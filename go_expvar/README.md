@@ -1,0 +1,96 @@
+# Go Expvar Integration
+
+![Go graph][1]
+
+## Overview
+
+Track the memory usage of your Go services and collect metrics instrumented from Go's expvar package.
+
+If you prefer to instrument your Go code using only [dogstats-go][2], you can still use this integration to collect memory-related metrics.
+
+## Setup
+
+### Installation
+
+The Go Expvar check is packaged with the Agent, so [install the Agent][3] anywhere you run Go services to collect metrics.
+
+### Configuration
+
+#### Prepare the service
+
+If your Go service doesn't use the [expvar package][4] already, import it (`import "expvar"`). If you don't want to instrument your own metrics with expvar - that is you only want to collect your service's memory metrics - import the package using the blank identifier (`import _ "expvar"`). If your service doesn't already listen for HTTP requests (with the http package), [make it listen][5] locally just for the Datadog Agent.
+
+<!-- xxx tabs xxx -->
+<!-- xxx tab "Host" xxx -->
+
+#### Host
+
+To configure this check for an Agent running on a host:
+
+##### Connect the Agent
+
+1. Edit the file `go_expvar.d/conf.yaml`, in the `conf.d/` folder at the root of your [Agent's configuration directory][6]. See the [sample go_expvar.d/conf.yaml][7] for all available configuration options.
+
+    **Note**: If you don't configure a `metrics` list, the Agent still collects memstat metrics. Use `metrics` to tell the Agent which expvar vars to collect.
+
+2. [Restart the Agent][8].
+
+**Note**: The Go Expvar integration can potentially emit [custom metrics][9], which may impact your [billing][10]. By default, there is a limit of 350 metrics. If you require additional metrics, contact [Datadog support][11].
+
+<!-- xxz tab xxx -->
+<!-- xxx tab "Containerized" xxx -->
+
+#### Containerized
+
+For containerized environments, see the [Autodiscovery Integration Templates][12] for guidance on applying the parameters below.
+
+| Parameter            | Value                                    |
+| -------------------- | ---------------------------------------- |
+| `<INTEGRATION_NAME>` | `go_expvar`                              |
+| `<INIT_CONFIG>`      | blank or `{}`                            |
+| `<INSTANCE_CONFIG>`  | `{"expvar_url": "http://%%host%%:8080"}` |
+
+<!-- xxz tab xxx -->
+<!-- xxz tabs xxx -->
+
+### Validation
+
+[Run the Agent's status subcommand][13] and look for `go_expvar` under the Checks section.
+
+## Data Collected
+
+### Metrics
+
+See [metadata.csv][14] for a list of metrics provided by this integration.
+
+### Events
+
+The Go-Expvar check does not include any events.
+
+### Service Checks
+
+The Go-Expvar check does not include any service checks.
+
+## Troubleshooting
+
+Need help? Contact [Datadog support][11].
+
+## Further Reading
+
+- [Instrument your Go apps with Expvar and Datadog][15]
+
+[1]: https://raw.githubusercontent.com/KhulnaSoft/integrations-core/master/go_expvar/images/go_graph.png
+[2]: https://github.com/KhulnaSoft/datadog-go
+[3]: https://app.khulnasoft.com/account/settings/agent/latest
+[4]: https://golang.org/pkg/expvar
+[5]: https://golang.org/pkg/net/http/#ListenAndServe
+[6]: https://docs.khulnasoft.com/agent/guide/agent-configuration-files/#agent-configuration-directory
+[7]: https://github.com/KhulnaSoft/integrations-core/blob/master/go_expvar/khulnasoft_checks/go_expvar/data/conf.yaml.example
+[8]: https://docs.khulnasoft.com/agent/guide/agent-commands/#start-stop-and-restart-the-agent
+[9]: https://docs.khulnasoft.com/developers/metrics/custom_metrics/
+[10]: https://docs.khulnasoft.com/account_management/billing/custom_metrics/
+[11]: https://docs.khulnasoft.com/help/
+[12]: https://docs.khulnasoft.com/agent/kubernetes/integrations/
+[13]: https://docs.khulnasoft.com/agent/guide/agent-commands/#agent-status-and-information
+[14]: https://github.com/KhulnaSoft/integrations-core/blob/master/go_expvar/metadata.csv
+[15]: https://www.khulnasoft.com/blog/instrument-go-apps-expvar-datadog

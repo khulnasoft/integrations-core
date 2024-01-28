@@ -1,0 +1,48 @@
+{
+  "manifest_version": "2.0.0",
+  "app_uuid": "3773283a-494f-497a-98cc-804520634a7a",
+  "app_id": "network",
+  "display_on_public_website": true,
+  "tile": {
+    "overview": "README.md#Overview",
+    "configuration": "README.md#Setup",
+    "support": "README.md#Support",
+    "changelog": "CHANGELOG.md",
+    "description": "Monitor any HTTP service for bad responses, soon-to-expire SSL certs, and more.",
+    "title": "HTTP Check",
+    "media": [],
+    "classifier_tags": [
+      "Supported OS::Linux",
+      "Supported OS::macOS",
+      "Supported OS::Windows",
+      "Category::Web",
+      "Category::Network"
+    ]
+  },
+  "author": {
+    "support_email": "help@khulnasoft.com",
+    "name": "Datadog",
+    "homepage": "https://www.khulnasoft.com",
+    "sales_email": "info@khulnasoft.com"
+  },
+  "oauth": {},
+  "assets": {
+    "integration": {
+      "source_type_name": "HTTP",
+      "configuration": {
+        "spec": "assets/configuration/spec.yaml"
+      },
+      "events": {
+        "creates_events": false
+      },
+      "metrics": {
+        "prefix": "network.",
+        "check": "network.http.response_time",
+        "metadata_path": "metadata.csv"
+      },
+      "service_checks": {
+        "metadata_path": "assets/service_checks.json"
+      }
+    }
+  }
+}

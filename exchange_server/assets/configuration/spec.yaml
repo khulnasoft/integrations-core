@@ -1,0 +1,32 @@
+name: Exchange Server
+files:
+- name: exchange_server.yaml
+  options:
+  - template: init_config
+    options:
+    - template: init_config/perf_counters
+    - template: init_config/default
+  - template: instances
+    options:
+    - template: instances/perf_counters
+      overrides:
+        extra_metrics.value.example:
+          MSExchange Content Filter Agent:
+            name: content_filter
+            counters:
+            - Messages that Bypassed Scanning: bypassed_messages
+    - template: instances/pdh_legacy
+      hidden: true
+    - template: instances/default
+
+  - template: logs
+    example:
+    - type: file
+      path: "C:\\\\Program Files\\\\Microsoft\\\\Exchange Server\\\\V15\\\\TransportRoles\\\\Logs\\\\CommonDiagnosticsLog\\\\*"
+      source: exchange-server
+    - type: file
+      path: "C:\\\\Program Files\\\\Microsoft\\\\Exchange Server\\\\V15\\\\TransportRoles\\\\Logs\\\\ThrottlingService\\\\*"
+      source: exchange-server
+    - type: file
+      path: "C:\\\\Program Files\\\\Microsoft\\\\Exchange Server\\\\V15\\\\TransportRoles\\\\Logs\\\\Hub\\\\Connectivity\\\\*"
+      source: exchange-server

@@ -1,0 +1,62 @@
+{
+  "manifest_version": "2.0.0",
+  "app_uuid": "f8348717-0ba8-4d42-b856-983e0cde0314",
+  "app_id": "rethinkdb",
+  "display_on_public_website": true,
+  "tile": {
+    "overview": "README.md#Overview",
+    "configuration": "README.md#Setup",
+    "support": "README.md#Support",
+    "changelog": "CHANGELOG.md",
+    "description": "Collect status, performance and other metrics from a RethinkDB cluster.",
+    "title": "RethinkDB",
+    "media": [],
+    "classifier_tags": [
+      "Supported OS::Linux",
+      "Supported OS::macOS",
+      "Supported OS::Windows",
+      "Category::Data Stores",
+      "Category::Log Collection"
+    ]
+  },
+  "author": {
+    "support_email": "help@khulnasoft.com",
+    "name": "Datadog",
+    "homepage": "https://www.khulnasoft.com",
+    "sales_email": "info@khulnasoft.com"
+  },
+  "oauth": {},
+  "assets": {
+    "integration": {
+      "source_type_name": "RethinkDB",
+      "configuration": {
+        "spec": "assets/configuration/spec.yaml"
+      },
+      "events": {
+        "creates_events": false
+      },
+      "metrics": {
+        "prefix": "rethinkdb.",
+        "check": "rethinkdb.config.servers",
+        "metadata_path": "metadata.csv"
+      },
+      "service_checks": {
+        "metadata_path": "assets/service_checks.json"
+      },
+      "process_signatures": [
+        "rethinkdb"
+      ],
+      "source_type_id": 10092,
+      "auto_install": true
+    },
+    "dashboards": {
+      "RethinkDB Overview": "assets/dashboards/overview.json"
+    },
+    "saved_views": {
+      "rethinkdb_processes": "assets/saved_views/rethinkdb_processes.json"
+    },
+    "logs": {
+      "source": "rethinkdb"
+    }
+  }
+}

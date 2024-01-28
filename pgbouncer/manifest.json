@@ -1,0 +1,64 @@
+{
+  "manifest_version": "2.0.0",
+  "app_uuid": "8aabdf7d-2d07-4d77-a76e-0ade64d8e70f",
+  "app_id": "pgbouncer",
+  "display_on_public_website": true,
+  "tile": {
+    "overview": "README.md#Overview",
+    "configuration": "README.md#Setup",
+    "support": "README.md#Support",
+    "changelog": "CHANGELOG.md",
+    "description": "Track connection pool metrics and monitor traffic to and from your application.",
+    "title": "PGBouncer",
+    "media": [],
+    "classifier_tags": [
+      "Supported OS::Linux",
+      "Supported OS::macOS",
+      "Category::Data Stores",
+      "Category::Log Collection"
+    ]
+  },
+  "author": {
+    "support_email": "help@khulnasoft.com",
+    "name": "Datadog",
+    "homepage": "https://www.khulnasoft.com",
+    "sales_email": "info@khulnasoft.com"
+  },
+  "oauth": {},
+  "assets": {
+    "integration": {
+      "source_type_name": "PGBouncer",
+      "configuration": {
+        "spec": "assets/configuration/spec.yaml"
+      },
+      "events": {
+        "creates_events": false
+      },
+      "metrics": {
+        "prefix": "pgbouncer.",
+        "check": "pgbouncer.pools.sv_idle",
+        "metadata_path": "metadata.csv"
+      },
+      "service_checks": {
+        "metadata_path": "assets/service_checks.json"
+      },
+      "process_signatures": [
+        "pgbouncer"
+      ],
+      "source_type_id": 118,
+      "auto_install": true
+    },
+    "dashboards": {
+      "pgbouncer": "assets/dashboards/pgbouncer_dashboard.json"
+    },
+    "saved_views": {
+      "error_warning_status": "assets/saved_views/error_warning_status.json",
+      "instance_overview": "assets/saved_views/instance_overview.json",
+      "user_overview": "assets/saved_views/user_overview.json",
+      "pgbouncer_processes": "assets/saved_views/pgbouncer_processes.json"
+    },
+    "logs": {
+      "source": "pgbouncer"
+    }
+  }
+}

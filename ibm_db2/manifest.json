@@ -1,0 +1,56 @@
+{
+  "manifest_version": "2.0.0",
+  "app_uuid": "e588293a-833f-4888-a7b4-2208e087059a",
+  "app_id": "ibm-db2",
+  "display_on_public_website": true,
+  "tile": {
+    "overview": "README.md#Overview",
+    "configuration": "README.md#Setup",
+    "support": "README.md#Support",
+    "changelog": "CHANGELOG.md",
+    "description": "Monitor table space, buffer pool, and other metrics from your IBM Db2 database.",
+    "title": "IBM Db2",
+    "media": [],
+    "classifier_tags": [
+      "Supported OS::Linux",
+      "Supported OS::macOS",
+      "Supported OS::Windows",
+      "Category::Data Stores",
+      "Category::Log Collection"
+    ]
+  },
+  "author": {
+    "support_email": "help@khulnasoft.com",
+    "name": "Datadog",
+    "homepage": "https://www.khulnasoft.com",
+    "sales_email": "info@khulnasoft.com"
+  },
+  "oauth": {},
+  "assets": {
+    "integration": {
+      "source_type_name": "IBM Db2",
+      "configuration": {
+        "spec": "assets/configuration/spec.yaml"
+      },
+      "events": {
+        "creates_events": true
+      },
+      "metrics": {
+        "prefix": "ibm_db2.",
+        "check": "ibm_db2.connection.active",
+        "metadata_path": "metadata.csv"
+      },
+      "service_checks": {
+        "metadata_path": "assets/service_checks.json"
+      },
+      "source_type_id": 10054,
+      "auto_install": true
+    },
+    "dashboards": {
+      "IBM Db2 Overview": "assets/dashboards/overview.json"
+    },
+    "logs": {
+      "source": "ibm_db2"
+    }
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "manifest_version": "2.0.0",
+  "app_uuid": "fe9a038e-3948-4646-9a1c-ea1f1cc59977",
+  "app_id": "marathon",
+  "display_on_public_website": true,
+  "tile": {
+    "overview": "README.md#Overview",
+    "configuration": "README.md#Setup",
+    "support": "README.md#Support",
+    "changelog": "CHANGELOG.md",
+    "description": "Track application metrics: required memory and disk, instance count, and more.",
+    "title": "Marathon",
+    "media": [],
+    "classifier_tags": [
+      "Supported OS::Linux",
+      "Supported OS::macOS",
+      "Category::Configuration & Deployment",
+      "Category::Containers",
+      "Category::Log Collection"
+    ]
+  },
+  "author": {
+    "support_email": "help@khulnasoft.com",
+    "name": "Datadog",
+    "homepage": "https://www.khulnasoft.com",
+    "sales_email": "info@khulnasoft.com"
+  },
+  "oauth": {},
+  "assets": {
+    "integration": {
+      "source_type_name": "Marathon",
+      "configuration": {
+        "spec": "assets/configuration/spec.yaml"
+      },
+      "events": {
+        "creates_events": false
+      },
+      "metrics": {
+        "prefix": "marathon.",
+        "check": "marathon.apps",
+        "metadata_path": "metadata.csv"
+      },
+      "service_checks": {
+        "metadata_path": "assets/service_checks.json"
+      },
+      "process_signatures": [
+        "start --master mesos marathon"
+      ],
+      "source_type_id": 82,
+      "auto_install": true
+    },
+    "dashboards": {
+      "marathon-overview": "assets/dashboards/marathon-overview_dashboard.json"
+    },
+    "saved_views": {
+      "marathon_processes": "assets/saved_views/marathon_processes.json"
+    },
+    "logs": {
+      "source": "marathon"
+    }
+  }
+}

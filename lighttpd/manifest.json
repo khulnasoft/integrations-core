@@ -1,0 +1,61 @@
+{
+  "manifest_version": "2.0.0",
+  "app_uuid": "3d7ace6a-9efd-4d21-b4e6-a9956512a875",
+  "app_id": "lighttpd",
+  "display_on_public_website": true,
+  "tile": {
+    "overview": "README.md#Overview",
+    "configuration": "README.md#Setup",
+    "support": "README.md#Support",
+    "changelog": "CHANGELOG.md",
+    "description": "Track uptime, bytes served, requests per second, response codes, and more.",
+    "title": "Lighttpd",
+    "media": [],
+    "classifier_tags": [
+      "Category::Log Collection",
+      "Supported OS::Linux",
+      "Supported OS::Windows",
+      "Supported OS::macOS"
+    ]
+  },
+  "author": {
+    "support_email": "help@khulnasoft.com",
+    "name": "Datadog",
+    "homepage": "https://www.khulnasoft.com",
+    "sales_email": "info@khulnasoft.com"
+  },
+  "oauth": {},
+  "assets": {
+    "integration": {
+      "source_type_name": "Lighttpd",
+      "configuration": {
+        "spec": "assets/configuration/spec.yaml"
+      },
+      "events": {
+        "creates_events": false
+      },
+      "metrics": {
+        "prefix": "lighttpd.",
+        "check": "lighttpd.performance.uptime",
+        "metadata_path": "metadata.csv"
+      },
+      "service_checks": {
+        "metadata_path": "assets/service_checks.json"
+      },
+      "process_signatures": [
+        "lighttpd"
+      ],
+      "source_type_id": 58,
+      "auto_install": true
+    },
+    "dashboards": {
+      "lighttpd": "assets/dashboards/lighttpd_dashboard.json"
+    },
+    "saved_views": {
+      "lighttpd_processes": "assets/saved_views/lighttpd_processes.json"
+    },
+    "logs": {
+      "source": "lighttpd"
+    }
+  }
+}

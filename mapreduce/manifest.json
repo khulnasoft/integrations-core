@@ -1,0 +1,55 @@
+{
+  "manifest_version": "2.0.0",
+  "app_uuid": "25ae6f45-147b-478c-9f0c-5013c3859796",
+  "app_id": "mapreduce",
+  "display_on_public_website": true,
+  "tile": {
+    "overview": "README.md#Overview",
+    "configuration": "README.md#Setup",
+    "support": "README.md#Support",
+    "changelog": "CHANGELOG.md",
+    "description": "Monitor the status and duration of map and reduce tasks.",
+    "title": "Map Reduce",
+    "media": [],
+    "classifier_tags": [
+      "Category::Log Collection",
+      "Supported OS::Linux",
+      "Supported OS::Windows",
+      "Supported OS::macOS"
+    ]
+  },
+  "author": {
+    "support_email": "help@khulnasoft.com",
+    "name": "Datadog",
+    "homepage": "https://www.khulnasoft.com",
+    "sales_email": "info@khulnasoft.com"
+  },
+  "oauth": {},
+  "assets": {
+    "integration": {
+      "source_type_name": "MapReduce",
+      "configuration": {
+        "spec": "assets/configuration/spec.yaml"
+      },
+      "events": {
+        "creates_events": false
+      },
+      "metrics": {
+        "prefix": "mapreduce.",
+        "check": "mapreduce.job.elapsed_time.max",
+        "metadata_path": "metadata.csv"
+      },
+      "service_checks": {
+        "metadata_path": "assets/service_checks.json"
+      },
+      "source_type_id": 133,
+      "auto_install": true
+    },
+    "dashboards": {
+      "mapreduce": "assets/dashboards/mapreduce_dashboard.json"
+    },
+    "logs": {
+      "source": "mapreduce"
+    }
+  }
+}

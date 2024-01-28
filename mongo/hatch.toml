@@ -1,0 +1,18 @@
+[env.collectors.datadog-checks]
+
+[envs.default]
+dependencies = [
+  "khulnasoft_checks_tests_helper @ {root:uri}/../khulnasoft_checks_tests_helper",
+]
+
+[[envs.default.matrix]]
+python = ["3.11"]
+version = ["4.4", "5.0"]
+flavor = ["standalone", "shard", "auth", "tls"]
+
+[envs.default.overrides]
+matrix.version.env-vars = "MONGO_VERSION"
+
+[envs.default.env-vars]
+COMPOSE_FILE = "mongo-{matrix:flavor}.yaml"
+DDEV_SKIP_GENERIC_TAGS_CHECK = "true"

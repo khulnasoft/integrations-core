@@ -1,0 +1,58 @@
+{
+  "manifest_version": "2.0.0",
+  "app_uuid": "d9b9104f-ffd1-42be-8e18-d8a3aa289b98",
+  "app_id": "vsphere",
+  "display_on_public_website": true,
+  "tile": {
+    "overview": "README.md#Overview",
+    "configuration": "README.md#Setup",
+    "support": "README.md#Support",
+    "changelog": "CHANGELOG.md",
+    "description": "Understand how vSphere resource usage affects your application.",
+    "title": "vSphere",
+    "media": [],
+    "classifier_tags": [
+      "Category::Cloud",
+      "Category::Network",
+      "Supported OS::Linux",
+      "Supported OS::Windows",
+      "Supported OS::macOS"
+    ]
+  },
+  "author": {
+    "support_email": "help@khulnasoft.com",
+    "name": "Datadog",
+    "homepage": "https://www.khulnasoft.com",
+    "sales_email": "info@khulnasoft.com"
+  },
+  "oauth": {},
+  "assets": {
+    "integration": {
+      "source_type_name": "vSphere",
+      "configuration": {
+        "spec": "assets/configuration/spec.yaml"
+      },
+      "events": {
+        "creates_events": true
+      },
+      "metrics": {
+        "prefix": "vsphere.",
+        "check": [
+          "vsphere.cpu.usage.avg",
+          "vsphere.vm.count"
+        ],
+        "metadata_path": "metadata.csv"
+      },
+      "service_checks": {
+        "metadata_path": "assets/service_checks.json"
+      },
+      "source_type_id": 85,
+      "auto_install": true
+    },
+    "dashboards": {
+      "vsphere-overview": "assets/dashboards/vsphere_overview.json",
+      "VMware vSphere TKG - Overview": "assets/dashboards/vmware_vsphere_tkg_-_overview.json",
+      "VMware vSphere - Property Metrics": "assets/dashboards/vmware_vsphere-_property_metrics.json"
+    }
+  }
+}

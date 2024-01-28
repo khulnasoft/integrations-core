@@ -1,0 +1,747 @@
+{
+    "title": "Cilium Overview",
+    "description": "",
+    "widgets": [
+        {
+            "id": 0,
+            "definition": {
+                "type": "note",
+                "content": "Endpoints",
+                "background_color": "gray",
+                "font_size": "18",
+                "text_align": "center",
+                "show_tick": true,
+                "tick_pos": "50%",
+                "tick_edge": "bottom"
+            },
+            "layout": {
+                "x": 25,
+                "y": 1,
+                "width": 23,
+                "height": 5
+            }
+        },
+        {
+            "id": 1,
+            "definition": {
+                "type": "query_value",
+                "requests": [
+                    {
+                        "q": "sum:cilium.endpoint.count{*}",
+                        "aggregator": "last"
+                    }
+                ],
+                "custom_links": [],
+                "title": "Ready Endpoint Count",
+                "title_size": "13",
+                "title_align": "left",
+                "autoscale": false,
+                "precision": 0
+            },
+            "layout": {
+                "x": 1,
+                "y": 8,
+                "width": 23,
+                "height": 14
+            }
+        },
+        {
+            "id": 2,
+            "definition": {
+                "type": "timeseries",
+                "requests": [
+                    {
+                        "q": "sum:cilium.endpoint.state{*} by {endpoint_state}",
+                        "display_type": "area",
+                        "style": {
+                            "palette": "dog_classic",
+                            "line_type": "solid",
+                            "line_width": "normal"
+                        }
+                    }
+                ],
+                "custom_links": [],
+                "title": "Endpoints by State",
+                "title_size": "13",
+                "title_align": "left",
+                "show_legend": false,
+                "legend_size": "0"
+            },
+            "layout": {
+                "x": 25,
+                "y": 8,
+                "width": 23,
+                "height": 14
+            }
+        },
+        {
+            "id": 3,
+            "definition": {
+                "type": "timeseries",
+                "requests": [
+                    {
+                        "q": "sum:cilium.endpoint.regenerations.count{*} by {outcome}.as_count()",
+                        "display_type": "area",
+                        "style": {
+                            "palette": "dog_classic",
+                            "line_type": "solid",
+                            "line_width": "normal"
+                        }
+                    }
+                ],
+                "custom_links": [],
+                "title": "Endpoint Regenerations by Outcome",
+                "title_size": "13",
+                "title_align": "left",
+                "show_legend": false,
+                "legend_size": "0"
+            },
+            "layout": {
+                "x": 25,
+                "y": 23,
+                "width": 23,
+                "height": 14
+            }
+        },
+        {
+            "id": 4,
+            "definition": {
+                "type": "query_value",
+                "requests": [
+                    {
+                        "q": "avg:cilium.endpoint.regeneration_time_stats.seconds.sum{*}",
+                        "aggregator": "avg"
+                    }
+                ],
+                "custom_links": [],
+                "title": "Avg Endpoint Regeneration Time",
+                "title_size": "13",
+                "title_align": "left",
+                "autoscale": true,
+                "custom_unit": "sec",
+                "precision": 0
+            },
+            "layout": {
+                "x": 1,
+                "y": 23,
+                "width": 23,
+                "height": 14
+            }
+        },
+        {
+            "id": 5,
+            "definition": {
+                "type": "note",
+                "content": "Packet Drops and Forwards",
+                "background_color": "gray",
+                "font_size": "18",
+                "text_align": "center",
+                "show_tick": true,
+                "tick_pos": "50%",
+                "tick_edge": "bottom"
+            },
+            "layout": {
+                "x": 49,
+                "y": 1,
+                "width": 47,
+                "height": 5
+            }
+        },
+        {
+            "id": 6,
+            "definition": {
+                "type": "timeseries",
+                "requests": [
+                    {
+                        "q": "sum:cilium.drop_count.total{direction:egress} by {reason}.as_count()",
+                        "display_type": "bars",
+                        "style": {
+                            "palette": "dog_classic",
+                            "line_type": "solid",
+                            "line_width": "normal"
+                        }
+                    }
+                ],
+                "custom_links": [],
+                "title": "Egress Packets Dropped by Reason",
+                "title_size": "13",
+                "title_align": "left",
+                "show_legend": false,
+                "legend_size": "0"
+            },
+            "layout": {
+                "x": 73,
+                "y": 8,
+                "width": 23,
+                "height": 14
+            }
+        },
+        {
+            "id": 7,
+            "definition": {
+                "type": "timeseries",
+                "requests": [
+                    {
+                        "q": "sum:cilium.drop_count.total{direction:ingress} by {reason}.as_count()",
+                        "display_type": "bars",
+                        "style": {
+                            "palette": "dog_classic",
+                            "line_type": "solid",
+                            "line_width": "normal"
+                        }
+                    }
+                ],
+                "custom_links": [],
+                "title": "Ingress Packets Dropped by Reason",
+                "title_size": "13",
+                "title_align": "left",
+                "show_legend": false,
+                "legend_size": "0"
+            },
+            "layout": {
+                "x": 49,
+                "y": 8,
+                "width": 23,
+                "height": 14
+            }
+        },
+        {
+            "id": 8,
+            "definition": {
+                "type": "timeseries",
+                "requests": [
+                    {
+                        "q": "sum:cilium.forward_count.total{direction:ingress}.as_count()",
+                        "display_type": "line",
+                        "style": {
+                            "palette": "dog_classic",
+                            "line_type": "solid",
+                            "line_width": "normal"
+                        }
+                    }
+                ],
+                "custom_links": [],
+                "title": "Ingress Packets Forwarded",
+                "title_size": "13",
+                "title_align": "left",
+                "show_legend": false,
+                "legend_size": "0"
+            },
+            "layout": {
+                "x": 49,
+                "y": 23,
+                "width": 23,
+                "height": 14
+            }
+        },
+        {
+            "id": 9,
+            "definition": {
+                "type": "timeseries",
+                "requests": [
+                    {
+                        "q": "avg:cilium.forward_count.total{*}.as_count()",
+                        "display_type": "line",
+                        "style": {
+                            "palette": "dog_classic",
+                            "line_type": "solid",
+                            "line_width": "normal"
+                        }
+                    }
+                ],
+                "custom_links": [],
+                "title": "Egress Packets Forwarded",
+                "title_size": "13",
+                "title_align": "left",
+                "show_legend": false,
+                "legend_size": "0"
+            },
+            "layout": {
+                "x": 73,
+                "y": 23,
+                "width": 23,
+                "height": 14
+            }
+        },
+        {
+            "id": 10,
+            "definition": {
+                "type": "image",
+                "url": "/static/images/logos/cilium_small.svg",
+                "sizing": "fit"
+            },
+            "layout": {
+                "x": 1,
+                "y": 1,
+                "width": 23,
+                "height": 5
+            }
+        },
+        {
+            "id": 11,
+            "definition": {
+                "type": "note",
+                "content": "Policies",
+                "background_color": "gray",
+                "font_size": "18",
+                "text_align": "center",
+                "show_tick": true,
+                "tick_pos": "50%",
+                "tick_edge": "bottom"
+            },
+            "layout": {
+                "x": 49,
+                "y": 38,
+                "width": 47,
+                "height": 5
+            }
+        },
+        {
+            "id": 12,
+            "definition": {
+                "type": "query_value",
+                "requests": [
+                    {
+                        "q": "max:cilium.policy.count{*}",
+                        "aggregator": "last"
+                    }
+                ],
+                "custom_links": [],
+                "title": "Policy Count",
+                "title_size": "13",
+                "title_align": "left",
+                "autoscale": true,
+                "precision": 0
+            },
+            "layout": {
+                "x": 49,
+                "y": 45,
+                "width": 23,
+                "height": 14
+            }
+        },
+        {
+            "id": 13,
+            "definition": {
+                "type": "timeseries",
+                "requests": [
+                    {
+                        "q": "sum:cilium.policy.import_errors.count{*}.as_count()",
+                        "display_type": "bars",
+                        "style": {
+                            "palette": "warm",
+                            "line_type": "solid",
+                            "line_width": "normal"
+                        }
+                    }
+                ],
+                "custom_links": [],
+                "title": "Policy Import Errors",
+                "title_size": "13",
+                "title_align": "left",
+                "show_legend": false,
+                "legend_size": "0"
+            },
+            "layout": {
+                "x": 73,
+                "y": 60,
+                "width": 23,
+                "height": 14
+            }
+        },
+        {
+            "id": 14,
+            "definition": {
+                "type": "timeseries",
+                "requests": [
+                    {
+                        "q": "sum:cilium.policy.endpoint_enforcement_status{*}",
+                        "display_type": "line",
+                        "style": {
+                            "palette": "dog_classic",
+                            "line_type": "solid",
+                            "line_width": "normal"
+                        }
+                    }
+                ],
+                "custom_links": [],
+                "title": "Endpoint Enforcement Status",
+                "title_size": "13",
+                "title_align": "left",
+                "show_legend": false,
+                "legend_size": "0"
+            },
+            "layout": {
+                "x": 73,
+                "y": 45,
+                "width": 23,
+                "height": 14
+            }
+        },
+        {
+            "id": 15,
+            "definition": {
+                "type": "timeseries",
+                "requests": [
+                    {
+                        "q": "sum:cilium.policy.regeneration_time_stats.seconds.sum{*}/sum:cilium.policy.regeneration_time_stats.seconds.count{upper_bound:none}",
+                        "display_type": "line",
+                        "style": {
+                            "palette": "dog_classic",
+                            "line_type": "solid",
+                            "line_width": "normal"
+                        }
+                    }
+                ],
+                "custom_links": [],
+                "title": "Policy Regeneration Time",
+                "title_size": "13",
+                "title_align": "left",
+                "show_legend": false,
+                "legend_size": "0"
+            },
+            "layout": {
+                "x": 49,
+                "y": 60,
+                "width": 23,
+                "height": 14
+            }
+        },
+        {
+            "id": 16,
+            "definition": {
+                "type": "note",
+                "content": "K8S API and KVStore Requests",
+                "background_color": "gray",
+                "font_size": "18",
+                "text_align": "center",
+                "show_tick": true,
+                "tick_pos": "50%",
+                "tick_edge": "bottom"
+            },
+            "layout": {
+                "x": 97,
+                "y": 38,
+                "width": 47,
+                "height": 5
+            }
+        },
+        {
+            "id": 17,
+            "definition": {
+                "type": "timeseries",
+                "requests": [
+                    {
+                        "q": "sum:cilium.ipam.events.total{*} by {action}.as_count()",
+                        "display_type": "line",
+                        "style": {
+                            "palette": "dog_classic",
+                            "line_type": "solid",
+                            "line_width": "normal"
+                        }
+                    }
+                ],
+                "custom_links": [],
+                "title": "IP Allocation by Action",
+                "title_size": "13",
+                "title_align": "left",
+                "show_legend": false,
+                "legend_size": "0"
+            },
+            "layout": {
+                "x": 25,
+                "y": 38,
+                "width": 23,
+                "height": 14
+            }
+        },
+        {
+            "id": 18,
+            "definition": {
+                "type": "timeseries",
+                "requests": [
+                    {
+                        "q": "sum:cilium.kvstore.operations_duration.seconds.sum{*} by {action}",
+                        "display_type": "line",
+                        "style": {
+                            "palette": "dog_classic",
+                            "line_type": "solid",
+                            "line_width": "normal"
+                        }
+                    }
+                ],
+                "custom_links": [],
+                "title": "KVStore Ops Duration by Action",
+                "title_size": "13",
+                "title_align": "left",
+                "show_legend": false,
+                "legend_size": "0"
+            },
+            "layout": {
+                "x": 97,
+                "y": 45,
+                "width": 23,
+                "height": 14
+            }
+        },
+        {
+            "id": 19,
+            "definition": {
+                "type": "timeseries",
+                "requests": [
+                    {
+                        "q": "avg:cilium.kvstore.events_queue.seconds.sum{*} by {action}",
+                        "display_type": "line",
+                        "style": {
+                            "palette": "warm",
+                            "line_type": "solid",
+                            "line_width": "normal"
+                        }
+                    }
+                ],
+                "custom_links": [],
+                "title": "KVStore Event Queue by Action",
+                "title_size": "13",
+                "title_align": "left",
+                "show_legend": false,
+                "legend_size": "0"
+            },
+            "layout": {
+                "x": 121,
+                "y": 45,
+                "width": 23,
+                "height": 14
+            }
+        },
+        {
+            "id": 20,
+            "definition": {
+                "type": "query_value",
+                "requests": [
+                    {
+                        "q": "max:cilium.identity.count{*}",
+                        "aggregator": "last"
+                    }
+                ],
+                "custom_links": [],
+                "title": "Identities Allocated",
+                "title_size": "13",
+                "title_align": "left",
+                "autoscale": false,
+                "precision": 0
+            },
+            "layout": {
+                "x": 1,
+                "y": 38,
+                "width": 23,
+                "height": 14
+            }
+        },
+        {
+            "id": 21,
+            "definition": {
+                "type": "note",
+                "content": "Agent and Operator Stats",
+                "background_color": "gray",
+                "font_size": "18",
+                "text_align": "center",
+                "show_tick": true,
+                "tick_pos": "50%",
+                "tick_edge": "bottom"
+            },
+            "layout": {
+                "x": 97,
+                "y": 1,
+                "width": 47,
+                "height": 5
+            }
+        },
+        {
+            "id": 22,
+            "definition": {
+                "type": "heatmap",
+                "requests": [
+                    {
+                        "q": "avg:cilium.process.cpu.seconds.total{*} by {host}.as_count()",
+                        "style": {
+                            "palette": "dog_classic"
+                        }
+                    }
+                ],
+                "custom_links": [],
+                "title": "Agent CPU Usage by Host",
+                "title_size": "13",
+                "title_align": "left",
+                "show_legend": false,
+                "legend_size": "0"
+            },
+            "layout": {
+                "x": 97,
+                "y": 8,
+                "width": 23,
+                "height": 14
+            }
+        },
+        {
+            "id": 23,
+            "definition": {
+                "type": "heatmap",
+                "requests": [
+                    {
+                        "q": "avg:cilium.operator.process.cpu.seconds{*}.as_count()",
+                        "style": {
+                            "palette": "dog_classic"
+                        }
+                    }
+                ],
+                "custom_links": [],
+                "title": "Operator CPU Usage by Host",
+                "title_size": "13",
+                "title_align": "left",
+                "show_legend": false,
+                "legend_size": "0"
+            },
+            "layout": {
+                "x": 121,
+                "y": 8,
+                "width": 23,
+                "height": 14
+            }
+        },
+        {
+            "id": 24,
+            "definition": {
+                "type": "heatmap",
+                "requests": [
+                    {
+                        "q": "avg:cilium.process.resident_memory.bytes{*} by {host}",
+                        "style": {
+                            "palette": "cool"
+                        }
+                    }
+                ],
+                "custom_links": [],
+                "title": "Agent Process Memory",
+                "title_size": "13",
+                "title_align": "left",
+                "show_legend": false,
+                "legend_size": "0"
+            },
+            "layout": {
+                "x": 97,
+                "y": 23,
+                "width": 23,
+                "height": 14
+            }
+        },
+        {
+            "id": 25,
+            "definition": {
+                "type": "heatmap",
+                "requests": [
+                    {
+                        "q": "avg:cilium.operator.process.resident_memory.bytes{*}",
+                        "style": {
+                            "palette": "cool"
+                        }
+                    }
+                ],
+                "custom_links": [],
+                "title": "Operator Process Memory",
+                "title_size": "13",
+                "title_align": "left",
+                "show_legend": false,
+                "legend_size": "0"
+            },
+            "layout": {
+                "x": 121,
+                "y": 23,
+                "width": 23,
+                "height": 14
+            }
+        },
+        {
+            "id": 26,
+            "definition": {
+                "type": "timeseries",
+                "requests": [
+                    {
+                        "q": "avg:cilium.k8s_client.api_calls.count{*} by {host}.as_rate()",
+                        "display_type": "line",
+                        "style": {
+                            "palette": "dog_classic",
+                            "line_type": "solid",
+                            "line_width": "normal"
+                        }
+                    }
+                ],
+                "custom_links": [],
+                "title": "K8S API Calls by Host",
+                "title_size": "13",
+                "title_align": "left",
+                "show_legend": false,
+                "legend_size": "0"
+            },
+            "layout": {
+                "x": 97,
+                "y": 60,
+                "width": 23,
+                "height": 14
+            }
+        },
+        {
+            "id": 27,
+            "definition": {
+                "type": "heatmap",
+                "requests": [
+                    {
+                        "q": "avg:cilium.k8s_client.api_latency_time.seconds.sum{*}/avg:cilium.k8s_client.api_latency_time.seconds.count{upper_bound:none}",
+                        "style": {
+                            "palette": "dog_classic"
+                        }
+                    }
+                ],
+                "custom_links": [],
+                "title": "K8S API Call Latency by Host",
+                "title_size": "13",
+                "title_align": "left",
+                "show_legend": false,
+                "legend_size": "0"
+            },
+            "layout": {
+                "x": 121,
+                "y": 60,
+                "width": 23,
+                "height": 14
+            }
+        },
+        {
+            "id": 28,
+            "definition": {
+                "type": "toplist",
+                "requests": [
+                    {
+                        "q": "top(sum:cilium.unreachable.nodes{*} by {host}, 10, 'max', 'desc')",
+                        "style": {
+                            "palette": "dog_classic"
+                        }
+                    }
+                ],
+                "custom_links": [],
+                "title": "Unreachable Node Count by Host",
+                "title_size": "13",
+                "title_align": "left"
+            },
+            "layout": {
+                "x": 1,
+                "y": 53,
+                "width": 28,
+                "height": 21
+            }
+        }
+    ],
+    "template_variables": [],
+    "layout_type": "free",
+    "is_read_only": true,
+    "notify_list": []
+}

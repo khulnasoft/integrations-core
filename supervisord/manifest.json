@@ -1,0 +1,60 @@
+{
+  "manifest_version": "2.0.0",
+  "app_uuid": "c4ee3618-f4b4-48b8-9515-a4a2f4091c0d",
+  "app_id": "supervisord",
+  "display_on_public_website": true,
+  "tile": {
+    "overview": "README.md#Overview",
+    "configuration": "README.md#Setup",
+    "support": "README.md#Support",
+    "changelog": "CHANGELOG.md",
+    "description": "Monitor the status, uptime, and number of supervisor-managed processes.",
+    "title": "Supervisord",
+    "media": [],
+    "classifier_tags": [
+      "Supported OS::Linux",
+      "Supported OS::macOS",
+      "Supported OS::Windows",
+      "Category::OS & System",
+      "Category::Log Collection"
+    ]
+  },
+  "author": {
+    "support_email": "help@khulnasoft.com",
+    "name": "Datadog",
+    "homepage": "https://www.khulnasoft.com",
+    "sales_email": "info@khulnasoft.com"
+  },
+  "oauth": {},
+  "assets": {
+    "integration": {
+      "source_type_name": "Supervisord",
+      "configuration": {
+        "spec": "assets/configuration/spec.yaml"
+      },
+      "events": {
+        "creates_events": false
+      },
+      "metrics": {
+        "prefix": "supervisord.",
+        "check": "supervisord.process.count",
+        "metadata_path": "metadata.csv"
+      },
+      "service_checks": {
+        "metadata_path": "assets/service_checks.json"
+      },
+      "process_signatures": [
+        "python supervisord",
+        "supervisord"
+      ],
+      "source_type_id": 116,
+      "auto_install": true
+    },
+    "saved_views": {
+      "supervisord_processes": "assets/saved_views/supervisord_processes.json"
+    },
+    "logs": {
+      "source": "supervisord"
+    }
+  }
+}

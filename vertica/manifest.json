@@ -1,0 +1,59 @@
+{
+  "manifest_version": "2.0.0",
+  "app_uuid": "c5946789-de76-4ec6-9485-db83dd66fd28",
+  "app_id": "vertica",
+  "display_on_public_website": true,
+  "tile": {
+    "overview": "README.md#Overview",
+    "configuration": "README.md#Setup",
+    "support": "README.md#Support",
+    "changelog": "CHANGELOG.md",
+    "description": "Monitor Vertica projection storage, license usage, and more.",
+    "title": "Vertica",
+    "media": [],
+    "classifier_tags": [
+      "Supported OS::Linux",
+      "Supported OS::macOS",
+      "Supported OS::Windows",
+      "Category::Data Stores",
+      "Category::Log Collection"
+    ]
+  },
+  "author": {
+    "support_email": "help@khulnasoft.com",
+    "name": "Datadog",
+    "homepage": "https://www.khulnasoft.com",
+    "sales_email": "info@khulnasoft.com"
+  },
+  "oauth": {},
+  "assets": {
+    "integration": {
+      "source_type_name": "Vertica",
+      "configuration": {
+        "spec": "assets/configuration/spec.yaml"
+      },
+      "events": {
+        "creates_events": false
+      },
+      "metrics": {
+        "prefix": "vertica.",
+        "check": "vertica.connection.active",
+        "metadata_path": "metadata.csv"
+      },
+      "service_checks": {
+        "metadata_path": "assets/service_checks.json"
+      },
+      "source_type_id": 10072,
+      "auto_install": true
+    },
+    "dashboards": {
+      "Vertica Overview": "assets/dashboards/overview.json"
+    },
+    "monitors": {
+      "[Vertica] Nodes down above K-safety level": "assets/monitors/vertica_replication_safety.json"
+    },
+    "logs": {
+      "source": "vertica"
+    }
+  }
+}

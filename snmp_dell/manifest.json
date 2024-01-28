@@ -1,0 +1,44 @@
+{
+  "manifest_version": "2.0.0",
+  "app_uuid": "2d90389f-0e85-49a8-8fd9-715ff1836a23",
+  "app_id": "snmp-dell",
+  "display_on_public_website": true,
+  "tile": {
+    "overview": "README.md#Overview",
+    "configuration": "README.md#Setup",
+    "support": "README.md#Support",
+    "changelog": "CHANGELOG.md",
+    "description": "Collect metrics from Dell devices.",
+    "title": "Dell Inc.",
+    "media": [],
+    "classifier_tags": [
+      "Category::Network",
+      "Category::Notifications",
+      "Category::SNMP",
+      "Supported OS::Linux",
+      "Supported OS::Windows",
+      "Supported OS::macOS"
+    ]
+  },
+  "author": {
+    "support_email": "help@khulnasoft.com",
+    "name": "Datadog",
+    "homepage": "https://www.khulnasoft.com",
+    "sales_email": "info@khulnasoft.com"
+  },
+  "oauth": {},
+  "assets": {
+    "integration": {
+      "source_type_name": "Dell",
+      "configuration": {},
+      "events": {
+        "creates_events": false
+      },
+      "service_checks": {
+        "metadata_path": "assets/service_checks.json"
+      },
+      "source_type_id": 10147,
+      "auto_install": true
+    }
+  }
+}

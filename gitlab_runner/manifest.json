@@ -1,0 +1,59 @@
+{
+  "manifest_version": "2.0.0",
+  "app_uuid": "ee31aff6-4821-4dbf-af9c-bd09e59a4e80",
+  "app_id": "gitlab-runner",
+  "display_on_public_website": true,
+  "tile": {
+    "overview": "README.md#Overview",
+    "configuration": "README.md#Setup",
+    "support": "README.md#Support",
+    "changelog": "CHANGELOG.md",
+    "description": "Track all the metrics from your GitLab runners with Datadog.",
+    "title": "GitLab Runners",
+    "media": [],
+    "classifier_tags": [
+      "Supported OS::Linux",
+      "Supported OS::macOS",
+      "Supported OS::Windows",
+      "Category::Collaboration",
+      "Category::Source Control",
+      "Category::Issue Tracking",
+      "Category::Log Collection"
+    ]
+  },
+  "author": {
+    "support_email": "help@khulnasoft.com",
+    "name": "Datadog",
+    "homepage": "https://www.khulnasoft.com",
+    "sales_email": "info@khulnasoft.com"
+  },
+  "oauth": {},
+  "assets": {
+    "integration": {
+      "source_type_name": "Gitlab Runner",
+      "configuration": {
+        "spec": "assets/configuration/spec.yaml"
+      },
+      "events": {
+        "creates_events": false
+      },
+      "metrics": {
+        "prefix": "gitlab_runner.",
+        "check": "gitlab_runner.process_max_fds",
+        "metadata_path": "metadata.csv"
+      },
+      "service_checks": {
+        "metadata_path": "assets/service_checks.json"
+      },
+      "process_signatures": [
+        "gitlab-runner",
+        "gitlab-ci-multi-runner"
+      ],
+      "source_type_id": 10028,
+      "auto_install": true
+    },
+    "logs": {
+      "source": "gitlab_runner"
+    }
+  }
+}

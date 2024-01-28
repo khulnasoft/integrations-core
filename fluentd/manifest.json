@@ -1,0 +1,61 @@
+{
+  "manifest_version": "2.0.0",
+  "app_uuid": "c725a834-feee-481d-94f0-afe95f39d0b1",
+  "app_id": "fluentd",
+  "display_on_public_website": true,
+  "tile": {
+    "overview": "README.md#Overview",
+    "configuration": "README.md#Setup",
+    "support": "README.md#Support",
+    "changelog": "CHANGELOG.md",
+    "description": "Monitor buffer queues and retry counts for each Fluentd plugin you've enabled.",
+    "title": "FluentD",
+    "media": [],
+    "classifier_tags": [
+      "Supported OS::Linux",
+      "Supported OS::Windows",
+      "Category::Log Collection",
+      "Category::Metrics",
+      "Supported OS::macOS"
+    ]
+  },
+  "author": {
+    "support_email": "help@khulnasoft.com",
+    "name": "Datadog",
+    "homepage": "https://www.khulnasoft.com",
+    "sales_email": "info@khulnasoft.com"
+  },
+  "oauth": {},
+  "assets": {
+    "integration": {
+      "source_type_name": "fluentd",
+      "configuration": {
+        "spec": "assets/configuration/spec.yaml"
+      },
+      "events": {
+        "creates_events": false
+      },
+      "metrics": {
+        "prefix": "fluentd.",
+        "check": "fluentd.buffer_queue_length",
+        "metadata_path": "metadata.csv"
+      },
+      "service_checks": {
+        "metadata_path": "assets/service_checks.json"
+      },
+      "process_signatures": [
+        "td-agent",
+        "fluentd",
+        "ruby td-agent"
+      ],
+      "source_type_id": 108,
+      "auto_install": true
+    },
+    "dashboards": {
+      "fluentd": "assets/dashboards/fluentd_dashboard.json"
+    },
+    "saved_views": {
+      "fluentd_processes": "assets/saved_views/fluentd_processes.json"
+    }
+  }
+}

@@ -1,0 +1,65 @@
+[build-system]
+requires = [
+    "hatchling>=0.11.2",
+    "setuptools>=66; python_version > '3.0'",
+    "setuptools; python_version < '3.0'",
+]
+build-backend = "hatchling.build"
+
+[project]
+name = "datadog-process"
+description = "The Process check"
+readme = "README.md"
+keywords = [
+    "datadog",
+    "datadog agent",
+    "datadog check",
+    "process",
+]
+authors = [
+    { name = "Datadog", email = "packages@khulnasoft.com" },
+]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "Intended Audience :: System Administrators",
+    "License :: OSI Approved :: BSD License",
+    "Programming Language :: Python :: 2.7",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: System :: Monitoring",
+    "Private :: Do Not Upload",
+]
+dependencies = [
+    "datadog-checks-base>=32.6.0",
+]
+dynamic = [
+    "version",
+]
+
+license = "BSD-3-Clause"
+
+[project.optional-dependencies]
+deps = [
+    "psutil==5.9.7",
+]
+
+[project.urls]
+Source = "https://github.com/KhulnaSoft/integrations-core"
+
+[tool.hatch.version]
+path = "khulnasoft_checks/process/__about__.py"
+
+[tool.hatch.build.targets.sdist]
+include = [
+    "/khulnasoft_checks",
+    "/tests",
+    "/manifest.json",
+]
+
+[tool.hatch.build.targets.wheel]
+include = [
+    "/khulnasoft_checks/process",
+]
+dev-mode-dirs = [
+    ".",
+]

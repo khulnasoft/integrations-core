@@ -1,0 +1,47 @@
+{
+  "manifest_version": "2.0.0",
+  "app_uuid": "2147d078-2742-413e-83eb-58400657de56",
+  "app_id": "dotnetclr",
+  "display_on_public_website": true,
+  "tile": {
+    "overview": "README.md#Overview",
+    "configuration": "README.md#Setup",
+    "support": "README.md#Support",
+    "changelog": "CHANGELOG.md",
+    "description": "Visualize and monitor Dotnetclr states",
+    "title": ".NET CLR",
+    "media": [],
+    "classifier_tags": [
+      "Supported OS::Windows",
+      "Category::Languages"
+    ]
+  },
+  "author": {
+    "support_email": "help@khulnasoft.com",
+    "name": "Datadog",
+    "homepage": "https://www.khulnasoft.com",
+    "sales_email": "info@khulnasoft.com"
+  },
+  "oauth": {},
+  "assets": {
+    "integration": {
+      "source_type_name": ".NET CLR",
+      "configuration": {
+        "spec": "assets/configuration/spec.yaml"
+      },
+      "events": {
+        "creates_events": false
+      },
+      "metrics": {
+        "prefix": "dotnetclr.",
+        "check": "dotnetclr.memory.time_in_gc",
+        "metadata_path": "metadata.csv"
+      },
+      "service_checks": {
+        "metadata_path": "assets/service_checks.json"
+      },
+      "source_type_id": 10069,
+      "auto_install": true
+    }
+  }
+}

@@ -1,0 +1,578 @@
+{
+    "title": "Istio - Overview (< v1.5)",
+    "description": "### Istio\n\n- [What is Istio](https://istio.io/docs/concepts/what-is-istio/)?\n- [Envoy](https://istio.io/docs/concepts/what-is-istio/#envoy), a high performance proxy.\n    - XDS = Envoy management APIs that can be implemented by backend servers. \n        - These APIs support:\n            - Cluster discovery service (CDS)\n            - Route discovery service (RDS)\n            - Endpoint discovery service (EDS)\n            - Listener discovery service (LDS)\n- [Mixer](https://istio.io/docs/concepts/what-is-istio/#mixer), enforces access control and usage policies across the service mesh, and collects telemetry data from the Envoy proxy and other services.\n- [Pilot](https://istio.io/docs/concepts/what-is-istio/#pilot), provides service discovery for the Envoy sidecars, traffic management capabilities for intelligent routing (e.g., A/B tests, canary rollouts, etc.), and resiliency (timeouts, retries, circuit breakers, etc.).\n- [Citadel](https://istio.io/docs/concepts/what-is-istio/#citadel), enables strong service-to-service and end-user authentication with built-in identity and credential management.\n- [Galley](https://istio.io/docs/concepts/what-is-istio/#galley), configuration validation, ingestion, processing and distribution component.)",
+    "widgets": [
+        {
+            "id": 0,
+            "definition": {
+                "type": "note",
+                "content": "Resource usage",
+                "background_color": "gray",
+                "font_size": "18",
+                "text_align": "center",
+                "show_tick": true,
+                "tick_pos": "50%",
+                "tick_edge": "bottom"
+            },
+            "layout": {
+                "x": 55,
+                "y": 0,
+                "width": 53,
+                "height": 5
+            }
+        },
+        {
+            "id": 1,
+            "definition": {
+                "type": "note",
+                "content": "Mesh throughput",
+                "background_color": "gray",
+                "font_size": "18",
+                "text_align": "center",
+                "show_tick": true,
+                "tick_pos": "50%",
+                "tick_edge": "bottom"
+            },
+            "layout": {
+                "x": 14,
+                "y": 0,
+                "width": 40,
+                "height": 5
+            }
+        },
+        {
+            "id": 2,
+            "definition": {
+                "type": "timeseries",
+                "requests": [
+                    {
+                        "q": "top(avg:istio.mesh.request.count{*} by {host}, 10, 'mean', 'desc')",
+                        "display_type": "area",
+                        "style": {
+                            "palette": "dog_classic",
+                            "line_type": "solid",
+                            "line_width": "normal"
+                        }
+                    }
+                ],
+                "custom_links": [],
+                "title": "Request count",
+                "title_size": "16",
+                "title_align": "center",
+                "show_legend": false,
+                "legend_size": "0"
+            },
+            "layout": {
+                "x": 1,
+                "y": 21,
+                "width": 26,
+                "height": 14
+            }
+        },
+        {
+            "id": 3,
+            "definition": {
+                "type": "toplist",
+                "requests": [
+                    {
+                        "q": "top(top(avg:istio.mesh.request.duration.sum{*} by {host}, 10, 'mean', 'desc')/top(avg:istio.mesh.request.duration.count{*} by {host}, 10, 'mean', 'desc'),10,'mean','desc')",
+                        "style": {
+                            "palette": "dog_classic"
+                        }
+                    }
+                ],
+                "custom_links": [],
+                "title": "Average request latency",
+                "title_size": "16",
+                "title_align": "center"
+            },
+            "layout": {
+                "x": 1,
+                "y": 6,
+                "width": 53,
+                "height": 14
+            }
+        },
+        {
+            "id": 4,
+            "definition": {
+                "type": "timeseries",
+                "requests": [
+                    {
+                        "q": "top(avg:istio.mesh.response.size.sum{*}, 10, 'mean', 'desc')/top(avg:istio.mesh.response.size.count{*}, 10, 'mean', 'desc')",
+                        "display_type": "area",
+                        "style": {
+                            "palette": "dog_classic",
+                            "line_type": "solid",
+                            "line_width": "normal"
+                        }
+                    }
+                ],
+                "custom_links": [],
+                "title": "Average response size",
+                "title_size": "16",
+                "title_align": "center",
+                "show_legend": false,
+                "legend_size": "0"
+            },
+            "layout": {
+                "x": 28,
+                "y": 36,
+                "width": 26,
+                "height": 14
+            }
+        },
+        {
+            "id": 5,
+            "definition": {
+                "type": "timeseries",
+                "requests": [
+                    {
+                        "q": "top(avg:istio.mixer.go.threads{*} by {host}, 10, 'mean', 'desc')",
+                        "display_type": "line",
+                        "style": {
+                            "palette": "dog_classic",
+                            "line_type": "solid",
+                            "line_width": "thin"
+                        }
+                    }
+                ],
+                "custom_links": [],
+                "title": "Number of OS threads created",
+                "title_size": "16",
+                "title_align": "center",
+                "show_legend": false,
+                "legend_size": "0"
+            },
+            "layout": {
+                "x": 82,
+                "y": 51,
+                "width": 26,
+                "height": 20
+            }
+        },
+        {
+            "id": 6,
+            "definition": {
+                "type": "toplist",
+                "requests": [
+                    {
+                        "q": "top((top(avg:istio.mixer.go.memstats.alloc_bytes{*} by {host}, 10, 'mean', 'desc')/top(avg:istio.mixer.go.memstats.alloc_bytes_total{*} by {host}, 10, 'mean', 'desc'))*100,10,'mean','desc')",
+                        "style": {
+                            "palette": "dog_classic"
+                        }
+                    }
+                ],
+                "custom_links": [],
+                "title": "Percentage of available memory allocated",
+                "title_size": "16",
+                "title_align": "center"
+            },
+            "layout": {
+                "x": 55,
+                "y": 6,
+                "width": 53,
+                "height": 14
+            }
+        },
+        {
+            "id": 7,
+            "definition": {
+                "type": "timeseries",
+                "requests": [
+                    {
+                        "q": "(top(avg:istio.mixer.go.memstats.heap_inuse_bytes{*} by {host}, 10, 'mean', 'desc')/top(avg:istio.mixer.go.memstats.heap_alloc_bytes{*} by {host}, 10, 'mean', 'desc'))*100",
+                        "display_type": "line",
+                        "style": {
+                            "palette": "dog_classic",
+                            "line_type": "solid",
+                            "line_width": "thin"
+                        }
+                    }
+                ],
+                "custom_links": [],
+                "title": "Heap in use (percent)",
+                "title_size": "16",
+                "title_align": "center",
+                "show_legend": false,
+                "legend_size": "0"
+            },
+            "layout": {
+                "x": 55,
+                "y": 51,
+                "width": 26,
+                "height": 20
+            }
+        },
+        {
+            "id": 8,
+            "definition": {
+                "type": "timeseries",
+                "requests": [
+                    {
+                        "q": "top(avg:istio.mixer.go.memstats.gc_cpu_fraction{*}, 10, 'mean', 'desc')",
+                        "display_type": "area",
+                        "style": {
+                            "palette": "cool",
+                            "line_type": "solid",
+                            "line_width": "normal"
+                        }
+                    }
+                ],
+                "custom_links": [],
+                "title": "CPU required for GC",
+                "title_size": "16",
+                "title_align": "center",
+                "show_legend": false,
+                "legend_size": "0"
+            },
+            "layout": {
+                "x": 82,
+                "y": 21,
+                "width": 26,
+                "height": 14
+            }
+        },
+        {
+            "id": 9,
+            "definition": {
+                "type": "timeseries",
+                "requests": [
+                    {
+                        "q": "top(avg:istio.mixer.go.gc_duration_seconds.sum{*}, 10, 'mean', 'desc')/top(avg:istio.mixer.go.gc_duration_seconds.count{*}, 10, 'mean', 'desc')",
+                        "display_type": "area",
+                        "style": {
+                            "palette": "cool",
+                            "line_type": "solid",
+                            "line_width": "normal"
+                        }
+                    }
+                ],
+                "custom_links": [],
+                "title": "Average GC duration",
+                "title_size": "16",
+                "title_align": "center",
+                "show_legend": false,
+                "legend_size": "0"
+            },
+            "layout": {
+                "x": 55,
+                "y": 21,
+                "width": 26,
+                "height": 14
+            }
+        },
+        {
+            "id": 10,
+            "definition": {
+                "type": "image",
+                "url": "/static/images/logos/istio_large.svg",
+                "sizing": "fit"
+            },
+            "layout": {
+                "x": 1,
+                "y": 0,
+                "width": 12,
+                "height": 5
+            }
+        },
+        {
+            "id": 11,
+            "definition": {
+                "type": "timeseries",
+                "requests": [
+                    {
+                        "q": "top(avg:istio.mixer.grpc.server.msg_sent_total{*} by {host}, 10, 'mean', 'desc'), top(avg:istio.mixer.grpc.server.msg_received_total{*} by {host}, 10, 'mean', 'desc')",
+                        "display_type": "area",
+                        "style": {
+                            "palette": "cool",
+                            "line_type": "solid",
+                            "line_width": "normal"
+                        }
+                    }
+                ],
+                "custom_links": [],
+                "title": "GRPC messages sent/received by host",
+                "title_size": "16",
+                "title_align": "center",
+                "show_legend": false,
+                "legend_size": "0"
+            },
+            "layout": {
+                "x": 1,
+                "y": 36,
+                "width": 26,
+                "height": 14
+            }
+        },
+        {
+            "id": 12,
+            "definition": {
+                "type": "toplist",
+                "requests": [
+                    {
+                        "q": "top(avg:istio.mixer.go.gc_duration_seconds.sum{*} by {host}, 10, 'mean', 'desc')",
+                        "style": {
+                            "palette": "dog_classic"
+                        }
+                    }
+                ],
+                "custom_links": [],
+                "title": "Hosts with the highest GC time",
+                "title_size": "16",
+                "title_align": "center"
+            },
+            "layout": {
+                "x": 55,
+                "y": 36,
+                "width": 53,
+                "height": 14
+            }
+        },
+        {
+            "id": 13,
+            "definition": {
+                "type": "timeseries",
+                "requests": [
+                    {
+                        "q": "top(avg:istio.mesh.request.duration.sum{*} by {host}, 10, 'mean', 'desc')/top(avg:istio.mesh.request.duration.count{*} by {host}, 10, 'mean', 'desc')",
+                        "display_type": "line",
+                        "style": {
+                            "palette": "dog_classic",
+                            "line_type": "solid",
+                            "line_width": "thin"
+                        }
+                    }
+                ],
+                "custom_links": [],
+                "title": "Average request latency by host",
+                "title_size": "16",
+                "title_align": "center",
+                "show_legend": false,
+                "legend_size": "0"
+            },
+            "layout": {
+                "x": 28,
+                "y": 21,
+                "width": 26,
+                "height": 14
+            }
+        },
+        {
+            "id": 14,
+            "definition": {
+                "type": "note",
+                "content": "Pilot Traffic Management",
+                "background_color": "gray",
+                "font_size": "18",
+                "text_align": "center",
+                "show_tick": true,
+                "tick_pos": "50%",
+                "tick_edge": "bottom"
+            },
+            "layout": {
+                "x": 1,
+                "y": 51,
+                "width": 53,
+                "height": 5
+            }
+        },
+        {
+            "id": 15,
+            "definition": {
+                "type": "timeseries",
+                "requests": [
+                    {
+                        "q": "sum:istio.pilot.xds{*}",
+                        "display_type": "area",
+                        "style": {
+                            "palette": "dog_classic",
+                            "line_type": "solid",
+                            "line_width": "normal"
+                        }
+                    }
+                ],
+                "custom_links": [],
+                "title": "XDS connected endpoints",
+                "title_size": "16",
+                "title_align": "center",
+                "show_legend": false,
+                "legend_size": "0"
+            },
+            "layout": {
+                "x": 1,
+                "y": 57,
+                "width": 26,
+                "height": 14
+            }
+        },
+        {
+            "id": 16,
+            "definition": {
+                "type": "timeseries",
+                "requests": [
+                    {
+                        "q": "sum:istio.pilot.xds.pushes{*}",
+                        "display_type": "line",
+                        "style": {
+                            "palette": "dog_classic",
+                            "line_type": "solid",
+                            "line_width": "normal"
+                        }
+                    }
+                ],
+                "custom_links": [],
+                "title": "LDS/EDS/RDS/CDS Build,Send Errors",
+                "title_size": "16",
+                "title_align": "center",
+                "show_legend": false,
+                "legend_size": "0"
+            },
+            "layout": {
+                "x": 28,
+                "y": 57,
+                "width": 26,
+                "height": 14
+            }
+        },
+        {
+            "id": 17,
+            "definition": {
+                "type": "note",
+                "content": "Galley Configuration Validation",
+                "background_color": "gray",
+                "font_size": "18",
+                "text_align": "center",
+                "show_tick": true,
+                "tick_pos": "50%",
+                "tick_edge": "bottom"
+            },
+            "layout": {
+                "x": 1,
+                "y": 72,
+                "width": 107,
+                "height": 5
+            }
+        },
+        {
+            "id": 18,
+            "definition": {
+                "type": "timeseries",
+                "requests": [
+                    {
+                        "q": "sum:istio.galley.endpoint_no_pod{*}",
+                        "display_type": "area",
+                        "style": {
+                            "palette": "dog_classic",
+                            "line_type": "solid",
+                            "line_width": "normal"
+                        }
+                    }
+                ],
+                "custom_links": [],
+                "title": "Endpoints without a pod",
+                "title_size": "16",
+                "title_align": "center",
+                "show_legend": false,
+                "legend_size": "0"
+            },
+            "layout": {
+                "x": 1,
+                "y": 78,
+                "width": 26,
+                "height": 14
+            }
+        },
+        {
+            "id": 19,
+            "definition": {
+                "type": "timeseries",
+                "requests": [
+                    {
+                        "q": "sum:istio.galley.process.max_fds{*}",
+                        "display_type": "area",
+                        "style": {
+                            "palette": "dog_classic",
+                            "line_type": "solid",
+                            "line_width": "normal"
+                        }
+                    }
+                ],
+                "custom_links": [],
+                "title": "Max # of File Descriptors",
+                "title_size": "16",
+                "title_align": "center",
+                "show_legend": false,
+                "legend_size": "0"
+            },
+            "layout": {
+                "x": 28,
+                "y": 78,
+                "width": 26,
+                "height": 14
+            }
+        },
+        {
+            "id": 20,
+            "definition": {
+                "type": "timeseries",
+                "requests": [
+                    {
+                        "q": "sum:istio.galley.process.virtual_memory_bytes{*}",
+                        "display_type": "area",
+                        "style": {
+                            "palette": "dog_classic",
+                            "line_type": "solid",
+                            "line_width": "normal"
+                        }
+                    }
+                ],
+                "custom_links": [],
+                "title": "Virtual Memory Size",
+                "title_size": "16",
+                "title_align": "center",
+                "show_legend": false,
+                "legend_size": "0"
+            },
+            "layout": {
+                "x": 55,
+                "y": 78,
+                "width": 26,
+                "height": 14
+            }
+        },
+        {
+            "id": 21,
+            "definition": {
+                "type": "timeseries",
+                "requests": [
+                    {
+                        "q": "sum:istio.galley.runtime_state_type_instances_total{*} by {collection}",
+                        "display_type": "area",
+                        "style": {
+                            "palette": "dog_classic",
+                            "line_type": "solid",
+                            "line_width": "normal"
+                        }
+                    }
+                ],
+                "custom_links": [],
+                "title": "# Instances per URL",
+                "title_size": "16",
+                "title_align": "center",
+                "show_legend": false,
+                "legend_size": "0"
+            },
+            "layout": {
+                "x": 82,
+                "y": 78,
+                "width": 26,
+                "height": 14
+            }
+        }
+    ],
+    "template_variables": [],
+    "layout_type": "free",
+    "is_read_only": true,
+    "notify_list": []
+}

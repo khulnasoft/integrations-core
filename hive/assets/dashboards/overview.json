@@ -1,0 +1,603 @@
+{
+    "title": "Hive Integration Dashboard",
+    "description": "",
+    "widgets": [
+        {
+            "id": 0,
+            "definition": {
+                "type": "timeseries",
+                "requests": [
+                    {
+                        "q": "avg:hive.server.memory.total.max{*}, avg:hive.server.memory.total.used{*}, avg:hive.server.memory.total.init{*}",
+                        "display_type": "line",
+                        "style": {
+                            "palette": "dog_classic",
+                            "line_type": "solid",
+                            "line_width": "normal"
+                        }
+                    }
+                ],
+                "custom_links": [],
+                "title": "HiveServer2 memory",
+                "title_size": "16",
+                "title_align": "left",
+                "show_legend": false,
+                "legend_size": "0"
+            },
+            "layout": {
+                "x": 46,
+                "y": 6,
+                "width": 47,
+                "height": 15
+            }
+        },
+        {
+            "id": 1,
+            "definition": {
+                "type": "timeseries",
+                "requests": [
+                    {
+                        "q": "sum:hive.server.api.sql_operation.running.count{*}.as_count(), sum:hive.server.api.sql_operation.pending.count{*}.as_count()",
+                        "display_type": "line",
+                        "style": {
+                            "palette": "dog_classic",
+                            "line_type": "solid",
+                            "line_width": "normal"
+                        }
+                    }
+                ],
+                "custom_links": [],
+                "title": "SQL Operation (running/pending)",
+                "title_size": "16",
+                "title_align": "left",
+                "show_legend": false,
+                "legend_size": "0"
+            },
+            "layout": {
+                "x": 46,
+                "y": 38,
+                "width": 47,
+                "height": 15
+            }
+        },
+        {
+            "id": 2,
+            "definition": {
+                "type": "image",
+                "url": "/static/images/logos/hive_large.svg",
+                "sizing": "fit"
+            },
+            "layout": {
+                "x": 0,
+                "y": 0,
+                "width": 31,
+                "height": 12
+            }
+        },
+        {
+            "id": 3,
+            "definition": {
+                "type": "check_status",
+                "title": "Hive host up",
+                "title_size": "16",
+                "title_align": "center",
+                "check": "hive.can_connect",
+                "grouping": "cluster",
+                "group": "instance:hive-localhost-8808,jmx_server:localhost,host:vagrant",
+                "group_by": [],
+                "tags": [
+                    "*"
+                ]
+            },
+            "layout": {
+                "x": 0,
+                "y": 19,
+                "width": 15,
+                "height": 8
+            }
+        },
+        {
+            "id": 4,
+            "definition": {
+                "type": "query_value",
+                "requests": [
+                    {
+                        "q": "avg:hive.server.session.open{*}",
+                        "aggregator": "last"
+                    }
+                ],
+                "custom_links": [],
+                "title": "Opened session",
+                "title_size": "16",
+                "title_align": "left",
+                "autoscale": true,
+                "precision": 0
+            },
+            "layout": {
+                "x": 16,
+                "y": 19,
+                "width": 15,
+                "height": 8
+            }
+        },
+        {
+            "id": 5,
+            "definition": {
+                "type": "timeseries",
+                "requests": [
+                    {
+                        "q": "avg:hive.metastore.table.created{*}.as_count()",
+                        "display_type": "bars",
+                        "style": {
+                            "palette": "dog_classic",
+                            "line_type": "solid",
+                            "line_width": "normal"
+                        }
+                    }
+                ],
+                "custom_links": [],
+                "title": "Created table",
+                "title_size": "16",
+                "title_align": "left",
+                "show_legend": false,
+                "legend_size": "0"
+            },
+            "layout": {
+                "x": 95,
+                "y": 54,
+                "width": 47,
+                "height": 15
+            }
+        },
+        {
+            "id": 6,
+            "definition": {
+                "type": "timeseries",
+                "requests": [
+                    {
+                        "q": "avg:hive.metastore.memory.total.max{*}, avg:hive.metastore.memory.total.used{*}, avg:hive.metastore.memory.total.init{*}",
+                        "display_type": "line",
+                        "style": {
+                            "palette": "dog_classic",
+                            "line_type": "solid",
+                            "line_width": "normal"
+                        }
+                    }
+                ],
+                "custom_links": [],
+                "title": "HiveMetaStore memory",
+                "title_size": "16",
+                "title_align": "left",
+                "show_legend": false,
+                "legend_size": "0"
+            },
+            "layout": {
+                "x": 95,
+                "y": 6,
+                "width": 47,
+                "height": 15
+            }
+        },
+        {
+            "id": 7,
+            "definition": {
+                "type": "note",
+                "content": "HiveServer2",
+                "background_color": "pink",
+                "font_size": "18",
+                "text_align": "center",
+                "show_tick": true,
+                "tick_pos": "50%",
+                "tick_edge": "bottom"
+            },
+            "layout": {
+                "x": 46,
+                "y": 0,
+                "width": 47,
+                "height": 5
+            }
+        },
+        {
+            "id": 8,
+            "definition": {
+                "type": "note",
+                "content": "HiveMetaStore",
+                "background_color": "pink",
+                "font_size": "18",
+                "text_align": "center",
+                "show_tick": true,
+                "tick_pos": "50%",
+                "tick_edge": "bottom"
+            },
+            "layout": {
+                "x": 95,
+                "y": 0,
+                "width": 47,
+                "height": 5
+            }
+        },
+        {
+            "id": 9,
+            "definition": {
+                "type": "timeseries",
+                "requests": [
+                    {
+                        "q": "avg:hive.metastore.api.get_table{*}.as_count(), avg:hive.metastore.api.drop_table{*}.as_count(), avg:hive.metastore.api.alter_table{*}.as_count()",
+                        "display_type": "line",
+                        "style": {
+                            "palette": "dog_classic",
+                            "line_type": "solid",
+                            "line_width": "normal"
+                        }
+                    }
+                ],
+                "custom_links": [],
+                "title": "API calls table (get/drop/alter)",
+                "title_size": "16",
+                "title_align": "left",
+                "show_legend": false,
+                "legend_size": "0"
+            },
+            "layout": {
+                "x": 95,
+                "y": 22,
+                "width": 47,
+                "height": 15
+            }
+        },
+        {
+            "id": 10,
+            "definition": {
+                "type": "timeseries",
+                "requests": [
+                    {
+                        "q": "sum:hive.server.queries.compiling.count{*}.as_count(), sum:hive.server.queries.executing.count{*}.as_count(), sum:hive.server.queries.submitted.count{*}.as_count(), sum:hive.server.queries.succeeded.count{*}.as_count()",
+                        "display_type": "line",
+                        "style": {
+                            "palette": "dog_classic",
+                            "line_type": "solid",
+                            "line_width": "normal"
+                        }
+                    }
+                ],
+                "custom_links": [],
+                "title": "Queries (compiling/executing/submitting/succeeded)",
+                "title_size": "16",
+                "title_align": "left",
+                "show_legend": false,
+                "legend_size": "0"
+            },
+            "layout": {
+                "x": 46,
+                "y": 22,
+                "width": 47,
+                "height": 15
+            }
+        },
+        {
+            "id": 11,
+            "definition": {
+                "type": "query_value",
+                "requests": [
+                    {
+                        "q": "sum:hive.server.api.sql_operation.pending.count{*}.as_count()",
+                        "aggregator": "last",
+                        "conditional_formats": [
+                            {
+                                "comparator": ">",
+                                "value": 0,
+                                "palette": "white_on_yellow"
+                            },
+                            {
+                                "comparator": "<=",
+                                "value": 0,
+                                "palette": "white_on_green"
+                            }
+                        ]
+                    }
+                ],
+                "custom_links": [],
+                "title": "Pending SQL Operation",
+                "title_size": "16",
+                "title_align": "left",
+                "autoscale": true,
+                "precision": 0
+            },
+            "layout": {
+                "x": 16,
+                "y": 34,
+                "width": 15,
+                "height": 8
+            }
+        },
+        {
+            "id": 12,
+            "definition": {
+                "type": "query_value",
+                "requests": [
+                    {
+                        "q": "sum:hive.server.queries.succeeded.count{*}.as_rate()",
+                        "aggregator": "avg"
+                    }
+                ],
+                "custom_links": [],
+                "title": "Rate of succeeded queries",
+                "title_size": "16",
+                "title_align": "left",
+                "autoscale": true,
+                "precision": 3
+            },
+            "layout": {
+                "x": 16,
+                "y": 43,
+                "width": 15,
+                "height": 8
+            }
+        },
+        {
+            "id": 13,
+            "definition": {
+                "type": "note",
+                "content": "General",
+                "background_color": "gray",
+                "font_size": "14",
+                "text_align": "left",
+                "show_tick": true,
+                "tick_pos": "50%",
+                "tick_edge": "bottom"
+            },
+            "layout": {
+                "x": 0,
+                "y": 13,
+                "width": 31,
+                "height": 5
+            }
+        },
+        {
+            "id": 14,
+            "definition": {
+                "type": "note",
+                "content": "HS2 Operations",
+                "background_color": "gray",
+                "font_size": "14",
+                "text_align": "left",
+                "show_tick": true,
+                "tick_pos": "50%",
+                "tick_edge": "bottom"
+            },
+            "layout": {
+                "x": 0,
+                "y": 28,
+                "width": 31,
+                "height": 5
+            }
+        },
+        {
+            "id": 15,
+            "definition": {
+                "type": "note",
+                "content": "Memory",
+                "background_color": "gray",
+                "font_size": "14",
+                "text_align": "center",
+                "show_tick": true,
+                "tick_pos": "50%",
+                "tick_edge": "right"
+            },
+            "layout": {
+                "x": 33,
+                "y": 6,
+                "width": 12,
+                "height": 15
+            }
+        },
+        {
+            "id": 16,
+            "definition": {
+                "type": "note",
+                "content": "Activity",
+                "background_color": "gray",
+                "font_size": "14",
+                "text_align": "center",
+                "show_tick": true,
+                "tick_pos": "50%",
+                "tick_edge": "right"
+            },
+            "layout": {
+                "x": 33,
+                "y": 23,
+                "width": 12,
+                "height": 47
+            }
+        },
+        {
+            "id": 17,
+            "definition": {
+                "type": "timeseries",
+                "requests": [
+                    {
+                        "q": "sum:hive.metastore.api.get_all_tables{*}.as_count(), sum:hive.metastore.api.get_all_databases{*}.as_count(), sum:hive.metastore.api.get_all_functions{*}.as_count()",
+                        "display_type": "line",
+                        "style": {
+                            "palette": "dog_classic",
+                            "line_type": "solid",
+                            "line_width": "normal"
+                        }
+                    }
+                ],
+                "custom_links": [],
+                "title": "API Calls get_all (table/db/function)",
+                "title_size": "16",
+                "title_align": "left",
+                "show_legend": false,
+                "legend_size": "0"
+            },
+            "layout": {
+                "x": 95,
+                "y": 38,
+                "width": 47,
+                "height": 15
+            }
+        },
+        {
+            "id": 18,
+            "definition": {
+                "type": "timeseries",
+                "requests": [
+                    {
+                        "q": "sum:hive.server.api.operation.running.count{*}.as_count(), sum:hive.server.api.operation.pending.count{*}.as_count(), sum:hive.server.api.operation.initialized.count{*}.as_count()",
+                        "display_type": "line",
+                        "style": {
+                            "palette": "dog_classic",
+                            "line_type": "solid",
+                            "line_width": "normal"
+                        }
+                    }
+                ],
+                "custom_links": [],
+                "title": "API Operations (running/pending/initialized)",
+                "title_size": "16",
+                "title_align": "left",
+                "show_legend": false,
+                "legend_size": "0"
+            },
+            "layout": {
+                "x": 46,
+                "y": 54,
+                "width": 47,
+                "height": 15
+            }
+        },
+        {
+            "id": 19,
+            "definition": {
+                "type": "query_value",
+                "requests": [
+                    {
+                        "q": "sum:hive.server.api.operation.pending.count{*}.as_count()",
+                        "aggregator": "last",
+                        "conditional_formats": [
+                            {
+                                "comparator": ">",
+                                "value": 0,
+                                "palette": "white_on_yellow"
+                            },
+                            {
+                                "comparator": "<=",
+                                "value": 0,
+                                "palette": "white_on_green"
+                            }
+                        ]
+                    }
+                ],
+                "custom_links": [],
+                "title": "Pending Operation",
+                "title_size": "16",
+                "title_align": "left",
+                "autoscale": true,
+                "precision": 0
+            },
+            "layout": {
+                "x": 0,
+                "y": 34,
+                "width": 15,
+                "height": 8
+            }
+        },
+        {
+            "id": 20,
+            "definition": {
+                "type": "note",
+                "content": "HMS Calls",
+                "background_color": "gray",
+                "font_size": "14",
+                "text_align": "left",
+                "show_tick": true,
+                "tick_pos": "50%",
+                "tick_edge": "bottom"
+            },
+            "layout": {
+                "x": 0,
+                "y": 52,
+                "width": 31,
+                "height": 5
+            }
+        },
+        {
+            "id": 21,
+            "definition": {
+                "type": "query_value",
+                "requests": [
+                    {
+                        "q": "avg:hive.metastore.api.get_database{*}.as_count()",
+                        "aggregator": "avg"
+                    }
+                ],
+                "custom_links": [],
+                "title": "Avg of get_db API call",
+                "title_size": "16",
+                "title_align": "left",
+                "autoscale": true,
+                "precision": 2
+            },
+            "layout": {
+                "x": 16,
+                "y": 58,
+                "width": 15,
+                "height": 8
+            }
+        },
+        {
+            "id": 22,
+            "definition": {
+                "type": "query_value",
+                "requests": [
+                    {
+                        "q": "sum:hive.server.queries.executing.count{*}.as_rate()",
+                        "aggregator": "avg"
+                    }
+                ],
+                "custom_links": [],
+                "title": "Rate of executing queries",
+                "title_size": "16",
+                "title_align": "left",
+                "autoscale": true,
+                "precision": 3
+            },
+            "layout": {
+                "x": 0,
+                "y": 43,
+                "width": 15,
+                "height": 8
+            }
+        },
+        {
+            "id": 23,
+            "definition": {
+                "type": "query_value",
+                "requests": [
+                    {
+                        "q": "avg:hive.metastore.api.get_table{*}.as_count()",
+                        "aggregator": "avg"
+                    }
+                ],
+                "custom_links": [],
+                "title": "Avg of get_table API call",
+                "title_size": "16",
+                "title_align": "left",
+                "autoscale": true,
+                "precision": 2
+            },
+            "layout": {
+                "x": 0,
+                "y": 58,
+                "width": 15,
+                "height": 8
+            }
+        }
+    ],
+    "template_variables": [],
+    "layout_type": "free",
+    "is_read_only": true,
+    "notify_list": []
+}

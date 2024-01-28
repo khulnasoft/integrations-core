@@ -1,0 +1,55 @@
+{
+  "manifest_version": "2.0.0",
+  "app_uuid": "34f4e81a-6fd2-48fd-a10c-5bffb75bbd0e",
+  "app_id": "twemproxy",
+  "display_on_public_website": true,
+  "tile": {
+    "overview": "README.md#Overview",
+    "configuration": "README.md#Setup",
+    "support": "README.md#Support",
+    "changelog": "CHANGELOG.md",
+    "description": "Visualize twemproxy performance and correlate with the rest of your applications",
+    "title": "Twemproxy",
+    "media": [],
+    "classifier_tags": [
+      "Category::Log Collection",
+      "Supported OS::Linux",
+      "Supported OS::Windows",
+      "Supported OS::macOS"
+    ]
+  },
+  "author": {
+    "support_email": "help@khulnasoft.com",
+    "name": "Datadog",
+    "homepage": "https://www.khulnasoft.com",
+    "sales_email": "info@khulnasoft.com"
+  },
+  "oauth": {},
+  "assets": {
+    "integration": {
+      "source_type_name": "Twemproxy",
+      "configuration": {
+        "spec": "assets/configuration/spec.yaml"
+      },
+      "events": {
+        "creates_events": false
+      },
+      "metrics": {
+        "prefix": "twemproxy.",
+        "check": "twemproxy.total_connections",
+        "metadata_path": "metadata.csv"
+      },
+      "service_checks": {
+        "metadata_path": "assets/service_checks.json"
+      },
+      "source_type_id": 10070,
+      "auto_install": true
+    },
+    "dashboards": {
+      "Twemproxy - Overview": "assets/dashboards/twemproxy_overview.json"
+    },
+    "logs": {
+      "source": "twemproxy"
+    }
+  }
+}

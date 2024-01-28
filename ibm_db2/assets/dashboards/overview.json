@@ -1,0 +1,737 @@
+{
+    "title": "IBM Db2 Overview",
+    "description": "## IBM Db2 Dashboard\n\nThis is an example IBM Db2 dashboard demonstrating the metrics that the integration collects.",
+    "widgets": [
+        {
+            "id": 0,
+            "definition": {
+                "type": "image",
+                "url": "/static/images/logos/ibm-db2_large.svg",
+                "sizing": "fit"
+            },
+            "layout": {
+                "x": 0,
+                "y": 0,
+                "width": 19,
+                "height": 14
+            }
+        },
+        {
+            "id": 1,
+            "definition": {
+                "type": "check_status",
+                "title": "Database status",
+                "title_size": "16",
+                "title_align": "center",
+                "check": "ibm_db2.status",
+                "grouping": "cluster",
+                "group_by": [
+                    "$host",
+                    "$db"
+                ],
+                "tags": [
+                    "$host"
+                ]
+            },
+            "layout": {
+                "x": 20,
+                "y": 0,
+                "width": 19,
+                "height": 14
+            }
+        },
+        {
+            "id": 2,
+            "definition": {
+                "type": "query_value",
+                "requests": [
+                    {
+                        "q": "avg:ibm_db2.backup.latest{$host,$db}",
+                        "aggregator": "last"
+                    }
+                ],
+                "custom_links": [],
+                "title": "Time since last backup",
+                "title_size": "16",
+                "title_align": "left",
+                "autoscale": true,
+                "precision": 2
+            },
+            "layout": {
+                "x": 0,
+                "y": 15,
+                "width": 19,
+                "height": 14
+            }
+        },
+        {
+            "id": 3,
+            "definition": {
+                "type": "toplist",
+                "requests": [
+                    {
+                        "q": "top(avg:ibm_db2.tablespace.utilized{$host,$db} by {tablespace}, 10, 'mean', 'desc')",
+                        "style": {
+                            "palette": "dog_classic"
+                        }
+                    }
+                ],
+                "custom_links": [],
+                "title": "Table space utilization",
+                "title_size": "16",
+                "title_align": "left"
+            },
+            "layout": {
+                "x": 88,
+                "y": 61,
+                "width": 47,
+                "height": 18
+            }
+        },
+        {
+            "id": 4,
+            "definition": {
+                "type": "query_value",
+                "requests": [
+                    {
+                        "q": "avg:ibm_db2.bufferpool.hit_percent{$host,$db}",
+                        "aggregator": "last"
+                    }
+                ],
+                "custom_links": [],
+                "title": "Buffer pool cache hit ratio",
+                "title_size": "16",
+                "title_align": "left",
+                "autoscale": true,
+                "precision": 2
+            },
+            "layout": {
+                "x": 0,
+                "y": 69,
+                "width": 19,
+                "height": 14
+            }
+        },
+        {
+            "id": 5,
+            "definition": {
+                "type": "query_value",
+                "requests": [
+                    {
+                        "q": "avg:ibm_db2.connection.max{$host,$db}",
+                        "aggregator": "last"
+                    }
+                ],
+                "custom_links": [],
+                "title": "Max simultaneous connections",
+                "title_size": "16",
+                "title_align": "left",
+                "autoscale": true,
+                "precision": 2
+            },
+            "layout": {
+                "x": 64,
+                "y": 44,
+                "width": 23,
+                "height": 10
+            }
+        },
+        {
+            "id": 6,
+            "definition": {
+                "type": "query_value",
+                "requests": [
+                    {
+                        "q": "avg:ibm_db2.log.utilized{$host,$db}",
+                        "aggregator": "last"
+                    }
+                ],
+                "custom_links": [],
+                "title": "Log utilization",
+                "title_size": "16",
+                "title_align": "left",
+                "autoscale": true,
+                "precision": 2
+            },
+            "layout": {
+                "x": 88,
+                "y": 44,
+                "width": 47,
+                "height": 10
+            }
+        },
+        {
+            "id": 7,
+            "definition": {
+                "type": "query_value",
+                "requests": [
+                    {
+                        "q": "avg:ibm_db2.connection.active{$host,$db}",
+                        "aggregator": "last"
+                    }
+                ],
+                "custom_links": [],
+                "title": "Active connections",
+                "title_size": "16",
+                "title_align": "left",
+                "autoscale": true,
+                "precision": 2
+            },
+            "layout": {
+                "x": 40,
+                "y": 44,
+                "width": 23,
+                "height": 10
+            }
+        },
+        {
+            "id": 8,
+            "definition": {
+                "type": "timeseries",
+                "requests": [
+                    {
+                        "q": "avg:ibm_db2.connection.total{$host,$db}.as_count()",
+                        "display_type": "bars",
+                        "style": {
+                            "palette": "dog_classic",
+                            "line_type": "solid",
+                            "line_width": "normal"
+                        }
+                    }
+                ],
+                "custom_links": [],
+                "title": "Established connections",
+                "title_size": "16",
+                "title_align": "left",
+                "show_legend": false,
+                "legend_size": "0"
+            },
+            "layout": {
+                "x": 40,
+                "y": 25,
+                "width": 47,
+                "height": 18
+            }
+        },
+        {
+            "id": 9,
+            "definition": {
+                "type": "timeseries",
+                "requests": [
+                    {
+                        "q": "avg:ibm_db2.lock.dead{$host,$db}.as_count()",
+                        "display_type": "bars",
+                        "style": {
+                            "palette": "dog_classic",
+                            "line_type": "solid",
+                            "line_width": "normal"
+                        }
+                    }
+                ],
+                "custom_links": [],
+                "title": "Deadlocks",
+                "title_size": "16",
+                "title_align": "left",
+                "show_legend": false,
+                "legend_size": "0"
+            },
+            "layout": {
+                "x": 40,
+                "y": 61,
+                "width": 47,
+                "height": 18
+            }
+        },
+        {
+            "id": 10,
+            "definition": {
+                "type": "query_value",
+                "requests": [
+                    {
+                        "q": "avg:ibm_db2.lock.wait{$host,$db}",
+                        "aggregator": "last"
+                    }
+                ],
+                "custom_links": [],
+                "title": "Average lock wait",
+                "title_size": "16",
+                "title_align": "left",
+                "autoscale": true,
+                "precision": 2
+            },
+            "layout": {
+                "x": 20,
+                "y": 15,
+                "width": 19,
+                "height": 14
+            }
+        },
+        {
+            "id": 11,
+            "definition": {
+                "type": "timeseries",
+                "requests": [
+                    {
+                        "q": "avg:ibm_db2.lock.timeouts{$host,$db}.as_count()",
+                        "display_type": "bars",
+                        "style": {
+                            "palette": "dog_classic",
+                            "line_type": "solid",
+                            "line_width": "normal"
+                        }
+                    }
+                ],
+                "custom_links": [],
+                "title": "Lock timeouts",
+                "title_size": "16",
+                "title_align": "left",
+                "show_legend": false,
+                "legend_size": "0"
+            },
+            "layout": {
+                "x": 40,
+                "y": 80,
+                "width": 47,
+                "height": 18
+            }
+        },
+        {
+            "id": 12,
+            "definition": {
+                "type": "note",
+                "content": "This dashboard provides an example of metrics to monitor for IBM Db2. \n\nClone this dashboard in order to make modifications.",
+                "background_color": "yellow",
+                "font_size": "14",
+                "text_align": "left",
+                "show_tick": false,
+                "tick_pos": "50%",
+                "tick_edge": "top"
+            },
+            "layout": {
+                "x": 0,
+                "y": 30,
+                "width": 39,
+                "height": 12
+            }
+        },
+        {
+            "id": 13,
+            "definition": {
+                "type": "timeseries",
+                "requests": [
+                    {
+                        "q": "avg:ibm_db2.connection.max{$host,$db}, avg:ibm_db2.connection.active{$host,$db}",
+                        "display_type": "area",
+                        "style": {
+                            "palette": "cool",
+                            "line_type": "solid",
+                            "line_width": "normal"
+                        }
+                    }
+                ],
+                "custom_links": [],
+                "title": "Active Connections",
+                "title_size": "16",
+                "title_align": "left",
+                "show_legend": false,
+                "legend_size": "0"
+            },
+            "layout": {
+                "x": 40,
+                "y": 6,
+                "width": 47,
+                "height": 18
+            }
+        },
+        {
+            "id": 14,
+            "definition": {
+                "type": "timeseries",
+                "requests": [
+                    {
+                        "q": "avg:ibm_db2.tablespace.usable{$host,$db}, avg:ibm_db2.tablespace.used{$host,$db}",
+                        "display_type": "area",
+                        "style": {
+                            "palette": "cool",
+                            "line_type": "solid",
+                            "line_width": "normal"
+                        }
+                    }
+                ],
+                "custom_links": [],
+                "title": "Average Tablespace Usage",
+                "title_size": "16",
+                "title_align": "left",
+                "show_legend": false,
+                "legend_size": "0"
+            },
+            "layout": {
+                "x": 88,
+                "y": 80,
+                "width": 47,
+                "height": 18
+            }
+        },
+        {
+            "id": 15,
+            "definition": {
+                "type": "timeseries",
+                "requests": [
+                    {
+                        "q": "avg:ibm_db2.row.modified.total{$host,$db}.as_count(), avg:ibm_db2.row.reads.total{$host,$db}.as_count()",
+                        "display_type": "line",
+                        "style": {
+                            "palette": "cool",
+                            "line_type": "solid",
+                            "line_width": "normal"
+                        }
+                    }
+                ],
+                "custom_links": [],
+                "title": "Total Row Reads and Updates",
+                "title_size": "16",
+                "title_align": "left",
+                "show_legend": false,
+                "legend_size": "0"
+            },
+            "layout": {
+                "x": 136,
+                "y": 44,
+                "width": 47,
+                "height": 18
+            }
+        },
+        {
+            "id": 16,
+            "definition": {
+                "type": "timeseries",
+                "requests": [
+                    {
+                        "q": "avg:ibm_db2.log.available{$host,$db}, avg:ibm_db2.log.used{$host,$db}",
+                        "display_type": "area",
+                        "style": {
+                            "palette": "cool",
+                            "line_type": "solid",
+                            "line_width": "normal"
+                        }
+                    }
+                ],
+                "custom_links": [],
+                "title": "Log Utilization",
+                "title_size": "16",
+                "title_align": "left",
+                "show_legend": false,
+                "legend_size": "0"
+            },
+            "layout": {
+                "x": 88,
+                "y": 6,
+                "width": 47,
+                "height": 18
+            }
+        },
+        {
+            "id": 17,
+            "definition": {
+                "type": "timeseries",
+                "requests": [
+                    {
+                        "q": "avg:ibm_db2.bufferpool.column.reads.total{$host,$db}.as_count()",
+                        "display_type": "line",
+                        "style": {
+                            "palette": "cool",
+                            "line_type": "solid",
+                            "line_width": "normal"
+                        }
+                    }
+                ],
+                "custom_links": [],
+                "title": "Total Column Reads",
+                "title_size": "16",
+                "title_align": "left",
+                "show_legend": false,
+                "legend_size": "0"
+            },
+            "layout": {
+                "x": 136,
+                "y": 25,
+                "width": 47,
+                "height": 18
+            }
+        },
+        {
+            "id": 18,
+            "definition": {
+                "type": "timeseries",
+                "requests": [
+                    {
+                        "q": "avg:ibm_db2.bufferpool.data.reads.total{$host,$db}.as_count()",
+                        "display_type": "line",
+                        "style": {
+                            "palette": "cool",
+                            "line_type": "solid",
+                            "line_width": "normal"
+                        }
+                    }
+                ],
+                "custom_links": [],
+                "title": "Total Data Reads",
+                "title_size": "16",
+                "title_align": "left",
+                "show_legend": false,
+                "legend_size": "0"
+            },
+            "layout": {
+                "x": 136,
+                "y": 82,
+                "width": 47,
+                "height": 18
+            }
+        },
+        {
+            "id": 19,
+            "definition": {
+                "type": "timeseries",
+                "requests": [
+                    {
+                        "q": "avg:ibm_db2.bufferpool.index.reads.total{$host,$db}.as_count()",
+                        "display_type": "line",
+                        "style": {
+                            "palette": "cool",
+                            "line_type": "solid",
+                            "line_width": "normal"
+                        }
+                    }
+                ],
+                "custom_links": [],
+                "title": "Total Index Reads",
+                "title_size": "16",
+                "title_align": "left",
+                "show_legend": false,
+                "legend_size": "0"
+            },
+            "layout": {
+                "x": 136,
+                "y": 6,
+                "width": 47,
+                "height": 18
+            }
+        },
+        {
+            "id": 20,
+            "definition": {
+                "type": "timeseries",
+                "requests": [
+                    {
+                        "q": "avg:ibm_db2.bufferpool.xda.reads.total{$host,$db}.as_count()",
+                        "display_type": "line",
+                        "style": {
+                            "palette": "cool",
+                            "line_type": "solid",
+                            "line_width": "normal"
+                        }
+                    }
+                ],
+                "custom_links": [],
+                "title": "Total XDA Reads",
+                "title_size": "16",
+                "title_align": "left",
+                "show_legend": false,
+                "legend_size": "0"
+            },
+            "layout": {
+                "x": 136,
+                "y": 63,
+                "width": 47,
+                "height": 18
+            }
+        },
+        {
+            "id": 21,
+            "definition": {
+                "type": "timeseries",
+                "requests": [
+                    {
+                        "q": "avg:ibm_db2.log.reads{$host,$db}.as_count(), avg:ibm_db2.log.writes{$host,$db}.as_count()",
+                        "display_type": "line",
+                        "style": {
+                            "palette": "cool",
+                            "line_type": "solid",
+                            "line_width": "normal"
+                        }
+                    }
+                ],
+                "custom_links": [],
+                "title": "Log Reads and Writes",
+                "title_size": "16",
+                "title_align": "left",
+                "show_legend": false,
+                "legend_size": "0"
+            },
+            "layout": {
+                "x": 88,
+                "y": 25,
+                "width": 47,
+                "height": 18
+            }
+        },
+        {
+            "id": 22,
+            "definition": {
+                "type": "timeseries",
+                "requests": [
+                    {
+                        "q": "avg:ibm_db2.bufferpool.reads.total{$host,$db}.as_count()",
+                        "display_type": "line",
+                        "style": {
+                            "palette": "cool",
+                            "line_type": "solid",
+                            "line_width": "normal"
+                        }
+                    }
+                ],
+                "custom_links": [],
+                "title": "Total Bufferpool Reads",
+                "title_size": "16",
+                "title_align": "left",
+                "show_legend": false,
+                "legend_size": "0"
+            },
+            "layout": {
+                "x": 0,
+                "y": 50,
+                "width": 39,
+                "height": 18
+            }
+        },
+        {
+            "id": 23,
+            "definition": {
+                "type": "note",
+                "content": "Connections",
+                "background_color": "gray",
+                "font_size": "18",
+                "text_align": "center",
+                "show_tick": true,
+                "tick_pos": "50%",
+                "tick_edge": "bottom"
+            },
+            "layout": {
+                "x": 40,
+                "y": 0,
+                "width": 47,
+                "height": 5
+            }
+        },
+        {
+            "id": 24,
+            "definition": {
+                "type": "note",
+                "content": "Lock Statistics",
+                "background_color": "gray",
+                "font_size": "18",
+                "text_align": "center",
+                "show_tick": true,
+                "tick_pos": "50%",
+                "tick_edge": "bottom"
+            },
+            "layout": {
+                "x": 40,
+                "y": 55,
+                "width": 47,
+                "height": 5
+            }
+        },
+        {
+            "id": 25,
+            "definition": {
+                "type": "note",
+                "content": "Log Statistics",
+                "background_color": "gray",
+                "font_size": "18",
+                "text_align": "center",
+                "show_tick": true,
+                "tick_pos": "50%",
+                "tick_edge": "bottom"
+            },
+            "layout": {
+                "x": 88,
+                "y": 0,
+                "width": 47,
+                "height": 5
+            }
+        },
+        {
+            "id": 26,
+            "definition": {
+                "type": "note",
+                "content": "Tablespace",
+                "background_color": "gray",
+                "font_size": "18",
+                "text_align": "center",
+                "show_tick": true,
+                "tick_pos": "50%",
+                "tick_edge": "bottom"
+            },
+            "layout": {
+                "x": 88,
+                "y": 55,
+                "width": 47,
+                "height": 5
+            }
+        },
+        {
+            "id": 27,
+            "definition": {
+                "type": "note",
+                "content": "Reads/Writes",
+                "background_color": "gray",
+                "font_size": "18",
+                "text_align": "center",
+                "show_tick": true,
+                "tick_pos": "50%",
+                "tick_edge": "bottom"
+            },
+            "layout": {
+                "x": 136,
+                "y": 0,
+                "width": 47,
+                "height": 5
+            }
+        },
+        {
+            "id": 28,
+            "definition": {
+                "type": "note",
+                "content": "Bufferpool",
+                "background_color": "gray",
+                "font_size": "18",
+                "text_align": "center",
+                "show_tick": true,
+                "tick_pos": "50%",
+                "tick_edge": "bottom"
+            },
+            "layout": {
+                "x": 0,
+                "y": 44,
+                "width": 39,
+                "height": 5
+            }
+        }
+    ],
+    "template_variables": [
+        {
+            "name": "host",
+            "default": "*",
+            "prefix": "host"
+        },
+        {
+            "name": "db",
+            "default": "*",
+            "prefix": "db"
+        }
+    ],
+    "layout_type": "free",
+    "is_read_only": true,
+    "notify_list": []
+}

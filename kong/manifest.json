@@ -1,0 +1,67 @@
+{
+  "manifest_version": "2.0.0",
+  "app_uuid": "41e7a8cb-07b6-46cc-a087-53e87736b5c7",
+  "app_id": "kong",
+  "display_on_public_website": true,
+  "tile": {
+    "overview": "README.md#Overview",
+    "configuration": "README.md#Setup",
+    "support": "README.md#Support",
+    "changelog": "CHANGELOG.md",
+    "description": "Track total requests, response codes, client connections, and more.",
+    "title": "Kong",
+    "media": [],
+    "classifier_tags": [
+      "Category::Log Collection",
+      "Supported OS::Linux",
+      "Supported OS::Windows",
+      "Supported OS::macOS"
+    ]
+  },
+  "author": {
+    "support_email": "help@khulnasoft.com",
+    "name": "Datadog",
+    "homepage": "https://www.khulnasoft.com",
+    "sales_email": "info@khulnasoft.com"
+  },
+  "oauth": {},
+  "assets": {
+    "integration": {
+      "source_type_name": "Kong",
+      "process_signatures": [
+        "kong start"
+      ],
+      "configuration": {
+        "spec": "assets/configuration/spec.yaml"
+      },
+      "events": {
+        "creates_events": false
+      },
+      "metrics": {
+        "prefix": "kong.",
+        "check": "kong.total_requests",
+        "metadata_path": "metadata.csv"
+      },
+      "service_checks": {
+        "metadata_path": "assets/service_checks.json"
+      },
+      "source_type_id": 141,
+      "auto_install": true
+    },
+    "dashboards": {
+      "Kong Overview OpenMetrics": "assets/dashboards/kong_overview_openmetrics.json",
+      "Kong Overview": "assets/dashboards/kong_overview.json",
+      "Kong API": "assets/dashboards/kong_api.json"
+    },
+    "saved_views": {
+      "4xx_errors": "assets/saved_views/4xx_errors.json",
+      "5xx_errors": "assets/saved_views/5xx_errors.json",
+      "status_code_overview": "assets/saved_views/status_code_overview.json",
+      "bot_errors": "assets/saved_views/bot_errors.json",
+      "kong_processes": "assets/saved_views/kong_processes.json"
+    },
+    "logs": {
+      "source": "kong"
+    }
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "manifest_version": "2.0.0",
+  "app_uuid": "34faabdb-8545-4a45-a8bd-be0f979e99e7",
+  "app_id": "php-fpm",
+  "display_on_public_website": true,
+  "tile": {
+    "overview": "README.md#Overview",
+    "configuration": "README.md#Setup",
+    "support": "README.md#Support",
+    "changelog": "CHANGELOG.md",
+    "description": "Monitor process states, slow requests, and accepted requests.",
+    "title": "PHP FPM",
+    "media": [],
+    "classifier_tags": [
+      "Supported OS::Linux",
+      "Supported OS::Windows",
+      "Category::Metrics",
+      "Supported OS::macOS"
+    ]
+  },
+  "author": {
+    "support_email": "help@khulnasoft.com",
+    "name": "Datadog",
+    "homepage": "https://www.khulnasoft.com",
+    "sales_email": "info@khulnasoft.com"
+  },
+  "oauth": {},
+  "assets": {
+    "integration": {
+      "source_type_name": "PHP-FPM",
+      "configuration": {
+        "spec": "assets/configuration/spec.yaml"
+      },
+      "events": {
+        "creates_events": false
+      },
+      "metrics": {
+        "prefix": "php_fpm.",
+        "check": "php_fpm.processes.total",
+        "metadata_path": "metadata.csv"
+      },
+      "service_checks": {
+        "metadata_path": "assets/service_checks.json"
+      },
+      "process_signatures": [
+        "php-fpm",
+        "php-fpm:",
+        "php7.0-fpm",
+        "php7.0-fpm start",
+        "service php-fpm",
+        "php7.0-fpm restart",
+        "restart php-fpm",
+        "systemctl restart php-fpm.service",
+        "php7.0-fpm.service"
+      ],
+      "source_type_id": 117,
+      "auto_install": true
+    },
+    "dashboards": {
+      "php-fpm": "assets/dashboards/php-fpm_dashboard.json"
+    },
+    "saved_views": {
+      "php-fpm_processes": "assets/saved_views/php-fpm_processes.json"
+    }
+  }
+}

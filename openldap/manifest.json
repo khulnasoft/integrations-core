@@ -1,0 +1,56 @@
+{
+  "manifest_version": "2.0.0",
+  "app_uuid": "ea3487c9-2c55-417c-bed5-17a42bdf71cf",
+  "app_id": "openldap",
+  "display_on_public_website": true,
+  "tile": {
+    "overview": "README.md#Overview",
+    "configuration": "README.md#Setup",
+    "support": "README.md#Support",
+    "changelog": "CHANGELOG.md",
+    "description": "Collect metrics from your OpenLDAP server using the cn=monitor backend",
+    "title": "OpenLDAP",
+    "media": [],
+    "classifier_tags": [
+      "Supported OS::Linux",
+      "Supported OS::macOS",
+      "Supported OS::Windows",
+      "Category::Data Stores",
+      "Category::Log Collection"
+    ]
+  },
+  "author": {
+    "support_email": "help@khulnasoft.com",
+    "name": "Datadog",
+    "homepage": "https://www.khulnasoft.com",
+    "sales_email": "info@khulnasoft.com"
+  },
+  "oauth": {},
+  "assets": {
+    "integration": {
+      "source_type_name": "OpenLDAP",
+      "configuration": {
+        "spec": "assets/configuration/spec.yaml"
+      },
+      "events": {
+        "creates_events": false
+      },
+      "metrics": {
+        "prefix": "openldap.",
+        "check": "openldap.connections.current",
+        "metadata_path": "metadata.csv"
+      },
+      "service_checks": {
+        "metadata_path": "assets/service_checks.json"
+      },
+      "source_type_id": 10040,
+      "auto_install": true
+    },
+    "dashboards": {
+      "OpenLDAP Overview": "assets/dashboards/openldap_overview.json"
+    },
+    "logs": {
+      "source": "openldap"
+    }
+  }
+}

@@ -1,0 +1,18 @@
+[
+    {
+        "agent_version": "7.20.0",
+        "integration": "HiveMQ",
+        "groups": [
+            "host",
+            "instance"
+        ],
+        "statuses": [
+            "ok",
+            "critical",
+            "warning"
+        ],
+        "check": "hivemq.can_connect",
+        "name": "Can Connect",
+        "description": "Returns `CRITICAL` if the Agent is unable to connect to HiveMQ, `WARNING` if no metrics are collected, and `OK` otherwise."
+    }
+]

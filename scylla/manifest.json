@@ -1,0 +1,60 @@
+{
+  "manifest_version": "2.0.0",
+  "app_uuid": "1d655820-3010-4ae3-8273-a3798321d4d4",
+  "app_id": "scylla",
+  "display_on_public_website": true,
+  "tile": {
+    "overview": "README.md#Overview",
+    "configuration": "README.md#Setup",
+    "support": "README.md#Support",
+    "changelog": "CHANGELOG.md",
+    "description": "Track cluster resources, latencies, health, and much more.",
+    "title": "Scylla",
+    "media": [],
+    "classifier_tags": [
+      "Category::Caching",
+      "Category::Data Stores",
+      "Category::Log Collection",
+      "Supported OS::Linux",
+      "Supported OS::Windows",
+      "Supported OS::macOS"
+    ]
+  },
+  "author": {
+    "support_email": "help@khulnasoft.com",
+    "name": "Datadog",
+    "homepage": "https://www.khulnasoft.com",
+    "sales_email": "info@khulnasoft.com"
+  },
+  "oauth": {},
+  "assets": {
+    "integration": {
+      "source_type_name": "Scylla",
+      "configuration": {
+        "spec": "assets/configuration/spec.yaml"
+      },
+      "events": {
+        "creates_events": false
+      },
+      "metrics": {
+        "prefix": "scylla.",
+        "check": "scylla.node.operation_mode",
+        "metadata_path": "metadata.csv"
+      },
+      "service_checks": {
+        "metadata_path": "assets/service_checks.json"
+      },
+      "source_type_id": 10087,
+      "auto_install": true
+    },
+    "dashboards": {
+      "Scylla Overview": "assets/dashboards/overview.json"
+    },
+    "monitors": {
+      "[Scylla] Server is shutting down": "assets/monitors/instance_down.json"
+    },
+    "logs": {
+      "source": "scylla"
+    }
+  }
+}

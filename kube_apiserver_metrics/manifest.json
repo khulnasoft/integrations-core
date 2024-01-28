@@ -1,0 +1,53 @@
+{
+  "manifest_version": "2.0.0",
+  "app_uuid": "c5caf884-25c1-4a35-a72e-fa75e7cc10fc",
+  "app_id": "kube-apiserver-metrics",
+  "display_on_public_website": true,
+  "tile": {
+    "overview": "README.md#Overview",
+    "configuration": "README.md#Setup",
+    "support": "README.md#Support",
+    "changelog": "CHANGELOG.md",
+    "description": "Collect metrics from the Kubernetes APIserver",
+    "title": "Kubernetes API server metrics",
+    "media": [],
+    "classifier_tags": [
+      "Category::Containers",
+      "Category::Kubernetes",
+      "Supported OS::Linux",
+      "Supported OS::Windows",
+      "Supported OS::macOS"
+    ]
+  },
+  "author": {
+    "support_email": "help@khulnasoft.com",
+    "name": "Datadog",
+    "homepage": "https://www.khulnasoft.com",
+    "sales_email": "info@khulnasoft.com"
+  },
+  "oauth": {},
+  "assets": {
+    "integration": {
+      "source_type_name": "Kubernetes API server metrics",
+      "configuration": {
+        "spec": "assets/configuration/spec.yaml"
+      },
+      "events": {
+        "creates_events": false
+      },
+      "metrics": {
+        "prefix": "kube_apiserver.",
+        "check": "kube_apiserver.go_goroutines",
+        "metadata_path": "metadata.csv"
+      },
+      "service_checks": {
+        "metadata_path": "assets/service_checks.json"
+      },
+      "source_type_id": 10197,
+      "auto_install": true
+    },
+    "dashboards": {
+      "Kubernetes API Server - Overview": "assets/dashboards/overview.json"
+    }
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "manifest_version": "2.0.0",
+  "app_uuid": "3d165411-7734-4f72-b39a-f222add296b2",
+  "app_id": "gitlab",
+  "display_on_public_website": true,
+  "tile": {
+    "overview": "README.md#Overview",
+    "configuration": "README.md#Setup",
+    "support": "README.md#Support",
+    "changelog": "CHANGELOG.md",
+    "description": "Track all your GitLab metrics with Datadog.",
+    "title": "GitLab",
+    "media": [],
+    "classifier_tags": [
+      "Category::Collaboration",
+      "Category::Developer Tools",
+      "Category::Issue Tracking",
+      "Category::Log Collection",
+      "Category::Source Control",
+      "Supported OS::Linux",
+      "Supported OS::Windows",
+      "Supported OS::macOS"
+    ]
+  },
+  "author": {
+    "support_email": "help@khulnasoft.com",
+    "name": "Datadog",
+    "homepage": "https://www.khulnasoft.com",
+    "sales_email": "info@khulnasoft.com"
+  },
+  "oauth": {},
+  "assets": {
+    "integration": {
+      "source_type_name": "Gitlab",
+      "configuration": {
+        "spec": "assets/configuration/spec.yaml"
+      },
+      "events": {
+        "creates_events": false
+      },
+      "metrics": {
+        "prefix": "gitlab.",
+        "check": [
+          "gitlab.process_max_fds",
+          "gitlab.ruby.process_start_time_seconds"
+        ],
+        "metadata_path": "metadata.csv"
+      },
+      "service_checks": {
+        "metadata_path": "assets/service_checks.json"
+      },
+      "process_signatures": [
+        "gitlab-kas",
+        "gitlab-workhorse",
+        "gitlab-ctl"
+      ],
+      "source_type_id": 10026,
+      "auto_install": true
+    },
+    "dashboards": {
+      "Gitlab Overview": "assets/dashboards/overview.json"
+    },
+    "logs": {
+      "source": "gitlab"
+    }
+  }
+}

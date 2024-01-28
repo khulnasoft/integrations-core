@@ -1,0 +1,18 @@
+[
+    {
+        "agent_version": "5.2.0",
+        "integration": "Mesos Master",
+        "check": "mesos_master.can_connect",
+        "statuses": [
+            "ok",
+            "critical",
+            "unknown"
+        ],
+        "name": "Can Connect",
+        "groups": [
+            "host",
+            "url"
+        ],
+        "description": "Returns CRITICAL if the Agent cannot connect to the Mesos Master API to collect metrics, UNKNOWN if the master is not detected as the leader, otherwise OK."
+    }
+]

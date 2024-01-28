@@ -1,0 +1,80 @@
+name: Oracle Database
+files:
+- name: oracle.yaml
+  options:
+  - template: init_config
+    options:
+    - name: use_instant_client
+      description: |
+          Determines whether the Agent uses the Oracle Instant Client to connect instead of the Oracle native client. 
+          This option cannot be used at the same time as `jdbc_driver_path`.
+      value:
+        example: false
+        type: boolean
+    - template: init_config/db
+    - template: init_config/default
+  - template: instances
+    options:
+    - name: server
+      description: The IP address or hostname of the Oracle Database Server.
+      required: true
+      value:
+        type: string
+        example: localhost:1521
+    - name: service_name
+      description: |
+        The Oracle Database service name. To view the services available on your server,
+        run the following query: `SELECT value FROM v$parameter WHERE name='service_names'`
+      required: true
+      value:
+        type: string
+    - name: protocol
+      description: |
+        The protocol to connect to the Oracle Database Server. Valid protocols include TCP and TCPS.
+
+        If you are using the TCPS protocol and connecting to Oracle Database through JDBC, `jdbc_truststore` and
+        `jdbc_truststore_type` are required.
+
+        More information can be found from Oracle Database's whitepaper:
+        https://www.oracle.com/technetwork/topics/wp-oracle-jdbc-thin-ssl-130128.pdf
+      value:
+        type: string
+        example: TCP
+    - name: username
+      description: The username for the Datadog user account.
+      required: true
+      value:
+        type: string
+    - name: password
+      description: The password for the Datadog user account.
+      required: true
+      value:
+        type: string
+    - name: jdbc_driver_path
+      description: |
+        Set this parameter if you are not using the Oracle native client or Instant Client.
+        You can also add it to your $CLASSPATH instead.
+      value:
+        type: string
+        example: <DRIVER_PATH>.jar
+    - name: jdbc_truststore_path
+      description: |
+        The JDBC truststore file path.
+
+        Note: This option is required if connecting with TCPS through JDBC.
+      value:
+        type: string
+    - name: jdbc_truststore_type
+      description: |
+        The JDBC truststore file type. Supported truststore types include JKS, SSO, and PKCS12.
+
+        Note: This option is required if connecting with TCPS through JDBC.
+      value:
+        type: string
+    - name: jdbc_truststore_password
+      description: |
+        The password for the truststore when connecting through JDBC.
+      value:
+        type: string
+    - template: instances/db
+    - template: instances/default

@@ -1,0 +1,59 @@
+{
+  "manifest_version": "2.0.0",
+  "app_uuid": "e03a0916-8708-4417-82e4-1f0c7bbee655",
+  "app_id": "active-directory",
+  "display_on_public_website": true,
+  "tile": {
+    "overview": "README.md#Overview",
+    "configuration": "README.md#Setup",
+    "support": "README.md#Support",
+    "changelog": "CHANGELOG.md",
+    "description": "Collect and graph Microsoft Active Directory metrics",
+    "title": "Active Directory",
+    "media": [],
+    "classifier_tags": [
+      "Supported OS::Windows",
+      "Category::OS & System",
+      "Category::Log Collection"
+    ]
+  },
+  "author": {
+    "support_email": "help@khulnasoft.com",
+    "name": "Datadog",
+    "homepage": "https://www.khulnasoft.com",
+    "sales_email": "info@khulnasoft.com"
+  },
+  "oauth": {},
+  "assets": {
+    "integration": {
+      "source_type_name": "Active Directory",
+      "configuration": {
+        "spec": "assets/configuration/spec.yaml"
+      },
+      "events": {
+        "creates_events": false
+      },
+      "metrics": {
+        "prefix": "active_directory.",
+        "check": "active_directory.dra.inbound.objects.persec",
+        "metadata_path": "metadata.csv"
+      },
+      "service_checks": {
+        "metadata_path": "assets/service_checks.json"
+      },
+      "source_type_id": 10068,
+      "auto_install": true
+    },
+    "dashboards": {
+      "Active Directory": "assets/dashboards/active_directory.json"
+    },
+    "monitors": {
+      "[Active Directory] Elevated LDAP binding duration for host {{host.name}}": "assets/monitors/ldap_binding.json",
+      "[Active Directory] Anomalous number of sessions for connected LDAP clients for host: {{host.name}}": "assets/monitors/ldap_client_sessions.json",
+      "[Active Directory] Anomalous number of successful LDAP bindings for host: {{host.name}}": "assets/monitors/ldap_binding_successful.json"
+    },
+    "logs": {
+      "source": "ruby"
+    }
+  }
+}

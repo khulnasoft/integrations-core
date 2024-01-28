@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  cockroachdb:
+    container_name: cockroachdb
+    image: cockroachdb/cockroach:${COCKROACHDB_VERSION}
+    command: ${COCKROACHDB_START_COMMAND} --insecure --store=attrs=ssd,path=/var/lib/cockroach/
+    restart: always
+    expose:
+      - "8080"
+      - "26257"
+    ports:
+      - "26257:26257"
+      - "8080:8080"
+    volumes:
+      - ./sql.sh:/sql.sh
+    networks:
+     - roachnet
+
+networks:
+  roachnet: {}

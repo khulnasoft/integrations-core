@@ -1,0 +1,64 @@
+{
+  "manifest_version": "2.0.0",
+  "app_uuid": "b613759e-89ca-4d98-a2c1-4d465c42e413",
+  "app_id": "coredns",
+  "display_on_public_website": true,
+  "tile": {
+    "overview": "README.md#Overview",
+    "configuration": "README.md#Setup",
+    "support": "README.md#Support",
+    "changelog": "CHANGELOG.md",
+    "description": "CoreDNS collects DNS metrics in Kubernetes.",
+    "title": "CoreDNS",
+    "media": [],
+    "classifier_tags": [
+      "Category::Caching",
+      "Category::Containers",
+      "Category::Kubernetes",
+      "Category::Log Collection",
+      "Category::Network",
+      "Supported OS::Linux"
+    ]
+  },
+  "author": {
+    "support_email": "help@khulnasoft.com",
+    "name": "Datadog",
+    "homepage": "https://www.khulnasoft.com",
+    "sales_email": "info@khulnasoft.com"
+  },
+  "oauth": {},
+  "assets": {
+    "integration": {
+      "source_type_name": "CoreDNS",
+      "configuration": {
+        "spec": "assets/configuration/spec.yaml"
+      },
+      "events": {
+        "creates_events": false
+      },
+      "metrics": {
+        "prefix": "coredns.",
+        "check": "coredns.request_count",
+        "metadata_path": "metadata.csv"
+      },
+      "service_checks": {
+        "metadata_path": "assets/service_checks.json"
+      },
+      "process_signatures": [
+        "coredns"
+      ],
+      "source_type_id": 10038,
+      "auto_install": true
+    },
+    "dashboards": {
+      "CoreDNS": "assets/dashboards/coredns.json"
+    },
+    "monitors": {
+      "[CoreDNS] Cache hits count low": "assets/monitors/coredns_cache_hits_low.json",
+      "[CoreDNS] Request duration high": "assets/monitors/coredns_request_duration_high.json"
+    },
+    "logs": {
+      "source": "coredns"
+    }
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "manifest_version": "2.0.0",
+  "app_uuid": "05a49675-62bb-4fa7-be6a-a03e13213640",
+  "app_id": "mesos",
+  "display_on_public_website": true,
+  "tile": {
+    "overview": "README.md#Overview",
+    "configuration": "README.md#Setup",
+    "support": "README.md#Support",
+    "changelog": "CHANGELOG.md",
+    "description": "Track cluster resource usage, master and slave counts, tasks statuses, and more.",
+    "title": "Mesos Slave",
+    "media": [],
+    "classifier_tags": [
+      "Category::Configuration & Deployment",
+      "Category::Containers",
+      "Category::Log Collection",
+      "Category::Network",
+      "Category::Orchestration",
+      "Supported OS::Linux",
+      "Supported OS::macOS"
+    ]
+  },
+  "author": {
+    "support_email": "help@khulnasoft.com",
+    "name": "Datadog",
+    "homepage": "https://www.khulnasoft.com",
+    "sales_email": "info@khulnasoft.com"
+  },
+  "oauth": {},
+  "assets": {
+    "integration": {
+      "source_type_name": "Mesos",
+      "configuration": {
+        "spec": "assets/configuration/spec.yaml"
+      },
+      "events": {
+        "creates_events": false
+      },
+      "metrics": {
+        "prefix": "mesos.",
+        "check": "mesos.stats.uptime_secs",
+        "metadata_path": "metadata.csv"
+      },
+      "service_checks": {
+        "metadata_path": "assets/service_checks.json"
+      },
+      "source_type_id": 81,
+      "auto_install": true
+    },
+    "dashboards": {
+      "mesos": "assets/dashboards/mesos_overview.json"
+    },
+    "logs": {
+      "source": "mesos"
+    }
+  }
+}

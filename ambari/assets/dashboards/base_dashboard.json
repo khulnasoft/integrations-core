@@ -1,0 +1,419 @@
+{
+    "title": "Ambari base dashboard",
+    "description": "## Ambari Dashboard\n\nThis is an example Ambari dashboard demonstrating the metrics that the integration collects.",
+    "widgets": [
+        {
+            "id": 0,
+            "definition": {
+                "type": "timeseries",
+                "requests": [
+                    {
+                        "q": "avg:ambari.memory.mem_free{*} by {host,ambari_cluster}",
+                        "display_type": "area",
+                        "style": {
+                            "palette": "dog_classic",
+                            "line_type": "solid",
+                            "line_width": "normal"
+                        }
+                    },
+                    {
+                        "q": "avg:ambari.memory.mem_total{*} by {host,ambari_cluster}",
+                        "display_type": "line",
+                        "style": {
+                            "palette": "dog_classic",
+                            "line_type": "solid",
+                            "line_width": "normal"
+                        }
+                    },
+                    {
+                        "q": "avg:ambari.memory.mem_cached{*} by {host,ambari_cluster}",
+                        "display_type": "area",
+                        "style": {
+                            "palette": "dog_classic",
+                            "line_type": "solid",
+                            "line_width": "normal"
+                        }
+                    },
+                    {
+                        "q": "avg:ambari.memory.mem_shared{*} by {host,ambari_cluster}",
+                        "display_type": "area",
+                        "style": {
+                            "palette": "dog_classic",
+                            "line_type": "solid",
+                            "line_width": "normal"
+                        }
+                    },
+                    {
+                        "q": "avg:ambari.memory.swap_total{*} by {host,ambari_cluster}",
+                        "display_type": "line",
+                        "style": {
+                            "palette": "dog_classic",
+                            "line_type": "solid",
+                            "line_width": "normal"
+                        }
+                    },
+                    {
+                        "q": "avg:ambari.memory.swap_free{*} by {host,ambari_cluster}",
+                        "display_type": "area",
+                        "style": {
+                            "palette": "dog_classic",
+                            "line_type": "solid",
+                            "line_width": "normal"
+                        }
+                    }
+                ],
+                "custom_links": [],
+                "title": "Memory by host",
+                "title_size": "16",
+                "title_align": "left",
+                "show_legend": false,
+                "legend_size": "0"
+            },
+            "layout": {
+                "x": 50,
+                "y": 24,
+                "width": 47,
+                "height": 15
+            }
+        },
+        {
+            "id": 1,
+            "definition": {
+                "type": "timeseries",
+                "requests": [
+                    {
+                        "q": "avg:ambari.disk.disk_free{*} by {host,ambari_cluster}",
+                        "display_type": "area",
+                        "style": {
+                            "palette": "dog_classic",
+                            "line_type": "solid",
+                            "line_width": "normal"
+                        }
+                    },
+                    {
+                        "q": "avg:ambari.disk.disk_total{*} by {host,ambari_cluster}",
+                        "display_type": "area",
+                        "style": {
+                            "palette": "dog_classic",
+                            "line_type": "solid",
+                            "line_width": "normal"
+                        }
+                    }
+                ],
+                "custom_links": [],
+                "title": "Disk by host",
+                "title_size": "16",
+                "title_align": "left",
+                "show_legend": false,
+                "legend_size": "0"
+            },
+            "layout": {
+                "x": 0,
+                "y": 24,
+                "width": 47,
+                "height": 15
+            }
+        },
+        {
+            "id": 2,
+            "definition": {
+                "type": "timeseries",
+                "requests": [
+                    {
+                        "q": "avg:ambari.process.proc_total{*} by {ambari_cluster}",
+                        "display_type": "area",
+                        "style": {
+                            "palette": "dog_classic",
+                            "line_type": "solid",
+                            "line_width": "normal"
+                        }
+                    },
+                    {
+                        "q": "avg:ambari.process.proc_run{*} by {ambari_cluster}",
+                        "display_type": "line",
+                        "style": {
+                            "palette": "dog_classic",
+                            "line_type": "solid",
+                            "line_width": "normal"
+                        }
+                    }
+                ],
+                "custom_links": [],
+                "title": "Cluster process by cluster",
+                "title_size": "16",
+                "title_align": "left",
+                "show_legend": false,
+                "legend_size": "0"
+            },
+            "layout": {
+                "x": 0,
+                "y": 41,
+                "width": 47,
+                "height": 15
+            }
+        },
+        {
+            "id": 3,
+            "definition": {
+                "type": "timeseries",
+                "requests": [
+                    {
+                        "q": "avg:ambari.load.load_fifteen{*} by {host,ambari_cluster}",
+                        "display_type": "line",
+                        "style": {
+                            "palette": "dog_classic",
+                            "line_type": "solid",
+                            "line_width": "normal"
+                        }
+                    }
+                ],
+                "custom_links": [],
+                "title": "Load 15 by host",
+                "title_size": "16",
+                "title_align": "left",
+                "show_legend": false,
+                "legend_size": "0"
+            },
+            "layout": {
+                "x": 99,
+                "y": 24,
+                "width": 47,
+                "height": 15
+            }
+        },
+        {
+            "id": 4,
+            "definition": {
+                "type": "image",
+                "url": "/static/images/logos/ambari_large.svg",
+                "sizing": "zoom"
+            },
+            "layout": {
+                "x": 0,
+                "y": 2,
+                "width": 47,
+                "height": 11
+            }
+        },
+        {
+            "id": 5,
+            "definition": {
+                "type": "check_status",
+                "title": "Agent Up",
+                "title_size": "16",
+                "title_align": "center",
+                "check": "ambari.can_connect",
+                "grouping": "cluster",
+                "group_by": [],
+                "tags": [
+                    "*"
+                ]
+            },
+            "layout": {
+                "x": 15,
+                "y": 14,
+                "width": 15,
+                "height": 8
+            }
+        },
+        {
+            "id": 6,
+            "definition": {
+                "type": "timeseries",
+                "requests": [
+                    {
+                        "q": "avg:ambari.cpu.cpu_system{*} by {ambari_cluster,host}",
+                        "display_type": "area",
+                        "style": {
+                            "palette": "dog_classic",
+                            "line_type": "solid",
+                            "line_width": "normal"
+                        }
+                    },
+                    {
+                        "q": "avg:ambari.cpu.cpu_user{*} by {ambari_cluster,host}",
+                        "display_type": "area",
+                        "style": {
+                            "palette": "dog_classic",
+                            "line_type": "solid",
+                            "line_width": "normal"
+                        }
+                    },
+                    {
+                        "q": "avg:ambari.cpu.cpu_idle{*} by {ambari_cluster,host}",
+                        "display_type": "area",
+                        "style": {
+                            "palette": "dog_classic",
+                            "line_type": "solid",
+                            "line_width": "normal"
+                        }
+                    }
+                ],
+                "custom_links": [],
+                "title": "CPU by host",
+                "title_size": "16",
+                "title_align": "left",
+                "show_legend": false,
+                "legend_size": "0"
+            },
+            "layout": {
+                "x": 99,
+                "y": 41,
+                "width": 47,
+                "height": 15
+            }
+        },
+        {
+            "id": 7,
+            "definition": {
+                "type": "hostmap",
+                "requests": {
+                    "fill": {
+                        "q": "avg:ambari.load.load_one{$ambari_cluster} by {host}"
+                    }
+                },
+                "custom_links": [],
+                "no_metric_hosts": false,
+                "no_group_hosts": true,
+                "group": [],
+                "scope": [
+                    "$ambari_cluster"
+                ],
+                "style": {
+                    "palette": "green_to_orange",
+                    "palette_flip": false
+                }
+            },
+            "layout": {
+                "x": 50,
+                "y": 2,
+                "width": 47,
+                "height": 22
+            }
+        },
+        {
+            "id": 8,
+            "definition": {
+                "type": "timeseries",
+                "requests": [
+                    {
+                        "q": "avg:ambari.disk.read_bytes{*} by {ambari_cluster,host}",
+                        "display_type": "area",
+                        "style": {
+                            "palette": "dog_classic",
+                            "line_type": "solid",
+                            "line_width": "normal"
+                        }
+                    },
+                    {
+                        "q": "avg:ambari.disk.write_bytes{*} by {ambari_cluster,host}",
+                        "display_type": "line",
+                        "style": {
+                            "palette": "dog_classic",
+                            "line_type": "solid",
+                            "line_width": "normal"
+                        }
+                    }
+                ],
+                "custom_links": [],
+                "title": "Disk read/write bytes by host",
+                "title_size": "16",
+                "title_align": "left",
+                "show_legend": false,
+                "legend_size": "0"
+            },
+            "layout": {
+                "x": 0,
+                "y": 58,
+                "width": 47,
+                "height": 15
+            }
+        },
+        {
+            "id": 9,
+            "definition": {
+                "type": "timeseries",
+                "requests": [
+                    {
+                        "q": "avg:ambari.disk.read_time{*} by {ambari_cluster,host}",
+                        "display_type": "line",
+                        "style": {
+                            "palette": "dog_classic",
+                            "line_type": "solid",
+                            "line_width": "normal"
+                        }
+                    },
+                    {
+                        "q": "avg:ambari.disk.write_time{*} by {ambari_cluster,host}",
+                        "display_type": "line",
+                        "style": {
+                            "palette": "dog_classic",
+                            "line_type": "solid",
+                            "line_width": "normal"
+                        }
+                    }
+                ],
+                "custom_links": [],
+                "title": "Disk read/Write time by host",
+                "title_size": "16",
+                "title_align": "left",
+                "show_legend": false,
+                "legend_size": "0"
+            },
+            "layout": {
+                "x": 50,
+                "y": 58,
+                "width": 47,
+                "height": 15
+            }
+        },
+        {
+            "id": 10,
+            "definition": {
+                "type": "timeseries",
+                "requests": [
+                    {
+                        "q": "avg:ambari.network.bytes_in{*} by {ambari_cluster,host}",
+                        "display_type": "line",
+                        "style": {
+                            "palette": "dog_classic",
+                            "line_type": "solid",
+                            "line_width": "normal"
+                        }
+                    },
+                    {
+                        "q": "avg:ambari.network.bytes_out{*} by {ambari_cluster,host}",
+                        "display_type": "line",
+                        "style": {
+                            "palette": "dog_classic",
+                            "line_type": "solid",
+                            "line_width": "normal"
+                        }
+                    }
+                ],
+                "custom_links": [],
+                "title": "Network bytes in/out by host",
+                "title_size": "16",
+                "title_align": "left",
+                "show_legend": false,
+                "legend_size": "0"
+            },
+            "layout": {
+                "x": 50,
+                "y": 41,
+                "width": 47,
+                "height": 15
+            }
+        }
+    ],
+    "template_variables": [
+        {
+            "name": "ambari_cluster",
+            "default": "*",
+            "prefix": "ambari_cluster"
+        }
+    ],
+    "layout_type": "free",
+    "is_read_only": true,
+    "notify_list": []
+}

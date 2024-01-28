@@ -1,0 +1,463 @@
+{
+    "title": "ClickHouse Overview",
+    "description": "## ClickHouse Dashboard\n\nThis is an example ClickHouse dashboard demonstrating the metrics that the integration collects.",
+    "widgets": [
+        {
+            "id": 0,
+            "definition": {
+                "type": "image",
+                "url": "/static/images/logos/clickhouse_large.svg",
+                "sizing": "zoom"
+            },
+            "layout": {
+                "x": 0,
+                "y": 0,
+                "width": 26,
+                "height": 12
+            }
+        },
+        {
+            "id": 1,
+            "definition": {
+                "type": "note",
+                "content": "Insertion",
+                "background_color": "gray",
+                "font_size": "18",
+                "text_align": "center",
+                "show_tick": true,
+                "tick_pos": "50%",
+                "tick_edge": "bottom"
+            },
+            "layout": {
+                "x": 28,
+                "y": 0,
+                "width": 70,
+                "height": 8
+            }
+        },
+        {
+            "id": 2,
+            "definition": {
+                "type": "timeseries",
+                "requests": [
+                    {
+                        "q": "avg:clickhouse.table.insert.size.count{$host}.as_count()",
+                        "display_type": "bars",
+                        "style": {
+                            "palette": "dog_classic",
+                            "line_type": "solid",
+                            "line_width": "normal"
+                        }
+                    }
+                ],
+                "custom_links": [],
+                "title": "Bytes per second",
+                "title_size": "16",
+                "title_align": "left",
+                "show_legend": false,
+                "legend_size": "0"
+            },
+            "layout": {
+                "x": 28,
+                "y": 10,
+                "width": 34,
+                "height": 15
+            }
+        },
+        {
+            "id": 3,
+            "definition": {
+                "type": "timeseries",
+                "requests": [
+                    {
+                        "q": "avg:clickhouse.table.mergetree.insert.delayed.count{$host}.as_count()",
+                        "display_type": "bars",
+                        "style": {
+                            "palette": "dog_classic",
+                            "line_type": "solid",
+                            "line_width": "normal"
+                        }
+                    }
+                ],
+                "custom_links": [],
+                "title": "Delayed inserts per second",
+                "title_size": "16",
+                "title_align": "left",
+                "show_legend": false,
+                "legend_size": "0"
+            },
+            "layout": {
+                "x": 64,
+                "y": 26,
+                "width": 34,
+                "height": 15
+            }
+        },
+        {
+            "id": 4,
+            "definition": {
+                "type": "timeseries",
+                "requests": [
+                    {
+                        "q": "avg:clickhouse.table.insert.row.count{$host}.as_count()",
+                        "display_type": "bars",
+                        "style": {
+                            "palette": "dog_classic",
+                            "line_type": "solid",
+                            "line_width": "normal"
+                        }
+                    }
+                ],
+                "custom_links": [],
+                "title": "Rows per second",
+                "title_size": "16",
+                "title_align": "left",
+                "show_legend": false,
+                "legend_size": "0"
+            },
+            "layout": {
+                "x": 64,
+                "y": 10,
+                "width": 34,
+                "height": 15
+            }
+        },
+        {
+            "id": 5,
+            "definition": {
+                "type": "timeseries",
+                "requests": [
+                    {
+                        "q": "avg:clickhouse.query.insert.count{$host}.as_count()",
+                        "display_type": "bars",
+                        "style": {
+                            "palette": "dog_classic",
+                            "line_type": "solid",
+                            "line_width": "normal"
+                        }
+                    }
+                ],
+                "custom_links": [],
+                "title": "Inserts per second",
+                "title_size": "16",
+                "title_align": "left",
+                "show_legend": false,
+                "legend_size": "0"
+            },
+            "layout": {
+                "x": 28,
+                "y": 26,
+                "width": 34,
+                "height": 15
+            }
+        },
+        {
+            "id": 6,
+            "definition": {
+                "type": "query_value",
+                "requests": [
+                    {
+                        "q": "avg:clickhouse.uptime{$host}",
+                        "aggregator": "last"
+                    }
+                ],
+                "custom_links": [],
+                "title": "Uptime",
+                "title_size": "16",
+                "title_align": "left",
+                "autoscale": true,
+                "precision": 2
+            },
+            "layout": {
+                "x": 0,
+                "y": 14,
+                "width": 26,
+                "height": 17
+            }
+        },
+        {
+            "id": 7,
+            "definition": {
+                "type": "note",
+                "content": "Active connections",
+                "background_color": "gray",
+                "font_size": "18",
+                "text_align": "center",
+                "show_tick": true,
+                "tick_pos": "50%",
+                "tick_edge": "bottom"
+            },
+            "layout": {
+                "x": 0,
+                "y": 33,
+                "width": 26,
+                "height": 8
+            }
+        },
+        {
+            "id": 8,
+            "definition": {
+                "type": "query_value",
+                "requests": [
+                    {
+                        "q": "avg:clickhouse.connection.http{$host}",
+                        "aggregator": "last"
+                    }
+                ],
+                "custom_links": [],
+                "title": "HTTP",
+                "title_size": "16",
+                "title_align": "left",
+                "autoscale": true,
+                "precision": 2
+            },
+            "layout": {
+                "x": 0,
+                "y": 43,
+                "width": 26,
+                "height": 6
+            }
+        },
+        {
+            "id": 9,
+            "definition": {
+                "type": "query_value",
+                "requests": [
+                    {
+                        "q": "avg:clickhouse.connection.tcp{$host}",
+                        "aggregator": "last"
+                    }
+                ],
+                "custom_links": [],
+                "title": "TCP",
+                "title_size": "16",
+                "title_align": "left",
+                "autoscale": true,
+                "precision": 2
+            },
+            "layout": {
+                "x": 0,
+                "y": 50,
+                "width": 26,
+                "height": 6
+            }
+        },
+        {
+            "id": 10,
+            "definition": {
+                "type": "query_value",
+                "requests": [
+                    {
+                        "q": "avg:clickhouse.connection.interserver{$host}",
+                        "aggregator": "last"
+                    }
+                ],
+                "custom_links": [],
+                "title": "Interserver",
+                "title_size": "16",
+                "title_align": "left",
+                "autoscale": true,
+                "precision": 2
+            },
+            "layout": {
+                "x": 0,
+                "y": 57,
+                "width": 26,
+                "height": 6
+            }
+        },
+        {
+            "id": 11,
+            "definition": {
+                "type": "note",
+                "content": "Replication",
+                "background_color": "gray",
+                "font_size": "18",
+                "text_align": "center",
+                "show_tick": true,
+                "tick_pos": "50%",
+                "tick_edge": "bottom"
+            },
+            "layout": {
+                "x": 100,
+                "y": 0,
+                "width": 71,
+                "height": 8
+            }
+        },
+        {
+            "id": 12,
+            "definition": {
+                "type": "timeseries",
+                "requests": [
+                    {
+                        "q": "avg:clickhouse.table.replicated.part.check{$host}",
+                        "display_type": "line",
+                        "style": {
+                            "palette": "dog_classic",
+                            "line_type": "solid",
+                            "line_width": "normal"
+                        }
+                    }
+                ],
+                "custom_links": [],
+                "title": "Checks",
+                "title_size": "16",
+                "title_align": "left",
+                "show_legend": false,
+                "legend_size": "0"
+            },
+            "layout": {
+                "x": 104,
+                "y": 10,
+                "width": 63,
+                "height": 15
+            }
+        },
+        {
+            "id": 13,
+            "definition": {
+                "type": "timeseries",
+                "requests": [
+                    {
+                        "q": "avg:clickhouse.table.replicated.part.fetch{$host}",
+                        "display_type": "line",
+                        "style": {
+                            "palette": "dog_classic",
+                            "line_type": "solid",
+                            "line_width": "normal"
+                        }
+                    }
+                ],
+                "custom_links": [],
+                "title": "Fetch",
+                "title_size": "16",
+                "title_align": "left",
+                "show_legend": false,
+                "legend_size": "0"
+            },
+            "layout": {
+                "x": 104,
+                "y": 26,
+                "width": 63,
+                "height": 15
+            }
+        },
+        {
+            "id": 14,
+            "definition": {
+                "type": "timeseries",
+                "requests": [
+                    {
+                        "q": "avg:clickhouse.table.replicated.part.send{$host}",
+                        "display_type": "line",
+                        "style": {
+                            "palette": "dog_classic",
+                            "line_type": "solid",
+                            "line_width": "normal"
+                        }
+                    }
+                ],
+                "custom_links": [],
+                "title": "Send",
+                "title_size": "16",
+                "title_align": "left",
+                "show_legend": false,
+                "legend_size": "0"
+            },
+            "layout": {
+                "x": 104,
+                "y": 42,
+                "width": 63,
+                "height": 15
+            }
+        },
+        {
+            "id": 15,
+            "definition": {
+                "type": "note",
+                "content": "Query",
+                "background_color": "gray",
+                "font_size": "18",
+                "text_align": "center",
+                "show_tick": true,
+                "tick_pos": "50%",
+                "tick_edge": "bottom"
+            },
+            "layout": {
+                "x": 28,
+                "y": 43,
+                "width": 70,
+                "height": 8
+            }
+        },
+        {
+            "id": 16,
+            "definition": {
+                "type": "timeseries",
+                "requests": [
+                    {
+                        "q": "avg:clickhouse.query.active{$host}",
+                        "display_type": "line",
+                        "style": {
+                            "palette": "dog_classic",
+                            "line_type": "solid",
+                            "line_width": "normal"
+                        }
+                    }
+                ],
+                "custom_links": [],
+                "title": "Active",
+                "title_size": "16",
+                "title_align": "left",
+                "show_legend": false,
+                "legend_size": "0"
+            },
+            "layout": {
+                "x": 28,
+                "y": 53,
+                "width": 34,
+                "height": 15
+            }
+        },
+        {
+            "id": 17,
+            "definition": {
+                "type": "timeseries",
+                "requests": [
+                    {
+                        "q": "avg:clickhouse.query.memory{$host}",
+                        "display_type": "line",
+                        "style": {
+                            "palette": "dog_classic",
+                            "line_type": "solid",
+                            "line_width": "normal"
+                        }
+                    }
+                ],
+                "custom_links": [],
+                "title": "Memory in use",
+                "title_size": "16",
+                "title_align": "left",
+                "show_legend": false,
+                "legend_size": "0"
+            },
+            "layout": {
+                "x": 64,
+                "y": 53,
+                "width": 34,
+                "height": 15
+            }
+        }
+    ],
+    "template_variables": [
+        {
+            "name": "host",
+            "default": "*",
+            "prefix": "host"
+        }
+    ],
+    "layout_type": "free",
+    "is_read_only": true,
+    "notify_list": []
+}

@@ -1,0 +1,301 @@
+name: IBM MQ
+files:
+- name: ibm_mq.yaml
+  options:
+  - template: init_config
+    options:
+      - name: queue_manager_process
+        description: |
+          A regular expression that must match the command line of a running process in
+          order for the check to run, which is useful if running MQ in a failover mode.
+          A `<queue_manager>` placeholder is supported which represents the value of
+          the `queue_manager` option defined in each check instance.
+
+          This option is only available on Agent 7+.
+        value:
+          display_default: null
+          example: amqpcsea <queue_manager>
+          type: string
+      - name: queue_manager_process_limit
+        description: |
+          The maximum number of processes that can be matched at any given moment by
+          the `queue_manager_process` option.
+
+          Note that if this limit is lower than the actual limit the check will ignore
+          some active queue managers, while if this limit is higher than the actual
+          limit you may see increased CPU usage during check runs.
+        value:
+          example: 1
+          type: integer
+      - template: init_config/default
+  - template: instances
+    options:
+      - name: channel
+        required: true
+        value:
+          example: 'DEV.ADMIN.SVRCONN'
+          type: string
+          minLength: 1
+        description: The IBMMQ Channel to connect to.
+      - name: queue_manager
+        required: true
+        description: The name of the queue manager.
+        value:
+          example: 'datadog'
+          type: string
+          minLength: 1
+      - name: host
+        value:
+          example: 'localhost'
+          type: string
+          minLength: 1
+        description: The host IBM MQ is running on.
+      - name: port
+        value:
+          example: 1414
+          type: integer
+        description: The port IBM MQ is listening on.
+      - name: connection_name
+        description: |
+          Connection name used to connect to IBM MQ with following syntax `<HOSTNAME>(<PORT>)`.
+
+          Multiple connection names can be provided using comma as separator.
+          The connections are usually tried in the order they are specified in the connection list
+          until a connection is successfully established.
+
+          Example `localhost(8080)` or `localhost(8080),localhost(8080),my.server(9090)`
+
+          Either `host/port` or `connection_name` configuration must be provided.
+        value:
+          type: string
+          minLength: 1
+      - name: override_hostname
+        description: |
+          If enabled, the check sends the provided `host` as hostname instead of the agent's host.
+          In this case the `mq_host` tag will not be emitted. This cannot be used alongside `connection_name`
+        value:
+          type: boolean
+          example: false
+      - name: username
+        value:
+          type: string
+          minLength: 1
+        description: <USERNAME> of the IBMMQ Channel to connect to.
+      - name: password
+        secret: true
+        value:
+          type: string
+          minLength: 1
+        description: <PASSWORD> of the IBMMQ Channel to connect to.
+      - name: queues
+        description: |
+          The IBMMQ queues to get data from (no queue metrics will be sent, but the check will run without it).
+          This will be in addition to any queues discovered using `auto_discover_queues`, `queue_regex` or
+          `queue_patterns`.
+        value:
+          example: ['<QUEUE_NAME>']
+          type: array
+          items:
+            type: string
+      - name: queue_patterns
+        description: |
+          Collect from queues that match a MQ pattern
+          Note: Do not use in conjunction with `auto_discover_queues` or `queue_regex` as it may lead to
+          unexpected results.
+        value:
+          example:
+            - 'DEV.*'          # match queues starting with "DEV."
+            - 'SYSTEM.*'       # match queues starting with "SYSTEM."
+          type: array
+          items:
+            type: string
+      - name: queue_regex
+        description: |
+          Collect from queues that match a regex
+          Note: Do not use in conjunction with `auto_discover_queues` or `queue_patterns` as it may lead to
+          unexpected results.
+        value:
+          example:
+            - '^DEV\..*$'          # match queues starting with "DEV."
+            - '^SYSTEM\..*$'       # match queues starting with "SYSTEM."
+          type: array
+          items:
+            type: string
+      - name: channels
+        description: Check the status of the following channels
+        value:
+          example: ['<CHANNEL_NAME>']
+          type: array
+          items:
+            type: string
+      - name: auto_discover_channels
+        description: |
+          Autodiscover channels to monitor. This finds all discoverable channels.
+
+          Note: autodiscovered channels are in addition to the ones provided in `channels`.
+          Disabling this option will stop autodiscovery only for status metrics but not for property metrics.
+        value:
+          example: true
+          type: boolean
+      - name: channel_status_mapping
+        description: |
+          Custom channel status mapping for service check `ibm_mq.channel.status`.
+
+          The key is the IBM MQ channel status. Valid keys are: `inactive`, `binding`, `starting`, `running`, `stopping`,
+          `retrying`, `stopped`, `requesting`, `paused`, and `initializing`.
+          The value is the Datadog service check level. Valid values are: `ok`, `warning`, `critical`, and `unknown`.
+          If a channel status is not mapped, it is mapped to `unknown`.
+        value:
+          example:
+            inactive: critical
+            binding: warning
+            starting: warning
+            running: ok
+            stopping: critical
+            retrying: warning
+            stopped: critical
+            requesting: warning
+            paused: warning
+            initializing: warning
+          type: object
+          properties: []
+      - name: auto_discover_queues
+        description: |
+          Autodiscover the queues to monitor. This will discover all available queues. If you have dynamic queues
+          it will discover and monitor them all which can drive CPU usage up. If you want to be more specific about the
+          queues to monitor use `queue_patterns` or `queue_regex` instead.
+          Warning: this can lead to some warnings in your logs
+        value:
+          example: false
+          type: boolean
+      - name: collect_statistics_metrics
+        description: |
+          Collect metrics from Statistics Messages. Statistics collected are:
+            - channel statistics (MQCMD_STATISTICS_CHANNEL)
+            - queue statistics (MQCMD_STATISTICS_Q)
+        value:
+          example: false
+          type: boolean
+      - name: collect_reset_queue_metrics
+        description: |
+          Collect metrics from Reset Queue Statistics. Statistics collected are:
+            - reset queue statistics (MQCMD_RESET_Q_STATS)
+
+          Note: Collecting reset queue statistics will also reset the performance data and requires `+chg`
+          permissions. More information found here:
+          https://www.ibm.com/docs/en/ibm-mq/9.1?topic=formats-reset-queue-statistics
+        value:
+          example: true
+          type: boolean
+      - name: mqcd_version
+        description: |
+          Which channel definition version to use. Supported values are 1 to 9 including.
+          If you're having connection issues make sure it matches your MQ version.
+          TLS encryption requires MQCD of version at least 7.
+        value:
+          example: 6
+          type: number
+          minimum: 1
+      - name: convert_endianness
+        description: |
+          If you are monitoring IBM MQ remotely and if the Agent and the server are using different endianness,
+          set this field to true. For example, you will need to enable this option if you are monitoring a server that
+          is running on AIX or IBM i.
+        value:
+          example: false
+          type: boolean
+      - name: queue_manager_timezone
+        description: |
+          Time zone of the queue manager in IANA/Olson timezone format, if it differs from Etc/UTC. Canonical IANA
+          time zone names must be used for accurate time calculations during daylight saving time periods.
+          E.g. `America/New_York` instead of `EST`.
+          https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+          Used to calculate `ibm_mq.queue.last_put_time` and `ibm_mq.queue.last_get_time` metrics.
+        value:
+          example: Etc/UTC
+          type: string
+          minLength: 1
+      - name: timeout
+        description: |
+          The number of seconds to wait for IBM MQ to respond.
+        value:
+          example: 5
+          type: integer
+      - name: ssl_auth
+        description: Whether or not to use SSL auth while connecting to the channel.
+        value:
+          example: False
+          type: boolean
+      - name: try_basic_auth
+        description: |
+          Whether or not to try connecting with just username and password before SSL when `ssl_auth` is enabled.
+
+          WARNING: There is a known issue with the client library in which disabling
+          this option has the potential to cause a memory leak.
+          
+          Note: When used in combination with `queue_manager_process`, the default is `false` instead. This option
+          also prevents connection memory leaks.
+        value:
+          example: false
+          type: boolean
+          display_default: true
+      - name: ssl_cipher_spec
+        description: |
+          The TLS/SSL cipher to use. It should match the value of the channels SSLCIPH attribute. For an enumeration
+          see: https://www.ibm.com/docs/en/ibm-mq/9.3?topic=jms-tls-cipherspecs-ciphersuites-in-mq-classes
+        value:
+          type: string
+      - name: ssl_key_repository_location
+        description: |
+          It specifies the location of the key database file in which keys and certificates are stored.
+          The key database file must have a file name of the form zzz.kdb , where zzz is user-selectable.
+          The KeyRepository field contains the path to this file, along with the file name stem
+          (all characters in the file name up to but not including the final .kdb).
+          Each key database file has an associated password stash file. This holds encoded passwords that are used to
+          allow programmatic access to the key database. The password stash file must reside in the same directory and
+          have the same file stem as the key database, and must end with the suffix .sth.
+        value:
+          example: '/var/mqm/ssl-db/client/KeyringClient'
+          type: string
+          minLength: 1
+      - name: ssl_certificate_label
+        description: Certificate label used for SSL connection.
+        value:
+          type: string
+      - name: queue_tag_re
+        description: |
+          Instruct the check to apply additional tags to matching
+          queues
+
+          Multiple comma-separated tags are supported. You must properly quote the string if the
+          pattern contains special characters e.g. colons.
+        value:
+          example:
+            'SYSTEM.*': queue_type:system
+            'DEV.*': role:dev,queue_type:default
+          type: object
+      - name: queue_manager_process
+        description: |
+          A regular expression that must match the command line of a running process in
+          order for the check to run, which is useful if running MQ in a failover mode.
+          A `<queue_manager>` placeholder is supported which represents the value of
+          the `queue_manager` option.
+
+          This option is only available on Agent 7+.
+
+          This overrides the `queue_manager_process` option in the `init_config` section
+          but the `queue_manager_process_limit` option still applies.
+        value:
+          display_default: null
+          example: amqpcsea <queue_manager>
+          type: string
+      - template: instances/default
+  - template: logs
+    example:
+    - type: file
+      path: /var/mqm/log/<APPNAME>/active/AMQERR01.LOG
+      source: ibm_mq
+      log_processing_rules:
+        - type: multi_line
+          name: new_log_start_with_date
+          pattern: "\\d{2}/\\d{2}/\\d{4}"

@@ -1,0 +1,598 @@
+{
+    "title": "Flink Overview",
+    "description": "## Flink Overview\n\nThis dashboard provides a high-level overview of your Flink JobManagers and TaskManagers so you can monitor metrics related to jobs, memory, and checkpoints. For further reading on monitoring Flink, see the [Datadog Flink integration docs](https://docs.khulnasoft.com/integrations/flink/).\n\nClone this template dashboard to make changes and add your own graphs and widgets.",
+    "widgets": [
+        {
+            "id": 0,
+            "definition": {
+                "type": "image",
+                "url": "/static/images/logos/flink_large.svg",
+                "sizing": "fit"
+            },
+            "layout": {
+                "x": 1,
+                "y": 1,
+                "width": 35,
+                "height": 13
+            }
+        },
+        {
+            "id": 1,
+            "definition": {
+                "type": "query_value",
+                "requests": [
+                    {
+                        "q": "avg:flink.jobmanager.numRunningJobs{*}",
+                        "aggregator": "avg"
+                    }
+                ],
+                "custom_links": [],
+                "title": "Running jobs",
+                "title_size": "16",
+                "title_align": "left",
+                "precision": 0
+            },
+            "layout": {
+                "x": 1,
+                "y": 23,
+                "width": 17,
+                "height": 12
+            }
+        },
+        {
+            "id": 2,
+            "definition": {
+                "type": "timeseries",
+                "requests": [
+                    {
+                        "q": "avg:flink.task.Shuffle.Netty.Input.Buffers.inPoolUsage{*} by {task_id,subtask_index}*100",
+                        "display_type": "line",
+                        "style": {
+                            "palette": "dog_classic",
+                            "line_type": "solid",
+                            "line_width": "normal"
+                        }
+                    }
+                ],
+                "custom_links": [],
+                "yaxis": {
+                    "label": "",
+                    "scale": "linear",
+                    "min": "auto",
+                    "max": "auto",
+                    "include_zero": true
+                },
+                "title": "Input buffer usage (%)",
+                "title_size": "16",
+                "title_align": "left",
+                "show_legend": false
+            },
+            "layout": {
+                "x": 38,
+                "y": 48,
+                "width": 53,
+                "height": 16
+            }
+        },
+        {
+            "id": 3,
+            "definition": {
+                "type": "query_value",
+                "requests": [
+                    {
+                        "q": "avg:flink.jobmanager.job.numRestarts{*}",
+                        "aggregator": "sum"
+                    }
+                ],
+                "custom_links": [],
+                "title": "Full restarts",
+                "title_size": "16",
+                "title_align": "left",
+                "precision": 0
+            },
+            "layout": {
+                "x": 19,
+                "y": 23,
+                "width": 17,
+                "height": 12
+            }
+        },
+        {
+            "id": 4,
+            "definition": {
+                "type": "query_value",
+                "requests": [
+                    {
+                        "q": "avg:flink.jobmanager.job.downtime{*}",
+                        "aggregator": "avg"
+                    }
+                ],
+                "custom_links": [],
+                "title": "Avg job downtime",
+                "title_size": "16",
+                "title_align": "left",
+                "autoscale": false,
+                "custom_unit": "ms",
+                "precision": 1
+            },
+            "layout": {
+                "x": 19,
+                "y": 36,
+                "width": 17,
+                "height": 12
+            }
+        },
+        {
+            "id": 5,
+            "definition": {
+                "type": "query_value",
+                "requests": [
+                    {
+                        "q": "avg:flink.jobmanager.job.uptime{*}",
+                        "aggregator": "avg"
+                    }
+                ],
+                "custom_links": [],
+                "title": "Avg job uptime ",
+                "title_size": "16",
+                "title_align": "left",
+                "autoscale": false,
+                "custom_unit": "ms",
+                "precision": 1
+            },
+            "layout": {
+                "x": 1,
+                "y": 36,
+                "width": 17,
+                "height": 12
+            }
+        },
+        {
+            "id": 6,
+            "definition": {
+                "type": "note",
+                "content": "Health",
+                "background_color": "gray",
+                "font_size": "18",
+                "text_align": "center",
+                "show_tick": true,
+                "tick_pos": "50%",
+                "tick_edge": "bottom"
+            },
+            "layout": {
+                "x": 1,
+                "y": 15,
+                "width": 35,
+                "height": 6
+            }
+        },
+        {
+            "id": 7,
+            "definition": {
+                "type": "query_value",
+                "requests": [
+                    {
+                        "q": "avg:flink.jobmanager.numRegisteredTaskManagers{*}",
+                        "aggregator": "sum"
+                    }
+                ],
+                "custom_links": [],
+                "title": "TaskManager count",
+                "title_size": "16",
+                "title_align": "left",
+                "precision": 0
+            },
+            "layout": {
+                "x": 1,
+                "y": 49,
+                "width": 17,
+                "height": 12
+            }
+        },
+        {
+            "id": 8,
+            "definition": {
+                "type": "query_value",
+                "requests": [
+                    {
+                        "q": "avg:flink.jobmanager.job.numberOfFailedCheckpoints{*}",
+                        "aggregator": "sum",
+                        "conditional_formats": [
+                            {
+                                "comparator": ">",
+                                "value": 0,
+                                "palette": "white_on_red"
+                            },
+                            {
+                                "comparator": "<=",
+                                "value": 0,
+                                "palette": "white_on_green"
+                            }
+                        ]
+                    }
+                ],
+                "custom_links": [],
+                "title": "Failed checkpoints",
+                "title_size": "16",
+                "title_align": "left",
+                "precision": 0
+            },
+            "layout": {
+                "x": 74,
+                "y": 9,
+                "width": 17,
+                "height": 12
+            }
+        },
+        {
+            "id": 9,
+            "definition": {
+                "type": "timeseries",
+                "requests": [
+                    {
+                        "q": "avg:flink.task.Shuffle.Netty.Output.Buffers.outPoolUsage{*} by {task_id,subtask_index}*100",
+                        "display_type": "line",
+                        "style": {
+                            "palette": "dog_classic",
+                            "line_type": "solid",
+                            "line_width": "normal"
+                        }
+                    }
+                ],
+                "custom_links": [],
+                "yaxis": {
+                    "label": "",
+                    "scale": "linear",
+                    "min": "auto",
+                    "max": "auto",
+                    "include_zero": true
+                },
+                "title": "Output buffer usage (%)",
+                "title_size": "16",
+                "title_align": "left",
+                "show_legend": false
+            },
+            "layout": {
+                "x": 38,
+                "y": 65,
+                "width": 53,
+                "height": 16
+            }
+        },
+        {
+            "id": 10,
+            "definition": {
+                "type": "query_value",
+                "requests": [
+                    {
+                        "q": "avg:flink.jobmanager.job.numberOfCompletedCheckpoints{*}",
+                        "aggregator": "sum",
+                        "conditional_formats": [
+                            {
+                                "comparator": ">",
+                                "value": 0,
+                                "palette": "white_on_green"
+                            }
+                        ]
+                    }
+                ],
+                "custom_links": [],
+                "title": "Completed checkpoints",
+                "title_size": "16",
+                "title_align": "left",
+                "precision": 0
+            },
+            "layout": {
+                "x": 38,
+                "y": 9,
+                "width": 17,
+                "height": 12
+            }
+        },
+        {
+            "id": 11,
+            "definition": {
+                "type": "timeseries",
+                "requests": [
+                    {
+                        "q": "avg:flink.task.numRecordsOut{*} by {task_id}",
+                        "display_type": "line",
+                        "style": {
+                            "palette": "dog_classic",
+                            "line_type": "solid",
+                            "line_width": "normal"
+                        }
+                    }
+                ],
+                "custom_links": [],
+                "yaxis": {
+                    "label": "",
+                    "scale": "linear",
+                    "min": "auto",
+                    "max": "auto",
+                    "include_zero": true
+                },
+                "title": "Outgoing records per second ",
+                "title_size": "16",
+                "title_align": "left",
+                "show_legend": false,
+                "legend_size": "0"
+            },
+            "layout": {
+                "x": 93,
+                "y": 69,
+                "width": 53,
+                "height": 16
+            }
+        },
+        {
+            "id": 12,
+            "definition": {
+                "type": "timeseries",
+                "requests": [
+                    {
+                        "q": "avg:flink.taskmanager.Status.JVM.Memory.Heap.Used{*} by {tm_id}",
+                        "display_type": "area",
+                        "style": {
+                            "palette": "dog_classic",
+                            "line_type": "solid",
+                            "line_width": "normal"
+                        }
+                    }
+                ],
+                "custom_links": [],
+                "yaxis": {
+                    "label": "",
+                    "scale": "linear",
+                    "min": "auto",
+                    "max": "auto",
+                    "include_zero": true
+                },
+                "title": "TaskManager heap memory usage (bytes)",
+                "title_size": "16",
+                "title_align": "left",
+                "show_legend": false,
+                "legend_size": "0"
+            },
+            "layout": {
+                "x": 93,
+                "y": 9,
+                "width": 53,
+                "height": 16
+            }
+        },
+        {
+            "id": 13,
+            "definition": {
+                "type": "timeseries",
+                "requests": [
+                    {
+                        "q": "avg:flink.taskmanager.Status.JVM.CPU.Load{*} by {tm_id}*100",
+                        "display_type": "area",
+                        "style": {
+                            "palette": "dog_classic",
+                            "line_type": "solid",
+                            "line_width": "normal"
+                        }
+                    }
+                ],
+                "custom_links": [],
+                "yaxis": {
+                    "label": "",
+                    "scale": "linear",
+                    "min": "auto",
+                    "max": "auto",
+                    "include_zero": true
+                },
+                "title": "TaskManager CPU load (%)",
+                "title_size": "16",
+                "title_align": "left",
+                "show_legend": false,
+                "legend_size": "0"
+            },
+            "layout": {
+                "x": 93,
+                "y": 26,
+                "width": 53,
+                "height": 16
+            }
+        },
+        {
+            "id": 14,
+            "definition": {
+                "type": "timeseries",
+                "requests": [
+                    {
+                        "q": "avg:flink.taskmanager.Status.JVM.GarbageCollector.G1_Young_Generation.Time{*} by {tm_id}",
+                        "display_type": "area",
+                        "style": {
+                            "palette": "dog_classic",
+                            "line_type": "solid",
+                            "line_width": "normal"
+                        }
+                    },
+                    {
+                        "q": "avg:flink.taskmanager.Status.JVM.GarbageCollector.G1_Old_Generation.Time{*} by {tm_id}",
+                        "display_type": "area",
+                        "style": {
+                            "palette": "dog_classic",
+                            "line_type": "solid",
+                            "line_width": "normal"
+                        }
+                    }
+                ],
+                "custom_links": [],
+                "yaxis": {
+                    "label": "",
+                    "scale": "linear",
+                    "min": "auto",
+                    "max": "auto",
+                    "include_zero": true
+                },
+                "title": "TaskManager garbage collection time (ms)",
+                "title_size": "16",
+                "title_align": "left",
+                "show_legend": false,
+                "legend_size": "0"
+            },
+            "layout": {
+                "x": 93,
+                "y": 43,
+                "width": 53,
+                "height": 16
+            }
+        },
+        {
+            "id": 15,
+            "definition": {
+                "type": "timeseries",
+                "requests": [
+                    {
+                        "q": "avg:flink.jobmanager.job.lastCheckpointDuration{*} by {job_id}",
+                        "display_type": "line",
+                        "style": {
+                            "palette": "dog_classic",
+                            "line_type": "solid",
+                            "line_width": "normal"
+                        }
+                    }
+                ],
+                "custom_links": [],
+                "yaxis": {
+                    "label": "",
+                    "scale": "linear",
+                    "min": "auto",
+                    "max": "auto",
+                    "include_zero": true
+                },
+                "title": "Last checkpoint completion time (ms)",
+                "title_size": "16",
+                "title_align": "left",
+                "show_legend": false,
+                "legend_size": "0"
+            },
+            "layout": {
+                "x": 38,
+                "y": 22,
+                "width": 53,
+                "height": 17
+            }
+        },
+        {
+            "id": 16,
+            "definition": {
+                "type": "query_value",
+                "requests": [
+                    {
+                        "q": "avg:flink.jobmanager.job.numberOfInProgressCheckpoints{*}",
+                        "aggregator": "sum",
+                        "conditional_formats": [
+                            {
+                                "comparator": ">=",
+                                "value": 0,
+                                "palette": "white_on_yellow"
+                            }
+                        ]
+                    }
+                ],
+                "custom_links": [],
+                "title": "In progress checkpoints",
+                "title_size": "16",
+                "title_align": "left",
+                "precision": 0
+            },
+            "layout": {
+                "x": 56,
+                "y": 9,
+                "width": 17,
+                "height": 12
+            }
+        },
+        {
+            "id": 17,
+            "definition": {
+                "type": "note",
+                "content": "Checkpoints",
+                "background_color": "gray",
+                "font_size": "18",
+                "text_align": "center",
+                "show_tick": true,
+                "tick_pos": "50%",
+                "tick_edge": "bottom"
+            },
+            "layout": {
+                "x": 38,
+                "y": 1,
+                "width": 53,
+                "height": 6
+            }
+        },
+        {
+            "id": 18,
+            "definition": {
+                "type": "note",
+                "content": "Buffers",
+                "background_color": "gray",
+                "font_size": "18",
+                "text_align": "center",
+                "show_tick": true,
+                "tick_pos": "50%",
+                "tick_edge": "bottom"
+            },
+            "layout": {
+                "x": 38,
+                "y": 40,
+                "width": 53,
+                "height": 6
+            }
+        },
+        {
+            "id": 19,
+            "definition": {
+                "type": "note",
+                "content": "JVM Resource Utilization",
+                "background_color": "gray",
+                "font_size": "18",
+                "text_align": "center",
+                "show_tick": true,
+                "tick_pos": "50%",
+                "tick_edge": "bottom"
+            },
+            "layout": {
+                "x": 93,
+                "y": 1,
+                "width": 53,
+                "height": 6
+            }
+        },
+        {
+            "id": 20,
+            "definition": {
+                "type": "note",
+                "content": "Throughput",
+                "background_color": "gray",
+                "font_size": "18",
+                "text_align": "center",
+                "show_tick": true,
+                "tick_pos": "50%",
+                "tick_edge": "bottom"
+            },
+            "layout": {
+                "x": 93,
+                "y": 61,
+                "width": 53,
+                "height": 6
+            }
+        }
+    ],
+    "template_variables": [
+        {
+            "name": "var",
+            "default": "*",
+            "prefix": null
+        }
+    ],
+    "layout_type": "free",
+    "is_read_only": true,
+    "notify_list": []
+}

@@ -1,0 +1,610 @@
+{
+    "title": "Airflow Overview",
+    "description": "## Airflow\n\nThis dashboard provides a high-level overview of your Airflow instances so you can monitor metrics related to DAGs, tasks, pools and executors.\n\nFor further reading on monitoring Airflow, see:\n\n- [Official Airflow integration docs](https://docs.khulnasoft.com/integrations/airflow/#data-collected)\n\nClone this template to make changes and add your own graphs and widgets.",
+    "widgets": [
+        {
+            "id": 0,
+            "definition": {
+                "type": "image",
+                "url": "/static/images/logos/airflow_large.svg",
+                "sizing": "fit"
+            },
+            "layout": {
+                "x": 1,
+                "y": 1,
+                "width": 16,
+                "height": 9
+            }
+        },
+        {
+            "id": 1,
+            "definition": {
+                "type": "check_status",
+                "title": "Can Connect",
+                "title_size": "16",
+                "title_align": "center",
+                "check": "airflow.can_connect",
+                "grouping": "cluster",
+                "group_by": [],
+                "tags": [
+                    "$scope",
+                    "$host"
+                ]
+            },
+            "layout": {
+                "x": 1,
+                "y": 11,
+                "width": 16,
+                "height": 8
+            }
+        },
+        {
+            "id": 2,
+            "definition": {
+                "type": "check_status",
+                "title": "Healthy",
+                "title_size": "16",
+                "title_align": "center",
+                "check": "airflow.healthy",
+                "grouping": "cluster",
+                "group_by": [],
+                "tags": [
+                    "$scope",
+                    "$host"
+                ]
+            },
+            "layout": {
+                "x": 1,
+                "y": 20,
+                "width": 16,
+                "height": 8
+            }
+        },
+        {
+            "id": 3,
+            "definition": {
+                "type": "note",
+                "content": "DAGs",
+                "background_color": "gray",
+                "font_size": "24",
+                "text_align": "center",
+                "show_tick": true,
+                "tick_pos": "50%",
+                "tick_edge": "bottom"
+            },
+            "layout": {
+                "x": 66,
+                "y": 1,
+                "width": 95,
+                "height": 7
+            }
+        },
+        {
+            "id": 4,
+            "definition": {
+                "type": "timeseries",
+                "requests": [
+                    {
+                        "q": "avg:airflow.dagbag_size{$host,$scope}",
+                        "display_type": "line",
+                        "style": {
+                            "palette": "dog_classic",
+                            "line_type": "solid",
+                            "line_width": "normal"
+                        }
+                    }
+                ],
+                "custom_links": [],
+                "title": "DAG Bag Size",
+                "title_size": "16",
+                "title_align": "left",
+                "show_legend": false,
+                "legend_size": "0"
+            },
+            "layout": {
+                "x": 114,
+                "y": 25,
+                "width": 47,
+                "height": 15
+            }
+        },
+        {
+            "id": 5,
+            "definition": {
+                "type": "timeseries",
+                "requests": [
+                    {
+                        "q": "avg:airflow.dagbag_import_errors{$host,$scope}",
+                        "display_type": "line",
+                        "style": {
+                            "palette": "dog_classic",
+                            "line_type": "solid",
+                            "line_width": "normal"
+                        }
+                    }
+                ],
+                "custom_links": [],
+                "title": "DAG Import Errors",
+                "title_size": "16",
+                "title_align": "left",
+                "show_legend": false,
+                "legend_size": "0"
+            },
+            "layout": {
+                "x": 114,
+                "y": 41,
+                "width": 47,
+                "height": 15
+            }
+        },
+        {
+            "id": 6,
+            "definition": {
+                "type": "timeseries",
+                "requests": [
+                    {
+                        "q": "avg:airflow.dag_processing.processes{$host,$scope}.as_count()",
+                        "display_type": "line",
+                        "style": {
+                            "palette": "dog_classic",
+                            "line_type": "solid",
+                            "line_width": "normal"
+                        }
+                    }
+                ],
+                "custom_links": [],
+                "title": "DAG Processes",
+                "title_size": "16",
+                "title_align": "left",
+                "show_legend": false,
+                "legend_size": "0"
+            },
+            "layout": {
+                "x": 114,
+                "y": 57,
+                "width": 47,
+                "height": 15
+            }
+        },
+        {
+            "id": 7,
+            "definition": {
+                "type": "note",
+                "content": "Executors",
+                "background_color": "gray",
+                "font_size": "24",
+                "text_align": "center",
+                "show_tick": true,
+                "tick_pos": "50%",
+                "tick_edge": "bottom"
+            },
+            "layout": {
+                "x": 162,
+                "y": 1,
+                "width": 47,
+                "height": 7
+            }
+        },
+        {
+            "id": 8,
+            "definition": {
+                "type": "timeseries",
+                "requests": [
+                    {
+                        "q": "avg:airflow.executor.open_slots{$host,$scope}",
+                        "display_type": "line",
+                        "style": {
+                            "palette": "dog_classic",
+                            "line_type": "solid",
+                            "line_width": "normal"
+                        }
+                    }
+                ],
+                "custom_links": [],
+                "title": "Executor Slots",
+                "title_size": "16",
+                "title_align": "left",
+                "show_legend": false,
+                "legend_size": "0"
+            },
+            "layout": {
+                "x": 162,
+                "y": 9,
+                "width": 47,
+                "height": 15
+            }
+        },
+        {
+            "id": 9,
+            "definition": {
+                "type": "timeseries",
+                "requests": [
+                    {
+                        "q": "avg:airflow.executor.queued_tasks{$host,$scope}, avg:airflow.executor.running_tasks{$host,$scope}",
+                        "display_type": "line",
+                        "style": {
+                            "palette": "dog_classic",
+                            "line_type": "solid",
+                            "line_width": "normal"
+                        }
+                    }
+                ],
+                "custom_links": [],
+                "title": "Executor Tasks",
+                "title_size": "16",
+                "title_align": "left",
+                "show_legend": false,
+                "legend_size": "0"
+            },
+            "layout": {
+                "x": 162,
+                "y": 25,
+                "width": 47,
+                "height": 15
+            }
+        },
+        {
+            "id": 10,
+            "definition": {
+                "type": "note",
+                "content": "Scheduler",
+                "background_color": "gray",
+                "font_size": "24",
+                "text_align": "center",
+                "show_tick": true,
+                "tick_pos": "50%",
+                "tick_edge": "bottom"
+            },
+            "layout": {
+                "x": 162,
+                "y": 41,
+                "width": 47,
+                "height": 7
+            }
+        },
+        {
+            "id": 11,
+            "definition": {
+                "type": "note",
+                "content": "Jobs",
+                "background_color": "gray",
+                "font_size": "24",
+                "text_align": "center",
+                "show_tick": true,
+                "tick_pos": "50%",
+                "tick_edge": "bottom"
+            },
+            "layout": {
+                "x": 18,
+                "y": 25,
+                "width": 47,
+                "height": 7
+            }
+        },
+        {
+            "id": 12,
+            "definition": {
+                "type": "timeseries",
+                "requests": [
+                    {
+                        "q": "avg:airflow.job.start{$host,$scope} by {job_name}.as_count()",
+                        "display_type": "line",
+                        "style": {
+                            "palette": "dog_classic",
+                            "line_type": "solid",
+                            "line_width": "normal"
+                        }
+                    }
+                ],
+                "custom_links": [],
+                "title": "Job Started",
+                "title_size": "16",
+                "title_align": "left",
+                "show_legend": false,
+                "legend_size": "0"
+            },
+            "layout": {
+                "x": 18,
+                "y": 33,
+                "width": 47,
+                "height": 15
+            }
+        },
+        {
+            "id": 13,
+            "definition": {
+                "type": "timeseries",
+                "requests": [
+                    {
+                        "q": "avg:airflow.job.end{$host,$scope} by {job_name}.as_count()",
+                        "display_type": "line",
+                        "style": {
+                            "palette": "dog_classic",
+                            "line_type": "solid",
+                            "line_width": "normal"
+                        }
+                    }
+                ],
+                "custom_links": [],
+                "title": "Job Ended",
+                "title_size": "16",
+                "title_align": "left",
+                "show_legend": false,
+                "legend_size": "0"
+            },
+            "layout": {
+                "x": 18,
+                "y": 49,
+                "width": 47,
+                "height": 15
+            }
+        },
+        {
+            "id": 14,
+            "definition": {
+                "type": "timeseries",
+                "requests": [
+                    {
+                        "q": "avg:airflow.scheduler_heartbeat{$host,$scope}.as_count()",
+                        "display_type": "line",
+                        "style": {
+                            "palette": "dog_classic",
+                            "line_type": "solid",
+                            "line_width": "normal"
+                        }
+                    }
+                ],
+                "custom_links": [],
+                "title": "Job Scheduler Heatbeat",
+                "title_size": "16",
+                "title_align": "left",
+                "show_legend": false,
+                "legend_size": "0"
+            },
+            "layout": {
+                "x": 162,
+                "y": 49,
+                "width": 47,
+                "height": 15
+            }
+        },
+        {
+            "id": 15,
+            "definition": {
+                "type": "timeseries",
+                "requests": [
+                    {
+                        "q": "avg:airflow.dag.task.duration.avg{$host,$scope} by {dag_id}",
+                        "display_type": "line",
+                        "style": {
+                            "palette": "dog_classic",
+                            "line_type": "solid",
+                            "line_width": "normal"
+                        }
+                    }
+                ],
+                "custom_links": [],
+                "title": "DAG Run Task Duration",
+                "title_size": "16",
+                "title_align": "left",
+                "show_legend": false,
+                "legend_size": "0"
+            },
+            "layout": {
+                "x": 66,
+                "y": 9,
+                "width": 47,
+                "height": 15
+            }
+        },
+        {
+            "id": 16,
+            "definition": {
+                "type": "timeseries",
+                "requests": [
+                    {
+                        "q": "avg:airflow.dagrun.duration.success.avg{$host,$scope} by {dag_id}",
+                        "display_type": "line",
+                        "style": {
+                            "palette": "dog_classic",
+                            "line_type": "solid",
+                            "line_width": "normal"
+                        }
+                    }
+                ],
+                "custom_links": [],
+                "title": "DAG Run Success Duration",
+                "title_size": "16",
+                "title_align": "left",
+                "show_legend": false,
+                "legend_size": "0"
+            },
+            "layout": {
+                "x": 66,
+                "y": 41,
+                "width": 47,
+                "height": 15
+            }
+        },
+        {
+            "id": 17,
+            "definition": {
+                "type": "timeseries",
+                "requests": [
+                    {
+                        "q": "avg:airflow.dagrun.duration.failed.avg{$host,$scope} by {dag_id}",
+                        "display_type": "line",
+                        "style": {
+                            "palette": "dog_classic",
+                            "line_type": "solid",
+                            "line_width": "normal"
+                        }
+                    }
+                ],
+                "custom_links": [],
+                "title": "DAG Run Failed Duration",
+                "title_size": "16",
+                "title_align": "left",
+                "show_legend": false,
+                "legend_size": "0"
+            },
+            "layout": {
+                "x": 66,
+                "y": 57,
+                "width": 47,
+                "height": 15
+            }
+        },
+        {
+            "id": 18,
+            "definition": {
+                "type": "timeseries",
+                "requests": [
+                    {
+                        "q": "avg:airflow.dagrun.schedule_delay.avg{$host,$scope} by {dag_id}",
+                        "display_type": "line",
+                        "style": {
+                            "palette": "dog_classic",
+                            "line_type": "solid",
+                            "line_width": "normal"
+                        }
+                    }
+                ],
+                "custom_links": [],
+                "title": "DAG Run Failed Duration",
+                "title_size": "16",
+                "title_align": "left",
+                "show_legend": false,
+                "legend_size": "0"
+            },
+            "layout": {
+                "x": 66,
+                "y": 25,
+                "width": 47,
+                "height": 15
+            }
+        },
+        {
+            "id": 19,
+            "definition": {
+                "type": "timeseries",
+                "requests": [
+                    {
+                        "q": "avg:airflow.dag.loading_duration.avg{$host,$scope} by {dag_file}",
+                        "display_type": "area",
+                        "style": {
+                            "palette": "dog_classic",
+                            "line_type": "solid",
+                            "line_width": "normal"
+                        }
+                    }
+                ],
+                "custom_links": [],
+                "title": "DAG Loading Duration",
+                "title_size": "16",
+                "title_align": "left",
+                "show_legend": false,
+                "legend_size": "0"
+            },
+            "layout": {
+                "x": 114,
+                "y": 9,
+                "width": 47,
+                "height": 15
+            }
+        },
+        {
+            "id": 20,
+            "definition": {
+                "type": "timeseries",
+                "requests": [
+                    {
+                        "q": "avg:airflow.ti_failures{$host,$scope}.as_count(), avg:airflow.ti_successes{$host,$scope}.as_count()",
+                        "display_type": "bars",
+                        "style": {
+                            "palette": "dog_classic",
+                            "line_type": "solid",
+                            "line_width": "normal"
+                        }
+                    }
+                ],
+                "custom_links": [],
+                "title": "Task Instances Successes & Failures",
+                "title_size": "16",
+                "title_align": "left",
+                "show_legend": false,
+                "legend_size": "0"
+            },
+            "layout": {
+                "x": 18,
+                "y": 9,
+                "width": 47,
+                "height": 15
+            }
+        },
+        {
+            "id": 21,
+            "definition": {
+                "type": "timeseries",
+                "requests": [
+                    {
+                        "q": "avg:airflow.pool.open_slots{$host,$scope}, avg:airflow.pool.used_slots{$host,$scope}, avg:airflow.pool.starving_tasks{$host,$scope}",
+                        "display_type": "line",
+                        "style": {
+                            "palette": "dog_classic",
+                            "line_type": "solid",
+                            "line_width": "normal"
+                        }
+                    }
+                ],
+                "custom_links": [],
+                "title": "Pools Open/Used/Starving",
+                "title_size": "16",
+                "title_align": "left",
+                "show_legend": false,
+                "legend_size": "0"
+            },
+            "layout": {
+                "x": 162,
+                "y": 65,
+                "width": 47,
+                "height": 15
+            }
+        },
+        {
+            "id": 22,
+            "definition": {
+                "type": "note",
+                "content": "Tasks",
+                "background_color": "gray",
+                "font_size": "24",
+                "text_align": "center",
+                "show_tick": true,
+                "tick_pos": "50%",
+                "tick_edge": "bottom"
+            },
+            "layout": {
+                "x": 18,
+                "y": 1,
+                "width": 47,
+                "height": 7
+            }
+        }
+    ],
+    "template_variables": [
+        {
+            "name": "scope",
+            "default": "*",
+            "prefix": null
+        },
+        {
+            "name": "host",
+            "default": "*",
+            "prefix": "host"
+        }
+    ],
+    "layout_type": "free",
+    "is_read_only": true,
+    "notify_list": []
+
+}

@@ -1,0 +1,71 @@
+{
+  "manifest_version": "2.0.0",
+  "app_uuid": "9497c2d8-63cb-4d90-b73c-f32065349fe1",
+  "app_id": "tomcat",
+  "display_on_public_website": true,
+  "tile": {
+    "overview": "README.md#Overview",
+    "configuration": "README.md#Setup",
+    "support": "README.md#Support",
+    "changelog": "CHANGELOG.md",
+    "description": "Track requests per second, bytes served, cache hits, servlet metrics, and more.",
+    "title": "Tomcat",
+    "media": [],
+    "classifier_tags": [
+      "Category::Caching",
+      "Category::Log Collection",
+      "Supported OS::Linux",
+      "Supported OS::Windows",
+      "Supported OS::macOS"
+    ]
+  },
+  "author": {
+    "support_email": "help@khulnasoft.com",
+    "name": "Datadog",
+    "homepage": "https://www.khulnasoft.com",
+    "sales_email": "info@khulnasoft.com"
+  },
+  "oauth": {},
+  "assets": {
+    "integration": {
+      "source_type_name": "Tomcat",
+      "configuration": {
+        "spec": "assets/configuration/spec.yaml"
+      },
+      "events": {
+        "creates_events": false
+      },
+      "metrics": {
+        "prefix": "tomcat.",
+        "check": "tomcat.threads.count",
+        "metadata_path": "metadata.csv"
+      },
+      "service_checks": {
+        "metadata_path": "assets/service_checks.json"
+      },
+      "process_signatures": [
+        "java tomcat"
+      ],
+      "source_type_id": 43,
+      "auto_install": true
+    },
+    "dashboards": {
+      "tomcat--overview": "assets/dashboards/overview.json",
+      "tomcat": "assets/dashboards/metrics.json"
+    },
+    "monitors": {
+      "[Tomcat] Anomalous request rate for host {{host.name}}": "assets/monitors/req_count.json",
+      "[Tomcat] Anomalous max processing time for host {{host.name}}": "assets/monitors/max_proc_time.json",
+      "[Tomcat] Anomalous average processing time for host {{host.name}}": "assets/monitors/processing_time.json",
+      "[Tomcat] % of thread count managed by the thread pool is high for host: {{host.name}}": "assets/monitors/thread_count_max.json",
+      "[Tomcat] % of busy threads is high for host: {{host.name}}": "assets/monitors/thread_busy.json",
+      "[Tomcat] Increase of the errors/second rate for host: {{host.name}}": "assets/monitors/error_count.json"
+    },
+    "saved_views": {
+      "tomcat_processes": "assets/saved_views/tomcat_processes.json"
+    },
+    "logs": {
+      "source": "tomcat"
+    }
+  }
+}

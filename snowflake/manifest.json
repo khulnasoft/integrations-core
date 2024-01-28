@@ -1,0 +1,58 @@
+{
+  "manifest_version": "2.0.0",
+  "app_uuid": "23e9084d-5801-4a71-88fe-f62b7c1bb289",
+  "app_id": "snowflake",
+  "display_on_public_website": true,
+  "tile": {
+    "overview": "README.md#Overview",
+    "configuration": "README.md#Setup",
+    "support": "README.md#Support",
+    "changelog": "CHANGELOG.md",
+    "description": "Monitor key metrics for credit usage, storage, query, user history and more.",
+    "title": "Snowflake",
+    "media": [],
+    "classifier_tags": [
+      "Supported OS::Linux",
+      "Supported OS::macOS",
+      "Supported OS::Windows",
+      "Category::Cloud",
+      "Category::Data Stores",
+      "Category::Cost Management"
+    ]
+  },
+  "author": {
+    "support_email": "help@khulnasoft.com",
+    "name": "Datadog",
+    "homepage": "https://www.khulnasoft.com",
+    "sales_email": "info@khulnasoft.com"
+  },
+  "oauth": {},
+  "assets": {
+    "integration": {
+      "source_type_name": "Snowflake",
+      "configuration": {
+        "spec": "assets/configuration/spec.yaml"
+      },
+      "events": {
+        "creates_events": false
+      },
+      "metrics": {
+        "prefix": "snowflake.",
+        "check": "snowflake.storage.storage_bytes.total",
+        "metadata_path": "metadata.csv"
+      },
+      "service_checks": {
+        "metadata_path": "assets/service_checks.json"
+      },
+      "source_type_id": 10123,
+      "auto_install": true
+    },
+    "dashboards": {
+      "Snowflake": "assets/dashboards/snowflake.json",
+      "Snowflake Organization Metrics": "assets/dashboards/organization_metrics.json"
+    },
+    "monitors": {
+      "Snowflake failed logins": "assets/monitors/snowflake_failed_logins.json"
+    }
+  }
+}

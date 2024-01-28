@@ -1,0 +1,64 @@
+{
+  "manifest_version": "2.0.0",
+  "app_uuid": "44e491e1-f7c3-447a-b597-e740196479e0",
+  "app_id": "powerdns",
+  "display_on_public_website": true,
+  "tile": {
+    "overview": "README.md#Overview",
+    "configuration": "README.md#Setup",
+    "support": "README.md#Support",
+    "changelog": "CHANGELOG.md",
+    "description": "Keep an eye on strange traffic to and from your PowerDNS recursors.",
+    "title": "Power DNS Recursor",
+    "media": [],
+    "classifier_tags": [
+      "Category::Caching",
+      "Category::Log Collection",
+      "Category::Network",
+      "Supported OS::Linux",
+      "Supported OS::Windows",
+      "Supported OS::macOS"
+    ]
+  },
+  "author": {
+    "support_email": "help@khulnasoft.com",
+    "name": "Datadog",
+    "homepage": "https://www.khulnasoft.com",
+    "sales_email": "info@khulnasoft.com"
+  },
+  "oauth": {},
+  "assets": {
+    "integration": {
+      "source_type_name": "PowerDNS Recursor",
+      "configuration": {
+        "spec": "assets/configuration/spec.yaml"
+      },
+      "events": {
+        "creates_events": false
+      },
+      "metrics": {
+        "prefix": "powerdns.",
+        "check": "powerdns.recursor.questions",
+        "metadata_path": "metadata.csv"
+      },
+      "service_checks": {
+        "metadata_path": "assets/service_checks.json"
+      },
+      "process_signatures": [
+        "pdns_server",
+        "systemctl start pdns@"
+      ],
+      "source_type_id": 144,
+      "auto_install": true
+    },
+    "dashboards": {
+      "powerdns": "assets/dashboards/powerdns_dashboard.json"
+    },
+    "saved_views": {
+      "powerdns_processes": "assets/saved_views/powerdns_processes.json"
+    },
+    "logs": {
+      "source": "powerdns"
+    }
+  }
+}

@@ -1,0 +1,74 @@
+[
+    {
+        "agent_version": "5.25.0",
+        "integration": "Vault",
+        "groups": [
+            "host"
+        ],
+        "check": "vault.can_connect",
+        "statuses": [
+            "ok",
+            "critical"
+        ],
+        "name": "Can Connect",
+        "description": "Returns Critical if the Agent cannot connect to the Vault endpoint, OK otherwise."
+    },
+    {
+        "agent_version": "5.25.0",
+        "integration": "Vault",
+        "groups": [
+            "host"
+        ],
+        "check": "vault.unsealed",
+        "statuses": [
+            "ok",
+            "critical"
+        ],
+        "name": "Unsealed OK",
+        "description": "Returns Critical if the vault is sealed, OK otherwise."
+    },
+    {
+        "agent_version": "5.25.0",
+        "integration": "Vault",
+        "groups": [
+            "host"
+        ],
+        "check": "vault.initialized",
+        "statuses": [
+            "ok",
+            "critical"
+        ],
+        "name": "Initialized OK",
+        "description": "Returns Critical if the vault isn't initialized, OK otherwise."
+    },
+    {
+        "agent_version": "7.17.0",
+        "integration": "Vault",
+        "check": "vault.prometheus.health",
+        "statuses": [
+            "ok",
+            "critical"
+        ],
+        "groups": [
+            "host",
+            "endpoint"
+        ],
+        "name": "Vault prometheus health",
+        "description": "Returns `CRITICAL` if the check cannot access the Metrics endpoint. Returns `OK` otherwise. This service check is only available with the legacy mode (`use_openmetrics: false`)."
+    },
+    {
+        "agent_version": "7.35.0",
+        "integration": "Vault",
+        "statuses": [
+            "ok",
+            "critical"
+        ],
+        "check": "vault.openmetrics.health",
+        "groups": [
+            "host",
+            "endpoint"
+        ],
+        "name": "OpenMetrics endpoint health",
+        "description": "Returns `CRITICAL` if the Agent is unable to connect to the OpenMetrics endpoint, otherwise returns `OK`. This service check is only available with the latest mode (`use_openmetrics: true`)."
+    }
+]

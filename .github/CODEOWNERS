@@ -1,0 +1,227 @@
+# See https://help.github.com/articles/about-codeowners/ for syntax
+# Rules are matched bottom-to-top, so one team can own subdirectories
+# and another the rest of the directory.
+
+# All your base
+*                   @KhulnaSoft/agent-integrations
+
+# Documentation
+/docs/                @KhulnaSoft/documentation @KhulnaSoft/agent-integrations
+*.md                  @KhulnaSoft/documentation @KhulnaSoft/agent-integrations
+conf.yaml.example     @KhulnaSoft/documentation @KhulnaSoft/agent-integrations
+conf.yaml.default     @KhulnaSoft/documentation @KhulnaSoft/agent-integrations @KhulnaSoft/agent-metrics-logs
+auto_conf.yaml        @KhulnaSoft/documentation @KhulnaSoft/agent-integrations @KhulnaSoft/container-integrations
+manifest.json         @KhulnaSoft/documentation @KhulnaSoft/agent-integrations
+**/assets             @KhulnaSoft/documentation @KhulnaSoft/agent-integrations
+
+# Checks base
+/khulnasoft_checks_base/                                          @KhulnaSoft/agent-integrations
+/khulnasoft_checks_base/khulnasoft_checks/base/checks/openmetrics/   @KhulnaSoft/agent-integrations @KhulnaSoft/container-integrations
+/khulnasoft_checks_base/khulnasoft_checks/base/checks/kube_leader/   @KhulnaSoft/agent-integrations @KhulnaSoft/container-integrations
+
+# Container monitoring
+/cert_manager/                            @KhulnaSoft/container-integrations @KhulnaSoft/agent-integrations
+/cert_manager/*.md                        @KhulnaSoft/container-integrations @KhulnaSoft/agent-integrations @KhulnaSoft/documentation
+/cert_manager/manifest.json               @KhulnaSoft/container-integrations @KhulnaSoft/agent-integrations @KhulnaSoft/documentation
+/container/                               @KhulnaSoft/container-integrations @KhulnaSoft/agent-integrations
+/container/*.md                           @KhulnaSoft/container-integrations @KhulnaSoft/agent-integrations @KhulnaSoft/documentation
+/container/manifest.json                  @KhulnaSoft/container-integrations @KhulnaSoft/agent-integrations @KhulnaSoft/documentation
+/containerd/                              @KhulnaSoft/container-integrations @KhulnaSoft/agent-integrations
+/containerd/*.md                          @KhulnaSoft/container-integrations @KhulnaSoft/agent-integrations @KhulnaSoft/documentation
+/containerd/manifest.json                 @KhulnaSoft/container-integrations @KhulnaSoft/agent-integrations @KhulnaSoft/documentation
+/cri/                                     @KhulnaSoft/container-integrations @KhulnaSoft/agent-integrations
+/cri/*.md                                 @KhulnaSoft/container-integrations @KhulnaSoft/agent-integrations @KhulnaSoft/documentation
+/cri/manifest.json                        @KhulnaSoft/container-integrations @KhulnaSoft/agent-integrations @KhulnaSoft/documentation
+/crio/                                    @KhulnaSoft/container-integrations @KhulnaSoft/agent-integrations
+/crio/*.md                                @KhulnaSoft/container-integrations @KhulnaSoft/agent-integrations @KhulnaSoft/documentation
+/crio/manifest.json                       @KhulnaSoft/container-integrations @KhulnaSoft/agent-integrations @KhulnaSoft/documentation
+/khulnasoft_cluster_agent/                   @KhulnaSoft/container-integrations @KhulnaSoft/agent-integrations
+/khulnasoft_cluster_agent/*.md               @KhulnaSoft/container-integrations @KhulnaSoft/agent-integrations @KhulnaSoft/documentation
+/khulnasoft_operator/                        @KhulnaSoft/container-ecosystems @KhulnaSoft/agent-integrations
+/khulnasoft_operator/*.md                    @KhulnaSoft/container-ecosystems @KhulnaSoft/agent-integrations @KhulnaSoft/documentation
+/docker_daemon/                           @KhulnaSoft/container-integrations @KhulnaSoft/agent-integrations
+/docker_daemon/*.md                       @KhulnaSoft/container-integrations @KhulnaSoft/agent-integrations @KhulnaSoft/documentation
+/docker_daemon/metadata.csv               @KhulnaSoft/container-integrations @KhulnaSoft/agent-integrations @KhulnaSoft/documentation
+/docker_daemon/manifest.json              @KhulnaSoft/container-integrations @KhulnaSoft/agent-integrations @KhulnaSoft/documentation
+/ecs_fargate/                             @KhulnaSoft/container-integrations @KhulnaSoft/agent-integrations
+/ecs_fargate/*.md                         @KhulnaSoft/container-integrations @KhulnaSoft/agent-integrations @KhulnaSoft/documentation
+/ecs_fargate/manifest.json                @KhulnaSoft/container-integrations @KhulnaSoft/agent-integrations @KhulnaSoft/documentation
+/eks_fargate/                             @KhulnaSoft/container-integrations @KhulnaSoft/agent-integrations
+/eks_fargate/*.md                         @KhulnaSoft/container-integrations @KhulnaSoft/agent-integrations @KhulnaSoft/documentation
+/eks_fargate/manifest.json                @KhulnaSoft/container-integrations @KhulnaSoft/agent-integrations @KhulnaSoft/documentation
+/helm/                                    @KhulnaSoft/container-integrations @KhulnaSoft/agent-integrations
+/helm/*.md                                @KhulnaSoft/container-integrations @KhulnaSoft/agent-integrations @KhulnaSoft/documentation
+/helm/manifest.json                       @KhulnaSoft/container-integrations @KhulnaSoft/agent-integrations @KhulnaSoft/documentation
+/kube_apiserver_metrics/                  @KhulnaSoft/container-integrations @KhulnaSoft/agent-integrations
+/kube_apiserver_metrics/*.md              @KhulnaSoft/container-integrations @KhulnaSoft/agent-integrations @KhulnaSoft/documentation
+/kube_apiserver_metrics/manifest.json     @KhulnaSoft/container-integrations @KhulnaSoft/agent-integrations @KhulnaSoft/documentation
+/kube_controller_manager/                 @KhulnaSoft/container-integrations @KhulnaSoft/agent-integrations
+/kube_controller_manager/*.md             @KhulnaSoft/container-integrations @KhulnaSoft/agent-integrations @KhulnaSoft/documentation
+/kube_controller_manager/manifest.json    @KhulnaSoft/container-integrations @KhulnaSoft/agent-integrations @KhulnaSoft/documentation
+/kube_dns/                                @KhulnaSoft/container-integrations @KhulnaSoft/agent-integrations
+/kube_dns/*.md                            @KhulnaSoft/container-integrations @KhulnaSoft/agent-integrations @KhulnaSoft/documentation
+/kube_dns/manifest.json                   @KhulnaSoft/container-integrations @KhulnaSoft/agent-integrations @KhulnaSoft/documentation
+/kube_metrics_server/                     @KhulnaSoft/container-integrations @KhulnaSoft/agent-integrations
+/kube_metrics_server/*.md                 @KhulnaSoft/container-integrations @KhulnaSoft/agent-integrations @KhulnaSoft/documentation
+/kube_metrics_server/manifest.json        @KhulnaSoft/container-integrations @KhulnaSoft/agent-integrations @KhulnaSoft/documentation
+/kube_proxy/                              @KhulnaSoft/container-integrations @KhulnaSoft/agent-integrations
+/kube_proxy/*.md                          @KhulnaSoft/container-integrations @KhulnaSoft/agent-integrations @KhulnaSoft/documentation
+/kube_proxy/manifest.json                 @KhulnaSoft/container-integrations @KhulnaSoft/agent-integrations @KhulnaSoft/documentation
+/kube_scheduler/                          @KhulnaSoft/container-integrations @KhulnaSoft/agent-integrations
+/kube_scheduler/*.md                      @KhulnaSoft/container-integrations @KhulnaSoft/agent-integrations @KhulnaSoft/documentation
+/kube_scheduler/manifest.json             @KhulnaSoft/container-integrations @KhulnaSoft/agent-integrations @KhulnaSoft/documentation
+/kubelet/                                 @KhulnaSoft/container-integrations @KhulnaSoft/agent-integrations
+/kubelet/*.md                             @KhulnaSoft/container-integrations @KhulnaSoft/agent-integrations @KhulnaSoft/documentation
+/kubelet/manifest.json                    @KhulnaSoft/container-integrations @KhulnaSoft/agent-integrations @KhulnaSoft/documentation
+/kubernetes/                              @KhulnaSoft/container-integrations @KhulnaSoft/agent-integrations
+/kubernetes/*.md                          @KhulnaSoft/container-integrations @KhulnaSoft/agent-integrations @KhulnaSoft/documentation
+/kubernetes/manifest.json                 @KhulnaSoft/container-integrations @KhulnaSoft/agent-integrations @KhulnaSoft/documentation
+/kubernetes_state/                        @KhulnaSoft/container-integrations @KhulnaSoft/agent-integrations
+/kubernetes_state/*.md                    @KhulnaSoft/container-integrations @KhulnaSoft/agent-integrations @KhulnaSoft/documentation
+/kubernetes_state/manifest.json           @KhulnaSoft/container-integrations @KhulnaSoft/agent-integrations @KhulnaSoft/documentation
+/kubernetes_state_core/                   @KhulnaSoft/container-integrations @KhulnaSoft/agent-integrations
+/kubernetes_state_core/*.md               @KhulnaSoft/container-integrations @KhulnaSoft/agent-integrations @KhulnaSoft/documentation
+/kubernetes_state_core/manifest.json      @KhulnaSoft/container-integrations @KhulnaSoft/agent-integrations @KhulnaSoft/documentation
+/nginx_ingress_controller/                @KhulnaSoft/container-integrations @KhulnaSoft/agent-integrations
+/nginx_ingress_controller/*.md            @KhulnaSoft/container-integrations @KhulnaSoft/agent-integrations @KhulnaSoft/documentation
+/nginx_ingress_controller/manifest.json   @KhulnaSoft/container-integrations @KhulnaSoft/agent-integrations @KhulnaSoft/documentation
+/oom_kill/                                @KhulnaSoft/container-integrations @KhulnaSoft/agent-integrations
+/oom_kill/*.md                            @KhulnaSoft/container-integrations @KhulnaSoft/agent-integrations @KhulnaSoft/documentation
+/oom_kill/manifest.json                   @KhulnaSoft/container-integrations @KhulnaSoft/agent-integrations @KhulnaSoft/documentation
+/openmetrics/                             @KhulnaSoft/container-integrations @KhulnaSoft/agent-integrations
+/openmetrics/*.md                         @KhulnaSoft/container-integrations @KhulnaSoft/agent-integrations @KhulnaSoft/documentation
+/openmetrics/manifest.json                @KhulnaSoft/container-integrations @KhulnaSoft/agent-integrations @KhulnaSoft/documentation
+/podman/                                  @KhulnaSoft/container-integrations @KhulnaSoft/agent-integrations
+/podman/*.md                              @KhulnaSoft/container-integrations @KhulnaSoft/agent-integrations @KhulnaSoft/documentation
+/podman/manifest.json                     @KhulnaSoft/container-integrations @KhulnaSoft/agent-integrations @KhulnaSoft/documentation
+/tcp_queue_length/                        @KhulnaSoft/container-integrations @KhulnaSoft/agent-integrations
+/tcp_queue_length/*.md                    @KhulnaSoft/container-integrations @KhulnaSoft/agent-integrations @KhulnaSoft/documentation
+/tcp_queue_length/manifest.json           @KhulnaSoft/container-integrations @KhulnaSoft/agent-integrations @KhulnaSoft/documentation
+
+# NDM
+/snmp/                                                             @KhulnaSoft/network-device-monitoring @KhulnaSoft/agent-integrations
+/snmp/*.md                                                         @KhulnaSoft/network-device-monitoring @KhulnaSoft/agent-integrations @KhulnaSoft/documentation
+/snmp_*/                                                           @KhulnaSoft/network-device-monitoring @KhulnaSoft/agent-integrations
+/snmp_*/*.md                                                       @KhulnaSoft/network-device-monitoring @KhulnaSoft/agent-integrations @KhulnaSoft/documentation
+/khulnasoft_checks_dev/khulnasoft_checks/dev/tooling/commands/meta/snmp/ @KhulnaSoft/network-device-monitoring @KhulnaSoft/agent-integrations
+/docs/developer/tutorials/snmp/                                    @KhulnaSoft/network-device-monitoring @KhulnaSoft/agent-integrations @KhulnaSoft/documentation
+
+# Platform Integrations
+/citrix_hypervisor/                     @KhulnaSoft/platform-integrations @KhulnaSoft/agent-integrations
+/citrix_hypervisor/manifest.json        @KhulnaSoft/platform-integrations @KhulnaSoft/agent-integrations @KhulnaSoft/documentation
+/citrix_hypervisor/*.md                 @KhulnaSoft/platform-integrations @KhulnaSoft/agent-integrations @KhulnaSoft/documentation
+/cloudera/                              @KhulnaSoft/platform-integrations @KhulnaSoft/agent-integrations
+/cloudera/manifest.json                 @KhulnaSoft/platform-integrations @KhulnaSoft/agent-integrations @KhulnaSoft/documentation
+/cloudera/*.md                          @KhulnaSoft/platform-integrations @KhulnaSoft/agent-integrations @KhulnaSoft/documentation
+/cloud_foundry_api/                     @KhulnaSoft/platform-integrations @KhulnaSoft/agent-integrations
+/cloud_foundry_api/manifest.json        @KhulnaSoft/platform-integrations @KhulnaSoft/agent-integrations @KhulnaSoft/documentation
+/cloud_foundry_api/*.md                 @KhulnaSoft/platform-integrations @KhulnaSoft/agent-integrations @KhulnaSoft/documentation
+/openstack/                             @KhulnaSoft/platform-integrations @KhulnaSoft/agent-integrations
+/openstack/*.md                         @KhulnaSoft/platform-integrations @KhulnaSoft/agent-integrations @KhulnaSoft/documentation
+/openstack/manifest.json                @KhulnaSoft/platform-integrations @KhulnaSoft/agent-integrations @KhulnaSoft/documentation
+/openstack_controller/                  @KhulnaSoft/platform-integrations @KhulnaSoft/agent-integrations
+/openstack_controller/manifest.json     @KhulnaSoft/platform-integrations @KhulnaSoft/agent-integrations @KhulnaSoft/documentation
+/openstack_controller/*.md              @KhulnaSoft/platform-integrations @KhulnaSoft/agent-integrations @KhulnaSoft/documentation
+/vsphere/                               @KhulnaSoft/platform-integrations @KhulnaSoft/agent-integrations
+/vsphere/manifest.json                  @KhulnaSoft/platform-integrations @KhulnaSoft/agent-integrations @KhulnaSoft/documentation
+/vsphere/*.md                           @KhulnaSoft/platform-integrations @KhulnaSoft/agent-integrations @KhulnaSoft/documentation
+
+# System checks
+/disk/                                    @KhulnaSoft/agent-integrations @KhulnaSoft/windows-agent
+/disk/*.md                                @KhulnaSoft/agent-integrations @KhulnaSoft/windows-agent @KhulnaSoft/documentation
+/disk/manifest.json                       @KhulnaSoft/agent-integrations @KhulnaSoft/windows-agent @KhulnaSoft/documentation
+/network/                                 @KhulnaSoft/agent-integrations @KhulnaSoft/windows-agent
+/network/*.md                             @KhulnaSoft/agent-integrations @KhulnaSoft/windows-agent @KhulnaSoft/documentation
+/network/manifest.json                    @KhulnaSoft/agent-integrations @KhulnaSoft/windows-agent @KhulnaSoft/documentation
+/process/                                 @KhulnaSoft/agent-integrations @KhulnaSoft/windows-agent
+/process/*.md                             @KhulnaSoft/agent-integrations @KhulnaSoft/windows-agent @KhulnaSoft/documentation
+/process/manifest.json                    @KhulnaSoft/agent-integrations @KhulnaSoft/windows-agent @KhulnaSoft/documentation
+
+# OpenTelemetry
+/otel/                                    @KhulnaSoft/opentelemetry @KhulnaSoft/agent-integrations
+/otel/*.md                                @KhulnaSoft/opentelemetry @KhulnaSoft/agent-integrations @KhulnaSoft/documentation
+/otel/manifest.json                       @KhulnaSoft/opentelemetry @KhulnaSoft/agent-integrations @KhulnaSoft/documentation
+
+# Agent Platform
+/nvidia_jetson/                           @KhulnaSoft/agent-platform @KhulnaSoft/agent-integrations
+/nvidia_jetson/*.md                       @KhulnaSoft/agent-platform @KhulnaSoft/agent-integrations @KhulnaSoft/documentation
+/nvidia_jetson/manifest.json              @KhulnaSoft/agent-platform @KhulnaSoft/agent-integrations @KhulnaSoft/documentation
+
+# Database monitoring
+**/base/utils/db/utils.py                           @KhulnaSoft/agent-integrations @KhulnaSoft/database-monitoring-agent
+khulnasoft_checks_base/tests/**/test_util.py           @KhulnaSoft/agent-integrations @KhulnaSoft/database-monitoring-agent
+**/base/utils/db/sql.py                             @KhulnaSoft/database-monitoring-agent @KhulnaSoft/agent-integrations
+khulnasoft_checks_base/tests/**/test_db_sql.py         @KhulnaSoft/database-monitoring-agent @KhulnaSoft/agent-integrations
+**/base/utils/db/statement_metrics.py               @KhulnaSoft/database-monitoring-agent @KhulnaSoft/agent-integrations
+khulnasoft_checks_base/tests/**/test_db_statements.py  @KhulnaSoft/database-monitoring-agent @KhulnaSoft/agent-integrations
+/postgres/                                          @KhulnaSoft/database-monitoring-agent @KhulnaSoft/agent-integrations
+/postgres/*.md                                      @KhulnaSoft/database-monitoring @KhulnaSoft/agent-integrations @KhulnaSoft/documentation
+/postgres/manifest.json                             @KhulnaSoft/database-monitoring @KhulnaSoft/agent-integrations @KhulnaSoft/documentation
+/mysql/                                             @KhulnaSoft/database-monitoring-agent @KhulnaSoft/agent-integrations
+/mysql/*.md                                         @KhulnaSoft/database-monitoring @KhulnaSoft/agent-integrations @KhulnaSoft/documentation
+/mysql/manifest.json                                @KhulnaSoft/database-monitoring @KhulnaSoft/agent-integrations @KhulnaSoft/documentation
+/sqlserver/                                         @KhulnaSoft/database-monitoring-agent @KhulnaSoft/agent-integrations
+/sqlserver/*.md                                     @KhulnaSoft/database-monitoring @KhulnaSoft/agent-integrations @KhulnaSoft/documentation
+/sqlserver/manifest.json                            @KhulnaSoft/database-monitoring @KhulnaSoft/agent-integrations @KhulnaSoft/documentation
+/oracle/                                            @KhulnaSoft/database-monitoring-agent @KhulnaSoft/agent-integrations
+/oracle/*.md                                        @KhulnaSoft/database-monitoring @KhulnaSoft/agent-integrations @KhulnaSoft/documentation
+/oracle/manifest.json                               @KhulnaSoft/database-monitoring @KhulnaSoft/agent-integrations @KhulnaSoft/documentation
+
+# APM Integrations
+/langchain/         @KhulnaSoft/ml-observability @KhulnaSoft/agent-integrations @KhulnaSoft/documentation
+/openai/            @KhulnaSoft/ml-observability @KhulnaSoft/agent-integrations @KhulnaSoft/documentation
+
+
+# Windows agent
+khulnasoft_checks_base/khulnasoft_checks/base/checks/win/                  @KhulnaSoft/windows-agent @KhulnaSoft/agent-integrations
+khulnasoft_checks_base/khulnasoft_checks/base/checks/windows/              @KhulnaSoft/windows-agent @KhulnaSoft/agent-integrations
+/active_directory/                                                   @KhulnaSoft/windows-agent @KhulnaSoft/agent-integrations
+/active_directory/*.md                                               @KhulnaSoft/windows-agent @KhulnaSoft/agent-integrations @KhulnaSoft/documentation
+/active_directory/manifest.json                                      @KhulnaSoft/windows-agent @KhulnaSoft/agent-integrations @KhulnaSoft/documentation
+/aspdotnet/                                                          @KhulnaSoft/windows-agent @KhulnaSoft/agent-integrations
+/aspdotnet/*.md                                                      @KhulnaSoft/windows-agent @KhulnaSoft/agent-integrations @KhulnaSoft/documentation
+/aspdotnet/manifest.json                                             @KhulnaSoft/windows-agent @KhulnaSoft/agent-integrations @KhulnaSoft/documentation
+/dotnetclr/                                                          @KhulnaSoft/windows-agent @KhulnaSoft/agent-integrations
+/dotnetclr/*.md                                                      @KhulnaSoft/windows-agent @KhulnaSoft/agent-integrations @KhulnaSoft/documentation
+/dotnetclr/manifest.json                                             @KhulnaSoft/windows-agent @KhulnaSoft/agent-integrations @KhulnaSoft/documentation
+/exchange_server/                                                    @KhulnaSoft/windows-agent @KhulnaSoft/agent-integrations
+/exchange_server/*.md                                                @KhulnaSoft/windows-agent @KhulnaSoft/agent-integrations @KhulnaSoft/documentation
+/exchange_server/manifest.json                                       @KhulnaSoft/windows-agent @KhulnaSoft/agent-integrations @KhulnaSoft/documentation
+/hyperv/                                                             @KhulnaSoft/windows-agent @KhulnaSoft/agent-integrations
+/hyperv/*.md                                                         @KhulnaSoft/windows-agent @KhulnaSoft/agent-integrations @KhulnaSoft/documentation
+/hyperv/manifest.json                                                @KhulnaSoft/windows-agent @KhulnaSoft/agent-integrations @KhulnaSoft/documentation
+/iis/                                                                @KhulnaSoft/windows-agent @KhulnaSoft/agent-integrations
+/iis/*.md                                                            @KhulnaSoft/windows-agent @KhulnaSoft/agent-integrations @KhulnaSoft/documentation
+/iis/manifest.json                                                   @KhulnaSoft/windows-agent @KhulnaSoft/agent-integrations @KhulnaSoft/documentation
+/pdh_check/                                                          @KhulnaSoft/windows-agent @KhulnaSoft/agent-integrations
+/pdh_check/*.md                                                      @KhulnaSoft/windows-agent @KhulnaSoft/agent-integrations @KhulnaSoft/documentation
+/pdh_check/manifest.json                                             @KhulnaSoft/windows-agent @KhulnaSoft/agent-integrations @KhulnaSoft/documentation
+/win32_event_log/                                                    @KhulnaSoft/windows-agent @KhulnaSoft/agent-integrations
+/win32_event_log/*.md                                                @KhulnaSoft/windows-agent @KhulnaSoft/agent-integrations @KhulnaSoft/documentation
+/win32_event_log/manifest.json                                       @KhulnaSoft/windows-agent @KhulnaSoft/agent-integrations @KhulnaSoft/documentation
+/windows_performance_counters/                                       @KhulnaSoft/windows-agent @KhulnaSoft/agent-integrations
+/windows_performance_counters/*.md                                   @KhulnaSoft/windows-agent @KhulnaSoft/agent-integrations @KhulnaSoft/documentation
+/windows_performance_counters/manifest.json                          @KhulnaSoft/windows-agent @KhulnaSoft/agent-integrations @KhulnaSoft/documentation
+/windows_service/                                                    @KhulnaSoft/windows-agent @KhulnaSoft/agent-integrations
+/windows_service/*.md                                                @KhulnaSoft/windows-agent @KhulnaSoft/agent-integrations @KhulnaSoft/documentation
+/windows_service/manifest.json                                       @KhulnaSoft/windows-agent @KhulnaSoft/agent-integrations @KhulnaSoft/documentation
+/wmi_check/                                                          @KhulnaSoft/windows-agent @KhulnaSoft/agent-integrations
+/wmi_check/*.md                                                      @KhulnaSoft/windows-agent @KhulnaSoft/agent-integrations @KhulnaSoft/documentation
+/wmi_check/manifest.json                                             @KhulnaSoft/windows-agent @KhulnaSoft/agent-integrations @KhulnaSoft/documentation
+
+# SaaS Integrations
+/cicso_umbrella_dns/                                                 @KhulnaSoft/saas-integrations
+/cicso_umbrella_dns/*.md                                             @KhulnaSoft/saas-integrations @KhulnaSoft/documentation      
+/cicso_umbrella_dns/manifest.json                                    @KhulnaSoft/saas-integrations @KhulnaSoft/documentation
+
+# To keep Security up-to-date with changes to the signing tool.
+/khulnasoft_checks_dev/khulnasoft_checks/dev/tooling/signing.py             @KhulnaSoft/software-integrity-and-trust @KhulnaSoft/agent-integrations @trishankatdatadog
+# As well as the secure downloader.
+/khulnasoft_checks_downloader/                                           @KhulnaSoft/software-integrity-and-trust @KhulnaSoft/agent-integrations @trishankatdatadog
+docs/developer/process/integration-release.md                         @KhulnaSoft/software-integrity-and-trust @KhulnaSoft/agent-integrations @trishankatdatadog
+# As well as the pipelines.
+/.github/workflows/                                                   @KhulnaSoft/agent-integrations
+/.gitlab-ci.yml                                                       @KhulnaSoft/agent-integrations @trishankatdatadog
+
+# Dev container
+/.devcontainer/                                                        @KhulnaSoft/agent-integrations @KhulnaSoft/container-integrations

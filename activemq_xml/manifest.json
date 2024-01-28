@@ -1,0 +1,53 @@
+{
+  "manifest_version": "2.0.0",
+  "app_uuid": "def4c078-7aa6-45ab-8429-b594c98f3d48",
+  "app_id": "activemq-xml",
+  "display_on_public_website": true,
+  "tile": {
+    "overview": "README.md#Overview",
+    "configuration": "README.md#Setup",
+    "support": "README.md#Support",
+    "changelog": "CHANGELOG.md",
+    "description": "Collect metrics for brokers and queues, producers and consumers, and more.",
+    "title": "ActiveMQ XML",
+    "media": [],
+    "classifier_tags": [
+      "Category::Log Collection",
+      "Category::Message Queues",
+      "Supported OS::Linux",
+      "Supported OS::Windows",
+      "Supported OS::macOS"
+    ]
+  },
+  "author": {
+    "support_email": "help@khulnasoft.com",
+    "name": "Datadog",
+    "homepage": "https://www.khulnasoft.com",
+    "sales_email": "info@khulnasoft.com"
+  },
+  "oauth": {},
+  "assets": {
+    "integration": {
+      "source_type_name": "ActiveMQ XML",
+      "configuration": {
+        "spec": "assets/configuration/spec.yaml"
+      },
+      "events": {
+        "creates_events": false
+      },
+      "metrics": {
+        "prefix": "activemq.",
+        "check": "activemq.queue.count",
+        "metadata_path": "metadata.csv"
+      },
+      "service_checks": {
+        "metadata_path": "assets/service_checks.json"
+      },
+      "source_type_id": 10240,
+      "auto_install": true
+    },
+    "logs": {
+      "source": "activemq"
+    }
+  }
+}

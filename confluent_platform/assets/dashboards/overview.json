@@ -1,0 +1,929 @@
+{
+    "title": "Confluent Platform Overview",
+    "description": "The default Dashboard for monitoring Confluent Platform including:\n\n* Brokers,\n* Producers, and Consumers (Java-based)\n* Kafka Connect\n* Schema Registry\n* REST Proxy\n* KSQLDB",
+    "widgets": [
+        {
+            "id": 0,
+            "definition": {
+                "type": "image",
+                "url": "/static/images/logos/confluent-platform_small.svg",
+                "sizing": "zoom"
+            },
+            "layout": {
+                "x": 1,
+                "y": 1,
+                "width": 25,
+                "height": 6
+            }
+        },
+        {
+            "id": 1,
+            "definition": {
+                "type": "note",
+                "content": "Brokers",
+                "background_color": "gray",
+                "font_size": "16",
+                "text_align": "center",
+                "show_tick": true,
+                "tick_pos": "50%",
+                "tick_edge": "bottom"
+            },
+            "layout": {
+                "x": 27,
+                "y": 1,
+                "width": 67,
+                "height": 5
+            }
+        },
+        {
+            "id": 2,
+            "definition": {
+                "type": "timeseries",
+                "requests": [
+                    {
+                        "q": "sum:confluent.kafka.server.topic.bytes_in_per_sec.rate{*} by {instance}",
+                        "display_type": "area",
+                        "style": {
+                            "palette": "dog_classic",
+                            "line_type": "solid",
+                            "line_width": "normal"
+                        }
+                    }
+                ],
+                "custom_links": [],
+                "yaxis": {
+                    "label": "",
+                    "scale": "linear",
+                    "min": "auto",
+                    "max": "auto",
+                    "include_zero": true
+                },
+                "title": "Bytes In per Second by Broker",
+                "title_size": "16",
+                "title_align": "left",
+                "show_legend": false
+            },
+            "layout": {
+                "x": 27,
+                "y": 8,
+                "width": 33,
+                "height": 16
+            }
+        },
+        {
+            "id": 3,
+            "definition": {
+                "type": "timeseries",
+                "requests": [
+                    {
+                        "q": "sum:confluent.kafka.server.topic.bytes_out_per_sec.rate{*} by {instance}",
+                        "display_type": "area",
+                        "style": {
+                            "palette": "dog_classic",
+                            "line_type": "solid",
+                            "line_width": "normal"
+                        }
+                    }
+                ],
+                "custom_links": [],
+                "yaxis": {
+                    "label": "",
+                    "scale": "linear",
+                    "min": "auto",
+                    "max": "auto",
+                    "include_zero": true
+                },
+                "title": "Bytes Out per Second by Broker",
+                "title_size": "16",
+                "title_align": "left",
+                "show_legend": false
+            },
+            "layout": {
+                "x": 61,
+                "y": 8,
+                "width": 33,
+                "height": 16
+            }
+        },
+        {
+            "id": 4,
+            "definition": {
+                "type": "timeseries",
+                "requests": [
+                    {
+                        "q": "avg:confluent.kafka.network.request.total_time_ms.75percentile{request:fetchconsumer} by {instance}, avg:confluent.kafka.network.request.total_time_ms.95percentile{request:fetchconsumer} by {instance}, avg:confluent.kafka.network.request.total_time_ms.99percentile{request:fetchconsumer} by {instance}",
+                        "display_type": "line",
+                        "style": {
+                            "palette": "dog_classic",
+                            "line_type": "solid",
+                            "line_width": "normal"
+                        }
+                    }
+                ],
+                "custom_links": [],
+                "yaxis": {
+                    "label": "",
+                    "scale": "linear",
+                    "min": "auto",
+                    "max": "auto",
+                    "include_zero": true
+                },
+                "title": "Avg Consumer Fetch Latency by Broker",
+                "title_size": "16",
+                "title_align": "left",
+                "show_legend": false,
+                "legend_size": "0"
+            },
+            "layout": {
+                "x": 61,
+                "y": 25,
+                "width": 33,
+                "height": 16
+            }
+        },
+        {
+            "id": 5,
+            "definition": {
+                "type": "timeseries",
+                "requests": [
+                    {
+                        "q": "avg:confluent.kafka.network.request.total_time_ms.75percentile{request:produce} by {instance}, avg:confluent.kafka.network.request.total_time_ms.95percentile{request:produce} by {instance}, avg:confluent.kafka.network.request.total_time_ms.99percentile{request:produce} by {instance}",
+                        "display_type": "line",
+                        "style": {
+                            "palette": "dog_classic",
+                            "line_type": "solid",
+                            "line_width": "normal"
+                        }
+                    }
+                ],
+                "custom_links": [],
+                "yaxis": {
+                    "label": "",
+                    "scale": "linear",
+                    "min": "auto",
+                    "max": "auto",
+                    "include_zero": true
+                },
+                "title": "Producer Request Latency by Broker",
+                "title_size": "16",
+                "title_align": "left",
+                "show_legend": false,
+                "legend_size": "0"
+            },
+            "layout": {
+                "x": 27,
+                "y": 25,
+                "width": 33,
+                "height": 16
+            }
+        },
+        {
+            "id": 6,
+            "definition": {
+                "type": "query_value",
+                "requests": [
+                    {
+                        "q": "sum:confluent.kafka.controller.offline_partitions_count{*} by {host}",
+                        "aggregator": "last"
+                    }
+                ],
+                "custom_links": [],
+                "title": "Offline Partitions",
+                "title_size": "16",
+                "title_align": "left",
+                "precision": 0
+            },
+            "layout": {
+                "x": 1,
+                "y": 25,
+                "width": 25,
+                "height": 16
+            }
+        },
+        {
+            "id": 7,
+            "definition": {
+                "type": "query_value",
+                "requests": [
+                    {
+                        "q": "sum:confluent.kafka.server.replica_manager.under_replicated_partitions{*} by {host}",
+                        "aggregator": "last"
+                    }
+                ],
+                "custom_links": [],
+                "title": "Under Replicated Partitions",
+                "title_size": "16",
+                "title_align": "left",
+                "precision": 0
+            },
+            "layout": {
+                "x": 1,
+                "y": 59,
+                "width": 25,
+                "height": 16
+            }
+        },
+        {
+            "id": 8,
+            "definition": {
+                "type": "note",
+                "content": "Producers",
+                "background_color": "gray",
+                "font_size": "16",
+                "text_align": "center",
+                "show_tick": true,
+                "tick_pos": "50%",
+                "tick_edge": "bottom"
+            },
+            "layout": {
+                "x": 27,
+                "y": 42,
+                "width": 33,
+                "height": 5
+            }
+        },
+        {
+            "id": 9,
+            "definition": {
+                "type": "timeseries",
+                "requests": [
+                    {
+                        "q": "sum:confluent.kafka.producer.topic.byte_rate{*} by {instance}",
+                        "display_type": "area",
+                        "style": {
+                            "palette": "dog_classic",
+                            "line_type": "solid",
+                            "line_width": "normal"
+                        }
+                    }
+                ],
+                "custom_links": [],
+                "yaxis": {
+                    "label": "",
+                    "scale": "linear",
+                    "min": "auto",
+                    "max": "auto",
+                    "include_zero": true
+                },
+                "title": "Byte Rate by Producer",
+                "title_size": "16",
+                "title_align": "left",
+                "show_legend": false,
+                "legend_size": "0"
+            },
+            "layout": {
+                "x": 27,
+                "y": 49,
+                "width": 33,
+                "height": 16
+            }
+        },
+        {
+            "id": 10,
+            "definition": {
+                "type": "timeseries",
+                "requests": [
+                    {
+                        "q": "avg:confluent.kafka.producer.batch_size_avg{*} by {instance}",
+                        "display_type": "line",
+                        "style": {
+                            "palette": "dog_classic",
+                            "line_type": "solid",
+                            "line_width": "normal"
+                        }
+                    }
+                ],
+                "custom_links": [],
+                "yaxis": {
+                    "label": "",
+                    "scale": "linear",
+                    "min": "auto",
+                    "max": "auto",
+                    "include_zero": true
+                },
+                "title": "Avg Batch Size per Producer",
+                "title_size": "16",
+                "title_align": "left",
+                "show_legend": false,
+                "legend_size": "0"
+            },
+            "layout": {
+                "x": 27,
+                "y": 66,
+                "width": 33,
+                "height": 16
+            }
+        },
+        {
+            "id": 11,
+            "definition": {
+                "type": "note",
+                "content": "Consumers",
+                "background_color": "gray",
+                "font_size": "16",
+                "text_align": "center",
+                "show_tick": true,
+                "tick_pos": "50%",
+                "tick_edge": "bottom"
+            },
+            "layout": {
+                "x": 61,
+                "y": 42,
+                "width": 33,
+                "height": 5
+            }
+        },
+        {
+            "id": 12,
+            "definition": {
+                "type": "timeseries",
+                "requests": [
+                    {
+                        "q": "avg:confluent.kafka.consumer.fetch.bytes_consumed_rate{*} by {instance}",
+                        "display_type": "area",
+                        "style": {
+                            "palette": "dog_classic",
+                            "line_type": "solid",
+                            "line_width": "normal"
+                        }
+                    }
+                ],
+                "custom_links": [],
+                "yaxis": {
+                    "label": "",
+                    "scale": "linear",
+                    "min": "auto",
+                    "max": "auto",
+                    "include_zero": true
+                },
+                "title": "Bytes Consumed by Consumer",
+                "title_size": "16",
+                "title_align": "left",
+                "show_legend": false,
+                "legend_size": "0"
+            },
+            "layout": {
+                "x": 61,
+                "y": 49,
+                "width": 33,
+                "height": 16
+            }
+        },
+        {
+            "id": 13,
+            "definition": {
+                "type": "timeseries",
+                "requests": [
+                    {
+                        "q": "max:confluent.kafka.consumer.fetch.records_lag_max{*} by {instance}",
+                        "display_type": "line",
+                        "style": {
+                            "palette": "dog_classic",
+                            "line_type": "solid",
+                            "line_width": "normal"
+                        }
+                    }
+                ],
+                "custom_links": [],
+                "yaxis": {
+                    "label": "",
+                    "scale": "linear",
+                    "min": "auto",
+                    "max": "auto",
+                    "include_zero": true
+                },
+                "title": "Max Lag by Consumer",
+                "title_size": "16",
+                "title_align": "left",
+                "show_legend": false,
+                "legend_size": "0"
+            },
+            "layout": {
+                "x": 61,
+                "y": 66,
+                "width": 33,
+                "height": 16
+            }
+        },
+        {
+            "id": 14,
+            "definition": {
+                "type": "note",
+                "content": "Connect",
+                "background_color": "gray",
+                "font_size": "16",
+                "text_align": "center",
+                "show_tick": true,
+                "tick_pos": "50%",
+                "tick_edge": "bottom"
+            },
+            "layout": {
+                "x": 95,
+                "y": 1,
+                "width": 67,
+                "height": 5
+            }
+        },
+        {
+            "id": 15,
+            "definition": {
+                "type": "timeseries",
+                "requests": [
+                    {
+                        "q": "sum:confluent.kafka.connect.worker.connector_count{*} by {instance}",
+                        "display_type": "area",
+                        "style": {
+                            "palette": "dog_classic",
+                            "line_type": "solid",
+                            "line_width": "normal"
+                        }
+                    }
+                ],
+                "custom_links": [],
+                "yaxis": {
+                    "label": "",
+                    "scale": "linear",
+                    "min": "auto",
+                    "max": "auto",
+                    "include_zero": true
+                },
+                "title": "Connector Count by Worker",
+                "title_size": "16",
+                "title_align": "left",
+                "show_legend": false,
+                "legend_size": "0"
+            },
+            "layout": {
+                "x": 95,
+                "y": 8,
+                "width": 33,
+                "height": 16
+            }
+        },
+        {
+            "id": 16,
+            "definition": {
+                "type": "timeseries",
+                "requests": [
+                    {
+                        "q": "avg:confluent.kafka.connect.worker_rebalance.rebalance_avg_time_ms{*} by {instance}",
+                        "display_type": "line",
+                        "style": {
+                            "palette": "dog_classic",
+                            "line_type": "solid",
+                            "line_width": "normal"
+                        }
+                    }
+                ],
+                "custom_links": [],
+                "yaxis": {
+                    "label": "",
+                    "scale": "linear",
+                    "min": "auto",
+                    "max": "auto",
+                    "include_zero": true
+                },
+                "title": "Avg Rebalance Time by Worker",
+                "title_size": "16",
+                "title_align": "left",
+                "show_legend": false,
+                "legend_size": "0"
+            },
+            "layout": {
+                "x": 95,
+                "y": 25,
+                "width": 33,
+                "height": 16
+            }
+        },
+        {
+            "id": 17,
+            "definition": {
+                "type": "timeseries",
+                "requests": [
+                    {
+                        "q": "sum:confluent.kafka.connect.worker.connector_failed_task_count{*} by {instance}",
+                        "display_type": "area",
+                        "style": {
+                            "palette": "dog_classic",
+                            "line_type": "solid",
+                            "line_width": "normal"
+                        }
+                    }
+                ],
+                "custom_links": [],
+                "yaxis": {
+                    "label": "",
+                    "scale": "linear",
+                    "min": "auto",
+                    "max": "auto",
+                    "include_zero": true
+                },
+                "title": "Failed Task Count by Worker",
+                "title_size": "16",
+                "title_align": "left",
+                "show_legend": false,
+                "legend_size": "0"
+            },
+            "layout": {
+                "x": 129,
+                "y": 25,
+                "width": 33,
+                "height": 16
+            }
+        },
+        {
+            "id": 18,
+            "definition": {
+                "type": "timeseries",
+                "requests": [
+                    {
+                        "q": "sum:confluent.kafka.connect.worker.connector_running_task_count{*} by {instance}",
+                        "display_type": "area",
+                        "style": {
+                            "palette": "dog_classic",
+                            "line_type": "solid",
+                            "line_width": "normal"
+                        }
+                    }
+                ],
+                "custom_links": [],
+                "yaxis": {
+                    "label": "",
+                    "scale": "linear",
+                    "min": "auto",
+                    "max": "auto",
+                    "include_zero": true
+                },
+                "title": "Running Task Count by Worker",
+                "title_size": "16",
+                "title_align": "left",
+                "show_legend": false,
+                "legend_size": "0"
+            },
+            "layout": {
+                "x": 129,
+                "y": 8,
+                "width": 33,
+                "height": 16
+            }
+        },
+        {
+            "id": 19,
+            "definition": {
+                "type": "note",
+                "content": "Schema Registry",
+                "background_color": "gray",
+                "font_size": "16",
+                "text_align": "center",
+                "show_tick": true,
+                "tick_pos": "50%",
+                "tick_edge": "bottom"
+            },
+            "layout": {
+                "x": 95,
+                "y": 42,
+                "width": 33,
+                "height": 5
+            }
+        },
+        {
+            "id": 20,
+            "definition": {
+                "type": "timeseries",
+                "requests": [
+                    {
+                        "q": "sum:confluent.kafka.schema.registry.jetty.connections_opened_rate{*} by {instance}",
+                        "display_type": "line",
+                        "style": {
+                            "palette": "dog_classic",
+                            "line_type": "solid",
+                            "line_width": "normal"
+                        }
+                    }
+                ],
+                "custom_links": [],
+                "yaxis": {
+                    "label": "",
+                    "scale": "linear",
+                    "min": "auto",
+                    "max": "auto",
+                    "include_zero": true
+                },
+                "title": "HTTP Request Rate by Instance",
+                "title_size": "16",
+                "title_align": "left",
+                "show_legend": false,
+                "legend_size": "0"
+            },
+            "layout": {
+                "x": 95,
+                "y": 66,
+                "width": 33,
+                "height": 16
+            }
+        },
+        {
+            "id": 21,
+            "definition": {
+                "type": "timeseries",
+                "requests": [
+                    {
+                        "q": "avg:confluent.kafka.schema.registry.jersey.request_error_rate{*} by {instance}",
+                        "display_type": "line",
+                        "style": {
+                            "palette": "dog_classic",
+                            "line_type": "solid",
+                            "line_width": "normal"
+                        }
+                    }
+                ],
+                "custom_links": [],
+                "yaxis": {
+                    "label": "",
+                    "scale": "linear",
+                    "min": "auto",
+                    "max": "auto",
+                    "include_zero": true
+                },
+                "title": "Request Error Rate by Instance",
+                "title_size": "16",
+                "title_align": "left",
+                "show_legend": false,
+                "legend_size": "0"
+            },
+            "layout": {
+                "x": 95,
+                "y": 49,
+                "width": 33,
+                "height": 16
+            }
+        },
+        {
+            "id": 22,
+            "definition": {
+                "type": "note",
+                "content": "REST Proxy",
+                "background_color": "gray",
+                "font_size": "16",
+                "text_align": "center",
+                "show_tick": true,
+                "tick_pos": "50%",
+                "tick_edge": "bottom"
+            },
+            "layout": {
+                "x": 129,
+                "y": 42,
+                "width": 33,
+                "height": 5
+            }
+        },
+        {
+            "id": 23,
+            "definition": {
+                "type": "timeseries",
+                "requests": [
+                    {
+                        "q": "avg:confluent.kafka.rest.jersey.request_error_rate{*} by {instance}",
+                        "display_type": "line",
+                        "style": {
+                            "palette": "dog_classic",
+                            "line_type": "solid",
+                            "line_width": "normal"
+                        }
+                    }
+                ],
+                "custom_links": [],
+                "yaxis": {
+                    "label": "",
+                    "scale": "linear",
+                    "min": "auto",
+                    "max": "auto",
+                    "include_zero": true
+                },
+                "title": "Request Error Rate by Instance",
+                "title_size": "16",
+                "title_align": "left",
+                "show_legend": false,
+                "legend_size": "0"
+            },
+            "layout": {
+                "x": 129,
+                "y": 49,
+                "width": 33,
+                "height": 16
+            }
+        },
+        {
+            "id": 24,
+            "definition": {
+                "type": "timeseries",
+                "requests": [
+                    {
+                        "q": "avg:confluent.kafka.rest.jetty.connections_opened_rate{*} by {instance}",
+                        "display_type": "line",
+                        "style": {
+                            "palette": "dog_classic",
+                            "line_type": "solid",
+                            "line_width": "normal"
+                        }
+                    }
+                ],
+                "custom_links": [],
+                "yaxis": {
+                    "label": "",
+                    "scale": "linear",
+                    "min": "auto",
+                    "max": "auto",
+                    "include_zero": true
+                },
+                "title": "HTTP Request Rate by Instance",
+                "title_size": "16",
+                "title_align": "left",
+                "show_legend": false,
+                "legend_size": "0"
+            },
+            "layout": {
+                "x": 129,
+                "y": 66,
+                "width": 33,
+                "height": 16
+            }
+        },
+        {
+            "id": 25,
+            "definition": {
+                "type": "check_status",
+                "title": "Connected Hosts",
+                "title_size": "16",
+                "title_align": "center",
+                "check": "confluent.can_connect",
+                "grouping": "cluster",
+                "group_by": [],
+                "tags": [
+                    "*"
+                ]
+            },
+            "layout": {
+                "x": 1,
+                "y": 8,
+                "width": 25,
+                "height": 16
+            }
+        },
+        {
+            "id": 26,
+            "definition": {
+                "type": "note",
+                "content": "KSQLDB",
+                "background_color": "gray",
+                "font_size": "16",
+                "text_align": "center",
+                "show_tick": true,
+                "tick_pos": "50%",
+                "tick_edge": "bottom"
+            },
+            "layout": {
+                "x": 163,
+                "y": 1,
+                "width": 33,
+                "height": 5
+            }
+        },
+        {
+            "id": 27,
+            "definition": {
+                "type": "timeseries",
+                "requests": [
+                    {
+                        "q": "sum:confluent.ksql.query_stats.num_active_queries{*} by {instance}",
+                        "display_type": "area",
+                        "style": {
+                            "palette": "dog_classic",
+                            "line_type": "solid",
+                            "line_width": "normal"
+                        }
+                    }
+                ],
+                "custom_links": [],
+                "yaxis": {
+                    "label": "",
+                    "scale": "linear",
+                    "min": "auto",
+                    "max": "auto",
+                    "include_zero": true
+                },
+                "title": "Active Queries by Instance",
+                "title_size": "16",
+                "title_align": "left",
+                "show_legend": false,
+                "legend_size": "0"
+            },
+            "layout": {
+                "x": 163,
+                "y": 25,
+                "width": 33,
+                "height": 16
+            }
+        },
+        {
+            "id": 28,
+            "definition": {
+                "type": "timeseries",
+                "requests": [
+                    {
+                        "q": "avg:confluent.ksql.query_stats.error_rate{*} by {instance}",
+                        "display_type": "line",
+                        "style": {
+                            "palette": "dog_classic",
+                            "line_type": "solid",
+                            "line_width": "normal"
+                        }
+                    }
+                ],
+                "custom_links": [],
+                "yaxis": {
+                    "label": "",
+                    "scale": "linear",
+                    "min": "auto",
+                    "max": "auto",
+                    "include_zero": true
+                },
+                "title": "Query Error Rate by Instance",
+                "title_size": "16",
+                "title_align": "left",
+                "show_legend": false,
+                "legend_size": "0"
+            },
+            "layout": {
+                "x": 163,
+                "y": 42,
+                "width": 33,
+                "height": 16
+            }
+        },
+        {
+            "id": 29,
+            "definition": {
+                "type": "timeseries",
+                "requests": [
+                    {
+                        "q": "sum:confluent.ksql.query_stats.bytes_consumed_total{*} by {instance}",
+                        "display_type": "area",
+                        "style": {
+                            "palette": "dog_classic",
+                            "line_type": "solid",
+                            "line_width": "normal"
+                        }
+                    }
+                ],
+                "custom_links": [],
+                "yaxis": {
+                    "label": "",
+                    "scale": "linear",
+                    "min": "auto",
+                    "max": "auto",
+                    "include_zero": true
+                },
+                "title": "Bytes Consumed by Instance",
+                "title_size": "16",
+                "title_align": "left",
+                "show_legend": false,
+                "legend_size": "0"
+            },
+            "layout": {
+                "x": 163,
+                "y": 8,
+                "width": 33,
+                "height": 16
+            }
+        },
+        {
+            "id": 30,
+            "definition": {
+                "type": "query_value",
+                "requests": [
+                    {
+                        "q": "sum:confluent.kafka.server.replica_manager.under_min_isr_partition_count{*} by {host}",
+                        "aggregator": "last"
+                    }
+                ],
+                "custom_links": [],
+                "title": "Partitions under Min ISR",
+                "title_size": "16",
+                "title_align": "left",
+                "precision": 0
+            },
+            "layout": {
+                "x": 1,
+                "y": 42,
+                "width": 25,
+                "height": 16
+            }
+        }
+    ],
+    "template_variables": [],
+    "layout_type": "free",
+    "is_read_only": true,
+    "notify_list": []
+}

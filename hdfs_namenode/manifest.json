@@ -1,0 +1,55 @@
+{
+  "manifest_version": "2.0.0",
+  "app_uuid": "58a6fbbc-fc0a-47c5-8688-e3713003c6d6",
+  "app_id": "hdfs-namenode",
+  "display_on_public_website": true,
+  "tile": {
+    "overview": "README.md#Overview",
+    "configuration": "README.md#Setup",
+    "support": "README.md#Support",
+    "changelog": "CHANGELOG.md",
+    "description": "Track cluster disk usage, volume failures, dead DataNodes, and more.",
+    "title": "HDFS Namenode",
+    "media": [],
+    "classifier_tags": [
+      "Category::Log Collection",
+      "Category::OS & System",
+      "Supported OS::Linux",
+      "Supported OS::macOS"
+    ]
+  },
+  "author": {
+    "support_email": "help@khulnasoft.com",
+    "name": "Datadog",
+    "homepage": "https://www.khulnasoft.com",
+    "sales_email": "info@khulnasoft.com"
+  },
+  "oauth": {},
+  "assets": {
+    "integration": {
+      "source_type_name": "HDFS Namenode",
+      "configuration": {
+        "spec": "assets/configuration/spec.yaml"
+      },
+      "events": {
+        "creates_events": false
+      },
+      "metrics": {
+        "prefix": "hdfs.",
+        "check": "hdfs.namenode.capacity_used",
+        "metadata_path": "metadata.csv"
+      },
+      "service_checks": {
+        "metadata_path": "assets/service_checks.json"
+      },
+      "source_type_id": 10227,
+      "auto_install": true
+    },
+    "dashboards": {
+      "hdfs_namenode": "assets/dashboards/hdfs_namenode_dashboard.json"
+    },
+    "logs": {
+      "source": "hdfs_namenode"
+    }
+  }
+}

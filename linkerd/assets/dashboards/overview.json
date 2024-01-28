@@ -1,0 +1,604 @@
+{
+    "title": "Linkerd - Overview",
+    "description": "## Linkerd\n\nThis dashboard provides a high-level overview of your Linkerd cluster so you can monitor its performance and route, control, and connection metrics.\n\nFor further reading on monitoring Envoy, see:\n\n- [Official Linkerd integration docs](https://docs.khulnasoft.com/integrations/linkerd/)\n\nClone this template to make changes and add your own graphs and widgets.",
+    "widgets": [
+      {
+        "id": 0,
+        "definition": {
+          "type": "image",
+          "url": "/static/images/logos/linkerd_large.svg",
+          "sizing": "fit"
+        },
+        "layout": {
+          "x": 1,
+          "y": 2,
+          "width": 12,
+          "height": 8
+        }
+      },
+      {
+        "id": 1,
+        "definition": {
+          "type": "timeseries",
+          "requests": [
+            {
+              "q": "sum:linkerd.request_total{*} by {direction}.as_rate()",
+              "display_type": "line",
+              "style": {
+                "palette": "dog_classic",
+                "line_type": "solid",
+                "line_width": "normal"
+              }
+            }
+          ],
+          "custom_links": [],
+          "title": "Request rate",
+          "title_size": "16",
+          "title_align": "center",
+          "show_legend": false,
+          "legend_size": "0"
+        },
+        "layout": {
+          "x": 65,
+          "y": 8,
+          "width": 26,
+          "height": 17
+        }
+      },
+      {
+        "id": 2,
+        "definition": {
+          "type": "timeseries",
+          "requests": [
+            {
+              "q": "top(avg:linkerd.response_latency.sum{*} by {direction}/avg:linkerd.response_latency.count{*} by {direction},10,'mean','desc')",
+              "display_type": "line",
+              "style": {
+                "palette": "dog_classic",
+                "line_type": "solid",
+                "line_width": "normal"
+              }
+            }
+          ],
+          "custom_links": [],
+          "title": "Average response latency by host",
+          "title_size": "16",
+          "title_align": "center",
+          "show_legend": false,
+          "legend_size": "0"
+        },
+        "layout": {
+          "x": 40,
+          "y": 8,
+          "width": 24,
+          "height": 17
+        }
+      },
+      {
+        "id": 3,
+        "definition": {
+          "type": "timeseries",
+          "requests": [
+            {
+              "q": "sum:linkerd.response_total{*} by {classification}.as_count()/sum:linkerd.response_total{*}.as_count()*100",
+              "display_type": "line",
+              "style": {
+                "palette": "dog_classic",
+                "line_type": "solid",
+                "line_width": "normal"
+              }
+            }
+          ],
+          "custom_links": [],
+          "yaxis": {
+            "min": "0",
+            "max": "100"
+          },
+          "title": "Success rate of requests",
+          "title_size": "16",
+          "title_align": "center",
+          "show_legend": false,
+          "legend_size": "0"
+        },
+        "layout": {
+          "x": 14,
+          "y": 8,
+          "width": 25,
+          "height": 17
+        }
+      },
+      {
+        "id": 4,
+        "definition": {
+          "type": "note",
+          "content": "Throughput",
+          "background_color": "gray",
+          "font_size": "18",
+          "text_align": "center",
+          "show_tick": true,
+          "tick_pos": "50%",
+          "tick_edge": "bottom"
+        },
+        "layout": {
+          "x": 14,
+          "y": 2,
+          "width": 77,
+          "height": 5
+        }
+      },
+      {
+        "id": 5,
+        "definition": {
+          "type": "check_status",
+          "title": "Health",
+          "title_size": "16",
+          "title_align": "center",
+          "check": "linkerd.prometheus.health",
+          "grouping": "cluster",
+          "group_by": [],
+          "tags": [
+            "*"
+          ]
+        },
+        "layout": {
+          "x": 1,
+          "y": 12,
+          "width": 12,
+          "height": 13
+        }
+      },
+      {
+        "id": 6,
+        "definition": {
+          "type": "timeseries",
+          "requests": [
+            {
+              "q": "avg:linkerd.tcp.connection_duration.sum{*} by {direction}",
+              "display_type": "line",
+              "style": {
+                "palette": "dog_classic",
+                "line_type": "solid",
+                "line_width": "normal"
+              }
+            }
+          ],
+          "custom_links": [],
+          "title": "Average connection lifetime",
+          "title_size": "16",
+          "title_align": "center",
+          "show_legend": false,
+          "legend_size": "0"
+        },
+        "layout": {
+          "x": 92,
+          "y": 8,
+          "width": 22,
+          "height": 17
+        }
+      },
+      {
+        "id": 7,
+        "definition": {
+          "type": "note",
+          "content": "Connections",
+          "background_color": "gray",
+          "font_size": "18",
+          "text_align": "center",
+          "show_tick": true,
+          "tick_pos": "50%",
+          "tick_edge": "bottom"
+        },
+        "layout": {
+          "x": 92,
+          "y": 2,
+          "width": 32,
+          "height": 5
+        }
+      },
+      {
+        "id": 8,
+        "definition": {
+          "type": "query_value",
+          "requests": [
+            {
+              "q": "max:linkerd.tcp.open_connections{*}",
+              "aggregator": "avg"
+            }
+          ],
+          "custom_links": [],
+          "title": "Open Connections",
+          "title_size": "16",
+          "title_align": "left",
+          "autoscale": true,
+          "precision": 2
+        },
+        "layout": {
+          "x": 115,
+          "y": 8,
+          "width": 9,
+          "height": 11
+        }
+      },
+      {
+        "id": 9,
+        "definition": {
+          "type": "note",
+          "content": "Linkerd V1 Only",
+          "background_color": "gray",
+          "font_size": "18",
+          "text_align": "center",
+          "show_tick": true,
+          "tick_pos": "50%",
+          "tick_edge": "bottom"
+        },
+        "layout": {
+          "x": 1,
+          "y": 53,
+          "width": 118,
+          "height": 5
+        }
+      },
+      {
+        "id": 10,
+        "definition": {
+          "type": "query_value",
+          "requests": [
+            {
+              "q": "count_not_null(avg:linkerd.jvm.uptime{*})",
+              "aggregator": "avg"
+            }
+          ],
+          "custom_links": [],
+          "title": "Linkerd instances",
+          "title_size": "16",
+          "title_align": "left",
+          "time": {
+            "live_span": "1h"
+          },
+          "autoscale": true,
+          "precision": 2
+        },
+        "layout": {
+          "x": 1,
+          "y": 59,
+          "width": 14,
+          "height": 14
+        }
+      },
+      {
+        "id": 11,
+        "definition": {
+          "type": "query_value",
+          "requests": [
+            {
+              "q": "count_not_null(sum:linkerd.rt.client.requests_s{*} by {client})",
+              "aggregator": "avg"
+            }
+          ],
+          "custom_links": [],
+          "title": "Services monitored",
+          "title_size": "16",
+          "title_align": "left",
+          "time": {
+            "live_span": "1h"
+          },
+          "autoscale": true,
+          "precision": 2
+        },
+        "layout": {
+          "x": 16,
+          "y": 59,
+          "width": 14,
+          "height": 14
+        }
+      },
+      {
+        "id": 12,
+        "definition": {
+          "type": "timeseries",
+          "requests": [
+            {
+              "q": "sum:linkerd.rt.client.requests_s{*}",
+              "display_type": "line",
+              "style": {
+                "palette": "dog_classic",
+                "line_type": "solid",
+                "line_width": "normal"
+              }
+            }
+          ],
+          "custom_links": [],
+          "title": "Req/S",
+          "title_size": "16",
+          "title_align": "left",
+          "time": {
+            "live_span": "1h"
+          },
+          "show_legend": false,
+          "legend_size": "0"
+        },
+        "layout": {
+          "x": 31,
+          "y": 59,
+          "width": 28,
+          "height": 14
+        }
+      },
+      {
+        "id": 13,
+        "definition": {
+          "type": "timeseries",
+          "requests": [
+            {
+              "q": "avg:linkerd.rt.client.status.1XX_s{*}",
+              "display_type": "line",
+              "style": {
+                "palette": "dog_classic",
+                "line_type": "solid",
+                "line_width": "normal"
+              }
+            },
+            {
+              "q": "avg:linkerd.rt.client.status.2XX_s{*}",
+              "display_type": "line",
+              "style": {
+                "palette": "dog_classic",
+                "line_type": "solid",
+                "line_width": "normal"
+              }
+            },
+            {
+              "q": "avg:linkerd.rt.client.status.3XX_s{*}",
+              "display_type": "line",
+              "style": {
+                "palette": "grey",
+                "line_type": "solid",
+                "line_width": "normal"
+              }
+            },
+            {
+              "q": "avg:linkerd.rt.client.status.4XX_s{*}",
+              "display_type": "line",
+              "style": {
+                "palette": "orange",
+                "line_type": "solid",
+                "line_width": "normal"
+              }
+            },
+            {
+              "q": "avg:linkerd.rt.client.status.5XX_s{*}",
+              "display_type": "line",
+              "style": {
+                "palette": "warm",
+                "line_type": "solid",
+                "line_width": "normal"
+              }
+            }
+          ],
+          "custom_links": [],
+          "title": "Status Code/Sec",
+          "title_size": "16",
+          "title_align": "left",
+          "time": {
+            "live_span": "1h"
+          },
+          "show_legend": false,
+          "legend_size": "0"
+        },
+        "layout": {
+          "x": 90,
+          "y": 59,
+          "width": 29,
+          "height": 14
+        }
+      },
+      {
+        "id": 14,
+        "definition": {
+          "type": "timeseries",
+          "requests": [
+            {
+              "q": "max:linkerd.rt.client.request_latency_ms.quantile{quantile:0.95}",
+              "display_type": "line",
+              "style": {
+                "palette": "dog_classic",
+                "line_type": "solid",
+                "line_width": "normal"
+              }
+            },
+            {
+              "q": "max:linkerd.rt.client.request_latency_ms.quantile{quantile:0.99}",
+              "display_type": "line",
+              "style": {
+                "palette": "dog_classic",
+                "line_type": "solid",
+                "line_width": "normal"
+              }
+            },
+            {
+              "q": "max:linkerd.rt.client.request_latency_ms.quantile{quantile:1.0}",
+              "display_type": "line",
+              "style": {
+                "palette": "dog_classic",
+                "line_type": "solid",
+                "line_width": "normal"
+              }
+            }
+          ],
+          "custom_links": [],
+          "title": "Latency",
+          "title_size": "16",
+          "title_align": "left",
+          "time": {
+            "live_span": "1h"
+          },
+          "show_legend": false,
+          "legend_size": "0"
+        },
+        "layout": {
+          "x": 60,
+          "y": 59,
+          "width": 29,
+          "height": 14
+        }
+      },
+      {
+        "id": 15,
+        "definition": {
+          "type": "note",
+          "content": "Route Metrics",
+          "background_color": "gray",
+          "font_size": "18",
+          "text_align": "center",
+          "show_tick": true,
+          "tick_pos": "50%",
+          "tick_edge": "bottom"
+        },
+        "layout": {
+          "x": 1,
+          "y": 26,
+          "width": 58,
+          "height": 5
+        }
+      },
+      {
+        "id": 16,
+        "definition": {
+          "type": "timeseries",
+          "requests": [
+            {
+              "q": "top(avg:linkerd.route.response_latency.sum{*} by {direction}/avg:linkerd.route.response_latency.count{*} by {direction},10,'mean','desc')",
+              "display_type": "line",
+              "style": {
+                "palette": "dog_classic",
+                "line_type": "solid",
+                "line_width": "normal"
+              }
+            }
+          ],
+          "custom_links": [],
+          "title": "Average route response latency",
+          "title_size": "16",
+          "title_align": "left",
+          "show_legend": false,
+          "legend_size": "0"
+        },
+        "layout": {
+          "x": 1,
+          "y": 32,
+          "width": 28,
+          "height": 17
+        }
+      },
+      {
+        "id": 17,
+        "definition": {
+          "type": "timeseries",
+          "requests": [
+            {
+              "q": "sum:linkerd.route.request_total{*} by {direction}.as_rate()",
+              "display_type": "line",
+              "style": {
+                "palette": "dog_classic",
+                "line_type": "solid",
+                "line_width": "normal"
+              }
+            }
+          ],
+          "custom_links": [],
+          "title": "Route request rate",
+          "title_size": "16",
+          "title_align": "left",
+          "show_legend": false,
+          "legend_size": "0"
+        },
+        "layout": {
+          "x": 31,
+          "y": 32,
+          "width": 28,
+          "height": 17
+        }
+      },
+      {
+        "id": 18,
+        "definition": {
+          "type": "timeseries",
+          "requests": [
+            {
+              "q": "sum:linkerd.control.request_total{*} by {direction}.as_rate()",
+              "display_type": "line",
+              "style": {
+                "palette": "dog_classic",
+                "line_type": "solid",
+                "line_width": "normal"
+              }
+            }
+          ],
+          "custom_links": [],
+          "title": "Control request rate",
+          "title_size": "16",
+          "title_align": "left",
+          "show_legend": false,
+          "legend_size": "0"
+        },
+        "layout": {
+          "x": 91,
+          "y": 32,
+          "width": 28,
+          "height": 17
+        }
+      },
+      {
+        "id": 19,
+        "definition": {
+          "type": "note",
+          "content": "Control Metrics",
+          "background_color": "gray",
+          "font_size": "18",
+          "text_align": "center",
+          "show_tick": true,
+          "tick_pos": "50%",
+          "tick_edge": "bottom"
+        },
+        "layout": {
+          "x": 61,
+          "y": 26,
+          "width": 58,
+          "height": 5
+        }
+      },
+      {
+        "id": 20,
+        "definition": {
+          "type": "timeseries",
+          "requests": [
+            {
+              "q": "top(avg:linkerd.control.response_latency.sum{*} by {direction}/avg:linkerd.control.response_latency.count{*} by {direction},10,'mean','desc')",
+              "display_type": "line",
+              "style": {
+                "palette": "dog_classic",
+                "line_type": "solid",
+                "line_width": "normal"
+              }
+            }
+          ],
+          "custom_links": [],
+          "title": "Average control response latency",
+          "title_size": "16",
+          "title_align": "left",
+          "show_legend": false,
+          "legend_size": "0"
+        },
+        "layout": {
+          "x": 61,
+          "y": 32,
+          "width": 28,
+          "height": 17
+        }
+      }
+    ],
+    "template_variables": [],
+    "layout_type": "free",
+    "is_read_only": true,
+    "notify_list": []
+  }

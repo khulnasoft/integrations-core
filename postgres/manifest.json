@@ -1,0 +1,78 @@
+{
+  "manifest_version": "2.0.0",
+  "app_uuid": "e6b3c5ec-b293-4a22-9145-277a12a9abd4",
+  "app_id": "postgres",
+  "display_on_public_website": true,
+  "tile": {
+    "overview": "README.md#Overview",
+    "configuration": "README.md#Setup",
+    "support": "README.md#Support",
+    "changelog": "CHANGELOG.md",
+    "description": "Collect a wealth of database performance and health metrics.",
+    "title": "Postgres",
+    "media": [],
+    "classifier_tags": [
+      "Category::Data Stores",
+      "Category::Log Collection",
+      "Category::Notifications",
+      "Category::Tracing",
+      "Supported OS::Linux",
+      "Supported OS::Windows",
+      "Supported OS::macOS"
+    ]
+  },
+  "author": {
+    "support_email": "help@khulnasoft.com",
+    "name": "Datadog",
+    "homepage": "https://www.khulnasoft.com",
+    "sales_email": "info@khulnasoft.com"
+  },
+  "oauth": {},
+  "assets": {
+    "integration": {
+      "source_type_name": "Postgres",
+      "configuration": {
+        "spec": "assets/configuration/spec.yaml"
+      },
+      "events": {
+        "creates_events": false
+      },
+      "metrics": {
+        "prefix": "postgresql.",
+        "check": [
+          "postgresql.connections",
+          "postgresql.max_connections"
+        ],
+        "metadata_path": "metadata.csv"
+      },
+      "service_checks": {
+        "metadata_path": "assets/service_checks.json"
+      },
+      "process_signatures": [
+        "postgres -D",
+        "pg_ctl start -l logfile",
+        "postgres -c 'pg_ctl start -D -l"
+      ],
+      "source_type_id": 28,
+      "auto_install": true
+    },
+    "dashboards": {
+      "postgresql": "assets/dashboards/postgresql_dashboard.json",
+      "postgresql_screenboard": "assets/dashboards/postgresql_screenboard_dashboard.json"
+    },
+    "monitors": {
+      "percent_usage_connections": "assets/monitors/percent_usage_connections.json",
+      "replication_delay": "assets/monitors/replication_delay.json"
+    },
+    "saved_views": {
+      "operations": "assets/saved_views/operations.json",
+      "slow_operations": "assets/saved_views/slow_operations.json",
+      "postgres_pattern": "assets/saved_views/postgres_pattern.json",
+      "sessions_by_host": "assets/saved_views/sessions_by_host.json",
+      "postgres_processes": "assets/saved_views/postgres_processes.json"
+    },
+    "logs": {
+      "source": "postgresql"
+    }
+  }
+}

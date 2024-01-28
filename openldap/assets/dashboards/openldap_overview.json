@@ -1,0 +1,741 @@
+{
+    "author_name": "Datadog",
+    "description": "This dashboard provides an overview of OpenLDAP metrics from the `cn=Monitor` backend of your OpenLDAP servers. \n\nFor more information, see:\n\n- Our [official OpenLDAP documentation](https://docs.khulnasoft.com/integrations/openldap/)",
+    "layout_type": "ordered",
+    "template_variables": [
+        {
+            "available_values": [],
+            "default": "*",
+            "name": "host",
+            "prefix": "host"
+        },
+        {
+            "available_values": [],
+            "default": "*",
+            "name": "url",
+            "prefix": "url"
+        }
+    ],
+    "title": "OpenLDAP - Overview",
+    "widgets": [
+        {
+            "definition": {
+                "background_color": "white",
+                "content": "## About OpenLDAP\nThis dashboard shows you the status of your OpenLDAP server, as well as its connections, operations, threads, and logs to help you monitor and maintain the health of your database.\n\n##### [Official Datadog OpenLDAP documentation \u2197](https://docs.khulnasoft.com/integrations/openldap/)\n\nYou can clone this dashboard and modify its contents or copy and paste widgets to create your own visualizations for your OpenLDAP server",
+                "font_size": "14",
+                "has_padding": true,
+                "show_tick": false,
+                "text_align": "left",
+                "tick_edge": "left",
+                "tick_pos": "50%",
+                "type": "note",
+                "vertical_align": "top"
+            },
+            "id": 7222283655321854,
+            "layout": {
+                "height": 4,
+                "width": 6,
+                "x": 0,
+                "y": 0
+            }
+        },
+        {
+            "definition": {
+                "layout_type": "ordered",
+                "show_title": true,
+                "title": "Overview",
+                "title_align": "center",
+                "type": "group",
+                "widgets": [
+                    {
+                        "definition": {
+                            "check": "openldap.can_connect",
+                            "group_by": [
+                                "host",
+                                "url"
+                            ],
+                            "grouping": "cluster",
+                            "tags": [
+                                "$host",
+                                "$url"
+                            ],
+                            "time": {
+                                "live_span": "10m"
+                            },
+                            "title": "OpenLDAP Service Check",
+                            "title_align": "left",
+                            "title_size": "16",
+                            "type": "check_status"
+                        },
+                        "id": 5794216397682308,
+                        "layout": {
+                            "height": 2,
+                            "width": 2,
+                            "x": 0,
+                            "y": 0
+                        }
+                    },
+                    {
+                        "definition": {
+                            "custom_unit": "conn",
+                            "precision": 0,
+                            "requests": [
+                                {
+                                    "queries": [
+                                        {
+                                            "aggregator": "last",
+                                            "data_source": "metrics",
+                                            "name": "query1",
+                                            "query": "sum:openldap.connections.current{$host,$url}"
+                                        }
+                                    ],
+                                    "response_format": "scalar"
+                                }
+                            ],
+                            "time": {
+                                "live_span": "15m"
+                            },
+                            "title": "Active Connections",
+                            "title_align": "left",
+                            "title_size": "16",
+                            "type": "query_value"
+                        },
+                        "id": 936573064721974,
+                        "layout": {
+                            "height": 2,
+                            "width": 2,
+                            "x": 2,
+                            "y": 0
+                        }
+                    },
+                    {
+                        "definition": {
+                            "precision": 0,
+                            "requests": [
+                                {
+                                    "queries": [
+                                        {
+                                            "aggregator": "sum",
+                                            "data_source": "metrics",
+                                            "name": "query1",
+                                            "query": "sum:openldap.connections.total{$host,$url}.as_count()"
+                                        }
+                                    ],
+                                    "response_format": "scalar"
+                                }
+                            ],
+                            "title": "Total Connections",
+                            "title_align": "left",
+                            "title_size": "16",
+                            "type": "query_value"
+                        },
+                        "id": 3941916095677364,
+                        "layout": {
+                            "height": 2,
+                            "width": 2,
+                            "x": 4,
+                            "y": 0
+                        }
+                    },
+                    {
+                        "definition": {
+                            "background_color": "gray",
+                            "content": "If the OpenLDAP cannot bind to the monitored server, this check returns **CRITICAL**, otherwise returns **OK**.\n\n",
+                            "font_size": "14",
+                            "has_padding": true,
+                            "show_tick": true,
+                            "text_align": "center",
+                            "tick_edge": "top",
+                            "tick_pos": "50%",
+                            "type": "note",
+                            "vertical_align": "top"
+                        },
+                        "id": 6805529559452018,
+                        "layout": {
+                            "height": 1,
+                            "width": 2,
+                            "x": 0,
+                            "y": 2
+                        }
+                    },
+                    {
+                        "definition": {
+                            "background_color": "gray",
+                            "content": "Current number of active connections to OpenLDAP",
+                            "font_size": "14",
+                            "has_padding": true,
+                            "show_tick": true,
+                            "text_align": "left",
+                            "tick_edge": "top",
+                            "tick_pos": "50%",
+                            "type": "note",
+                            "vertical_align": "center"
+                        },
+                        "id": 147298638873240,
+                        "layout": {
+                            "height": 1,
+                            "width": 2,
+                            "x": 2,
+                            "y": 2
+                        }
+                    },
+                    {
+                        "definition": {
+                            "background_color": "gray",
+                            "content": "Total connections to OpenLDAP since the server started.",
+                            "font_size": "14",
+                            "has_padding": true,
+                            "show_tick": true,
+                            "text_align": "left",
+                            "tick_edge": "top",
+                            "tick_pos": "50%",
+                            "type": "note",
+                            "vertical_align": "center"
+                        },
+                        "id": 1846220905428980,
+                        "layout": {
+                            "height": 1,
+                            "width": 2,
+                            "x": 4,
+                            "y": 2
+                        }
+                    }
+                ]
+            },
+            "id": 1,
+            "layout": {
+                "height": 4,
+                "width": 6,
+                "x": 6,
+                "y": 0
+            }
+        },
+        {
+            "definition": {
+                "layout_type": "ordered",
+                "show_title": true,
+                "title": "Thread Metrics",
+                "type": "group",
+                "widgets": [
+                    {
+                        "definition": {
+                            "legend_columns": [
+                                "value",
+                                "avg"
+                            ],
+                            "legend_layout": "vertical",
+                            "markers": [],
+                            "requests": [
+                                {
+                                    "display_type": "line",
+                                    "queries": [
+                                        {
+                                            "data_source": "metrics",
+                                            "name": "query1",
+                                            "query": "sum:openldap.threads{$host,$url} by {status}"
+                                        }
+                                    ],
+                                    "response_format": "timeseries",
+                                    "style": {
+                                        "line_type": "solid",
+                                        "line_width": "normal",
+                                        "palette": "dog_classic"
+                                    }
+                                }
+                            ],
+                            "show_legend": true,
+                            "time": {},
+                            "title": "Threads by Status",
+                            "title_align": "left",
+                            "title_size": "16",
+                            "type": "timeseries",
+                            "yaxis": {
+                                "include_zero": true,
+                                "label": "",
+                                "max": "auto",
+                                "min": "auto",
+                                "scale": "linear"
+                            }
+                        },
+                        "id": 1902084353892230,
+                        "layout": {
+                            "height": 5,
+                            "width": 6,
+                            "x": 0,
+                            "y": 0
+                        }
+                    },
+                    {
+                        "definition": {
+                            "legend_columns": [
+                                "sum"
+                            ],
+                            "legend_layout": "auto",
+                            "markers": [
+                                {
+                                    "display_type": "warning dashed",
+                                    "label": "\u00a04 remaining threads available\u00a0",
+                                    "value": "y = 4"
+                                }
+                            ],
+                            "requests": [
+                                {
+                                    "display_type": "line",
+                                    "formulas": [
+                                        {
+                                            "formula": "query1 - query2"
+                                        }
+                                    ],
+                                    "queries": [
+                                        {
+                                            "data_source": "metrics",
+                                            "name": "query1",
+                                            "query": "sum:openldap.threads.max{$host,$url} by {host,url}"
+                                        },
+                                        {
+                                            "data_source": "metrics",
+                                            "name": "query2",
+                                            "query": "sum:openldap.threads{$host,$url, status:active} by {host,url}"
+                                        }
+                                    ],
+                                    "response_format": "timeseries",
+                                    "style": {
+                                        "line_type": "solid",
+                                        "line_width": "normal",
+                                        "palette": "dog_classic"
+                                    }
+                                }
+                            ],
+                            "show_legend": true,
+                            "time": {},
+                            "title": "Remaining Available Threads ",
+                            "title_align": "left",
+                            "title_size": "16",
+                            "type": "timeseries",
+                            "yaxis": {
+                                "include_zero": true,
+                                "label": "",
+                                "max": "auto",
+                                "min": "auto",
+                                "scale": "linear"
+                            }
+                        },
+                        "id": 6016125597671316,
+                        "layout": {
+                            "height": 5,
+                            "width": 6,
+                            "x": 6,
+                            "y": 0
+                        }
+                    }
+                ]
+            },
+            "id": 4776520994686612,
+            "layout": {
+                "height": 6,
+                "width": 12,
+                "x": 0,
+                "y": 4
+            }
+        },
+        {
+            "definition": {
+                "layout_type": "ordered",
+                "show_title": true,
+                "title": "Statistics",
+                "type": "group",
+                "widgets": [
+                    {
+                        "definition": {
+                            "legend_columns": [
+                                "avg",
+                                "min",
+                                "max",
+                                "value",
+                                "sum"
+                            ],
+                            "legend_layout": "auto",
+                            "markers": [],
+                            "requests": [
+                                {
+                                    "display_type": "line",
+                                    "queries": [
+                                        {
+                                            "data_source": "metrics",
+                                            "name": "query1",
+                                            "query": "sum:openldap.statistics.pdu{$url} by {host}.as_count()"
+                                        }
+                                    ],
+                                    "response_format": "timeseries",
+                                    "style": {
+                                        "line_type": "solid",
+                                        "line_width": "normal",
+                                        "palette": "dog_classic"
+                                    }
+                                }
+                            ],
+                            "show_legend": true,
+                            "title": "PDU Packets by Server",
+                            "title_align": "left",
+                            "title_size": "16",
+                            "type": "timeseries",
+                            "yaxis": {
+                                "include_zero": true,
+                                "label": "",
+                                "max": "auto",
+                                "min": "auto",
+                                "scale": "linear"
+                            }
+                        },
+                        "id": 569430273145778,
+                        "layout": {
+                            "height": 3,
+                            "width": 4,
+                            "x": 0,
+                            "y": 0
+                        }
+                    },
+                    {
+                        "definition": {
+                            "legend_columns": [
+                                "avg",
+                                "min",
+                                "max",
+                                "value",
+                                "sum"
+                            ],
+                            "legend_layout": "auto",
+                            "markers": [],
+                            "requests": [
+                                {
+                                    "display_type": "line",
+                                    "queries": [
+                                        {
+                                            "data_source": "metrics",
+                                            "name": "query1",
+                                            "query": "sum:openldap.statistics.bytes{$host,$url} by {host}.as_count()"
+                                        }
+                                    ],
+                                    "response_format": "timeseries",
+                                    "style": {
+                                        "line_type": "solid",
+                                        "line_width": "normal",
+                                        "palette": "dog_classic"
+                                    }
+                                }
+                            ],
+                            "show_legend": true,
+                            "title": "Bytes Sent by Server",
+                            "title_align": "left",
+                            "title_size": "16",
+                            "type": "timeseries",
+                            "yaxis": {
+                                "include_zero": true,
+                                "label": "",
+                                "max": "auto",
+                                "min": "auto",
+                                "scale": "linear"
+                            }
+                        },
+                        "id": 4890120308859972,
+                        "layout": {
+                            "height": 3,
+                            "width": 4,
+                            "x": 4,
+                            "y": 0
+                        }
+                    },
+                    {
+                        "definition": {
+                            "legend_columns": [
+                                "avg",
+                                "min",
+                                "max",
+                                "value",
+                                "sum"
+                            ],
+                            "legend_layout": "auto",
+                            "markers": [],
+                            "requests": [
+                                {
+                                    "display_type": "line",
+                                    "queries": [
+                                        {
+                                            "data_source": "metrics",
+                                            "name": "query1",
+                                            "query": "sum:openldap.statistics.entries{$host,$url} by {host}.as_count()"
+                                        }
+                                    ],
+                                    "response_format": "timeseries",
+                                    "style": {
+                                        "line_type": "solid",
+                                        "line_width": "normal",
+                                        "palette": "dog_classic"
+                                    }
+                                }
+                            ],
+                            "show_legend": true,
+                            "title": "Entries Sent by Server",
+                            "title_align": "left",
+                            "title_size": "16",
+                            "type": "timeseries",
+                            "yaxis": {
+                                "include_zero": true,
+                                "label": "",
+                                "max": "auto",
+                                "min": "auto",
+                                "scale": "linear"
+                            }
+                        },
+                        "id": 517747265586524,
+                        "layout": {
+                            "height": 3,
+                            "width": 4,
+                            "x": 8,
+                            "y": 0
+                        }
+                    }
+                ]
+            },
+            "id": 4089774572580756,
+            "layout": {
+                "height": 4,
+                "width": 12,
+                "x": 0,
+                "y": 10
+            }
+        },
+        {
+            "definition": {
+                "layout_type": "ordered",
+                "show_title": true,
+                "title": "Operations Metrics",
+                "type": "group",
+                "widgets": [
+                    {
+                        "definition": {
+                            "legend_columns": [
+                                "avg",
+                                "min",
+                                "max",
+                                "value",
+                                "sum"
+                            ],
+                            "legend_layout": "auto",
+                            "markers": [],
+                            "requests": [
+                                {
+                                    "display_type": "bars",
+                                    "on_right_yaxis": false,
+                                    "queries": [
+                                        {
+                                            "data_source": "metrics",
+                                            "name": "query1",
+                                            "query": "avg:openldap.operations.completed.total{$host,$url} by {host,url}.as_count()"
+                                        }
+                                    ],
+                                    "response_format": "timeseries",
+                                    "style": {
+                                        "line_type": "solid",
+                                        "line_width": "normal",
+                                        "palette": "dog_classic"
+                                    }
+                                }
+                            ],
+                            "show_legend": true,
+                            "title": "Completed Operations",
+                            "title_align": "left",
+                            "title_size": "16",
+                            "type": "timeseries",
+                            "yaxis": {
+                                "include_zero": true,
+                                "label": "",
+                                "max": "auto",
+                                "min": "auto",
+                                "scale": "linear"
+                            }
+                        },
+                        "id": 2205784706649616,
+                        "layout": {
+                            "height": 4,
+                            "width": 4,
+                            "x": 0,
+                            "y": 0
+                        }
+                    },
+                    {
+                        "definition": {
+                            "legend_columns": [
+                                "avg",
+                                "min",
+                                "max",
+                                "value",
+                                "sum"
+                            ],
+                            "legend_layout": "auto",
+                            "markers": [],
+                            "requests": [
+                                {
+                                    "display_type": "bars",
+                                    "formulas": [
+                                        {
+                                            "formula": "top(query1, 10, \"sum\", \"desc\") - top(query2, 10, \"sum\", \"desc\")"
+                                        }
+                                    ],
+                                    "on_right_yaxis": false,
+                                    "queries": [
+                                        {
+                                            "data_source": "metrics",
+                                            "name": "query1",
+                                            "query": "avg:openldap.operations.initiated.total{$host,$url} by {host,url}.as_count()"
+                                        },
+                                        {
+                                            "data_source": "metrics",
+                                            "name": "query2",
+                                            "query": "avg:openldap.operations.completed.total{$host,$url} by {host,url}.as_count()"
+                                        }
+                                    ],
+                                    "response_format": "timeseries",
+                                    "style": {
+                                        "line_type": "solid",
+                                        "line_width": "normal",
+                                        "palette": "dog_classic"
+                                    }
+                                }
+                            ],
+                            "show_legend": true,
+                            "title": "Incomplete Operations",
+                            "title_align": "left",
+                            "title_size": "16",
+                            "type": "timeseries",
+                            "yaxis": {
+                                "include_zero": true,
+                                "label": "",
+                                "max": "auto",
+                                "min": "auto",
+                                "scale": "linear"
+                            }
+                        },
+                        "id": 7619695970441178,
+                        "layout": {
+                            "height": 4,
+                            "width": 5,
+                            "x": 4,
+                            "y": 0
+                        }
+                    },
+                    {
+                        "definition": {
+                            "background_color": "gray",
+                            "content": "**Incomplete Operations** displays the difference between initiated and completed operations to help provide an indicator for failures or errors.",
+                            "font_size": "14",
+                            "has_padding": true,
+                            "show_tick": true,
+                            "text_align": "left",
+                            "tick_edge": "left",
+                            "tick_pos": "50%",
+                            "type": "note",
+                            "vertical_align": "center"
+                        },
+                        "id": 6915102480834804,
+                        "layout": {
+                            "height": 4,
+                            "width": 3,
+                            "x": 9,
+                            "y": 0
+                        }
+                    }
+                ]
+            },
+            "id": 5418366396402,
+            "layout": {
+                "height": 5,
+                "is_column_break": true,
+                "width": 12,
+                "x": 0,
+                "y": 14
+            }
+        },
+        {
+            "definition": {
+                "layout_type": "ordered",
+                "show_title": true,
+                "title": "Logs",
+                "type": "group",
+                "widgets": [
+                    {
+                        "definition": {
+                            "requests": [
+                                {
+                                    "columns": [
+                                        {
+                                            "field": "status_line",
+                                            "width": "auto"
+                                        },
+                                        {
+                                            "field": "timestamp",
+                                            "width": "auto"
+                                        },
+                                        {
+                                            "field": "status",
+                                            "width": "auto"
+                                        },
+                                        {
+                                            "field": "host",
+                                            "width": "auto"
+                                        },
+                                        {
+                                            "field": "@url",
+                                            "width": "auto"
+                                        },
+                                        {
+                                            "field": "service",
+                                            "width": "auto"
+                                        },
+                                        {
+                                            "field": "@op",
+                                            "width": "auto"
+                                        },
+                                        {
+                                            "field": "content",
+                                            "width": "compact"
+                                        }
+                                    ],
+                                    "query": {
+                                        "data_source": "logs_stream",
+                                        "indexes": [],
+                                        "query_string": "source:openldap",
+                                        "sort": {
+                                            "column": "timestamp",
+                                            "order": "desc"
+                                        },
+                                        "storage": "hot"
+                                    },
+                                    "response_format": "event_list"
+                                }
+                            ],
+                            "title": "",
+                            "title_align": "left",
+                            "title_size": "16",
+                            "type": "list_stream"
+                        },
+                        "id": 3534096394864830,
+                        "layout": {
+                            "height": 8,
+                            "width": 12,
+                            "x": 0,
+                            "y": 0
+                        }
+                    }
+                ]
+            },
+            "id": 4468676229331770,
+            "layout": {
+                "height": 9,
+                "width": 12,
+                "x": 0,
+                "y": 19
+            }
+        }
+    ]
+}

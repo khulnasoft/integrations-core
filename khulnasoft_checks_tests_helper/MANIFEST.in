@@ -1,0 +1,3 @@
+include README.md
+include requirements.in
+graft khulnasoft_test_libs

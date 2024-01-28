@@ -1,0 +1,70 @@
+{
+  "manifest_version": "2.0.0",
+  "app_uuid": "de5b5443-5038-46cf-a052-0484348776d6",
+  "app_id": "istio",
+  "display_on_public_website": true,
+  "tile": {
+    "overview": "README.md#Overview",
+    "configuration": "README.md#Setup",
+    "support": "README.md#Support",
+    "changelog": "CHANGELOG.md",
+    "description": "Collect performance schema metrics, query throughput, custom metrics, and more.",
+    "title": "Istio",
+    "media": [],
+    "classifier_tags": [
+      "Category::Log Collection",
+      "Category::Network",
+      "Category::Tracing",
+      "Supported OS::Linux",
+      "Supported OS::Windows",
+      "Supported OS::macOS"
+    ]
+  },
+  "author": {
+    "support_email": "help@khulnasoft.com",
+    "name": "Datadog",
+    "homepage": "https://www.khulnasoft.com",
+    "sales_email": "info@khulnasoft.com"
+  },
+  "oauth": {},
+  "assets": {
+    "integration": {
+      "source_type_name": "Istio",
+      "configuration": {
+        "spec": "assets/configuration/spec.yaml"
+      },
+      "events": {
+        "creates_events": false
+      },
+      "metrics": {
+        "prefix": "istio.",
+        "check": [
+          "istio.mixer.process.cpu_seconds_total",
+          "istio.mesh.request.count",
+          "istio.galley.endpoint_no_pod"
+        ],
+        "metadata_path": "metadata.csv"
+      },
+      "service_checks": {
+        "metadata_path": "assets/service_checks.json"
+      },
+      "process_signatures": [
+        "pilot-agent proxy router",
+        "envoy envoy-rev0.json"
+      ],
+      "source_type_id": 10017,
+      "auto_install": true
+    },
+    "dashboards": {
+      "Istio base dashboard": "assets/dashboards/istio_overview.json",
+      "Istio Overview 1.5": "assets/dashboards/istio_1_5_overview.json",
+      "Istio Overview 1.5 (OpenMetrics)": "assets/dashboards/istio_1_5_openmetrics_overview.json"
+    },
+    "monitors": {
+      "Failed sidecar injections": "assets/monitors/failed_sidecar_injection.json"
+    },
+    "logs": {
+      "source": "istio"
+    }
+  }
+}

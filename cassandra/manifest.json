@@ -1,0 +1,67 @@
+{
+  "manifest_version": "2.0.0",
+  "app_uuid": "a930364f-ac97-4483-92d6-5a982da7b1c0",
+  "app_id": "cassandra",
+  "display_on_public_website": true,
+  "tile": {
+    "overview": "README.md#Overview",
+    "configuration": "README.md#Setup",
+    "support": "README.md#Support",
+    "changelog": "CHANGELOG.md",
+    "description": "Track cluster performance, capacity, overall health, and much more.",
+    "title": "Cassandra",
+    "media": [],
+    "classifier_tags": [
+      "Category::Caching",
+      "Category::Data Stores",
+      "Category::Log Collection",
+      "Supported OS::Linux",
+      "Supported OS::Windows",
+      "Supported OS::macOS"
+    ]
+  },
+  "author": {
+    "support_email": "help@khulnasoft.com",
+    "name": "Datadog",
+    "homepage": "https://www.khulnasoft.com",
+    "sales_email": "info@khulnasoft.com"
+  },
+  "oauth": {},
+  "assets": {
+    "integration": {
+      "source_type_name": "Cassandra",
+      "configuration": {
+        "spec": "assets/configuration/spec.yaml"
+      },
+      "events": {
+        "creates_events": false
+      },
+      "metrics": {
+        "prefix": "cassandra.",
+        "check": "cassandra.load.count",
+        "metadata_path": "metadata.csv"
+      },
+      "service_checks": {
+        "metadata_path": "assets/service_checks.json"
+      },
+      "process_signatures": [
+        "java org.apache.cassandra.service.CassandraDaemon"
+      ],
+      "source_type_id": 33,
+      "auto_install": true
+    },
+    "dashboards": {
+      "cassandra-overview": "assets/dashboards/cassandra_overview.json",
+      "cassandra-read": "assets/dashboards/cassandra_read.json",
+      "cassandra-sstables": "assets/dashboards/cassandra_sstable.json",
+      "cassandra-write": "assets/dashboards/cassandra_write.json",
+      "cassandra-overview-screenboard": "assets/dashboards/cassandra_overview_screenboard.json"
+    },
+    "saved_views": {
+      "cassandra_processes": "assets/saved_views/cassandra_processes.json"
+    },
+    "logs": {
+      "source": "cassandra"
+    }
+  }
+}

@@ -1,0 +1,35 @@
+[
+    {
+        "agent_version": "5.0.0",
+        "integration": "Elasticsearch",
+        "check": "elasticsearch.cluster_health",
+        "statuses": [
+            "ok",
+            "warning",
+            "critical"
+        ],
+        "groups": [
+            "host",
+            "port",
+            "server"
+        ],
+        "name": "Cluster Health",
+        "description": "Returns the `status` from the Elasticsearch [Cluster Health API](https://www.elastic.co/guide/en/elasticsearch/reference/current/cluster-health.html). Additional information about shard status at the time of collection is included in the check message."
+    },
+    {
+        "agent_version": "5.1.0",
+        "integration": "Elasticsearch",
+        "check": "elasticsearch.can_connect",
+        "statuses": [
+            "ok",
+            "critical"
+        ],
+        "groups": [
+            "host",
+            "port",
+            "server"
+        ],
+        "name": "Can Connect",
+        "description": "Returns `CRITICAL` if the Agent is unable to connect to the monitored Elasticsearch instance. Returns `OK` otherwise."
+    }
+]

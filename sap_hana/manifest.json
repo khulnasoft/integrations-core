@@ -1,0 +1,53 @@
+{
+  "manifest_version": "2.0.0",
+  "app_uuid": "53d66afa-de92-4f09-9514-778324f38f5c",
+  "app_id": "sap-hana",
+  "display_on_public_website": true,
+  "tile": {
+    "overview": "README.md#Overview",
+    "configuration": "README.md#Setup",
+    "support": "README.md#Support",
+    "changelog": "CHANGELOG.md",
+    "description": "Monitor memory, network, volume, and other metrics from your SAP HANA system.",
+    "title": "SAP HANA",
+    "media": [],
+    "classifier_tags": [
+      "Category::Data Stores",
+      "Category::SAP",
+      "Supported OS::Linux",
+      "Supported OS::Windows",
+      "Supported OS::macOS"
+    ]
+  },
+  "author": {
+    "support_email": "help@khulnasoft.com",
+    "name": "Datadog",
+    "homepage": "https://www.khulnasoft.com",
+    "sales_email": "info@khulnasoft.com"
+  },
+  "oauth": {},
+  "assets": {
+    "integration": {
+      "source_type_name": "SAP HANA",
+      "configuration": {
+        "spec": "assets/configuration/spec.yaml"
+      },
+      "events": {
+        "creates_events": false
+      },
+      "metrics": {
+        "prefix": "sap_hana.",
+        "check": "sap_hana.uptime",
+        "metadata_path": "metadata.csv"
+      },
+      "service_checks": {
+        "metadata_path": "assets/service_checks.json"
+      },
+      "source_type_id": 10076,
+      "auto_install": true
+    },
+    "dashboards": {
+      "SAP HANA Overview": "assets/dashboards/overview.json"
+    }
+  }
+}

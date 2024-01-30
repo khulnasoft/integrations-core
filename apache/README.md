@@ -84,9 +84,9 @@ To configure this check for an Agent running on a container:
 Set [Autodiscovery Integrations Templates][7] as Docker labels on your application container:
 
 ```yaml
-LABEL "com.khulnasofthq.ad.check_names"='["apache"]'
-LABEL "com.khulnasofthq.ad.init_configs"='[{}]'
-LABEL "com.khulnasofthq.ad.instances"='[{"apache_status_url": "http://%%host%%/server-status?auto"}]'
+LABEL "com.khulnasoft.ad.check_names"='["apache"]'
+LABEL "com.khulnasoft.ad.init_configs"='[{}]'
+LABEL "com.khulnasoft.ad.instances"='[{"apache_status_url": "http://%%host%%/server-status?auto"}]'
 ```
 
 ##### Log collection
@@ -97,7 +97,7 @@ Collecting logs is disabled by default in the Khulnasoft Agent. To enable it, se
 Then, set [Log Integrations][9] as Docker labels:
 
 ```yaml
-LABEL "com.khulnasofthq.ad.logs"='[{"source": "apache", "service": "<SERVICE_NAME>"}]'
+LABEL "com.khulnasoft.ad.logs"='[{"source": "apache", "service": "<SERVICE_NAME>"}]'
 ```
 
 <!-- xxz tab xxx -->
@@ -195,9 +195,9 @@ Set [Autodiscovery Integrations Templates][7] as Docker labels on your applicati
     "name": "apache",
     "image": "apache:latest",
     "dockerLabels": {
-      "com.khulnasofthq.ad.check_names": "[\"apache\"]",
-      "com.khulnasofthq.ad.init_configs": "[{}]",
-      "com.khulnasofthq.ad.instances": "[{\"apache_status_url\": \"http://%%host%%/server-status?auto\"}]"
+      "com.khulnasoft.ad.check_names": "[\"apache\"]",
+      "com.khulnasoft.ad.init_configs": "[{}]",
+      "com.khulnasoft.ad.instances": "[{\"apache_status_url\": \"http://%%host%%/server-status?auto\"}]"
     }
   }]
 }
@@ -216,7 +216,7 @@ Then, set [Log Integrations][9] as Docker labels:
     "name": "apache",
     "image": "apache:latest",
     "dockerLabels": {
-      "com.khulnasofthq.ad.logs": "[{\"source\":\"apache\",\"service\":\"<YOUR_APP_NAME>\"}]"
+      "com.khulnasoft.ad.logs": "[{\"source\":\"apache\",\"service\":\"<YOUR_APP_NAME>\"}]"
     }
   }]
 }

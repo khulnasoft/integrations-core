@@ -25,7 +25,7 @@ export LD_LIBRARY_PATH=/opt/mqm/lib64:/opt/mqm/lib:$LD_LIBRARY_PATH
 
 - Upstart (Linux): `/etc/init/khulnasoft-agent.conf`
 - Systemd (Linux): `/lib/systemd/system/khulnasoft-agent.service`
-- Launchd (MacOS): `~/Library/LaunchAgents/com.khulnasofthq.agent.plist`
+- Launchd (MacOS): `~/Library/LaunchAgents/com.khulnasoft.agent.plist`
   - This only works if MacOS SIP is disabled (might not be recommended depending on your security policy). This is due to [SIP purging `LD_LIBRARY_PATH` environ variable][4].
 
 Example of the configuration for `systemd`:
@@ -90,7 +90,7 @@ Example of the configuration for `launchd`:
             <false/>
         </dict>
         <key>Label</key>
-        <string>com.khulnasofthq.agent</string>
+        <string>com.khulnasoft.agent</string>
         <key>EnvironmentVariables</key>
         <dict>
             <key>DD_LOG_TO_CONSOLE</key>

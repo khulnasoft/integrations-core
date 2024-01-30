@@ -44,7 +44,7 @@ This is an example configuration of a Docker label inside `docker-compose.yml`. 
 
 ```yaml
 labels:
-  com.khulnasofthq.ad.checks: '{"fluxcd":{"instances":[{"openmetrics_endpoint":"http://%%host%%:8080"}]}}'
+  com.khulnasoft.ad.checks: '{"fluxcd":{"instances":[{"openmetrics_endpoint":"http://%%host%%:8080"}]}}'
 ```
 
 <!-- xxz tab xxx -->

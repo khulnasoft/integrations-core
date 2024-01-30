@@ -79,7 +79,7 @@ new value of the option for the subsequent stages.
 
 #### Pre-defined field validators
 
-A `validators` key under the [value](https://khulnasofthq.dev/integrations-core/meta/config-specs/#values) property of config
+A `validators` key under the [value](https://khulnasoft.dev/integrations-core/meta/config-specs/#values) property of config
 spec options is considered. Every entry refers to a relative import path to a [field validator](#custom-field-validators)
 under `khulnasoft_checks.base.utils.models.validation` and is executed in the defined order.
 
@@ -105,7 +105,7 @@ be mutated, so you can only raise errors.
 
 ## Loading
 
-A [check initialization](https://khulnasofthq.dev/integrations-core/base/basics/#check-initializations) occurs before a check's first
+A [check initialization](https://khulnasoft.dev/integrations-core/base/basics/#check-initializations) occurs before a check's first
 run that loads the config models. Validation errors will thus prevent check execution.
 
 ## Interface

@@ -26,13 +26,13 @@ Follow the steps below to configure the IoT Edge device, runtime modules, and th
 
 1. Configure the **Edge Agent** runtime module as follows:
     - Image version must be `1.0.10` or above.
-    - Under "Create Options", add the following `Labels`. Edit the `com.khulnasofthq.ad.instances` label as appropriate. See the [sample azure_iot_edge.d/conf.yaml][4] for all available configuration options. See the documentation on [Docker Integrations Autodiscovery][5] for more information on labels-based integration configuration.
+    - Under "Create Options", add the following `Labels`. Edit the `com.khulnasoft.ad.instances` label as appropriate. See the [sample azure_iot_edge.d/conf.yaml][4] for all available configuration options. See the documentation on [Docker Integrations Autodiscovery][5] for more information on labels-based integration configuration.
 
         ```json
         "Labels": {
-            "com.khulnasofthq.ad.check_names": "[\"azure_iot_edge\"]",
-            "com.khulnasofthq.ad.init_configs": "[{}]",
-            "com.khulnasofthq.ad.instances": "[{\"edge_hub_prometheus_url\": \"http://edgeHub:9600/metrics\", \"edge_agent_prometheus_url\": \"http://edgeAgent:9600/metrics\"}]"
+            "com.khulnasoft.ad.check_names": "[\"azure_iot_edge\"]",
+            "com.khulnasoft.ad.init_configs": "[{}]",
+            "com.khulnasoft.ad.instances": "[{\"edge_hub_prometheus_url\": \"http://edgeHub:9600/metrics\", \"edge_agent_prometheus_url\": \"http://edgeAgent:9600/metrics\"}]"
         }
         ```
 
@@ -83,7 +83,7 @@ Follow the steps below to configure the IoT Edge device, runtime modules, and th
 
     ```json
     "Labels": {
-        "com.khulnasofthq.ad.logs": "[{\"source\": \"azure.iot_edge\", \"service\": \"<SERVICE>\"}]",
+        "com.khulnasoft.ad.logs": "[{\"source\": \"azure.iot_edge\", \"service\": \"<SERVICE>\"}]",
         "...": "..."
     }
     ```

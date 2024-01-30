@@ -100,9 +100,9 @@ To configure this check for an Agent running on a container:
 Set [Autodiscovery Integrations Templates][8] as Docker labels on your application container:
 
 ```yaml
-LABEL "com.khulnasofthq.ad.check_names"='["redisdb"]'
-LABEL "com.khulnasofthq.ad.init_configs"='[{}]'
-LABEL "com.khulnasofthq.ad.instances"='[{"host":"%%host%%","port":"6379","password":"%%env_REDIS_PASSWORD%%"}]'
+LABEL "com.khulnasoft.ad.check_names"='["redisdb"]'
+LABEL "com.khulnasoft.ad.init_configs"='[{}]'
+LABEL "com.khulnasoft.ad.instances"='[{"host":"%%host%%","port":"6379","password":"%%env_REDIS_PASSWORD%%"}]'
 ```
 
 **Note**: The `"%%env_<ENV_VAR>%%"` template variable logic is used to avoid storing the password in plain text, hence the `REDIS_PASSWORD` environment variable must be set on the Agent container. See the [Autodiscovery Template Variable][9] documentation for more details. Alternatively, the Agent can leverage the `secrets` package to work with any [secrets management][10] backend (such as HashiCorp Vault or AWS Secrets Manager).
@@ -116,7 +116,7 @@ Collecting logs is disabled by default in the Khulnasoft Agent. To enable it, se
 Then, set [Log Integrations][12] as Docker labels:
 
 ```yaml
-LABEL "com.khulnasofthq.ad.logs"='[{"source":"redis","service":"<YOUR_APP_NAME>"}]'
+LABEL "com.khulnasoft.ad.logs"='[{"source":"redis","service":"<YOUR_APP_NAME>"}]'
 ```
 
 ##### Trace collection
@@ -268,9 +268,9 @@ Set [Autodiscovery Integrations Templates][8] as Docker labels on your applicati
     "name": "redis",
     "image": "redis:latest",
     "dockerLabels": {
-      "com.khulnasofthq.ad.check_names": "[\"redisdb\"]",
-      "com.khulnasofthq.ad.init_configs": "[{}]",
-      "com.khulnasofthq.ad.instances": "[{\"host\":\"%%host%%\",\"port\":\"6379\",\"password\":\"%%env_REDIS_PASSWORD%%\"}]"
+      "com.khulnasoft.ad.check_names": "[\"redisdb\"]",
+      "com.khulnasoft.ad.init_configs": "[{}]",
+      "com.khulnasoft.ad.instances": "[{\"host\":\"%%host%%\",\"port\":\"6379\",\"password\":\"%%env_REDIS_PASSWORD%%\"}]"
     }
   }]
 }
@@ -292,7 +292,7 @@ Then, set [Log Integrations][12] as Docker labels:
     "name": "redis",
     "image": "redis:latest",
     "dockerLabels": {
-      "com.khulnasofthq.ad.logs": "[{\"source\":\"redis\",\"service\":\"<YOUR_APP_NAME>\"}]"
+      "com.khulnasoft.ad.logs": "[{\"source\":\"redis\",\"service\":\"<YOUR_APP_NAME>\"}]"
     }
   }]
 }

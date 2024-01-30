@@ -228,9 +228,9 @@ To configure this check for an Agent running on a container:
 Set [Autodiscovery Integrations Templates][9] as Docker labels on your application container:
 
 ```yaml
-LABEL "com.khulnasofthq.ad.check_names"='["haproxy"]'
-LABEL "com.khulnasofthq.ad.init_configs"='[{}]'
-LABEL "com.khulnasofthq.ad.instances"='[{"url": "https://%%host%%/admin?stats"}]'
+LABEL "com.khulnasoft.ad.check_names"='["haproxy"]'
+LABEL "com.khulnasoft.ad.init_configs"='[{}]'
+LABEL "com.khulnasoft.ad.instances"='[{"url": "https://%%host%%/admin?stats"}]'
 ```
 
 ##### Log collection
@@ -240,7 +240,7 @@ Collecting logs is disabled by default in the Khulnasoft Agent. To enable it, se
 Then, set [Log Integrations][11] as Docker labels:
 
 ```yaml
-LABEL "com.khulnasofthq.ad.logs"='[{"source":"haproxy","service":"<SERVICE_NAME>"}]'
+LABEL "com.khulnasoft.ad.logs"='[{"source":"haproxy","service":"<SERVICE_NAME>"}]'
 ```
 
 <!-- xxz tab xxx -->
@@ -338,9 +338,9 @@ Set [Autodiscovery Integrations Templates][9] as Docker labels on your applicati
     "name": "haproxy",
     "image": "haproxy:latest",
     "dockerLabels": {
-      "com.khulnasofthq.ad.check_names": "[\"haproxy\"]",
-      "com.khulnasofthq.ad.init_configs": "[{}]",
-      "com.khulnasofthq.ad.instances": "[{\"url\": \"https://%%host%%/admin?stats\"}]"
+      "com.khulnasoft.ad.check_names": "[\"haproxy\"]",
+      "com.khulnasoft.ad.init_configs": "[{}]",
+      "com.khulnasoft.ad.instances": "[{\"url\": \"https://%%host%%/admin?stats\"}]"
     }
   }]
 }
@@ -360,7 +360,7 @@ Then, set [Log Integrations][11] as Docker labels:
     "name": "haproxy",
     "image": "haproxy:latest",
     "dockerLabels": {
-      "com.khulnasofthq.ad.logs": "[{\"source\":\"haproxy\",\"service\":\"<SERVICE_NAME>\"}]"
+      "com.khulnasoft.ad.logs": "[{\"source\":\"haproxy\",\"service\":\"<SERVICE_NAME>\"}]"
     }
   }]
 }
@@ -428,7 +428,7 @@ Need help? Contact [Khulnasoft support][20].
 [23]: https://www.khulnasoft.com/blog/monitor-haproxy-with-khulnasoft
 [24]: https://docs.khulnasoft.com/integrations/faq/haproxy-multi-process/
 [25]: https://github.com/KhulnaSoft/integrations-core/blob/7.34.x/haproxy/khulnasoft_checks/haproxy/data/conf.yaml.example
-[26]: https://khulnasofthq.dev/integrations-core/base/openmetrics/
+[26]: https://khulnasoft.dev/integrations-core/base/openmetrics/
 [27]: https://docs.khulnasoft.com/agent/guide/agent-v6-python-3/?tab=helm#use-python-3-with-khulnasoft-agent-v6
 [28]: https://github.com/KhulnaSoft/integrations-core/blob/0e34b3309cc1371095762bfcaf121b0b45a4e263/haproxy/khulnasoft_checks/haproxy/data/conf.yaml.example#L631
 [29]: https://docs.khulnasoft.com/integrations/guide/versions-for-openmetrics-based-integrations

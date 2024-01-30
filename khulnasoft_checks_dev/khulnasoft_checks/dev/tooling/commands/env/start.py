@@ -31,7 +31,7 @@ base_option = click.option(
     help=(
         'Pass this flag to mount the local version of the base package. By default we use the version shipped '
         'with the agent. Note that passing the flag also mounts the local version of the check.\n\n'
-        'More about the base package: https://khulnasofthq.dev/integrations-core/base/about/'
+        'More about the base package: https://khulnasoft.dev/integrations-core/base/about/'
     ),
 )
 

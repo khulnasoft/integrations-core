@@ -88,7 +88,7 @@ Collecting logs is disabled by default in the Khulnasoft Agent. To enable it, se
 Then, set [log integrations][7] as Docker labels:
 
 ```yaml
-LABEL "com.khulnasofthq.ad.logs"='[{"source": "cockroachdb", "service": "<SERVICE_NAME>"}]'
+LABEL "com.khulnasoft.ad.logs"='[{"source": "cockroachdb", "service": "<SERVICE_NAME>"}]'
 ```
 
 <!-- xxz tab xxx -->

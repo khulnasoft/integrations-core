@@ -1,7 +1,7 @@
 site_name: Agent Integrations
 site_description: The home of Agent Integrations developer documentation
 site_author: Khulnasoft
-site_url: https://khulnasofthq.dev/integrations-core/
+site_url: https://khulnasoft.dev/integrations-core/
 repo_name: khulnasoft/integrations-core
 repo_url: https://github.com/KhulnaSoft/integrations-core
 edit_uri: blob/master/docs/developer
@@ -198,9 +198,9 @@ extra:
     - icon: fontawesome/brands/github-alt
       link: https://github.com/KhulnaSoft
     - icon: fontawesome/brands/twitter
-      link: https://twitter.com/khulnasofthq
+      link: https://twitter.com/khulnasoft
     - icon: fontawesome/brands/instagram
-      link: https://www.instagram.com/khulnasofthq
+      link: https://www.instagram.com/khulnasoft
 extra_css:
   - assets/css/custom.css
   - https://cdn.jsdelivr.net/npm/firacode@6.2.0/distr/fira_code.css

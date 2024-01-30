@@ -103,7 +103,7 @@ def get_agent_service_cmd(version, platform, action):
             'launchctl',
             'load' if action == 'start' else 'unload',
             '-w',
-            f"{expanduser('~')}/Library/LaunchAgents/com.khulnasofthq.agent.plist",
+            f"{expanduser('~')}/Library/LaunchAgents/com.khulnasoft.agent.plist",
         ]
     else:
         return ['sudo', 'service', 'khulnasoft-agent', action]

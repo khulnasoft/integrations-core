@@ -115,7 +115,7 @@ Additional parameters can be used to change the endpoint used in order to go thr
 <match khulnasoft.**>
 
   #...
-  host 'http-intake.logs.khulnasofthq.eu'
+  host 'http-intake.logs.khulnasoft.eu'
 
 </match>
 ```

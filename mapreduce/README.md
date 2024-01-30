@@ -73,7 +73,7 @@ Collecting logs is disabled by default in the Khulnasoft Agent. To enable it, se
 Then, set [log integrations][16] as Docker labels:
 
 ```yaml
-LABEL "com.khulnasofthq.ad.logs"='[{"source": "mapreduce", "service": "<SERVICE_NAME>"}]'
+LABEL "com.khulnasoft.ad.logs"='[{"source": "mapreduce", "service": "<SERVICE_NAME>"}]'
 ```
 
 <!-- xxz tab xxx -->

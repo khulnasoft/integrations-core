@@ -236,9 +236,9 @@ To configure this check for an Agent running on a container:
 Set [Autodiscovery Integration Templates][11] as Docker labels on your application container:
 
 ```yaml
-LABEL "com.khulnasofthq.ad.check_names"='["mysql"]'
-LABEL "com.khulnasofthq.ad.init_configs"='[{}]'
-LABEL "com.khulnasofthq.ad.instances"='[{"server": "%%host%%", "username": "khulnasoft","password": "<UNIQUEPASSWORD>"}]'
+LABEL "com.khulnasoft.ad.check_names"='["mysql"]'
+LABEL "com.khulnasoft.ad.init_configs"='[{}]'
+LABEL "com.khulnasoft.ad.instances"='[{"server": "%%host%%", "username": "khulnasoft","password": "<UNIQUEPASSWORD>"}]'
 ```
 
 See [Autodiscovery template variables][12] for details on using `<UNIQUEPASSWORD>` as an environment variable instead of a label.
@@ -251,7 +251,7 @@ Collecting logs is disabled by default in the Khulnasoft Agent. To enable it, se
 Then, set [Log Integrations][14] as Docker labels:
 
 ```yaml
-LABEL "com.khulnasofthq.ad.logs"='[{"source":"mysql","service":"mysql"}]'
+LABEL "com.khulnasoft.ad.logs"='[{"source":"mysql","service":"mysql"}]'
 ```
 
 <!-- xxz tab xxx -->
@@ -356,9 +356,9 @@ Set [Autodiscovery Integrations Templates][11] as Docker labels on your applicat
     "name": "mysql",
     "image": "mysql:latest",
     "dockerLabels": {
-      "com.khulnasofthq.ad.check_names": "[\"mysql\"]",
-      "com.khulnasofthq.ad.init_configs": "[{}]",
-      "com.khulnasofthq.ad.instances": "[{\"server\": \"%%host%%\", \"username\": \"khulnasoft\",\"password\": \"<UNIQUEPASSWORD>\"}]"
+      "com.khulnasoft.ad.check_names": "[\"mysql\"]",
+      "com.khulnasoft.ad.init_configs": "[{}]",
+      "com.khulnasoft.ad.instances": "[{\"server\": \"%%host%%\", \"username\": \"khulnasoft\",\"password\": \"<UNIQUEPASSWORD>\"}]"
     }
   }]
 }
@@ -380,7 +380,7 @@ Then, set [Log Integrations][14] as Docker labels:
     "name": "mysql",
     "image": "mysql:latest",
     "dockerLabels": {
-      "com.khulnasofthq.ad.logs": "[{\"source\":\"mysql\",\"service\":\"mysql\"}]"
+      "com.khulnasoft.ad.logs": "[{\"source\":\"mysql\",\"service\":\"mysql\"}]"
     }
   }]
 }

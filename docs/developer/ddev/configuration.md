@@ -60,7 +60,7 @@ org = "staging"
 [orgs.staging]
 api_key = "<API_KEY>"
 app_key = "<APP_KEY>"
-site = "khulnasofthq.eu"
+site = "khulnasoft.eu"
 ```
 
 would use the access keys for the organization named `staging` and would submit data to the EU region.

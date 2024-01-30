@@ -18,11 +18,11 @@ Licensed under a 3-clause BSD style license (see LICENSE)
   <domains enable_localSystem="true"/>
 
   <choices-outline>
-    <line choice="com.khulnasofthq.ddev.choice"/>
+    <line choice="com.khulnasoft.ddev.choice"/>
   </choices-outline>
-  <choice title="ddev (universal)" id="com.khulnasofthq.ddev.choice">
-    <pkg-ref id="com.khulnasofthq.ddev.pkg"/>
+  <choice title="ddev (universal)" id="com.khulnasoft.ddev.choice">
+    <pkg-ref id="com.khulnasoft.ddev.pkg"/>
   </choice>
 
-  <pkg-ref id="com.khulnasofthq.ddev.pkg">com.khulnasofthq.ddev.pkg</pkg-ref>
+  <pkg-ref id="com.khulnasoft.ddev.pkg">com.khulnasoft.ddev.pkg</pkg-ref>
 </installer-gui-script>

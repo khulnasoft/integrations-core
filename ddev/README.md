@@ -11,8 +11,8 @@ This is the redesigned command line tooling for Khulnasoft Agent integrations.
 
 ## Installation
 
-Read the [`ddev` installation guide](https://khulnasofthq.dev/integrations-core/setup/#ddev).
+Read the [`ddev` installation guide](https://khulnasoft.dev/integrations-core/setup/#ddev).
 
 ## Documentation
 
-Read the [`ddev` documentation](https://khulnasofthq.dev/integrations-core/ddev/about/).
+Read the [`ddev` documentation](https://khulnasoft.dev/integrations-core/ddev/about/).

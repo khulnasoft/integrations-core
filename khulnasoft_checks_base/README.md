@@ -36,7 +36,7 @@ Need help? Contact [Khulnasoft support][8].
 [1]: https://img.shields.io/pypi/v/khulnasoft-checks-base.svg
 [2]: https://img.shields.io/pypi/pyversions/khulnasoft-checks-base.svg
 [4]: https://github.com/KhulnaSoft/khulnasoft-agent
-[5]: https://khulnasofthq.dev/integrations-core/base/about/
+[5]: https://khulnasoft.dev/integrations-core/base/about/
 [6]: https://github.com/KhulnaSoft/integrations-core
 [7]: https://pypi.org/project/khulnasoft-checks-base/
 [8]: https://docs.khulnasoft.com/help/

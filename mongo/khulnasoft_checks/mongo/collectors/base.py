@@ -112,7 +112,7 @@ class MongoCollector(object):
                 else metric_name
             )
 
-            # This is because https://khulnasofthq.atlassian.net/browse/AGENT-9001
+            # This is because https://khulnasoft.atlassian.net/browse/AGENT-9001
             # Delete this code when the metrics are definitely deprecated
             if metric_name_alias in (
                 'opLatencies.reads.latency',

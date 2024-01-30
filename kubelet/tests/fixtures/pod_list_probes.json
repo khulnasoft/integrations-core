@@ -833,7 +833,7 @@
                 "initContainers": [
                     {
                         "name": "init-volume",
-                        "image": "gcr.io/khulnasofthq/agent:7.35.0-rc.4",
+                        "image": "gcr.io/khulnasoft/agent:7.35.0-rc.4",
                         "command": [
                             "bash",
                             "-c"
@@ -863,7 +863,7 @@
                     },
                     {
                         "name": "init-config",
-                        "image": "gcr.io/khulnasofthq/agent:7.35.0-rc.4",
+                        "image": "gcr.io/khulnasoft/agent:7.35.0-rc.4",
                         "command": [
                             "bash",
                             "-c"
@@ -943,7 +943,7 @@
                 "containers": [
                     {
                         "name": "agent",
-                        "image": "gcr.io/khulnasofthq/agent:7.35.0-rc.4",
+                        "image": "gcr.io/khulnasoft/agent:7.35.0-rc.4",
                         "command": [
                             "agent",
                             "run"
@@ -1153,7 +1153,7 @@
                     },
                     {
                         "name": "process-agent",
-                        "image": "gcr.io/khulnasofthq/agent:7.35.0-rc.4",
+                        "image": "gcr.io/khulnasoft/agent:7.35.0-rc.4",
                         "command": [
                             "process-agent",
                             "-config=/etc/khulnasoft-agent/khulnasoft.yaml"
@@ -1400,8 +1400,8 @@
                         "lastState": {},
                         "ready": true,
                         "restartCount": 0,
-                        "image": "gcr.io/khulnasofthq/agent:7.35.0-rc.4",
-                        "imageID": "docker-pullable://gcr.io/khulnasofthq/agent@sha256:a65ca0ff6415ec63565d52d06e097b646faf392abe32518e36a5b81fd2bc8ca8",
+                        "image": "gcr.io/khulnasoft/agent:7.35.0-rc.4",
+                        "imageID": "docker-pullable://gcr.io/khulnasoft/agent@sha256:a65ca0ff6415ec63565d52d06e097b646faf392abe32518e36a5b81fd2bc8ca8",
                         "containerID": "docker://094e720ed0e2ff3e165dad8ed2e4ed49cd45f3bde7f567d0c20768e0f0ff8ec5"
                     },
                     {
@@ -1418,8 +1418,8 @@
                         "lastState": {},
                         "ready": true,
                         "restartCount": 0,
-                        "image": "gcr.io/khulnasofthq/agent:7.35.0-rc.4",
-                        "imageID": "docker-pullable://gcr.io/khulnasofthq/agent@sha256:a65ca0ff6415ec63565d52d06e097b646faf392abe32518e36a5b81fd2bc8ca8",
+                        "image": "gcr.io/khulnasoft/agent:7.35.0-rc.4",
+                        "imageID": "docker-pullable://gcr.io/khulnasoft/agent@sha256:a65ca0ff6415ec63565d52d06e097b646faf392abe32518e36a5b81fd2bc8ca8",
                         "containerID": "docker://fbeb65e16c9c98bad4abab849698d0d38a6acb04d248e32cd2f3a20246239d34"
                     }
                 ],
@@ -1434,8 +1434,8 @@
                         "lastState": {},
                         "ready": true,
                         "restartCount": 0,
-                        "image": "gcr.io/khulnasofthq/agent:7.35.0-rc.4",
-                        "imageID": "docker-pullable://gcr.io/khulnasofthq/agent@sha256:a65ca0ff6415ec63565d52d06e097b646faf392abe32518e36a5b81fd2bc8ca8",
+                        "image": "gcr.io/khulnasoft/agent:7.35.0-rc.4",
+                        "imageID": "docker-pullable://gcr.io/khulnasoft/agent@sha256:a65ca0ff6415ec63565d52d06e097b646faf392abe32518e36a5b81fd2bc8ca8",
                         "containerID": "docker://c81dfc25dd24b538a880bfd0f807ba9ec1ff4541e8b8eb49a8d1afcdecc5ef59",
                         "started": true
                     },
@@ -1449,8 +1449,8 @@
                         "lastState": {},
                         "ready": true,
                         "restartCount": 0,
-                        "image": "gcr.io/khulnasofthq/agent:7.35.0-rc.4",
-                        "imageID": "docker-pullable://gcr.io/khulnasofthq/agent@sha256:a65ca0ff6415ec63565d52d06e097b646faf392abe32518e36a5b81fd2bc8ca8",
+                        "image": "gcr.io/khulnasoft/agent:7.35.0-rc.4",
+                        "imageID": "docker-pullable://gcr.io/khulnasoft/agent@sha256:a65ca0ff6415ec63565d52d06e097b646faf392abe32518e36a5b81fd2bc8ca8",
                         "containerID": "docker://a670bc474cfeb082ae1fdccf8039d58986938a30aa5be89d6c0fe3d82639734e",
                         "started": true
                     }

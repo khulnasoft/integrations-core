@@ -32,7 +32,7 @@ setup = ["single"]
 [envs.default.env-vars]
 ODBCSYSINI = "{root}{/}tests{/}odbc"
 COMPOSE_FOLDER = "compose"
-PIP_EXTRA_INDEX_URL = "https://khulnasofthq.dev/ci-wheels/bin"
+PIP_EXTRA_INDEX_URL = "https://khulnasoft.dev/ci-wheels/bin"
 
 [envs.default.overrides]
 env.GITHUB_ACTIONS.e2e-env = { value = false, if = ["true"], platform = ["windows"] }

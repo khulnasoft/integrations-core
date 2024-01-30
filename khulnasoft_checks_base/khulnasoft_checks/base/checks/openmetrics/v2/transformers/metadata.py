@@ -8,7 +8,7 @@ def get_metadata(check, metric_name, modifiers, global_options):
     """
     This allows for the submission of instance metadata like a product's version. The required modifier
     `label` indicates which label contains the desired information. For more information, see:
-    https://khulnasofthq.dev/integrations-core/base/metadata/
+    https://khulnasoft.dev/integrations-core/base/metadata/
     """
     set_metadata_method = check.set_metadata
 

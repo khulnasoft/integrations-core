@@ -49,7 +49,7 @@ python -m khulnasoft_checks.downloader -vvvv khulnasoft-$INTEGRATION
 
 You can use `ddev` to run the tests.
 
-About how to install `ddev`, see https://docs.khulnasoft.com/developers/integrations/python/ and https://khulnasofthq.dev/integrations-core/.
+About how to install `ddev`, see https://docs.khulnasoft.com/developers/integrations/python/ and https://khulnasoft.dev/integrations-core/.
 
 For running tests locally, you need to download some test data first. You should only have to do it the first time, and later after some updates to the data:
 

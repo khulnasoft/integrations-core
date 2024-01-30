@@ -41,8 +41,8 @@ The plugin has the following configuration options:
 | Name       | Required | Default value | description|
 |------------|:--------:|---------------|------------|
 |apiKey | true | NA | Your Khulnasoft API key.|
-|khulnasoftUrl | false | https://api.khulnasoft.com/api/ | You can configure a different endpoint, for instance https://api.khulnasofthq.eu/api/ if your khulnasoft instance is in the EU|
-|logIntakeUrl | false | https://http-intake.logs.khulnasoft.com/v1/input/ | You can configure a different endpoint, for instance https://http-intake.logs.khulnasofthq.eu/v1/input/ if your khulnasoft instance is in the EU.|
+|khulnasoftUrl | false | https://api.khulnasoft.com/api/ | You can configure a different endpoint, for instance https://api.khulnasoft.eu/api/ if your khulnasoft instance is in the EU|
+|logIntakeUrl | false | https://http-intake.logs.khulnasoft.com/v1/input/ | You can configure a different endpoint, for instance https://http-intake.logs.khulnasoft.eu/v1/input/ if your khulnasoft instance is in the EU.|
 |metricsMaxBatchSize|false|200|Metrics are submitted every 10 seconds in batches of size `metricsMaxBatchSize`.|
 |logsBatchSize|false|500|Logs are submitted in batches of size `logsBatchSize` as soon as this size is reached.|
 |sendResultsAsLogs|false|false|By default only metrics are reported to Khulnasoft. To report individual test results as log events, set this field to `true`.|

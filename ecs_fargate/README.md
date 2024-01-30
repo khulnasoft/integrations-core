@@ -424,7 +424,7 @@ partial -->
       "options": {
         "Name": "khulnasoft",
         "apikey": "<KHULNASOFT_API_KEY>",
-        "Host": "http-intake.logs.khulnasofthq.eu",
+        "Host": "http-intake.logs.khulnasoft.eu",
         "dd_service": "firelens-test",
         "dd_source": "redis",
         "dd_message_key": "log",
@@ -631,7 +631,7 @@ Resources:
             Options:
               Name: khulnasoft
               apikey: <KHULNASOFT_API_KEY>
-              Host: http-intake.logs.khulnasofthq.eu
+              Host: http-intake.logs.khulnasoft.eu
               dd_service: test-service
               dd_source: test-source
               TLS: 'on'

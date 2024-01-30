@@ -28,5 +28,5 @@ Need help? Contact [Khulnasoft support][4].
 
 [1]: https://docs.khulnasoft.com/network_performance_monitoring/devices/setup
 [2]: https://www.khulnasoft.com/blog/monitor-snmp-with-khulnasoft/
-[3]: https://khulnasofthq.dev/integrations-core/tutorials/snmp/introduction/
+[3]: https://khulnasoft.dev/integrations-core/tutorials/snmp/introduction/
 [4]: https://docs.khulnasoft.com/help/

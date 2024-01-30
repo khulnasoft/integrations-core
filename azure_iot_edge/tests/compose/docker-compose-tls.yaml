@@ -28,7 +28,7 @@ services:
     networks:
       - iot-edge-network
     labels:
-      com.khulnasofthq.ad.logs: '[{"source": "azure.iot_edge", "service": "azure_iot_edge_dev"}]'
+      com.khulnasoft.ad.logs: '[{"source": "azure.iot_edge", "service": "azure_iot_edge_dev"}]'
 
 networks:
   iot-edge-network:

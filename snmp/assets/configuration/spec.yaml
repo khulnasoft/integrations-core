@@ -58,7 +58,7 @@ files:
 
           Single scalar metrics and table metrics can be defined in this section.
           Details on how to define metrics can be found in the documentation:
-          https://khulnasofthq.dev/integrations-core/tutorials/snmp/profile-format/#metrics
+          https://khulnasoft.dev/integrations-core/tutorials/snmp/profile-format/#metrics
         value:
           type: array
           items:
@@ -289,7 +289,7 @@ files:
 
           Single scalar metrics and table metrics can be defined in this section.
           Details on how to define metrics can be found in the documentation:
-          https://khulnasofthq.dev/integrations-core/tutorials/snmp/profile-format/#metrics
+          https://khulnasoft.dev/integrations-core/tutorials/snmp/profile-format/#metrics
         value:
           type: array
           items:

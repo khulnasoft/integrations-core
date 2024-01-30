@@ -29,7 +29,7 @@ For more information on integrations, please reference our [documentation][11] a
 
 [1]: https://raw.githubusercontent.com/KhulnaSoft/integrations-core/badges/test-results.svg
 [2]: https://github.com/KhulnaSoft/integrations-core/actions/workflows/master.yml
-[3]: https://khulnasofthq.dev/integrations-core/
+[3]: https://khulnasoft.dev/integrations-core/
 [5]: https://github.com/KhulnaSoft/integrations-extras
 [6]: https://docs.khulnasoft.com/developers/integrations/
 [7]: https://github.com/KhulnaSoft/khulnasoft-agent

@@ -47,7 +47,7 @@ This example demonstrates the configuration as a Docker label inside `docker-com
 
 ```yaml
 labels:
-  com.khulnasofthq.ad.checks: '{"ray":{"instances":[{"openmetrics_endpoint":"http://%%host%%:8080"}]}}'
+  com.khulnasoft.ad.checks: '{"ray":{"instances":[{"openmetrics_endpoint":"http://%%host%%:8080"}]}}'
 ```
 
 <!-- xxz tab xxx -->

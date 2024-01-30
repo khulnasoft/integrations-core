@@ -264,9 +264,9 @@ Use the `extra_metrics` configuration field to add metrics that go beyond the on
 Set [Autodiscovery Integrations Templates][5] as Docker labels on your DCGM exporter container:
 
 ```yaml
-LABEL "com.khulnasofthq.ad.check_names"='["dcgm"]'
-LABEL "com.khulnasofthq.ad.init_configs"='[{}]'
-LABEL "com.khulnasofthq.ad.instances"='[{"openmetrics_endpoint": "http://%%host%%:9400/metrics"}]'
+LABEL "com.khulnasoft.ad.check_names"='["dcgm"]'
+LABEL "com.khulnasoft.ad.init_configs"='[{}]'
+LABEL "com.khulnasoft.ad.instances"='[{"openmetrics_endpoint": "http://%%host%%:9400/metrics"}]'
 ```
 
 <!-- xxz tab xxx -->

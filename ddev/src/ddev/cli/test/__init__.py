@@ -83,7 +83,7 @@ def test(
     Please see these docs for to pass TARGET_SPEC and PYTEST_ARGS:
 
     \b
-    https://khulnasofthq.dev/integrations-core/testing/
+    https://khulnasoft.dev/integrations-core/testing/
     """
     import json
     import os

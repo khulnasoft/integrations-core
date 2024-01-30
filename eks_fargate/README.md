@@ -133,7 +133,7 @@ spec:
        env:
        - name: DD_API_KEY
          value: "<YOUR_KHULNASOFT_API_KEY>"
-         ## Set DD_SITE to "khulnasofthq.eu" to send your
+         ## Set DD_SITE to "khulnasoft.eu" to send your
          ## Agent data to the Khulnasoft EU site
        - name: DD_SITE
          value: "khulnasoft.com"
@@ -250,7 +250,7 @@ spec:
        env:
        - name: DD_API_KEY
          value: "<YOUR_KHULNASOFT_API_KEY>"
-         ## Set DD_SITE to "khulnasofthq.eu" to send your
+         ## Set DD_SITE to "khulnasoft.eu" to send your
          ## Agent data to the Khulnasoft EU site
        - name: DD_SITE
          value: "khulnasoft.com"
@@ -311,7 +311,7 @@ spec:
        env:
        - name: DD_API_KEY
          value: "<YOUR_KHULNASOFT_API_KEY>"
-         ## Set DD_SITE to "khulnasofthq.eu" to send your
+         ## Set DD_SITE to "khulnasoft.eu" to send your
          ## Agent data to the Khulnasoft EU site
        - name: DD_SITE
          value: "khulnasoft.com"
@@ -409,7 +409,7 @@ spec:
        env:
        - name: DD_API_KEY
          value: "<YOUR_KHULNASOFT_API_KEY>"
-         ## Set DD_SITE to "khulnasofthq.eu" to send your
+         ## Set DD_SITE to "khulnasoft.eu" to send your
          ## Agent data to the Khulnasoft EU site
        - name: DD_SITE
          value: "khulnasoft.com"

@@ -43,7 +43,7 @@ init_config:
     ##
     ## Single scalar metrics and table metrics can be defined in this section.
     ## Details on how to define metrics can be found in the documentation:
-    ## https://khulnasofthq.dev/integrations-core/tutorials/snmp/profile-format/#metrics
+    ## https://khulnasoft.dev/integrations-core/tutorials/snmp/profile-format/#metrics
     #
     # global_metrics:
     #   - OID: 1.3.6.1.2.1.6.5.0
@@ -220,7 +220,7 @@ instances:
     ##
     ## Single scalar metrics and table metrics can be defined in this section.
     ## Details on how to define metrics can be found in the documentation:
-    ## https://khulnasofthq.dev/integrations-core/tutorials/snmp/profile-format/#metrics
+    ## https://khulnasoft.dev/integrations-core/tutorials/snmp/profile-format/#metrics
     #
     # metrics:
     #   - OID: 1.3.6.1.2.1.6.5.0

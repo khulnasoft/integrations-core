@@ -29,15 +29,15 @@ To configure this check for an Agent running on a container:
 Set [Autodiscovery Integration Templates][2] as Docker labels on your application container:
 
 ```yaml
-LABEL "com.khulnasofthq.ad.check_names"='["coredns"]'
-LABEL "com.khulnasofthq.ad.init_configs"='[{}]'
-LABEL "com.khulnasofthq.ad.instances"='[{"openmetrics_endpoint":"http://%%host%%:9153/metrics", "tags":["dns-pod:%%host%%"]}]'
+LABEL "com.khulnasoft.ad.check_names"='["coredns"]'
+LABEL "com.khulnasoft.ad.init_configs"='[{}]'
+LABEL "com.khulnasoft.ad.instances"='[{"openmetrics_endpoint":"http://%%host%%:9153/metrics", "tags":["dns-pod:%%host%%"]}]'
 ```
 
 To enable the legacy mode of this OpenMetrics-based check, replace `openmetrics_endpoint` with `prometheus_url`:
 
 ```yaml
-LABEL "com.khulnasofthq.ad.instances"='[{"prometheus_url":"http://%%host%%:9153/metrics", "tags":["dns-pod:%%host%%"]}]' 
+LABEL "com.khulnasoft.ad.instances"='[{"prometheus_url":"http://%%host%%:9153/metrics", "tags":["dns-pod:%%host%%"]}]' 
 ```
 
 **Notes**:
@@ -53,7 +53,7 @@ Collecting logs is disabled by default in the Khulnasoft Agent. To enable it, se
 Then, set [Log Integrations][4] as Docker labels:
 
 ```yaml
-LABEL "com.khulnasofthq.ad.logs"='[{"source":"coredns","service":"<SERVICE_NAME>"}]'
+LABEL "com.khulnasoft.ad.logs"='[{"source":"coredns","service":"<SERVICE_NAME>"}]'
 ```
 
 <!-- xxz tab xxx -->
@@ -185,9 +185,9 @@ Set [Autodiscovery Integrations Templates][10] as Docker labels on your applicat
     "name": "coredns",
     "image": "coredns:latest",
     "dockerLabels": {
-      "com.khulnasofthq.ad.check_names": "[\"coredns\"]",
-      "com.khulnasofthq.ad.init_configs": "[{}]",
-      "com.khulnasofthq.ad.instances": "[{\"openmetrics_endpoint\":\"http://%%host%%:9153/metrics\", \"tags\":[\"dns-pod:%%host%%\"]}]"
+      "com.khulnasoft.ad.check_names": "[\"coredns\"]",
+      "com.khulnasoft.ad.init_configs": "[{}]",
+      "com.khulnasoft.ad.instances": "[{\"openmetrics_endpoint\":\"http://%%host%%:9153/metrics\", \"tags\":[\"dns-pod:%%host%%\"]}]"
     }
   }]
 }
@@ -196,7 +196,7 @@ Set [Autodiscovery Integrations Templates][10] as Docker labels on your applicat
 To enable the legacy mode of this OpenMetrics-based check, replace `openmetrics_endpoint` with `prometheus_url`:
 
 ```json
-      "com.khulnasofthq.ad.instances": "[{\"prometheus_url\":\"http://%%host%%:9153/metrics\", \"tags\":[\"dns-pod:%%host%%\"]}]"
+      "com.khulnasoft.ad.instances": "[{\"prometheus_url\":\"http://%%host%%:9153/metrics\", \"tags\":[\"dns-pod:%%host%%\"]}]"
 ```
 
 **Notes**:
@@ -217,7 +217,7 @@ Then, set [Log Integrations][12] as Docker labels:
     "name": "coredns",
     "image": "coredns:latest",
     "dockerLabels": {
-      "com.khulnasofthq.ad.logs": "[{\"source\":\"coredns\",\"service\":\"<SERVICE_NAME>\"}]"
+      "com.khulnasoft.ad.logs": "[{\"source\":\"coredns\",\"service\":\"<SERVICE_NAME>\"}]"
     }
   }]
 }

@@ -239,9 +239,9 @@ To configure this check for an Agent running on a container:
 Set [Autodiscovery Integrations Templates][9] as Docker labels on your application container:
 
 ```yaml
-LABEL "com.khulnasofthq.ad.check_names"='["postgres"]'
-LABEL "com.khulnasofthq.ad.init_configs"='[{}]'
-LABEL "com.khulnasofthq.ad.instances"='[{"host":"%%host%%", "port":5432,"username":"khulnasoft","password":"<PASSWORD>"}]'
+LABEL "com.khulnasoft.ad.check_names"='["postgres"]'
+LABEL "com.khulnasoft.ad.init_configs"='[{}]'
+LABEL "com.khulnasoft.ad.instances"='[{"host":"%%host%%", "port":5432,"username":"khulnasoft","password":"<PASSWORD>"}]'
 ```
 
 ##### Log collection
@@ -252,7 +252,7 @@ Collecting logs is disabled by default in the Khulnasoft Agent. To enable it, se
 Then, set [Log Integrations][11] as Docker labels:
 
 ```yaml
-LABEL "com.khulnasofthq.ad.logs"='[{"source":"postgresql","service":"postgresql"}]'
+LABEL "com.khulnasoft.ad.logs"='[{"source":"postgresql","service":"postgresql"}]'
 ```
 
 ##### Trace collection
@@ -388,9 +388,9 @@ Set [Autodiscovery Integrations Templates][9] as Docker labels on your applicati
     "name": "postgres",
     "image": "postgres:latest",
     "dockerLabels": {
-      "com.khulnasofthq.ad.check_names": "[\"postgres\"]",
-      "com.khulnasofthq.ad.init_configs": "[{}]",
-      "com.khulnasofthq.ad.instances": "[{\"host\":\"%%host%%\", \"port\":5432,\"username\":\"khulnasoft\",\"password\":\"<PASSWORD>\"}]"
+      "com.khulnasoft.ad.check_names": "[\"postgres\"]",
+      "com.khulnasoft.ad.init_configs": "[{}]",
+      "com.khulnasoft.ad.instances": "[{\"host\":\"%%host%%\", \"port\":5432,\"username\":\"khulnasoft\",\"password\":\"<PASSWORD>\"}]"
     }
   }]
 }
@@ -409,7 +409,7 @@ Then, set [Log Integrations][11] as Docker labels:
     "name": "postgres",
     "image": "postgres:latest",
     "dockerLabels": {
-      "com.khulnasofthq.ad.logs": "[{\"source\":\"postgresql\",\"service\":\"postgresql\"}]"
+      "com.khulnasoft.ad.logs": "[{\"source\":\"postgresql\",\"service\":\"postgresql\"}]"
     }
   }]
 }

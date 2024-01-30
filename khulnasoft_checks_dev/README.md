@@ -21,5 +21,5 @@ Docs are available [here][7].
 [2]: https://img.shields.io/pypi/pyversions/khulnasoft-checks-dev.svg
 [3]: https://pypi.org/project/khulnasoft-checks-dev/
 [5]: https://github.com/KhulnaSoft/khulnasoft-agent
-[6]: https://khulnasofthq.dev/integrations-core/setup/#ddev
-[7]: https://khulnasofthq.dev/integrations-core/ddev/about/
+[6]: https://khulnasoft.dev/integrations-core/setup/#ddev
+[7]: https://khulnasoft.dev/integrations-core/ddev/about/

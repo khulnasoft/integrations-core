@@ -21,7 +21,7 @@ docker run -d --cgroupns host \
               -p 127.0.0.1:8125:8125/udp \
               -e DD_DOGSTATSD_NON_LOCAL_TRAFFIC=true \
               -e DD_APM_ENABLED=true \
-              gcr.io/khulnasofthq/agent:latest
+              gcr.io/khulnasoft/agent:latest
 ```
 
 2. Install the Khulnasoft APM Python library.

@@ -243,9 +243,9 @@ To configure this check for an Agent running on a container:
 Set [Autodiscovery Integrations Templates][9] as Docker labels on your application container:
 
 ```yaml
-LABEL "com.khulnasofthq.ad.check_names"='["mongo"]'
-LABEL "com.khulnasofthq.ad.init_configs"='[{}]'
-LABEL "com.khulnasofthq.ad.instances"='[{"hosts": ["%%host%%:%%port%%"], "username": "khulnasoft", "password" : "<UNIQUEPASSWORD>", "database": "<DATABASE>"}]'
+LABEL "com.khulnasoft.ad.check_names"='["mongo"]'
+LABEL "com.khulnasoft.ad.init_configs"='[{}]'
+LABEL "com.khulnasoft.ad.instances"='[{"hosts": ["%%host%%:%%port%%"], "username": "khulnasoft", "password" : "<UNIQUEPASSWORD>", "database": "<DATABASE>"}]'
 ```
 
 ##### Log collection
@@ -255,7 +255,7 @@ Collecting logs is disabled by default in the Khulnasoft Agent. To enable it, se
 Then, set [Log Integrations][11] as Docker labels:
 
 ```yaml
-LABEL "com.khulnasofthq.ad.logs"='[{"source":"mongodb","service":"<SERVICE_NAME>"}]'
+LABEL "com.khulnasoft.ad.logs"='[{"source":"mongodb","service":"<SERVICE_NAME>"}]'
 ```
 
 ##### Trace collection
@@ -390,9 +390,9 @@ Set [Autodiscovery Integrations Templates][9] as Docker labels on your applicati
     "name": "mongo",
     "image": "mongo:latest",
     "dockerLabels": {
-      "com.khulnasofthq.ad.check_names": "[\"mongo\"]",
-      "com.khulnasofthq.ad.init_configs": "[{}]",
-      "com.khulnasofthq.ad.instances": "[{\"hosts\": [\"%%host%%:%%port%%\"], \"username\": \"khulnasoft\", \"password\": \"<UNIQUEPASSWORD>\", \"database\": \"<DATABASE>\"}]"
+      "com.khulnasoft.ad.check_names": "[\"mongo\"]",
+      "com.khulnasoft.ad.init_configs": "[{}]",
+      "com.khulnasoft.ad.instances": "[{\"hosts\": [\"%%host%%:%%port%%\"], \"username\": \"khulnasoft\", \"password\": \"<UNIQUEPASSWORD>\", \"database\": \"<DATABASE>\"}]"
     }
   }]
 }
@@ -412,7 +412,7 @@ Then, set [Log Integrations][11] as Docker labels:
     "name": "mongo",
     "image": "mongo:latest",
     "dockerLabels": {
-      "com.khulnasofthq.ad.logs": "[{\"source\":\"mongodb\",\"service\":\"<SERVICE_NAME>\"}]"
+      "com.khulnasoft.ad.logs": "[{\"source\":\"mongodb\",\"service\":\"<SERVICE_NAME>\"}]"
     }
   }]
 }

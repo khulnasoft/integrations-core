@@ -9,8 +9,8 @@ index f0ba8af..4182dd0 100644
 +
 +[patch.crates-io]
 +speedate = { git = "https://github.com/KhulnaSoft/speedate.git", branch = "support-old-nightly" }
-+pyo3 = { git = "https://github.com/KhulnaSoft/pyo3.git", branch = "support-old-nightly" }
-+indexmap = { git = "https://github.com/KhulnaSoft/indexmap.git", branch = "support-old-nightly" }
++pyo3 = { git = "https://github.com/Khulnasoft-lab/pyo3.git", branch = "support-old-nightly" }
++indexmap = { git = "https://github.com/Khulnasoft-lab/indexmap.git", branch = "support-old-nightly" }
 diff --git a/Cargo.lock b/Cargo.lock
 index fc9a6ed..ff5fe71 100644
 --- a/Cargo.lock
@@ -84,7 +84,7 @@ index fc9a6ed..ff5fe71 100644
  version = "1.9.3"
 -source = "registry+https://github.com/rust-lang/crates.io-index"
 -checksum = "bd070e393353796e801d209ad339e89596eb4c8d430d18ede6a1cced8fafbd99"
-+source = "git+https://github.com/KhulnaSoft/indexmap.git?branch=support-old-nightly#861fad73de14b7f08d2dc56ed83607aef621b42e"
++source = "git+https://github.com/Khulnasoft-lab/indexmap.git?branch=support-old-nightly#861fad73de14b7f08d2dc56ed83607aef621b42e"
  dependencies = [
   "autocfg",
   "hashbrown",
@@ -214,7 +214,7 @@ index fc9a6ed..ff5fe71 100644
  version = "0.19.1"
 -source = "registry+https://github.com/rust-lang/crates.io-index"
 -checksum = "ffb88ae05f306b4bfcde40ac4a51dc0b05936a9207a4b75b798c7729c4258a59"
-+source = "git+https://github.com/KhulnaSoft/pyo3.git?branch=support-old-nightly#782dcfa95ce95ef6306cd9c777ca3aee86b79fcc"
++source = "git+https://github.com/Khulnasoft-lab/pyo3.git?branch=support-old-nightly#782dcfa95ce95ef6306cd9c777ca3aee86b79fcc"
  dependencies = [
   "cfg-if",
   "indoc",
@@ -224,7 +224,7 @@ index fc9a6ed..ff5fe71 100644
  version = "0.19.1"
 -source = "registry+https://github.com/rust-lang/crates.io-index"
 -checksum = "554db24f0b3c180a9c0b1268f91287ab3f17c162e15b54caaae5a6b3773396b0"
-+source = "git+https://github.com/KhulnaSoft/pyo3.git?branch=support-old-nightly#782dcfa95ce95ef6306cd9c777ca3aee86b79fcc"
++source = "git+https://github.com/Khulnasoft-lab/pyo3.git?branch=support-old-nightly#782dcfa95ce95ef6306cd9c777ca3aee86b79fcc"
  dependencies = [
   "once_cell",
   "python3-dll-a",
@@ -234,7 +234,7 @@ index fc9a6ed..ff5fe71 100644
  version = "0.19.1"
 -source = "registry+https://github.com/rust-lang/crates.io-index"
 -checksum = "922ede8759e8600ad4da3195ae41259654b9c55da4f7eec84a0ccc7d067a70a4"
-+source = "git+https://github.com/KhulnaSoft/pyo3.git?branch=support-old-nightly#782dcfa95ce95ef6306cd9c777ca3aee86b79fcc"
++source = "git+https://github.com/Khulnasoft-lab/pyo3.git?branch=support-old-nightly#782dcfa95ce95ef6306cd9c777ca3aee86b79fcc"
  dependencies = [
   "libc",
   "pyo3-build-config",
@@ -244,7 +244,7 @@ index fc9a6ed..ff5fe71 100644
  version = "0.19.1"
 -source = "registry+https://github.com/rust-lang/crates.io-index"
 -checksum = "8a5caec6a1dd355964a841fcbeeb1b89fe4146c87295573f94228911af3cc5a2"
-+source = "git+https://github.com/KhulnaSoft/pyo3.git?branch=support-old-nightly#782dcfa95ce95ef6306cd9c777ca3aee86b79fcc"
++source = "git+https://github.com/Khulnasoft-lab/pyo3.git?branch=support-old-nightly#782dcfa95ce95ef6306cd9c777ca3aee86b79fcc"
  dependencies = [
   "proc-macro2",
   "pyo3-macros-backend",
@@ -254,7 +254,7 @@ index fc9a6ed..ff5fe71 100644
  version = "0.19.1"
 -source = "registry+https://github.com/rust-lang/crates.io-index"
 -checksum = "e0b78ccbb160db1556cdb6fd96c50334c5d4ec44dc5e0a968d0a1208fa0efa8b"
-+source = "git+https://github.com/KhulnaSoft/pyo3.git?branch=support-old-nightly#782dcfa95ce95ef6306cd9c777ca3aee86b79fcc"
++source = "git+https://github.com/Khulnasoft-lab/pyo3.git?branch=support-old-nightly#782dcfa95ce95ef6306cd9c777ca3aee86b79fcc"
  dependencies = [
   "proc-macro2",
   "quote",
@@ -566,7 +566,7 @@ index 7c3bae8..00d29e2 100644
  version_check = "0.9.4"
  # used where logic has to be version/distribution specific, e.g. pypy
 -pyo3-build-config = "0.19.0"
-+pyo3-build-config = { git = 'https://github.com/KhulnaSoft/pyo3.git', branch = 'support-old-nightly' }
++pyo3-build-config = { git = 'https://github.com/Khulnasoft-lab/pyo3.git', branch = 'support-old-nightly' }
 diff --git a/pyproject.toml b/pyproject.toml
 index 1602e32..0278c38 100644
 --- a/pyproject.toml

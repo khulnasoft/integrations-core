@@ -235,9 +235,9 @@ To configure this check for an Agent running on a container:
 Set [Autodiscovery Integration Templates][8] as Docker labels on your application container:
 
 ```yaml
-LABEL "com.khulnasofthq.ad.check_names"='["nginx"]'
-LABEL "com.khulnasofthq.ad.init_configs"='[{}]'
-LABEL "com.khulnasofthq.ad.instances"='[{"nginx_status_url": "http://%%host%%:81/nginx_status/"}]'
+LABEL "com.khulnasoft.ad.check_names"='["nginx"]'
+LABEL "com.khulnasoft.ad.init_configs"='[{}]'
+LABEL "com.khulnasoft.ad.instances"='[{"nginx_status_url": "http://%%host%%:81/nginx_status/"}]'
 ```
 
 **Note**: This instance configuration works only with NGINX Open Source. If you are using NGINX Plus, inline the corresponding instance configuration.
@@ -250,7 +250,7 @@ Collecting logs is disabled by default in the Khulnasoft Agent. To enable it, se
 Then, set [Log Integrations][10] as Docker labels:
 
 ```yaml
-LABEL "com.khulnasofthq.ad.logs"='[{"source":"nginx","service":"nginx"}]'
+LABEL "com.khulnasoft.ad.logs"='[{"source":"nginx","service":"nginx"}]'
 ```
 
 <!-- xxz tab xxx -->
@@ -346,9 +346,9 @@ Set [Autodiscovery Integrations Templates][8] as Docker labels on your applicati
     "name": "nginx",
     "image": "nginx:latest",
     "dockerLabels": {
-      "com.khulnasofthq.ad.check_names": "[\"nginx\"]",
-      "com.khulnasofthq.ad.init_configs": "[{}]",
-      "com.khulnasofthq.ad.instances": "[{\"nginx_status_url\":\"http://%%host%%:81/nginx_status/\"}]"
+      "com.khulnasoft.ad.check_names": "[\"nginx\"]",
+      "com.khulnasoft.ad.init_configs": "[{}]",
+      "com.khulnasoft.ad.instances": "[{\"nginx_status_url\":\"http://%%host%%:81/nginx_status/\"}]"
     }
   }]
 }
@@ -369,7 +369,7 @@ Then, set [Log Integrations][10] as Docker labels:
     "name": "nginx",
     "image": "nginx:latest",
     "dockerLabels": {
-      "com.khulnasofthq.ad.logs": "[{\"source\":\"nginx\",\"service\":\"nginx\"}]"
+      "com.khulnasoft.ad.logs": "[{\"source\":\"nginx\",\"service\":\"nginx\"}]"
     }
   }]
 }

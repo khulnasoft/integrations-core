@@ -70,7 +70,7 @@ def test_command(
     See these docs for to pass ENVIRONMENT and PYTEST_ARGS:
 
     \b
-    https://khulnasofthq.dev/integrations-core/testing/
+    https://khulnasoft.dev/integrations-core/testing/
     """
     from ddev.cli.env.start import start
     from ddev.cli.env.stop import stop

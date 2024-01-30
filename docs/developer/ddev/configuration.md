@@ -20,7 +20,7 @@ repo = "core"
 [repos]
 core = "/path/to/integrations-core"
 extras = "/path/to/integrations-extras"
-agent = "/path/to/datadog-agent"
+agent = "/path/to/khulnasoft-agent"
 ```
 
 would make it so running e.g. `ddev test nginx` will look for an integration named `nginx` in `/path/to/integrations-core`
@@ -38,16 +38,16 @@ Agent versions. For example, this configuration:
 agent = "master"
 
 [agents.master]
-docker = "datadog/agent-dev:master"
+docker = "khulnasoft/agent-dev:master"
 local = "latest"
 
 [agents."7.18.1"]
-docker = "datadog/agent:7.18.1"
+docker = "khulnasoft/agent:7.18.1"
 local = "7.18.1"
 ```
 
 would make it so environments that [define](plugins.md#metadata) the type as `docker` will use the Docker image
-that was built with the latest commit to the [datadog-agent][] repo.
+that was built with the latest commit to the [khulnasoft-agent][] repo.
 
 ## Organization
 
@@ -60,18 +60,18 @@ org = "staging"
 [orgs.staging]
 api_key = "<API_KEY>"
 app_key = "<APP_KEY>"
-site = "datadoghq.eu"
+site = "khulnasofthq.eu"
 ```
 
 would use the access keys for the organization named `staging` and would submit data to the EU region.
 
 The supported fields are:
 
-- [api_key][datadog-config-api-key]
-- [app_key][datadog-config-app-key]
-- [site][datadog-config-site]
-- [dd_url][datadog-config-dd-url]
-- [log_url][datadog-config-log-url]
+- [api_key][khulnasoft-config-api-key]
+- [app_key][khulnasoft-config-app-key]
+- [site][khulnasoft-config-site]
+- [dd_url][khulnasoft-config-dd-url]
+- [log_url][khulnasoft-config-log-url]
 
 ## GitHub
 

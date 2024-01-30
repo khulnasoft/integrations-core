@@ -2,7 +2,7 @@
     {
         "agent_version": "5.0.0",
         "integration": "System",
-        "check": "datadog.agent.up",
+        "check": "khulnasoft.agent.up",
         "statuses": [
             "ok",
             "critical"

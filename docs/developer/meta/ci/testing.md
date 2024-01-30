@@ -150,7 +150,7 @@ This reusable workflow is called by workflows that need to test everything.
 
 ## Tracing
 
-During testing we use [ddtrace](https://github.com/KhulnaSoft/dd-trace-py) to submit [APM data](https://docs.khulnasoft.com/tracing/) to the [Datadog Agent](https://docs.khulnasoft.com/agent/). To avoid every job pulling the Agent, these HTTP trace requests are captured and saved to a [newline-delimited JSON](https://en.wikipedia.org/wiki/JSON_streaming#Newline-Delimited_JSON) file.
+During testing we use [ddtrace](https://github.com/KhulnaSoft/dd-trace-py) to submit [APM data](https://docs.khulnasoft.com/tracing/) to the [Khulnasoft Agent](https://docs.khulnasoft.com/agent/). To avoid every job pulling the Agent, these HTTP trace requests are captured and saved to a [newline-delimited JSON](https://en.wikipedia.org/wiki/JSON_streaming#Newline-Delimited_JSON) file.
 
 A [workflow](https://github.com/KhulnaSoft/integrations-core/blob/master/.github/workflows/submit-traces.yml) then runs after all jobs are finished and [replays](https://github.com/KhulnaSoft/integrations-core/blob/master/.ddev/ci/scripts/traces.py) the requests to the Agent. At the end the artifact is [deleted](https://github.com/geekyeggo/delete-artifact) to avoid needless storage persistence and also so if individual jobs are rerun that only the new traces will be submitted.
 

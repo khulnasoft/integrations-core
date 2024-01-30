@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2023-present
+# (C) Khulnasoft, Inc. 2023-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 from urllib.parse import urljoin, urlparse  # noqa: F401
@@ -43,7 +43,7 @@ class NvidiaTritonCheck(OpenMetricsBaseCheckV2):
     def get_default_config(self):
         return {
             "metrics": [METRICS_MAP],
-            # Rename labels that are reserved in datadog.
+            # Rename labels that are reserved in khulnasoft.
             "rename_labels": {
                 "version": "triton_model_version",
             },

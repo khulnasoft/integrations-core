@@ -12,7 +12,7 @@ In addition to the integrations inheriting from AgentCheck, other classes that i
 
 ## Getting Started
 
-The Datadog Agent looks for `__version__` and a subclass of `AgentCheck` at the root of every Check package.
+The Khulnasoft Agent looks for `__version__` and a subclass of `AgentCheck` at the root of every Check package.
 
 Below is an example of the `__init__.py` file for a hypothetical `Awesome` Check:
 
@@ -36,7 +36,7 @@ Collector
     AwesomeCheck (0.0.1)
     -------------------
       Instance ID: 1234 [OK]
-      Configuration Source: file:/etc/datadog-agent/conf.d/awesomecheck.d/awesomecheck.yaml
+      Configuration Source: file:/etc/khulnasoft-agent/conf.d/awesomecheck.d/awesomecheck.yaml
       Total Runs: 12
       Metric Samples: Last Run: 242, Total: 2,904
       Events: Last Run: 0, Total: 0
@@ -50,7 +50,7 @@ Collector
 
 ## Checks
 
-AgentCheck contains functions that you use to execute Checks and submit data to Datadog.
+AgentCheck contains functions that you use to execute Checks and submit data to Khulnasoft.
 
 ### Metrics
 
@@ -82,7 +82,7 @@ For more information, see the [API documentation](api.md#khulnasoft_checks.base.
 
 #### Histogram
 
-The histogram metric submission type represents the statistical distribution of a set of values calculated Agent-side in one time interval. Datadog’s histogram metric type is an extension of the StatsD timing metric type: the Agent aggregates the values that are sent in a defined time interval and produces different metrics which represent the set of values.
+The histogram metric submission type represents the statistical distribution of a set of values calculated Agent-side in one time interval. Khulnasoft’s histogram metric type is an extension of the StatsD timing metric type: the Agent aggregates the values that are sent in a defined time interval and produces different metrics which represent the set of values.
 
 For more information, see the [API documentation](api.md#khulnasoft_checks.base.checks.base.AgentCheck.histogram).
 
@@ -118,7 +118,7 @@ class AwesomeCheck(AgentCheck):
 ...
 ```
 
-This is an optional addition, but it makes submissions easier since it prefixes every metric with the `__NAMESPACE__` automatically. In this case it would append `awesome.` to each metric submitted to Datadog.
+This is an optional addition, but it makes submissions easier since it prefixes every metric with the `__NAMESPACE__` automatically. In this case it would append `awesome.` to each metric submitted to Khulnasoft.
 
 If you wish to ignore the namespace for any reason, you can append an optional Boolean `raw=True` to each submission:
 

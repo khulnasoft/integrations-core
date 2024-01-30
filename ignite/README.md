@@ -8,7 +8,7 @@ This check monitors [Ignite][1].
 
 ### Installation
 
-The Ignite check is included in the [Datadog Agent][2] package. No additional installation is needed on your server.
+The Ignite check is included in the [Khulnasoft Agent][2] package. No additional installation is needed on your server.
 
 ### Configuration
 
@@ -30,7 +30,7 @@ To configure this check for an Agent running on a host:
    This check has a limit of 350 metrics per instance. The number of returned metrics is indicated in the info page.
    You can specify the metrics you are interested in by editing the configuration below.
    To learn how to customize the metrics to collect see the [JMX Checks documentation][5] for more information.
-   If you need to monitor more metrics, contact [Datadog support][6].
+   If you need to monitor more metrics, contact [Khulnasoft support][6].
 
 2. [Restart the Agent][7]
 
@@ -38,7 +38,7 @@ To configure this check for an Agent running on a host:
 
 _Available for Agent versions >6.0_
 
-1. Collecting logs is disabled by default in the Datadog Agent, you need to enable it in `datadog.yaml`:
+1. Collecting logs is disabled by default in the Khulnasoft Agent, you need to enable it in `khulnasoft.yaml`:
 
    ```yaml
    logs_enabled: true
@@ -71,13 +71,13 @@ For containerized environments, see the [Autodiscovery Integration Templates][8]
 
 ##### Metric collection
 
-To collect metrics with the Datadog-Ignite integration, see the [Autodiscovery with JMX][9] guide.
+To collect metrics with the Khulnasoft-Ignite integration, see the [Autodiscovery with JMX][9] guide.
 
 ##### Log collection
 
 _Available for Agent versions >6.0_
 
-Collecting logs is disabled by default in the Datadog Agent. To enable it, see [Docker log collection][10].
+Collecting logs is disabled by default in the Khulnasoft Agent. To enable it, see [Docker log collection][10].
 
 | Parameter      | Value                                                                                                                                                             |
 | -------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -106,7 +106,7 @@ See [service_checks.json][13] for a list of service checks provided by this inte
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][4].
+Need help? Contact [Khulnasoft support][4].
 
 
 [1]: https://ignite.apache.org/

@@ -159,7 +159,7 @@
 ***Fixed***:
 
 * Fix explaining parameterized queries flood server logs ([#15612](https://github.com/KhulnaSoft/integrations-core/pull/15612))
-* Update datadog-checks-base dependency version to 32.6.0 ([#15604](https://github.com/KhulnaSoft/integrations-core/pull/15604))
+* Update khulnasoft-checks-base dependency version to 32.6.0 ([#15604](https://github.com/KhulnaSoft/integrations-core/pull/15604))
 * Prevent `command already in progress` errors in the Postgres integration ([#15489](https://github.com/KhulnaSoft/integrations-core/pull/15489))
 
 ***Fixed***:
@@ -186,7 +186,7 @@
 
 ***Fixed***:
 
-* Bump the minimum datadog-checks-base version ([#15238](https://github.com/KhulnaSoft/integrations-core/pull/15238))
+* Bump the minimum khulnasoft-checks-base version ([#15238](https://github.com/KhulnaSoft/integrations-core/pull/15238))
 
 ## 14.0.0 / 2023-07-10
 
@@ -474,7 +474,7 @@
 ***Fixed***:
 
 * Fix bug in PG activity collection interval logic ([#10487](https://github.com/KhulnaSoft/integrations-core/pull/10487))
-* Upgrade datadog checks base to 23.1.5 ([#10466](https://github.com/KhulnaSoft/integrations-core/pull/10466))
+* Upgrade khulnasoft checks base to 23.1.5 ([#10466](https://github.com/KhulnaSoft/integrations-core/pull/10466))
 
 ## 10.0.0 / 2021-10-04
 
@@ -489,7 +489,7 @@
 
 ***Fixed***:
 
-* Bump datadog checks base version ([#10300](https://github.com/KhulnaSoft/integrations-core/pull/10300))
+* Bump khulnasoft checks base version ([#10300](https://github.com/KhulnaSoft/integrations-core/pull/10300))
 * Avoid re-explaining queries that cannot be explained ([#9941](https://github.com/KhulnaSoft/integrations-core/pull/9941))
 
 ## 9.0.2 / 2021-08-27 / Agent 7.31.0
@@ -545,7 +545,7 @@
 ***Fixed***:
 
 * Fix wrong errors related to pg_stat_statements setup ([#9733](https://github.com/KhulnaSoft/integrations-core/pull/9733))
-* Bump `datadog-checks-base` version requirement ([#9719](https://github.com/KhulnaSoft/integrations-core/pull/9719))
+* Bump `khulnasoft-checks-base` version requirement ([#9719](https://github.com/KhulnaSoft/integrations-core/pull/9719))
 
 ## 8.0.4 / 2021-07-15
 

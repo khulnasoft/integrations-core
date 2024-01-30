@@ -39,7 +39,7 @@ files:
         If you surround patterns by quotes, be sure to escape backslashes with an extra backslash.
         The example list below will include:
           - cluster.in.0000.lb_subsets_active
-          - cluster.out.alerting-event-evaluator-test.datadog.svc.cluster.local
+          - cluster.out.alerting-event-evaluator-test.khulnasoft.svc.cluster.local
       value:
         type: array
         items:

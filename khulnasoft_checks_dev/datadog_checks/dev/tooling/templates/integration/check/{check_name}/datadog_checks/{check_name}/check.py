@@ -21,7 +21,7 @@ class {check_class}(AgentCheck):
 
         # If the check is going to perform SQL queries you should define a query manager here.
         # More info at
-        # https://datadoghq.dev/integrations-core/base/databases/#khulnasoft_checks.base.utils.db.core.QueryManager
+        # https://khulnasofthq.dev/integrations-core/base/databases/#khulnasoft_checks.base.utils.db.core.QueryManager
         # sample_query = {{
         #     "name": "sample",
         #     "query": "SELECT * FROM sample_table",
@@ -37,7 +37,7 @@ class {check_class}(AgentCheck):
         # The following are useful bits of code to help new users get started.
 
         # Perform HTTP Requests with our HTTP wrapper.
-        # More info at https://datadoghq.dev/integrations-core/base/http/
+        # More info at https://khulnasofthq.dev/integrations-core/base/http/
         # try:
         #     response = self.http.get(self.url)
         #     response.raise_for_status()
@@ -75,7 +75,7 @@ class {check_class}(AgentCheck):
 
         # This is how you submit metrics
         # There are different types of metrics that you can submit (gauge, event).
-        # More info at https://datadoghq.dev/integrations-core/base/api/#khulnasoft_checks.base.checks.base.AgentCheck
+        # More info at https://khulnasofthq.dev/integrations-core/base/api/#khulnasoft_checks.base.checks.base.AgentCheck
         # self.gauge("test", 1.23, tags=['foo:bar'])
 
         # Perform database queries using the Query Manager
@@ -89,7 +89,7 @@ class {check_class}(AgentCheck):
 
         # If your check ran successfully, you can send the status.
         # More info at
-        # https://datadoghq.dev/integrations-core/base/api/#khulnasoft_checks.base.checks.base.AgentCheck.service_check
+        # https://khulnasofthq.dev/integrations-core/base/api/#khulnasoft_checks.base.checks.base.AgentCheck.service_check
         # self.service_check("can_connect", AgentCheck.OK)
 
         # If it didn't then it should send a critical service check

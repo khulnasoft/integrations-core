@@ -1499,10 +1499,10 @@
       },
       {
          "metadata":{
-            "name":"datadog-agent-n9gmd",
-            "generateName":"datadog-agent-",
+            "name":"khulnasoft-agent-n9gmd",
+            "generateName":"khulnasoft-agent-",
             "namespace":"default",
-            "selfLink":"/api/v1/namespaces/default/pods/datadog-agent-n9gmd",
+            "selfLink":"/api/v1/namespaces/default/pods/khulnasoft-agent-n9gmd",
             "uid":"d9156db8-631a-11e8-a028-42010a8401a4",
             "resourceVersion":"8941490",
             "creationTimestamp":"2018-05-29T08:32:39Z",
@@ -1519,7 +1519,7 @@
                {
                   "apiVersion":"extensions/v1beta1",
                   "kind":"DaemonSet",
-                  "name":"datadog-agent",
+                  "name":"khulnasoft-agent",
                   "uid":"d9111ea5-631a-11e8-a028-42010a8401a4",
                   "controller":true,
                   "blockOwnerDeletion":true
@@ -1560,7 +1560,7 @@
             "containers":[
                {
                   "name":"dd-agent",
-                  "image":"datadog/agent-dev:antoine-kubernetes-events-tag-with-involved-host",
+                  "image":"khulnasoft/agent-dev:antoine-kubernetes-events-tag-with-involved-host",
                   "ports":[
                      {
                         "name":"dogstatsdport",
@@ -1719,8 +1719,8 @@
                   },
                   "ready":true,
                   "restartCount":0,
-                  "image":"datadog/agent-dev:antoine-kubernetes-events-tag-with-involved-host",
-                  "imageID":"docker-pullable://datadog/agent-dev@sha256:463321aafe4cd1a43d00435a44af66b2bf35a1612876faebf4481b56cc57eaa0",
+                  "image":"khulnasoft/agent-dev:antoine-kubernetes-events-tag-with-involved-host",
+                  "imageID":"docker-pullable://khulnasoft/agent-dev@sha256:463321aafe4cd1a43d00435a44af66b2bf35a1612876faebf4481b56cc57eaa0",
                   "containerID":"docker://cb4bdc365c313932cdcc53bcc9a4984042e24112f9820f083bd8cb507ee5212b"
                }
             ],

@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2010-present
+# (C) Khulnasoft, Inc. 2010-present
 # All rights reserved
 # Licensed under Simplified BSD License (see LICENSE)
 import os
@@ -32,9 +32,9 @@ PORT = '5432'
 PORT_REPLICA = '5433'
 PORT_REPLICA2 = '5434'
 PORT_REPLICA_LOGICAL = '5435'
-USER = 'datadog'
+USER = 'khulnasoft'
 USER_ADMIN = 'dd_admin'
-PASSWORD = 'datadog'
+PASSWORD = 'khulnasoft'
 PASSWORD_ADMIN = 'dd_admin'
 DB_NAME = 'khulnasoft_test'
 POSTGRES_VERSION = os.environ.get('POSTGRES_VERSION', None)

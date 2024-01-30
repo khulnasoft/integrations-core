@@ -2,40 +2,40 @@
 
 ## Overview
 
-The Datadog Agent collects many metrics from Airflow, including those for:
+The Khulnasoft Agent collects many metrics from Airflow, including those for:
 
 - DAGs (Directed Acyclic Graphs): Number of DAG processes, DAG bag size, etc.
 - Tasks: Task failures, successes, killed, etc.
 - Pools: Open slots, used slots, etc.
 - Executors: Open slots, queued tasks, running tasks, etc.
 
-Metrics are collected through the [Airflow StatsD][1] plugin and sent to Datadog's [DogStatsD][2].
+Metrics are collected through the [Airflow StatsD][1] plugin and sent to Khulnasoft's [DogStatsD][2].
 
-In addition to metrics, the Datadog Agent also sends service checks related to Airflow's health.
+In addition to metrics, the Khulnasoft Agent also sends service checks related to Airflow's health.
 
 ## Setup
 
 ### Installation
 
-All steps below are needed for the Airflow integration to work properly. Before you begin, [install the Datadog Agent][3] version `>=6.17` or `>=7.17`, which includes the StatsD/DogStatsD mapping feature.
+All steps below are needed for the Airflow integration to work properly. Before you begin, [install the Khulnasoft Agent][3] version `>=6.17` or `>=7.17`, which includes the StatsD/DogStatsD mapping feature.
 
 ### Configuration
-There are two forms of the Airflow integration. There is the Datadog Agent integration which makes requests to a provided endpoint for Airflow to report whether it can connect and is healthy. Then there is the Airflow StatsD portion where Airflow can be configured to send metrics to the Datadog Agent, which can remap the Airflow notation to a Datadog notation.
+There are two forms of the Airflow integration. There is the Khulnasoft Agent integration which makes requests to a provided endpoint for Airflow to report whether it can connect and is healthy. Then there is the Airflow StatsD portion where Airflow can be configured to send metrics to the Khulnasoft Agent, which can remap the Airflow notation to a Khulnasoft notation.
 
 <!-- xxx tabs xxx -->
 <!-- xxx tab "Host" xxx -->
 
 #### Host
 
-##### Configure Datadog Agent Airflow integration
+##### Configure Khulnasoft Agent Airflow integration
 
-Configure the Airflow check included in the [Datadog Agent][4] package to collect health metrics and service checks. This can be done by editing the `url` within the `airflow.d/conf.yaml` file, in the `conf.d/` folder at the root of your Agent's configuration directory, to start collecting your Airflow service checks. See the [sample airflow.d/conf.yaml][5] for all available configuration options.
+Configure the Airflow check included in the [Khulnasoft Agent][4] package to collect health metrics and service checks. This can be done by editing the `url` within the `airflow.d/conf.yaml` file, in the `conf.d/` folder at the root of your Agent's configuration directory, to start collecting your Airflow service checks. See the [sample airflow.d/conf.yaml][5] for all available configuration options.
 
 Ensure that `url` matches your Airflow [webserver `base_url`][20], the URL used to connect to your Airflow instance.
 
 ##### Connect Airflow to DogStatsD
 
-Connect Airflow to DogStatsD (included in the Datadog Agent) by using the Airflow `statsd` feature to collect metrics. For more information about the metrics reported by the Airflow version used and the additional configuration options, see the Airflow documentation below:
+Connect Airflow to DogStatsD (included in the Khulnasoft Agent) by using the Airflow `statsd` feature to collect metrics. For more information about the metrics reported by the Airflow version used and the additional configuration options, see the Airflow documentation below:
 - [Airflow Metrics][6]
 - [Airflow Metrics Configuration][7]
 
@@ -54,14 +54,14 @@ Connect Airflow to DogStatsD (included in the Datadog Agent) by using the Airflo
    ```conf
    [scheduler]
    statsd_on = True
-   # Hostname or IP of server running the Datadog Agent
+   # Hostname or IP of server running the Khulnasoft Agent
    statsd_host = localhost  
-   # DogStatsD port configured in the Datadog Agent
+   # DogStatsD port configured in the Khulnasoft Agent
    statsd_port = 8125
    statsd_prefix = airflow
    ```
 
-3. Update the [Datadog Agent main configuration file][9] `datadog.yaml` by adding the following configs:
+3. Update the [Khulnasoft Agent main configuration file][9] `khulnasoft.yaml` by adding the following configs:
 
    ```yaml
    # dogstatsd_mapper_cache_size: 1000  # default to 1000
@@ -194,7 +194,7 @@ Connect Airflow to DogStatsD (included in the Datadog Agent) by using the Airflo
              state: "$3"
    ```
 
-##### Restart Datadog Agent and Airflow
+##### Restart Khulnasoft Agent and Airflow
 
 1. [Restart the Agent][10].
 2. Restart Airflow to start sending your Airflow metrics to the Agent DogStatsD endpoint.
@@ -207,7 +207,7 @@ Use the default configuration in your `airflow.d/conf.yaml` file to activate you
 
 _Available for Agent versions >6.0_
 
-1. Collecting logs is disabled by default in the Datadog Agent. Enable it in your `datadog.yaml` file:
+1. Collecting logs is disabled by default in the Khulnasoft Agent. Enable it in your `khulnasoft.yaml` file:
 
    ```yaml
    logs_enabled: true
@@ -253,7 +253,7 @@ _Available for Agent versions >6.0_
 
       Caveat: By default Airflow uses this log file template for tasks: `log_filename_template = {{ ti.dag_id }}/{{ ti.task_id }}/{{ ts }}/{{ try_number }}.log`. The number of log files grow quickly if not cleaned regularly. This pattern is used by Airflow UI to display logs individually for each executed task.
 
-      If you do not view logs in Airflow UI, Datadog recommends this configuration in `airflow.cfg`: `log_filename_template = dag_tasks.log`. Then log rotate this file and use this configuration:
+      If you do not view logs in Airflow UI, Khulnasoft recommends this configuration in `airflow.cfg`: `log_filename_template = dag_tasks.log`. Then log rotate this file and use this configuration:
 
       ```yaml
       logs:
@@ -273,7 +273,7 @@ _Available for Agent versions >6.0_
 
 #### Containerized
 
-##### Configure Datadog Agent Airflow integration
+##### Configure Khulnasoft Agent Airflow integration
 
 For containerized environments, see the [Autodiscovery Integration Templates][8] for guidance on applying the parameters below.
 
@@ -287,7 +287,7 @@ Ensure that `url` matches your Airflow [webserver `base_url`][20], the URL used 
 
 ##### Connect Airflow to DogStatsD
 
-Connect Airflow to DogStatsD (included in the Datadog Agent) by using the Airflow `statsd` feature to collect metrics. For more information about the metrics reported by the Airflow version used and the additional configuration options, see the Airflow documentation below:
+Connect Airflow to DogStatsD (included in the Khulnasoft Agent) by using the Airflow `statsd` feature to collect metrics. For more information about the metrics reported by the Airflow version used and the additional configuration options, see the Airflow documentation below:
 - [Airflow Metrics][6]
 - [Airflow Metrics Configuration][7]
 
@@ -309,9 +309,9 @@ The Airflow StatsD configuration can be enabled with the following environment v
         fieldRef:
           fieldPath: status.hostIP
   ```
-The environment variable for the host endpoint `AIRFLOW__SCHEDULER__STATSD_HOST` is supplied with the node's host IP address to route the StatsD data to the Datadog Agent pod on the same node as the Airflow pod. This setup also requires the Agent to have a `hostPort` open for this port `8125` and accepting non-local StatsD traffic. For more information, see [DogStatsD on Kubernetes Setup][12].
+The environment variable for the host endpoint `AIRFLOW__SCHEDULER__STATSD_HOST` is supplied with the node's host IP address to route the StatsD data to the Khulnasoft Agent pod on the same node as the Airflow pod. This setup also requires the Agent to have a `hostPort` open for this port `8125` and accepting non-local StatsD traffic. For more information, see [DogStatsD on Kubernetes Setup][12].
 
-This should direct the StatsD traffic from the Airflow container to a Datadog Agent ready to accept the incoming data. The last portion is to update the Datadog Agent with the corresponding `dogstatsd_mapper_profiles` . This can be done by copying the `dogstatsd_mapper_profiles` provided in the [Host installation][13] into your `datadog.yaml` file. Or by deploying your Datadog Agent with the equivalent JSON configuration in the environment variable `DD_DOGSTATSD_MAPPER_PROFILES`. With respect to Kubernetes the equivalent environment variable notation is:
+This should direct the StatsD traffic from the Airflow container to a Khulnasoft Agent ready to accept the incoming data. The last portion is to update the Khulnasoft Agent with the corresponding `dogstatsd_mapper_profiles` . This can be done by copying the `dogstatsd_mapper_profiles` provided in the [Host installation][13] into your `khulnasoft.yaml` file. Or by deploying your Khulnasoft Agent with the equivalent JSON configuration in the environment variable `DD_DOGSTATSD_MAPPER_PROFILES`. With respect to Kubernetes the equivalent environment variable notation is:
   ```yaml
   env: 
     - name: DD_DOGSTATSD_MAPPER_PROFILES
@@ -319,13 +319,13 @@ This should direct the StatsD traffic from the Airflow container to a Datadog Ag
         [{"prefix":"airflow.","name":"airflow","mappings":[{"name":"airflow.job.start","match":"airflow.*_start","tags":{"job_name":"$1"}},{"name":"airflow.job.end","match":"airflow.*_end","tags":{"job_name":"$1"}},{"name":"airflow.job.heartbeat.failure","match":"airflow.*_heartbeat_failure","tags":{"job_name":"$1"}},{"name":"airflow.operator_failures","match":"airflow.operator_failures_*","tags":{"operator_name":"$1"}},{"name":"airflow.operator_successes","match":"airflow.operator_successes_*","tags":{"operator_name":"$1"}},{"match_type":"regex","name":"airflow.dag_processing.last_runtime","match":"airflow\\.dag_processing\\.last_runtime\\.(.*)","tags":{"dag_file":"$1"}},{"match_type":"regex","name":"airflow.dag_processing.last_run.seconds_ago","match":"airflow\\.dag_processing\\.last_run\\.seconds_ago\\.(.*)","tags":{"dag_file":"$1"}},{"match_type":"regex","name":"airflow.dag.loading_duration","match":"airflow\\.dag\\.loading-duration\\.(.*)","tags":{"dag_file":"$1"}},{"name":"airflow.dagrun.first_task_scheduling_delay","match":"airflow.dagrun.*.first_task_scheduling_delay","tags":{"dag_id":"$1"}},{"name":"airflow.pool.open_slots","match":"airflow.pool.open_slots.*","tags":{"pool_name":"$1"}},{"name":"airflow.pool.queued_slots","match":"airflow.pool.queued_slots.*","tags":{"pool_name":"$1"}},{"name":"airflow.pool.running_slots","match":"airflow.pool.running_slots.*","tags":{"pool_name":"$1"}},{"name":"airflow.pool.used_slots","match":"airflow.pool.used_slots.*","tags":{"pool_name":"$1"}},{"name":"airflow.pool.starving_tasks","match":"airflow.pool.starving_tasks.*","tags":{"pool_name":"$1"}},{"match_type":"regex","name":"airflow.dagrun.dependency_check","match":"airflow\\.dagrun\\.dependency-check\\.(.*)","tags":{"dag_id":"$1"}},{"match_type":"regex","name":"airflow.dag.task.duration","match":"airflow\\.dag\\.(.*)\\.([^.]*)\\.duration","tags":{"dag_id":"$1","task_id":"$2"}},{"match_type":"regex","name":"airflow.dag_processing.last_duration","match":"airflow\\.dag_processing\\.last_duration\\.(.*)","tags":{"dag_file":"$1"}},{"match_type":"regex","name":"airflow.dagrun.duration.success","match":"airflow\\.dagrun\\.duration\\.success\\.(.*)","tags":{"dag_id":"$1"}},{"match_type":"regex","name":"airflow.dagrun.duration.failed","match":"airflow\\.dagrun\\.duration\\.failed\\.(.*)","tags":{"dag_id":"$1"}},{"match_type":"regex","name":"airflow.dagrun.schedule_delay","match":"airflow\\.dagrun\\.schedule_delay\\.(.*)","tags":{"dag_id":"$1"}},{"name":"airflow.scheduler.tasks.running","match":"airflow.scheduler.tasks.running"},{"name":"airflow.scheduler.tasks.starving","match":"airflow.scheduler.tasks.starving"},{"name":"airflow.sla_email_notification_failure","match":"airflow.sla_email_notification_failure"},{"match_type":"regex","name":"airflow.dag.task_removed","match":"airflow\\.task_removed_from_dag\\.(.*)","tags":{"dag_id":"$1"}},{"match_type":"regex","name":"airflow.dag.task_restored","match":"airflow\\.task_restored_to_dag\\.(.*)","tags":{"dag_id":"$1"}},{"name":"airflow.task.instance_created","match":"airflow.task_instance_created-*","tags":{"task_class":"$1"}},{"name":"airflow.ti.start","match":"airflow.ti.start.*.*","tags":{"dag_id":"$1","task_id":"$2"}},{"name":"airflow.ti.finish","match":"airflow.ti.finish.*.*.*","tags":{"dag_id":"$1","state":"$3","task_id":"$2"}}]}]
   ```
 
-See the Datadog `integrations-core` repo for an [example setup][14].
+See the Khulnasoft `integrations-core` repo for an [example setup][14].
 
 ##### Log collection
 
 _Available for Agent versions >6.0_
 
-Collecting logs is disabled by default in the Datadog Agent. To enable it, see [Kubernetes Log Collection][15].
+Collecting logs is disabled by default in the Khulnasoft Agent. To enable it, see [Kubernetes Log Collection][15].
 
 | Parameter      | Value                                                 |
 |----------------|-------------------------------------------------------|
@@ -340,9 +340,9 @@ Collecting logs is disabled by default in the Datadog Agent. To enable it, see [
 
 ## Annexe
 
-### Airflow DatadogHook
+### Airflow KhulnasoftHook
 
-In addition, [Airflow DatadogHook][17] can be used to interact with Datadog:
+In addition, [Airflow KhulnasoftHook][17] can be used to interact with Khulnasoft:
 
 - Send Metric
 - Query Metric
@@ -364,7 +364,7 @@ See [service_checks.json][19] for a list of service checks provided by this inte
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][11].
+Need help? Contact [Khulnasoft support][11].
 
 
 [1]: https://airflow.apache.org/docs/stable/metrics.html
@@ -383,7 +383,7 @@ Need help? Contact [Datadog support][11].
 [14]: https://github.com/KhulnaSoft/integrations-core/tree/master/airflow/tests/k8s_sample
 [15]: https://docs.khulnasoft.com/agent/kubernetes/integrations/?tab=kubernetes#configuration
 [16]: https://docs.khulnasoft.com/agent/guide/agent-commands/?tab=agentv6#agent-status-and-information
-[17]: https://airflow.apache.org/docs/apache-airflow-providers-datadog/stable/_modules/airflow/providers/datadog/hooks/datadog.html
+[17]: https://airflow.apache.org/docs/apache-airflow-providers-khulnasoft/stable/_modules/airflow/providers/khulnasoft/hooks/khulnasoft.html
 [18]: https://github.com/KhulnaSoft/integrations-core/blob/master/airflow/metadata.csv
 [19]: https://github.com/KhulnaSoft/integrations-core/blob/master/airflow/assets/service_checks.json
 [20]: https://airflow.apache.org/docs/apache-airflow/stable/configurations-ref.html#base-url

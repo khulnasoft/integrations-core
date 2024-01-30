@@ -1,5 +1,5 @@
 {
-    "title": "Datadog Cluster Agent - Overview",
+    "title": "Khulnasoft Cluster Agent - Overview",
     "description": "",
     "widgets": [
         {
@@ -51,7 +51,7 @@
                             {
                                 "data_source": "metrics",
                                 "name": "query1",
-                                "query": "sum:datadog.cluster_agent.running{$cluster,$namespace} by {version}.fill(null)"
+                                "query": "sum:khulnasoft.cluster_agent.running{$cluster,$namespace} by {version}.fill(null)"
                             }
                         ],
                         "response_format": "timeseries",
@@ -467,7 +467,7 @@
                                 "aggregator": "last",
                                 "data_source": "metrics",
                                 "name": "query1",
-                                "query": "sum:datadog.cluster_agent.cluster_checks.nodes_reporting{$cluster,$namespace,$leader}"
+                                "query": "sum:khulnasoft.cluster_agent.cluster_checks.nodes_reporting{$cluster,$namespace,$leader}"
                             }
                         ],
                         "response_format": "scalar"
@@ -668,7 +668,7 @@
                                 "aggregator": "last",
                                 "data_source": "metrics",
                                 "name": "query1",
-                                "query": "sum:datadog.cluster_agent.cluster_checks.configs_dispatched{$cluster,$namespace,$leader}"
+                                "query": "sum:khulnasoft.cluster_agent.cluster_checks.configs_dispatched{$cluster,$namespace,$leader}"
                             }
                         ],
                         "response_format": "scalar"
@@ -710,7 +710,7 @@
                                 "aggregator": "last",
                                 "data_source": "metrics",
                                 "name": "query1",
-                                "query": "sum:datadog.cluster_agent.cluster_checks.configs_dangling{$cluster,$namespace,$leader}"
+                                "query": "sum:khulnasoft.cluster_agent.cluster_checks.configs_dangling{$cluster,$namespace,$leader}"
                             }
                         ],
                         "response_format": "scalar"
@@ -754,7 +754,7 @@
                             {
                                 "data_source": "metrics",
                                 "name": "query1",
-                                "query": "avg:datadog.cluster_agent.cluster_checks.configs_dispatched{$cluster,$namespace,$leader} by {node}.fill(null)"
+                                "query": "avg:khulnasoft.cluster_agent.cluster_checks.configs_dispatched{$cluster,$namespace,$leader} by {node}.fill(null)"
                             }
                         ],
                         "response_format": "timeseries",
@@ -926,7 +926,7 @@
                             {
                                 "data_source": "metrics",
                                 "name": "query0",
-                                "query": "avg:datadog.cluster_agent.cluster_checks.configs_dangling{$cluster,$namespace,$leader}.fill(null)"
+                                "query": "avg:khulnasoft.cluster_agent.cluster_checks.configs_dangling{$cluster,$namespace,$leader}.fill(null)"
                             }
                         ],
                         "response_format": "timeseries",
@@ -1001,7 +1001,7 @@
                             {
                                 "data_source": "metrics",
                                 "name": "query1",
-                                "query": "avg:datadog.cluster_agent.admission_webhooks.reconcile_success{controller:webhooks,$cluster,$namespace} by {pod_name}"
+                                "query": "avg:khulnasoft.cluster_agent.admission_webhooks.reconcile_success{controller:webhooks,$cluster,$namespace} by {pod_name}"
                             }
                         ],
                         "response_format": "timeseries",
@@ -1054,7 +1054,7 @@
                             {
                                 "data_source": "metrics",
                                 "name": "query1",
-                                "query": "avg:datadog.cluster_agent.admission_webhooks.reconcile_success{controller:secrets,$cluster,$namespace} by {pod_name}"
+                                "query": "avg:khulnasoft.cluster_agent.admission_webhooks.reconcile_success{controller:secrets,$cluster,$namespace} by {pod_name}"
                             }
                         ],
                         "response_format": "timeseries",
@@ -1128,13 +1128,13 @@
                                 "aggregator": "last",
                                 "data_source": "metrics",
                                 "name": "query1",
-                                "query": "sum:datadog.cluster_agent.external_metrics{valid:true,$cluster,$namespace,$leader}"
+                                "query": "sum:khulnasoft.cluster_agent.external_metrics{valid:true,$cluster,$namespace,$leader}"
                             },
                             {
                                 "aggregator": "last",
                                 "data_source": "metrics",
                                 "name": "query2",
-                                "query": "sum:datadog.cluster_agent.external_metrics.khulnasoft_metrics{valid:true,$cluster,$namespace,$leader}"
+                                "query": "sum:khulnasoft.cluster_agent.external_metrics.khulnasoft_metrics{valid:true,$cluster,$namespace,$leader}"
                             }
                         ],
                         "response_format": "scalar"
@@ -1176,13 +1176,13 @@
                                 "aggregator": "last",
                                 "data_source": "metrics",
                                 "name": "query1",
-                                "query": "sum:datadog.cluster_agent.external_metrics{valid:false,$cluster,$namespace,$leader}"
+                                "query": "sum:khulnasoft.cluster_agent.external_metrics{valid:false,$cluster,$namespace,$leader}"
                             },
                             {
                                 "aggregator": "last",
                                 "data_source": "metrics",
                                 "name": "query2",
-                                "query": "sum:datadog.cluster_agent.external_metrics.khulnasoft_metrics{valid:false,$cluster,$namespace,$leader}"
+                                "query": "sum:khulnasoft.cluster_agent.external_metrics.khulnasoft_metrics{valid:false,$cluster,$namespace,$leader}"
                             }
                         ],
                         "response_format": "scalar"
@@ -1224,7 +1224,7 @@
                             {
                                 "data_source": "metrics",
                                 "name": "query0",
-                                "query": "avg:datadog.cluster_agent.admission_webhooks.reconcile_errors{controller:webhooks,$cluster,$namespace} by {pod_name}"
+                                "query": "avg:khulnasoft.cluster_agent.admission_webhooks.reconcile_errors{controller:webhooks,$cluster,$namespace} by {pod_name}"
                             }
                         ],
                         "response_format": "timeseries",
@@ -1277,7 +1277,7 @@
                             {
                                 "data_source": "metrics",
                                 "name": "query0",
-                                "query": "avg:datadog.cluster_agent.admission_webhooks.reconcile_errors{controller:secrets,$cluster,$namespace} by {pod_name}"
+                                "query": "avg:khulnasoft.cluster_agent.admission_webhooks.reconcile_errors{controller:secrets,$cluster,$namespace} by {pod_name}"
                             }
                         ],
                         "response_format": "timeseries",
@@ -1334,12 +1334,12 @@
                             {
                                 "data_source": "metrics",
                                 "name": "query1",
-                                "query": "sum:datadog.cluster_agent.external_metrics{$namespace,$cluster,$leader} by {valid,kube_namespace}"
+                                "query": "sum:khulnasoft.cluster_agent.external_metrics{$namespace,$cluster,$leader} by {valid,kube_namespace}"
                             },
                             {
                                 "data_source": "metrics",
                                 "name": "query2",
-                                "query": "sum:datadog.cluster_agent.external_metrics.khulnasoft_metrics{$namespace,$cluster,$leader} by {valid,kube_namespace}"
+                                "query": "sum:khulnasoft.cluster_agent.external_metrics.khulnasoft_metrics{$namespace,$cluster,$leader} by {valid,kube_namespace}"
                             }
                         ],
                         "response_format": "timeseries",
@@ -1393,7 +1393,7 @@
                             {
                                 "data_source": "metrics",
                                 "name": "query1",
-                                "query": "avg:datadog.cluster_agent.admission_webhooks.mutation_attempts{injected:true,$cluster,$namespace} by {mutation_type}"
+                                "query": "avg:khulnasoft.cluster_agent.admission_webhooks.mutation_attempts{injected:true,$cluster,$namespace} by {mutation_type}"
                             }
                         ],
                         "response_format": "timeseries",
@@ -1446,7 +1446,7 @@
                             {
                                 "data_source": "metrics",
                                 "name": "query1",
-                                "query": "avg:datadog.cluster_agent.admission_webhooks.mutation_errors{$cluster,$namespace} by {mutation_type,reason}"
+                                "query": "avg:khulnasoft.cluster_agent.admission_webhooks.mutation_errors{$cluster,$namespace} by {mutation_type,reason}"
                             }
                         ],
                         "response_format": "timeseries",
@@ -1501,12 +1501,12 @@
                             {
                                 "data_source": "metrics",
                                 "name": "query1",
-                                "query": "avg:datadog.cluster_agent.datadog.rate_limit_queries.limit{endpoint:/api/v1/query,$cluster,$namespace,$leader}.fill(null)"
+                                "query": "avg:khulnasoft.cluster_agent.khulnasoft.rate_limit_queries.limit{endpoint:/api/v1/query,$cluster,$namespace,$leader}.fill(null)"
                             },
                             {
                                 "data_source": "metrics",
                                 "name": "query4",
-                                "query": "avg:datadog.cluster_agent.datadog.rate_limit_queries.remaining{endpoint:/api/v1/query,$cluster,$namespace,$leader}.fill(null)"
+                                "query": "avg:khulnasoft.cluster_agent.khulnasoft.rate_limit_queries.remaining{endpoint:/api/v1/query,$cluster,$namespace,$leader}.fill(null)"
                             }
                         ],
                         "response_format": "timeseries",
@@ -1529,7 +1529,7 @@
                             {
                                 "data_source": "metrics",
                                 "name": "query0",
-                                "query": "avg:datadog.cluster_agent.datadog.rate_limit_queries.limit{endpoint:/api/v1/query,$cluster,$namespace,$leader}.fill(null)"
+                                "query": "avg:khulnasoft.cluster_agent.khulnasoft.rate_limit_queries.limit{endpoint:/api/v1/query,$cluster,$namespace,$leader}.fill(null)"
                             }
                         ],
                         "response_format": "timeseries",
@@ -1583,7 +1583,7 @@
                             {
                                 "data_source": "metrics",
                                 "name": "query1",
-                                "query": "avg:datadog.cluster_agent.admission_webhooks.mutation_attempts{injected:false,$cluster,$namespace} by {mutation_type}"
+                                "query": "avg:khulnasoft.cluster_agent.admission_webhooks.mutation_attempts{injected:false,$cluster,$namespace} by {mutation_type}"
                             }
                         ],
                         "response_format": "timeseries",
@@ -1645,7 +1645,7 @@
                                 "aggregator": "last",
                                 "data_source": "metrics",
                                 "name": "query1",
-                                "query": "avg:datadog.cluster_agent.admission_webhooks.certificate_expiry{$cluster,$namespace}"
+                                "query": "avg:khulnasoft.cluster_agent.admission_webhooks.certificate_expiry{$cluster,$namespace}"
                             }
                         ],
                         "response_format": "scalar"
@@ -1689,7 +1689,7 @@
                             {
                                 "name": "query1",
                                 "data_source": "metrics",
-                                "query": "sum:datadog.cluster_agent.datadog.requests{$cluster, $namespace, $leader } by {status}.as_count()"
+                                "query": "sum:khulnasoft.cluster_agent.khulnasoft.requests{$cluster, $namespace, $leader } by {status}.as_count()"
                             }
                         ],
                         "response_format": "timeseries",
@@ -1733,7 +1733,7 @@
                             {
                                 "data_source": "metrics",
                                 "name": "query1",
-                                "query": "sum:datadog.cluster_agent.admission_webhooks.library_injection_attempts{$cluster, $namespace} by {injected}.as_count()"
+                                "query": "sum:khulnasoft.cluster_agent.admission_webhooks.library_injection_attempts{$cluster, $namespace} by {injected}.as_count()"
                             }
                         ],
                         "response_format": "timeseries",
@@ -1786,7 +1786,7 @@
                             {
                                 "data_source": "metrics",
                                 "name": "query1",
-                                "query": "sum:datadog.cluster_agent.admission_webhooks.library_injection_errors{$cluster, $namespace} by {reason}.as_count()"
+                                "query": "sum:khulnasoft.cluster_agent.admission_webhooks.library_injection_errors{$cluster, $namespace} by {reason}.as_count()"
                             }
                         ],
                         "response_format": "timeseries",

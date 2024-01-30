@@ -23,7 +23,7 @@ See [metadata.csv][4] for a list of metrics provided by this integration.
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][1].
+Need help? Contact [Khulnasoft support][1].
 
 [1]: https://podman.io/
 [2]: https://docs.khulnasoft.com/integrations/container/

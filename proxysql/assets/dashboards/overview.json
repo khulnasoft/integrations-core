@@ -1,6 +1,6 @@
 {
     "title": "ProxySQL Overview",
-    "description": "This dashboard provides a high-level view of your ProxySQL environment, with in-depth performance indicators regarding the query cache or the latency.\n\n- [How to monitor ProxySQL with Datadog](https://docs.khulnasoft.com/integrations/proxysql/) \n\nClone this template dashboard to make changes and add your own graph widgets. ",
+    "description": "This dashboard provides a high-level view of your ProxySQL environment, with in-depth performance indicators regarding the query cache or the latency.\n\n- [How to monitor ProxySQL with Khulnasoft](https://docs.khulnasoft.com/integrations/proxysql/) \n\nClone this template dashboard to make changes and add your own graph widgets. ",
     "widgets": [
       {
         "id": 0,

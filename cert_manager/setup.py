@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2022-present
+# (C) Khulnasoft, Inc. 2022-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 
@@ -47,16 +47,16 @@ CHECKS_BASE_REQ = parse_pyproject_array('dependencies')[0]
 
 
 setup(
-    name='datadog-cert_manager',
+    name='khulnasoft-cert_manager',
     version=ABOUT['__version__'],
     description='The cert_manager check',
     long_description=long_description,
     long_description_content_type='text/markdown',
-    keywords='datadog agent cert_manager check',
+    keywords='khulnasoft agent cert_manager check',
     # The project's main homepage.
     url='https://github.com/KhulnaSoft/integrations-core',
     # Author details
-    author='Datadog',
+    author='Khulnasoft',
     author_email='packages@khulnasoft.com',
     # License
     license='BSD-3-Clause',

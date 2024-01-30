@@ -1,4 +1,4 @@
-[env.collectors.datadog-checks]
+[env.collectors.khulnasoft-checks]
 
 [envs.default.env-vars]
 DDEV_SKIP_GENERIC_TAGS_CHECK = "true"

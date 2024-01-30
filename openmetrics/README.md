@@ -12,15 +12,15 @@ The integration is compatible with both the [Prometheus exposition format][12] a
 
 Follow the instructions below to install and configure this check for an Agent running on a host. For containerized environments, see the [Autodiscovery Integration Templates][1] for guidance on applying these instructions.
 
-This integration has a latest mode (enabled by setting `openmetrics_endpoint` to point to the target endpoint) and a legacy mode (enabled by setting `prometheus_url` instead). To get all the most up-to-date features, Datadog recommends enabling the latest mode. For more information, see [Latest and Legacy Versioning For OpenMetrics-based Integrations][15].
+This integration has a latest mode (enabled by setting `openmetrics_endpoint` to point to the target endpoint) and a legacy mode (enabled by setting `prometheus_url` instead). To get all the most up-to-date features, Khulnasoft recommends enabling the latest mode. For more information, see [Latest and Legacy Versioning For OpenMetrics-based Integrations][15].
 
 ### Installation
 
-The OpenMetrics check is packaged with the [Datadog Agent v6.6.0 or later][2].
+The OpenMetrics check is packaged with the [Khulnasoft Agent v6.6.0 or later][2].
 
 ### Configuration
 
-Edit the `openmetrics.d/conf.yaml` file at the root of your [Agent's configuration directory][3]. See the [sample openmetrics.d/conf.yaml][4] for all available configuration options. This is the latest OpenMetrics check example as of Datadog Agent version 7.32.0. If you previously implemented this integration, see the [legacy example][5].
+Edit the `openmetrics.d/conf.yaml` file at the root of your [Agent's configuration directory][3]. See the [sample openmetrics.d/conf.yaml][4] for all available configuration options. This is the latest OpenMetrics check example as of Khulnasoft Agent version 7.32.0. If you previously implemented this integration, see the [legacy example][5].
 
 For each instance, the following parameters are required:
 
@@ -30,11 +30,11 @@ For each instance, the following parameters are required:
 | `namespace`      | The namespace to prepend to all metrics.                                                                                                                                                                                                                                 |
 | `metrics`        | A list of metrics to retrieve as custom metrics. Add each metric to the list as `metric_name` or `metric_name: renamed` to rename it. The metrics are interpreted as regular expressions. Use `".*"` as a wildcard (`metric.*`) to fetch all matching metrics. **Note**: Regular expressions can potentially send a lot of custom metrics. |
 
-Starting in Datadog Agent v7.32.0, in adherence to the [OpenMetrics specification standard][11], counter names ending in `_total` must be specified without the `_total` suffix. For example, to collect `promhttp_metric_handler_requests_total`, specify the metric name `promhttp_metric_handler_requests`. This submits to Datadog the metric name appended with `.count`, `promhttp_metric_handler_requests.count`.
+Starting in Khulnasoft Agent v7.32.0, in adherence to the [OpenMetrics specification standard][11], counter names ending in `_total` must be specified without the `_total` suffix. For example, to collect `promhttp_metric_handler_requests_total`, specify the metric name `promhttp_metric_handler_requests`. This submits to Khulnasoft the metric name appended with `.count`, `promhttp_metric_handler_requests.count`.
 
-This check has a limit of 2000 metrics per instance. The number of returned metrics is indicated when running the Datadog Agent [status command][6]. You can specify the metrics you are interested in by editing the configuration. To learn how to customize the metrics to collect, see [Prometheus and OpenMetrics Metrics Collection][7].
+This check has a limit of 2000 metrics per instance. The number of returned metrics is indicated when running the Khulnasoft Agent [status command][6]. You can specify the metrics you are interested in by editing the configuration. To learn how to customize the metrics to collect, see [Prometheus and OpenMetrics Metrics Collection][7].
 
-If you need to monitor more metrics, contact [Datadog support][8].
+If you need to monitor more metrics, contact [Khulnasoft support][8].
 
 ### Validation
 
@@ -44,7 +44,7 @@ If you need to monitor more metrics, contact [Datadog support][8].
 
 ### Metrics
 
-All metrics collected by the OpenMetrics check are forwarded to Datadog as custom metrics.
+All metrics collected by the OpenMetrics check are forwarded to Khulnasoft as custom metrics.
 
 ### Events
 
@@ -60,7 +60,7 @@ The OpenMetrics check does not include any service checks.
 
 OpenMetrics configurations with generic wildcard values for the `metrics` option have significant impact on custom metrics billing.
 
-Datadog recommends using specific metric names or partial metric name matches for more precise collection.
+Khulnasoft recommends using specific metric names or partial metric name matches for more precise collection.
 
 ### Missing untyped metrics
 
@@ -96,7 +96,7 @@ instances:
       Accept: text/plain
 ```
 
-Need help? Contact [Datadog support][8].
+Need help? Contact [Khulnasoft support][8].
 
 ## Further Reading
 

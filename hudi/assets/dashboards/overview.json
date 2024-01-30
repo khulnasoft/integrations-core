@@ -1,6 +1,6 @@
 {
-    "author_name": "Datadog",
-    "description": "##  Hudi\n\nThis dashboard provides a high-level overview of your Hudi performance data to troubleshoot any performance issues. For further reading on Hudi: \n- [Datadog's Hudi integration docs](https://github.com/KhulnaSoft/integrations-core/tree/master/hudi)\n- [Hudi docs](https://hudi.apache.org/)\n- [How to configure JMX converter in Hudi](https://hudi.apache.org/docs/metrics/#jmxmetricsreporter)\n- [Information on Datadog's JMX configuration](https://docs.khulnasoft.com/integrations/java/)\n\nClone this template dashboard to make changes and add your own graph widgets. ",
+    "author_name": "Khulnasoft",
+    "description": "##  Hudi\n\nThis dashboard provides a high-level overview of your Hudi performance data to troubleshoot any performance issues. For further reading on Hudi: \n- [Khulnasoft's Hudi integration docs](https://github.com/KhulnaSoft/integrations-core/tree/master/hudi)\n- [Hudi docs](https://hudi.apache.org/)\n- [How to configure JMX converter in Hudi](https://hudi.apache.org/docs/metrics/#jmxmetricsreporter)\n- [Information on Khulnasoft's JMX configuration](https://docs.khulnasoft.com/integrations/java/)\n\nClone this template dashboard to make changes and add your own graph widgets. ",
     "layout_type": "ordered",
     "template_variables": [
         {
@@ -44,7 +44,7 @@
                     {
                         "definition": {
                             "background_color": "white",
-                            "content": "Further reading on Hudi: \n- [Datadog's Hudi integration docs](https://github.com/KhulnaSoft/integrations-core/tree/master/hudi)\n- [Hudi docs](https://hudi.apache.org/)\n- [How to configure JMX converter in Hudi](https://hudi.apache.org/docs/metrics/#jmxmetricsreporter)\n- [Information on Datadog's JMX configuration](https://docs.khulnasoft.com/integrations/java/)",
+                            "content": "Further reading on Hudi: \n- [Khulnasoft's Hudi integration docs](https://github.com/KhulnaSoft/integrations-core/tree/master/hudi)\n- [Hudi docs](https://hudi.apache.org/)\n- [How to configure JMX converter in Hudi](https://hudi.apache.org/docs/metrics/#jmxmetricsreporter)\n- [Information on Khulnasoft's JMX configuration](https://docs.khulnasoft.com/integrations/java/)",
                             "font_size": "14",
                             "has_padding": true,
                             "show_tick": false,

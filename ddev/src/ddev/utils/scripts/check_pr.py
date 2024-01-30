@@ -1,7 +1,7 @@
 """
 Running this script by itself must not use any external dependencies.
 """
-# (C) Datadog, Inc. 2023-present
+# (C) Khulnasoft, Inc. 2023-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 from __future__ import annotations

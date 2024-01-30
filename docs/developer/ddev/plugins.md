@@ -4,7 +4,7 @@
 
 ## tox
 
-Our [tox plugin][datadog-checks-dev-plugin-tox] dynamically adds environments based on the presence of
+Our [tox plugin][khulnasoft-checks-dev-plugin-tox] dynamically adds environments based on the presence of
 options defined in the `[testenv]` section of each integration's `tox.ini` file.
 
 ### Style
@@ -18,7 +18,7 @@ Setting `dd_check_style` to `true` will enable 2 environments for enforcing our 
 
 ## pytest
 
-Our [pytest plugin][datadog-checks-dev-plugin-pytest] makes a few [fixtures][pytest-fixtures] available globally
+Our [pytest plugin][khulnasoft-checks-dev-plugin-pytest] makes a few [fixtures][pytest-fixtures] available globally
 for use during tests. Also, it's responsible for managing the control flow of E2E environments.
 
 ### Fixtures
@@ -28,7 +28,7 @@ for use during tests. Also, it's responsible for managing the control flow of E2
 The stubs provided by each fixture will automatically have their state reset before each test.
 
 - [aggregator](../base/api.md#khulnasoft_checks.base.stubs.aggregator.AggregatorStub)
-- [khulnasoft_agent](../base/api.md#khulnasoft_checks.base.stubs.khulnasoft_agent.DatadogAgentStub)
+- [khulnasoft_agent](../base/api.md#khulnasoft_checks.base.stubs.khulnasoft_agent.KhulnasoftAgentStub)
 
 #### Check execution
 

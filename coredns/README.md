@@ -7,7 +7,7 @@ Get metrics from CoreDNS in real time to visualize and monitor DNS failures and 
 ## Setup
 
 
-Starting with version 1.11.0, this OpenMetrics-based integration has a latest mode (enabled by setting `openmetrics_endpoint` to point to the target endpoint) and a legacy mode (enabled by setting `prometheus_url` instead). To get all the most up-to-date features, Datadog recommends enabling the latest mode. For more information, see [Latest and Legacy Versioning For OpenMetrics-based Integrations][24].
+Starting with version 1.11.0, this OpenMetrics-based integration has a latest mode (enabled by setting `openmetrics_endpoint` to point to the target endpoint) and a legacy mode (enabled by setting `prometheus_url` instead). To get all the most up-to-date features, Khulnasoft recommends enabling the latest mode. For more information, see [Latest and Legacy Versioning For OpenMetrics-based Integrations][24].
 
 The latest mode of the CoreDNS check requires Python 3 and submits `.bucket` metrics and submits the `.sum` and `.count` histogram samples as monotonic count type. These metrics were previously submitted as `gauge` type in the legacy mode. See the [`metadata.csv` file][14] for a list of metrics available in each mode. 
 
@@ -15,7 +15,7 @@ For hosts unable to use Python 3, or if you previously implemented this integrat
 
 ### Installation
 
-The CoreDNS check is included in the [Datadog Agent][1] package, so you don't need to install anything else on your servers.
+The CoreDNS check is included in the [Khulnasoft Agent][1] package, so you don't need to install anything else on your servers.
 
 ### Configuration
 <!-- xxx tabs xxx -->
@@ -29,31 +29,31 @@ To configure this check for an Agent running on a container:
 Set [Autodiscovery Integration Templates][2] as Docker labels on your application container:
 
 ```yaml
-LABEL "com.datadoghq.ad.check_names"='["coredns"]'
-LABEL "com.datadoghq.ad.init_configs"='[{}]'
-LABEL "com.datadoghq.ad.instances"='[{"openmetrics_endpoint":"http://%%host%%:9153/metrics", "tags":["dns-pod:%%host%%"]}]'
+LABEL "com.khulnasofthq.ad.check_names"='["coredns"]'
+LABEL "com.khulnasofthq.ad.init_configs"='[{}]'
+LABEL "com.khulnasofthq.ad.instances"='[{"openmetrics_endpoint":"http://%%host%%:9153/metrics", "tags":["dns-pod:%%host%%"]}]'
 ```
 
 To enable the legacy mode of this OpenMetrics-based check, replace `openmetrics_endpoint` with `prometheus_url`:
 
 ```yaml
-LABEL "com.datadoghq.ad.instances"='[{"prometheus_url":"http://%%host%%:9153/metrics", "tags":["dns-pod:%%host%%"]}]' 
+LABEL "com.khulnasofthq.ad.instances"='[{"prometheus_url":"http://%%host%%:9153/metrics", "tags":["dns-pod:%%host%%"]}]' 
 ```
 
 **Notes**:
 
 - The shipped `coredns.d/auto_conf.yaml` file enables the `prometheus_url` option by default for legacy mode. 
-- The `dns-pod` tag keeps track of the target DNS pod IP. The other tags are related to the Datadog Agent that is polling the information using the service discovery.
+- The `dns-pod` tag keeps track of the target DNS pod IP. The other tags are related to the Khulnasoft Agent that is polling the information using the service discovery.
 - The service discovery annotations need to be done on the pod. In case of a deployment, add the annotations to the metadata of the template's specifications. Do not add it at the outer specification level.
 
 #### Log collection
 
-Collecting logs is disabled by default in the Datadog Agent. To enable it, see [Docker Log Collection][3].
+Collecting logs is disabled by default in the Khulnasoft Agent. To enable it, see [Docker Log Collection][3].
 
 Then, set [Log Integrations][4] as Docker labels:
 
 ```yaml
-LABEL "com.datadoghq.ad.logs"='[{"source":"coredns","service":"<SERVICE_NAME>"}]'
+LABEL "com.khulnasofthq.ad.logs"='[{"source":"coredns","service":"<SERVICE_NAME>"}]'
 ```
 
 <!-- xxz tab xxx -->
@@ -67,7 +67,7 @@ To configure this check for an Agent running on Kubernetes:
 
 Set [Autodiscovery Integrations Templates][5] as pod annotations on your application container. Alternatively, you can configure templates with a [file, configmap, or key-value store][6].
 
-**Annotations v1** (for Datadog Agent < v7.36)
+**Annotations v1** (for Khulnasoft Agent < v7.36)
 
 ```yaml
 apiVersion: v1
@@ -91,7 +91,7 @@ spec:
     - name: coredns
 ```
 
-**Annotations v2** (for Datadog Agent v7.36 or later)
+**Annotations v2** (for Khulnasoft Agent v7.36 or later)
 
 ```yaml
 apiVersion: v1
@@ -120,7 +120,7 @@ spec:
 
 To enable the legacy mode of this OpenMetrics-based check, replace `openmetrics_endpoint` with `prometheus_url`:
 
-**Annotations v1** (for Datadog Agent < v7.36)
+**Annotations v1** (for Khulnasoft Agent < v7.36)
 
 ```yaml
     ad.khulnasoft.com/coredns.instances: |
@@ -132,7 +132,7 @@ To enable the legacy mode of this OpenMetrics-based check, replace `openmetrics_
       ]
 ```
 
-**Annotations v2** (for Datadog Agent v7.36 or later)
+**Annotations v2** (for Khulnasoft Agent v7.36 or later)
 
 ```yaml
           "instances": [
@@ -146,12 +146,12 @@ To enable the legacy mode of this OpenMetrics-based check, replace `openmetrics_
 **Notes**:
 
 - The shipped `coredns.d/auto_conf.yaml` file enables the `prometheus_url` option by default for legacy mode. 
-- The `dns-pod` tag keeps track of the target DNS pod IP. The other tags are related to the Datadog Agent that is polling the information using the service discovery.
+- The `dns-pod` tag keeps track of the target DNS pod IP. The other tags are related to the Khulnasoft Agent that is polling the information using the service discovery.
 - The service discovery annotations need to be done on the pod. In case of a deployment, add the annotations to the metadata of the template's specifications. Do not add it at the outer specification level.
 
 #### Log collection
 
-Collecting logs is disabled by default in the Datadog Agent. To enable it, see [Kubernetes Log Collection][7].
+Collecting logs is disabled by default in the Khulnasoft Agent. To enable it, see [Kubernetes Log Collection][7].
 
 Then, set [Log Integrations][8] as pod annotations. Alternatively, you can configure this with a [file, configmap, or key-value store][9].
 
@@ -185,9 +185,9 @@ Set [Autodiscovery Integrations Templates][10] as Docker labels on your applicat
     "name": "coredns",
     "image": "coredns:latest",
     "dockerLabels": {
-      "com.datadoghq.ad.check_names": "[\"coredns\"]",
-      "com.datadoghq.ad.init_configs": "[{}]",
-      "com.datadoghq.ad.instances": "[{\"openmetrics_endpoint\":\"http://%%host%%:9153/metrics\", \"tags\":[\"dns-pod:%%host%%\"]}]"
+      "com.khulnasofthq.ad.check_names": "[\"coredns\"]",
+      "com.khulnasofthq.ad.init_configs": "[{}]",
+      "com.khulnasofthq.ad.instances": "[{\"openmetrics_endpoint\":\"http://%%host%%:9153/metrics\", \"tags\":[\"dns-pod:%%host%%\"]}]"
     }
   }]
 }
@@ -196,18 +196,18 @@ Set [Autodiscovery Integrations Templates][10] as Docker labels on your applicat
 To enable the legacy mode of this OpenMetrics-based check, replace `openmetrics_endpoint` with `prometheus_url`:
 
 ```json
-      "com.datadoghq.ad.instances": "[{\"prometheus_url\":\"http://%%host%%:9153/metrics\", \"tags\":[\"dns-pod:%%host%%\"]}]"
+      "com.khulnasofthq.ad.instances": "[{\"prometheus_url\":\"http://%%host%%:9153/metrics\", \"tags\":[\"dns-pod:%%host%%\"]}]"
 ```
 
 **Notes**:
 
 - The shipped `coredns.d/auto_conf.yaml` file enables the `prometheus_url` option by default for legacy mode. 
-- The `dns-pod` tag keeps track of the target DNS pod IP. The other tags are related to the Datadog Agent that is polling the information using the service discovery.
+- The `dns-pod` tag keeps track of the target DNS pod IP. The other tags are related to the Khulnasoft Agent that is polling the information using the service discovery.
 - The service discovery annotations need to be done on the pod. In case of a deployment, add the annotations to the metadata of the template's specifications. Do not add it at the outer specification level.
 
 ##### Log collection
 
-Collecting logs is disabled by default in the Datadog Agent. To enable it, see [ECS Log Collection][11].
+Collecting logs is disabled by default in the Khulnasoft Agent. To enable it, see [ECS Log Collection][11].
 
 Then, set [Log Integrations][12] as Docker labels:
 
@@ -217,7 +217,7 @@ Then, set [Log Integrations][12] as Docker labels:
     "name": "coredns",
     "image": "coredns:latest",
     "dockerLabels": {
-      "com.datadoghq.ad.logs": "[{\"source\":\"coredns\",\"service\":\"<SERVICE_NAME>\"}]"
+      "com.khulnasofthq.ad.logs": "[{\"source\":\"coredns\",\"service\":\"<SERVICE_NAME>\"}]"
     }
   }]
 }
@@ -245,7 +245,7 @@ See [service_checks.json][15] for a list of service checks provided by this inte
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][16].
+Need help? Contact [Khulnasoft support][16].
 
 ## Further Reading
 
@@ -253,7 +253,7 @@ Additional helpful documentation, links, and articles:
 
 - [Key metrics for CoreDNS monitoring][21]
 - [Tools for collecting metrics and logs from CoreDNS][22]
-- [How to monitor CoreDNS with Datadog][23]
+- [How to monitor CoreDNS with Khulnasoft][23]
 
 
 [1]: https://app.khulnasoft.com/account/settings/agent/latest
@@ -263,7 +263,7 @@ Additional helpful documentation, links, and articles:
 [5]: https://docs.khulnasoft.com/agent/kubernetes/integrations/?tab=kubernetes
 [6]: https://docs.khulnasoft.com/agent/kubernetes/integrations/?tab=kubernetes#configuration
 [7]: https://docs.khulnasoft.com/agent/kubernetes/log/?tab=daemonset
-[8]: https://docs.khulnasoft.com/agent/kubernetes/log/?tab=kubernetes#examples---datadog-redis-integration
+[8]: https://docs.khulnasoft.com/agent/kubernetes/log/?tab=kubernetes#examples---khulnasoft-redis-integration
 [9]: https://docs.khulnasoft.com/agent/kubernetes/integrations/?tab=file
 [10]: https://docs.khulnasoft.com/agent/amazon_ecs/?tab=awscli#process-collection
 [11]: https://docs.khulnasoft.com/agent/amazon_ecs/logs/?tab=linux
@@ -278,5 +278,5 @@ Additional helpful documentation, links, and articles:
 [20]: https://github.com/KhulnaSoft/integrations-core/blob/master/coredns/khulnasoft_checks/coredns/data/conf.yaml.example
 [21]: https://www.khulnasoft.com/blog/coredns-metrics/
 [22]: https://www.khulnasoft.com/blog/coredns-monitoring-tools/
-[23]: https://www.khulnasoft.com/blog/monitoring-coredns-with-datadog/
+[23]: https://www.khulnasoft.com/blog/monitoring-coredns-with-khulnasoft/
 [24]: https://docs.khulnasoft.com/integrations/guide/versions-for-openmetrics-based-integrations

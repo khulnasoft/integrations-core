@@ -2,15 +2,15 @@
 
 ## Overview
 
-This check monitors the availability and uptime of non-Datadog StatsD servers. It also tracks the number of metrics, by metric type, received by StatsD.
+This check monitors the availability and uptime of non-Khulnasoft StatsD servers. It also tracks the number of metrics, by metric type, received by StatsD.
 
-This check does **NOT** forward application metrics from StatsD servers to Datadog. It collects metrics about StatsD itself.
+This check does **NOT** forward application metrics from StatsD servers to Khulnasoft. It collects metrics about StatsD itself.
 
 ## Setup
 
 ### Installation
 
-The StatsD check is included in the [Datadog Agent][1] package, so you don't need to install anything else on any servers that run StatsD.
+The StatsD check is included in the [Khulnasoft Agent][1] package, so you don't need to install anything else on any servers that run StatsD.
 
 ### Configuration
 
@@ -31,7 +31,7 @@ To configure this check for an Agent running on a host:
        port: 8126 # or wherever your statsd listens
    ```
 
-2. [Restart the Agent][4] to start sending StatsD metrics and service checks to Datadog.
+2. [Restart the Agent][4] to start sending StatsD metrics and service checks to Khulnasoft.
 
 <!-- xxz tab xxx -->
 <!-- xxx tab "Containerized" xxx -->
@@ -51,7 +51,7 @@ For containerized environments, see the [Autodiscovery Integration Templates][5]
 
 #### Log collection
 
-1. Collecting logs is disabled by default in the Datadog Agent, you need to enable it in `datadog.yaml`:
+1. Collecting logs is disabled by default in the Khulnasoft Agent, you need to enable it in `khulnasoft.yaml`:
 
    ```yaml
    logs_enabled: true
@@ -91,7 +91,7 @@ See [service_checks.json][8] for a list of service checks provided by this integ
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][9].
+Need help? Contact [Khulnasoft support][9].
 
 ## Further Reading
 

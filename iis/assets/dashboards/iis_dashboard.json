@@ -1,6 +1,6 @@
 {
     "title": "IIS - Metrics",
-    "description": "The dashboard tracks IIS performance, errors, and resource utilization, allowing you to understand at a glance how your web servers are performing. Further reading on IIS monitoring:\n\n- [Datadog's IIS integration docs](https://docs.khulnasoft.com/integrations/iis/)\n\n- [Key IIS metrics to monitor](https://www.khulnasoft.com/blog/iis-metrics/)\n\n- [Collecting metrics with IIS monitoring tools](https://www.khulnasoft.com/blog/iis-monitoring-tools/)\n\n- [IIS monitoring with Datadog](https://www.khulnasoft.com/blog/iis-monitoring-datadog/)\n\nClone this template dashboard to make changes and add your own graph widgets.",
+    "description": "The dashboard tracks IIS performance, errors, and resource utilization, allowing you to understand at a glance how your web servers are performing. Further reading on IIS monitoring:\n\n- [Khulnasoft's IIS integration docs](https://docs.khulnasoft.com/integrations/iis/)\n\n- [Key IIS metrics to monitor](https://www.khulnasoft.com/blog/iis-metrics/)\n\n- [Collecting metrics with IIS monitoring tools](https://www.khulnasoft.com/blog/iis-monitoring-tools/)\n\n- [IIS monitoring with Khulnasoft](https://www.khulnasoft.com/blog/iis-monitoring-khulnasoft/)\n\nClone this template dashboard to make changes and add your own graph widgets.",
     "layout_type": "ordered",
     "template_variables": [
         {

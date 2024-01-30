@@ -1,6 +1,6 @@
 {
-    "author_name": "Datadog",
-    "description": "This dashboard provides an overview of your CouchDB deployment to help you identify performance issues, unexpected traffic changes, and unauthorized login attempts. Further reading on CouchDB monitoring: \n\n- [How to monitor CouchDB with Datadog](https://www.khulnasoft.com/blog/monitoring-couchdb-with-datadog/)  \n\n- [Datadog\u2019s CouchDB integration docs](https://docs.khulnasoft.com/integrations/couch/). \n\nClone this template dashboard to make changes and add your own graph widgets.",
+    "author_name": "Khulnasoft",
+    "description": "This dashboard provides an overview of your CouchDB deployment to help you identify performance issues, unexpected traffic changes, and unauthorized login attempts. Further reading on CouchDB monitoring: \n\n- [How to monitor CouchDB with Khulnasoft](https://www.khulnasoft.com/blog/monitoring-couchdb-with-khulnasoft/)  \n\n- [Khulnasoft\u2019s CouchDB integration docs](https://docs.khulnasoft.com/integrations/couch/). \n\nClone this template dashboard to make changes and add your own graph widgets.",
     "layout_type": "free",
     "template_variables": [
         {
@@ -604,7 +604,7 @@
         {
             "definition": {
                 "background_color": "white",
-                "content": "This dashboard provides an overview of your CouchDB deployment to help you identify performance issues, unexpected traffic changes, and unauthorized login attempts. Further reading on CouchDB monitoring: \n\n- [How to monitor CouchDB with Datadog](https://www.khulnasoft.com/blog/monitoring-couchdb-with-datadog/)  \n\n- [Datadog\u2019s CouchDB integration docs](https://docs.khulnasoft.com/integrations/couch/). \n\nClone this template dashboard to make changes and add your own graph widgets.",
+                "content": "This dashboard provides an overview of your CouchDB deployment to help you identify performance issues, unexpected traffic changes, and unauthorized login attempts. Further reading on CouchDB monitoring: \n\n- [How to monitor CouchDB with Khulnasoft](https://www.khulnasoft.com/blog/monitoring-couchdb-with-khulnasoft/)  \n\n- [Khulnasoft\u2019s CouchDB integration docs](https://docs.khulnasoft.com/integrations/couch/). \n\nClone this template dashboard to make changes and add your own graph widgets.",
                 "font_size": "14",
                 "has_padding": true,
                 "show_tick": false,

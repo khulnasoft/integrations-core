@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2019-present
+# (C) Khulnasoft, Inc. 2019-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 import pytest
@@ -77,7 +77,7 @@ def test_custom_queries(aggregator, instance, dd_run_check):
         aggregator.assert_metric(
             'ibm_db2.tablespace.files_closed',
             metric_type=3,
-            tags=['db:datadog', 'foo:bar', 'test:ibm_db2', 'tablespace:{}'.format(table_space)],
+            tags=['db:khulnasoft', 'foo:bar', 'test:ibm_db2', 'tablespace:{}'.format(table_space)],
         )
     aggregator.assert_service_check(check.SERVICE_CHECK_CONNECT, count=1, status=check.OK)
 
@@ -108,7 +108,7 @@ def test_custom_queries_init_config(aggregator, instance, dd_run_check):
         aggregator.assert_metric(
             'ibm_db2.tablespace.files_closed',
             metric_type=3,
-            tags=['db:datadog', 'foo:bar', 'test:ibm_db2', 'tablespace:{}'.format(table_space)],
+            tags=['db:khulnasoft', 'foo:bar', 'test:ibm_db2', 'tablespace:{}'.format(table_space)],
         )
     aggregator.assert_service_check(check.SERVICE_CHECK_CONNECT, count=1, status=check.OK)
 

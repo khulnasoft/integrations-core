@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2010-present
+# (C) Khulnasoft, Inc. 2010-present
 # All rights reserved
 # Licensed under Simplified BSD License (see LICENSE)
 import os
@@ -20,8 +20,8 @@ class NfsStatCheck(AgentCheck):
             self.nfs_cmd = init_config['nfsiostat_path'].split() + ['1', '2']
         else:
             # if not, check if it's installed in the opt dir, if so use that
-            if os.path.exists('/opt/datadog-agent/embedded/sbin/nfsiostat'):
-                self.nfs_cmd = ['/opt/datadog-agent/embedded/sbin/nfsiostat', '1', '2']
+            if os.path.exists('/opt/khulnasoft-agent/embedded/sbin/nfsiostat'):
+                self.nfs_cmd = ['/opt/khulnasoft-agent/embedded/sbin/nfsiostat', '1', '2']
             # if not, then check if it is in the default place
             elif os.path.exists('/usr/local/sbin/nfsiostat'):
                 self.nfs_cmd = ['/usr/local/sbin/nfsiostat', '1', '2']

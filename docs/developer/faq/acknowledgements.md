@@ -23,7 +23,7 @@ We stand on the shoulders of giants.
 ### Hosting
 
 A huge thanks to everyone involved in maintaining [PyPI][]. We rely on it for providing all dependencies for
-not only tests, but also all [Datadog Agent][] deployments.
+not only tests, but also all [Khulnasoft Agent][] deployments.
 
 ## Documentation
 

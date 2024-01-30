@@ -2,7 +2,7 @@
 
 ## Overview
 
-This check monitors [IBM i][1] remotely through the Datadog Agent.
+This check monitors [IBM i][1] remotely through the Khulnasoft Agent.
 
 ## Setup
 
@@ -10,7 +10,7 @@ Follow the instructions below to install and configure this check for an Agent r
 
 ### Installation
 
-The IBM i check is included in the [Datadog Agent][3] package.
+The IBM i check is included in the [Khulnasoft Agent][3] package.
 No additional installation is needed on your server.
 
 #### ODBC driver
@@ -23,13 +23,13 @@ Choose the `ACS App Pkg` package for your platform, such as `ACS Linux App Pkg` 
 
 ### Configuration
 
-The IBM i check queries an IBM i system remotely from a host running the Datadog Agent. To communicate with the IBM i system, you need to set up the IBM i ODBC driver on the host running the Datadog Agent.
+The IBM i check queries an IBM i system remotely from a host running the Khulnasoft Agent. To communicate with the IBM i system, you need to set up the IBM i ODBC driver on the host running the Khulnasoft Agent.
 
 #### ODBC driver
 
 Once the ODBC driver is installed, find the ODBC configuration files: `odbc.ini` and `odbcinst.ini`. The location may vary depending on your system. On Linux they may be located in the `/etc` directory or in the `/etc/unixODBC` directory.
 
-Copy these configuration files to the embedded Agent environment, such as `/opt/datadog-agent/embedded/etc/` on Linux hosts.
+Copy these configuration files to the embedded Agent environment, such as `/opt/khulnasoft-agent/embedded/etc/` on Linux hosts.
 
 The `odbcinst.ini` file defines the available ODBC drivers for the Agent. Each section defines one driver. For instance, the following section defines a driver named `IBM i Access ODBC Driver 64-bit`:
 ```
@@ -71,7 +71,7 @@ The IBM i check does not include any events.
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][10].
+Need help? Contact [Khulnasoft support][10].
 
 [1]: https://www.ibm.com/it-infrastructure/power/os/ibm-i
 [2]: https://docs.khulnasoft.com/agent/kubernetes/integrations/

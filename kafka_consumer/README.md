@@ -16,7 +16,7 @@ This check fetches the highwater offsets from the Kafka brokers, consumer offset
 
 ### Installation
 
-The Agent's Kafka consumer check is included in the [Datadog Agent][2] package. No additional installation is needed on your Kafka nodes.
+The Agent's Kafka consumer check is included in the [Khulnasoft Agent][2] package. No additional installation is needed on your Kafka nodes.
 
 ### Configuration
 
@@ -60,7 +60,7 @@ See [metadata.csv][9] for a list of metrics provided by this check.
 ### Events
 
 **consumer_lag**:<br>
-The Datadog Agent emits an event when the value of the `consumer_lag` metric goes below 0, tagging it with `topic`, `partition` and `consumer_group`.
+The Khulnasoft Agent emits an event when the value of the `consumer_lag` metric goes below 0, tagging it with `topic`, `partition` and `consumer_group`.
 
 ### Service Checks
 
@@ -75,13 +75,13 @@ The Kafka-consumer check does not include any service checks.
 
 Depending on your Kafka cluster's Kerberos setup, you may need to configure the following:
 
-* Kafka client configured for the Datadog Agent to connect to the Kafka broker. The Kafka client should be added as a Kerberos principal and added to a Kerberos keytab. The Kafka client should also have a valid kerberos ticket. 
+* Kafka client configured for the Khulnasoft Agent to connect to the Kafka broker. The Kafka client should be added as a Kerberos principal and added to a Kerberos keytab. The Kafka client should also have a valid kerberos ticket. 
 * TLS certificate to authenticate a secure connection to the Kafka broker.
   * If JKS keystore is used, a certificate needs to be exported from the keystore and the file path should be configured with the applicable `tls_cert` and/or `tls_ca_cert` options. 
   * If a private key is required to authenticate the certificate, it should be configured with the `tls_private_key` option. If applicable, the private key password should be configured with the `tls_private_key_password`. 
 * `KRB5_CLIENT_KTNAME` environment variable pointing to the Kafka client's Kerberos keytab location if it differs from the default path (for example, `KRB5_CLIENT_KTNAME=/etc/krb5.keytab`)
 * `KRB5CCNAME` environment variable pointing to the Kafka client's Kerberos credentials ticket cache if it differs from the default path (for example, `KRB5CCNAME=/tmp/krb5cc_xxx`)
-* If the Datadog Agent is unable to access the environment variables, configure the environment variables in a Datadog Agent service configuration override file for your operating system. The procedure for modifying the Datadog Agent service unit file may vary for different Linux operating systems. For example, in a Linux `systemd` environment: 
+* If the Khulnasoft Agent is unable to access the environment variables, configure the environment variables in a Khulnasoft Agent service configuration override file for your operating system. The procedure for modifying the Khulnasoft Agent service unit file may vary for different Linux operating systems. For example, in a Linux `systemd` environment: 
 
 **Linux Systemd Example**
 
@@ -93,7 +93,7 @@ Depending on your Kafka cluster's Kerberos setup, you may need to configure the 
   KRB5CCNAME=/tmp/krb5cc_xxx
   ```
 
-2. Create a Datadog Agent service configuration override file: `sudo systemctl edit datadog-agent.service`
+2. Create a Khulnasoft Agent service configuration override file: `sudo systemctl edit khulnasoft-agent.service`
 
 3. Configure the following in the override file:
 
@@ -102,19 +102,19 @@ Depending on your Kafka cluster's Kerberos setup, you may need to configure the 
   EnvironmentFile=/path/to/environment/file
   ```
 
-4. Run the following commands to reload the systemd daemon, datadog-agent service, and Datadog Agent:
+4. Run the following commands to reload the systemd daemon, khulnasoft-agent service, and Khulnasoft Agent:
 
 ```
 sudo systemctl daemon-reload
-sudo systemctl restart datadog-agent.service
-sudo service datadog-agent restart
+sudo systemctl restart khulnasoft-agent.service
+sudo service khulnasoft-agent restart
 ```
 
 ## Further Reading
 
 - [Monitoring Kafka performance metrics][13]
 - [Collecting Kafka performance metrics][14]
-- [Monitoring Kafka with Datadog][15]
+- [Monitoring Kafka with Khulnasoft][15]
 
 [1]: https://raw.githubusercontent.com/KhulnaSoft/integrations-core/master/kafka_consumer/images/kafka_dashboard.png
 [2]: https://app.khulnasoft.com/account/settings/agent/latest
@@ -129,5 +129,5 @@ sudo service datadog-agent restart
 [11]: https://docs.khulnasoft.com/integrations/guide/agent-failed-to-retrieve-rmiserver-stub/
 [13]: https://www.khulnasoft.com/blog/monitoring-kafka-performance-metrics
 [14]: https://www.khulnasoft.com/blog/collecting-kafka-performance-metrics
-[15]: https://www.khulnasoft.com/blog/monitor-kafka-with-datadog
+[15]: https://www.khulnasoft.com/blog/monitor-kafka-with-khulnasoft
 [16]: https://www.khulnasoft.com/product/data-streams-monitoring/

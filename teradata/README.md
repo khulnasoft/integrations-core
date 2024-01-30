@@ -4,7 +4,7 @@
 
 [Teradata][1] is an enterprise-level relational database management system within a multi-cloud data platform. 
 
-This check monitors Teradata through the Datadog Agent. Enable the Datadog-Teradata integration to view Teradata performance, disk usage, and resource consumption.
+This check monitors Teradata through the Khulnasoft Agent. Enable the Khulnasoft-Teradata integration to view Teradata performance, disk usage, and resource consumption.
 
 ## Setup
 
@@ -12,7 +12,7 @@ Follow the instructions below to install and configure this check for an Agent r
 
 ### Installation
 
-The Teradata check is included in the [Datadog Agent][2] package.
+The Teradata check is included in the [Khulnasoft Agent][2] package.
 
 #### Prepare Teradata
 
@@ -21,25 +21,25 @@ The Teradata check is included in the [Datadog Agent][2] package.
 **Linux**
 
 ```
-sudo -Hu dd-agent /opt/datadog-agent/embedded/bin/pip install teradatasql
+sudo -Hu dd-agent /opt/khulnasoft-agent/embedded/bin/pip install teradatasql
 ```
 
 **Windows**
 
 ```
-%PROGRAMFILES%\Datadog\"Datadog Agent"\embedded<PYTHON_MAJOR_VERSION>\python -m pip install teradatasql
+%PROGRAMFILES%\Khulnasoft\"Khulnasoft Agent"\embedded<PYTHON_MAJOR_VERSION>\python -m pip install teradatasql
 ```
 
-2. Create a read-only `datadog` user with proper access to your Teradata Database. Start a `BTEQ` session on your Teradata Database:
+2. Create a read-only `khulnasoft` user with proper access to your Teradata Database. Start a `BTEQ` session on your Teradata Database:
 
 ```shell
-CREATE USER "datadog" AS PASSWORD="<PASSWORD>";
+CREATE USER "khulnasoft" AS PASSWORD="<PASSWORD>";
 ```
 
-Optional, but strongly recommended: Grant a new or existing role to the `datadog` user designated for read-only monitoring purposes. 
+Optional, but strongly recommended: Grant a new or existing role to the `khulnasoft` user designated for read-only monitoring purposes. 
 
 ```shell
-GRANT "<READ_ONLY_ROLE>" TO "datadog"; 
+GRANT "<READ_ONLY_ROLE>" TO "khulnasoft"; 
 ```
 
 The Teradata system grants the `SELECT` privilege to PUBLIC on most [Data Dictionary views][12] by default. All Teradata Database users have `PUBLIC` privileges.
@@ -115,7 +115,7 @@ See [service_checks.json][8] for a list of service checks provided by this integ
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][9].
+Need help? Contact [Khulnasoft support][9].
 
 
 [1]: https://www.teradata.com/

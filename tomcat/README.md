@@ -14,7 +14,7 @@ This check collects Tomcat metrics, for example:
 
 ### Installation
 
-The Tomcat check is included in the [Datadog Agent][2] package, so you don't need to install anything else on your Tomcat servers.
+The Tomcat check is included in the [Khulnasoft Agent][2] package, so you don't need to install anything else on your Tomcat servers.
 
 This check is JMX-based, so you need to enable JMX Remote on your Tomcat servers. Follow the instructions in [Monitoring and Managing Tomcat][3].
 
@@ -48,13 +48,13 @@ mydomain:attr0=val0,attr1=val1
 
 In this example, your metric is `mydomain` (or some variation depending on the attribute inside the bean) and has the tags `attr0:val0`, `attr1:val1`, and `domain:mydomain`.
 
-If you specify an alias in an `include` key that is formatted as _camel case_, it is converted to _snake case_. For example, `MyMetricName` is shown in Datadog as `my_metric_name`.
+If you specify an alias in an `include` key that is formatted as _camel case_, it is converted to _snake case_. For example, `MyMetricName` is shown in Khulnasoft as `my_metric_name`.
 
 ##### The attribute filter
 
 The `attribute` filter can accept two types of values:
 
-- A dictionary whose keys are attributes names (see below). For this case, you can specify an alias for the metric that becomes the metric name in Datadog. You can also specify the metric type as a gauge or counter. If you choose counter, a rate per second is computed for the metric.
+- A dictionary whose keys are attributes names (see below). For this case, you can specify an alias for the metric that becomes the metric name in Khulnasoft. You can also specify the metric type as a gauge or counter. If you choose counter, a rate per second is computed for the metric.
 
   ```yaml
   conf:
@@ -92,7 +92,7 @@ The `attribute` filter can accept two types of values:
 #### Log collection
 
 
-1. To submit logs to Datadog, Tomcat uses the `log4j` logger. For versions of Tomcat before 8.0, `log4j` is configured by default. For Tomcat 8.0+, you must configure Tomcat to use `log4j`, see [Using Log4j][8]. In the first step of those instructions, edit the `log4j.properties` file in the `$CATALINA_BASE/lib` directory as follows:
+1. To submit logs to Khulnasoft, Tomcat uses the `log4j` logger. For versions of Tomcat before 8.0, `log4j` is configured by default. For Tomcat 8.0+, you must configure Tomcat to use `log4j`, see [Using Log4j][8]. In the first step of those instructions, edit the `log4j.properties` file in the `$CATALINA_BASE/lib` directory as follows:
 
    ```conf
      log4j.rootLogger = INFO, CATALINA
@@ -137,7 +137,7 @@ The `attribute` filter can accept two types of values:
    ```
    Then follow the remaining steps in [the Tomcat docs][8] for configuring `log4j`.
 
-2. By default, Datadog's integration pipeline support the following conversion patterns:
+2. By default, Khulnasoft's integration pipeline support the following conversion patterns:
 
    ```text
      %d{yyyy-MM-dd HH:mm:ss} %-5p %c{1}:%L - %m%n
@@ -146,7 +146,7 @@ The `attribute` filter can accept two types of values:
 
     Clone and edit the [integration pipeline][9] if you have a different format. See [Logging in Tomcat][10] for details on Tomcat logging capabilities.
 
-3. Collecting logs is disabled by default in the Datadog Agent, enable it in your `datadog.yaml` file:
+3. Collecting logs is disabled by default in the Khulnasoft Agent, enable it in your `khulnasoft.yaml` file:
 
    ```yaml
    logs_enabled: true
@@ -203,10 +203,10 @@ See [service_checks.json][14] for a list of service checks provided by this inte
 
 ### Missing `tomcat.*` metrics
 
-The Datadog Agent collects JMX metrics with either `Catalina` or `Tomcat` as bean domain names with the Datadog Agent version **7.49.0** or later. Older versions only collect metrics with `Catalina` as the bean domain name.
+The Khulnasoft Agent collects JMX metrics with either `Catalina` or `Tomcat` as bean domain names with the Khulnasoft Agent version **7.49.0** or later. Older versions only collect metrics with `Catalina` as the bean domain name.
 Standalone Tomcat deployments have metrics under domain `Catalina`, but embedded Tomcat deployments (such as with Spring Boot) have metrics under domain `Tomcat`.
 
-If the Datadog Agent version is older than **7.49.0**, and if the exposed Tomcat metrics are prefixed with a different bean domain name such as `Tomcat`, copy the default metrics from the `metrics.yaml` file to the `conf` section of the `tomcat.d/conf.yaml` file and modify the `domain` filter to use the applicable bean domain name.
+If the Khulnasoft Agent version is older than **7.49.0**, and if the exposed Tomcat metrics are prefixed with a different bean domain name such as `Tomcat`, copy the default metrics from the `metrics.yaml` file to the `conf` section of the `tomcat.d/conf.yaml` file and modify the `domain` filter to use the applicable bean domain name.
 
 ```yaml
 - include:
@@ -228,28 +228,28 @@ See the [JMX Check documentation][7] for more detailed information.
 
 ### Commands to view the available metrics
 
-The `datadog-agent jmx` command was added in version 4.1.0.
+The `khulnasoft-agent jmx` command was added in version 4.1.0.
 
 - List attributes that match at least one of your instance configurations:
-  `sudo /etc/init.d/datadog-agent jmx list_matching_attributes`
+  `sudo /etc/init.d/khulnasoft-agent jmx list_matching_attributes`
 - List attributes that match one of your instance configurations but that are not collected because it would exceed the number of metrics that can be collected:
-  `sudo /etc/init.d/datadog-agent jmx list_limited_attributes`
+  `sudo /etc/init.d/khulnasoft-agent jmx list_limited_attributes`
 - List attributes that are actually collected by your current instance configurations:
-  `sudo /etc/init.d/datadog-agent jmx list_collected_attributes`
+  `sudo /etc/init.d/khulnasoft-agent jmx list_collected_attributes`
 - List attributes that don't match any of your instance configurations:
-  `sudo /etc/init.d/datadog-agent jmx list_not_matching_attributes`
+  `sudo /etc/init.d/khulnasoft-agent jmx list_not_matching_attributes`
 - List every attribute available that has a type supported by JMXFetch:
-  `sudo /etc/init.d/datadog-agent jmx list_everything`
+  `sudo /etc/init.d/khulnasoft-agent jmx list_everything`
 - Start the collection of metrics based on your current configuration and display them in the console:
-  `sudo /etc/init.d/datadog-agent jmx collect`
+  `sudo /etc/init.d/khulnasoft-agent jmx collect`
 
 ## Further Reading
 
 Additional helpful documentation, links, and articles:
 
-- [Monitor Tomcat metrics with Datadog][15]
+- [Monitor Tomcat metrics with Khulnasoft][15]
 - [Key metrics for monitoring Tomcat][16]
-- [Analyzing Tomcat logs and metrics with Datadog][17]
+- [Analyzing Tomcat logs and metrics with Khulnasoft][17]
 
 [1]: https://raw.githubusercontent.com/KhulnaSoft/integrations-core/master/tomcat/images/tomcat_dashboard.png
 [2]: https://app.khulnasoft.com/account/settings/agent/latest
@@ -267,4 +267,4 @@ Additional helpful documentation, links, and articles:
 [14]: https://github.com/KhulnaSoft/integrations-core/blob/master/tomcat/assets/service_checks.json
 [15]: https://www.khulnasoft.com/blog/monitor-tomcat-metrics
 [16]: https://www.khulnasoft.com/blog/tomcat-architecture-and-performance
-[17]: https://www.khulnasoft.com/blog/analyzing-tomcat-logs-and-metrics-with-datadog
+[17]: https://www.khulnasoft.com/blog/analyzing-tomcat-logs-and-metrics-with-khulnasoft

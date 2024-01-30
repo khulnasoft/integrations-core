@@ -1,6 +1,6 @@
 {
-    "author_name": "Datadog",
-    "description": "This dashboard provides a high-level view of your IIS sites' status, plus breakdowns of requests and detailed views into network metrics. Further reading on IIS monitoring:\n\n- [Datadog's IIS integration docs](https://docs.khulnasoft.com/integrations/iis/)\n\n- [Key IIS metrics to monitor](https://www.khulnasoft.com/blog/iis-metrics/)\n\n- [Collecting metrics with IIS monitoring tools](https://www.khulnasoft.com/blog/iis-monitoring-tools/)\n\n- [IIS monitoring with Datadog](https://www.khulnasoft.com/blog/iis-monitoring-datadog/)\n\nClone this template dashboard to make changes and add your own graph widgets. \n",
+    "author_name": "Khulnasoft",
+    "description": "This dashboard provides a high-level view of your IIS sites' status, plus breakdowns of requests and detailed views into network metrics. Further reading on IIS monitoring:\n\n- [Khulnasoft's IIS integration docs](https://docs.khulnasoft.com/integrations/iis/)\n\n- [Key IIS metrics to monitor](https://www.khulnasoft.com/blog/iis-metrics/)\n\n- [Collecting metrics with IIS monitoring tools](https://www.khulnasoft.com/blog/iis-monitoring-tools/)\n\n- [IIS monitoring with Khulnasoft](https://www.khulnasoft.com/blog/iis-monitoring-khulnasoft/)\n\nClone this template dashboard to make changes and add your own graph widgets. \n",
     "layout_type": "free",
     "template_variables": [
         {
@@ -759,7 +759,7 @@
         {
             "definition": {
                 "background_color": "white",
-                "content": "Internet Information Services (IIS) is a flexible, general-purpose web server from Microsoft that runs on Windows systems to serve requested HTML pages or files.\n\nThis dashboard provides a high-level view of your IIS sites' status, plus breakdowns of requests and detailed views into network metrics. The IIS check is packaged with the Agent. To start gathering your IIS metrics and logs, install the Agent on your IIS servers. Further reading on IIS monitoring and integrations:\n\n[Datadog's IIS integration docs](https://docs.khulnasoft.com/integrations/iis/?tab=host)\n\n[Key IIS metrics to monitor](https://www.khulnasoft.com/blog/iis-metrics/)\n\n[Collecting metrics with IIS monitoring tools](https://www.khulnasoft.com/blog/iis-monitoring-tools/)\n\n[IIS monitoring with Datadog](https://www.khulnasoft.com/blog/iis-monitoring-datadog/)\n\nClone this template dashboard to make changes and add your own graph widgets.\n",
+                "content": "Internet Information Services (IIS) is a flexible, general-purpose web server from Microsoft that runs on Windows systems to serve requested HTML pages or files.\n\nThis dashboard provides a high-level view of your IIS sites' status, plus breakdowns of requests and detailed views into network metrics. The IIS check is packaged with the Agent. To start gathering your IIS metrics and logs, install the Agent on your IIS servers. Further reading on IIS monitoring and integrations:\n\n[Khulnasoft's IIS integration docs](https://docs.khulnasoft.com/integrations/iis/?tab=host)\n\n[Key IIS metrics to monitor](https://www.khulnasoft.com/blog/iis-metrics/)\n\n[Collecting metrics with IIS monitoring tools](https://www.khulnasoft.com/blog/iis-monitoring-tools/)\n\n[IIS monitoring with Khulnasoft](https://www.khulnasoft.com/blog/iis-monitoring-khulnasoft/)\n\nClone this template dashboard to make changes and add your own graph widgets.\n",
                 "font_size": "14",
                 "show_tick": false,
                 "text_align": "left",
@@ -778,7 +778,7 @@
         {
             "definition": {
                 "background_color": "gray",
-                "content": "Since several key IIS metrics are only available from logs, it\u2019s important to collect and analyze your logs in order to get full visibility into your deployment. You can configure the Datadog Agent to collect logs from IIS, parse them, and send them to Datadog. Once Datadog is ingesting your logs, you can use that data to identify trends and get alerted to IIS performance issues. You can check out our blog regarding [IIS Log Configuration with Datadog](https://www.khulnasoft.com/blog/iis-monitoring-datadog/#configure-iis-log-collection), or jump to our documentation on [IIS log collection](https://docs.khulnasoft.com/integrations/iis/?tab=host#log-collection).",
+                "content": "Since several key IIS metrics are only available from logs, it\u2019s important to collect and analyze your logs in order to get full visibility into your deployment. You can configure the Khulnasoft Agent to collect logs from IIS, parse them, and send them to Khulnasoft. Once Khulnasoft is ingesting your logs, you can use that data to identify trends and get alerted to IIS performance issues. You can check out our blog regarding [IIS Log Configuration with Khulnasoft](https://www.khulnasoft.com/blog/iis-monitoring-khulnasoft/#configure-iis-log-collection), or jump to our documentation on [IIS log collection](https://docs.khulnasoft.com/integrations/iis/?tab=host#log-collection).",
                 "font_size": "14",
                 "show_tick": true,
                 "text_align": "left",

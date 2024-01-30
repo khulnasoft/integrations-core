@@ -16,7 +16,7 @@
             "id": 2426290674948290,
             "definition": {
               "type": "note",
-              "content": "This is a high-level overview of your Impala Daemons, so you can track health status, search and indexing performance, and resource utilization metrics from all your services and be better prepared to address potential issues.\n\n##### [**Datadog Impala integration docs&nbsp;↗**](https://docs.khulnasoft.com/integrations/impala/)",
+              "content": "This is a high-level overview of your Impala Daemons, so you can track health status, search and indexing performance, and resource utilization metrics from all your services and be better prepared to address potential issues.\n\n##### [**Khulnasoft Impala integration docs&nbsp;↗**](https://docs.khulnasoft.com/integrations/impala/)",
               "background_color": "transparent",
               "font_size": "18",
               "text_align": "left",

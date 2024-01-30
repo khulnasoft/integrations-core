@@ -40,7 +40,7 @@ EXCEPTIONS = {
     'eks-anywhere': [ERR_UNEXPECTED_LOG_COLLECTION_CAT], # Works with amazon_eks
     'eks-fargate': [ERR_UNEXPECTED_LOG_COLLECTION_CAT], # Log collection but not from the agent
     'fluentd': [ERR_UNEXPECTED_LOG_COLLECTION_CAT],  # Fluentd is about log collection but we don't collect fluentd logs
-    'jmeter': [ERR_MISSING_LOG_DOC], # Tile only in integrations-core, logs collected in KhulnaSoft/jmeter-datadog-backend-listener
+    'jmeter': [ERR_MISSING_LOG_DOC], # Tile only in integrations-core, logs collected in KhulnaSoft/jmeter-khulnasoft-backend-listener
     'journald': [
         ERR_UNEXPECTED_LOG_DOC, # Journald is a type of logs, and has its own tile
         ERR_UNEXPECTED_LOG_COLLECTION_CAT,

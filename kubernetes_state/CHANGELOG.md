@@ -409,7 +409,7 @@
 
 ***Fixed***:
 
-* [Fix the chosen port](https://github.com/KhulnaSoft/datadog-agent/issues/1523) in recent KSM versions exposing multiple ports
+* [Fix the chosen port](https://github.com/KhulnaSoft/khulnasoft-agent/issues/1523) in recent KSM versions exposing multiple ports
 
 ## 2.4.0 / 2018-03-23
 

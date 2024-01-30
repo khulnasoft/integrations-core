@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2019-present
+# (C) Khulnasoft, Inc. 2019-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 import sys
@@ -8,7 +8,7 @@ if sys.version_info >= (3, 8):
 else:
     from importlib_metadata import distributions
 
-KHULNASOFT_CHECK_PREFIX = 'datadog-'
+KHULNASOFT_CHECK_PREFIX = 'khulnasoft-'
 
 
 def get_khulnasoft_wheels():

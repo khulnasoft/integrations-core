@@ -1,6 +1,6 @@
 {
-    "author_name": "Datadog",
-    "description": "Dive into the health and performance of your F5 Networks appliances. Drill into health metrics from the Big IP and LTM platforms.  \n\n* Read more about [Monitoring Datacenters and Network Devices with Datadog](https://www.khulnasoft.com/blog/datacenter-monitoring-dashboards/)\n* For more configuration details, check out the Network Device Monitoring [documentation](https://docs.khulnasoft.com/network_monitoring/devices/)  \n\nkhulnasoft_demo_keep:true",
+    "author_name": "Khulnasoft",
+    "description": "Dive into the health and performance of your F5 Networks appliances. Drill into health metrics from the Big IP and LTM platforms.  \n\n* Read more about [Monitoring Datacenters and Network Devices with Khulnasoft](https://www.khulnasoft.com/blog/datacenter-monitoring-dashboards/)\n* For more configuration details, check out the Network Device Monitoring [documentation](https://docs.khulnasoft.com/network_monitoring/devices/)  \n\nkhulnasoft_demo_keep:true",
     "layout_type": "ordered",
     "template_variables": [
         {

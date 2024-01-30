@@ -1,4 +1,4 @@
-[env.collectors.datadog-checks]
+[env.collectors.khulnasoft-checks]
 base-package-features = ["deps", "db", "json"]
 
 [[envs.default.matrix]]
@@ -32,7 +32,7 @@ setup = ["single"]
 [envs.default.env-vars]
 ODBCSYSINI = "{root}{/}tests{/}odbc"
 COMPOSE_FOLDER = "compose"
-PIP_EXTRA_INDEX_URL = "https://datadoghq.dev/ci-wheels/bin"
+PIP_EXTRA_INDEX_URL = "https://khulnasofthq.dev/ci-wheels/bin"
 
 [envs.default.overrides]
 env.GITHUB_ACTIONS.e2e-env = { value = false, if = ["true"], platform = ["windows"] }
@@ -57,7 +57,7 @@ matrix.version.env-vars = [
   { key = "SQLSERVER_IMAGE_TAG", value = "2017-CU24-ubuntu-16.04", if = ["2017"], platform = ["linux"] },
   { key = "SQLSERVER_IMAGE_TAG", value = "2019-CU11-ubuntu-16.04", if = ["2019"], platform = ["linux"] },
   { key = "SQLSERVER_IMAGE_TAG", value = "2022-CU9-ubuntu-20.04", if = ["2022"], platform = ["linux"] },
-  { key = "SQLSERVER_BASE_IMAGE", value = "datadog/docker-library:sqlserver_{matrix:version}", platform = ["windows"] },
+  { key = "SQLSERVER_BASE_IMAGE", value = "khulnasoft/docker-library:sqlserver_{matrix:version}", platform = ["windows"] },
 ]
 matrix.driver.env-vars = [
   { key = "WINDOWS_SQLSERVER_DRIVER", platform = ["windows"] },

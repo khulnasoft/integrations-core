@@ -53,12 +53,12 @@ instances:
     # protocol: TCP
 
     ## @param username - string - required
-    ## The username for the Datadog user account.
+    ## The username for the Khulnasoft user account.
     #
     username: <USERNAME>
 
     ## @param password - string - required
-    ## The password for the Datadog user account.
+    ## The password for the Khulnasoft user account.
     #
     password: <PASSWORD>
 

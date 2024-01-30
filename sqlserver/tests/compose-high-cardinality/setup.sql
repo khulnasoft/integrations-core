@@ -1,10 +1,10 @@
--- Datadog user
-CREATE LOGIN datadog WITH PASSWORD = 'Password12!';
-CREATE USER datadog FOR LOGIN datadog;
-GRANT SELECT on sys.dm_os_performance_counters to datadog;
-GRANT VIEW SERVER STATE to datadog;
-GRANT CONNECT ANY DATABASE to datadog;
-GRANT VIEW ANY DEFINITION to datadog;
+-- Khulnasoft user
+CREATE LOGIN khulnasoft WITH PASSWORD = 'Password12!';
+CREATE USER khulnasoft FOR LOGIN khulnasoft;
+GRANT SELECT on sys.dm_os_performance_counters to khulnasoft;
+GRANT VIEW SERVER STATE to khulnasoft;
+GRANT CONNECT ANY DATABASE to khulnasoft;
+GRANT VIEW ANY DEFINITION to khulnasoft;
 
 -- Test users
 CREATE LOGIN bob WITH PASSWORD = 'Password12!';
@@ -20,7 +20,7 @@ USE master;
 GO
 CREATE PROCEDURE pyStoredProc
     AS BEGIN
-        CREATE TABLE #Datadog
+        CREATE TABLE #Khulnasoft
         (
             [metric] varchar(255) NOT NULL,
             [type] varchar(50) NOT NULL,
@@ -28,14 +28,14 @@ CREATE PROCEDURE pyStoredProc
             [tags] varchar(255)
         )
         SET NOCOUNT ON;
-        INSERT INTO #Datadog (metric, type, value, tags) VALUES
+        INSERT INTO #Khulnasoft (metric, type, value, tags) VALUES
             ('sql.sp.testa', 'gauge', 100, 'foo:bar,baz:qux'),
             ('sql.sp.testb', 'gauge', 1, 'foo:bar,baz:qux'),
             ('sql.sp.testb', 'gauge', 2, 'foo:bar,baz:qux');
-        SELECT * FROM #Datadog;
+        SELECT * FROM #Khulnasoft;
     END;
 GO
-GRANT EXECUTE on pyStoredProc to datadog;
+GRANT EXECUTE on pyStoredProc to khulnasoft;
 GO
 
 CREATE PROCEDURE exampleProcWithoutNocount AS
@@ -48,7 +48,7 @@ BEGIN
     select * from #Hello;
 END;
 GO
-GRANT EXECUTE on exampleProcWithoutNocount to datadog;
+GRANT EXECUTE on exampleProcWithoutNocount to khulnasoft;
 GO
 
 CREATE PROCEDURE encryptedProc WITH ENCRYPTION AS
@@ -97,7 +97,7 @@ GO
 
 CREATE PROCEDURE procedureWithLargeCommment AS
 /* 
-author: Datadog 
+author: Khulnasoft 
 usage: some random comments
 test: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 description: bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb

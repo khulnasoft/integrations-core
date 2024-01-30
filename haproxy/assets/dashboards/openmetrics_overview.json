@@ -1,6 +1,6 @@
 {
-    "author_name": "Datadog",
-    "description": "This dashboard displays an overview of your HAProxy frontend and backend servers, helping you spot issues like rising error rates or disparities between your frontend and backend traffic. For more information, see:\n\n- [Monitoring HAProxy performance metrics](https://www.khulnasoft.com/blog/monitoring-haproxy-performance-metrics/)\n\n- [Using built-in and third-party tools to collect HAProxy metrics](https://www.khulnasoft.com/blog/how-to-collect-haproxy-metrics/)\n\n- [Monitor HAProxy with Datadog](https://www.khulnasoft.com/blog/monitor-haproxy-with-datadog/)\n\n- [Datadog's HAProxy documentation](https://docs.khulnasoft.com/integrations/haproxy/)\n\nClone this template dashboard to make changes and add your own graph widgets.",
+    "author_name": "Khulnasoft",
+    "description": "This dashboard displays an overview of your HAProxy frontend and backend servers, helping you spot issues like rising error rates or disparities between your frontend and backend traffic. For more information, see:\n\n- [Monitoring HAProxy performance metrics](https://www.khulnasoft.com/blog/monitoring-haproxy-performance-metrics/)\n\n- [Using built-in and third-party tools to collect HAProxy metrics](https://www.khulnasoft.com/blog/how-to-collect-haproxy-metrics/)\n\n- [Monitor HAProxy with Khulnasoft](https://www.khulnasoft.com/blog/monitor-haproxy-with-khulnasoft/)\n\n- [Khulnasoft's HAProxy documentation](https://docs.khulnasoft.com/integrations/haproxy/)\n\nClone this template dashboard to make changes and add your own graph widgets.",
     "layout_type": "free",
     "template_variables": [
         {
@@ -73,7 +73,7 @@
         {
             "definition": {
                 "background_color": "white",
-                "content": "This dashboard displays an overview of your HAProxy frontend and backend servers, helping you spot issues like rising error rates or disparities between your frontend and backend traffic. For more information, see:\n\n- [Monitoring HAProxy performance metrics](https://www.khulnasoft.com/blog/monitoring-haproxy-performance-metrics/)\n\n- [Using built-in and third-party tools to collect HAProxy metrics](https://www.khulnasoft.com/blog/how-to-collect-haproxy-metrics/)\n\n- [Monitor HAProxy with Datadog](https://www.khulnasoft.com/blog/monitor-haproxy-with-datadog/)\n\n- [Datadog's HAProxy documentation](https://docs.khulnasoft.com/integrations/haproxy/)",
+                "content": "This dashboard displays an overview of your HAProxy frontend and backend servers, helping you spot issues like rising error rates or disparities between your frontend and backend traffic. For more information, see:\n\n- [Monitoring HAProxy performance metrics](https://www.khulnasoft.com/blog/monitoring-haproxy-performance-metrics/)\n\n- [Using built-in and third-party tools to collect HAProxy metrics](https://www.khulnasoft.com/blog/how-to-collect-haproxy-metrics/)\n\n- [Monitor HAProxy with Khulnasoft](https://www.khulnasoft.com/blog/monitor-haproxy-with-khulnasoft/)\n\n- [Khulnasoft's HAProxy documentation](https://docs.khulnasoft.com/integrations/haproxy/)",
                 "font_size": "14",
                 "show_tick": false,
                 "text_align": "left",

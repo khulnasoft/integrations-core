@@ -1,7 +1,7 @@
 {
     "title": "CoreDNS",
-    "author_name": "Datadog",
-    "description": "## CoreDNS\n\nWith this dashboard, you can monitor CoreDNS in real time to visualize and monitor DNS failures and cache hits/misses.\n\n- [CoreDNS Integration Docs](https://docs.khulnasoft.com/integrations/coredns/)\n- [Monitor CoreDNS with Datadog](https://www.khulnasoft.com/blog/monitor-coredns-with-datadog/)\n- [Debugging DNS in Kubernetes](https://kubernetes.io/docs/tasks/administer-cluster/dns-debugging-resolution/#check-for-errors-in-the-dns-pod)  ",
+    "author_name": "Khulnasoft",
+    "description": "## CoreDNS\n\nWith this dashboard, you can monitor CoreDNS in real time to visualize and monitor DNS failures and cache hits/misses.\n\n- [CoreDNS Integration Docs](https://docs.khulnasoft.com/integrations/coredns/)\n- [Monitor CoreDNS with Khulnasoft](https://www.khulnasoft.com/blog/monitor-coredns-with-khulnasoft/)\n- [Debugging DNS in Kubernetes](https://kubernetes.io/docs/tasks/administer-cluster/dns-debugging-resolution/#check-for-errors-in-the-dns-pod)  ",
     "widgets": [
       {
         "id": 2197552365820208,
@@ -17,7 +17,7 @@
               "id": 2586292269732124,
               "definition": {
                 "type": "note",
-                "content": "### With this dashboard, you can monitor CoreDNS in real time to visualize and monitor DNS failures and cache hits/misses.\n\nCoreDNS Guides\n\n- [CoreDNS Integration Docs&nbsp;↗](https://docs.khulnasoft.com/integrations/coredns/)\n- [Monitor CoreDNS with Datadog&nbsp;↗](https://www.khulnasoft.com/blog/monitor-coredns-with-datadog/)\n- [Debugging DNS in Kubernetes&nbsp;↗](https://kubernetes.io/docs/tasks/administer-cluster/dns-debugging-resolution/#check-for-errors-in-the-dns-pod)  ",
+                "content": "### With this dashboard, you can monitor CoreDNS in real time to visualize and monitor DNS failures and cache hits/misses.\n\nCoreDNS Guides\n\n- [CoreDNS Integration Docs&nbsp;↗](https://docs.khulnasoft.com/integrations/coredns/)\n- [Monitor CoreDNS with Khulnasoft&nbsp;↗](https://www.khulnasoft.com/blog/monitor-coredns-with-khulnasoft/)\n- [Debugging DNS in Kubernetes&nbsp;↗](https://kubernetes.io/docs/tasks/administer-cluster/dns-debugging-resolution/#check-for-errors-in-the-dns-pod)  ",
                 "background_color": "transparent",
                 "font_size": "14",
                 "text_align": "left",

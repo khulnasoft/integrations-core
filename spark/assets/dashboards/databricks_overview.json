@@ -1,6 +1,6 @@
 {
-    "author_name": "Datadog",
-    "description": "This Dashboard provides a high-level overview of your Databricks clusters, alongside detailed Spark metrics and logs, so you can monitor your jobs in real-time.\n\n- [Monitor Databricks with Datadog](/blog/databricks-monitoring-datadog)\n- [Databricks integration docs](https://docs.khulnasoft.com/integrations/databricks/?tab=driveronly)\n- [Spark integration docs](https://docs.khulnasoft.com/integrations/spark/?tab=host)\n",
+    "author_name": "Khulnasoft",
+    "description": "This Dashboard provides a high-level overview of your Databricks clusters, alongside detailed Spark metrics and logs, so you can monitor your jobs in real-time.\n\n- [Monitor Databricks with Khulnasoft](/blog/databricks-monitoring-khulnasoft)\n- [Databricks integration docs](https://docs.khulnasoft.com/integrations/databricks/?tab=driveronly)\n- [Spark integration docs](https://docs.khulnasoft.com/integrations/spark/?tab=host)\n",
     "layout_type": "ordered",
     "reflow_type": "fixed",
     "template_variables": [
@@ -33,7 +33,7 @@
                     {
                         "definition": {
                             "background_color": "white",
-                            "content": "This dashboard tracks the current status of your Spark jobs, tasks, and stages in your Databricks clusters. It also allows you to track the resource utilization of your nodes, which point to possible areas for optimization.\n\nSee the [Datadog Databricks integration documentation](https://docs.khulnasoft.com/integrations/databricks/?tab=driveronly) to find the suitable init script for your Databricks cluster environment.\nClone this template dashboard to make changes and add your own graph widgets.",
+                            "content": "This dashboard tracks the current status of your Spark jobs, tasks, and stages in your Databricks clusters. It also allows you to track the resource utilization of your nodes, which point to possible areas for optimization.\n\nSee the [Khulnasoft Databricks integration documentation](https://docs.khulnasoft.com/integrations/databricks/?tab=driveronly) to find the suitable init script for your Databricks cluster environment.\nClone this template dashboard to make changes and add your own graph widgets.",
                             "font_size": "14",
                             "has_padding": true,
                             "show_tick": false,
@@ -548,7 +548,7 @@
                     {
                         "definition": {
                             "background_color": "white",
-                            "content": "The Datadog init scripts support logs configuration to collect and monitor your [Databrick's driver logs](https://docs.microsoft.com/en-us/azure/databricks/clusters/clusters-manage#driver-logs). \n\nYou can also modify the init scripts to configure additional logs instances to read from other log files in your environment. ",
+                            "content": "The Khulnasoft init scripts support logs configuration to collect and monitor your [Databrick's driver logs](https://docs.microsoft.com/en-us/azure/databricks/clusters/clusters-manage#driver-logs). \n\nYou can also modify the init scripts to configure additional logs instances to read from other log files in your environment. ",
                             "font_size": "14",
                             "has_padding": true,
                             "show_tick": false,

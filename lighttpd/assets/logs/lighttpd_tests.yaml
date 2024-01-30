@@ -1,7 +1,7 @@
 id: "lighttpd"
 tests:
  -
-  sample: "172.26.0.1 localhost:9449 - [18/Sep/2020:14:25:39 +0000] \"GET /server-status HTTP/1.1\" 200 5695 \"-\" \"Datadog Agent/7.23.0\""
+  sample: "172.26.0.1 localhost:9449 - [18/Sep/2020:14:25:39 +0000] \"GET /server-status HTTP/1.1\" 200 5695 \"-\" \"Khulnasoft Agent/7.23.0\""
   result:
     custom:
       http:
@@ -13,7 +13,7 @@ tests:
         url: "/server-status"
         url_details:
           path: "/server-status"
-        useragent: "Datadog Agent/7.23.0"
+        useragent: "Khulnasoft Agent/7.23.0"
         useragent_details:
           browser:
             family: "Other"
@@ -28,7 +28,7 @@ tests:
         client:
           ip: "172.26.0.1"
       timestamp: 1600439139000
-    message: "172.26.0.1 localhost:9449 - [18/Sep/2020:14:25:39 +0000] \"GET /server-status HTTP/1.1\" 200 5695 \"-\" \"Datadog Agent/7.23.0\""
+    message: "172.26.0.1 localhost:9449 - [18/Sep/2020:14:25:39 +0000] \"GET /server-status HTTP/1.1\" 200 5695 \"-\" \"Khulnasoft Agent/7.23.0\""
     tags:
      - "source:LOGS_SOURCE"
  -

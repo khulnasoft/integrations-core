@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2018-present
+# (C) Khulnasoft, Inc. 2018-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 import getpass
@@ -144,7 +144,7 @@ def legacy_environment():
         env['HAPROXY_CONFIG'] = os.path.join(HERE, 'compose', 'haproxy-1_6.cfg')
 
     with TempDir() as temp_dir:
-        host_socket_path = os.path.join(temp_dir, 'datadog-haproxy-stats.sock')
+        host_socket_path = os.path.join(temp_dir, 'khulnasoft-haproxy-stats.sock')
         env['HAPROXY_SOCKET_DIR'] = temp_dir
 
         with docker_run(

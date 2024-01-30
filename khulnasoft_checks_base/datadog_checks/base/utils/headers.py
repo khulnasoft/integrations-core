@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2018-present
+# (C) Khulnasoft, Inc. 2018-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 from collections import OrderedDict
@@ -32,7 +32,7 @@ def get_default_headers():
     headers = OrderedDict(
         (
             # Default to `0.0.0` if no version is found
-            ('User-Agent', 'Datadog Agent/{}'.format(khulnasoft_agent.get_version() or '0.0.0')),
+            ('User-Agent', 'Khulnasoft Agent/{}'.format(khulnasoft_agent.get_version() or '0.0.0')),
         )
     )
     headers.update(_get_common_headers())
@@ -47,7 +47,7 @@ def update_headers(headers, extra_headers):
 def headers(agentConfig, **kwargs):
     # Build the request headers
     version = __get_version(agentConfig)
-    res = {'User-Agent': 'Datadog Agent/{}'.format(version)}
+    res = {'User-Agent': 'Khulnasoft Agent/{}'.format(version)}
     res.update(_get_common_headers())
 
     if 'http_host' in kwargs:

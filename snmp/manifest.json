@@ -22,7 +22,7 @@
   },
   "author": {
     "support_email": "help@khulnasoft.com",
-    "name": "Datadog",
+    "name": "Khulnasoft",
     "homepage": "https://www.khulnasoft.com",
     "sales_email": "info@khulnasoft.com"
   },
@@ -51,7 +51,7 @@
       "Interface Performance": "assets/dashboards/interface_performance.json",
       "Datacenter Overview": "assets/dashboards/datacenter_overview.json",
       "Netflow Monitoring": "assets/dashboards/netflow_monitoring.json",
-      "Datadog NDM Environment": "assets/dashboards/khulnasoft_ndm_environment.json",
+      "Khulnasoft NDM Environment": "assets/dashboards/khulnasoft_ndm_environment.json",
       "BGP & OSPF Overview": "assets/dashboards/bgp_ospf_overview.json"
     },
     "monitors": {

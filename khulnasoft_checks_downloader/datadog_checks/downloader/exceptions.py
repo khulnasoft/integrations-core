@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2019-present
+# (C) Khulnasoft, Inc. 2019-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 
@@ -7,7 +7,7 @@
 
 
 class ChecksDownloaderException(Exception):
-    """A top level exception type for datadog-checks-downloader module."""
+    """A top level exception type for khulnasoft-checks-downloader module."""
 
 
 class CLIError(ChecksDownloaderException):
@@ -22,7 +22,7 @@ class NonCanonicalVersion(CLIError):
         return '{}'.format(self.version)
 
 
-class NonDatadogPackage(CLIError):
+class NonKhulnasoftPackage(CLIError):
     def __init__(self, standard_distribution_name):
         self.standard_distribution_name = standard_distribution_name
 
@@ -62,7 +62,7 @@ class MissingVersions(SimpleIndexError):
     pass
 
 
-class NoSuchDatadogPackage(SimpleIndexError):
+class NoSuchKhulnasoftPackage(SimpleIndexError):
     pass
 
 
@@ -75,9 +75,9 @@ class InconsistentSimpleIndex(SimpleIndexError):
         return '{}: {}!={}'.format(self.standard_distribution_name, self.href, self.text)
 
 
-class NoSuchDatadogPackageVersion(SimpleIndexError):
+class NoSuchKhulnasoftPackageVersion(SimpleIndexError):
     def __init__(self, standard_distribution_name, version):
-        super(NoSuchDatadogPackageVersion, self).__init__(standard_distribution_name)
+        super(NoSuchKhulnasoftPackageVersion, self).__init__(standard_distribution_name)
         self.version = version
 
     def __str__(self):

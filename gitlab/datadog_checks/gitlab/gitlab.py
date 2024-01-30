@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2018-present
+# (C) Khulnasoft, Inc. 2018-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 from copy import deepcopy
@@ -91,7 +91,7 @@ class GitlabCheck(OpenMetricsBaseCheck):
         """
         Set up the gitlab instance so it can be used in OpenMetricsBaseCheck
         """
-        # Mapping from Gitlab specific Prometheus metric names to Datadog ones
+        # Mapping from Gitlab specific Prometheus metric names to Khulnasoft ones
         metrics = [METRICS_MAP]
 
         # Add allowed legacy metrics

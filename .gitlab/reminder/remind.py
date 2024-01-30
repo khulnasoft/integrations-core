@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2019-present
+# (C) Khulnasoft, Inc. 2019-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 import json  # noqa: F401
@@ -6,7 +6,7 @@ import os
 import sys
 import time
 
-import datadog as dd
+import khulnasoft as dd
 import requests
 
 GITHUB_ISSUES_API = 'https://api.github.com/search/issues?q=sha:{}+repo:KhulnaSoft/{}'
@@ -64,7 +64,7 @@ def exit_failure(message):
     sys.exit(message)
 
 
-# Emit an event to Datadog based on whether or not we could create the card
+# Emit an event to Khulnasoft based on whether or not we could create the card
 def emit_dd_event(title, message):
     dd.api.Event.create(title=title, text=message, tags=TAGS)
 

@@ -1,7 +1,7 @@
 {
   "title": "Redis - Overview",
-  "author_name": "Datadog",
-  "description": "This dashboard provides a high-level overview of key Redis metrics to help you monitor your Redis primary's performance and manage your Redis instance.\n\nFor more information, see:\n\n- Our [official Redis documentation](https://docs.khulnasoft.com/integrations/redisdb/)\n\nOr our 3-part series blog post:\n\n- Part 1: [How to monitor Redis performance metrics](https://www.khulnasoft.com/blog/how-to-monitor-redis-performance-metrics/) \n- Part 2: [Collecting Redis metrics](https://www.khulnasoft.com/blog/how-to-collect-redis-metrics/)\n- Part 3: [Monitoring Redis with Datadog](https://www.khulnasoft.com/blog/monitor-redis-using-datadog/)",
+  "author_name": "Khulnasoft",
+  "description": "This dashboard provides a high-level overview of key Redis metrics to help you monitor your Redis primary's performance and manage your Redis instance.\n\nFor more information, see:\n\n- Our [official Redis documentation](https://docs.khulnasoft.com/integrations/redisdb/)\n\nOr our 3-part series blog post:\n\n- Part 1: [How to monitor Redis performance metrics](https://www.khulnasoft.com/blog/how-to-monitor-redis-performance-metrics/) \n- Part 2: [Collecting Redis metrics](https://www.khulnasoft.com/blog/how-to-collect-redis-metrics/)\n- Part 3: [Monitoring Redis with Khulnasoft](https://www.khulnasoft.com/blog/monitor-redis-using-khulnasoft/)",
   "widgets": [
     {
       "id": 0,
@@ -17,7 +17,7 @@
             "id": 8013519185925578,
             "definition": {
               "type": "note",
-              "content": "This dashboard shows latency information and slow query counts that summarize your Redis master's performance, as well as memory metrics to help you manage your Redis instance.\n\n##### [Official Datadog Redis documentation ↗](https://docs.khulnasoft.com/integrations/redisdb/)",
+              "content": "This dashboard shows latency information and slow query counts that summarize your Redis master's performance, as well as memory metrics to help you manage your Redis instance.\n\n##### [Official Khulnasoft Redis documentation ↗](https://docs.khulnasoft.com/integrations/redisdb/)",
               "background_color": "transparent",
               "font_size": "16",
               "text_align": "left",
@@ -33,7 +33,7 @@
             "id": 2021637053460700,
             "definition": {
               "type": "note",
-              "content": "**Our 3-part blog series**\n\n\n[How to monitor Redis performance metrics&nbsp;↗](https://www.khulnasoft.com/blog/how-to-monitor-redis-performance-metrics/)\n\n[Collecting Redis metrics&nbsp;↗](https://www.khulnasoft.com/blog/how-to-collect-redis-metrics/)\n\n[Monitoring Redis with Datadog&nbsp;↗](https://www.khulnasoft.com/blog/monitor-redis-using-datadog/)",
+              "content": "**Our 3-part blog series**\n\n\n[How to monitor Redis performance metrics&nbsp;↗](https://www.khulnasoft.com/blog/how-to-monitor-redis-performance-metrics/)\n\n[Collecting Redis metrics&nbsp;↗](https://www.khulnasoft.com/blog/how-to-collect-redis-metrics/)\n\n[Monitoring Redis with Khulnasoft&nbsp;↗](https://www.khulnasoft.com/blog/monitor-redis-using-khulnasoft/)",
               "background_color": "transparent",
               "font_size": "12",
               "text_align": "left",

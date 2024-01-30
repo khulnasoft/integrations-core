@@ -2,7 +2,7 @@
 
 ## Overview
 
-Datadog's Palo Alto Networks Firewall Log integration allows customers to ingest, parse, and analyze Palo Alto Networks firewall logs. This log integration relies on the HTTPS log templating and forwarding capability provided by PAN OS, the operating system that runs in Palo Alto firewalls. PAN-OS allows customers to forward threat, traffic, authentication, and other important log events.
+Khulnasoft's Palo Alto Networks Firewall Log integration allows customers to ingest, parse, and analyze Palo Alto Networks firewall logs. This log integration relies on the HTTPS log templating and forwarding capability provided by PAN OS, the operating system that runs in Palo Alto firewalls. PAN-OS allows customers to forward threat, traffic, authentication, and other important log events.
 
 ### Key use cases
 #### Respond to high severity threat events
@@ -18,11 +18,11 @@ Firewall authentication logs provide detailed information on users as they authe
 
 ### Log collection
 
- 1. [Install the Datadog Agent][1] on a machine that is reachable by the firewall and can connect to the internet.
+ 1. [Install the Khulnasoft Agent][1] on a machine that is reachable by the firewall and can connect to the internet.
  2. In PanOS, Select Device >> Server Profiles >> Syslog , add a name for the server profile. Follow the Syslog log forwarding [configuration steps][2]. Same steps listed below.
  3. Click Add and provide the following details of the server:
  	* Name of the server
- 	* IP address of the machine with datadog agent
+ 	* IP address of the machine with khulnasoft agent
  	* Transport as TCP
  	* Port as 10518 and format as BSD
  4. Copy and configure custom log format for the required log type.
@@ -59,7 +59,7 @@ Firewall authentication logs provide detailed information on users as they authe
 
 ### Logs
 
-The PANOS integration collects logs from the Palo Alto Networks firewall integration and forwards them to Datadog.
+The PANOS integration collects logs from the Palo Alto Networks firewall integration and forwards them to Khulnasoft.
 
 ### Metrics
 
@@ -82,7 +82,7 @@ Additional helpful documentation, links, and articles:
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][7].
+Need help? Contact [Khulnasoft support][7].
 
 [1]: https://app.khulnasoft.com/account/settings/agent/latest
 [2]: https://www.youtube.com/watch?v=LOPXg0oCMPs

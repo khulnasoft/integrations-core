@@ -1,15 +1,15 @@
 {
   "manifest_version": "2.0.0",
   "app_uuid": "b6c2b71b-38c9-4769-86ad-516953849236",
-  "app_id": "datadog-cluster-agent",
+  "app_id": "khulnasoft-cluster-agent",
   "display_on_public_website": true,
   "tile": {
     "overview": "README.md#Overview",
     "configuration": "README.md#Setup",
     "support": "README.md#Support",
     "changelog": "CHANGELOG.md",
-    "description": "Tracks metrics of the Datadog Cluster Agent",
-    "title": "Datadog Cluster Agent",
+    "description": "Tracks metrics of the Khulnasoft Cluster Agent",
+    "title": "Khulnasoft Cluster Agent",
     "media": [],
     "classifier_tags": [
       "Supported OS::Linux",
@@ -20,14 +20,14 @@
   },
   "author": {
     "support_email": "help@khulnasoft.com",
-    "name": "Datadog",
+    "name": "Khulnasoft",
     "homepage": "https://www.khulnasoft.com",
     "sales_email": "info@khulnasoft.com"
   },
   "oauth": {},
   "assets": {
     "integration": {
-      "source_type_name": "Datadog Cluster Agent",
+      "source_type_name": "Khulnasoft Cluster Agent",
       "configuration": {
         "spec": "assets/configuration/spec.yaml"
       },
@@ -35,8 +35,8 @@
         "creates_events": false
       },
       "metrics": {
-        "prefix": "datadog.cluster_agent.",
-        "check": "datadog.cluster_agent.api_requests",
+        "prefix": "khulnasoft.cluster_agent.",
+        "check": "khulnasoft.cluster_agent.api_requests",
         "metadata_path": "metadata.csv"
       },
       "service_checks": {
@@ -46,7 +46,7 @@
       "auto_install": true
     },
     "dashboards": {
-      "Datadog Cluster Agent - Overview": "assets/dashboards/khulnasoft_cluster_agent_overview.json"
+      "Khulnasoft Cluster Agent - Overview": "assets/dashboards/khulnasoft_cluster_agent_overview.json"
     }
   }
 }

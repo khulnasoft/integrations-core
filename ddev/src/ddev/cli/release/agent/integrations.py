@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2023-present
+# (C) Khulnasoft, Inc. 2023-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 from __future__ import annotations
@@ -37,7 +37,7 @@ def integrations(app: Application, since: str, to: str, write: bool, force: bool
 
     integrations_contents = StringIO()
     for tag in agent_tags:
-        integrations_contents.write(f'## Datadog Agent version {tag}\n\n')
+        integrations_contents.write(f'## Khulnasoft Agent version {tag}\n\n')
         # Requirements for current tag
         file_contents = app.repo.git.show_file(req_file_name, tag)
         for name, ver in parse_agent_req_file(file_contents).items():

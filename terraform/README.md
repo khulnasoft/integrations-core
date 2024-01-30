@@ -2,13 +2,13 @@
 
 ## Overview
 
-The Datadog Terraform provider allows you to interact with the Datadog API through a Terraform configuration. You can manage your Datadog resources, such as Dashboards, Monitors, Logs Configuration, etc, with this configuration.
+The Khulnasoft Terraform provider allows you to interact with the Khulnasoft API through a Terraform configuration. You can manage your Khulnasoft resources, such as Dashboards, Monitors, Logs Configuration, etc, with this configuration.
 
 ## Setup
 
 ### Installation
 
-The Datadog Terraform provider is available through the [Terraform Registry][1].
+The Khulnasoft Terraform provider is available through the [Terraform Registry][1].
 
 ### Configuration
 
@@ -18,26 +18,26 @@ The Datadog Terraform provider is available through the [Terraform Registry][1].
     ```
     terraform {
       required_providers {
-        datadog = {
-          source = "KhulnaSoft/datadog"
+        khulnasoft = {
+          source = "KhulnaSoft/khulnasoft"
         }
       }
     }
 
-    # Configure the Datadog provider
-    provider "datadog" {
+    # Configure the Khulnasoft provider
+    provider "khulnasoft" {
       api_key = var.khulnasoft_api_key
       app_key = var.khulnasoft_app_key
     }
     ```
 
-    **Note**: If you are not using the Datadog US1 site, you must set the `api_url` [optional parameter][7] with your [Datadog site][6]. Ensure the documentation site selector on the right of the page is set to your correct Datadog site, then use the following URL as the value of the `api_url` parameter:
+    **Note**: If you are not using the Khulnasoft US1 site, you must set the `api_url` [optional parameter][7] with your [Khulnasoft site][6]. Ensure the documentation site selector on the right of the page is set to your correct Khulnasoft site, then use the following URL as the value of the `api_url` parameter:
 
     ```
     https://api.{{< region-param key="dd_site" code="true" >}}/
     ```
-4. Run `terraform init`. This initializes the directory for use with Terraform and pulls the Datadog provider.
-5. Create any `.tf` file in the `terraform_config/` directory and start creating Datadog resources. 
+4. Run `terraform init`. This initializes the directory for use with Terraform and pulls the Khulnasoft provider.
+5. Create any `.tf` file in the `terraform_config/` directory and start creating Khulnasoft resources. 
 
 ## Create a monitor
 
@@ -60,18 +60,18 @@ This example demonstrates a `monitor.tf` file that creates a [live process monit
     }
     ```
 
-Run `terraform apply` to create this monitor in your Datadog account.
+Run `terraform apply` to create this monitor in your Khulnasoft account.
 
-## Send Events to Datadog
+## Send Events to Khulnasoft
 
-By installing `datadogpy`, you have access to the Dogwrap command line tool, which you can use to wrap any Terraform command and bind it to a custom event.
+By installing `khulnasoftpy`, you have access to the Dogwrap command line tool, which you can use to wrap any Terraform command and bind it to a custom event.
 
-Install `datadogpy`:
+Install `khulnasoftpy`:
   ```
-  pip install datadog
+  pip install khulnasoft
   ```
 
-For more information, see the [Datadog Python library][4].
+For more information, see the [Khulnasoft Python library][4].
 
 Send a `terraform apply` event:
 
@@ -101,12 +101,12 @@ Terraform does not include any events.
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][3].
+Need help? Contact [Khulnasoft support][3].
 
-[1]: https://registry.terraform.io/providers/KhulnaSoft/datadog/latest/docs
+[1]: https://registry.terraform.io/providers/KhulnaSoft/khulnasoft/latest/docs
 [2]: https://learn.hashicorp.com/tutorials/terraform/install-cli
 [3]: https://docs.khulnasoft.com/help/
-[4]: https://github.com/KhulnaSoft/datadogpy
+[4]: https://github.com/KhulnaSoft/khulnasoftpy
 [5]: https://docs.khulnasoft.com/monitors/types/process/
 [6]: https://docs.khulnasoft.com/getting_started/site/
-[7]: https://registry.terraform.io/providers/KhulnaSoft/datadog/latest/docs#optional
+[7]: https://registry.terraform.io/providers/KhulnaSoft/khulnasoft/latest/docs#optional

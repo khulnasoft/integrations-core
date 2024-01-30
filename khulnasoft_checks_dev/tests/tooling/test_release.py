@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2018-present
+# (C) Khulnasoft, Inc. 2018-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 
@@ -17,18 +17,18 @@ from khulnasoft_checks.dev.tooling.release import (
 
 
 def test_get_package_name():
-    assert get_package_name('khulnasoft_checks_base') == 'datadog-checks-base'
-    assert get_package_name('my_check') == 'datadog-my-check'
+    assert get_package_name('khulnasoft_checks_base') == 'khulnasoft-checks-base'
+    assert get_package_name('my_check') == 'khulnasoft-my-check'
 
 
 def test_get_folder_name():
-    assert get_folder_name('datadog-checks-base') == 'khulnasoft_checks_base'
-    assert get_folder_name('datadog-my-check') == 'my_check'
+    assert get_folder_name('khulnasoft-checks-base') == 'khulnasoft_checks_base'
+    assert get_folder_name('khulnasoft-my-check') == 'my_check'
 
 
 def test_get_agent_requirement_line():
     res = get_agent_requirement_line('khulnasoft_checks_base', '1.1.0')
-    assert res == 'datadog-checks-base==1.1.0'
+    assert res == 'khulnasoft-checks-base==1.1.0'
 
     with mock.patch('khulnasoft_checks.dev.tooling.release.load_manifest') as load:
         # wrong manifest
@@ -39,17 +39,17 @@ def test_get_agent_requirement_line():
         # all platforms
         load.return_value = {"supported_os": ["linux", "mac_os", "windows"]}
         res = get_agent_requirement_line('foo', '1.2.3')
-        assert res == 'datadog-foo==1.2.3'
+        assert res == 'khulnasoft-foo==1.2.3'
 
         # one platform
         load.return_value = {"supported_os": ["linux"]}
         res = get_agent_requirement_line('foo', '1.2.3')
-        assert res == "datadog-foo==1.2.3; sys_platform == 'linux2'"
+        assert res == "khulnasoft-foo==1.2.3; sys_platform == 'linux2'"
 
         # multiple platforms
         load.return_value = {"supported_os": ["linux", "mac_os"]}
         res = get_agent_requirement_line('foo', '1.2.3')
-        assert res == "datadog-foo==1.2.3; sys_platform != 'win32'"
+        assert res == "khulnasoft-foo==1.2.3; sys_platform != 'win32'"
 
 
 @pytest.mark.parametrize(
@@ -59,19 +59,19 @@ def test_get_agent_requirement_line():
             "activemq",
             "2.4.0",
             [
-                "datadog-activemq-xml==2.2.0\n",
-                "datadog-activemq==2.4.0\n",
-                "datadog-zk==1.0.0\n",
+                "khulnasoft-activemq-xml==2.2.0\n",
+                "khulnasoft-activemq==2.4.0\n",
+                "khulnasoft-zk==1.0.0\n",
             ],
         ),
         (
             "impala",
             "1.0.0",
             [
-                "datadog-activemq-xml==2.2.0\n",
-                "datadog-activemq==2.3.1\n",
-                "datadog-impala==1.0.0\n",
-                "datadog-zk==1.0.0\n",
+                "khulnasoft-activemq-xml==2.2.0\n",
+                "khulnasoft-activemq==2.3.1\n",
+                "khulnasoft-impala==1.0.0\n",
+                "khulnasoft-zk==1.0.0\n",
             ],
         ),
     ],
@@ -80,10 +80,10 @@ def test_get_agent_requirement_line():
 def test_update_agent_requirements(check, new_version, expected_result):
     with CliRunner().isolated_filesystem():
         with open('requirements-agent-release.txt', 'w') as file:
-            file.write("datadog-activemq-xml==2.2.0\n")
-            file.write("datadog-activemq==2.3.1\n")
-            file.write("datadog-zk==1.0.0\n")
+            file.write("khulnasoft-activemq-xml==2.2.0\n")
+            file.write("khulnasoft-activemq==2.3.1\n")
+            file.write("khulnasoft-zk==1.0.0\n")
 
-        update_agent_requirements('requirements-agent-release.txt', check, "datadog-{}=={}".format(check, new_version))
+        update_agent_requirements('requirements-agent-release.txt', check, "khulnasoft-{}=={}".format(check, new_version))
 
         assert read_file_lines('requirements-agent-release.txt') == expected_result

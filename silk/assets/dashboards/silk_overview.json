@@ -1,6 +1,6 @@
 {
   "title": "Silk - Overview",
-  "description": "This dashboard provides a high-level overview of your Silk Platform instances, so you can track throughput, latency, replication, io ops, and other metrics from all your servers and spot potential issues.\n\n\nFurther reading on monitoring Silk:\n- [Datadog's Silk integration docs](https://docs.khulnasoft.com/integrations/silk/)\n- [Official Silk API documentation](https://github.com/silk-us/silk-sdp-api-docs)\n- [Silk Platform Overview](https://silk.us/platform-overview/)\n",
+  "description": "This dashboard provides a high-level overview of your Silk Platform instances, so you can track throughput, latency, replication, io ops, and other metrics from all your servers and spot potential issues.\n\n\nFurther reading on monitoring Silk:\n- [Khulnasoft's Silk integration docs](https://docs.khulnasoft.com/integrations/silk/)\n- [Official Silk API documentation](https://github.com/silk-us/silk-sdp-api-docs)\n- [Silk Platform Overview](https://silk.us/platform-overview/)\n",
   "widgets": [
     {
       "id": 1469971046547818,
@@ -15,7 +15,7 @@
             "id": 4198239031394762,
             "definition": {
               "type": "note",
-              "content": "This dashboard provides a high-level overview of your Silk Platform instances, so you can track throughput, latency, replication, io ops, and other metrics from all your servers and spot potential issues.\n\n\nFurther reading on monitoring Silk:\n- [Datadog's Silk integration docs](https://docs.khulnasoft.com/integrations/silk/)\n- [Official Silk API documentation](https://github.com/silk-us/silk-sdp-api-docs)\n- [Silk Platform Overview](https://silk.us/platform-overview/)\n",
+              "content": "This dashboard provides a high-level overview of your Silk Platform instances, so you can track throughput, latency, replication, io ops, and other metrics from all your servers and spot potential issues.\n\n\nFurther reading on monitoring Silk:\n- [Khulnasoft's Silk integration docs](https://docs.khulnasoft.com/integrations/silk/)\n- [Official Silk API documentation](https://github.com/silk-us/silk-sdp-api-docs)\n- [Silk Platform Overview](https://silk.us/platform-overview/)\n",
               "font_size": "16",
               "has_padding": true
             },

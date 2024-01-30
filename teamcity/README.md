@@ -8,7 +8,7 @@ This integration connects to your TeamCity server to submit metrics, service che
 
 ### Installation
 
-The TeamCity check is included in the [Datadog Agent][1] package, so you don't need to install anything else on your TeamCity servers.
+The TeamCity check is included in the [Khulnasoft Agent][1] package, so you don't need to install anything else on your TeamCity servers.
 
 ### Configuration
 
@@ -124,13 +124,13 @@ instances:
     build_configuration: <BUILD_CONFIGURATION_ID>
 ```
 
-[Restart the Agent][5] to start collecting and sending TeamCity events to Datadog.
+[Restart the Agent][5] to start collecting and sending TeamCity events to Khulnasoft.
 
 ##### Log collection
 
 1. Configure TeamCity [logging settings][6].
 
-2. By default, Datadog's integration pipeline supports the following kind of log format:
+2. By default, Khulnasoft's integration pipeline supports the following kind of log format:
 
    ```text
    [2020-09-10 21:21:37,486]   INFO -  jetbrains.buildServer.STARTUP - Current stage: System is ready
@@ -138,7 +138,7 @@ instances:
 
    Clone and edit the [integration pipeline][7] if you defined different conversion [patterns][8].
 
-3. Collecting logs is disabled by default in the Datadog Agent. Enable it in your `datadog.yaml` file:
+3. Collecting logs is disabled by default in the Khulnasoft Agent. Enable it in your `khulnasoft.yaml` file:
 
    ```yaml
    logs_enabled: true
@@ -185,7 +185,7 @@ For containerized environments, see the [Autodiscovery Integration Templates][9]
 
 ##### Log collection
 
-Collecting logs is disabled by default in the Datadog Agent. To enable it, see [Kubernetes log collection][10].
+Collecting logs is disabled by default in the Khulnasoft Agent. To enable it, see [Kubernetes log collection][10].
 
 | Parameter      | Value                                                |
 | -------------- | ---------------------------------------------------- |
@@ -206,7 +206,7 @@ See [metadata.csv][14] for a list of metrics provided by this check.
 
 ### Events
 
-TeamCity events representing successful and failed builds are forwarded to Datadog.
+TeamCity events representing successful and failed builds are forwarded to Khulnasoft.
 
 ### Service Checks
 
@@ -214,11 +214,11 @@ See [service_checks.json][15] for a list of service checks provided by this inte
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][12].
+Need help? Contact [Khulnasoft support][12].
 
 ## Further Reading
 
-- [Track performance impact of code changes with TeamCity and Datadog][13]
+- [Track performance impact of code changes with TeamCity and Khulnasoft][13]
 
 [1]: https://app.khulnasoft.com/account/settings/agent/latest
 [2]: https://www.jetbrains.com/help/teamcity/enabling-guest-login.html
@@ -232,7 +232,7 @@ Need help? Contact [Datadog support][12].
 [10]: https://docs.khulnasoft.com/agent/kubernetes/log/
 [11]: https://docs.khulnasoft.com/agent/guide/agent-commands/#agent-status-and-information
 [12]: https://docs.khulnasoft.com/help/
-[13]: https://www.khulnasoft.com/blog/track-performance-impact-of-code-changes-with-teamcity-and-datadog
+[13]: https://www.khulnasoft.com/blog/track-performance-impact-of-code-changes-with-teamcity-and-khulnasoft
 [14]: https://github.com/KhulnaSoft/integrations-core/blob/master/teamcity/metadata.csv
 [15]: https://github.com/KhulnaSoft/integrations-core/blob/master/teamcity/assets/service_checks.json
 [16]: https://github.com/OpenObservability/OpenMetrics/blob/main/specification/OpenMetrics.md

@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2018-present
+# (C) Khulnasoft, Inc. 2018-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 from requests.exceptions import ConnectionError, HTTPError, InvalidURL, SSLError, Timeout
@@ -307,7 +307,7 @@ class YarnCheck(AgentCheck):
 
     def _split_yarn_application_tags(self, application_tags, dd_tag):
         """Splits the YARN application tags string, if formatted as
-        "key1:val1,key2:val2" into Datadog application tags as such:
+        "key1:val1,key2:val2" into Khulnasoft application tags as such:
             app_key1: val1
             app_key2: val2
         """

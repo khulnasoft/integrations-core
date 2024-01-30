@@ -8,7 +8,7 @@ This check monitors [Kube_metrics_server][1] v0.3.0+, a component used by the Ku
 
 ### Installation
 
-The Kube_metrics_server check is included in the [Datadog Agent][2] package. No additional installation is needed on your server.
+The Kube_metrics_server check is included in the [Khulnasoft Agent][2] package. No additional installation is needed on your server.
 
 ### Configuration
 
@@ -69,7 +69,7 @@ See [service_checks.json][9] for a list of service checks provided by this integ
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][10].
+Need help? Contact [Khulnasoft support][10].
 
 
 [1]: https://github.com/kubernetes-incubator/metrics-server

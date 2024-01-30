@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2020-present
+# (C) Khulnasoft, Inc. 2020-present
 # All rights reserved
 # Licensed under Simplified BSD License (see LICENSE)
 """
@@ -46,7 +46,7 @@ def parse_metrics(metrics, resolver, logger, bulk_threshold=0):
 
     for metric in metrics:
         # Backward compatibility layer for python related to renaming of forced_type to metric_type
-        # https://github.com/KhulnaSoft/datadog-agent/pull/17900
+        # https://github.com/KhulnaSoft/khulnasoft-agent/pull/17900
         metric_type = metric.get('metric_type')
         if metric_type is not None:
             metric['forced_type'] = metric_type
@@ -459,7 +459,7 @@ def _parse_table_metric_tag(mib, parsed_table, metric_tag):
 
     # Renamed `symbol` to `column` for backward compatibility with this change:
     #   Deprecate `metric_tags[].column` in favour of `symbol`
-    #   https://github.com/KhulnaSoft/datadog-agent/pull/20030
+    #   https://github.com/KhulnaSoft/khulnasoft-agent/pull/20030
     if 'symbol' in metric_tag:
         metric_tag['column'] = metric_tag['symbol']
         del metric_tag['symbol']

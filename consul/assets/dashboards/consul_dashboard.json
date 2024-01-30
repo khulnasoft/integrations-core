@@ -1,6 +1,6 @@
 {
     "title": "Consul - Overview",
-    "description": "This dashboard displays key metrics from your Consul integration, displaying the size of your deployment and performance over time. Further reading on Consul monitoring:\n\n- [Datadog's Consul integration docs](https://docs.khulnasoft.com/integrations/consul/)\n\n- [Monitor Consul health and performance with Datadog](https://www.khulnasoft.com/blog/monitor-consul-health-and-performance-with-datadog/)\n\n- [Consul at Datadog](https://www.khulnasoft.com/blog/engineering/consul-at-datadog/)\n\nClone this template dashboard to make changes and add your own graph widgets.",
+    "description": "This dashboard displays key metrics from your Consul integration, displaying the size of your deployment and performance over time. Further reading on Consul monitoring:\n\n- [Khulnasoft's Consul integration docs](https://docs.khulnasoft.com/integrations/consul/)\n\n- [Monitor Consul health and performance with Khulnasoft](https://www.khulnasoft.com/blog/monitor-consul-health-and-performance-with-khulnasoft/)\n\n- [Consul at Khulnasoft](https://www.khulnasoft.com/blog/engineering/consul-at-khulnasoft/)\n\nClone this template dashboard to make changes and add your own graph widgets.",
     "widgets": [
         {
             "id": 0,

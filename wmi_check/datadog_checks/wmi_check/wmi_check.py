@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2013-present
+# (C) Khulnasoft, Inc. 2013-present
 # All rights reserved
 # Licensed under Simplified BSD License (see LICENSE)
 from typing import Any, Dict, List  # noqa: F401

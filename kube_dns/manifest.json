@@ -8,7 +8,7 @@
     "configuration": "README.md#Setup",
     "support": "README.md#Support",
     "changelog": "CHANGELOG.md",
-    "description": "Track all your Kube DNS metrics with Datadog",
+    "description": "Track all your Kube DNS metrics with Khulnasoft",
     "title": "Kube DNS",
     "media": [],
     "classifier_tags": [
@@ -22,7 +22,7 @@
   },
   "author": {
     "support_email": "help@khulnasoft.com",
-    "name": "Datadog",
+    "name": "Khulnasoft",
     "homepage": "https://www.khulnasoft.com",
     "sales_email": "info@khulnasoft.com"
   },

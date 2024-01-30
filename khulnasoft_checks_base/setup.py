@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2018-present
+# (C) Khulnasoft, Inc. 2018-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 from codecs import open  # To use a consistent encoding
@@ -55,13 +55,13 @@ def parse_pyproject_array(name):
 setup(
     # Version should always match one from an agent release
     version=ABOUT["__version__"],
-    name='datadog-checks-base',
-    description='The Datadog Check Toolkit',
+    name='khulnasoft-checks-base',
+    description='The Khulnasoft Check Toolkit',
     long_description=LONG_DESC,
     long_description_content_type='text/markdown',
-    keywords='datadog agent checks',
+    keywords='khulnasoft agent checks',
     url='https://github.com/KhulnaSoft/integrations-core',
-    author='Datadog',
+    author='Khulnasoft',
     author_email='packages@khulnasoft.com',
     license='BSD',
     # See https://pypi.org/classifiers

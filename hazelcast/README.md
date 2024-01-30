@@ -8,7 +8,7 @@ This check monitors [Hazelcast][1] v4.0+.
 
 ### Installation
 
-The Hazelcast check is included in the [Datadog Agent][2] package.
+The Hazelcast check is included in the [Khulnasoft Agent][2] package.
 No additional installation is needed on your server.
 
 ### Configuration
@@ -29,7 +29,7 @@ To configure this check for an Agent running on a host:
    This check has a limit of 350 metrics per instance. The number of returned metrics is indicated in the info page.
    You can specify the metrics you are interested in by editing the configuration below.
    To learn how to customize the metrics to collect, see the [JMX Checks documentation][4] for more detailed instructions.
-   If you need to monitor more metrics, contact [Datadog support][5].
+   If you need to monitor more metrics, contact [Khulnasoft support][5].
 
 2. [Restart the Agent][6].
 
@@ -72,7 +72,7 @@ To configure this check for an Agent running on a host:
    #log4j.logger.com.hazelcast.hibernate=debug
    ```
 
-2. By default, Datadog's integration pipeline supports the following conversion [pattern][8]:
+2. By default, Khulnasoft's integration pipeline supports the following conversion [pattern][8]:
 
    ```text
    %d{yyyy-MM-dd HH:mm:ss} [%thread] %level{length=10} %c{1}:%L - %m%n
@@ -80,7 +80,7 @@ To configure this check for an Agent running on a host:
 
     Clone and edit the [integration pipeline][9] if you have a different format.
 
-3. Collecting logs is disabled by default in the Datadog Agent. Enable it in your `datadog.yaml` file:
+3. Collecting logs is disabled by default in the Khulnasoft Agent. Enable it in your `khulnasoft.yaml` file:
 
    ```yaml
    logs_enabled: true
@@ -113,7 +113,7 @@ For containerized environments, see the [Autodiscovery with JMX][10] guide.
 
 ##### Log collection
 
-Collecting logs is disabled by default in the Datadog Agent. To enable it, see [Docker log collection][11].
+Collecting logs is disabled by default in the Khulnasoft Agent. To enable it, see [Docker log collection][11].
 
 | Parameter      | Value                                              |
 | -------------- | -------------------------------------------------- |
@@ -164,7 +164,7 @@ See [service_checks.json][14] for a list of service checks provided by this inte
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][5].
+Need help? Contact [Khulnasoft support][5].
 
 
 [1]: https://hazelcast.org

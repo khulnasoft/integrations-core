@@ -1,8 +1,8 @@
-# Datadog Checks Downloader
+# Khulnasoft Checks Downloader
 
 ## Overview
 
-This package provides the secure downloader used by the [Datadog Agent][1] to
+This package provides the secure downloader used by the [Khulnasoft Agent][1] to
 download Agent-based Integrations (also known as _Checks_). Internally, it uses
 [The Update Framework (TUF)][2] and [in-toto][3] in order to provide
 _end-to-end verification_ of integrations between our developers and end-users.
@@ -17,7 +17,7 @@ Presently, the downloader is limited to downloading packages of
 
 This package is expected to be built and included with the KhulnaSoft Agent
 beginning with version 6.10.0. There is a blog post forthcoming shortly that
-will explain in more detail how to use the Datadog Agent to transparently
+will explain in more detail how to use the Khulnasoft Agent to transparently
 download and install new or updated integrations.
 
 ## Development
@@ -35,13 +35,13 @@ To download a new or updated integration, you may specify a precise
 [version][7]:
 
 ```shell
-python -m khulnasoft_checks.downloader -vvvv datadog-$INTEGRATION --version X.Y.Z
+python -m khulnasoft_checks.downloader -vvvv khulnasoft-$INTEGRATION --version X.Y.Z
 ```
 
 Or you may leave the version unspecified to download the latest version:
 
 ```shell
-python -m khulnasoft_checks.downloader -vvvv datadog-$INTEGRATION
+python -m khulnasoft_checks.downloader -vvvv khulnasoft-$INTEGRATION
 ```
 
 
@@ -49,7 +49,7 @@ python -m khulnasoft_checks.downloader -vvvv datadog-$INTEGRATION
 
 You can use `ddev` to run the tests.
 
-About how to install `ddev`, see https://docs.khulnasoft.com/developers/integrations/python/ and https://datadoghq.dev/integrations-core/.
+About how to install `ddev`, see https://docs.khulnasoft.com/developers/integrations/python/ and https://khulnasofthq.dev/integrations-core/.
 
 For running tests locally, you need to download some test data first. You should only have to do it the first time, and later after some updates to the data:
 
@@ -81,21 +81,21 @@ For online tests, you can specify explicitly distribution and its version to
 run tests against:
 
 ```shell
-pytest -vvvv -m online --distribution-name datadog-active-directory --distribution-version 1.10.0
+pytest -vvvv -m online --distribution-name khulnasoft-active-directory --distribution-version 1.10.0
 ```
 
 To run checks against content served from own local directory where TUF, in-toto and wheel files are present:
 
 ```shell
-pytest -vvvv --local-dir=/path/to/dir --distribution-name datadog-active-directory --distribution-version 1.10.0
+pytest -vvvv --local-dir=/path/to/dir --distribution-name khulnasoft-active-directory --distribution-version 1.10.0
 ```
 
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][9].
+Need help? Contact [Khulnasoft support][9].
 
-[1]: https://github.com/KhulnaSoft/datadog-agent
+[1]: https://github.com/KhulnaSoft/khulnasoft-agent
 [2]: https://theupdateframework.com
 [3]: https://in-toto.io
 [4]: https://youtu.be/XAlvd4QXngs

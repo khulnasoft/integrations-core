@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2018-present
+# (C) Khulnasoft, Inc. 2018-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 import logging
@@ -483,7 +483,7 @@ def test_network_latency_checks(aggregator):
             {
                 'cert': None,
                 'verify': True,
-                'headers': {'User-Agent': 'Datadog Agent/0.0.0', 'Accept': '*/*', 'Accept-Encoding': 'gzip, deflate'},
+                'headers': {'User-Agent': 'Khulnasoft Agent/0.0.0', 'Accept': '*/*', 'Accept-Encoding': 'gzip, deflate'},
             },
         ),
         (
@@ -500,7 +500,7 @@ def test_network_latency_checks(aggregator):
                 'verify': 'file/path',
                 'headers': {
                     'X-Consul-Token': 'token',
-                    'User-Agent': 'Datadog Agent/0.0.0',
+                    'User-Agent': 'Khulnasoft Agent/0.0.0',
                     'Accept': '*/*',
                     'Accept-Encoding': 'gzip, deflate',
                 },

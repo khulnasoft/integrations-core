@@ -2,7 +2,7 @@
 
 ## Overview
 
-This check monitors [Flux][1] through the Datadog Agent. Flux is a set of continuous and progressive delivery solutions for Kubernetes that is open and extensible.
+This check monitors [Flux][1] through the Khulnasoft Agent. Flux is a set of continuous and progressive delivery solutions for Kubernetes that is open and extensible.
 
 ## Setup
 
@@ -10,7 +10,7 @@ Follow the instructions below to install and configure this check for an Agent r
 
 ### Installation
 
-Starting from Agent release 7.51.0, the Fluxcd check is included in the [Datadog Agent][2] package. No additional installation is needed on your server.
+Starting from Agent release 7.51.0, the Fluxcd check is included in the [Khulnasoft Agent][2] package. No additional installation is needed on your server.
 
 
 <!-- xxx tabs xxx -->
@@ -44,7 +44,7 @@ This is an example configuration of a Docker label inside `docker-compose.yml`. 
 
 ```yaml
 labels:
-  com.datadoghq.ad.checks: '{"fluxcd":{"instances":[{"openmetrics_endpoint":"http://%%host%%:8080"}]}}'
+  com.khulnasofthq.ad.checks: '{"fluxcd":{"instances":[{"openmetrics_endpoint":"http://%%host%%:8080"}]}}'
 ```
 
 <!-- xxz tab xxx -->
@@ -102,7 +102,7 @@ See [service_checks.json][8] for a list of service checks provided by this integ
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][9].
+Need help? Contact [Khulnasoft support][9].
 
 
 [1]: https://fluxcd.io/

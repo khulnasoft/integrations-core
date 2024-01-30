@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# (C) Datadog, Inc. 2020-present
+# (C) Khulnasoft, Inc. 2020-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 from __future__ import unicode_literals

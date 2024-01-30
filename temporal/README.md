@@ -2,7 +2,7 @@
 
 ## Overview
 
-This check monitors [Temporal][1] through the Datadog Agent.
+This check monitors [Temporal][1] through the Khulnasoft Agent.
 
 ## Setup
 
@@ -10,7 +10,7 @@ Follow the instructions below to install and configure this check for an Agent r
 
 ### Installation
 
-The Temporal check is included in the [Datadog Agent][2] package.
+The Temporal check is included in the [Khulnasoft Agent][2] package.
 No additional installation is needed on your server.
 
 ### Configuration
@@ -27,7 +27,7 @@ See the [sample temporal.d/conf.yaml][4] for all available configuration options
 
 #### Log collection
 
-1. Collecting logs is disabled by default in the Datadog Agent. Enable it in your `datadog.yaml` file:
+1. Collecting logs is disabled by default in the Khulnasoft Agent. Enable it in your `khulnasoft.yaml` file:
 
    ```yaml
    logs_enabled: true
@@ -66,17 +66,17 @@ See [service_checks.json][8] for a list of service checks provided by this integ
 
 ### Logs
 
-The Temporal integration can collect logs from the Temporal Cluster and forward them to Datadog. 
+The Temporal integration can collect logs from the Temporal Cluster and forward them to Khulnasoft. 
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][9].
+Need help? Contact [Khulnasoft support][9].
 
 ## Further Reading
 
 Additional helpful documentation, links, and articles:
 
-- [Monitor the health of your Temporal Server with Datadog][12]
+- [Monitor the health of your Temporal Server with Khulnasoft][12]
 
 
 [1]: https://temporal.io/

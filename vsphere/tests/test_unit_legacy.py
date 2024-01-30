@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2023-present
+# (C) Khulnasoft, Inc. 2023-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 import mock
@@ -106,7 +106,7 @@ def test_event_vm_being_hot_migrated_change_host(aggregator, dd_run_check, legac
         return_value=[
             vim.event.VmBeingHotMigratedEvent(
                 createdTime=get_current_datetime(),
-                userName="datadog",
+                userName="khulnasoft",
                 host=vim.event.HostEventArgument(name="host1"),
                 destHost=vim.event.HostEventArgument(name="host2"),
                 datacenter=vim.event.DatacenterEventArgument(name="dc1"),
@@ -120,7 +120,7 @@ def test_event_vm_being_hot_migrated_change_host(aggregator, dd_run_check, legac
     check = VSphereCheck('vsphere', {}, [legacy_default_instance])
     dd_run_check(check)
     aggregator.assert_event(
-        """datadog has launched a hot migration of this virtual machine:
+        """khulnasoft has launched a hot migration of this virtual machine:
 - Host MIGRATION: from host1 to host2
 - No datacenter migration: still dc1
 - No datastore migration: still ds1""",
@@ -143,7 +143,7 @@ def test_event_vm_being_hot_migrated_change_datacenter(
         return_value=[
             vim.event.VmBeingHotMigratedEvent(
                 createdTime=get_current_datetime(),
-                userName="datadog",
+                userName="khulnasoft",
                 host=vim.event.HostEventArgument(name="host1"),
                 destHost=vim.event.HostEventArgument(name="host2"),
                 datacenter=vim.event.DatacenterEventArgument(name="dc1"),
@@ -157,7 +157,7 @@ def test_event_vm_being_hot_migrated_change_datacenter(
     check = VSphereCheck('vsphere', {}, [legacy_default_instance])
     dd_run_check(check)
     aggregator.assert_event(
-        """datadog has launched a hot migration of this virtual machine:
+        """khulnasoft has launched a hot migration of this virtual machine:
 - Datacenter MIGRATION: from dc1 to dc2
 - Host MIGRATION: from host1 to host2
 - No datastore migration: still ds1""",
@@ -180,7 +180,7 @@ def test_event_vm_being_hot_migrated_change_datastore(
         return_value=[
             vim.event.VmBeingHotMigratedEvent(
                 createdTime=get_current_datetime(),
-                userName="datadog",
+                userName="khulnasoft",
                 host=vim.event.HostEventArgument(name="host1"),
                 destHost=vim.event.HostEventArgument(name="host1"),
                 datacenter=vim.event.DatacenterEventArgument(name="dc1"),
@@ -194,7 +194,7 @@ def test_event_vm_being_hot_migrated_change_datastore(
     check = VSphereCheck('vsphere', {}, [legacy_default_instance])
     dd_run_check(check)
     aggregator.assert_event(
-        """datadog has launched a hot migration of this virtual machine:
+        """khulnasoft has launched a hot migration of this virtual machine:
 - Datastore MIGRATION: from ds1 to ds2
 - No host migration: still host1
 - No datacenter migration: still dc1""",
@@ -400,7 +400,7 @@ def test_event_vm_powered_on(aggregator, dd_run_check, legacy_default_instance, 
         return_value=[
             vim.event.VmPoweredOnEvent(
                 createdTime=get_current_datetime(),
-                userName="datadog",
+                userName="khulnasoft",
                 host=vim.event.HostEventArgument(name="host1"),
                 datacenter=vim.event.DatacenterEventArgument(name="dc1"),
                 vm=vim.event.VmEventArgument(name="vm1"),
@@ -411,7 +411,7 @@ def test_event_vm_powered_on(aggregator, dd_run_check, legacy_default_instance, 
     check = VSphereCheck('vsphere', {}, [legacy_default_instance])
     dd_run_check(check)
     aggregator.assert_event(
-        """datadog has powered on this virtual machine. It is running on:
+        """khulnasoft has powered on this virtual machine. It is running on:
 - datacenter: dc1
 - host: host1
 """
@@ -423,7 +423,7 @@ def test_event_vm_powered_off(aggregator, dd_run_check, legacy_default_instance,
         return_value=[
             vim.event.VmPoweredOffEvent(
                 createdTime=get_current_datetime(),
-                userName="datadog",
+                userName="khulnasoft",
                 host=vim.event.HostEventArgument(name="host1"),
                 datacenter=vim.event.DatacenterEventArgument(name="dc1"),
                 vm=vim.event.VmEventArgument(name="vm1"),
@@ -434,7 +434,7 @@ def test_event_vm_powered_off(aggregator, dd_run_check, legacy_default_instance,
     check = VSphereCheck('vsphere', {}, [legacy_default_instance])
     dd_run_check(check)
     aggregator.assert_event(
-        """datadog has powered off this virtual machine. It was running on:
+        """khulnasoft has powered off this virtual machine. It was running on:
 - datacenter: dc1
 - host: host1
 """,
@@ -447,7 +447,7 @@ def test_event_vm_reconfigured(aggregator, dd_run_check, legacy_default_instance
         return_value=[
             vim.event.VmReconfiguredEvent(
                 createdTime=get_current_datetime(),
-                userName="datadog",
+                userName="khulnasoft",
                 vm=vim.event.VmEventArgument(name="vm1"),
                 configSpec=vim.vm.ConfigSpec(),
             )
@@ -456,7 +456,7 @@ def test_event_vm_reconfigured(aggregator, dd_run_check, legacy_default_instance
     check = VSphereCheck('vsphere', {}, [legacy_default_instance])
     dd_run_check(check)
     aggregator.assert_event(
-        """datadog saved the new configuration:\n@@@\n""",
+        """khulnasoft saved the new configuration:\n@@@\n""",
         count=1,
         exact_match=False,
         msg_title="VM vm1 configuration has been changed",
@@ -469,7 +469,7 @@ def test_event_vm_suspended(aggregator, dd_run_check, legacy_default_instance, s
         return_value=[
             vim.event.VmSuspendedEvent(
                 createdTime=get_current_datetime(),
-                userName="datadog",
+                userName="khulnasoft",
                 host=vim.event.HostEventArgument(name="host1"),
                 datacenter=vim.event.DatacenterEventArgument(name="dc1"),
                 vm=vim.event.VmEventArgument(name="vm1"),
@@ -479,7 +479,7 @@ def test_event_vm_suspended(aggregator, dd_run_check, legacy_default_instance, s
     check = VSphereCheck('vsphere', {}, [legacy_default_instance])
     dd_run_check(check)
     aggregator.assert_event(
-        """datadog has suspended this virtual machine. It was running on:
+        """khulnasoft has suspended this virtual machine. It was running on:
 - datacenter: dc1
 - host: host1
 """,

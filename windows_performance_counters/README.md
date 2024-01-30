@@ -2,7 +2,7 @@
 
 ## Overview
 
-This check monitors [Windows performance counters][1] through the Datadog Agent.
+This check monitors [Windows performance counters][1] through the Khulnasoft Agent.
 
 **Note:** Agent version 7.33.0 is the minimum supported version.
 
@@ -12,7 +12,7 @@ Follow the instructions below to install and configure this check for an Agent r
 
 ### Installation
 
-The Windows performance counters check is included in the [Datadog Agent][2] package.
+The Windows performance counters check is included in the [Khulnasoft Agent][2] package.
 No additional installation is needed on your server.
 
 ### Configuration
@@ -29,7 +29,7 @@ No additional installation is needed on your server.
 
 ### Metrics
 
-All metrics collected by the Windows performance counters check are forwarded to Datadog as [custom metrics][7], which may impact your [billing][8].
+All metrics collected by the Windows performance counters check are forwarded to Khulnasoft as [custom metrics][7], which may impact your [billing][8].
 
 ### Events
 
@@ -41,7 +41,7 @@ See [service_checks.json][9] for a list of service checks provided by this integ
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][10].
+Need help? Contact [Khulnasoft support][10].
 
 
 [1]: https://docs.microsoft.com/en-us/windows/win32/perfctrs/about-performance-counters

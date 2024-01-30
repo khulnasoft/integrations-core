@@ -43,7 +43,7 @@ when something is merged in the `master` branch:
 - validate manifest file is valid (both JSON format and contents)
 - validate metadata (same as manifest)
 - validate service-checks (same as manifest)
-- unit and integrations test + test coverage (the Datadog Agent is not involved)
+- unit and integrations test + test coverage (the Khulnasoft Agent is not involved)
 - benchmarks (at the moment they don't fail but we could stop a release if a slowdown is found)
 
 Unit and integration tests are **not** enough to ensure an integration can run
@@ -61,7 +61,7 @@ an engineer must consider that changes in a PR could be used right after the
 release by any users on any supported Agent version and platform.
 
 The release process will stay manual, since the release commit has to be signed by
-an authorized Datadog engineer in order to trigger the build pipeline and make the
+an authorized Khulnasoft engineer in order to trigger the build pipeline and make the
 package generally available. This means that exceptions to the proposed workflow
 will still be possible; for example, if two different PRs for the same integrations
 are good to go at the same time, they can be shipped within the same release, at

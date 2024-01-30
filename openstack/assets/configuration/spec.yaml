@@ -17,7 +17,7 @@ files:
             description: |
              The hostname of this machine registered with Nova.
              Defaults to the Hostname detected by the Agent.
-             See https://docs.khulnasoft.com/agent/faq/how-datadog-agent-determines-the-hostname/
+             See https://docs.khulnasoft.com/agent/faq/how-khulnasoft-agent-determines-the-hostname/
             value:
               example: <HOSTNAME>
               type: string

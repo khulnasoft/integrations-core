@@ -2,7 +2,7 @@
 
 ## Overview
 
-This integration monitors [Sidekiq][1] through [Dogstatsd][2]. It collects metrics through [Datadog's Dogstatsd Ruby client][3].
+This integration monitors [Sidekiq][1] through [Dogstatsd][2]. It collects metrics through [Khulnasoft's Dogstatsd Ruby client][3].
 
 **Note** Only Sidekiq Pro (>= 3.6) or Enterprise (>= 1.1.0) users can collect metrics.
 
@@ -10,7 +10,7 @@ This integration monitors [Sidekiq][1] through [Dogstatsd][2]. It collects metri
 
 ### Installation
 
-The Sidekiq integration is packaged with the [Datadog Agent][4].
+The Sidekiq integration is packaged with the [Khulnasoft Agent][4].
 No additional installation is needed on your server.
 
 ### Configuration
@@ -24,9 +24,9 @@ No additional installation is needed on your server.
 2. Enable Sidekiq Pro metric collection by including this in your initializer; for a containerized deployment, update `localhost` to your Agent container address:
 
    ```ruby
-        require 'datadog/statsd' # gem 'dogstatsd-ruby'
+        require 'khulnasoft/statsd' # gem 'dogstatsd-ruby'
 
-        Sidekiq::Pro.dogstatsd = ->{ Datadog::Statsd.new('localhost', 8125, namespace:'sidekiq') }
+        Sidekiq::Pro.dogstatsd = ->{ Khulnasoft::Statsd.new('localhost', 8125, namespace:'sidekiq') }
 
         Sidekiq.configure_server do |config|
           config.server_middleware do |chain|
@@ -47,7 +47,7 @@ No additional installation is needed on your server.
 
     See the Sidekiq [Pro][5] and [Enterprise][6] documentation for more information, and the [Dogstatsd Ruby][3] documentation for further configuration options.
 
-3. Update the [Datadog Agent main configuration file][7] `datadog.yaml` by adding the following configs:
+3. Update the [Khulnasoft Agent main configuration file][7] `khulnasoft.yaml` by adding the following configs:
 
    ```yaml
    # dogstatsd_mapper_cache_size: 1000  # default to 1000
@@ -70,7 +70,7 @@ No additional installation is needed on your server.
              worker: "$1"
     ```
     
-    These parameters can also be set by adding the `DD_DOGSTATSD_MAPPER_PROFILES` environment variable to the Datadog Agent. 
+    These parameters can also be set by adding the `DD_DOGSTATSD_MAPPER_PROFILES` environment variable to the Khulnasoft Agent. 
 
 4. [Restart the Agent][8].
 
@@ -84,7 +84,7 @@ The Sidekiq integration also allows custom metrics, see [Sidekiq Enterprise Hist
 
 ### Log collection
 
-1. Collecting logs is disabled by default in the Datadog Agent. Enable it in the `datadog.yaml` file with:
+1. Collecting logs is disabled by default in the Khulnasoft Agent. Enable it in the `khulnasoft.yaml` file with:
 
     ```yaml
       logs_enabled: true
@@ -114,7 +114,7 @@ Sidekiq does not include any events.
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][12].
+Need help? Contact [Khulnasoft support][12].
 
 [1]: https://sidekiq.org/
 [2]: https://docs.khulnasoft.com/developers/dogstatsd/

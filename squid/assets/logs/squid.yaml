@@ -74,8 +74,8 @@ pipeline:
       enabled: true
       source: message
       samples:
-        - 1570784654.576    111 127.0.0.1 TCP_MISS/301 491 GET http://www.datadog.com - HIER_DIRECT/99.86.88.89 - [http_request_headers] [http_response_headers]
-        - 1570784663.985    120 127.0.0.1 TCP_MISS/301 491 GET http://datadog.com/test/?queryParam1=1&queryParam2=queryParam2 - HIER_DIRECT/99.86.88.128 -
+        - 1570784654.576    111 127.0.0.1 TCP_MISS/301 491 GET http://www.khulnasoft.com - HIER_DIRECT/99.86.88.89 - [http_request_headers] [http_response_headers]
+        - 1570784663.985    120 127.0.0.1 TCP_MISS/301 491 GET http://khulnasoft.com/test/?queryParam1=1&queryParam2=queryParam2 - HIER_DIRECT/99.86.88.128 -
         - 1570784722.610    196 127.0.0.1 TCP_MISS/200 12712 GET http://www.google.com/ - HIER_DIRECT/172.217.20.68 text/html
         - 1570784681.846  12140 127.0.0.1 TCP_MISS_ABORTED/000 0 GET http://8.8.8.8/ - HIER_DIRECT/8.8.8.8 -
         - 2019/10/11 09:14:49 kid1| Accepting HTTP Socket connections at local=[::]:3128 remote=[::] FD 11 flags=9

@@ -1,6 +1,6 @@
 {
   "title": "TeamCity Overview",
-  "description": "## TeamCity Integration \nThis dashboard provides an overview of your TeamCity environment. It monitors resource utilization, provides information on build statuses and progress, and gives you insight into various other observability measures.\n\nFor more information, please reference:\n\n* [TeamCity Integration Doc](https://docs.khulnasoft.com/integrations/teamcity/?tab=host)\n* [TeamCity Blog by Datadog](https://www.khulnasoft.com/blog/track-performance-impact-of-code-changes-with-teamcity-and-datadog/)\n",
+  "description": "## TeamCity Integration \nThis dashboard provides an overview of your TeamCity environment. It monitors resource utilization, provides information on build statuses and progress, and gives you insight into various other observability measures.\n\nFor more information, please reference:\n\n* [TeamCity Integration Doc](https://docs.khulnasoft.com/integrations/teamcity/?tab=host)\n* [TeamCity Blog by Khulnasoft](https://www.khulnasoft.com/blog/track-performance-impact-of-code-changes-with-teamcity-and-khulnasoft/)\n",
   "widgets": [
     {
       "id": 1006707459310838,
@@ -54,7 +54,7 @@
             "id": 4339779467181026,
             "definition": {
               "type": "note",
-              "content": "## Useful Links\n* [TeamCity Integration Doc](https://docs.khulnasoft.com/integrations/teamcity/?tab=host)\n* [TeamCity Blog by Datadog](https://www.khulnasoft.com/blog/track-performance-impact-of-code-changes-with-teamcity-and-datadog/)",
+              "content": "## Useful Links\n* [TeamCity Integration Doc](https://docs.khulnasoft.com/integrations/teamcity/?tab=host)\n* [TeamCity Blog by Khulnasoft](https://www.khulnasoft.com/blog/track-performance-impact-of-code-changes-with-teamcity-and-khulnasoft/)",
               "background_color": "white",
               "font_size": "12",
               "text_align": "left",
@@ -1043,7 +1043,7 @@
                     }
                   ],
                   "style": {
-                    "palette": "datadog16"
+                    "palette": "khulnasoft16"
                   },
                   "response_format": "scalar",
                   "queries": [

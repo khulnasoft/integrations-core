@@ -4,23 +4,23 @@
 
 ## Overview
 
-This check collects resource usage metrics from your vSphere cluster-CPU, disk, memory, and network usage. It also watches your vCenter server for events and emits them to Datadog.
+This check collects resource usage metrics from your vSphere cluster-CPU, disk, memory, and network usage. It also watches your vCenter server for events and emits them to Khulnasoft.
 
 ## Setup
 
 ### Installation
 
-The vSphere check is included in the [Datadog Agent][2] package, so you don't need to install anything else on your vCenter server.
+The vSphere check is included in the [Khulnasoft Agent][2] package, so you don't need to install anything else on your vCenter server.
 
 ### Configuration
 
-In the **Administration** section of vCenter, add a read-only user called `datadog-readonly` and apply the read-only user permissions to the resources that need monitoring. To monitor all child objects in the resource hierarchy, select the "Propagate to children" option. 
+In the **Administration** section of vCenter, add a read-only user called `khulnasoft-readonly` and apply the read-only user permissions to the resources that need monitoring. To monitor all child objects in the resource hierarchy, select the "Propagate to children" option. 
 
 Then, edit the `vsphere.d/conf.yaml` file in the `conf.d/` folder at the root of your [Agent's configuration directory][3]. See the [sample vsphere.d/conf.yaml][4] for all available configuration options.
 
-[Restart the Agent][5] to start sending vSphere metrics and events to Datadog.
+[Restart the Agent][5] to start sending vSphere metrics and events to Khulnasoft.
 
-**Note**: The Datadog Agent doesn't need to be on the same server as the vSphere appliance software. An Agent with the vSphere check enabled can be set up to point to a vSphere appliance server. Update your `<HOSTNAME>` for each instance accordingly.
+**Note**: The Khulnasoft Agent doesn't need to be on the same server as the vSphere appliance software. An Agent with the vSphere check enabled can be set up to point to a vSphere appliance server. Update your `<HOSTNAME>` for each instance accordingly.
 
 ### Compatibility
 
@@ -59,7 +59,7 @@ collect_per_instance_filters:
 
 ### Events
 
-This check watches vCenter's Event Manager for events and emits them to Datadog. It emits the following event types:
+This check watches vCenter's Event Manager for events and emits them to Khulnasoft. It emits the following event types:
 
 - AlarmStatusChangedEvent
 - VmBeingHotMigratedEvent
@@ -85,11 +85,11 @@ You can limit the number of VMs pulled in with the VMWare integration using the 
 
 ### Monitoring vSphere Tanzu Kubernetes Grid (TKG)
 
-The Datadog vSphere integration collects metrics and events from your [TKG][13] VMs and control plane VMs automatically. To collect more granular information about your TKG cluster, including container-, pod-, and node-level metrics, you can install the [Datadog Agent][14] on your cluster. See the [distribution documentation][15] for example configuration files specific to TKG.
+The Khulnasoft vSphere integration collects metrics and events from your [TKG][13] VMs and control plane VMs automatically. To collect more granular information about your TKG cluster, including container-, pod-, and node-level metrics, you can install the [Khulnasoft Agent][14] on your cluster. See the [distribution documentation][15] for example configuration files specific to TKG.
 
 ## Further Reading
 
-- [Monitor vSphere with Datadog][16]
+- [Monitor vSphere with Khulnasoft][16]
 
 
 [1]: https://raw.githubusercontent.com/KhulnaSoft/integrations-core/master/vsphere/images/vsphere_graph.png
@@ -106,4 +106,4 @@ The Datadog vSphere integration collects metrics and events from your [TKG][13] 
 [13]: https://tanzu.vmware.com/kubernetes-grid
 [14]: https://docs.khulnasoft.com/containers/kubernetes/installation/?tab=operator
 [15]: https://docs.khulnasoft.com/containers/kubernetes/distributions/?tab=operator#TKG
-[16]: https://www.khulnasoft.com/blog/unified-vsphere-app-monitoring-datadog/#auto-discovery-across-vm-and-app-layers
+[16]: https://www.khulnasoft.com/blog/unified-vsphere-app-monitoring-khulnasoft/#auto-discovery-across-vm-and-app-layers

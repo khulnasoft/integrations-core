@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2018-present
+# (C) Khulnasoft, Inc. 2018-present
 # (C) Dan Crosta <dcrosta@late.am> 2018
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)

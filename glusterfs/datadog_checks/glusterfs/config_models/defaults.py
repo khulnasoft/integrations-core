@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2021-present
+# (C) Khulnasoft, Inc. 2021-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 
@@ -9,7 +9,7 @@
 
 
 def shared_gstatus_path():
-    return '/opt/datadog-agent/embedded/sbin/gstatus'
+    return '/opt/khulnasoft-agent/embedded/sbin/gstatus'
 
 
 def instance_disable_generic_tags():

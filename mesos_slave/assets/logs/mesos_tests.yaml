@@ -29,7 +29,7 @@ tests:
      - "source:LOGS_SOURCE"
     timestamp: 36669103015
  -
-  sample: "I0301 09:55:21.503362    15 http.cpp:391] HTTP GET for /master/roles.json from 172.28.0.1:59406 with User-Agent='Datadog Agent/7.27.0'"
+  sample: "I0301 09:55:21.503362    15 http.cpp:391] HTTP GET for /master/roles.json from 172.28.0.1:59406 with User-Agent='Khulnasoft Agent/7.27.0'"
   result:
     custom:
       http:
@@ -47,7 +47,7 @@ tests:
           port: 59406
       pid: 15
       timestamp: 36669321503
-    message: "I0301 09:55:21.503362    15 http.cpp:391] HTTP GET for /master/roles.json from 172.28.0.1:59406 with User-Agent='Datadog Agent/7.27.0'"
+    message: "I0301 09:55:21.503362    15 http.cpp:391] HTTP GET for /master/roles.json from 172.28.0.1:59406 with User-Agent='Khulnasoft Agent/7.27.0'"
     tags:
      - "source:LOGS_SOURCE"
     timestamp: 36669321503

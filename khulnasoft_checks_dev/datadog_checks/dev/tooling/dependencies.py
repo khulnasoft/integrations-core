@@ -104,11 +104,11 @@ def load_base_check(check_name, dependencies, errors):
             continue
 
         name = normalize_project_name(req.name)
-        if name == 'datadog-checks-base':
+        if name == 'khulnasoft-checks-base':
             dependencies[check_name] = get_normalized_dependency(req)
             break
     else:
-        errors.append(f'File `{check_name}/pyproject.toml` is missing the base check dependency `datadog-checks-base`')
+        errors.append(f'File `{check_name}/pyproject.toml` is missing the base check dependency `khulnasoft-checks-base`')
 
 
 def load_base_check_legacy(req_file, dependencies, errors, check_name=None):

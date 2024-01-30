@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2018-present
+# (C) Khulnasoft, Inc. 2018-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 
@@ -68,7 +68,7 @@ DBM_MIGRATED_METRICS = [
 ]
 
 # Default performance table metrics - Database Instance level
-# datadog metric name, counter name, instance name
+# khulnasoft metric name, counter name, instance name
 INSTANCE_METRICS = [
     # SQLServer:General Statistics
     ('sqlserver.stats.procs_blocked', 'Processes blocked', ''),  # LARGE_RAWCOUNT
@@ -123,7 +123,7 @@ INSTANCE_METRICS = [
 
 # Performance table metrics, initially configured to track at instance-level only
 # With auto-discovery enabled, these metrics will be extended accordingly
-# datadog metric name, counter name, instance name
+# khulnasoft metric name, counter name, instance name
 INSTANCE_METRICS_DATABASE = [
     # SQLServer:Databases
     ('sqlserver.database.backup_restore_throughput', 'Backup/Restore Throughput/sec', '_Total'),
@@ -136,7 +136,7 @@ INSTANCE_METRICS_DATABASE = [
 ]
 
 # AlwaysOn metrics
-# datadog metric name, sql table, column name, tag
+# khulnasoft metric name, sql table, column name, tag
 AO_AG_SYNC_METRICS = [
     ('sqlserver.ao.ag_sync_health', 'sys.dm_hadr_availability_group_states', 'synchronization_health'),
 ]
@@ -158,7 +158,7 @@ AO_METRICS_SECONDARY = [
 ]
 
 # Non-performance table metrics - can be database specific
-# datadog metric name, sql table, column name
+# khulnasoft metric name, sql table, column name
 OS_SCHEDULER_METRICS = [
     ('sqlserver.scheduler.current_tasks_count', 'sys.dm_os_schedulers', 'current_tasks_count'),
     ('sqlserver.scheduler.current_workers_count', 'sys.dm_os_schedulers', 'current_workers_count'),
@@ -175,7 +175,7 @@ OS_TASK_METRICS = [
 TASK_SCHEDULER_METRICS = OS_SCHEDULER_METRICS + OS_TASK_METRICS
 
 # Non-performance table metrics
-# datadog metric name, sql table, column name
+# khulnasoft metric name, sql table, column name
 # Files State enum:
 #   0 = Online, 1 = Restoring, 2 = Recovering, 3 = Recovery_Pending,
 #   4 = Suspect, 5 = Unknown, 6 = Offline, 7 = Defunct

@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2020-present
+# (C) Khulnasoft, Inc. 2020-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 import copy
@@ -413,7 +413,7 @@ class CloudFoundryApiCheck(AgentCheck):
         org_id = org_guid if org_guid else "none"
         # we include both space_guid+space_id and org_guid+org_id; the *_guid are kept for
         # backwards compatibility, the *_id are added to maintain consistency with
-        # https://github.com/KhulnaSoft/datadog-firehose-nozzle
+        # https://github.com/KhulnaSoft/khulnasoft-firehose-nozzle
         tags = [
             "event_type:{}".format(event_type),
             "{}_name:{}".format(target_type, target_name),

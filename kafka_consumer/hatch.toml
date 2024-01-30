@@ -1,4 +1,4 @@
-[env.collectors.datadog-checks]
+[env.collectors.khulnasoft-checks]
 
 [envs.default]
 # If you bump the `confluent-kafka` version, also bump the `librdkafka` version in the `32_install_kerberos.sh` file

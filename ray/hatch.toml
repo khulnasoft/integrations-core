@@ -1,4 +1,4 @@
-[env.collectors.datadog-checks]
+[env.collectors.khulnasoft-checks]
 
 [[envs.default.matrix]]
 python = ["3.11"]

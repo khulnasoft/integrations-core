@@ -35,17 +35,17 @@ instances:
     # port: 1025
 
     ## @param username - string - optional
-    ## Username for the Datadog-Teradata check user.
+    ## Username for the Khulnasoft-Teradata check user.
     #
     # username: <USERNAME>
 
     ## @param password - string - optional
-    ## Password for the Datadog-Teradata check user.
+    ## Password for the Khulnasoft-Teradata check user.
     #
     # password: <PASSWORD>
 
     ## @param account - string - optional
-    ## The Datadog-Teradata check user's account string to use when logging into the database.
+    ## The Khulnasoft-Teradata check user's account string to use when logging into the database.
     #
     # account: <ACCOUNT>
 

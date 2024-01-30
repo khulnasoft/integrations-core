@@ -28,7 +28,7 @@
 
 ***Fixed***:
 
-* Bump the minimum datadog-checks-base version ([#15219](https://github.com/KhulnaSoft/integrations-core/pull/15219))
+* Bump the minimum khulnasoft-checks-base version ([#15219](https://github.com/KhulnaSoft/integrations-core/pull/15219))
 
 ## 3.0.1 / 2023-07-10
 
@@ -49,7 +49,7 @@
 ***Fixed***:
 
 * Fix bug on empty openmetrics scrape response ([#14508](https://github.com/KhulnaSoft/integrations-core/pull/14508))
-* Update minimum datadog base package version ([#14463](https://github.com/KhulnaSoft/integrations-core/pull/14463))
+* Update minimum khulnasoft base package version ([#14463](https://github.com/KhulnaSoft/integrations-core/pull/14463))
 * Deprecate `use_latest_spec` option ([#14446](https://github.com/KhulnaSoft/integrations-core/pull/14446))
 
 ## 2.3.0 / 2022-09-16 / Agent 7.40.0

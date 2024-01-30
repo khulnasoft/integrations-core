@@ -1,4 +1,4 @@
-# CHANGELOG - Datadog-Cluster-Agent
+# CHANGELOG - Khulnasoft-Cluster-Agent
 
 <!-- towncrier release notes start -->
 
@@ -12,13 +12,13 @@
 
 ***Added***:
 
-* Add `datadog.rate_limit_queries.remaining_min` to default metrics of `khulnasoft_cluster_agent` integration ([#16122](https://github.com/KhulnaSoft/integrations-core/pull/16122))
+* Add `khulnasoft.rate_limit_queries.remaining_min` to default metrics of `khulnasoft_cluster_agent` integration ([#16122](https://github.com/KhulnaSoft/integrations-core/pull/16122))
 
 ## 2.7.1 / 2023-08-18 / Agent 7.48.0
 
 ***Fixed***:
 
-* Update datadog-checks-base dependency version to 32.6.0 ([#15604](https://github.com/KhulnaSoft/integrations-core/pull/15604))
+* Update khulnasoft-checks-base dependency version to 32.6.0 ([#15604](https://github.com/KhulnaSoft/integrations-core/pull/15604))
 
 ## 2.7.0 / 2023-08-10
 
@@ -124,7 +124,7 @@
 
 * Document new include_labels option ([#10617](https://github.com/KhulnaSoft/integrations-core/pull/10617))
 * Document new use_process_start_time option ([#10601](https://github.com/KhulnaSoft/integrations-core/pull/10601))
-* Collect a metric about valid and invalid DatadogMetrics ([#10525](https://github.com/KhulnaSoft/integrations-core/pull/10525))
+* Collect a metric about valid and invalid KhulnasoftMetrics ([#10525](https://github.com/KhulnaSoft/integrations-core/pull/10525))
 
 ***Fixed***:
 
@@ -152,4 +152,4 @@
 
 ***Added***:
 
-* Add Datadog Cluster Agent integration ([#9772](https://github.com/KhulnaSoft/integrations-core/pull/9772))
+* Add Khulnasoft Cluster Agent integration ([#9772](https://github.com/KhulnaSoft/integrations-core/pull/9772))

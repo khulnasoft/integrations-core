@@ -17,7 +17,7 @@ It also submits service checks for the health of each backend.
 
 ### Installation
 
-The Varnish check is included in the [Datadog Agent][2] package. No additional installation is needed on your server.
+The Varnish check is included in the [Khulnasoft Agent][2] package. No additional installation is needed on your server.
 
 ### Configuration
 
@@ -71,7 +71,7 @@ _Available for Agent versions >6.0_
 
 3. Restart the `varnishncsa` utility to apply the changes.
 
-4. Collecting logs is disabled by default in the Datadog Agent, enable it in your `datadog.yaml` file:
+4. Collecting logs is disabled by default in the Khulnasoft Agent, enable it in your `khulnasoft.yaml` file:
 
    ```yaml
    logs_enabled: true
@@ -112,7 +112,7 @@ See [service_checks.json][10] for a list of service checks provided by this inte
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][11].
+Need help? Contact [Khulnasoft support][11].
 
 ## Further Reading
 
@@ -120,7 +120,7 @@ Additional helpful documentation, links, and articles:
 
 - [Top Varnish performance metrics][12]
 - [How to collect Varnish metrics][13]
-- [Monitor Varnish using Datadog][14]
+- [Monitor Varnish using Khulnasoft][14]
 
 [1]: https://raw.githubusercontent.com/KhulnaSoft/integrations-core/master/varnish/images/varnish.png
 [2]: https://app.khulnasoft.com/account/settings/agent/latest
@@ -135,4 +135,4 @@ Additional helpful documentation, links, and articles:
 [11]: https://docs.khulnasoft.com/help/
 [12]: https://www.khulnasoft.com/blog/top-varnish-performance-metrics
 [13]: https://www.khulnasoft.com/blog/how-to-collect-varnish-metrics
-[14]: https://www.khulnasoft.com/blog/monitor-varnish-using-datadog
+[14]: https://www.khulnasoft.com/blog/monitor-varnish-using-khulnasoft

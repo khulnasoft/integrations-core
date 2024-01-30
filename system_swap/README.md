@@ -8,7 +8,7 @@ This check monitors the number of bytes a host has swapped in and out.
 
 ### Installation
 
-The System Swap check is included in the [Datadog Agent][1] package. No additional installation is needed on your server.
+The System Swap check is included in the [Khulnasoft Agent][1] package. No additional installation is needed on your server.
 
 ### Configuration
 
@@ -36,7 +36,7 @@ The System Swap check does not include any service checks.
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][7].
+Need help? Contact [Khulnasoft support][7].
 
 [1]: https://app.khulnasoft.com/account/settings/agent/latest
 [2]: https://docs.khulnasoft.com/agent/guide/agent-configuration-files/#agent-configuration-directory

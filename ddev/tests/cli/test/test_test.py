@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2023-present
+# (C) Khulnasoft, Inc. 2023-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 import json
@@ -931,7 +931,7 @@ class TestPluginInteraction:
 
         project_file = repository.path / 'postgres' / 'pyproject.toml'
         data = tomlkit.parse(project_file.read_text())
-        data['project']['dependencies'] = ['datadog-checks-base>=9000,<10000']
+        data['project']['dependencies'] = ['khulnasoft-checks-base>=9000,<10000']
         project_file.write_text(tomlkit.dumps(data))
 
         result = ddev('test', 'postgres', '--compat')

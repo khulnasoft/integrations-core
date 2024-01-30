@@ -2,7 +2,7 @@
 
 ## Overview
 
-Get Windows kernel memory usage to create visualizations and monitors in Datadog.
+Get Windows kernel memory usage to create visualizations and monitors in Khulnasoft.
 
 **Note:** The list of metrics collected by this integration may change between minor Agent versions. Such changes may not be mentioned in the Agent's changelog.
 
@@ -10,7 +10,7 @@ Get Windows kernel memory usage to create visualizations and monitors in Datadog
 
 ### Installation
 
-The Windows Kernel Memory integration is included in the [Datadog Agent][1] package, so you don't need to install anything else on your servers.
+The Windows Kernel Memory integration is included in the [Khulnasoft Agent][1] package, so you don't need to install anything else on your servers.
 
 ### Configuration
 
@@ -38,11 +38,11 @@ The Windows Kernel Memory integration does not include any service checks.
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][5].
+Need help? Contact [Khulnasoft support][5].
 
 [1]: https://app.khulnasoft.com/account/settings/agent/latest
 [2]: https://docs.khulnasoft.com/agent/guide/agent-configuration-files/#agent-configuration-directory
-[3]: https://github.com/KhulnaSoft/datadog-agent/blob/master/cmd/agent/dist/conf.d/winkmem.d/conf.yaml.example
+[3]: https://github.com/KhulnaSoft/khulnasoft-agent/blob/master/cmd/agent/dist/conf.d/winkmem.d/conf.yaml.example
 [4]: https://docs.khulnasoft.com/agent/guide/agent-commands/#start-stop-and-restart-the-agent
 [5]: https://docs.khulnasoft.com/help/
 [6]: https://github.com/KhulnaSoft/integrations-core/blob/master/winkmem/metadata.csv

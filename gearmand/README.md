@@ -12,7 +12,7 @@ Collect Gearman metrics to:
 
 ### Installation
 
-The Gearman check is included in the [Datadog Agent][1] package, so you don't need to install anything else on your Gearman job servers.
+The Gearman check is included in the [Khulnasoft Agent][1] package, so you don't need to install anything else on your Gearman job servers.
 
 ### Configuration
 
@@ -53,7 +53,7 @@ For containerized environments, see the [Autodiscovery Integration Templates][5]
 
 #### Log collection
 
-1. Collecting logs is disabled by default in the Datadog Agent, enable it in your `datadog.yaml` file:
+1. Collecting logs is disabled by default in the Khulnasoft Agent, enable it in your `khulnasoft.yaml` file:
 
     ```yaml
     logs_enabled: true
@@ -94,7 +94,7 @@ See [service_checks.json][9] for a list of service checks provided by this integ
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][10].
+Need help? Contact [Khulnasoft support][10].
 
 [1]: https://app.khulnasoft.com/account/settings/agent/latest
 [2]: https://docs.khulnasoft.com/agent/guide/agent-configuration-files/#agent-configuration-directory

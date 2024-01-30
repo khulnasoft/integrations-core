@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2018-present
+# (C) Khulnasoft, Inc. 2018-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 import getpass
@@ -159,7 +159,7 @@ class WaitAndUnsealVault(WaitFor):
             'audit enable file file_path=/vault/vault-audit.log',
             'auth enable jwt',
             'write auth/jwt/config jwt_supported_algs=RS256 jwt_validation_pubkeys=@/home/pub.pem',
-            'write auth/jwt/role/datadog role_type=jwt bound_audiences=test user_claim=name token_policies=metrics',
+            'write auth/jwt/role/khulnasoft role_type=jwt bound_audiences=test user_claim=name token_policies=metrics',
             'agent -config=/home/agent_config.hcl',
         ):
             time.sleep(2)

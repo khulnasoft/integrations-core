@@ -26,7 +26,7 @@
 
 ***Fixed***:
 
-* Bump the minimum datadog-checks-base version ([#15217](https://github.com/KhulnaSoft/integrations-core/pull/15217))
+* Bump the minimum khulnasoft-checks-base version ([#15217](https://github.com/KhulnaSoft/integrations-core/pull/15217))
 
 ## 1.6.0 / 2023-07-10
 

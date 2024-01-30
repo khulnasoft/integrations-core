@@ -11,7 +11,7 @@ Get metrics from ASP.NET in real time to:
 
 ### Installation
 
-The ASP.NET check is included in the [Datadog Agent][1] package, so you don't need to install anything else on your servers.
+The ASP.NET check is included in the [Khulnasoft Agent][1] package, so you don't need to install anything else on your servers.
 
 ### Configuration
 
@@ -47,7 +47,7 @@ The ASP.NET check does not include any service checks.
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][8].
+Need help? Contact [Khulnasoft support][8].
 
 [1]: https://app.khulnasoft.com/account/settings/agent/latest
 [2]: https://docs.khulnasoft.com/agent/guide/agent-configuration-files/#agent-configuration-directory

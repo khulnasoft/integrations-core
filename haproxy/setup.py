@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2018-present
+# (C) Khulnasoft, Inc. 2018-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 
@@ -47,16 +47,16 @@ def parse_pyproject_array(name):
 CHECKS_BASE_REQ = parse_pyproject_array('dependencies')[0]
 
 setup(
-    name='datadog-haproxy',
+    name='khulnasoft-haproxy',
     version=ABOUT["__version__"],
     description='The HAProxy check',
     long_description=long_description,
     long_description_content_type='text/markdown',
-    keywords='datadog agent haproxy check',
+    keywords='khulnasoft agent haproxy check',
     # The project's main homepage.
     url='https://github.com/KhulnaSoft/integrations-core',
     # Author details
-    author='Datadog',
+    author='Khulnasoft',
     author_email='packages@khulnasoft.com',
     # License
     license='BSD',

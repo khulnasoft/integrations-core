@@ -18,7 +18,7 @@ def main():
 
     now = datetime.now(timezone.utc)
     encoded = jwt.encode(
-        {'exp': now + timedelta(hours=1), 'nbf': now, 'aud': 'test', 'name': 'datadog'},
+        {'exp': now + timedelta(hours=1), 'nbf': now, 'aud': 'test', 'name': 'khulnasoft'},
         serialized_private,
         algorithm='RS256',
     )

@@ -23,7 +23,7 @@ The integration relies on the `--enable-metrics` option of CRI-O that is disable
 ## Data Collected
 
 CRI-O collects metrics about the count and latency of operations that are done by the runtime.
-The Datadog-CRI-O integration collects CPU and memory usage of the CRI-O golang binary itself.
+The Khulnasoft-CRI-O integration collects CPU and memory usage of the CRI-O golang binary itself.
 
 ### Metrics
 
@@ -44,7 +44,7 @@ See [service_checks.json][6] for a list of service checks provided by this integ
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][7].
+Need help? Contact [Khulnasoft support][7].
 
 
 [1]: http://cri-o.io

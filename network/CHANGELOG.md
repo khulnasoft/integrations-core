@@ -313,7 +313,7 @@
 
 ***Fixed***:
 
-* Retrieve no_proxy directly from the Datadog Agent's configuration ([#2004](https://github.com/KhulnaSoft/integrations-core/pull/2004))
+* Retrieve no_proxy directly from the Khulnasoft Agent's configuration ([#2004](https://github.com/KhulnaSoft/integrations-core/pull/2004))
 * Add data files to the wheel package ([#1727](https://github.com/KhulnaSoft/integrations-core/pull/1727))
 
 ## 1.6.0 / 2018-06-07

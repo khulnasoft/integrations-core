@@ -10,7 +10,7 @@ The Process Check lets you:
 
 ### Installation
 
-The Process check is included in the [Datadog Agent][2] package, so you don't need to install anything else on your server.
+The Process check is included in the [Khulnasoft Agent][2] package, so you don't need to install anything else on your server.
 
 ### Configuration
 
@@ -29,7 +29,7 @@ instances:
 
 **Note**: After you make configuration changes, make sure you [restart the Agent][4].
 
-Retrieving some process metrics requires the Datadog collector to either run as the monitored process user or with privileged access. For the `open_file_descriptors` metric on Unix platforms, there is an additional configuration option. Setting `try_sudo` to `true` in your `conf.yaml` file allows the Process check to try using `sudo` to collect the `open_file_descriptors` metric. Using this configuration option requires setting the appropriate sudoers rules in `/etc/sudoers`:
+Retrieving some process metrics requires the Khulnasoft collector to either run as the monitored process user or with privileged access. For the `open_file_descriptors` metric on Unix platforms, there is an additional configuration option. Setting `try_sudo` to `true` in your `conf.yaml` file allows the Process check to try using `sudo` to collect the `open_file_descriptors` metric. Using this configuration option requires setting the appropriate sudoers rules in `/etc/sudoers`:
 
 ```shell
 dd-agent ALL=NOPASSWD: /bin/ls /proc/*/fd/
@@ -80,11 +80,11 @@ See [service_checks.json][8] for a list of service checks provided by this integ
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][9].
+Need help? Contact [Khulnasoft support][9].
 
 ## Further Reading
 
-To get a better idea of how (or why) to monitor process resource consumption with Datadog, check out this [series of blog posts][10] about it.
+To get a better idea of how (or why) to monitor process resource consumption with Khulnasoft, check out this [series of blog posts][10] about it.
 
 [1]: https://docs.khulnasoft.com/monitors/create/types/process_check/?tab=checkalert
 [2]: https://app.khulnasoft.com/account/settings/agent/latest

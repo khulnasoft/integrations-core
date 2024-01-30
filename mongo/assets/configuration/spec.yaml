@@ -227,7 +227,7 @@ files:
           hosts, username, password, database, options
       description: |
         Specify the MongoDB URI, with database to use for reporting (defaults to "admin")
-        E.g. mongodb://datadog:LnCbkX4uhpuLHSUrcayEoAZA@localhost:27016/admin
+        E.g. mongodb://khulnasoft:LnCbkX4uhpuLHSUrcayEoAZA@localhost:27016/admin
       value:
         example: mongodb://<USER>:<PASSWORD>@<HOST>:<PORT>/<DB_NAME>
         display_default: null

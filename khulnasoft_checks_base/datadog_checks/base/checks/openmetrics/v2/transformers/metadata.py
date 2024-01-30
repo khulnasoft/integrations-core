@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2020-present
+# (C) Khulnasoft, Inc. 2020-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 from copy import deepcopy
@@ -8,7 +8,7 @@ def get_metadata(check, metric_name, modifiers, global_options):
     """
     This allows for the submission of instance metadata like a product's version. The required modifier
     `label` indicates which label contains the desired information. For more information, see:
-    https://datadoghq.dev/integrations-core/base/metadata/
+    https://khulnasofthq.dev/integrations-core/base/metadata/
     """
     set_metadata_method = check.set_metadata
 

@@ -1,6 +1,6 @@
 #!/bin/bash
 echo "configuring nginx check ..."
-cat > /etc/datadog-agent/conf.d/nginx.d/nginx.yaml << EOF
+cat > /etc/khulnasoft-agent/conf.d/nginx.d/nginx.yaml << EOF
 init_config: {}
 instances:
 - auth_type: kerberos
@@ -14,4 +14,4 @@ instances:
   url: http://web:8080
 EOF
 echo "nginx configured as: "
-cat /etc/datadog-agent/conf.d/nginx.d/nginx.yaml
+cat /etc/khulnasoft-agent/conf.d/nginx.d/nginx.yaml

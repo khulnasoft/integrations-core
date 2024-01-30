@@ -1,15 +1,15 @@
 {
   "manifest_version": "2.0.0",
   "app_uuid": "8ea2f311-02dd-478b-9b3b-3fbef310d82c",
-  "app_id": "datadog-operator",
+  "app_id": "khulnasoft-operator",
   "display_on_public_website": true,
   "tile": {
     "overview": "README.md#Overview",
     "configuration": "README.md#Setup",
     "support": "README.md#Support",
     "changelog": "CHANGELOG.md",
-    "description": "Monitor the Datadog Operator",
-    "title": "Datadog Operator",
+    "description": "Monitor the Khulnasoft Operator",
+    "title": "Khulnasoft Operator",
     "media": [],
     "classifier_tags": [
       "Supported OS::Linux",
@@ -19,13 +19,13 @@
   },
   "assets": {
     "dashboards": {
-      "Datadog Operator Overview": "assets/dashboards/operator_overview.json"
+      "Khulnasoft Operator Overview": "assets/dashboards/operator_overview.json"
     },
     "integration": {
-      "source_type_name": "Datadog Operator",
+      "source_type_name": "Khulnasoft Operator",
       "metrics": {
-        "prefix": "datadog.operator.",
-        "check": "datadog.operator.go_info",
+        "prefix": "khulnasoft.operator.",
+        "check": "khulnasoft.operator.go_info",
         "metadata_path": "metadata.csv"
       },
       "service_checks": {
@@ -37,7 +37,7 @@
   },
   "author": {
     "support_email": "help@khulnasoft.com",
-    "name": "Datadog",
+    "name": "Khulnasoft",
     "homepage": "https://www.khulnasoft.com",
     "sales_email": "info@khulnasoft.com"
   },

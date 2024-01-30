@@ -42,7 +42,7 @@ pipeline:
 
           access.combined %{_client_ip} %{_ident} %{_auth} \[%{_date_access}\] "(?>%{_method} |)%{_url}(?> %{_version}|)" %{_status_code} (?>%{_bytes_written}|-) "%{_referer}" "%{_user_agent}"( "%{_x_forwarded_for}")?.*
 
-          khulnasoft_format (?>\[ %{word:process.name} \] )?%{_dd_date} \| %{word:level} \| \(%{_logger_name}:%{_line} in %{word:datadog.process}\) \| .*
+          khulnasoft_format (?>\[ %{word:process.name} \] )?%{_dd_date} \| %{word:level} \| \(%{_logger_name}:%{_line} in %{word:khulnasoft.process}\) \| .*
     - type: date-remapper
       name: Define `timestamp` as the official date of the log
       enabled: true

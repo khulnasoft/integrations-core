@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-(C) Datadog, Inc. 2023-present
+(C) Khulnasoft, Inc. 2023-present
 All rights reserved
 Licensed under a 3-clause BSD style license (see LICENSE)
 -->
@@ -9,7 +9,7 @@ Licensed under a 3-clause BSD style license (see LICENSE)
   <!--
   https://developer.apple.com/library/archive/documentation/DeveloperTools/Reference/DistributionDefinitionRef/Chapters/Distribution_XML_Ref.html
   -->
-  <title>Datadog Agent integration developer tool</title>
+  <title>Khulnasoft Agent integration developer tool</title>
   <license file="LICENSE" mime-type="text/plain"/>
   <readme file="README.html" mime-type="text/html"/>
   <background mime-type="image/png" file="icon.png" alignment="left" scaling="proportional"/>
@@ -18,11 +18,11 @@ Licensed under a 3-clause BSD style license (see LICENSE)
   <domains enable_localSystem="true"/>
 
   <choices-outline>
-    <line choice="com.datadoghq.ddev.choice"/>
+    <line choice="com.khulnasofthq.ddev.choice"/>
   </choices-outline>
-  <choice title="ddev (universal)" id="com.datadoghq.ddev.choice">
-    <pkg-ref id="com.datadoghq.ddev.pkg"/>
+  <choice title="ddev (universal)" id="com.khulnasofthq.ddev.choice">
+    <pkg-ref id="com.khulnasofthq.ddev.pkg"/>
   </choice>
 
-  <pkg-ref id="com.datadoghq.ddev.pkg">com.datadoghq.ddev.pkg</pkg-ref>
+  <pkg-ref id="com.khulnasofthq.ddev.pkg">com.khulnasofthq.ddev.pkg</pkg-ref>
 </installer-gui-script>

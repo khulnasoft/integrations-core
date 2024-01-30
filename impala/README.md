@@ -2,7 +2,7 @@
 
 ## Overview
 
-This check monitors [Impala][1] through the Datadog Agent.
+This check monitors [Impala][1] through the Khulnasoft Agent.
 
 ## Setup
 
@@ -10,7 +10,7 @@ Follow the instructions below to install and configure this check for an Agent r
 
 ### Installation
 
-The Impala check is included in the [Datadog Agent][2] package.
+The Impala check is included in the [Khulnasoft Agent][2] package.
 No additional installation is needed on your server.
 
 ### Configuration
@@ -80,9 +80,9 @@ See [service_checks.json][8] for a list of service checks provided by this integ
 
 ### Logs
 
-The Impala integration can collect logs from the Impala services and forward them to Datadog. 
+The Impala integration can collect logs from the Impala services and forward them to Khulnasoft. 
 
-1. Collecting logs is disabled by default in the Datadog Agent. Enable it in your `datadog.yaml` file:
+1. Collecting logs is disabled by default in the Khulnasoft Agent. Enable it in your `khulnasoft.yaml` file:
 
    ```yaml
    logs_enabled: true
@@ -134,7 +134,7 @@ See [the example configuration file][10] on how to collect all logs.
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][9].
+Need help? Contact [Khulnasoft support][9].
 
 
 [1]: https://impala.apache.org

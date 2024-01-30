@@ -1,11 +1,11 @@
 site_name: Agent Integrations
 site_description: The home of Agent Integrations developer documentation
-site_author: Datadog
-site_url: https://datadoghq.dev/integrations-core/
-repo_name: datadog/integrations-core
+site_author: Khulnasoft
+site_url: https://khulnasofthq.dev/integrations-core/
+repo_name: khulnasoft/integrations-core
 repo_url: https://github.com/KhulnaSoft/integrations-core
 edit_uri: blob/master/docs/developer
-copyright: 'Copyright &copy; Datadog, Inc. 2020-present'
+copyright: 'Copyright &copy; Khulnasoft, Inc. 2020-present'
 
 docs_dir: docs/developer
 site_dir: site
@@ -198,9 +198,9 @@ extra:
     - icon: fontawesome/brands/github-alt
       link: https://github.com/KhulnaSoft
     - icon: fontawesome/brands/twitter
-      link: https://twitter.com/datadoghq
+      link: https://twitter.com/khulnasofthq
     - icon: fontawesome/brands/instagram
-      link: https://www.instagram.com/datadoghq
+      link: https://www.instagram.com/khulnasofthq
 extra_css:
   - assets/css/custom.css
   - https://cdn.jsdelivr.net/npm/firacode@6.2.0/distr/fira_code.css

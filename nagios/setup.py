@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2018-present
+# (C) Khulnasoft, Inc. 2018-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 from codecs import open  # To use a consistent encoding
@@ -46,16 +46,16 @@ CHECKS_BASE_REQ = parse_pyproject_array('dependencies')[0]
 
 
 setup(
-    name='datadog-nagios',
+    name='khulnasoft-nagios',
     version=ABOUT['__version__'],
     description='The Nagios check',
     long_description=long_description,
     long_description_content_type='text/markdown',
-    keywords='datadog agent nagios check',
+    keywords='khulnasoft agent nagios check',
     # The project's main homepage.
     url='https://github.com/KhulnaSoft/integrations-core',
     # Author details
-    author='Datadog',
+    author='Khulnasoft',
     author_email='packages@khulnasoft.com',
     # License
     license='BSD',

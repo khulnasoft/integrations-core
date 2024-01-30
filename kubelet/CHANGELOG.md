@@ -35,7 +35,7 @@
 
 ***Fixed***:
 
-* Update datadog-checks-base dependency version to 32.6.0 ([#15604](https://github.com/KhulnaSoft/integrations-core/pull/15604))
+* Update khulnasoft-checks-base dependency version to 32.6.0 ([#15604](https://github.com/KhulnaSoft/integrations-core/pull/15604))
 * Fix Kubernetes probe metrics breaking in k8s 1.25+ ([#15254](https://github.com/KhulnaSoft/integrations-core/pull/15254))
 
 ## 7.9.0 / 2023-08-10
@@ -53,7 +53,7 @@
 
 ***Fixed***:
 
-* Bump the minimum datadog-checks-base version ([#15218](https://github.com/KhulnaSoft/integrations-core/pull/15218))
+* Bump the minimum khulnasoft-checks-base version ([#15218](https://github.com/KhulnaSoft/integrations-core/pull/15218))
 
 ## 7.8.0 / 2023-07-10
 

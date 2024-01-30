@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2022-present
+# (C) Khulnasoft, Inc. 2022-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 import hashlib
@@ -29,7 +29,7 @@ def get_unique_name(check_id, topic_string):
     # https://www.ibm.com/docs/en/ibm-mq/9.2?topic=reference-crtmqmsub-create-mq-subscription#q084220___q084220SUBNAME
     hostname = khulnasoft_agent.get_hostname()
     data = topic_string.encode('utf-8')
-    return f'datadog-{check_id}-{hostname}-{hashlib.sha256(data).hexdigest()}'
+    return f'khulnasoft-{check_id}-{hostname}-{hashlib.sha256(data).hexdigest()}'
 
 
 class Subscription(ABC):
@@ -191,7 +191,7 @@ class FlowMonitoringSubscription(Subscription):
                 statistics = get_statistics(name)
                 if statistics is None:
                     self.check.log.debug(
-                        'Not collecting flow statistic group: %s. Refer to the Datadog IBM ACE documentation for '
+                        'Not collecting flow statistic group: %s. Refer to the Khulnasoft IBM ACE documentation for '
                         'list of collected metrics.',
                         name,
                     )

@@ -1,6 +1,6 @@
 {
   "title": "NGINX - Overview",
-  "description": "This dashboard provides a high-level overview of your NGINX infrastructure, so you can see aggregated throughput and activity metrics from all your servers and spot issues quickly. Further reading on NGINX monitoring:\n\n- [Datadog's guide to key NGINX metrics](https://www.khulnasoft.com/blog/how-to-monitor-nginx/)\n\n- [How to collect NGINX metrics using built-in tools](https://www.khulnasoft.com/blog/how-to-collect-nginx-metrics/)\n\n- [How to monitor NGINX with Datadog](https://www.khulnasoft.com/blog/how-to-monitor-nginx-with-datadog/)\n\n- [Datadog's NGINX integration docs](https://docs.khulnasoft.com/integrations/nginx/)\n\nClone this template dashboard to make changes and add your own graph widgets.",
+  "description": "This dashboard provides a high-level overview of your NGINX infrastructure, so you can see aggregated throughput and activity metrics from all your servers and spot issues quickly. Further reading on NGINX monitoring:\n\n- [Khulnasoft's guide to key NGINX metrics](https://www.khulnasoft.com/blog/how-to-monitor-nginx/)\n\n- [How to collect NGINX metrics using built-in tools](https://www.khulnasoft.com/blog/how-to-collect-nginx-metrics/)\n\n- [How to monitor NGINX with Khulnasoft](https://www.khulnasoft.com/blog/how-to-monitor-nginx-with-khulnasoft/)\n\n- [Khulnasoft's NGINX integration docs](https://docs.khulnasoft.com/integrations/nginx/)\n\nClone this template dashboard to make changes and add your own graph widgets.",
   "widgets": [
     {
       "id": 5246207281015974,
@@ -36,7 +36,7 @@
             "id": 5476438101081174,
             "definition": {
               "type": "note",
-              "content": "#### Further reading on the NGINX integration:\n- [Datadog's guide to  key NGINX metrics](https://www.khulnasoft.com/blog/how-to-monitor-nginx/)\n- [Collecting metrics with NGINX monitoring tool](https://www.khulnasoft.com/blog/how-to-collect-nginx-metrics/)\n- [How to monitor NGINX with Datadog](https://www.khulnasoft.com/blog/how-to-monitor-nginx-with-datadog/)\n- [Datadog's NGINX integration docs](https://docs.khulnasoft.com/integrations/nginx/?tab=host#)\n[If you're using NGINX Plus, check out our docs here](https://docs.khulnasoft.com/integrations/nginx/?tab=host#nginx-plus)\n",
+              "content": "#### Further reading on the NGINX integration:\n- [Khulnasoft's guide to  key NGINX metrics](https://www.khulnasoft.com/blog/how-to-monitor-nginx/)\n- [Collecting metrics with NGINX monitoring tool](https://www.khulnasoft.com/blog/how-to-collect-nginx-metrics/)\n- [How to monitor NGINX with Khulnasoft](https://www.khulnasoft.com/blog/how-to-monitor-nginx-with-khulnasoft/)\n- [Khulnasoft's NGINX integration docs](https://docs.khulnasoft.com/integrations/nginx/?tab=host#)\n[If you're using NGINX Plus, check out our docs here](https://docs.khulnasoft.com/integrations/nginx/?tab=host#nginx-plus)\n",
               "background_color": "white",
               "font_size": "14",
               "text_align": "left",
@@ -283,7 +283,7 @@
             "id": 518123602946722,
             "definition": {
               "type": "note",
-              "content": "NGINX error metrics tell you how often your servers are returning errors instead of producing useful work. You can monitor the errors through Datadog's logging capabilities. \n\n- Client errors are represented by 4xx status codes, server errors with 5xx status codes.",
+              "content": "NGINX error metrics tell you how often your servers are returning errors instead of producing useful work. You can monitor the errors through Khulnasoft's logging capabilities. \n\n- Client errors are represented by 4xx status codes, server errors with 5xx status codes.",
               "background_color": "purple",
               "font_size": "14",
               "text_align": "left",

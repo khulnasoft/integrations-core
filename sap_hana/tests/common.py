@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2019-present
+# (C) Khulnasoft, Inc. 2019-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 import os
@@ -11,7 +11,7 @@ COMPOSE_FILE = os.path.join(HERE, 'docker', 'docker-compose.yaml')
 SERVER = get_docker_hostname()
 PORT = 39017
 TIMEOUT = 20
-CONFIG = {'server': SERVER, 'port': PORT, 'username': 'datadog', 'password': 'Datadog9000', 'timeout': TIMEOUT}
+CONFIG = {'server': SERVER, 'port': PORT, 'username': 'khulnasoft', 'password': 'Khulnasoft9000', 'timeout': TIMEOUT}
 ADMIN_CONFIG = {'server': SERVER, 'port': PORT, 'username': 'system', 'password': 'Admin1337'}
 
 E2E_METADATA = {'start_commands': ['pip install hdbcli==2.10.15']}

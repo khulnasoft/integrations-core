@@ -52,7 +52,7 @@ files:
           * _time_error_*
           * _time_100
 
-        Include these metrics in the following list if you would like to collect them for your Datadog account.
+        Include these metrics in the following list if you would like to collect them for your Khulnasoft account.
         See the complete list of metrics available: https://github.com/basho/riak_cs/wiki/Riak-cs-and-stanchion-metrics
       value:
         type: array

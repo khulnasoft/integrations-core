@@ -4,7 +4,7 @@
 
 ## Overview
 
-This check monitors [Spark][2] through the Datadog Agent. Collect Spark metrics for:
+This check monitors [Spark][2] through the Khulnasoft Agent. Collect Spark metrics for:
 
 - Drivers and executors: RDD blocks, memory used, disk used, duration, etc.
 - RDDs: partition count, memory used, and disk used.
@@ -15,7 +15,7 @@ This check monitors [Spark][2] through the Datadog Agent. Collect Spark metrics 
 
 ### Installation
 
-The Spark check is included in the [Datadog Agent][3] package. No additional installation is needed on your Mesos master (for Spark on Mesos), YARN ResourceManager (for Spark on YARN), or Spark master (for Spark Standalone).
+The Spark check is included in the [Khulnasoft Agent][3] package. No additional installation is needed on your Mesos master (for Spark on Mesos), YARN ResourceManager (for Spark on YARN), or Spark master (for Spark Standalone).
 
 ### Configuration
 
@@ -67,7 +67,7 @@ For containerized environments, see the [Autodiscovery Integration Templates][7]
 
 ### Log collection
 
-1. Collecting logs is disabled by default in the Datadog Agent, enable it in your `datadog.yaml` file:
+1. Collecting logs is disabled by default in the Khulnasoft Agent, enable it in your `khulnasoft.yaml` file:
 
       ```yaml
        logs_enabled: true
@@ -114,11 +114,11 @@ See [service_checks.json][11] for a list of service checks provided by this inte
 
 ### Spark on AWS EMR
 
-To receive metrics for Spark on AWS EMR, [use bootstrap actions][12] to install the [Datadog Agent][13]:
+To receive metrics for Spark on AWS EMR, [use bootstrap actions][12] to install the [Khulnasoft Agent][13]:
 
 For Agent v5, create the `/etc/dd-agent/conf.d/spark.yaml` configuration file with the [proper values on each EMR node][14].
 
-For Agent v6/7, create the `/etc/datadog-agent/conf.d/spark.d/conf.yaml` configuration file with the [proper values on each EMR node][14].
+For Agent v6/7, create the `/etc/khulnasoft-agent/conf.d/spark.d/conf.yaml` configuration file with the [proper values on each EMR node][14].
 
 ### Successful check but no metrics are collected
 
@@ -128,7 +128,7 @@ The Spark integration only collects metrics about running apps. If you have no c
 
 Additional helpful documentation, links, and articles:
 
-- [Hadoop and Spark monitoring with Datadog][15]
+- [Hadoop and Spark monitoring with Khulnasoft][15]
 - [Monitoring Apache Spark applications running on Amazon EMR][16]
 
 [1]: https://raw.githubusercontent.com/KhulnaSoft/integrations-core/master/spark/images/sparkgraph.png

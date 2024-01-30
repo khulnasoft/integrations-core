@@ -38,7 +38,7 @@
 ***Fixed***:
 
 * Expand migration docs ([#14549](https://github.com/KhulnaSoft/integrations-core/pull/14549))
-* Update minimum datadog base package version ([#14463](https://github.com/KhulnaSoft/integrations-core/pull/14463))
+* Update minimum khulnasoft base package version ([#14463](https://github.com/KhulnaSoft/integrations-core/pull/14463))
 * Adjust docs and tests based on customer feedback ([#14444](https://github.com/KhulnaSoft/integrations-core/pull/14444))
 * Deprecate `use_latest_spec` option ([#14446](https://github.com/KhulnaSoft/integrations-core/pull/14446))
 

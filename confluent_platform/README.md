@@ -2,7 +2,7 @@
 
 ## Overview
 
-This check monitors Confluent Platform and Kafka components through the Datadog Agent.
+This check monitors Confluent Platform and Kafka components through the Khulnasoft Agent.
 
 This integration collects JMX metrics for the following components:
 
@@ -19,7 +19,7 @@ This integration collects JMX metrics for the following components:
 
 ### Installation
 
-The Confluent Platform check is included in the [Datadog Agent][1] package. No additional installation is needed on your Confluent Platform component server.
+The Confluent Platform check is included in the [Khulnasoft Agent][1] package. No additional installation is needed on your Confluent Platform component server.
 
 **Note**: This check collects metrics with JMX. A JVM is required on each node so the Agent can run [jmxfetch][2]. It is recommended to use an Oracle-provided JVM.
 
@@ -51,7 +51,7 @@ The Confluent Platform check is included in the [Datadog Agent][1] package. No a
 
 _Available for Agent versions >6.0_
 
-1. Collecting logs is disabled by default in the Datadog Agent, you need to enable it in `datadog.yaml`:
+1. Collecting logs is disabled by default in the Khulnasoft Agent, you need to enable it in `khulnasoft.yaml`:
 
    ```yaml
    logs_enabled: true
@@ -114,7 +114,7 @@ See [service_checks.json][9] for a list of service checks provided by this integ
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][10].
+Need help? Contact [Khulnasoft support][10].
 
 
 [1]: https://app.khulnasoft.com/account/settings/agent/latest

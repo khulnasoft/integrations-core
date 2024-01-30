@@ -32,7 +32,7 @@
 
 ***Fixed***:
 
-* Bump the minimum datadog-checks-base version ([#15217](https://github.com/KhulnaSoft/integrations-core/pull/15217))
+* Bump the minimum khulnasoft-checks-base version ([#15217](https://github.com/KhulnaSoft/integrations-core/pull/15217))
 
 ## 4.3.1 / 2023-07-10
 
@@ -159,7 +159,7 @@
 ***Added***:
 
 * Add config specs for YARN integration ([#7167](https://github.com/KhulnaSoft/integrations-core/pull/7167))
-* Add ability to split YARN application tags into Datadog tags ([#7101](https://github.com/KhulnaSoft/integrations-core/pull/7101)) Thanks [nicodv](https://github.com/nicodv).
+* Add ability to split YARN application tags into Khulnasoft tags ([#7101](https://github.com/KhulnaSoft/integrations-core/pull/7101)) Thanks [nicodv](https://github.com/nicodv).
 
 ***Fixed***:
 

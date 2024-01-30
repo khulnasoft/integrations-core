@@ -20,7 +20,7 @@ To use the `py38-sandbox` environment, the following environment variables must 
 **Environment Variables**
 
 * TF_VAR_google_credentials_file: Local file path containing Service Account Credentials
-* TF_VAR_google_compute_instance_name: Name of the VM Instance [here](https://console.cloud.google.com/compute/instances?project=datadog-integrations-lab) 
+* TF_VAR_google_compute_instance_name: Name of the VM Instance [here](https://console.cloud.google.com/compute/instances?project=khulnasoft-integrations-lab) 
 
 **Start the E2E Environment**
 

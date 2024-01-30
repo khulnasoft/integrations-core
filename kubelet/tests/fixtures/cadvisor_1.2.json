@@ -1450,7 +1450,7 @@
       "has_filesystem": true,
       "has_diskio": true,
       "has_custom_metrics": false,
-      "image": "datadog/docker-dd-agent:massi_ingest_k8s_events"
+      "image": "khulnasoft/docker-dd-agent:massi_ingest_k8s_events"
     },
     "stats": [
       {

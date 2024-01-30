@@ -1,6 +1,6 @@
 {
   "title": "MapR - Overview",
-  "description": "This dashboard provides a high-level overview of your MapR 6.1+ deployment so you can monitor its performance and resource usage. For further reading on monitoring MapR:\n\n- [Monitoring the cluster (MapR)](https://mapr.com/docs/61/AdministratorGuide/Monitoring-the-Cluster.html)\n- [Metric collection (MapR)](https://mapr.com/docs/61/AdministratorGuide/MetricsCollections.html)\n- [Datadog's MapR integration docs](https://docs.khulnasoft.com/integrations/mapr)\n\nClone this template dashboard to make changes and add your own graphs and widgets.",
+  "description": "This dashboard provides a high-level overview of your MapR 6.1+ deployment so you can monitor its performance and resource usage. For further reading on monitoring MapR:\n\n- [Monitoring the cluster (MapR)](https://mapr.com/docs/61/AdministratorGuide/Monitoring-the-Cluster.html)\n- [Metric collection (MapR)](https://mapr.com/docs/61/AdministratorGuide/MetricsCollections.html)\n- [Khulnasoft's MapR integration docs](https://docs.khulnasoft.com/integrations/mapr)\n\nClone this template dashboard to make changes and add your own graphs and widgets.",
   "widgets": [
     {
       "id": 0,

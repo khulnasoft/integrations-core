@@ -29,7 +29,7 @@
                             "Default Web Site".  Specify 'none' for all instances of
                             the counter.
     <COUNTER_NAME> is the individual counter to report.
-    <METRIC_NAME> is the name that displays in Datadog.
+    <METRIC_NAME> is the name that displays in Khulnasoft.
     <METRIC_TYPE> is from the standard choices for all Agent checks, such as gauge,
                   rate, histogram, or count.
   value:

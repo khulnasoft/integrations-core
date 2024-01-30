@@ -2,13 +2,13 @@
 
 ## Overview
 
-This check monitors the kernel OOM (out of memory) kill process through the Datadog Agent and the System Probe.
+This check monitors the kernel OOM (out of memory) kill process through the Khulnasoft Agent and the System Probe.
 
 ## Setup
 
 ### Installation
 
-The OOM Kill check is included in the [Datadog Agent][1] package. It relies on an eBPF program implemented in the System Probe.
+The OOM Kill check is included in the [Khulnasoft Agent][1] package. It relies on an eBPF program implemented in the System Probe.
 
 The eBPF program used by the System Probe is compiled at runtime and requires you to have access to the proper kernel headers.
 
@@ -64,16 +64,16 @@ In addition to mounting `system-probe.yaml` and `oom_kill.d/conf.yaml` as descri
 
 ### Configuration with Helm
 
-With the [Datadog Helm chart][4], ensure that the `datadog.systemProbe` and `datadog.systemProbe.enableOOMKill` parameters are enabled in the `values.yaml` file.
+With the [Khulnasoft Helm chart][4], ensure that the `khulnasoft.systemProbe` and `khulnasoft.systemProbe.enableOOMKill` parameters are enabled in the `values.yaml` file.
 
 ### Configuration with the Operator (v1.0.0+)
 
-Set the `features.oomKill.enabled` parameter in the DatadogAgent manifest:
+Set the `features.oomKill.enabled` parameter in the KhulnasoftAgent manifest:
 ```yaml
 apiVersion: khulnasoft.com/v2alpha1
-kind: DatadogAgent
+kind: KhulnasoftAgent
 metadata:
-  name: datadog
+  name: khulnasoft
 spec:
   features:
     oomKill:
@@ -83,9 +83,9 @@ spec:
 **Note**: When using COS (Container Optimized OS), override the `src` volume in the node Agent:
 ```yaml
 apiVersion: khulnasoft.com/v2alpha1
-kind: DatadogAgent
+kind: KhulnasoftAgent
 metadata:
-  name: datadog
+  name: khulnasoft
 spec:
   features:
     oomKill:
@@ -117,10 +117,10 @@ The OOM Kill check submits an event for each OOM Kill that includes the killed p
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][7].
+Need help? Contact [Khulnasoft support][7].
 
 [1]: https://app.khulnasoft.com/account/settings/agent/latest
-[2]: https://github.com/KhulnaSoft/datadog-agent/blob/master/cmd/agent/dist/conf.d/oom_kill.d/conf.yaml.example
+[2]: https://github.com/KhulnaSoft/khulnasoft-agent/blob/master/cmd/agent/dist/conf.d/oom_kill.d/conf.yaml.example
 [3]: https://docs.khulnasoft.com/agent/guide/agent-commands/#start-stop-and-restart-the-agent
 [4]: https://github.com/KhulnaSoft/helm-charts
 [5]: https://docs.khulnasoft.com/agent/guide/agent-commands/#agent-status-and-information

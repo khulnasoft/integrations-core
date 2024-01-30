@@ -25,22 +25,22 @@
 [config-spec-template-init-config-openmetrics]: https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_dev/khulnasoft_checks/dev/tooling/templates/configuration/init_config/openmetrics.yaml
 [config-spec-templates]: https://github.com/KhulnaSoft/integrations-core/tree/master/khulnasoft_checks_dev/khulnasoft_checks/dev/tooling/templates/configuration
 [conf-yaml-example-share-labels]: https://github.com/KhulnaSoft/integrations-core/blob/7.32.x/openmetrics/khulnasoft_checks/openmetrics/data/conf.yaml.example#L227
-[Datadog Agent]: https://docs.khulnasoft.com/agent/
-[datadog-agent]: https://github.com/KhulnaSoft/datadog-agent
-[datadog-agent-flare]: https://docs.khulnasoft.com/agent/troubleshooting/send_a_flare/
-[datadog-agent-logs]: https://docs.khulnasoft.com/agent/logs/?tab=tailfiles
-[datadog-agent-status-page]: https://docs.khulnasoft.com/agent/guide/agent-status-page/
-[datadog-checks-base]: https://github.com/KhulnaSoft/integrations-core/tree/master/khulnasoft_checks_base
-[datadog-checks-base-tox-ini]: https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_base/tox.ini
-[datadog-distribution-metrics]: https://docs.khulnasoft.com/metrics/distributions/
-[datadog-checks-dev]: https://github.com/KhulnaSoft/integrations-core/tree/master/khulnasoft_checks_dev
-[datadog-checks-dev-plugin-pytest]: https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_dev/khulnasoft_checks/dev/plugin/pytest.py
-[datadog-checks-dev-plugin-tox]: https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_dev/khulnasoft_checks/dev/plugin/tox.py
-[datadog-config-api-key]: https://docs.khulnasoft.com/account_management/api-app-keys/#api-keys
-[datadog-config-app-key]: https://docs.khulnasoft.com/account_management/api-app-keys/#application-keys
-[datadog-config-dd-url]: https://github.com/KhulnaSoft/datadog-agent/blob/6ade73718033454dfd40cb5293b7f4ff51ceaeb7/pkg/config/config_template.yaml#L18-L24
-[datadog-config-log-url]: https://github.com/KhulnaSoft/datadog-agent/blob/6ade73718033454dfd40cb5293b7f4ff51ceaeb7/pkg/config/config_template.yaml#L412-L416
-[datadog-config-site]: https://docs.khulnasoft.com/agent/basic_agent_usage/#datadog-site
+[Khulnasoft Agent]: https://docs.khulnasoft.com/agent/
+[khulnasoft-agent]: https://github.com/KhulnaSoft/khulnasoft-agent
+[khulnasoft-agent-flare]: https://docs.khulnasoft.com/agent/troubleshooting/send_a_flare/
+[khulnasoft-agent-logs]: https://docs.khulnasoft.com/agent/logs/?tab=tailfiles
+[khulnasoft-agent-status-page]: https://docs.khulnasoft.com/agent/guide/agent-status-page/
+[khulnasoft-checks-base]: https://github.com/KhulnaSoft/integrations-core/tree/master/khulnasoft_checks_base
+[khulnasoft-checks-base-tox-ini]: https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_base/tox.ini
+[khulnasoft-distribution-metrics]: https://docs.khulnasoft.com/metrics/distributions/
+[khulnasoft-checks-dev]: https://github.com/KhulnaSoft/integrations-core/tree/master/khulnasoft_checks_dev
+[khulnasoft-checks-dev-plugin-pytest]: https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_dev/khulnasoft_checks/dev/plugin/pytest.py
+[khulnasoft-checks-dev-plugin-tox]: https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_dev/khulnasoft_checks/dev/plugin/tox.py
+[khulnasoft-config-api-key]: https://docs.khulnasoft.com/account_management/api-app-keys/#api-keys
+[khulnasoft-config-app-key]: https://docs.khulnasoft.com/account_management/api-app-keys/#application-keys
+[khulnasoft-config-dd-url]: https://github.com/KhulnaSoft/khulnasoft-agent/blob/6ade73718033454dfd40cb5293b7f4ff51ceaeb7/pkg/config/config_template.yaml#L18-L24
+[khulnasoft-config-log-url]: https://github.com/KhulnaSoft/khulnasoft-agent/blob/6ade73718033454dfd40cb5293b7f4ff51ceaeb7/pkg/config/config_template.yaml#L412-L416
+[khulnasoft-config-site]: https://docs.khulnasoft.com/agent/basic_agent_usage/#khulnasoft-site
 [docker-compose-docs]: https://docs.docker.com/compose/
 [docker-install-centos]: https://docs.docker.com/install/linux/docker-ce/centos
 [docker-install-debian]: https://docs.docker.com/install/linux/docker-ce/debian
@@ -121,7 +121,7 @@
 [release-base.yml]: https://github.com/KhulnaSoft/integrations-core/blob/master/.github/workflows/release-base.yml
 [release-dev.yml]: https://github.com/KhulnaSoft/integrations-core/blob/master/.github/workflows/release-dev.yml
 [root-tox-config]: https://github.com/KhulnaSoft/integrations-core/blob/master/tox.ini
-[rtloader]: https://github.com/KhulnaSoft/datadog-agent/tree/master/rtloader
+[rtloader]: https://github.com/KhulnaSoft/khulnasoft-agent/tree/master/rtloader
 [semver-home]: https://semver.org
 [terraform-home]: https://www.terraform.io
 [terraform-templates-location]: https://github.com/KhulnaSoft/integrations-core/tree/master/khulnasoft_checks_dev/khulnasoft_checks/dev/tooling/templates/terraform

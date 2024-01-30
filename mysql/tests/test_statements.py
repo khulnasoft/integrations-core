@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2021-present
+# (C) Khulnasoft, Inc. 2021-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 import logging
@@ -459,7 +459,7 @@ def test_statement_samples_collect(
     if schema == 'testdb' and explain_strategy == 'FQ_PROCEDURE':
         # explain via the FQ_PROCEDURE will fail if a query contains non-fully-qualified tables because it will
         # default to the schema of the FQ_PROCEDURE, so in case of "select * from testdb" it'll try to do
-        # "select start from datadog.testdb" which would be the wrong schema.
+        # "select start from khulnasoft.testdb" which would be the wrong schema.
         assert not with_plans, "should not have collected any plans"
     elif schema == 'information_schema' and explain_strategy == 'PROCEDURE':
         # we can't create an explain_statement procedure in performance_schema so this is not expected to work
@@ -884,7 +884,7 @@ def test_statement_samples_invalid_explain_procedure(aggregator, dd_run_check, d
 @pytest.mark.integration
 @pytest.mark.usefixtures('dd_environment')
 @pytest.mark.parametrize(
-    "events_statements_enable_procedure", ["datadog.enable_events_statements_consumers", "invalid_proc"]
+    "events_statements_enable_procedure", ["khulnasoft.enable_events_statements_consumers", "invalid_proc"]
 )
 @mock.patch.dict('os.environ', {'DDEV_SKIP_GENERIC_TAGS_CHECK': 'true'})
 def test_statement_samples_enable_consumers(dd_run_check, dbm_instance, root_conn, events_statements_enable_procedure):
@@ -908,7 +908,7 @@ def test_statement_samples_enable_consumers(dd_run_check, dbm_instance, root_con
     dd_run_check(mysql_check)
 
     enabled_consumers = mysql_check._statement_samples._get_enabled_performance_schema_consumers()
-    if events_statements_enable_procedure == "datadog.enable_events_statements_consumers":
+    if events_statements_enable_procedure == "khulnasoft.enable_events_statements_consumers":
         # ensure that the consumer was re-enabled by the check run
         assert enabled_consumers == all_consumers or enabled_consumers == all_consumers_gt_8_0_28
     else:

@@ -2,9 +2,9 @@
 
 ## Overview
 
-This check monitors [ArangoDB][1] through the Datadog Agent. ArangoDB 3.8 and above are supported.
+This check monitors [ArangoDB][1] through the Khulnasoft Agent. ArangoDB 3.8 and above are supported.
 
-Enable the Datadog-ArangoDB integration to:
+Enable the Khulnasoft-ArangoDB integration to:
 
 - Identify slow queries based on user-defined thresholds.
 - Understand the impact of a long request and troubleshoot latency issues.
@@ -16,7 +16,7 @@ Follow the instructions below to install and configure this check for an Agent r
 
 ### Installation
 
-The ArangoDB check is included in the [Datadog Agent][2] package.
+The ArangoDB check is included in the [Khulnasoft Agent][2] package.
 
 ### Configuration
 
@@ -56,9 +56,9 @@ file = /var/log/arangodb3/arangod.log
 ...
 ```
 
-ArangoDB logs contain [many options][10] for log verbosity and output files. Datadog's integration pipeline supports the default conversion pattern.
+ArangoDB logs contain [many options][10] for log verbosity and output files. Khulnasoft's integration pipeline supports the default conversion pattern.
 
-1. Collecting logs is disabled by default in the Datadog Agent. Enable it in your `datadog.yaml` file:
+1. Collecting logs is disabled by default in the Khulnasoft Agent. Enable it in your `khulnasoft.yaml` file:
 
    ```yaml
    logs_enabled: true
@@ -83,7 +83,7 @@ See [service_checks.json][8] for a list of service checks provided by this integ
 
 ## Troubleshooting
 
-Need help? Contact [Datadog Support][9].
+Need help? Contact [Khulnasoft Support][9].
 
 
 [1]: https://www.arangodb.com/

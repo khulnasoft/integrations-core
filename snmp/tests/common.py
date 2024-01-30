@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2018-present
+# (C) Khulnasoft, Inc. 2018-present
 # All rights reserved
 # Licensed under Simplified BSD License (see LICENSE)
 
@@ -299,9 +299,9 @@ def assert_common_check_run_metrics(aggregator, tags=None, is_e2e=False, loader=
     loader = loader or 'python'
     if tags is not None:
         tags = tags + ['loader:' + loader]
-    aggregator.assert_metric('datadog.snmp.check_duration', metric_type=aggregator.GAUGE, tags=tags)
-    aggregator.assert_metric('datadog.snmp.check_interval', metric_type=monotonic_type, tags=tags)
-    aggregator.assert_metric('datadog.snmp.submitted_metrics', metric_type=aggregator.GAUGE, tags=tags)
+    aggregator.assert_metric('khulnasoft.snmp.check_duration', metric_type=aggregator.GAUGE, tags=tags)
+    aggregator.assert_metric('khulnasoft.snmp.check_interval', metric_type=monotonic_type, tags=tags)
+    aggregator.assert_metric('khulnasoft.snmp.submitted_metrics', metric_type=aggregator.GAUGE, tags=tags)
 
 
 def assert_common_device_metrics(

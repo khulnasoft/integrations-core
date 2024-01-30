@@ -1,6 +1,6 @@
 {
     "title": "Spark - Overview",
-    "description": "This dashboard tracks the current status of your Spark jobs, tasks, and stages. It also allows you to track expensive operations like shuffles, which point to possible areas for optimization. Further reading on Spark monitoring:\n\n- [Datadog's blog post announcing support for Hadoop and Spark monitoring](https://www.khulnasoft.com/blog/monitoring-spark/)\n\n- [How Datadog uses and monitors Spark for highly reliable data pipelines](https://www.khulnasoft.com/blog/engineering/highly-reliable-data-pipelines/)\n\n- [Docs for Datadog's Spark integration](https://docs.khulnasoft.com/integrations/spark/)\n\nClone this template dashboard to make changes and add your own graph widgets.",
+    "description": "This dashboard tracks the current status of your Spark jobs, tasks, and stages. It also allows you to track expensive operations like shuffles, which point to possible areas for optimization. Further reading on Spark monitoring:\n\n- [Khulnasoft's blog post announcing support for Hadoop and Spark monitoring](https://www.khulnasoft.com/blog/monitoring-spark/)\n\n- [How Khulnasoft uses and monitors Spark for highly reliable data pipelines](https://www.khulnasoft.com/blog/engineering/highly-reliable-data-pipelines/)\n\n- [Docs for Khulnasoft's Spark integration](https://docs.khulnasoft.com/integrations/spark/)\n\nClone this template dashboard to make changes and add your own graph widgets.",
     "widgets": [
         {
             "id": 0,

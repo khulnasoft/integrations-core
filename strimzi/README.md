@@ -2,13 +2,13 @@
 
 ## Overview
 
-This check monitors [Strimzi][1] through the Datadog Agent.
+This check monitors [Strimzi][1] through the Khulnasoft Agent.
 
 ## Setup
 
 ### Installation
 
-The Strimzi check is included in the [Datadog Agent][2] package.
+The Strimzi check is included in the [Khulnasoft Agent][2] package.
 No additional installation is needed on your server.
 
 <div class="alert alert-warning">This check uses <a href="https://docs.khulnasoft.com/integrations/openmetrics/">OpenMetrics</a>, which requires Python 3.</div>
@@ -193,7 +193,7 @@ spec:
 
 _Available for Agent versions >6.0_
 
-Strimzi logs can be collected from the different Strimzi pods through Kubernetes. Collecting logs is disabled by default in the Datadog Agent. To enable it, see [Kubernetes Log Collection][16].
+Strimzi logs can be collected from the different Strimzi pods through Kubernetes. Collecting logs is disabled by default in the Khulnasoft Agent. To enable it, see [Kubernetes Log Collection][16].
 
 See the [Autodiscovery Integration Templates][3] for guidance on applying the parameters below.
 
@@ -221,7 +221,7 @@ See [service_checks.json][8] for a list of service checks provided by this integ
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][9].
+Need help? Contact [Khulnasoft support][9].
 
 
 [1]: https://strimzi.io/

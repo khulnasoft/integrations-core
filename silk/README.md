@@ -2,7 +2,7 @@
 
 ## Overview
 
-This check monitors [Silk][1] through the Datadog Agent.
+This check monitors [Silk][1] through the Khulnasoft Agent.
 
 ## Setup
 
@@ -10,7 +10,7 @@ Follow the instructions below to install and configure this check for an Agent r
 
 ### Installation
 
-The Silk check is included in the [Datadog Agent][2] package.
+The Silk check is included in the [Khulnasoft Agent][2] package.
 No additional installation is needed on your server.
 
 ### Configuration
@@ -33,7 +33,7 @@ See [metadata.csv][7] for a list of metrics provided by this check.
 
 The Silk integration records events emitted by the Silk server. The event levels are mapped as the following:
 
-| Silk                      | Datadog                            |
+| Silk                      | Khulnasoft                            |
 |---------------------------|------------------------------------|
 | `INFO`                    | `info`                             |
 | `ERROR`                   | `error`                            |
@@ -47,7 +47,7 @@ See [service_checks.json][8] for a list of service checks provided by this integ
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][9].
+Need help? Contact [Khulnasoft support][9].
 
 
 [1]: https://silk.us/

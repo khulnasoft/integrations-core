@@ -2,7 +2,7 @@
 
 ## Overview
 
-This check monitors [MapR][1] 6.1+ through the Datadog Agent.
+This check monitors [MapR][1] 6.1+ through the Khulnasoft Agent.
 
 ## Setup
 
@@ -10,7 +10,7 @@ Follow the instructions below to install and configure this check for an Agent r
 
 ### Installation
 
-The MapR check is included in the [Datadog Agent][2] package but requires additional setup operations.
+The MapR check is included in the [Khulnasoft Agent][2] package but requires additional setup operations.
 
 #### Prerequisites
 
@@ -24,7 +24,7 @@ Installation steps for each node:
 1. [Install the Agent][2].
 2. Install the library _mapr-streams-library_ with the following command:
 
-    `sudo -u dd-agent /opt/datadog-agent/embedded/bin/pip install --global-option=build_ext --global-option="--library-dirs=/opt/mapr/lib" --global-option="--include-dirs=/opt/mapr/include/" mapr-streams-python`.
+    `sudo -u dd-agent /opt/khulnasoft-agent/embedded/bin/pip install --global-option=build_ext --global-option="--library-dirs=/opt/mapr/lib" --global-option="--include-dirs=/opt/mapr/include/" mapr-streams-python`.
 
     If you use Python 3 with Agent v7, replace `pip` with `pip3`.
 
@@ -35,7 +35,7 @@ Installation steps for each node:
 #### Additional notes
 
 - If you don't have "security" enabled in the cluster, you can continue without a ticket.
-- If your production environment does not allow compilation tools like gcc (required to build the mapr-streams-library), it is possible to generate a compiled wheel of the library on a development instance and distribute the compiled wheel to the production hosts. The development and production hosts have to be similar enough for the compiled wheel to be compatible. You can run `sudo -u dd-agent /opt/datadog-agent/embedded/bin/pip wheel --global-option=build_ext --global-option="--library-dirs=/opt/mapr/lib" --global-option="--include-dirs=/opt/mapr/include/" mapr-streams-python` to create the wheel file on the development machine. Then, `sudo -u dd-agent /opt/datadog-agent/embedded/bin/pip install <THE_WHEEL_FILE>` on the production machine.
+- If your production environment does not allow compilation tools like gcc (required to build the mapr-streams-library), it is possible to generate a compiled wheel of the library on a development instance and distribute the compiled wheel to the production hosts. The development and production hosts have to be similar enough for the compiled wheel to be compatible. You can run `sudo -u dd-agent /opt/khulnasoft-agent/embedded/bin/pip wheel --global-option=build_ext --global-option="--library-dirs=/opt/mapr/lib" --global-option="--include-dirs=/opt/mapr/include/" mapr-streams-python` to create the wheel file on the development machine. Then, `sudo -u dd-agent /opt/khulnasoft-agent/embedded/bin/pip install <THE_WHEEL_FILE>` on the production machine.
 - If you use Python 3 with Agent v7, make sure to replace `pip` with `pip3` when installing the _mapr-streams-library_
 
 ### Configuration
@@ -48,9 +48,9 @@ Installation steps for each node:
 
 #### Log collection
 
-MapR uses fluentD for logs. Use the [fluentD datadog plugin][9] to collect MapR logs. The following command downloads and installs the plugin into the right directory.
+MapR uses fluentD for logs. Use the [fluentD khulnasoft plugin][9] to collect MapR logs. The following command downloads and installs the plugin into the right directory.
 
-`curl https://raw.githubusercontent.com/KhulnaSoft/fluent-plugin-datadog/master/lib/fluent/plugin/out_datadog.rb -o /opt/mapr/fluentd/fluentd-<VERSION>/lib/fluentd-<VERSION>-linux-x86_64/lib/app/lib/fluent/plugin/out_datadog.rb`
+`curl https://raw.githubusercontent.com/KhulnaSoft/fluent-plugin-khulnasoft/master/lib/fluent/plugin/out_khulnasoft.rb -o /opt/mapr/fluentd/fluentd-<VERSION>/lib/fluentd-<VERSION>-linux-x86_64/lib/app/lib/fluent/plugin/out_khulnasoft.rb`
 
 Then update the `/opt/mapr/fluentd/fluentd-<VERSION>/etc/fluentd/fluentd.conf` with the following section.
 
@@ -62,11 +62,11 @@ Then update the `/opt/mapr/fluentd/fluentd-<VERSION>/etc/fluentd/fluentd.conf` w
     include_tag_key true
     tag_key service_name
   </store>
-  <store> # This section also forwards all the logs to Datadog:
-    @type datadog
+  <store> # This section also forwards all the logs to Khulnasoft:
+    @type khulnasoft
     @id dd_agent
     include_tag_key true
-    dd_source mapr  # Sets "source: mapr" on every log to allow automatic parsing on Datadog.
+    dd_source mapr  # Sets "source: mapr" on every log to allow automatic parsing on Khulnasoft.
     dd_tags "<KEY>:<VALUE>"
     service <YOUR_SERVICE_NAME>
     api_key <YOUR_API_KEY>
@@ -108,7 +108,7 @@ See [service_checks.json][12] for a list of service checks provided by this inte
 
   The Agent embedded environment was not able to run the command `import confluent_kafka`. This means that either the _mapr-streams-library_ was not installed inside the embedded environment, or that it can't find the mapr-core libraries. The error message should give more details.
 
-Need more help? Contact [Datadog support][13].
+Need more help? Contact [Khulnasoft support][13].
 
 
 [1]: https://mapr.com
@@ -119,7 +119,7 @@ Need more help? Contact [Datadog support][13].
 [6]: https://mapr.com/docs/61/SecurityGuide/GeneratingServiceTicket.html
 [7]: https://github.com/KhulnaSoft/integrations-core/blob/master/mapr/khulnasoft_checks/mapr/data/conf.yaml.example
 [8]: https://docs.khulnasoft.com/agent/guide/agent-commands/#start-stop-and-restart-the-agent
-[9]: https://www.rubydoc.info/gems/fluent-plugin-datadog
+[9]: https://www.rubydoc.info/gems/fluent-plugin-khulnasoft
 [10]: https://docs.khulnasoft.com/agent/guide/agent-commands/#agent-status-and-information
 [11]: https://github.com/KhulnaSoft/integrations-core/blob/master/mapr/metadata.csv
 [12]: https://github.com/KhulnaSoft/integrations-core/blob/master/mapr/assets/service_checks.json

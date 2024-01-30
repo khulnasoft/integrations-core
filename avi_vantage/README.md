@@ -2,7 +2,7 @@
 
 ## Overview
 
-This check monitors [Avi Vantage][1] through the Datadog Agent.
+This check monitors [Avi Vantage][1] through the Khulnasoft Agent.
 
 ## Setup
 
@@ -10,7 +10,7 @@ Follow the instructions below to install and configure this check for an Agent r
 
 ### Installation
 
-The Avi Vantage check is included in the [Datadog Agent][3] package.
+The Avi Vantage check is included in the [Khulnasoft Agent][3] package.
 No additional installation is needed on your server.
 
 ### Configuration
@@ -39,7 +39,7 @@ Avi Vantage does not include any events.
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][9].
+Need help? Contact [Khulnasoft support][9].
 
 [1]: https://avinetworks.com/why-avi/multi-cloud-load-balancing/
 [2]: https://docs.khulnasoft.com/agent/kubernetes/integrations/

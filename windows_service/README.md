@@ -2,13 +2,13 @@
 
 ## Overview
 
-This check monitors the state of any Windows Service and submits a service check to Datadog.
+This check monitors the state of any Windows Service and submits a service check to Khulnasoft.
 
 ## Setup
 
 ### Installation
 
-The Windows Service check is included in the [Datadog Agent][1] package, so you don't need to install anything else on your Windows hosts.
+The Windows Service check is included in the [Khulnasoft Agent][1] package, so you don't need to install anything else on your Windows hosts.
 
 ### Configuration
 
@@ -33,10 +33,10 @@ instances:
 
 The check uses case-insensitive [Python regular expressions][11] when matching service names. If a service name includes special characters, you must escape the special characters with a `\`. For example, `MSSQL$CRMAWS` becomes  `MSSQL\$CRMAWS` and `Web Server (prod)` becomes `Web Server \(prod\)`. The service name pattern matches all service names that start with the pattern. For an exact match, use the regular expression `^service$`.
 
-Provide service names as they appear in the service name field, **NOT** the display name field. For example, configure the service name `datadogagent` **NOT** the display name `Datadog Agent`.
+Provide service names as they appear in the service name field, **NOT** the display name field. For example, configure the service name `khulnasoftagent` **NOT** the display name `Khulnasoft Agent`.
 
 <p align="center">
-<img alt="Datadog Agent service properties" src="https://raw.githubusercontent.com/KhulnaSoft/integrations-core/master/windows_service/images/service-properties.png"/>
+<img alt="Khulnasoft Agent service properties" src="https://raw.githubusercontent.com/KhulnaSoft/integrations-core/master/windows_service/images/service-properties.png"/>
 </p>
 
 Beginning with Agent version 7.41, the check can select which services to monitor based on their startup type.
@@ -101,21 +101,21 @@ See [service_checks.json][6] for a list of service checks provided by this integ
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][7].
+Need help? Contact [Khulnasoft support][7].
 
 ### Service permissions
-If a service is present and matches the configuration, but the Datadog Agent does not report a service check for the service, the Datadog Agent might have insufficient permissions. For example, by default the Datadog Agent does not have access to the NTDS Active Directory Domain Services service. To verify this, run the check from an **elevated (run as Admin)** PowerShell shell.
+If a service is present and matches the configuration, but the Khulnasoft Agent does not report a service check for the service, the Khulnasoft Agent might have insufficient permissions. For example, by default the Khulnasoft Agent does not have access to the NTDS Active Directory Domain Services service. To verify this, run the check from an **elevated (run as Admin)** PowerShell shell.
 
 ```powershell
-& "$env:ProgramFiles\Datadog\Datadog Agent\bin\agent.exe" check windows_service
+& "$env:ProgramFiles\Khulnasoft\Khulnasoft Agent\bin\agent.exe" check windows_service
 ```
-If the service is present in the output, permissions are the issue. To give the Datadog Agent permission [grant `Read` access on the service][14] to the [Datadog Agent User][15]. We recommend [granting `Read` access with Group Policy][16] to ensure the permissions persist through Windows Updates.
+If the service is present in the output, permissions are the issue. To give the Khulnasoft Agent permission [grant `Read` access on the service][14] to the [Khulnasoft Agent User][15]. We recommend [granting `Read` access with Group Policy][16] to ensure the permissions persist through Windows Updates.
 
 ## Further Reading
 
 - [Monitoring Windows Server 2012][8]
 - [How to collect Windows Server 2012 metrics][9]
-- [Monitoring Windows Server 2012 with Datadog][10]
+- [Monitoring Windows Server 2012 with Khulnasoft][10]
 
 [1]: https://app.khulnasoft.com/account/settings/agent/latest
 [2]: https://docs.khulnasoft.com/agent/guide/agent-configuration-files/#agent-configuration-directory

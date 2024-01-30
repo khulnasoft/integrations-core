@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2022-present
+# (C) Khulnasoft, Inc. 2022-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 import click
@@ -8,10 +8,10 @@ from ddev.cli.release.agent.integrations import integrations
 from ddev.cli.release.agent.integrations_changelog import integrations_changelog
 
 
-@click.group(short_help='A collection of tasks related to the Datadog Agent')
+@click.group(short_help='A collection of tasks related to the Khulnasoft Agent')
 def agent():
     """
-    A collection of tasks related to the Datadog Agent.
+    A collection of tasks related to the Khulnasoft Agent.
     """
 
 

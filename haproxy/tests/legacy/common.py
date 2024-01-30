@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2020-present
+# (C) Khulnasoft, Inc. 2020-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 
@@ -56,7 +56,7 @@ BASE_URL_OPEN = "http://{0}:{1}".format(HOST, PORT_OPEN)
 STATS_URL = "{0}/stats".format(BASE_URL)
 STATS_URL_OPEN = "{0}/stats".format(BASE_URL_OPEN)
 STATS_SOCKET = "tcp://{0}:{1}".format(HOST, SOCKET_PORT)
-USERNAME = 'datadog'
+USERNAME = 'khulnasoft'
 PASSWORD = 'isdevops'
 
 platform_supports_sockets = ON_LINUX or ON_MACOS
@@ -95,7 +95,7 @@ CHECK_CONFIG = {
 
 CHECK_CONFIG_OPEN = {'url': STATS_URL_OPEN, 'collect_aggregates_only': False, 'collect_status_metrics': True}
 
-BACKEND_SERVICES = ['anotherbackend', 'datadog']
+BACKEND_SERVICES = ['anotherbackend', 'khulnasoft']
 FRONTEND_SERVICES = ['public']
 
 BACKEND_LIST = ['singleton:8080', 'singleton:8081', 'otherserver']
@@ -108,7 +108,7 @@ BACKEND_TO_ADDR = {
 
 STICKTABLE_TYPES = {
     'anotherbackend': 'ip',
-    'datadog': 'integer',
+    'khulnasoft': 'integer',
     'public': 'string',
 }
 

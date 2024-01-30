@@ -34,6 +34,6 @@ This check monitors [{integration_name}][1].
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][3].
+Need help? Contact [Khulnasoft support][3].
 
 {integration_links}

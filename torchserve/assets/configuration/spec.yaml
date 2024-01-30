@@ -101,7 +101,7 @@ files:
               type: integer
           - name: submit_events
             description: |
-              By default we submit events to Datadog. You can set this option to `false` to disable submitting the events.
+              By default we submit events to Khulnasoft. You can set this option to `false` to disable submitting the events.
             value:
               type: boolean
               example: true

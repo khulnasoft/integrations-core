@@ -50,7 +50,7 @@ If you see failures regarding formatting or missing parameters, see our [config 
 ddev validate dashboards
 ```
 
-This validates that dashboards are formatted correctly. This means that they need to be proper JSON and generated from Datadog's `/dashboard` [API](https://docs.khulnasoft.com/api/v1/dashboards/).
+This validates that dashboards are formatted correctly. This means that they need to be proper JSON and generated from Khulnasoft's `/dashboard` [API](https://docs.khulnasoft.com/api/v1/dashboards/).
 
 !!! tip
     If you see a failure regarding use of the screen endpoint, consider using our dashboard [utility command](../../ddev/cli.md#ddev-meta-dash-export) to generate your dashboard payload.
@@ -75,7 +75,7 @@ This validation only applies if your work introduces new external dependencies.
 ddev validate manifest
 ```
 
-This validates that the manifest files contain required fields, are formatted correctly, and don't contain common errors. See the [Datadog docs](https://docs.khulnasoft.com/developers/integrations/check_references/#manifest-file) for more detailed constraints.
+This validates that the manifest files contain required fields, are formatted correctly, and don't contain common errors. See the [Khulnasoft docs](https://docs.khulnasoft.com/developers/integrations/check_references/#manifest-file) for more detailed constraints.
 
 ## Metadata
 
@@ -83,7 +83,7 @@ This validates that the manifest files contain required fields, are formatted co
 ddev validate metadata
 ```
 
-This checks that every `metadata.csv` file is formatted correctly. See the [Datadog docs](https://docs.khulnasoft.com/developers/integrations/check_references/#metrics-metadata-file) for more detailed constraints.
+This checks that every `metadata.csv` file is formatted correctly. See the [Khulnasoft docs](https://docs.khulnasoft.com/developers/integrations/check_references/#metrics-metadata-file) for more detailed constraints.
 
 ## README files
 
@@ -110,7 +110,7 @@ This validates that saved views for an integration are formatted correctly and c
 ddev validate service-checks
 ```
 
-This checks that every service check file is formatted correctly. See the [Datadog docs](https://docs.khulnasoft.com/developers/integrations/check_references/#service-check-file) for more specific constraints.
+This checks that every service check file is formatted correctly. See the [Khulnasoft docs](https://docs.khulnasoft.com/developers/integrations/check_references/#service-check-file) for more specific constraints.
 
 ## Imports
 

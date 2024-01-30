@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2022-present
+# (C) Khulnasoft, Inc. 2022-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 
@@ -10,7 +10,7 @@ DEFAULT_OPTIONS = {
     'cert': None,
     'headers': OrderedDict(
         [
-            ('User-Agent', 'Datadog Agent/0.0.0'),
+            ('User-Agent', 'Khulnasoft Agent/0.0.0'),
             ('Accept', '*/*'),
             ('Accept-Encoding', 'gzip, deflate'),
         ]

@@ -8,11 +8,11 @@ This check monitors [JBoss][1] and [WildFly][2] applications.
 
 ### Installation
 
-The JBoss/WildFly check is included in the [Datadog Agent][3] package so you don't need to install anything else on your JBoss/WildFly host.
+The JBoss/WildFly check is included in the [Khulnasoft Agent][3] package so you don't need to install anything else on your JBoss/WildFly host.
 
 ### Configuration
 
-This check has a limit of 350 metrics per instance. The number of returned metrics is indicated in the info page. You can specify the metrics you are interested in by editing the configuration below. To learn how to customize the collected metrics, see the [JMX Checks documentation][4] for more detailed instructions. If you need to monitor more metrics, contact [Datadog support][5].
+This check has a limit of 350 metrics per instance. The number of returned metrics is indicated in the info page. You can specify the metrics you are interested in by editing the configuration below. To learn how to customize the collected metrics, see the [JMX Checks documentation][4] for more detailed instructions. If you need to monitor more metrics, contact [Khulnasoft support][5].
 
 <!-- xxx tabs xxx -->
 <!-- xxx tab "Host" xxx -->
@@ -40,7 +40,7 @@ To configure this check for an Agent running on a host:
 
 _Available for Agent versions >6.0_
 
-1. Collecting logs is disabled by default in the Datadog Agent, enable it in your `datadog.yaml` file:
+1. Collecting logs is disabled by default in the Khulnasoft Agent, enable it in your `khulnasoft.yaml` file:
 
    ```yaml
    logs_enabled: true
@@ -71,7 +71,7 @@ For containerized environments, see the [Autodiscovery with JMX][9] guide.
 
 _Available for Agent versions >6.0_
 
-Collecting logs is disabled by default in the Datadog Agent. To enable it, see [Kubernetes Log Collection][10].
+Collecting logs is disabled by default in the Khulnasoft Agent. To enable it, see [Kubernetes Log Collection][10].
 
 | Parameter      | Value                                                      |
 | -------------- | ---------------------------------------------------------- |
@@ -100,7 +100,7 @@ See [service_checks.json][13] for a list of service checks provided by this inte
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][5].
+Need help? Contact [Khulnasoft support][5].
 
 
 [1]: https://developers.redhat.com/products/eap/overview

@@ -1,6 +1,6 @@
 {
   "title": "HAProxy - Overview",
-  "description": "This dashboard displays an overview of your HAProxy frontend and backend servers, helping you spot issues like rising error rates or disparities between your frontend and backend traffic. For more information, see:\n\n- [Monitoring HAProxy performance metrics](https://www.khulnasoft.com/blog/monitoring-haproxy-performance-metrics/)\n\n- [Using built-in and third-party tools to collect HAProxy metrics](https://www.khulnasoft.com/blog/how-to-collect-haproxy-metrics/)\n\n- [Monitor HAProxy with Datadog](https://www.khulnasoft.com/blog/monitor-haproxy-with-datadog/)\n\n- [Datadog's HAProxy documentation](https://docs.khulnasoft.com/integrations/haproxy/)\n\nClone this template dashboard to make changes and add your own graph widgets.",
+  "description": "This dashboard displays an overview of your HAProxy frontend and backend servers, helping you spot issues like rising error rates or disparities between your frontend and backend traffic. For more information, see:\n\n- [Monitoring HAProxy performance metrics](https://www.khulnasoft.com/blog/monitoring-haproxy-performance-metrics/)\n\n- [Using built-in and third-party tools to collect HAProxy metrics](https://www.khulnasoft.com/blog/how-to-collect-haproxy-metrics/)\n\n- [Monitor HAProxy with Khulnasoft](https://www.khulnasoft.com/blog/monitor-haproxy-with-khulnasoft/)\n\n- [Khulnasoft's HAProxy documentation](https://docs.khulnasoft.com/integrations/haproxy/)\n\nClone this template dashboard to make changes and add your own graph widgets.",
   "widgets": [
     {
       "id": 7654339181439146,
@@ -35,7 +35,7 @@
             "id": 6085654256880802,
             "definition": {
               "type": "note",
-              "content": "**Refer to the following resources for more information**\n\n- [Official HAProxy documentation](https://www.haproxy.com/documentation/hapee/latest/onepage/)\n\n- [Available HAProxy metrics](https://docs.khulnasoft.com/integrations/haproxy/?tab=host) \n\n- [Monitor HAProxy with Datadog](https://www.khulnasoft.com/blog/monitor-haproxy-with-datadog/)",
+              "content": "**Refer to the following resources for more information**\n\n- [Official HAProxy documentation](https://www.haproxy.com/documentation/hapee/latest/onepage/)\n\n- [Available HAProxy metrics](https://docs.khulnasoft.com/integrations/haproxy/?tab=host) \n\n- [Monitor HAProxy with Khulnasoft](https://www.khulnasoft.com/blog/monitor-haproxy-with-khulnasoft/)",
               "background_color": "transparent",
               "font_size": "12",
               "text_align": "left",

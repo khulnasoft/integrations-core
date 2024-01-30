@@ -2,7 +2,7 @@
 
 ## Overview
 
-Get Datadog events upon Windows system crash to create monitors in Datadog.
+Get Khulnasoft events upon Windows system crash to create monitors in Khulnasoft.
 
 **Note**: The list of metrics collected by this integration may change between minor Agent versions. Such changes may not be mentioned in the Agent's changelog.
 
@@ -10,13 +10,13 @@ Get Datadog events upon Windows system crash to create monitors in Datadog.
 
 ### Installation
 
-The Windows Crash Detection integration is included in the [Datadog Agent][1] package. No additional installation is needed.
+The Windows Crash Detection integration is included in the [Khulnasoft Agent][1] package. No additional installation is needed.
 
 ### Configuration
 
 1. Edit the `wincrashdetect.d/conf.yaml` file in the `conf.d/` folder at the root of your [Agent's configuration directory][2] to set `enabled: true`. See the [sample wincrashdetect.d/conf.yaml.example][3] for all available configuration options.
 
-2. Enable the Windows Crash Detection module in `C:\ProgramData\Datadog\system-probe.yaml` by setting the enabled flag to 'true':
+2. Enable the Windows Crash Detection module in `C:\ProgramData\Khulnasoft\system-probe.yaml` by setting the enabled flag to 'true':
 
    ```yaml
     windows_crash_detection:
@@ -44,11 +44,11 @@ The Windows Kernel Memory integration does not include any service checks.
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][5].
+Need help? Contact [Khulnasoft support][5].
 
 [1]: https://app.khulnasoft.com/account/settings#agent
 [2]: https://docs.khulnasoft.com/agent/guide/agent-configuration-files/#agent-configuration-directory
-[3]: https://github.com/KhulnaSoft/datadog-agent/blob/master/cmd/agent/dist/conf.d/wincrashdetect.d/conf.yaml.example
+[3]: https://github.com/KhulnaSoft/khulnasoft-agent/blob/master/cmd/agent/dist/conf.d/wincrashdetect.d/conf.yaml.example
 [4]: https://docs.khulnasoft.com/agent/guide/agent-commands/#start-stop-and-restart-the-agent
 [5]: https://docs.khulnasoft.com/help/
 [6]: https://docs.khulnasoft.com/agent/basic_agent_usage/windows/?tab=gui#agent-status-and-information

@@ -49,7 +49,7 @@
         "containers": [
           {
             "name": "dd-agent",
-            "image": "datadog/docker-dd-agent:massi_ingest_k8s_events",
+            "image": "khulnasoft/docker-dd-agent:massi_ingest_k8s_events",
             "ports": [
               {
                 "name": "dogstatsdport",
@@ -179,7 +179,7 @@
         "containers": [
           {
             "name": "dd-agent",
-            "image": "datadog/docker-dd-agent:massi_ingest_k8s_events",
+            "image": "khulnasoft/docker-dd-agent:massi_ingest_k8s_events",
             "ports": [
               {
                 "name": "dogstatsdport",
@@ -280,7 +280,7 @@
             "lastState": {},
             "ready": true,
             "restartCount": 0,
-            "image": "datadog/docker-dd-agent:massi_ingest_k8s_events",
+            "image": "khulnasoft/docker-dd-agent:massi_ingest_k8s_events",
             "imageID": "docker://22c8298aadea7bae69765758a88fc373118c9a0c332d23aa99869d4f84d75a8e",
             "containerID": "docker://1d6e5db3abbfbb69718899748a882e2519da5b5d798b4b6bf1ec7dd6b5f26a60"
           }
@@ -334,7 +334,7 @@
         "containers": [
           {
             "name": "dd-agent",
-            "image": "datadog/docker-dd-agent:massi_ingest_k8s_events",
+            "image": "khulnasoft/docker-dd-agent:massi_ingest_k8s_events",
             "ports": [
               {
                 "name": "dogstatsdport",
@@ -435,7 +435,7 @@
             "lastState": {},
             "ready": true,
             "restartCount": 0,
-            "image": "datadog/docker-dd-agent:massi_ingest_k8s_events",
+            "image": "khulnasoft/docker-dd-agent:massi_ingest_k8s_events",
             "imageID": "docker://22c8298aadea7bae69765758a88fc373118c9a0c332d23aa99869d4f84d75a8e",
             "containerID": "docker://9a4d1a5dc416b805f015efb2a0f310180ec3d9c7026ace523f29a1e5e8be2e2b"
           }
@@ -488,7 +488,7 @@
         "containers": [
           {
             "name": "dd-agent",
-            "image": "datadog/docker-dd-agent:massi_ingest_k8s_events",
+            "image": "khulnasoft/docker-dd-agent:massi_ingest_k8s_events",
             "ports": [
               {
                 "name": "dogstatsdport",
@@ -589,7 +589,7 @@
             "lastState": {},
             "ready": true,
             "restartCount": 0,
-            "image": "datadog/docker-dd-agent:massi_ingest_k8s_events",
+            "image": "khulnasoft/docker-dd-agent:massi_ingest_k8s_events",
             "imageID": "docker://22c8298aadea7bae69765758a88fc373118c9a0c332d23aa99869d4f84d75a8e",
             "containerID": "docker://32fc50ecfe24df055f6d56037acb966337eef7282ad5c203a1be58f2dd2fe743"
           }

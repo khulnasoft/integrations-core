@@ -10,7 +10,7 @@
         "processlist_id": 1532,
         "processlist_state": "executing",
         "processlist_user": "shopper_13",
-        "sql_text": "select * from datadog",
+        "sql_text": "select * from khulnasoft",
         "query_signature": "bbb771e694fe5689",
         "event_timer_end": 354301626064000,
         "event_timer_start": 353141155758000,

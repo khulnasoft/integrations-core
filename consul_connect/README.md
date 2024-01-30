@@ -2,13 +2,13 @@
 
 ## Overview
 
-Monitor your [Consul Connect][1] Envoy sidecar proxies with the [Datadog Envoy Integration][2]. The Consul Connect integration only supports [Consul Connect configured with Envoy][3]. 
+Monitor your [Consul Connect][1] Envoy sidecar proxies with the [Khulnasoft Envoy Integration][2]. The Consul Connect integration only supports [Consul Connect configured with Envoy][3]. 
 
 ## Setup
 
 ### Installation
 
-Install the [Datadog Agent][4] on your services running Consul Connect and follow the [Configuration](#configuration) instructions for your appropriate environment.
+Install the [Khulnasoft Agent][4] on your services running Consul Connect and follow the [Configuration](#configuration) instructions for your appropriate environment.
 
 ### Configuration
 Follow the instructions below to configure this check for an Agent running on a host. For containerized environments, see the [Containerized](#containerized) section.
@@ -34,7 +34,7 @@ Follow the [Envoy host][7] instructions to configure log collection.
 
 #### Containerized
 
-Follow the [Envoy containerized instructions][8] to configure your Datadog Agent for Envoy. 
+Follow the [Envoy containerized instructions][8] to configure your Khulnasoft Agent for Envoy. 
 
 ##### Metric collection
 
@@ -69,7 +69,7 @@ Consul Connect does not include any events.
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][15].
+Need help? Contact [Khulnasoft support][15].
 
 [1]: https://www.consul.io/docs/connect#connect
 [2]: https://docs.khulnasoft.com/integrations/envoy/

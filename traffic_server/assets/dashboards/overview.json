@@ -1,6 +1,6 @@
 {
-    "author_name": "Datadog",
-    "description": "## Traffic Server\n\nThis dashboard displays key HTTP, cache, and network metrics for your Traffic Server configuration, providing a high-level overview of your Traffic Server infrastructure at a quick glance. For further reading on Traffic Server:\n\n* [Datadog's Traffic Server integration docs](https://docs.khulnasoft.com/integrations/traffic_server/)\n* [Traffic Server docs](https://docs.trafficserver.apache.org/en/latest/index.html)\n* [How to configure the Stats over HTTP plugin in Traffic Server](https://docs.trafficserver.apache.org/en/latest/admin-guide/monitoring/statistics/accessing.en.html#stats-over-http)\n\nClone this template dashboard to make changes and add your own graph widgets. ",
+    "author_name": "Khulnasoft",
+    "description": "## Traffic Server\n\nThis dashboard displays key HTTP, cache, and network metrics for your Traffic Server configuration, providing a high-level overview of your Traffic Server infrastructure at a quick glance. For further reading on Traffic Server:\n\n* [Khulnasoft's Traffic Server integration docs](https://docs.khulnasoft.com/integrations/traffic_server/)\n* [Traffic Server docs](https://docs.trafficserver.apache.org/en/latest/index.html)\n* [How to configure the Stats over HTTP plugin in Traffic Server](https://docs.trafficserver.apache.org/en/latest/admin-guide/monitoring/statistics/accessing.en.html#stats-over-http)\n\nClone this template dashboard to make changes and add your own graph widgets. ",
     "layout_type": "ordered",
     "template_variables": [
         {
@@ -50,7 +50,7 @@
                     {
                         "definition": {
                             "background_color": "white",
-                            "content": "**For more information on setup and monitoring, check out the following**\n\n- [Datadog's Traffic Server integration docs](https://docs.khulnasoft.com/integrations/traffic_server/)\n- [Traffic Server docs](https://docs.trafficserver.apache.org/en/latest/index.html)\n- [How to configure the Stats over HTTP plugin in Traffic Server](https://docs.trafficserver.apache.org/en/latest/admin-guide/monitoring/statistics/accessing.en.html#stats-over-http)\n",
+                            "content": "**For more information on setup and monitoring, check out the following**\n\n- [Khulnasoft's Traffic Server integration docs](https://docs.khulnasoft.com/integrations/traffic_server/)\n- [Traffic Server docs](https://docs.trafficserver.apache.org/en/latest/index.html)\n- [How to configure the Stats over HTTP plugin in Traffic Server](https://docs.trafficserver.apache.org/en/latest/admin-guide/monitoring/statistics/accessing.en.html#stats-over-http)\n",
                             "font_size": "16",
                             "has_padding": true,
                             "show_tick": false,

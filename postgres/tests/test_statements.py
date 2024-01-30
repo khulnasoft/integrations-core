@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2021-present
+# (C) Khulnasoft, Inc. 2021-present
 # All rights reserved
 # Licensed under Simplified BSD License (see LICENSE)
 import datetime
@@ -113,7 +113,7 @@ def test_statement_metrics_version(integration_check, dbm_instance, version, exp
 
 
 @pytest.mark.parametrize("dbstrict,ignore_databases", [(True, []), (False, ['dogs']), (False, [])])
-@pytest.mark.parametrize("pg_stat_statements_view", ["pg_stat_statements", "datadog.pg_stat_statements()"])
+@pytest.mark.parametrize("pg_stat_statements_view", ["pg_stat_statements", "khulnasoft.pg_stat_statements()"])
 @pytest.mark.parametrize("track_io_timing_enabled", [True, False])
 def test_statement_metrics(
     aggregator,
@@ -398,7 +398,7 @@ def bob_conn():
 def dbm_instance(pg_instance):
     pg_instance['dbm'] = True
     pg_instance['min_collection_interval'] = 0.2
-    pg_instance['pg_stat_activity_view'] = "datadog.pg_stat_activity()"
+    pg_instance['pg_stat_activity_view'] = "khulnasoft.pg_stat_activity()"
     pg_instance['query_samples'] = {'enabled': True, 'run_sync': True, 'collection_interval': 0.2}
     pg_instance['query_activity'] = {'enabled': True, 'collection_interval': 0.2}
     pg_instance['query_metrics'] = {'enabled': True, 'run_sync': True, 'collection_interval': 0.2}
@@ -411,7 +411,7 @@ def dbm_instance_replica2(pg_instance):
     pg_instance['dbm'] = True
     pg_instance['port'] = PORT_REPLICA2
     pg_instance['min_collection_interval'] = 1
-    pg_instance['pg_stat_activity_view'] = "datadog.pg_stat_activity()"
+    pg_instance['pg_stat_activity_view'] = "khulnasoft.pg_stat_activity()"
     pg_instance['query_samples'] = {'enabled': True, 'run_sync': True, 'collection_interval': 1}
     pg_instance['query_activity'] = {'enabled': True, 'collection_interval': 1}
     pg_instance['query_metrics'] = {'enabled': True, 'run_sync': True, 'collection_interval': 0.2}
@@ -487,7 +487,7 @@ failed_explain_test_repeat_count = 5
         (
             "select * from persons",
             "error:explain-database_error-<class 'psycopg2.errors.InsufficientPrivilege'>",
-            "datadog.explain_statement_noaccess",
+            "khulnasoft.explain_statement_noaccess",
             failed_explain_test_repeat_count,
             None,
         ),
@@ -557,7 +557,7 @@ def test_failed_explain_handling(
     )
 
 
-@pytest.mark.parametrize("pg_stat_activity_view", ["pg_stat_activity", "datadog.pg_stat_activity()"])
+@pytest.mark.parametrize("pg_stat_activity_view", ["pg_stat_activity", "khulnasoft.pg_stat_activity()"])
 @pytest.mark.parametrize(
     "user,password,dbname,query,arg,expected_error_tag,expected_collection_errors,expected_statement_truncated,"
     "expected_warnings",
@@ -606,11 +606,11 @@ def test_failed_explain_handling(
             StatementTruncationState.not_truncated.value,
             [
                 'Unable to collect execution plans in dbname=dogs_nofunc. Check that the '
-                'function datadog.explain_statement exists in the database. See '
+                'function khulnasoft.explain_statement exists in the database. See '
                 'https://docs.khulnasoft.com/database_monitoring/setup_postgres/'
                 'troubleshooting#undefined-explain-function for more details: function '
-                'datadog.explain_statement(unknown) does not exist\nLINE 1: SELECT '
-                'datadog.explain_statement($stmt$SELECT * FROM pg_stat...\n               '
+                'khulnasoft.explain_statement(unknown) does not exist\nLINE 1: SELECT '
+                'khulnasoft.explain_statement($stmt$SELECT * FROM pg_stat...\n               '
                 '^\nHINT:  No function matches the given name and argument types. You might need to add '
                 'explicit type casts.\n'
                 '\n'
@@ -726,7 +726,7 @@ def test_statement_samples_collect(
         conn.close()
 
 
-@pytest.mark.parametrize("pg_stat_statements_view", ["pg_stat_statements", "datadog.pg_stat_statements()"])
+@pytest.mark.parametrize("pg_stat_statements_view", ["pg_stat_statements", "khulnasoft.pg_stat_statements()"])
 @pytest.mark.parametrize(
     "metadata,expected_metadata_payload",
     [
@@ -857,7 +857,7 @@ def test_statement_reported_hostname(
     assert metrics[0]['host'] == expected_hostname
 
 
-@pytest.mark.parametrize("pg_stat_activity_view", ["pg_stat_activity", "datadog.pg_stat_activity()"])
+@pytest.mark.parametrize("pg_stat_activity_view", ["pg_stat_activity", "khulnasoft.pg_stat_activity()"])
 @pytest.mark.parametrize(
     "user,password,dbname,query,blocking_query,arg,expected_out,expected_keys,expected_conn_out",
     [
@@ -1396,7 +1396,7 @@ def test_async_job_enabled(
         assert check.statement_metrics._job_loop_future is None
 
 
-@pytest.mark.parametrize("db_user", ["datadog", "khulnasoft_no_catalog"])
+@pytest.mark.parametrize("db_user", ["khulnasoft", "khulnasoft_no_catalog"])
 def test_load_pg_settings(aggregator, integration_check, dbm_instance, db_user):
     dbm_instance["username"] = db_user
     dbm_instance["dbname"] = "postgres"
@@ -1418,7 +1418,7 @@ def test_load_pg_settings(aggregator, integration_check, dbm_instance, db_user):
 
 
 def test_pg_settings_caching(aggregator, integration_check, dbm_instance):
-    dbm_instance["username"] = "datadog"
+    dbm_instance["username"] = "khulnasoft"
     dbm_instance["dbname"] = "postgres"
     check = integration_check(dbm_instance)
     assert not check.pg_settings, "pg_settings should not have been initialized yet"
@@ -1534,7 +1534,7 @@ def test_statement_samples_unique_plans_rate_limits(aggregator, integration_chec
     assert len(matching) > 0, "should have collected exactly at least one matching event"
 
 
-@pytest.mark.parametrize("pg_stat_activity_view", ["pg_stat_activity", "datadog.pg_stat_activity()"])
+@pytest.mark.parametrize("pg_stat_activity_view", ["pg_stat_activity", "khulnasoft.pg_stat_activity()"])
 @pytest.mark.parametrize("query_samples_enabled", [True, False])
 @pytest.mark.parametrize("query_activity_enabled", [True, False])
 @pytest.mark.parametrize(

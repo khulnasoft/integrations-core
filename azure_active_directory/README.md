@@ -3,17 +3,17 @@
 ## Overview
 
 Azure Active Directory is a cloud hosted Active Directory offering by Microsoft Azure.
-This integration allows you to ingest your [Azure AD activity logs][1] (audit and sign-in logs) to Datadog.
+This integration allows you to ingest your [Azure AD activity logs][1] (audit and sign-in logs) to Khulnasoft.
 
 ## Setup
 
 ### Installation
 
-This integration forwards logs to Datadog using Azure with Event Hubs. Configure Azure AD to forward activity logs to the event hub.
+This integration forwards logs to Khulnasoft using Azure with Event Hubs. Configure Azure AD to forward activity logs to the event hub.
 
 ### Configuration
 
-1. Set up the log forwarding pipeline from Azure to Datadog using Event Hubs by following the [Send Azure Logs to Datadog][2] guide.
+1. Set up the log forwarding pipeline from Azure to Khulnasoft using Event Hubs by following the [Send Azure Logs to Khulnasoft][2] guide.
 
 2. In Azure portal, select _Azure Active Directory > Monitoring > Audit logs_.
    
@@ -30,14 +30,14 @@ This integration forwards logs to Datadog using Azure with Event Hubs. Configure
    
 7. Select OK to exit the event hub configuration.
 
-8. Do one or both of the following. Datadog recommends selecting both.
+8. Do one or both of the following. Khulnasoft recommends selecting both.
 
    - To send audit logs, select the **AuditLogs** check box.
    - To send sign-in logs, select the **SignInLogs** check box.
   
 9. Select **Save**.
 
-Logs should start coming into Datadog within 15 minutes.
+Logs should start coming into Khulnasoft within 15 minutes.
 For more details on the setup, see the [Azure tutorial][3].
 
 ## Data Collected
@@ -58,11 +58,11 @@ Azure Active Directory does not include any metrics.
 
 ### Events
 
-Datadog sends credential expiry events, which grant visibility into credential expirations for Azure app registrations, Key Vault keys, Key Vault secrets, and Key Vault certificates. The Azure Active Directory integration must be installed to receive events for Azure app registrations. Receiving events from Azure also requires installation of the [Azure integration][7].
+Khulnasoft sends credential expiry events, which grant visibility into credential expirations for Azure app registrations, Key Vault keys, Key Vault secrets, and Key Vault certificates. The Azure Active Directory integration must be installed to receive events for Azure app registrations. Receiving events from Azure also requires installation of the [Azure integration][7].
 
 
 - **Expiration events** are sent 60, 30, 15, and 1 day(s) before credential expiration, and once after expiration.
-- **Missing permission events** are sent every 15 days. A missing permission event lists the Key Vaults for which Datadog has not been given permissions. If no changes have been made regarding Key Vault permissions in the previous 15-day cycle, the event notification is not sent again.
+- **Missing permission events** are sent every 15 days. A missing permission event lists the Key Vaults for which Khulnasoft has not been given permissions. If no changes have been made regarding Key Vault permissions in the previous 15-day cycle, the event notification is not sent again.
 
 You can view these events in [Event Explorer][5].
 
@@ -73,7 +73,7 @@ You can view these events in [Event Explorer][5].
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][4].
+Need help? Contact [Khulnasoft support][4].
 
 [1]: https://docs.microsoft.com/en-us/azure/active-directory/reports-monitoring/overview-reports#activity-reports
 [2]: https://docs.khulnasoft.com/logs/guide/azure-logging-guide/

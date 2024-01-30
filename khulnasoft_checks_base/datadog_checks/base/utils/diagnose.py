@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2023-present
+# (C) Khulnasoft, Inc. 2023-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 
@@ -34,12 +34,12 @@ class Diagnosis:
     #     // run-time
     #     RawError error
     # }
-    # defined in datadog-agent\\pkg\\diagnose\\diagnosis\\loader.go
+    # defined in khulnasoft-agent\\pkg\\diagnose\\diagnosis\\loader.go
     Result = namedtuple('Result', ['result', 'name', 'diagnosis', 'category', 'description', 'remediation', 'rawerror'])
 
     # defined in
-    # datadog-agent\\pkg\\diagnose\\diagnosis\\loader.go and
-    # datadog-agent\\rtloader\\include\\rtloader_types.h
+    # khulnasoft-agent\\pkg\\diagnose\\diagnosis\\loader.go and
+    # khulnasoft-agent\\rtloader\\include\\rtloader_types.h
     DIAGNOSIS_SUCCESS = 0
     DIAGNOSIS_FAIL = 1
     DIAGNOSIS_WARNING = 2

@@ -2,7 +2,7 @@
 
 ## Overview
 
-Get internal metrics from the Datadog Agent to create visualizations and monitors in Datadog.
+Get internal metrics from the Khulnasoft Agent to create visualizations and monitors in Khulnasoft.
 
 **Note:** The list of metrics collected by this integration may change between minor Agent versions. Such changes may not be mentioned in the Agent's changelog.
 
@@ -10,7 +10,7 @@ Get internal metrics from the Datadog Agent to create visualizations and monitor
 
 ### Installation
 
-The Agent Metrics integration, based on the [go_expvar][1] check, is included in the [Datadog Agent][2] package, so you don't need to install anything else on your servers.
+The Agent Metrics integration, based on the [go_expvar][1] check, is included in the [Khulnasoft Agent][2] package, so you don't need to install anything else on your servers.
 
 ### Configuration
 
@@ -38,11 +38,11 @@ The Agent Metrics integration does not include any service checks.
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][7].
+Need help? Contact [Khulnasoft support][7].
 
 [1]: https://docs.khulnasoft.com/integrations/go_expvar/
 [2]: https://app.khulnasoft.com/account/settings/agent/latest
-[3]: https://github.com/KhulnaSoft/datadog-agent/blob/master/cmd/agent/dist/conf.d/go_expvar.d/agent_stats.yaml.example
+[3]: https://github.com/KhulnaSoft/khulnasoft-agent/blob/master/cmd/agent/dist/conf.d/go_expvar.d/agent_stats.yaml.example
 [4]: https://docs.khulnasoft.com/agent/guide/agent-configuration-files/#agent-configuration-directory
 [5]: https://docs.khulnasoft.com/agent/guide/agent-commands/#start-stop-and-restart-the-agent
 [6]: https://docs.khulnasoft.com/agent/guide/agent-commands/#agent-status-and-information

@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2023-present
+# (C) Khulnasoft, Inc. 2023-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 import re
@@ -54,7 +54,7 @@ def test_changelog_since_to(fake_changelog, ddev, mocker):
     assert result.exit_code == 0
 
     expected_output = (
-        """## Datadog Agent version [7.39.0](https://github.com/KhulnaSoft/datadog-agent/blob/master/CHANGELOG.rst#7390)
+        """## Khulnasoft Agent version [7.39.0](https://github.com/KhulnaSoft/khulnasoft-agent/blob/master/CHANGELOG.rst#7390)
 
 * bar [2.0.0](https://github.com/KhulnaSoft/integrations-core/blob/master/bar/CHANGELOG.md) **BREAKING CHANGE**
 """
@@ -73,15 +73,15 @@ def repo_with_fake_changelog(repo_with_history, config_file):
     # ruff: noqa: E501
     expected_output = (
         """
-## Datadog Agent version [7.41.0](https://github.com/KhulnaSoft/datadog-agent/blob/master/CHANGELOG.rst#7410)
+## Khulnasoft Agent version [7.41.0](https://github.com/KhulnaSoft/khulnasoft-agent/blob/master/CHANGELOG.rst#7410)
 
 * khulnasoft_checks_downloader [4.0.0](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_downloader/CHANGELOG.md)
 
-## Datadog Agent version [7.40.0](https://github.com/KhulnaSoft/datadog-agent/blob/master/CHANGELOG.rst#7400)
+## Khulnasoft Agent version [7.40.0](https://github.com/KhulnaSoft/khulnasoft-agent/blob/master/CHANGELOG.rst#7400)
 
 * onlywin [1.0.0](https://github.com/KhulnaSoft/integrations-core/blob/master/onlywin/CHANGELOG.md)
 
-## Datadog Agent version [7.39.0](https://github.com/KhulnaSoft/datadog-agent/blob/master/CHANGELOG.rst#7390)
+## Khulnasoft Agent version [7.39.0](https://github.com/KhulnaSoft/khulnasoft-agent/blob/master/CHANGELOG.rst#7390)
 
 * bar [2.0.0](https://github.com/KhulnaSoft/integrations-core/blob/master/bar/CHANGELOG.md) **BREAKING CHANGE**
 """
@@ -90,7 +90,7 @@ def repo_with_fake_changelog(repo_with_history, config_file):
         "**BREAKING CHANGE**"
         """
 
-## Datadog Agent version [7.38.0](https://github.com/KhulnaSoft/datadog-agent/blob/master/CHANGELOG.rst#7380)
+## Khulnasoft Agent version [7.38.0](https://github.com/KhulnaSoft/khulnasoft-agent/blob/master/CHANGELOG.rst#7380)
 
 * foo [1.5.0](https://github.com/KhulnaSoft/integrations-core/blob/master/foo/CHANGELOG.md)
 * bar [1.0.0](https://github.com/KhulnaSoft/integrations-core/blob/master/bar/CHANGELOG.md)

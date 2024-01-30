@@ -13,7 +13,7 @@ interactions:
       user-agent:
       - python-httpx/0.24.1
     method: GET
-    uri: https://dd-integrations-core-wheels-build-stable.khulnasoft.com/targets/simple/datadog-disk/index.html
+    uri: https://dd-integrations-core-wheels-build-stable.khulnasoft.com/targets/simple/khulnasoft-disk/index.html
   response:
     content: '<a href=''khulnasoft_disk-2.0.1-py2.py3-none-any.whl''>khulnasoft_disk-2.0.1-py2.py3-none-any.whl</a><br
       />

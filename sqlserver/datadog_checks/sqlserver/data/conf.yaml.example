@@ -3,7 +3,7 @@
 init_config:
 
     ## @param custom_metrics - list of mappings - optional
-    ## Collect custom metrics and send them to Datadog based on
+    ## Collect custom metrics and send them to Khulnasoft based on
     ## your SQL server counters.
     ##
     ## See https://docs.khulnasoft.com/integrations/guide/collect-sql-server-custom-metrics/
@@ -45,12 +45,12 @@ instances:
   - host: <HOST>,<PORT>
 
     ## @param username - string - optional
-    ## Username for the Datadog-SQL server check user. It will be ignored if using Windows authentication.
+    ## Username for the Khulnasoft-SQL server check user. It will be ignored if using Windows authentication.
     #
     # username: <USERNAME>
 
     ## @param password - string - optional
-    ## Password for the Datadog-SQL server check user. It will be ignored if using Windows authentication.
+    ## Password for the Khulnasoft-SQL server check user. It will be ignored if using Windows authentication.
     #
     # password: <PASSWORD>
 
@@ -159,14 +159,14 @@ instances:
     ## @param include_primary_log_shipping_metrics - boolean - optional - default: false
     ## Include log_shipping_primary metrics for a log shipping setup. Required to run
     ## against the primary instance in a transaction log shipping configuration. Note that
-    ## the Datadog user needs to be present in msdb and must be added to the db_datareader role.
+    ## the Khulnasoft user needs to be present in msdb and must be added to the db_datareader role.
     #
     # include_primary_log_shipping_metrics: false
 
     ## @param include_secondary_log_shipping_metrics - boolean - optional - default: false
     ## Include log_shipping_secondary metrics for a log shipping setup. Required to run
     ## against a secondary instance in a transaction log shipping configuration. Note that
-    ## the Datadog user needs to be present in msdb and must be added to the db_datareader role.
+    ## the Khulnasoft user needs to be present in msdb and must be added to the db_datareader role.
     #
     # include_secondary_log_shipping_metrics: false
 
@@ -344,13 +344,13 @@ instances:
     ## Limit the number of characters of the text of a stored procedure that is collected.
     ## The characters limit is applicable to both query metrics and query samples.
     ## Please be aware that increasing this value may affect performance,
-    ## as more data will be gathered from the database and sent to Datadog.
+    ## as more data will be gathered from the database and sent to Khulnasoft.
     #
     # stored_procedure_characters_limit: 500
 
     ## This block defines the configuration for AWS RDS and Aurora instances.
     ##
-    ## Complete this section if you have installed the Datadog AWS Integration
+    ## Complete this section if you have installed the Khulnasoft AWS Integration
     ## (https://docs.khulnasoft.com/integrations/amazon_web_services) to enrich instances
     ## with SQL Server integration telemetry.
     ##
@@ -369,7 +369,7 @@ instances:
 
     ## This block defines the configuration for Google Cloud SQL instances.
     ##
-    ## Complete this section if you have installed the Datadog GCP Integration
+    ## Complete this section if you have installed the Khulnasoft GCP Integration
     ## (https://docs.khulnasoft.com/integrations/google_cloud_platform) to enrich instances
     ## with SQL Server integration telemetry.
     ##
@@ -396,7 +396,7 @@ instances:
     ## This block defines the configuration for Azure Managed Instance, Azure SQL Database or
     ## SQLServer on Virtual Machines.
     ##
-    ## Complete this section if you have installed the Datadog Azure Integration
+    ## Complete this section if you have installed the Khulnasoft Azure Integration
     ## (https://docs.khulnasoft.com/integrations/azure) to enrich instances
     ## with SQL Server integration telemetry.
     ##
@@ -680,7 +680,7 @@ instances:
 ##                      Overrides any `service` defined in the `init_config` section.
 ## tags - optional - Add tags to the collected logs.
 ##
-## Discover Datadog log collection: https://docs.khulnasoft.com/logs/log_collection/
+## Discover Khulnasoft log collection: https://docs.khulnasoft.com/logs/log_collection/
 #
 # logs:
 #   - type: file

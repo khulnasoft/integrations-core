@@ -1,5 +1,5 @@
 {
-    "author_name": "Datadog",
+    "author_name": "Khulnasoft",
     "description": "This dashboard provides an overview of OpenLDAP metrics from the `cn=Monitor` backend of your OpenLDAP servers. \n\nFor more information, see:\n\n- Our [official OpenLDAP documentation](https://docs.khulnasoft.com/integrations/openldap/)",
     "layout_type": "ordered",
     "template_variables": [
@@ -21,7 +21,7 @@
         {
             "definition": {
                 "background_color": "white",
-                "content": "## About OpenLDAP\nThis dashboard shows you the status of your OpenLDAP server, as well as its connections, operations, threads, and logs to help you monitor and maintain the health of your database.\n\n##### [Official Datadog OpenLDAP documentation \u2197](https://docs.khulnasoft.com/integrations/openldap/)\n\nYou can clone this dashboard and modify its contents or copy and paste widgets to create your own visualizations for your OpenLDAP server",
+                "content": "## About OpenLDAP\nThis dashboard shows you the status of your OpenLDAP server, as well as its connections, operations, threads, and logs to help you monitor and maintain the health of your database.\n\n##### [Official Khulnasoft OpenLDAP documentation \u2197](https://docs.khulnasoft.com/integrations/openldap/)\n\nYou can clone this dashboard and modify its contents or copy and paste widgets to create your own visualizations for your OpenLDAP server",
                 "font_size": "14",
                 "has_padding": true,
                 "show_tick": false,

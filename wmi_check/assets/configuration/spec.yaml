@@ -27,7 +27,7 @@ files:
                                 The standard properties are also available on the MSDN docs
                                 for each class.
 
-         * <METRIC_NAME> is the name you want to show up in Datadog.
+         * <METRIC_NAME> is the name you want to show up in Khulnasoft.
 
          * <METRIC_TYPE> is from the standard choices for all agent checks, such as gauge, rate, histogram or counter.
       value:

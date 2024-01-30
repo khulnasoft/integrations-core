@@ -1,4 +1,4 @@
-[env.collectors.datadog-checks]
+[env.collectors.khulnasoft-checks]
 
 [[envs.default.matrix]]
 python = ["2.7", "3.11"]
@@ -8,7 +8,7 @@ version = ["1.12", "1.13", "vts"]
 matrix.version.env-vars = [
   { key = "NGINX_IMAGE", value = "nginx:1.12", if = ["1.12"] },
   { key = "NGINX_IMAGE", value = "nginx:1.13", if = ["1.13"] },
-  { key = "NGINX_IMAGE", value = "datadog/docker-library:nginx-vts", if = ["vts"] },
+  { key = "NGINX_IMAGE", value = "khulnasoft/docker-library:nginx-vts", if = ["vts"] },
 ]
 
 [envs.latest.env-vars]

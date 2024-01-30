@@ -1,7 +1,7 @@
 [overrides.display-name]
-khulnasoft_checks_base = "Datadog Checks Base"
-khulnasoft_checks_dev = "Datadog Checks Dev"
-khulnasoft_checks_downloader = "Datadog Checks Downloader"
+khulnasoft_checks_base = "Khulnasoft Checks Base"
+khulnasoft_checks_dev = "Khulnasoft Checks Dev"
+khulnasoft_checks_downloader = "Khulnasoft Checks Downloader"
 ecs_fargate = "Amazon ECS Fargate"
 fluentd = "Fluentd"
 kube_scheduler = "Kubernetes Scheduler"

@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2019-present
+# (C) Khulnasoft, Inc. 2019-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 from khulnasoft_checks.dev import get_here
@@ -14,7 +14,7 @@ KAFKA_METRIC = {
         u'clustername': u'demo',
         u'process_name': u'apiserver',
         u'clusterid': u'7616098736519857348',
-        u'fqdn': u'mapr-lab-2-ghs6.c.datadog-integrations-lab.internal',
+        u'fqdn': u'mapr-lab-2-ghs6.c.khulnasoft-integrations-lab.internal',
     },
 }
 
@@ -26,7 +26,7 @@ DISTRIBUTION_METRIC = {
         "table_path": "/var/mapr/mapr.monitoring/tsdb-meta",
         "noindex": "//primary",
         "rpc_type": "put",
-        "fqdn": "mapr-lab-2-dhk4.c.datadog-integrations-lab.internal",
+        "fqdn": "mapr-lab-2-dhk4.c.khulnasoft-integrations-lab.internal",
         "clusterid": "7616098736519857348",
         "clustername": "demo",
     },

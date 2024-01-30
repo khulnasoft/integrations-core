@@ -9,7 +9,7 @@ It reports the metrics collected from `tegrastats`.
 
 ### Installation
 
-The Nvidia Jetson check is included in the [Datadog Agent][2] package.
+The Nvidia Jetson check is included in the [Khulnasoft Agent][2] package.
 No additional installation is needed on your server.
 
 ### Configuration
@@ -48,11 +48,11 @@ The Nvidia Jetson integration does not include any events.
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][7].
+Need help? Contact [Khulnasoft support][7].
 
 [1]: https://developer.nvidia.com/embedded-computing
 [2]: https://app.khulnasoft.com/account/settings/agent/latest
-[3]: https://github.com/KhulnaSoft/datadog-agent/blob/master/cmd/agent/dist/conf.d/jetson.d/conf.yaml.example
+[3]: https://github.com/KhulnaSoft/khulnasoft-agent/blob/master/cmd/agent/dist/conf.d/jetson.d/conf.yaml.example
 [4]: https://docs.khulnasoft.com/agent/guide/agent-commands/#start-stop-restart-the-agent
 [5]: https://docs.khulnasoft.com/agent/guide/agent-commands/#agent-status-and-information
 [6]: https://github.com/KhulnaSoft/integrations-core/blob/master/nvidia_jetson/metadata.csv

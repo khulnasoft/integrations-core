@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2022-present
+# (C) Khulnasoft, Inc. 2022-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 import os
@@ -149,7 +149,7 @@ class RootConfig(LazilyParsedConfig):
                     'core': os.path.join('~', 'dd', 'integrations-core'),
                     'extras': os.path.join('~', 'dd', 'integrations-extras'),
                     'marketplace': os.path.join('~', 'dd', 'marketplace'),
-                    'agent': os.path.join('~', 'dd', 'datadog-agent'),
+                    'agent': os.path.join('~', 'dd', 'khulnasoft-agent'),
                 }
 
         return self._field_repos
@@ -176,8 +176,8 @@ class RootConfig(LazilyParsedConfig):
                 self._field_agents = agents
             else:
                 self._field_agents = self.raw_data['agents'] = {
-                    'dev': {'docker': 'datadog/agent-dev:master', 'local': 'latest'},
-                    '7': {'docker': 'datadog/agent:7', 'local': '7'},
+                    'dev': {'docker': 'khulnasoft/agent-dev:master', 'local': 'latest'},
+                    '7': {'docker': 'khulnasoft/agent:7', 'local': '7'},
                 }
 
         return self._field_agents

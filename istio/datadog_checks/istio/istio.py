@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2018-Present
+# (C) Khulnasoft, Inc. 2018-Present
 # All rights reserved
 # Licensed under Simplified BSD License (see LICENSE)
 from six import PY2

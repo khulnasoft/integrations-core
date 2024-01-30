@@ -31,7 +31,7 @@ files:
             enabled: true
             value:
               type: string
-              example: datadog
+              example: khulnasoft
               display_default: null
 
           - name: password
@@ -322,7 +322,7 @@ files:
 
                   Note that some of these require the `user` defined for this instance
                   to have PROCESS and SELECT privileges. Take a look at the
-                  MySQL integration tile in the Datadog Web UI for further instructions.
+                  MySQL integration tile in the Khulnasoft Web UI for further instructions.
                 value:
                   type: boolean
                   example: false
@@ -434,20 +434,20 @@ files:
                   statements sent from connections that do not have a default schema configured.
                 value:
                   type: string
-                  example: datadog.explain_statement
+                  example: khulnasoft.explain_statement
               - name: events_statements_enable_procedure
                 description: |
                   Overrides the default procedure used for enabling events statements consumers.
                 value:
                   type: string
-                  example: datadog.enable_events_statements_consumers
+                  example: khulnasoft.enable_events_statements_consumers
               - name: events_statements_temp_table_name
                 description: |
                   Overrides the default fully qualified name for the temp table the agent creates while collecting
                   samples.
                 value:
                   type: string
-                  example: datadog.temp_events
+                  example: khulnasoft.temp_events
               - name: collection_strategy_cache_maxsize
                 description: |
                   Sets the max size of the cache used for caching collection strategies. This value should be increased
@@ -482,7 +482,7 @@ files:
             description: |
               This block defines the configuration for AWS RDS and Aurora instances. 
               
-              Complete this section if you have installed the Datadog AWS Integration 
+              Complete this section if you have installed the Khulnasoft AWS Integration 
               (https://docs.khulnasoft.com/integrations/amazon_web_services) to enrich instances 
               with MySQL integration telemetry.
               
@@ -503,7 +503,7 @@ files:
             description: |
               This block defines the configuration for Google Cloud SQL instances.
               
-              Complete this section if you have installed the Datadog GCP Integration 
+              Complete this section if you have installed the Khulnasoft GCP Integration 
               (https://docs.khulnasoft.com/integrations/google_cloud_platform) to enrich instances 
               with MySQL integration telemetry.
               
@@ -532,7 +532,7 @@ files:
             description: |
               This block defines the configuration for Azure Database for MySQL.
               
-              Complete this section if you have installed the Datadog Azure Integration 
+              Complete this section if you have installed the Khulnasoft Azure Integration 
               (https://docs.khulnasoft.com/integrations/azure) to enrich instances 
               with MySQL integration telemetry.
               
@@ -668,7 +668,7 @@ files:
             hidden: true
             description: |
               Set to `true` to enable logging of original unobfuscated SQL queries when obfuscation errors occur.
-              For security purposes, it is recommended to use this option for debugging only when requested by Datadog Support.
+              For security purposes, it is recommended to use this option for debugging only when requested by Khulnasoft Support.
               Note: This option only applies when `dbm` is enabled.
             value:
               type: boolean
@@ -678,7 +678,7 @@ files:
             hidden: true
             description: |
               Set to `true` to enable logging of original unobfuscated SQL plans when obfuscation errors occur.
-              For security purposes, it is recommended to use this option for debugging only when requested by Datadog Support.
+              For security purposes, it is recommended to use this option for debugging only when requested by Khulnasoft Support.
               Note: This option only applies when `dbm` is enabled.
             value:
               type: boolean

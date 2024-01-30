@@ -2,13 +2,13 @@
 
 ## Overview
 
-Use AWS Identity and Access Management (IAM) Access Analyzer across your Amazon account to continuously analyze IAM permissions granted with any of your account policies. Datadog integrates with Amazon IAM Access Analyzer using a Lambda function that ships its findings as logs to Datadog.
+Use AWS Identity and Access Management (IAM) Access Analyzer across your Amazon account to continuously analyze IAM permissions granted with any of your account policies. Khulnasoft integrates with Amazon IAM Access Analyzer using a Lambda function that ships its findings as logs to Khulnasoft.
 
 ## Setup
 
 ### Log collection
 
-1. If you haven't already, set up the [Datadog Forwarder][1] Lambda function.
+1. If you haven't already, set up the [Khulnasoft Forwarder][1] Lambda function.
 
 2. Create a new rule with type `Rule with an event pattern` in AWS EventBridge.
 
@@ -20,11 +20,11 @@ Use AWS Identity and Access Management (IAM) Access Analyzer across your Amazon 
     }
     ```
 
-4. Select `AWS service` to use as the target type. Select `Lambda function` as the target and select the Datadog Forwarder Lambda or enter the ARN.
+4. Select `AWS service` to use as the target type. Select `Lambda function` as the target and select the Khulnasoft Forwarder Lambda or enter the ARN.
 
 5. Save your rule.
 
-6. Once the AWS Access Analyzer runs and produces findings, the events will be picked up by the Datadog Lambda Forwarder tagged with `source:access-analyzer`. See the [Log Explorer][2] to start exploring your logs.
+6. Once the AWS Access Analyzer runs and produces findings, the events will be picked up by the Khulnasoft Lambda Forwarder tagged with `source:access-analyzer`. See the [Log Explorer][2] to start exploring your logs.
 
 ## Data Collected
 
@@ -46,7 +46,7 @@ This integration does not include any events.
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][3].
+Need help? Contact [Khulnasoft support][3].
 
 [1]: /logs/guide/forwarder/
 [2]: https://app.khulnasoft.com/logs?query=source%3Aaccess-analyzer

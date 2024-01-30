@@ -2,7 +2,7 @@
 
 ## Overview
 
-This check monitors [Calico][1] through the Datadog Agent.
+This check monitors [Calico][1] through the Khulnasoft Agent.
 
 The Calico check sends metrics concerning network and security in a Kubernetes cluster set up with Calico.
 
@@ -10,7 +10,7 @@ The Calico check sends metrics concerning network and security in a Kubernetes c
 
 ### Installation
 
-The Calico check is included in the [Datadog Agent][2] package. 
+The Calico check is included in the [Khulnasoft Agent][2] package. 
 
 #### Installation with a Kubernetes cluster-based Agent
 
@@ -84,9 +84,9 @@ To configure this check for an Agent running on a host:
 
 Since Calico structure is set up in a Kubernetes cluster, it is built with deployments, pods, and services. The Kubernetes integration fetches logs from containers.
 
-After setting up the [Kubernetes][12] integration, Calico logs become available in the Datadog Log Explorer.
+After setting up the [Kubernetes][12] integration, Calico logs become available in the Khulnasoft Log Explorer.
 
-Collecting logs is disabled by default in the Datadog Agent. Enable it in your `datadog.yaml` file:
+Collecting logs is disabled by default in the Khulnasoft Agent. Enable it in your `khulnasoft.yaml` file:
 
    ```yaml
    logs_enabled: true
@@ -109,7 +109,7 @@ For containerized environments, see the [Autodiscovery Integration Templates][13
 
 ##### Log collection
 
-Collecting logs is disabled by default in the Datadog Agent. To enable it, see [Kubernetes Log Collection][14].
+Collecting logs is disabled by default in the Khulnasoft Agent. To enable it, see [Kubernetes Log Collection][14].
 
 | Parameter      | Value                                                  |
 | -------------- | ------------------------------------------------------ |
@@ -137,13 +137,13 @@ See [service_checks.json][7] for a list of service checks provided by this integ
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][8].
+Need help? Contact [Khulnasoft support][8].
 
 ## Further Reading
 
 Additional helpful documentation, links, and articles:
 
-- [Monitor Calico with Datadog][15]
+- [Monitor Calico with Khulnasoft][15]
 
 [1]: https://www.tigera.io/project-calico/
 [2]: https://app.khulnasoft.com/account/settings/agent/latest
@@ -159,4 +159,4 @@ Additional helpful documentation, links, and articles:
 [12]: https://docs.khulnasoft.com/agent/kubernetes
 [13]: https://docs.khulnasoft.com/agent/docker/integrations/?tab=docker
 [14]: https://docs.khulnasoft.com/agent/kubernetes/log/?tab=containerinstallation#setup
-[15]: https://www.khulnasoft.com/blog/monitor-calico-with-datadog/
+[15]: https://www.khulnasoft.com/blog/monitor-calico-with-khulnasoft/

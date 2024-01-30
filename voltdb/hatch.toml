@@ -1,4 +1,4 @@
-[env.collectors.datadog-checks]
+[env.collectors.khulnasoft-checks]
 check-types = false
 mypy-args = [
     "--py2",
@@ -29,6 +29,6 @@ matrix.version.env-vars = [
     { key = "VOLTDB_VERSION", value = "8.4.2", if = ["8.4"] },
     { key = "VOLTDB_IMAGE", value = "voltdb/voltdb-community:8.4.2", if = ["8.4"] },
     { key = "VOLTDB_VERSION", value = "10.0.0", if = ["10.0"] },
-    { key = "VOLTDB_IMAGE", value = "datadog/docker-library:voltdb_10_0", if = ["10.0"] }
+    { key = "VOLTDB_IMAGE", value = "khulnasoft/docker-library:voltdb_10_0", if = ["10.0"] }
 ]
 matrix.tls.env-vars = "TLS_ENABLED"

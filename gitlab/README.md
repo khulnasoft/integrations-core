@@ -12,13 +12,13 @@ For more in-depth monitoring of your GitLab pipelines, check out [CI Pipeline Vi
 
 ## Setup
 
-This OpenMetrics-based integration has a latest mode (enabled by setting `openmetrics_endpoint` to point to the target endpoint) and a legacy mode (enabled by setting `prometheus_url` instead). To get all the most up-to-date features, Datadog recommends enabling the latest mode. For more information, see [Latest and Legacy Versioning For OpenMetrics-based Integrations][18].
+This OpenMetrics-based integration has a latest mode (enabled by setting `openmetrics_endpoint` to point to the target endpoint) and a legacy mode (enabled by setting `prometheus_url` instead). To get all the most up-to-date features, Khulnasoft recommends enabling the latest mode. For more information, see [Latest and Legacy Versioning For OpenMetrics-based Integrations][18].
 
 Metrics marked as `[OpenMetricsV1]` or `[OpenMetricsV2]` are only available using the corresponding mode of the GitLab integration. All other metrics are collected by both modes. 
 
 ### Installation
 
-The GitLab check is included in the [Datadog Agent][2] package, so you don't need to install anything else on your GitLab servers.
+The GitLab check is included in the [Khulnasoft Agent][2] package, so you don't need to install anything else on your GitLab servers.
 
 ### Configuration
 
@@ -47,7 +47,7 @@ See the [sample gitlab.d/conf.yaml][5] for all available configuration options. 
 
 ##### Log collection
 
-1. Collecting logs is disabled by default in the Datadog Agent, enable it in your `datadog.yaml` file:
+1. Collecting logs is disabled by default in the Khulnasoft Agent, enable it in your `khulnasoft.yaml` file:
 
    ```yaml
    logs_enabled: true
@@ -90,7 +90,7 @@ For containerized environments, see the [Autodiscovery Integration Templates][9]
 
 ##### Log collection
 
-Collecting logs is disabled by default in the Datadog Agent. To enable it, see [Kubernetes Log Collection][10].
+Collecting logs is disabled by default in the Khulnasoft Agent. To enable it, see [Kubernetes Log Collection][10].
 
 | Parameter      | Value                                       |
 | -------------- | ------------------------------------------- |
@@ -119,7 +119,7 @@ See [service_checks.json][13] for a list of service checks provided by this inte
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][14].
+Need help? Contact [Khulnasoft support][14].
 
 [1]: https://docs.gitlab.com/ee/administration/monitoring/prometheus
 [2]: https://app.khulnasoft.com/account/settings/agent/latest

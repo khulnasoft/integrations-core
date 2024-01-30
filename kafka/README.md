@@ -4,7 +4,7 @@
 
 ## Overview
 
-Connect Kafka to Datadog to:
+Connect Kafka to Khulnasoft to:
 
 - Visualize the performance of your cluster in real time.
 - Correlate the performance of Kafka with the rest of your applications.
@@ -22,7 +22,7 @@ If you are running a version older than that, see the [Agent v5.2.x released sam
 
 ### Installation
 
-The Agent's Kafka check is included in the [Datadog Agent][4] package, so you don't need to install anything else on your Kafka nodes.
+The Agent's Kafka check is included in the [Khulnasoft Agent][4] package, so you don't need to install anything else on your Kafka nodes.
 
 The check collects metrics from JMX with [JMXFetch][5]. A JVM is needed on each kafka node so the Agent can run JMXFetch. The same JVM that Kafka uses can be used for this.
 
@@ -57,7 +57,7 @@ _Available for Agent versions >6.0_
      log4j.appender.R.layout.ConversionPattern=%d{yyyy-MM-dd HH:mm:ss} %-5p %c{1}:%L - %m%n
    ```
 
-2. By default, the Datadog integration pipeline supports the following conversion patterns:
+2. By default, the Khulnasoft integration pipeline supports the following conversion patterns:
 
    ```text
      %d{yyyy-MM-dd HH:mm:ss} %-5p %c{1}:%L - %m%n
@@ -68,7 +68,7 @@ _Available for Agent versions >6.0_
 
     Clone and edit the [integration pipeline][10] if you have a different format.
 
-3. Collecting logs is disabled by default in the Datadog Agent, enable it in your `datadog.yaml` file:
+3. Collecting logs is disabled by default in the Khulnasoft Agent, enable it in your `khulnasoft.yaml` file:
 
    ```yaml
    logs_enabled: true
@@ -104,7 +104,7 @@ For containerized environments, see the [Autodiscovery with JMX][11] guide.
 
 _Available for Agent versions >6.0_
 
-Collecting logs is disabled by default in the Datadog Agent. To enable it, see [Kubernetes Log Collection][12].
+Collecting logs is disabled by default in the Khulnasoft Agent. To enable it, see [Kubernetes Log Collection][12].
 
 | Parameter      | Value                                              |
 | -------------- | -------------------------------------------------- |
@@ -154,7 +154,7 @@ See [service_checks.json][15] for a list of service checks provided by this inte
 
 - [Monitoring Kafka performance metrics][19]
 - [Collecting Kafka performance metrics][20]
-- [Monitoring Kafka with Datadog][21]
+- [Monitoring Kafka with Khulnasoft][21]
 - [Kafka Overview on the Knowledge Center][23]
 
 [1]: https://raw.githubusercontent.com/KhulnaSoft/integrations-core/master/kafka/images/kafka_dashboard.png
@@ -176,7 +176,7 @@ See [service_checks.json][15] for a list of service checks provided by this inte
 [17]: https://docs.khulnasoft.com/integrations/guide/agent-failed-to-retrieve-rmiserver-stub/
 [19]: https://www.khulnasoft.com/blog/monitoring-kafka-performance-metrics
 [20]: https://www.khulnasoft.com/blog/collecting-kafka-performance-metrics
-[21]: https://www.khulnasoft.com/blog/monitor-kafka-with-datadog
+[21]: https://www.khulnasoft.com/blog/monitor-kafka-with-khulnasoft
 [22]: https://raw.githubusercontent.com/KhulnaSoft/dd-agent/5.2.1/conf.d/kafka.yaml.example
 [23]: https://www.khulnasoft.com/knowledge-center/apache-kafka/
 [24]: https://www.khulnasoft.com/product/data-streams-monitoring/

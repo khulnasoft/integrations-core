@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2018-present
+# (C) Khulnasoft, Inc. 2018-present
 # All rights reserved
 # Licensed under Simplified BSD License (see LICENSE)
 
@@ -261,15 +261,15 @@ def test_submitted_metrics_count(aggregator):
 
     aggregator.assert_metric('snmp.sysUpTimeInstance', count=1)
     aggregator.assert_metric(
-        'datadog.snmp.submitted_metrics',
+        'khulnasoft.snmp.submitted_metrics',
         value=total_snmp_submitted_metrics,
         metric_type=aggregator.GAUGE,
         count=1,
         tags=telemetry_tags,
     )
-    aggregator.assert_metric('datadog.snmp.check_duration', metric_type=aggregator.GAUGE, count=1, tags=telemetry_tags)
+    aggregator.assert_metric('khulnasoft.snmp.check_duration', metric_type=aggregator.GAUGE, count=1, tags=telemetry_tags)
     aggregator.assert_metric(
-        'datadog.snmp.check_interval', metric_type=aggregator.MONOTONIC_COUNT, count=1, tags=telemetry_tags
+        'khulnasoft.snmp.check_interval', metric_type=aggregator.MONOTONIC_COUNT, count=1, tags=telemetry_tags
     )
     common.assert_common_device_metrics(aggregator, tags=common.CHECK_TAGS)
     aggregator.all_metrics_asserted()
@@ -412,7 +412,7 @@ def test_table_v3_MD5_DES(aggregator):
     instance = common.generate_v3_instance_config(
         common.TABULAR_OBJECTS,
         name=name,
-        user='datadog{}{}'.format(auth.upper(), priv.upper()),
+        user='khulnasoft{}{}'.format(auth.upper(), priv.upper()),
         auth=common.AUTH_PROTOCOLS[auth],
         auth_key=common.AUTH_KEY,
         priv=common.PRIV_PROTOCOLS[priv],
@@ -452,7 +452,7 @@ def test_table_v3_MD5_AES(aggregator):
     instance = common.generate_v3_instance_config(
         common.TABULAR_OBJECTS,
         name=name,
-        user='datadog{}{}'.format(auth.upper(), priv.upper()),
+        user='khulnasoft{}{}'.format(auth.upper(), priv.upper()),
         auth=auth,
         auth_key=common.AUTH_KEY,
         priv=priv,
@@ -491,7 +491,7 @@ def test_table_v3_SHA_DES(aggregator):
     instance = common.generate_v3_instance_config(
         common.TABULAR_OBJECTS,
         name=name,
-        user='datadog{}{}'.format(auth.upper(), priv.upper()),
+        user='khulnasoft{}{}'.format(auth.upper(), priv.upper()),
         auth=auth,
         auth_key=common.AUTH_KEY,
         priv=priv,
@@ -530,7 +530,7 @@ def test_table_v3_SHA_AES(aggregator):
     instance = common.generate_v3_instance_config(
         common.TABULAR_OBJECTS,
         name=name,
-        user='datadog{}{}'.format(auth.upper(), priv.upper()),
+        user='khulnasoft{}{}'.format(auth.upper(), priv.upper()),
         auth=common.AUTH_PROTOCOLS[auth],
         auth_key=common.AUTH_KEY,
         priv=common.PRIV_PROTOCOLS[priv],

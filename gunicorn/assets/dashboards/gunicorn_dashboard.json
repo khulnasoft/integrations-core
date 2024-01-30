@@ -1,6 +1,6 @@
 {
     "title": "Gunicorn - Overview",
-    "description": "This dashboard provides a high-level overview of Gunicorn health and performance, including request duration, resource utilization, and HTTP status code metrics, so you can keep tabs on how your web application is handling traffic. Further reading on Gunicorn monitoring:\n\n- [Datadog's Gunicorn integration docs](https://docs.khulnasoft.com/integrations/gunicorn/)\n\n- [How to monitor Gunicorn with Datadog](https://www.khulnasoft.com/blog/monitor-gunicorn-performance/)\n\nClone this template dashboard to make changes and add your own graph widgets.",
+    "description": "This dashboard provides a high-level overview of Gunicorn health and performance, including request duration, resource utilization, and HTTP status code metrics, so you can keep tabs on how your web application is handling traffic. Further reading on Gunicorn monitoring:\n\n- [Khulnasoft's Gunicorn integration docs](https://docs.khulnasoft.com/integrations/gunicorn/)\n\n- [How to monitor Gunicorn with Khulnasoft](https://www.khulnasoft.com/blog/monitor-gunicorn-performance/)\n\nClone this template dashboard to make changes and add your own graph widgets.",
     "widgets": [
         {
             "id": 0,

@@ -24,7 +24,7 @@ tests:
   sample: "2018-07-05 10:08:08 GMT | INFO | (runner.go:309 in work) | Done running check network"
   result:
     custom:
-      datadog:
+      khulnasoft:
         process: "work"
       level: "INFO"
       lineno: 309.0
@@ -53,7 +53,7 @@ tests:
   sample: "[ AGENT ] 2018-07-11 18:27:57 UTC | INFO | (transaction.go:121 in Process) | Successfully posted payload to \"https://6-3-0-app.agent.khulnasoft.com/api/v1/series?api_key=*************************64a86\""
   result:
     custom:
-      datadog:
+      khulnasoft:
         process: "Process"
       level: "INFO"
       lineno: 121.0

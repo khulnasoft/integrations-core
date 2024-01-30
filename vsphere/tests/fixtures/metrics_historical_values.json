@@ -1780,12 +1780,12 @@
         ]
     },
     {
-        "name": "datadog.vsphere.query_metrics.time"
+        "name": "khulnasoft.vsphere.query_metrics.time"
     },
     {
-        "name": "datadog.vsphere.refresh_metrics_metadata_cache.time"
+        "name": "khulnasoft.vsphere.refresh_metrics_metadata_cache.time"
     },
     {
-        "name": "datadog.vsphere.refresh_infrastructure_cache.time"
+        "name": "khulnasoft.vsphere.refresh_infrastructure_cache.time"
     }
 ]

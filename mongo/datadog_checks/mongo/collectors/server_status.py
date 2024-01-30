@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2020-present
+# (C) Khulnasoft, Inc. 2020-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 
@@ -6,7 +6,7 @@ from khulnasoft_checks.mongo.collectors.base import MongoCollector
 
 
 class ServerStatusCollector(MongoCollector):
-    """The main collector, performs the 'serverStatus' command and forwards metrics to Datadog."""
+    """The main collector, performs the 'serverStatus' command and forwards metrics to Khulnasoft."""
 
     def __init__(self, check, db_name, tags, tcmalloc=False):
         super(ServerStatusCollector, self).__init__(check, tags)

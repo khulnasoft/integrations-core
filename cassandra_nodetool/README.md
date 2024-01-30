@@ -10,7 +10,7 @@ This check collects metrics for your Cassandra cluster that are not available th
 
 ### Installation
 
-The Cassandra Nodetool check is included in the [Datadog Agent][3] package, so you don't need to install anything else on your Cassandra nodes.
+The Cassandra Nodetool check is included in the [Khulnasoft Agent][3] package, so you don't need to install anything else on your Cassandra nodes.
 
 ### Configuration
 
@@ -72,13 +72,13 @@ See [service_checks.json][10] for a list of service checks provided by this inte
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][11].
+Need help? Contact [Khulnasoft support][11].
 
 ## Further Reading
 
 - [How to monitor Cassandra performance metrics][12]
 - [How to collect Cassandra metrics][13]
-- [Monitoring Cassandra with Datadog][14]
+- [Monitoring Cassandra with Khulnasoft][14]
 
 [1]: https://raw.githubusercontent.com/KhulnaSoft/integrations-core/master/cassandra_nodetool/images/cassandra_dashboard.png
 [2]: https://github.com/KhulnaSoft/integrations-core/tree/master/cassandra
@@ -93,5 +93,5 @@ Need help? Contact [Datadog support][11].
 [11]: https://docs.khulnasoft.com/help/
 [12]: https://www.khulnasoft.com/blog/how-to-monitor-cassandra-performance-metrics
 [13]: https://www.khulnasoft.com/blog/how-to-collect-cassandra-metrics
-[14]: https://www.khulnasoft.com/blog/monitoring-cassandra-with-datadog
+[14]: https://www.khulnasoft.com/blog/monitoring-cassandra-with-khulnasoft
 [15]: https://github.com/prometheus/jmx_exporter

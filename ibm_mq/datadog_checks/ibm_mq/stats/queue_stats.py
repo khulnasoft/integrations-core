@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2020-present
+# (C) Khulnasoft, Inc. 2020-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 from pymqi.CMQC import MQCA_Q_NAME, MQIA_DEFINITION_TYPE, MQIA_Q_TYPE

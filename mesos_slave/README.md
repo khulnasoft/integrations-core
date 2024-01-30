@@ -18,25 +18,25 @@ This check also creates a service check for every executor task.
 
 ### Installation
 
-See [Installing Datadog on Mesos with DC/OS][2] to install the Datadog Agent on each Mesos agent node with the DC/OS web UI.
+See [Installing Khulnasoft on Mesos with DC/OS][2] to install the Khulnasoft Agent on each Mesos agent node with the DC/OS web UI.
 
 ### Configuration
 
 #### DC/OS
 
-1. In the DC/OS web UI, click on the **Universe** tab. Find the **datadog** package and click the Install button.
+1. In the DC/OS web UI, click on the **Universe** tab. Find the **khulnasoft** package and click the Install button.
 1. Click the **Advanced Installation** button.
-1. Enter your Datadog API Key in the first field.
+1. Enter your Khulnasoft API Key in the first field.
 1. In the Instances field, enter the number of slave nodes in your cluster (You can determine the number of nodes in your cluster by clicking the Nodes tab on the left side of the DC/OS web ui).
 1. Click **Review and Install** then **Install**
 
 #### Marathon
 
-If you are not using DC/OS, use the Marathon web UI or post to the API URL the following JSON to define the Datadog Agent. You must change `<YOUR_KHULNASOFT_API_KEY>` with your API Key and the number of instances with the number of slave nodes on your cluster. You may also need to update the docker image used to more recent tag. You can find the latest [on Docker Hub][3]
+If you are not using DC/OS, use the Marathon web UI or post to the API URL the following JSON to define the Khulnasoft Agent. You must change `<YOUR_KHULNASOFT_API_KEY>` with your API Key and the number of instances with the number of slave nodes on your cluster. You may also need to update the docker image used to more recent tag. You can find the latest [on Docker Hub][3]
 
 ```json
 {
-  "id": "/datadog-agent",
+  "id": "/khulnasoft-agent",
   "cmd": null,
   "cpus": 0.05,
   "mem": 256,
@@ -63,7 +63,7 @@ If you are not using DC/OS, use the Marathon web UI or post to the API URL the f
       }
     ],
     "docker": {
-      "image": "datadog/agent:latest",
+      "image": "khulnasoft/agent:latest",
       "network": "BRIDGE",
       "portMappings": [
         {
@@ -76,7 +76,7 @@ If you are not using DC/OS, use the Marathon web UI or post to the API URL the f
       ],
       "privileged": false,
       "parameters": [
-        { "key": "name", "value": "datadog-agent" },
+        { "key": "name", "value": "khulnasoft-agent" },
         { "key": "env", "value": "DD_API_KEY=<YOUR_KHULNASOFT_API_KEY>" },
         { "key": "env", "value": "MESOS_SLAVE=true" }
       ],
@@ -104,7 +104,7 @@ Unless you want to configure a custom `mesos_slave.d/conf.yaml`-perhaps you need
 
 #### Log collection
 
-1. Collecting logs is disabled by default in the Datadog Agent, enable it in your `datadog.yaml` file:
+1. Collecting logs is disabled by default in the Khulnasoft Agent, enable it in your `khulnasoft.yaml` file:
 
     ```yaml
     logs_enabled: true
@@ -137,11 +137,11 @@ To enable logs for Kubernetes environments, see [Kubernetes Log Collection][6].
 
 #### DC/OS
 
-Under the Services tab in the DC/OS web UI you should see the Datadog Agent shown. In Datadog, search for `mesos.slave` in the Metrics Explorer.
+Under the Services tab in the DC/OS web UI you should see the Khulnasoft Agent shown. In Khulnasoft, search for `mesos.slave` in the Metrics Explorer.
 
 #### Marathon
 
-If you are not using DC/OS, then datadog-agent is in the list of running applications with a healthy status. In Datadog, search for `mesos.slave` in the Metrics Explorer.
+If you are not using DC/OS, then khulnasoft-agent is in the list of running applications with a healthy status. In Khulnasoft, search for `mesos.slave` in the Metrics Explorer.
 
 ## Data Collected
 
@@ -159,15 +159,15 @@ See [service_checks.json][8] for a list of service checks provided by this integ
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][9].
+Need help? Contact [Khulnasoft support][9].
 
 ## Further Reading
 
-- [Installing Datadog on Mesos with DC/OS][2]
+- [Installing Khulnasoft on Mesos with DC/OS][2]
 
 [1]: https://raw.githubusercontent.com/KhulnaSoft/integrations-core/master/mesos_slave/images/mesos_dashboard.png
-[2]: https://www.khulnasoft.com/blog/deploy-datadog-dcos
-[3]: https://hub.docker.com/r/datadog/agent/tags
+[2]: https://www.khulnasoft.com/blog/deploy-khulnasoft-dcos
+[3]: https://hub.docker.com/r/khulnasoft/agent/tags
 [4]: https://github.com/KhulnaSoft/integrations-core/blob/master/mesos_slave/khulnasoft_checks/mesos_slave/data/conf.yaml.example
 [5]: https://docs.khulnasoft.com/agent/guide/agent-commands/#start-stop-and-restart-the-agent
 [6]: https://docs.khulnasoft.com/agent/kubernetes/log/

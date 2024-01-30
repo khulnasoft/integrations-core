@@ -17,11 +17,11 @@ Kubernetes State Metrics Core provides a better alternative to the legacy `kuber
 
 ### Installation
 
-The Kubernetes State Metrics Core check is included in the [Datadog Cluster Agent][4] image, so you don't need to install anything else on your Kubernetes servers.
+The Kubernetes State Metrics Core check is included in the [Khulnasoft Cluster Agent][4] image, so you don't need to install anything else on your Kubernetes servers.
 
 ### Requirements
 
-- Datadog Cluster Agent v1.12+
+- Khulnasoft Cluster Agent v1.12+
 
 ### Configuration
 
@@ -31,7 +31,7 @@ The Kubernetes State Metrics Core check is included in the [Datadog Cluster Agen
 In your Helm `values.yaml`, add the following:
 
 ```yaml
-datadog:
+khulnasoft:
   # (...)
   kubeStateMetricsCore:
     enabled: true
@@ -40,13 +40,13 @@ datadog:
 <!-- xxz tab xxx -->
 <!-- xxx tab "Operator" xxx -->
 
-To enable the `kubernetes_state_core` check, the setting `spec.features.kubeStateMetricsCore.enabled` must be set to `true` in the DatadogAgent resource:
+To enable the `kubernetes_state_core` check, the setting `spec.features.kubeStateMetricsCore.enabled` must be set to `true` in the KhulnasoftAgent resource:
 
 ```yaml
-kind: DatadogAgent
+kind: KhulnasoftAgent
 apiVersion: khulnasoft.com/v2alpha1
 metadata:
-  name: datadog
+  name: khulnasoft
 spec:
   global:
     credentials:
@@ -56,7 +56,7 @@ spec:
       enabled: true
 ```
 
-**Note**: Datadog Operator v0.7.0 or greater is required.
+**Note**: Khulnasoft Operator v0.7.0 or greater is required.
 
 <!-- xxz tab xxx -->
 <!-- xxz tabs xxx -->
@@ -123,7 +123,7 @@ To add tags globally, use the `DD_TAGS` environment variable, or use the respect
 <!-- xxx tabs xxx -->
 <!-- xxx tab "Helm" xxx -->
 ```yaml
-datadog:
+khulnasoft:
   kubeStateMetricsCore:
     enabled: true
   tags: 
@@ -132,10 +132,10 @@ datadog:
 <!-- xxz tab xxx -->
 <!-- xxx tab "Operator" xxx -->
 ```yaml
-kind: DatadogAgent
+kind: KhulnasoftAgent
 apiVersion: khulnasoft.com/v2alpha1
 metadata:
-  name: datadog
+  name: khulnasoft
 spec:
   global:
     credentials:
@@ -162,10 +162,10 @@ If you still want to enable both checks simultaneously for the migration phase, 
 
 **Note**: `ignoreLegacyKSMCheck` makes the Agent only ignore the auto configuration for the legacy `kubernetes_state` check. Custom `kubernetes_state` configurations need to be removed manually.
 
-The Kubernetes State Metrics Core check does not require deploying `kube-state-metrics` in your cluster anymore, you can disable deploying `kube-state-metrics` as part of the Datadog Helm Chart. To do this, add the following in your Helm `values.yaml`:
+The Kubernetes State Metrics Core check does not require deploying `kube-state-metrics` in your cluster anymore, you can disable deploying `kube-state-metrics` as part of the Khulnasoft Helm Chart. To do this, add the following in your Helm `values.yaml`:
 
 ```yaml
-datadog:
+khulnasoft:
   # (...)
   kubeStateMetricsEnabled: false
 ```
@@ -173,7 +173,7 @@ datadog:
 <!-- xxz tab xxx -->
 <!-- xxz tabs xxx -->
 
-**Important Note:** The Kubernetes State Metrics Core check is an alternative to the legacy `kubernetes_state` check. Datadog recommends not enabling both checks simultaneously to guarantee consistent metrics.
+**Important Note:** The Kubernetes State Metrics Core check is an alternative to the legacy `kubernetes_state` check. Khulnasoft recommends not enabling both checks simultaneously to guarantee consistent metrics.
 
 ## Data Collected
 
@@ -181,7 +181,7 @@ datadog:
 
 See [metadata.csv][5] for a list of metrics provided by this integration.
 
-**Note:** You can configure [Datadog Standard labels][6] on your Kubernetes objects to get the `env` `service` `version` tags.
+**Note:** You can configure [Khulnasoft Standard labels][6] on your Kubernetes objects to get the `env` `service` `version` tags.
 
 ### Events
 
@@ -227,13 +227,13 @@ You can avoid this by setting the environment variable `DD_KUBERNETES_APISERVER_
 
 <!-- xxx tabs xxx -->
 <!-- xxx tab "Operator" xxx -->
-Update your `datadog-agent.yaml` with the following configuration:
+Update your `khulnasoft-agent.yaml` with the following configuration:
 
 ```yaml
 apiVersion: khulnasoft.com/v2alpha1
-kind: DatadogAgent
+kind: KhulnasoftAgent
 metadata:
-  name: datadog
+  name: khulnasoft
 spec:
   override:
     clusterAgent:
@@ -245,11 +245,11 @@ spec:
 Then apply the new configuration:
 
 ```shell
-kubectl apply -n $DD_NAMESPACE -f datadog-agent.yaml
+kubectl apply -n $DD_NAMESPACE -f khulnasoft-agent.yaml
 ```
 <!-- xxz tab xxx -->
 <!-- xxx tab "Helm" xxx -->
-Update your `datadog-values.yaml` with the following configuration:
+Update your `khulnasoft-values.yaml` with the following configuration:
 
 ```yaml
 clusterAgent:
@@ -261,12 +261,12 @@ clusterAgent:
 Then upgrade your Helm chart:
 
 ```shell
-helm upgrade -f datadog-values.yaml <RELEASE_NAME> datadog/datadog
+helm upgrade -f khulnasoft-values.yaml <RELEASE_NAME> khulnasoft/khulnasoft
 ```
 <!-- xxz tab xxx -->
 <!-- xxz tabs xxx -->
 
-Need help? Contact [Datadog support][9].
+Need help? Contact [Khulnasoft support][9].
 
 ## Further Reading
 - [Our Journey Taking Kubernetes State Metrics to the Next Level][10]

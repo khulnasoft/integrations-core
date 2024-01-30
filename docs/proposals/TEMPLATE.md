@@ -67,4 +67,4 @@ common for C applications. The same C api can be leveraged using cgo...
 ## Appendix
 
 *Link any relevant stats, code, images, whatever that work for you.*
-[1]: https://github.com/KhulnaSoft/datadog-agent/pull/0
+[1]: https://github.com/KhulnaSoft/khulnasoft-agent/pull/0

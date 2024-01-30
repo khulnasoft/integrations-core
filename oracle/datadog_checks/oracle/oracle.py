@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2018-present
+# (C) Khulnasoft, Inc. 2018-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 import itertools
@@ -181,7 +181,7 @@ class Oracle(AgentCheck):
             if JDBC_IMPORT_ERROR is not None:
                 self.log.error(
                     "The integration is unable to import JDBC libraries. Please double check your "
-                    "installation and refer to the Datadog documentation for more information."
+                    "installation and refer to the Khulnasoft documentation for more information."
                 )
                 raise JDBC_IMPORT_ERROR
             else:

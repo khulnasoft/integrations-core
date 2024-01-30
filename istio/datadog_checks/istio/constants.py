@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2020 - Present
+# (C) Khulnasoft, Inc. 2020 - Present
 # All rights reserved
 # Licensed under Simplified BSD License (see LICENSE)
 

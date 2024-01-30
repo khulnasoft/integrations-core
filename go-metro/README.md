@@ -4,7 +4,7 @@
 
 The TCP RTT check reports on roundtrip times between the host the Agent is running on and any host it is communicating with. This check is passive and only reports RTT times for packets being sent and received from outside the check. The check itself does not send any packets.
 
-This check is only shipped in the 64-bit DEB and RPM Datadog Agent v5 packages. The check is _not_ available with Datadog Agent v6.
+This check is only shipped in the 64-bit DEB and RPM Khulnasoft Agent v5 packages. The check is _not_ available with Khulnasoft Agent v6.
 
 ## Setup
 
@@ -31,7 +31,7 @@ sudo yum install compat-libcap1
 Finally, configure PCAP:
 
 ```bash
-sudo setcap cap_net_raw+ep /opt/datadog-agent/bin/go-metro
+sudo setcap cap_net_raw+ep /opt/khulnasoft-agent/bin/go-metro
 ```
 
 ### Configuration
@@ -67,32 +67,32 @@ $ sudo yum install libcap  # redhat
 $ sudo yum install compat-libcap1  # redhat alternative
 
 # Set capabilities
-$ sudo setcap cap_net_raw+ep /opt/datadog-agent/bin/go-metro
+$ sudo setcap cap_net_raw+ep /opt/khulnasoft-agent/bin/go-metro
 ```
 
-Because of different package names for different distributions, if the instructions above don't work for you, issue an `apt-cache search libcap` or `yum search libcap` for a shortlist of packages that provide the binary. Contact [Datadog support][6], if you need assistance.
+Because of different package names for different distributions, if the instructions above don't work for you, issue an `apt-cache search libcap` or `yum search libcap` for a shortlist of packages that provide the binary. Contact [Khulnasoft support][6], if you need assistance.
 
-**Note**: go-metro logs to its own file - found in `/var/log/datadog/go-metro.log`. Additionally, go-metro runs standalone so it does not appear on the Agent's info page.
+**Note**: go-metro logs to its own file - found in `/var/log/khulnasoft/go-metro.log`. Additionally, go-metro runs standalone so it does not appear on the Agent's info page.
 
-Finally, because the go-metro binary is only bundled with the 64-bit RPM and DEB distributions of the Datadog Agent, it is only available in those packaged versions, that is go-metro is unavailable with the source install or 32-bit packages.
+Finally, because the go-metro binary is only bundled with the 64-bit RPM and DEB distributions of the Khulnasoft Agent, it is only available in those packaged versions, that is go-metro is unavailable with the source install or 32-bit packages.
 
 ### Validation
 
-To validate that the check is running correctly, you should see `system.net.tcp.rtt` metrics showing in the Datadog interface. Also, if you [Run the Agent's `status` subcommand][4], you should see something similar to the following:
+To validate that the check is running correctly, you should see `system.net.tcp.rtt` metrics showing in the Khulnasoft interface. Also, if you [Run the Agent's `status` subcommand][4], you should see something similar to the following:
 
 ```text
- datadog-agent.service - "Datadog Agent"
-    Loaded: loaded (/lib/...datadog-agent.service; enabled; vendor preset: enabled)
+ khulnasoft-agent.service - "Khulnasoft Agent"
+    Loaded: loaded (/lib/...khulnasoft-agent.service; enabled; vendor preset: enabled)
     Active: active (running) since Thu 2016-03-31 20:35:27 UTC; 42min ago
   Process: 10016 ExecStop=/opt/.../supervisorctl -c /etc/dd-....conf shutdown (code=exited, status=0/SUCCESS)
   Process: 10021 ExecStart=/opt/.../start_agent.sh (code=exited, status=0/SUCCESS)
   Main PID: 10025 (supervisord)
-    CGroup: /system.slice/datadog-agent.service
-            |_10025 /opt/datadog-...python /opt/datadog-agent/bin/supervisord -c /etc/dd-agent/supervisor.conf
-            |_10043 /opt/datadog-...python /opt/datadog-agent/agent/dogstatsd.py --use-local-forwarder
-            |_10044 /opt/datadog-agent/bin/go-metro -cfg=/etc/dd-agent/conf.d/go-metro.yaml
-            |_10046 /opt/datadog-.../python /opt/datadog-agent/agent/ddagent.py
-            |_10047 /opt/datadog-.../python /opt/datadog-agent/agent/agent.py foreground --use-local-forwarder
+    CGroup: /system.slice/khulnasoft-agent.service
+            |_10025 /opt/khulnasoft-...python /opt/khulnasoft-agent/bin/supervisord -c /etc/dd-agent/supervisor.conf
+            |_10043 /opt/khulnasoft-...python /opt/khulnasoft-agent/agent/dogstatsd.py --use-local-forwarder
+            |_10044 /opt/khulnasoft-agent/bin/go-metro -cfg=/etc/dd-agent/conf.d/go-metro.yaml
+            |_10046 /opt/khulnasoft-.../python /opt/khulnasoft-agent/agent/ddagent.py
+            |_10047 /opt/khulnasoft-.../python /opt/khulnasoft-agent/agent/agent.py foreground --use-local-forwarder
 ```
 
 If the TCP RTT check has started you should see something similar to the go-metro line above.
@@ -115,7 +115,7 @@ The Go-metro check does not include any service checks.
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][6].
+Need help? Contact [Khulnasoft support][6].
 
 [1]: https://docs.khulnasoft.com/agent/kubernetes/integrations/
 [2]: https://github.com/KhulnaSoft/go-metro

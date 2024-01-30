@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2013-present
+# (C) Khulnasoft, Inc. 2013-present
 # (C) Brett Langdon <brett@blangdon.com> 2013
 # All rights reserved
 # Licensed under Simplified BSD License (see LICENSE)
@@ -412,7 +412,7 @@ class RabbitMQManagement(AgentCheck):
                 msg = (
                     "Too many items to fetch. "
                     "You must choose the {} you are interested in by editing the rabbitmq.d/conf.yaml configuration "
-                    "file or get in touch with Datadog support"
+                    "file or get in touch with Khulnasoft support"
                 ).format(object_type)
                 self.warning(msg)
                 break
@@ -522,7 +522,7 @@ class RabbitMQManagement(AgentCheck):
             "RabbitMQ integration is approaching the limit on the number of {} that can be collected from on {}"
         ).format(object_type, self.hostname)
         msg = (
-            "{} {} are present. The limit is {}. Please get in touch with Datadog support to increase the limit."
+            "{} {} are present. The limit is {}. Please get in touch with Khulnasoft support to increase the limit."
         ).format(size, object_type, max_detailed)
 
         event = {

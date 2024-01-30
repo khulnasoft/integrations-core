@@ -1,5 +1,5 @@
 {
-    "author_name": "Datadog",
+    "author_name": "Khulnasoft",
     "description": "The Snowflake Organization Usage Metrics dashboard provides insight into organization-wide data, so you can see key metrics about cost, usage, and storage across all snowflake accounts in one place.\n\nTo get started, follow our docs to set up organization usage monitoring in [Snowflake](https://github.com/KhulnaSoft/integrations-core/tree/master/snowflake).\n\nFor more information about the data collected, view Snowflake's [organization usage docs](https://docs.snowflake.com/en/sql-reference/organization-usage.html).",
     "layout_type": "ordered",
     "template_variables": [
@@ -35,7 +35,7 @@
         {
             "definition": {
                 "background_color": "white",
-                "content": "Use the Organization Usage dashboard to understand your current contractual limits for your organization, consumption by account, and data transfer history from Snowflake into different cloud storage provider's network.\n\n**Note**: By default, the integration minimum collection interval is 12 hours for organization metrics, setting the global dashboard time selector to **past 12 hours or less may result in sparse graphs**.\n\nSnowflake `ORGANIZATION_USAGE` views have a [known latency](https://docs.snowflake.com/en/sql-reference/account-usage.html#data-latency) of 2 to 24 hours, so the integration reports values from the past day.\n\nFor more information on setup and use-cases, check out the following:\n\n- [Snowflake integration docs](https://docs.khulnasoft.com/integrations/snowflake/)\n- [How to setup custom queries](https://docs.khulnasoft.com/integrations/snowflake/#snowflake-custom-queries)\n- [Blog post on Snowflake monitoring use-cases](https://www.khulnasoft.com/blog/snowflake-monitoring-datadog/)",
+                "content": "Use the Organization Usage dashboard to understand your current contractual limits for your organization, consumption by account, and data transfer history from Snowflake into different cloud storage provider's network.\n\n**Note**: By default, the integration minimum collection interval is 12 hours for organization metrics, setting the global dashboard time selector to **past 12 hours or less may result in sparse graphs**.\n\nSnowflake `ORGANIZATION_USAGE` views have a [known latency](https://docs.snowflake.com/en/sql-reference/account-usage.html#data-latency) of 2 to 24 hours, so the integration reports values from the past day.\n\nFor more information on setup and use-cases, check out the following:\n\n- [Snowflake integration docs](https://docs.khulnasoft.com/integrations/snowflake/)\n- [How to setup custom queries](https://docs.khulnasoft.com/integrations/snowflake/#snowflake-custom-queries)\n- [Blog post on Snowflake monitoring use-cases](https://www.khulnasoft.com/blog/snowflake-monitoring-khulnasoft/)",
                 "font_size": "14",
                 "show_tick": false,
                 "text_align": "left",
@@ -62,7 +62,7 @@
                     {
                         "definition": {
                             "background_color": "blue",
-                            "content": "With Datadog's Snowflake integration, you can track key metrics about cost and credit usage at an organization-wide level. In this metric group you can see the hourly credit usage for all warehouses across all the accounts in your Snowflake organization. ",
+                            "content": "With Khulnasoft's Snowflake integration, you can track key metrics about cost and credit usage at an organization-wide level. In this metric group you can see the hourly credit usage for all warehouses across all the accounts in your Snowflake organization. ",
                             "font_size": "16",
                             "has_padding": true,
                             "show_tick": false,
@@ -1037,7 +1037,7 @@
                     {
                         "definition": {
                             "background_color": "purple",
-                            "content": "With Datadog's Snowflake integration, you can track the amount of data transferred from Snowflake tables into a different cloud storage provider's network.",
+                            "content": "With Khulnasoft's Snowflake integration, you can track the amount of data transferred from Snowflake tables into a different cloud storage provider's network.",
                             "font_size": "16",
                             "has_padding": true,
                             "show_tick": true,

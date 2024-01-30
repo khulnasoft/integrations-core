@@ -1,4 +1,4 @@
-#  (C) Datadog, Inc. 2020-present
+#  (C) Khulnasoft, Inc. 2020-present
 #  All rights reserved
 #  Licensed under a 3-clause BSD style license (see LICENSE)
 import json
@@ -64,7 +64,7 @@ class SchemaValidator(BaseManifestValidator):
         if not self.should_validate():
             return
 
-        # Get API and APP keys which are needed to call Datadog API
+        # Get API and APP keys which are needed to call Khulnasoft API
         org_name = self.ctx.obj.get('org')
         if not org_name:
             self.fail('No `org` has been set')

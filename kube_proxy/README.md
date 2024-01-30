@@ -39,7 +39,7 @@ The Kube Proxy integration does not include any service checks.
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][3].
+Need help? Contact [Khulnasoft support][3].
 
 [1]: https://docs.khulnasoft.com/agent/guide/agent-commands/#agent-status-and-information
 [2]: https://github.com/KhulnaSoft/integrations-core/blob/master/kube_proxy/metadata.csv

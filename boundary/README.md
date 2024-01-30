@@ -2,7 +2,7 @@
 
 ## Overview
 
-This check monitors [Boundary][1] through the Datadog Agent. The minimum supported version of Boundary is `0.8.0`.
+This check monitors [Boundary][1] through the Khulnasoft Agent. The minimum supported version of Boundary is `0.8.0`.
 
 ## Setup
 
@@ -10,7 +10,7 @@ Follow the instructions below to install and configure this check for an Agent r
 
 ### Installation
 
-The Boundary check is included in the [Datadog Agent][2] package.
+The Boundary check is included in the [Khulnasoft Agent][2] package.
 No additional installation is needed on your server.
 
 ### Configuration
@@ -50,7 +50,7 @@ controller {
 }
 ```
 
-#### Datadog Agent
+#### Khulnasoft Agent
 
 1. Edit the `boundary.d/conf.yaml` file, in the `conf.d/` folder at the root of your Agent's configuration directory to start collecting your boundary performance data. See the [sample boundary.d/conf.yaml][4] for all available configuration options.
 
@@ -76,7 +76,7 @@ See [service_checks.json][8] for a list of service checks provided by this integ
 
 ### Log collection
 
-1. Collecting logs is disabled by default in the Datadog Agent. Enable it in your `datadog.yaml` file:
+1. Collecting logs is disabled by default in the Khulnasoft Agent. Enable it in your `khulnasoft.yaml` file:
 
     ```yaml
     logs_enabled: true
@@ -95,7 +95,7 @@ See [service_checks.json][8] for a list of service checks provided by this integ
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][9].
+Need help? Contact [Khulnasoft support][9].
 
 [1]: https://www.boundaryproject.io
 [2]: https://app.khulnasoft.com/account/settings/agent/latest

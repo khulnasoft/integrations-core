@@ -8,7 +8,7 @@
     "configuration": "README.md#Setup",
     "support": "README.md#Support",
     "changelog": "CHANGELOG.md",
-    "description": "Send Nagios service flaps, host alerts, and more to your Datadog event stream.",
+    "description": "Send Nagios service flaps, host alerts, and more to your Khulnasoft event stream.",
     "title": "Nagios",
     "media": [],
     "classifier_tags": [
@@ -21,7 +21,7 @@
   },
   "author": {
     "support_email": "help@khulnasoft.com",
-    "name": "Datadog",
+    "name": "Khulnasoft",
     "homepage": "https://www.khulnasoft.com",
     "sales_email": "info@khulnasoft.com"
   },

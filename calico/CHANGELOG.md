@@ -37,7 +37,7 @@
 ***Fixed***:
 
 * Add DEFAULT_METRIC_LIMIT for OpenMetrics-based checks ([#14527](https://github.com/KhulnaSoft/integrations-core/pull/14527))
-* Update minimum datadog base package version ([#14463](https://github.com/KhulnaSoft/integrations-core/pull/14463))
+* Update minimum khulnasoft base package version ([#14463](https://github.com/KhulnaSoft/integrations-core/pull/14463))
 * Deprecate `use_latest_spec` option ([#14446](https://github.com/KhulnaSoft/integrations-core/pull/14446))
 
 ## 1.1.0 / 2022-09-16 / Agent 7.40.0

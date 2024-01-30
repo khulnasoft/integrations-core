@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2022-present
+# (C) Khulnasoft, Inc. 2022-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 import os
@@ -26,14 +26,14 @@ def test_default_scrubbed(ddev, config_file, helpers):
         core = "~{sep}dd{sep}integrations-core"
         extras = "~{sep}dd{sep}integrations-extras"
         marketplace = "~{sep}dd{sep}marketplace"
-        agent = "~{sep}dd{sep}datadog-agent"
+        agent = "~{sep}dd{sep}khulnasoft-agent"
 
         [agents.dev]
-        docker = "datadog/agent-dev:master"
+        docker = "khulnasoft/agent-dev:master"
         local = "latest"
 
         [agents.7]
-        docker = "datadog/agent:7"
+        docker = "khulnasoft/agent:7"
         local = "7"
 
         [orgs.default]
@@ -89,14 +89,14 @@ def test_reveal(ddev, config_file, helpers):
         core = "~{sep}dd{sep}integrations-core"
         extras = "~{sep}dd{sep}integrations-extras"
         marketplace = "~{sep}dd{sep}marketplace"
-        agent = "~{sep}dd{sep}datadog-agent"
+        agent = "~{sep}dd{sep}khulnasoft-agent"
 
         [agents.dev]
-        docker = "datadog/agent-dev:master"
+        docker = "khulnasoft/agent-dev:master"
         local = "latest"
 
         [agents.7]
-        docker = "datadog/agent:7"
+        docker = "khulnasoft/agent:7"
         local = "7"
 
         [orgs.default]

@@ -2,10 +2,10 @@
 
 ## Overview
 
-This check monitors [Snowflake][1] through the Datadog Agent. Snowflake is a SaaS-analytic data warehouse and runs completely on cloud infrastructure. 
+This check monitors [Snowflake][1] through the Khulnasoft Agent. Snowflake is a SaaS-analytic data warehouse and runs completely on cloud infrastructure. 
 This integration monitors credit usage, billing, storage, query metrics, and more.
 
-<div class="alert alert-info"><bold>Note</bold>: Metrics are collected with queries to Snowflake. Queries made by the Datadog integration are billable by Snowflake.</div>
+<div class="alert alert-info"><bold>Note</bold>: Metrics are collected with queries to Snowflake. Queries made by the Khulnasoft integration are billable by Snowflake.</div>
 
 ## Setup
 
@@ -13,22 +13,22 @@ Follow the instructions below to install and configure this check for an Agent r
 
 ### Installation
 
-The Snowflake check is included in the [Datadog Agent][2] package.
+The Snowflake check is included in the [Khulnasoft Agent][2] package.
 
-**Note**: The Snowflake check is not available in Datadog Agent v6 using Python 2. To use Snowflake on Agent v6 see [Use Python 3 with Datadog Agent v6][3] or upgrade to Agent v7.
+**Note**: The Snowflake check is not available in Khulnasoft Agent v6 using Python 2. To use Snowflake on Agent v6 see [Use Python 3 with Khulnasoft Agent v6][3] or upgrade to Agent v7.
 
 <div class="alert alert-warning">For users configuring the integration with Agent <code>v7.23.0</code>, upgrade the integration version to <code>2.0.1</code> to take advantage of latest features.
 You can upgrade the integration with the following <a href=https://docs.khulnasoft.com/agent/guide/integration-management/#install>command</a>:<br>
 
 ```text
-datadog-agent integration install datadog-snowflake==2.0.1
+khulnasoft-agent integration install khulnasoft-snowflake==2.0.1
 ```
 </div>
 
 ### Configuration
 <div class="alert alert-warning">Snowflake recommends granting permissions to an alternate role like `SYSADMIN`. Read more about controlling <a href="https://docs.snowflake.com/en/user-guide/security-access-control-considerations.html#control-the-assignment-of-the-accountadmin-role-to-users">ACCOUNTADMIN role</a> for more information.</div>
 
-1. Create a Datadog specific role and user to monitor Snowflake. In Snowflake, run the following to create a custom role with access to the ACCOUNT_USAGE schema.
+1. Create a Khulnasoft specific role and user to monitor Snowflake. In Snowflake, run the following to create a custom role with access to the ACCOUNT_USAGE schema.
 
     Note: By default, this integration monitors the `SNOWFLAKE` database and `ACCOUNT_USAGE` schema. See "Collecting Organization Data" for information on how to monitor the `ORGANIZATION_USAGE` schema.
     This database is available by default and only viewable by users in the `ACCOUNTADMIN` role or [any role granted by the ACCOUNTADMIN][4].
@@ -298,13 +298,13 @@ See [service_checks.json][16] for a list of service checks provided by this inte
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][17].
+Need help? Contact [Khulnasoft support][17].
 
 ## Further Reading
 
 Additional helpful documentation, links, and articles:
 
-- [Monitor Snowflake with Datadog][18]
+- [Monitor Snowflake with Khulnasoft][18]
 
 
 [1]: https://www.snowflake.com/
@@ -324,4 +324,4 @@ Additional helpful documentation, links, and articles:
 [15]: https://github.com/KhulnaSoft/integrations-core/blob/master/snowflake/metadata.csv
 [16]: https://github.com/KhulnaSoft/integrations-core/blob/master/snowflake/assets/service_checks.json
 [17]: https://docs.khulnasoft.com/help/
-[18]: https://www.khulnasoft.com/blog/snowflake-monitoring-datadog/
+[18]: https://www.khulnasoft.com/blog/snowflake-monitoring-khulnasoft/

@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2021-present
+# (C) Khulnasoft, Inc. 2021-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 import json
@@ -34,7 +34,7 @@ def get_changed_immutable_attribute_manifest():
     Helper function to change other immutable attributes in a manifest
     """
     immutable_attributes_changed_attribute = JSONDict(deepcopy(input_constants.V2_VALID_MANIFEST))
-    immutable_attributes_changed_attribute['app_id'] = 'datadog-oracle-changed'
+    immutable_attributes_changed_attribute['app_id'] = 'khulnasoft-oracle-changed'
     return immutable_attributes_changed_attribute
 
 
@@ -56,7 +56,7 @@ def test_manifest_v2_maintainer_validator_incorrect_maintainer(setup_route):
         {
             "author": {
                 "homepage": "https://www.khulnasoft.com",
-                "name": "Datadog",
+                "name": "Khulnasoft",
                 "sales_email": "help@khulnasoft.com",
                 "support_email": "fake_email@khulnasoft.com",
             },
@@ -82,7 +82,7 @@ def test_manifest_v2_maintainer_validator_invalid_maintainer(setup_route):
         {
             "author": {
                 "homepage": "https://www.khulnasoft.com",
-                "name": "Datadog",
+                "name": "Khulnasoft",
                 "sales_email": "help@khulnasoft.com",
                 "support_email": "Ǩ_help@khulnasoft.com",
             },
@@ -288,7 +288,7 @@ def test_manifest_v2_display_on_public_validator_invalid(setup_route):
     """
     Ensure DisplayOnPublicValidator fails if the display_on_public_website attribute is not True
     """
-    display_on_public_invalid_manifest = JSONDict({"app_id": "datadog-oracle"})
+    display_on_public_invalid_manifest = JSONDict({"app_id": "khulnasoft-oracle"})
 
     # Use specific validator
     validator = v2_validators.DisplayOnPublicValidator(version=V2)

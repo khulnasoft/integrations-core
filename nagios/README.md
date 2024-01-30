@@ -2,22 +2,22 @@
 
 ## Overview
 
-Send events from your Nagios-monitored infrastructure to Datadog for richer alerting and to help correlate Nagios events with metrics from your Datadog-monitored infrastructure.
+Send events from your Nagios-monitored infrastructure to Khulnasoft for richer alerting and to help correlate Nagios events with metrics from your Khulnasoft-monitored infrastructure.
 
-This check watches your Nagios server's logs and sends events to Datadog for the following:
+This check watches your Nagios server's logs and sends events to Khulnasoft for the following:
 
 - Service flaps
 - Host state changes
 - Passive service checks
 - Host and service downtimes
 
-This check can also send Nagios performance data as metrics to Datadog.
+This check can also send Nagios performance data as metrics to Khulnasoft.
 
 ## Setup
 
 ### Installation
 
-The Nagios check is included in the [Datadog Agent][1] package, so you don't need to install anything else on your Nagios servers.
+The Nagios check is included in the [Khulnasoft Agent][1] package, so you don't need to install anything else on your Nagios servers.
 
 ### Configuration
 
@@ -32,7 +32,7 @@ To configure this check for an Agent running on a host:
 
 1. Edit the `nagios.d/conf.yaml` file in the `conf.d/` folder at the root of your [Agent's configuration directory][2]. See the [sample nagios.d/conf.yaml][3] for all available configuration options.
 
-2. [Restart the Agent][4] to start sending Nagios events and (optionally) performance data metrics to Datadog.
+2. [Restart the Agent][4] to start sending Nagios events and (optionally) performance data metrics to Khulnasoft.
 
 **Note**: The Nagios check can potentially emit [custom metrics][5], which may impact your [billing][6].
 
@@ -49,7 +49,7 @@ For containerized environments, see the [Autodiscovery Integration Templates][7]
 | `<INIT_CONFIG>`      | blank or `{}`                                |
 | `<INSTANCE_CONFIG>`  | `{"nagios_conf": "/etc/nagios3/nagios.cfg"}` |
 
-**Note**: The containerized Agent should be able to access the `/etc/nagios3/nagios.cfg` file to enable the Datadog-Nagios integration.
+**Note**: The containerized Agent should be able to access the `/etc/nagios3/nagios.cfg` file to enable the Khulnasoft-Nagios integration.
 
 <!-- xxz tab xxx -->
 <!-- xxz tabs xxx -->
@@ -62,11 +62,11 @@ For containerized environments, see the [Autodiscovery Integration Templates][7]
 
 ### Metrics
 
-With the default configuration, the Nagios check doesn't collect any metrics. But if you set `collect_host_performance_data` and/or `collect_service_performance_data` to `True`, the check watches for Nagios performance data and submits it as gauge metrics to Datadog.
+With the default configuration, the Nagios check doesn't collect any metrics. But if you set `collect_host_performance_data` and/or `collect_service_performance_data` to `True`, the check watches for Nagios performance data and submits it as gauge metrics to Khulnasoft.
 
 ### Log collection
 
-1. Collecting logs is disabled by default in the Datadog Agent, enable it in your `datadog.yaml` file:
+1. Collecting logs is disabled by default in the Khulnasoft Agent, enable it in your `khulnasoft.yaml` file:
 
     ```yaml
     logs_enabled: true
@@ -105,11 +105,11 @@ The Nagios check does not include any service checks.
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][9].
+Need help? Contact [Khulnasoft support][9].
 
 ## Further Reading
 
-- [Understand your Nagios alerts with Datadog][10]
+- [Understand your Nagios alerts with Khulnasoft][10]
 
 [1]: https://app.khulnasoft.com/account/settings/agent/latest
 [2]: https://docs.khulnasoft.com/agent/guide/agent-configuration-files/#agent-configuration-directory

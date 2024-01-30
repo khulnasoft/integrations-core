@@ -8,7 +8,7 @@ files:
           WARNING: This configuration file is for SNMP v1, v2, and v3.
           Check all variables depending on your SNMP version.
 
-          NOTE: See SNMP integration setup guide and examples in the Datadog documentation:
+          NOTE: See SNMP integration setup guide and examples in the Khulnasoft documentation:
                 https://docs.khulnasoft.com/network_monitoring/devices/setup
       options:
       - name: loader
@@ -58,7 +58,7 @@ files:
 
           Single scalar metrics and table metrics can be defined in this section.
           Details on how to define metrics can be found in the documentation:
-          https://datadoghq.dev/integrations-core/tutorials/snmp/profile-format/#metrics
+          https://khulnasofthq.dev/integrations-core/tutorials/snmp/profile-format/#metrics
         value:
           type: array
           items:
@@ -289,7 +289,7 @@ files:
 
           Single scalar metrics and table metrics can be defined in this section.
           Details on how to define metrics can be found in the documentation:
-          https://datadoghq.dev/integrations-core/tutorials/snmp/profile-format/#metrics
+          https://khulnasofthq.dev/integrations-core/tutorials/snmp/profile-format/#metrics
         value:
           type: array
           items:

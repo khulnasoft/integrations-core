@@ -11,7 +11,7 @@ This integration gets container metrics from kubelet
 
 ### Installation
 
-The Kubelet check is included in the [Datadog Agent][1] package, so you don't need to install anything else on your servers.
+The Kubelet check is included in the [Khulnasoft Agent][1] package, so you don't need to install anything else on your servers.
 
 ### Configuration
 
@@ -64,7 +64,7 @@ For network metrics reported at the pod level, containers cannot be excluded bas
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][6].
+Need help? Contact [Khulnasoft support][6].
 
 
 [1]: https://app.khulnasoft.com/account/settings/agent/latest

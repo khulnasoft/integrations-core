@@ -2,7 +2,7 @@
 
 ## Overview
 
-This check monitors [Systemd][1] and the units it manages through the Datadog Agent.
+This check monitors [Systemd][1] and the units it manages through the Khulnasoft Agent.
 
 - Track the state and health of your Systemd
 - Monitor the units, services, sockets managed by Systemd
@@ -11,7 +11,7 @@ This check monitors [Systemd][1] and the units it manages through the Datadog Ag
 
 ### Installation
 
-The Systemd check is included in the [Datadog Agent][2] package. No additional installation is needed on your server.
+The Systemd check is included in the [Khulnasoft Agent][2] package. No additional installation is needed on your server.
 
 ### Configuration
 
@@ -41,7 +41,7 @@ docker run -d -v /var/run/docker.sock:/var/run/docker.sock:ro \
               -v /sys/fs/cgroup/:/host/sys/fs/cgroup/:ro \
               -v /run/systemd/:/host/run/systemd/:ro \
               -e DD_API_KEY=<YOUR_API_KEY> \
-              datadog/agent:latest
+              khulnasoft/agent:latest
 ```
 
 <!-- xxz tab xxx -->
@@ -79,12 +79,12 @@ See [service_checks.json][7] for a list of service checks provided by this integ
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][8].
+Need help? Contact [Khulnasoft support][8].
 
 
 [1]: https://www.freedesktop.org/wiki/Software/systemd/
 [2]: https://app.khulnasoft.com/account/settings/agent/latest
-[3]: https://github.com/KhulnaSoft/datadog-agent/blob/master/cmd/agent/dist/conf.d/systemd.d/conf.yaml.example
+[3]: https://github.com/KhulnaSoft/khulnasoft-agent/blob/master/cmd/agent/dist/conf.d/systemd.d/conf.yaml.example
 [4]: https://docs.khulnasoft.com/agent/guide/agent-commands/#start-stop-restart-the-agent
 [5]: https://docs.khulnasoft.com/agent/guide/agent-commands/#agent-status-and-information
 [6]: https://github.com/KhulnaSoft/integrations-core/blob/master/systemd/metadata.csv

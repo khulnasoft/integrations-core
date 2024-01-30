@@ -76,7 +76,7 @@ files:
 
               The key is the Yarn application channel status. Valid keys are: `ALL`, `NEW`,
               `NEW_SAVING`, `SUBMITTED`, `ACCEPTED`, `RUNNING`, `FINISHED`, `FAILED` and `KILLED`.
-              The value is the Datadog service check level.
+              The value is the Khulnasoft service check level.
               Valid values are: `ok`, `warning`, `critical`, and `unknown`.
               If a channel status is not mapped, it is mapped to `unknown`.
 
@@ -155,7 +155,7 @@ files:
           - name: split_yarn_application_tags
             description: |
               Set this parameter to true to split YARN application tags string formatted as
-              `key1:value1,key2:value2,...` into Datadog application tags as such:
+              `key1:value1,key2:value2,...` into Khulnasoft application tags as such:
               `app_key1: value1`, `app_key2: value2`, etc.
             value:
               example: false

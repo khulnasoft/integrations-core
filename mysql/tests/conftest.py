@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2018-present
+# (C) Khulnasoft, Inc. 2018-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 import copy
@@ -325,12 +325,12 @@ def init_group_replication():
 
 
 def _init_khulnasoft_sample_collection(conn):
-    logger.debug("initializing datadog sample collection")
+    logger.debug("initializing khulnasoft sample collection")
     cur = conn.cursor()
-    cur.execute("CREATE DATABASE datadog")
-    cur.execute("GRANT CREATE TEMPORARY TABLES ON `datadog`.* TO 'dog'@'%'")
-    cur.execute("GRANT EXECUTE on `datadog`.*  TO 'dog'@'%'")
-    _create_explain_procedure(conn, "datadog")
+    cur.execute("CREATE DATABASE khulnasoft")
+    cur.execute("GRANT CREATE TEMPORARY TABLES ON `khulnasoft`.* TO 'dog'@'%'")
+    cur.execute("GRANT EXECUTE on `khulnasoft`.*  TO 'dog'@'%'")
+    _create_explain_procedure(conn, "khulnasoft")
     _create_explain_procedure(conn, "mysql")
     _create_enable_consumers_procedure(conn)
 
@@ -352,7 +352,7 @@ def _create_explain_procedure(conn, schema):
             schema=schema
         )
     )
-    if schema != 'datadog':
+    if schema != 'khulnasoft':
         cur.execute("GRANT EXECUTE ON PROCEDURE {schema}.explain_statement to 'dog'@'%'".format(schema=schema))
     cur.close()
 
@@ -362,7 +362,7 @@ def _create_enable_consumers_procedure(conn):
     cur = conn.cursor()
     cur.execute(
         """
-        CREATE PROCEDURE datadog.enable_events_statements_consumers()
+        CREATE PROCEDURE khulnasoft.enable_events_statements_consumers()
             SQL SECURITY DEFINER
         BEGIN
             UPDATE performance_schema.setup_consumers SET enabled='YES' WHERE name LIKE 'events_statements_%';

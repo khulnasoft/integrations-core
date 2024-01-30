@@ -130,7 +130,7 @@ files:
                        a. value_path - This is the JSON path from the `data_path` to the metric. This path may include
                                        string keys as well as list indices. For example, if querying for size of parent
                                        circuit breaker, the `value_path` is `estimated_size_in_bytes`.
-                       b. name - The full metric name sent to Datadog. If `type` is `tag`, this column is considered a
+                       b. name - The full metric name sent to Khulnasoft. If `type` is `tag`, this column is considered a
                                  tag and applied to every metric collected by this particular query.
 
                        c. type (optional) - An optional parameter to designates the type of data sent. Possible values
@@ -185,7 +185,7 @@ files:
                 type: string
     - name: submit_events
       description: |
-        By default we submit events to Datadog if the cluster starts unhealthy or anytime its health changes.
+        By default we submit events to Khulnasoft if the cluster starts unhealthy or anytime its health changes.
         You can set this option to `false` to disable submitting the events in case you already implemented
         your own custom alerts based on metrics.
       value:

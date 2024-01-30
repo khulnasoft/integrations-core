@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2019-present
+# (C) Khulnasoft, Inc. 2019-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 import logging
@@ -158,7 +158,7 @@ def test_connection_error_service_check(aggregator, instance, monkeypatch):
 
     check.check(instance)
 
-    aggregator.assert_service_check("vertica.can_connect", status=AgentCheck.CRITICAL, tags=['db:datadog', 'foo:bar'])
+    aggregator.assert_service_check("vertica.can_connect", status=AgentCheck.CRITICAL, tags=['db:khulnasoft', 'foo:bar'])
 
 
 def test_invalid_groups_in_config(instance):

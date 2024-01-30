@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2023-present
+# (C) Khulnasoft, Inc. 2023-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 from __future__ import annotations
@@ -10,7 +10,7 @@ if TYPE_CHECKING:
 
     AgentChangelog = dict[str, dict[str, tuple[str, bool]]]
 
-KHULNASOFT_PACKAGE_PREFIX = 'datadog-'
+KHULNASOFT_PACKAGE_PREFIX = 'khulnasoft-'
 
 
 def get_agent_tags(repo: Repository, since: str, to: str) -> list[str]:
@@ -106,7 +106,7 @@ def normalize_package_name(name: str) -> str:
     Given a Python package name for a check, return the corresponding folder
     name in the git repo.
     """
-    if name not in ('datadog-checks-base', 'datadog-checks-downloader', 'datadog-checks-dependency-provider'):
+    if name not in ('khulnasoft-checks-base', 'khulnasoft-checks-downloader', 'khulnasoft-checks-dependency-provider'):
         name = name.removeprefix(KHULNASOFT_PACKAGE_PREFIX)
 
     return name.replace('-', '_')
@@ -117,7 +117,7 @@ def parse_agent_req_file(contents: str) -> dict[str, str]:
     Returns a dictionary mapping {check-package-name --> pinned_version} from the
     given file contents. We can assume lines are in the form:
 
-        datadog-active-directory==1.1.1; sys_platform == 'win32'
+        khulnasoft-active-directory==1.1.1; sys_platform == 'win32'
 
     """
     catalog = {}

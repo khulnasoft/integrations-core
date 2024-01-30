@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2023-present
+# (C) Khulnasoft, Inc. 2023-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 import re
@@ -195,7 +195,7 @@ VALID_UNIT_NAMES = {
     'step',
 }
 
-ALLOWED_PREFIXES = ('system.', 'jvm.', 'http.', 'datadog.', 'sftp.', 'process.', 'runtime.', 'otelcol_')
+ALLOWED_PREFIXES = ('system.', 'jvm.', 'http.', 'khulnasoft.', 'sftp.', 'process.', 'runtime.', 'otelcol_')
 PROVIDER_INTEGRATIONS = {'openmetrics', 'prometheus'}
 
 MAX_DESCRIPTION_LENGTH = 400

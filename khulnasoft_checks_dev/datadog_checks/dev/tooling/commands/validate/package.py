@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2020-present
+# (C) Khulnasoft, Inc. 2020-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 import re
@@ -61,8 +61,8 @@ def package(check):
         source, project_name = read_project_name(check)
         normalization_function = normalize_project_name if has_project_file(check) else normalize_package_name
         project_name = normalization_function(project_name)
-        normalized_project_name = normalization_function(f'datadog-{check}')
-        # The name field must match the pattern: `datadog-<folder_name>`
+        normalized_project_name = normalization_function(f'khulnasoft-{check}')
+        # The name field must match the pattern: `khulnasoft-<folder_name>`
         if project_name != normalized_project_name:
             file_failed = True
             display_queue.append(

@@ -12,7 +12,7 @@ This check monitors the [Kubernetes Controller Manager][2], part of the Kubernet
 
 ### Installation
 
-The Kubernetes Controller Manager check is included in the [Datadog Agent][3] package, so you do not
+The Kubernetes Controller Manager check is included in the [Khulnasoft Agent][3] package, so you do not
 need to install anything else on your server.
 
 ### Configuration
@@ -24,7 +24,7 @@ need to install anything else on your server.
 This integration requires access to the controller manager's metric endpoint. To have access to the metric endpoint you should:
 
 * have access to the IP/Port of the controller-manager process
-* have `get` RBAC permissions to the /metrics endpoint (the default Datadog Helm chart already adds the right RBAC roles and bindings for this)
+* have `get` RBAC permissions to the /metrics endpoint (the default Khulnasoft Helm chart already adds the right RBAC roles and bindings for this)
 
 ### Validation
 
@@ -46,7 +46,7 @@ See [service_checks.json][8] for a list of service checks provided by this integ
 
 ## Troubleshooting
 
-Need help? Contact [Datadog Support][9].
+Need help? Contact [Khulnasoft Support][9].
 
 [1]: https://raw.githubusercontent.com/KhulnaSoft/integrations-core/master/kube_controller_manager/images/screenshot.png
 [2]: https://kubernetes.io/docs/reference/command-line-tools-reference/kube-controller-manager

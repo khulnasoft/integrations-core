@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2018-present
+# (C) Khulnasoft, Inc. 2018-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 from __future__ import division
@@ -104,7 +104,7 @@ class OpenMetricsScraperMixin(object):
             return instance.get(name, default_instance.get(name, default))
 
         # `metrics_mapper` is a dictionary where the keys are the metrics to capture
-        # and the values are the corresponding metrics names to have in datadog.
+        # and the values are the corresponding metrics names to have in khulnasoft.
         # Note: it is empty in the parent class but will need to be
         # overloaded/hardcoded in the final check not to be counted as custom metric.
 
@@ -213,7 +213,7 @@ class OpenMetricsScraperMixin(object):
             instance.get('non_cumulative_buckets', default_instance.get('non_cumulative_buckets', False))
         )
 
-        # Send histograms as datadog distribution metrics
+        # Send histograms as khulnasoft distribution metrics
         config['send_distribution_buckets'] = is_affirmative(
             instance.get('send_distribution_buckets', default_instance.get('send_distribution_buckets', False))
         )
@@ -351,7 +351,7 @@ class OpenMetricsScraperMixin(object):
         config['_text_filter_blacklist'] = []
 
         # Refresh the bearer token every 60 seconds by default.
-        # Ref https://github.com/KhulnaSoft/datadog-agent/pull/11686
+        # Ref https://github.com/KhulnaSoft/khulnasoft-agent/pull/11686
         config['bearer_token_refresh_interval'] = instance.get(
             'bearer_token_refresh_interval', default_instance.get('bearer_token_refresh_interval', 60)
         )
@@ -558,7 +558,7 @@ class OpenMetricsScraperMixin(object):
 
     def process(self, scraper_config, metric_transformers=None):
         """
-        Polls the data from Prometheus and submits them as Datadog metrics.
+        Polls the data from Prometheus and submits them as Khulnasoft metrics.
         `endpoint` is the metrics endpoint to use to poll metrics from Prometheus
 
         Note that if the instance has a `tags` attribute, it will be pushed
@@ -761,7 +761,7 @@ class OpenMetricsScraperMixin(object):
     def process_metric(self, metric, scraper_config, metric_transformers=None):
         """
         Handle a Prometheus metric according to the following flow:
-        - search `scraper_config['metrics_mapper']` for a prometheus.metric to datadog.metric mapping
+        - search `scraper_config['metrics_mapper']` for a prometheus.metric to khulnasoft.metric mapping
         - call check method with the same name as the metric
         - log info if none of the above worked
 
@@ -887,7 +887,7 @@ class OpenMetricsScraperMixin(object):
         send the buckets as tagged values when dealing with histograms.
 
         `custom_tags` is an array of `tag:value` that will be added to the
-        metric when sending the gauge to Datadog.
+        metric when sending the gauge to Khulnasoft.
         """
         if metric.type in ["gauge", "counter", "rate"]:
             metric_name_with_namespace = self._metric_name_with_namespace(metric_name, scraper_config)

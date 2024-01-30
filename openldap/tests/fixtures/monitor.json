@@ -516,7 +516,7 @@
                     "20180712102238Z"
                 ],
                 "monitorConnectionAuthzDN": [
-                    "cn=monitor,dc=datadoghq,dc=com"
+                    "cn=monitor,dc=khulnasofthq,dc=com"
                 ],
                 "monitorConnectionGet": [
                     "6"
@@ -596,7 +596,7 @@
                     "20180712102238Z"
                 ],
                 "monitorConnectionAuthzDN": [
-                    "cn=monitor,dc=datadoghq,dc=com"
+                    "cn=monitor,dc=khulnasofthq,dc=com"
                 ],
                 "monitorConnectionGet": [
                     "6"
@@ -845,7 +845,7 @@
                 "namingContexts": [
                     "",
                     "cn=config",
-                    "dc=datadoghq,dc=com"
+                    "dc=khulnasofthq,dc=com"
                 ],
                 "objectClass": [
                     "monitorContainer"
@@ -888,7 +888,7 @@
                 "namingContexts": [
                     "",
                     "cn=config",
-                    "dc=datadoghq,dc=com"
+                    "dc=khulnasofthq,dc=com"
                 ],
                 "objectClass": [
                     "monitorContainer"
@@ -1078,7 +1078,7 @@
                     "mdb"
                 ],
                 "namingContexts": [
-                    "dc=datadoghq,dc=com"
+                    "dc=khulnasofthq,dc=com"
                 ],
                 "objectClass": [
                     "monitoredObject",
@@ -1126,7 +1126,7 @@
                     "mdb"
                 ],
                 "namingContexts": [
-                    "dc=datadoghq,dc=com"
+                    "dc=khulnasofthq,dc=com"
                 ],
                 "objectClass": [
                     "monitoredObject",
@@ -3473,7 +3473,7 @@
                 "modifiersName": "",
                 "modifyTimestamp": "2018-07-10 14:09:36+00:00",
                 "monitoredInfo": [
-                    "{0}mdb_checkpoint(dc=datadoghq,dc=com)"
+                    "{0}mdb_checkpoint(dc=khulnasofthq,dc=com)"
                 ],
                 "objectClass": [
                     "monitoredObject"
@@ -3508,7 +3508,7 @@
                     "20180710140936Z"
                 ],
                 "monitoredInfo": [
-                    "{0}mdb_checkpoint(dc=datadoghq,dc=com)"
+                    "{0}mdb_checkpoint(dc=khulnasofthq,dc=com)"
                 ],
                 "objectClass": [
                     "monitoredObject"

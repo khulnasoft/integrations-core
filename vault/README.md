@@ -8,10 +8,10 @@ This check monitors [Vault][1] cluster health and leader changes.
 
 ### Installation
 
-The Vault check is included in the [Datadog Agent][2] package.
+The Vault check is included in the [Khulnasoft Agent][2] package.
 
 
-Starting with version 3.4.0, this OpenMetrics-based integration has a *latest* mode (`use_openmetrics`: true) and a *legacy* mode (`use_openmetrics`: false). To get all the most up-to-date features, Datadog recommends enabling the *latest* mode. Note that *latest* mode requires Python 3. For more information, see [Latest and Legacy Versioning For OpenMetrics-based Integrations][22].
+Starting with version 3.4.0, this OpenMetrics-based integration has a *latest* mode (`use_openmetrics`: true) and a *legacy* mode (`use_openmetrics`: false). To get all the most up-to-date features, Khulnasoft recommends enabling the *latest* mode. Note that *latest* mode requires Python 3. For more information, see [Latest and Legacy Versioning For OpenMetrics-based Integrations][22].
 
 1. Ensure you have enabled [Prometheus metrics in the Vault configuration][3].
 
@@ -40,7 +40,7 @@ The Vault integration requires the following capabilities:
   $ vault policy write metrics /path/to/metrics_policy.hcl
   $ vault auth enable jwt
   $ vault write auth/jwt/config jwt_supported_algs=RS256 jwt_validation_pubkeys=@<PATH_TO_PUBLIC_PEM>
-  $ vault write auth/jwt/role/datadog role_type=jwt bound_audiences=<AUDIENCE> user_claim=name token_policies=metrics
+  $ vault write auth/jwt/role/khulnasoft role_type=jwt bound_audiences=<AUDIENCE> user_claim=name token_policies=metrics
   $ vault agent -config=/path/to/agent_config.hcl
   ```
 
@@ -54,7 +54,7 @@ The Vault integration requires the following capabilities:
     method "jwt" {
       config = {
         path = "<JWT_CLAIM_PATH>"
-        role = "datadog"
+        role = "khulnasoft"
       }
     }
 
@@ -142,7 +142,7 @@ For containerized environments, see the [Autodiscovery Integration Templates][9]
 
 _Available for Agent versions >6.0_
 
-1. Collecting logs is disabled by default in the Datadog Agent, enable it in your `datadog.yaml` file:
+1. Collecting logs is disabled by default in the Khulnasoft Agent, enable it in your `khulnasoft.yaml` file:
 
    ```yaml
    logs_enabled: true
@@ -208,16 +208,16 @@ See [service_checks.json][15] for a list of service checks provided by this inte
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][16].
+Need help? Contact [Khulnasoft support][16].
 
 ## Further Reading
 
 Additional helpful documentation, links, and articles:
 
-- [Monitor HashiCorp Vault with Datadog][17]
+- [Monitor HashiCorp Vault with Khulnasoft][17]
 - [Monitor HashiCorp Vault metrics and logs][18]
 - [Tools for HashiCorp Vault monitoring][19]
-- [How to monitor HashiCorp Vault with Datadog][20]
+- [How to monitor HashiCorp Vault with Khulnasoft][20]
 
 [1]: https://www.vaultproject.io
 [2]: https://app.khulnasoft.com/account/settings/agent/latest
@@ -235,9 +235,9 @@ Additional helpful documentation, links, and articles:
 [14]: https://github.com/KhulnaSoft/integrations-core/blob/master/vault/metadata.csv
 [15]: https://github.com/KhulnaSoft/integrations-core/blob/master/vault/assets/service_checks.json
 [16]: https://docs.khulnasoft.com/help/
-[17]: https://www.khulnasoft.com/blog/monitor-hashicorp-vault-with-datadog
+[17]: https://www.khulnasoft.com/blog/monitor-hashicorp-vault-with-khulnasoft
 [18]: https://www.khulnasoft.com/blog/monitor-vault-metrics-and-logs/
 [19]: https://www.khulnasoft.com/blog/vault-monitoring-tools
-[20]: https://www.khulnasoft.com/blog/vault-monitoring-with-datadog
+[20]: https://www.khulnasoft.com/blog/vault-monitoring-with-khulnasoft
 [21]: https://docs.khulnasoft.com/integrations/openmetrics/
 [22]: https://docs.khulnasoft.com/integrations/guide/versions-for-openmetrics-based-integrations

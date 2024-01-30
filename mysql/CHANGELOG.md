@@ -323,7 +323,7 @@
 
 ***Fixed***:
 
-* Upgrade datadog checks base to 23.1.5 ([#10467](https://github.com/KhulnaSoft/integrations-core/pull/10467))
+* Upgrade khulnasoft checks base to 23.1.5 ([#10467](https://github.com/KhulnaSoft/integrations-core/pull/10467))
 
 ## 6.1.0 / 2021-10-04
 
@@ -357,7 +357,7 @@
 ***Fixed***:
 
 * Properly allow deprecated required config ([#9750](https://github.com/KhulnaSoft/integrations-core/pull/9750))
-* Bump `datadog-checks-base` version requirement ([#9718](https://github.com/KhulnaSoft/integrations-core/pull/9718))
+* Bump `khulnasoft-checks-base` version requirement ([#9718](https://github.com/KhulnaSoft/integrations-core/pull/9718))
 
 ## 5.0.3 / 2021-07-16
 

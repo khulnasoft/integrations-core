@@ -26,7 +26,7 @@
 
 ***Fixed***:
 
-* Bump the minimum datadog-checks-base version ([#15217](https://github.com/KhulnaSoft/integrations-core/pull/15217))
+* Bump the minimum khulnasoft-checks-base version ([#15217](https://github.com/KhulnaSoft/integrations-core/pull/15217))
 
 ## 2.19.0 / 2023-07-10
 
@@ -268,7 +268,7 @@
 
 ***Fixed***:
 
-* Clean-up import for `PDHBaseCheck` from `datadog-checks-base` wheel. [#1183](https://github.com/KhulnaSoft/integrations-core/issues/1183)
+* Clean-up import for `PDHBaseCheck` from `khulnasoft-checks-base` wheel. [#1183](https://github.com/KhulnaSoft/integrations-core/issues/1183)
 
 ## 2.0.2 / 2018-03-07
 

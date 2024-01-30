@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2019-present
+# (C) Khulnasoft, Inc. 2019-present
 # All rights reserved
 # Licensed under Simplified BSD License (see LICENSE)
 from collections import defaultdict
@@ -86,7 +86,7 @@ def test_e2e_v3_version_autodetection(dd_agent_check):
     config = common.generate_container_instance_config([])
     config['instances'][0].update(
         {
-            'user': 'datadogSHADES',
+            'user': 'khulnasoftSHADES',
             'authKey': 'doggiepass',
             'authProtocol': 'sha',
             'privKey': 'doggiePRIVkey',
@@ -106,7 +106,7 @@ def test_e2e_v3_explicit_version(dd_agent_check):
     config = common.generate_container_instance_config([])
     config['instances'][0].update(
         {
-            'user': 'datadogSHADES',
+            'user': 'khulnasoftSHADES',
             'authKey': 'doggiepass',
             'authProtocol': 'SHA',
             'privKey': 'doggiePRIVkey',
@@ -127,7 +127,7 @@ def test_e2e_v3_md5_aes(dd_agent_check):
     config = common.generate_container_instance_config([])
     config['instances'][0].update(
         {
-            'user': 'datadogMD5AES',
+            'user': 'khulnasoftMD5AES',
             'authKey': 'doggiepass',
             'authProtocol': 'MD5',
             'privKey': 'doggiePRIVkey',
@@ -149,7 +149,7 @@ def test_e2e_v3_md5_aes256_blumenthal(dd_agent_check):
     config = common.generate_container_instance_config([])
     config['instances'][0].update(
         {
-            'user': 'datadogMD5AES256BLMT',
+            'user': 'khulnasoftMD5AES256BLMT',
             'authKey': 'doggiepass',
             'authProtocol': 'MD5',
             'privKey': 'doggiePRIVkey',
@@ -175,7 +175,7 @@ def test_e2e_v3_md5_aes256_reeder(dd_agent_check):
     config = common.generate_container_instance_config([])
     config['instances'][0].update(
         {
-            'user': 'datadogMD5AES256',
+            'user': 'khulnasoftMD5AES256',
             'authKey': 'doggiepass',
             'authProtocol': 'MD5',
             'privKey': 'doggiePRIVkey',
@@ -504,7 +504,7 @@ def test_e2e_profile_dell_poweredge(dd_agent_check):
         # See II-153
         'snmp.networkDeviceStatus',
         'snmp.memoryDeviceStatus',
-        'datadog.snmp.submitted_metrics',  # count won't match because of the reason explained above
+        'khulnasoft.snmp.submitted_metrics',  # count won't match because of the reason explained above
     ]
     assert_python_vs_core(
         dd_agent_check,
@@ -649,9 +649,9 @@ def test_e2e_discovery(dd_agent_check):
     # python integration autodiscovery submit telemetry metrics once for all devices
     # core integration autodiscovery submit telemetry metrics once for each device
     skip_metrics = [
-        'datadog.snmp.check_interval',
-        'datadog.snmp.submitted_metrics',
-        'datadog.snmp.check_duration',
+        'khulnasoft.snmp.check_interval',
+        'khulnasoft.snmp.submitted_metrics',
+        'khulnasoft.snmp.check_duration',
     ]
     # we don't assert count, since the count might be off by 1 due to devices not being discovered at first check run
     assert_python_vs_core(

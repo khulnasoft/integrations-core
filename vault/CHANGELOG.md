@@ -42,7 +42,7 @@
 
 ***Fixed***:
 
-* Update minimum datadog base package version ([#14463](https://github.com/KhulnaSoft/integrations-core/pull/14463))
+* Update minimum khulnasoft base package version ([#14463](https://github.com/KhulnaSoft/integrations-core/pull/14463))
 * Deprecate `use_latest_spec` option ([#14446](https://github.com/KhulnaSoft/integrations-core/pull/14446))
 
 ## 3.3.3 / 2022-10-28 / Agent 7.41.0

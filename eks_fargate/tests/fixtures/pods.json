@@ -721,9 +721,9 @@
                 "containerStatuses": [
                     {
                         "restartCount": 0,
-                        "name": "datadog-agent",
-                        "image": "datadog/agent-dev:haissam-tagger-pod-entity",
-                        "imageID": "docker-pullable://datadog/agent-dev@sha256:894fb66f89be0332a47388d7219ab8b365520ff0e3bbf597bd0a378b19efa7ee",
+                        "name": "khulnasoft-agent",
+                        "image": "khulnasoft/agent-dev:haissam-tagger-pod-entity",
+                        "imageID": "docker-pullable://khulnasoft/agent-dev@sha256:894fb66f89be0332a47388d7219ab8b365520ff0e3bbf597bd0a378b19efa7ee",
                         "state": {
                             "running": {
                                 "startedAt": "2018-02-13T16:11:19Z"
@@ -762,9 +762,9 @@
             "spec": {
                 "dnsPolicy": "ClusterFirst",
                 "securityContext": {},
-                "serviceAccountName": "datadog",
+                "serviceAccountName": "khulnasoft",
                 "schedulerName": "default-scheduler",
-                "serviceAccount": "datadog",
+                "serviceAccount": "khulnasoft",
                 "terminationGracePeriodSeconds": 30,
                 "restartPolicy": "Always",
                 "volumes": [
@@ -792,9 +792,9 @@
                     {
                         "secret": {
                             "defaultMode": 420,
-                            "secretName": "datadog-token-bbjjv"
+                            "secretName": "khulnasoft-token-bbjjv"
                         },
-                        "name": "datadog-token-bbjjv"
+                        "name": "khulnasoft-token-bbjjv"
                     }
                 ],
                 "tolerations": [
@@ -822,8 +822,8 @@
                 "containers": [
                     {
                         "terminationMessagePath": "/dev/termination-log",
-                        "name": "datadog-agent",
-                        "image": "datadog/agent-dev:haissam-tagger-pod-entity",
+                        "name": "khulnasoft-agent",
+                        "image": "khulnasoft/agent-dev:haissam-tagger-pod-entity",
                         "volumeMounts": [
                             {
                                 "readOnly": true,
@@ -843,7 +843,7 @@
                             {
                                 "readOnly": true,
                                 "mountPath": "/var/run/secrets/kubernetes.io/serviceaccount",
-                                "name": "datadog-token-bbjjv"
+                                "name": "khulnasoft-token-bbjjv"
                             }
                         ],
                         "terminationMessagePolicy": "File",
@@ -878,9 +878,9 @@
                 "nodeName": "gke-haissam-default-pool-be5066f1-wnvn"
             },
             "metadata": {
-                "name": "datadog-agent-jbm2k",
+                "name": "khulnasoft-agent-jbm2k",
                 "labels": {
-                    "app": "datadog-node-agent",
+                    "app": "khulnasoft-node-agent",
                     "pod-template-generation": "1",
                     "controller-revision-hash": "4047775714"
                 },
@@ -888,7 +888,7 @@
                 "ownerReferences": [
                     {
                         "kind": "DaemonSet",
-                        "name": "datadog-agent",
+                        "name": "khulnasoft-agent",
                         "apiVersion": "extensions/v1beta1",
                         "controller": true,
                         "blockOwnerDeletion": true,
@@ -896,14 +896,14 @@
                     }
                 ],
                 "resourceVersion": "30704834",
-                "generateName": "datadog-agent-",
+                "generateName": "khulnasoft-agent-",
                 "creationTimestamp": "2018-02-13T15:15:43Z",
                 "annotations": {
                     "kubernetes.io/config.source": "api",
-                    "kubernetes.io/limit-ranger": "LimitRanger plugin set: cpu request for container datadog-agent",
+                    "kubernetes.io/limit-ranger": "LimitRanger plugin set: cpu request for container khulnasoft-agent",
                     "kubernetes.io/config.seen": "2018-02-13T16:10:19.509271892Z"
                 },
-                "selfLink": "/api/v1/namespaces/default/pods/datadog-agent-jbm2k",
+                "selfLink": "/api/v1/namespaces/default/pods/khulnasoft-agent-jbm2k",
                 "uid": "c2319815-10d0-11e8-bd5a-42010af00137"
             }
         },
@@ -914,8 +914,8 @@
                     {
                         "restartCount": 0,
                         "name": "dd-agent",
-                        "image": "datadog/dev-dd-agent:beta",
-                        "imageID": "docker-pullable://datadog/dev-dd-agent@sha256:1672a9c8741813070b5fac803d598c379e37e678e989582c55b7659b01f36eb4",
+                        "image": "khulnasoft/dev-dd-agent:beta",
+                        "imageID": "docker-pullable://khulnasoft/dev-dd-agent@sha256:1672a9c8741813070b5fac803d598c379e37e678e989582c55b7659b01f36eb4",
                         "state": {
                             "waiting": {
                                 "startedAt": "2018-02-13T16:11:00Z"
@@ -1015,7 +1015,7 @@
                     {
                         "terminationMessagePath": "/dev/termination-log",
                         "name": "dd-agent",
-                        "image": "datadog/dev-dd-agent:beta",
+                        "image": "khulnasoft/dev-dd-agent:beta",
                         "volumeMounts": [
                             {
                                 "mountPath": "/var/run/docker.sock",

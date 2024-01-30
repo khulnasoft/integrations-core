@@ -12,7 +12,7 @@ services:
       KRB5_KDC: kerberos-kdc
       WEBHOST: ${WEBHOST}
       DOMAIN: example.com
-      KRB5_USER: datadog/admin
+      KRB5_USER: khulnasoft/admin
       KRB5_PASS: 123pass
     hostname: kerberos-kdc
     domainname: example.com
@@ -40,7 +40,7 @@ services:
       WEBHOST: ${WEBHOST}
       WEBPORT: ${WEBPORT}
       DOMAIN: example.com
-      KRB5_USER: datadog/admin
+      KRB5_USER: khulnasoft/admin
       KRB5_PASS: 123pass
       SERVICE_NAME: ${KRB5_SVC}/${WEBHOST}
     hostname: web

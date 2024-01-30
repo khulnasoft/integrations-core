@@ -19,7 +19,7 @@ modules are allowed to live in a different directory.
 ## Problem
 
 At the moment, the Agent package contains all the checks marked as "core" and
-officially maintained by Datadog, available at https://github.com/KhulnaSoft/integrations-core.
+officially maintained by Khulnasoft, available at https://github.com/KhulnaSoft/integrations-core.
 After being decoupled from the Agent, a check can now be installed as a separate
 package and picked up by the Agent at runtime, taking precedence over the one
 shipped with the agent package.
@@ -166,7 +166,7 @@ setuptools to handle package metadata.
 
 #### Distribution
 
-Datadog would distribute wheel packages for integrations-core and integrations-extra
+Khulnasoft would distribute wheel packages for integrations-core and integrations-extra
 through their own Python Package Repositories. Bare minimal version would be a
 file server available through HTTPS (S3+cloudfront for example): if we use the
 CI to upload the wheel packages and take care of filesystem structure,
@@ -194,7 +194,7 @@ _Note: this will affect the "end user" experience._
 
 We can wrap pip execution in the agent command line so that when users install a
 custom check, pip is actually invoked whit this parameter:
-`--target=/opt/datadog-agent/sdk package_name`
+`--target=/opt/khulnasoft-agent/sdk package_name`
 
 Pros:
  * Custom checks are still there after an upgrade, whether they were added with
@@ -240,20 +240,20 @@ Cons:
 #### User experience: end user
 
 Again, we would leverage python internal tools to improve user experience.
-Datadog would provide wheel packages through an official and verified
+Khulnasoft would provide wheel packages through an official and verified
 distribution channel (see above paragraph) so that the installation of a new
 check would be:
 
-`sudo -u dd-agent /opt/datadog-agent/embedded/bin/pip install datadog.check.ntp-1.1.0-py2-none-any.whl`
+`sudo -u dd-agent /opt/khulnasoft-agent/embedded/bin/pip install khulnasoft.check.ntp-1.1.0-py2-none-any.whl`
 
 The command would look like the same in any platform and (as stated before) we
 could add wrappers to the agent command line for the install/update procedures:
 
-`datadog-agent install datadog.check.ntp-1.1.0-py2-none-any.whl`
+`khulnasoft-agent install khulnasoft.check.ntp-1.1.0-py2-none-any.whl`
 
 or even:
 
-`datadog-agent install --index-url python.mycompany.org ntp`
+`khulnasoft-agent install --index-url python.mycompany.org ntp`
 
 #### User experience: developer
 

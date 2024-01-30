@@ -12,7 +12,7 @@ Get metrics from Btrfs in real time to:
 
 ### Installation
 
-The Btrfs check is included in the [Datadog Agent][2] package, so you don't need to install anything else on your servers that use at least one Btrfs filesystem.
+The Btrfs check is included in the [Khulnasoft Agent][2] package, so you don't need to install anything else on your servers that use at least one Btrfs filesystem.
 
 ### Configuration
 
@@ -40,7 +40,7 @@ The Btrfs check does not include any service checks.
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][8].
+Need help? Contact [Khulnasoft support][8].
 
 [1]: https://raw.githubusercontent.com/KhulnaSoft/integrations-core/master/btrfs/images/btrfs_metric.png
 [2]: https://app.khulnasoft.com/account/settings/agent/latest

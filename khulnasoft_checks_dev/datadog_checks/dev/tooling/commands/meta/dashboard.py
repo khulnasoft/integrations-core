@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2019-present
+# (C) Khulnasoft, Inc. 2019-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 import json
@@ -30,8 +30,8 @@ def dash():
     '--author',
     '-a',
     required=False,
-    default='Datadog',
-    help="The owner of this integration's dashboard. Default is 'Datadog'",
+    default='Khulnasoft',
+    help="The owner of this integration's dashboard. Default is 'Khulnasoft'",
 )
 @click.pass_context
 def export(ctx, url, integration, author):

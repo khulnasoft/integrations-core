@@ -1,10 +1,10 @@
-# SPDX-FileCopyrightText: 2023-present Datadog, Inc. <dev@khulnasoft.com>
+# SPDX-FileCopyrightText: 2023-present Khulnasoft, Inc. <dev@khulnasoft.com>
 #
 # SPDX-License-Identifier: MIT
 VERSION = VARS["version"]
 APP_NAME = "ddev"
 DISPLAY_NAME = "ddev"
-AUTHOR = "Datadog, Inc."
+AUTHOR = "Khulnasoft, Inc."
 
 
 def make_msi(target):

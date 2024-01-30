@@ -27,12 +27,12 @@ instances:
     # port: 5432
 
     ## @param username - string - optional
-    ## The Datadog username created to connect to PostgreSQL.
+    ## The Khulnasoft username created to connect to PostgreSQL.
     #
     # username: <USERNAME>
 
     ## @param password - string - optional
-    ## The password associated with the Datadog user.
+    ## The password associated with the Khulnasoft user.
     #
     # password: <PASSWORD>
 
@@ -227,7 +227,7 @@ instances:
 
     ## @param custom_queries - list of mappings - optional
     ## Define custom queries to collect custom metrics from your PostgreSQL
-    ## See Datadog FAQ article for a guide on collecting custom metrics from PostgreSQL:
+    ## See Khulnasoft FAQ article for a guide on collecting custom metrics from PostgreSQL:
     ## https://docs.khulnasoft.com/integrations/faq/postgres-custom-metric-collection-explained/
     #
     # custom_queries:
@@ -288,12 +288,12 @@ instances:
         #
         # refresh: 600
 
-    ## @param application_name - string - optional - default: datadog-agent
+    ## @param application_name - string - optional - default: khulnasoft-agent
     ## The application_name can be any string of less than NAMEDATALEN characters (64 characters in a standard build).
     ## It is typically set by an application upon connection to the server.
     ## The name is displayed in the pg_stat_activity view and included in CSV log entries.
     #
-    # application_name: datadog-agent
+    # application_name: khulnasoft-agent
 
     ## @param dbm - boolean - optional - default: false
     ## Set to `true` to enable Database Monitoring.
@@ -301,8 +301,8 @@ instances:
     # dbm: false
 
     ## @param pg_stat_statements_view - string - optional - default: show_pg_stat_statements()
-    ## Set this value if you want to define a custom view or function to allow the datadog user to query the
-    ## `pg_stat_statements` table, which is useful for restricting the permissions given to the datadog agent.
+    ## Set this value if you want to define a custom view or function to allow the khulnasoft user to query the
+    ## `pg_stat_statements` table, which is useful for restricting the permissions given to the khulnasoft agent.
     ## Please note this is an ALPHA feature and is subject to change or deprecation without notice.
     #
     # pg_stat_statements_view: show_pg_stat_statements()
@@ -338,10 +338,10 @@ instances:
         #
         # collection_interval: 1
 
-        ## @param explain_function - string - optional - default: datadog.explain_statement
+        ## @param explain_function - string - optional - default: khulnasoft.explain_statement
         ## Override the default function used to collect execution plans for queries.
         #
-        # explain_function: datadog.explain_statement
+        # explain_function: khulnasoft.explain_statement
 
         ## @param explained_queries_per_hour_per_query - integer - optional - default: 60
         ## Set the rate limit for how many execution plans will be collected per hour per normalized query.
@@ -445,7 +445,7 @@ instances:
 
     ## This block defines the configuration for AWS RDS and Aurora instances.
     ##
-    ## Complete this section if you have installed the Datadog AWS Integration
+    ## Complete this section if you have installed the Khulnasoft AWS Integration
     ## (https://docs.khulnasoft.com/integrations/amazon_web_services) to enrich instances
     ## with Postgres integration telemetry.
     ##
@@ -487,7 +487,7 @@ instances:
 
     ## This block defines the configuration for Google Cloud SQL instances.
     ##
-    ## Complete this section if you have installed the Datadog GCP Integration
+    ## Complete this section if you have installed the Khulnasoft GCP Integration
     ## (https://docs.khulnasoft.com/integrations/google_cloud_platform) to enrich instances
     ## with Postgres integration telemetry.
     ##
@@ -513,7 +513,7 @@ instances:
 
     ## This block defines the configuration for Azure Database for PostgreSQL.
     ##
-    ## Complete this section if you have installed the Datadog Azure Integration
+    ## Complete this section if you have installed the Khulnasoft Azure Integration
     ## (https://docs.khulnasoft.com/integrations/azure) to enrich instances
     ## with Postgres integration telemetry.
     ## These values are only applied when `dbm: true` option is set.
@@ -733,7 +733,7 @@ instances:
 ##                      Overrides any `service` defined in the `init_config` section.
 ## tags - optional - Add tags to the collected logs.
 ##
-## Discover Datadog log collection: https://docs.khulnasoft.com/logs/log_collection/
+## Discover Khulnasoft log collection: https://docs.khulnasoft.com/logs/log_collection/
 #
 # logs:
 #   - type: file

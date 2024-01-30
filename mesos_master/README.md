@@ -19,30 +19,30 @@ And many more.
 
 ### Installation
 
-The installation is the same on Mesos with and without DC/OS. Run the datadog-agent container on each of your Mesos master nodes:
+The installation is the same on Mesos with and without DC/OS. Run the khulnasoft-agent container on each of your Mesos master nodes:
 
 ```shell
-docker run -d --name datadog-agent \
+docker run -d --name khulnasoft-agent \
   -v /var/run/docker.sock:/var/run/docker.sock:ro \
   -v /proc/:/host/proc/:ro \
   -v /sys/fs/cgroup/:/host/sys/fs/cgroup:ro \
   -e DD_API_KEY=<YOUR_KHULNASOFT_API_KEY> \
   -e MESOS_MASTER=true \
   -e MARATHON_URL=http://leader.mesos:8080 \
-  datadog/agent:latest
+  khulnasoft/agent:latest
 ```
 
-Substitute your Datadog API key and Mesos Master's API URL into the command above.
+Substitute your Khulnasoft API key and Mesos Master's API URL into the command above.
 
 ### Configuration
 
-If you passed the correct Master URL when starting datadog-agent, the Agent is already using a default `mesos_master.d/conf.yaml` to collect metrics from your masters. See the [sample mesos_master.d/conf.yaml][3] for all available configuration options.
+If you passed the correct Master URL when starting khulnasoft-agent, the Agent is already using a default `mesos_master.d/conf.yaml` to collect metrics from your masters. See the [sample mesos_master.d/conf.yaml][3] for all available configuration options.
 
 Unless your masters' API uses a self-signed certificate. In that case, set `disable_ssl_validation: true` in `mesos_master.d/conf.yaml`.
 
 #### Log collection
 
-1. Collecting logs is disabled by default in the Datadog Agent, enable it in your `datadog.yaml` file:
+1. Collecting logs is disabled by default in the Khulnasoft Agent, enable it in your `khulnasoft.yaml` file:
 
     ```yaml
     logs_enabled: true
@@ -73,7 +73,7 @@ To enable logs for Kubernetes environments, see [Kubernetes Log Collection][5].
 
 ### Validation
 
-In Datadog, search for `mesos.cluster` in the Metrics Explorer.
+In Khulnasoft, search for `mesos.cluster` in the Metrics Explorer.
 
 ## Data Collected
 
@@ -91,11 +91,11 @@ See [service_checks.json][7] for a list of service checks provided by this integ
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][8].
+Need help? Contact [Khulnasoft support][8].
 
 ## Further Reading
 
-- [Installing Datadog on Mesos with DC/OS][9]
+- [Installing Khulnasoft on Mesos with DC/OS][9]
 
 [1]: https://docs.khulnasoft.com/integrations/mesos/#mesos-slave-integration
 [2]: https://raw.githubusercontent.com/KhulnaSoft/integrations-core/master/mesos_master/images/mesos_dashboard.png
@@ -105,4 +105,4 @@ Need help? Contact [Datadog support][8].
 [6]: https://github.com/KhulnaSoft/integrations-core/blob/master/mesos_master/metadata.csv
 [7]: https://github.com/KhulnaSoft/integrations-core/blob/master/mesos_master/assets/service_checks.json
 [8]: https://docs.khulnasoft.com/help/
-[9]: https://www.khulnasoft.com/blog/deploy-datadog-dcos
+[9]: https://www.khulnasoft.com/blog/deploy-khulnasoft-dcos

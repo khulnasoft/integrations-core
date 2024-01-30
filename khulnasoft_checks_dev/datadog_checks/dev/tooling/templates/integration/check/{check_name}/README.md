@@ -2,7 +2,7 @@
 
 ## Overview
 
-This check monitors [{integration_name}][1] through the Datadog Agent.
+This check monitors [{integration_name}][1] through the Khulnasoft Agent.
 
 ## Setup
 
@@ -40,7 +40,7 @@ See [service_checks.json][8] for a list of service checks provided by this integ
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][9].
+Need help? Contact [Khulnasoft support][9].
 
 
 {integration_links}

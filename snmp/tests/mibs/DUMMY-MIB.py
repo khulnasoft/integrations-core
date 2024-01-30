@@ -1,6 +1,6 @@
 # ruff: noqa
 # PySNMP MIB module DUMMY-MIB (http://pysnmp.sf.net)
-# ASN.1 source file:///Users/hippolytehenry/Datadog/integrations-core/snmp/tests/compose/data/DUMMY-MIB.txt
+# ASN.1 source file:///Users/hippolytehenry/Khulnasoft/integrations-core/snmp/tests/compose/data/DUMMY-MIB.txt
 # Produced by pysmi-0.2.2 at Thu Oct  4 16:55:02 2018
 # On host Hippolytes-MacBook-Pro.local platform Darwin version 17.7.0 by user hippolytehenry
 # Using Python version 2.7.14 (default, May 11 2018, 14:04:47)

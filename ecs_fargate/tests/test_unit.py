@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2010-present
+# (C) Khulnasoft, Inc. 2010-present
 # All rights reserved
 # Licensed under Simplified BSD License (see LICENSE)
 from __future__ import unicode_literals
@@ -77,27 +77,27 @@ def test_successful_check_linux(check, aggregator, dd_run_check):
     common_tags = INSTANCE_TAGS + [
         # Tagger
         'cluster_name:pierrem-test-fargate',
-        'task_family:redis-datadog',
+        'task_family:redis-khulnasoft',
         'task_version:1',
         # Compat
         'ecs_cluster:pierrem-test-fargate',
-        'ecs_task_family:redis-datadog',
+        'ecs_task_family:redis-khulnasoft',
         'ecs_task_version:1',
     ]
 
     container_tags = [
         [
             # Tagger
-            "docker_image:datadog/docker-dd-agent:latest",
-            "image_name:datadog/docker-dd-agent",
+            "docker_image:khulnasoft/docker-dd-agent:latest",
+            "image_name:khulnasoft/docker-dd-agent",
             "short_image:docker-dd-agent",
             "image_tag:latest",
             "ecs_container_name:dd-agent",
             "container_id:e8d4a9a20a0d931f8f632ec166b3f71a6ff00450aa7e99607f650e586df7d068",
-            "container_name:ecs-redis-datadog-1-dd-agent-8085fa82d1d3ada5a601",
+            "container_name:ecs-redis-khulnasoft-1-dd-agent-8085fa82d1d3ada5a601",
             "task_arn:arn:aws:ecs:eu-west-1:172597598159:task/648ca535-cbe0-4de7-b102-28e50b81e888",
             # Compat
-            'docker_name:ecs-redis-datadog-1-dd-agent-8085fa82d1d3ada5a601',
+            'docker_name:ecs-redis-khulnasoft-1-dd-agent-8085fa82d1d3ada5a601',
         ],
         [
             # Tagger
@@ -107,10 +107,10 @@ def test_successful_check_linux(check, aggregator, dd_run_check):
             "image_tag:latest",
             "ecs_container_name:redis",
             "container_id:c912d0f0f204360ee90ce67c0d083c3514975f149b854f38a48deac611e82e48",
-            "container_name:ecs-redis-datadog-1-redis-ce99d29f8ce998ed4a00",
+            "container_name:ecs-redis-khulnasoft-1-redis-ce99d29f8ce998ed4a00",
             "task_arn:arn:aws:ecs:eu-west-1:172597598159:task/648ca535-cbe0-4de7-b102-28e50b81e888",
             # Compat
-            'docker_name:ecs-redis-datadog-1-redis-ce99d29f8ce998ed4a00',
+            'docker_name:ecs-redis-khulnasoft-1-redis-ce99d29f8ce998ed4a00',
         ],
     ]
 
@@ -159,26 +159,26 @@ def test_successful_check_windows(check, aggregator, dd_run_check):
     common_tags = INSTANCE_TAGS + [
         # Tagger
         'cluster_name:pierrem-test-fargate',
-        'task_family:redis-datadog',
+        'task_family:redis-khulnasoft',
         'task_version:1',
         # Compat
         'ecs_cluster:pierrem-test-fargate',
-        'ecs_task_family:redis-datadog',
+        'ecs_task_family:redis-khulnasoft',
         'ecs_task_version:1',
     ]
 
     container_tags = [
         # Tagger
-        "docker_image:datadog/docker-dd-agent:latest",
-        "image_name:datadog/docker-dd-agent",
+        "docker_image:khulnasoft/docker-dd-agent:latest",
+        "image_name:khulnasoft/docker-dd-agent",
         "short_image:docker-dd-agent",
         "image_tag:latest",
         "ecs_container_name:dd-agent",
         "container_id:e8d4a9a20a0d931f8f632ec166b3f71a6ff00450aa7e99607f650e586df7d068",
-        "container_name:ecs-redis-datadog-1-dd-agent-8085fa82d1d3ada5a601",
+        "container_name:ecs-redis-khulnasoft-1-dd-agent-8085fa82d1d3ada5a601",
         "task_arn:arn:aws:ecs:eu-west-1:172597598159:task/648ca535-cbe0-4de7-b102-28e50b81e888",
         # Compat
-        'docker_name:ecs-redis-datadog-1-dd-agent-8085fa82d1d3ada5a601',
+        'docker_name:ecs-redis-khulnasoft-1-dd-agent-8085fa82d1d3ada5a601',
     ]
 
     task_tags = [
@@ -214,27 +214,27 @@ def test_successful_check_wrong_sys_delta(check, aggregator, dd_run_check):
     common_tags = INSTANCE_TAGS + [
         # Tagger
         'cluster_name:pierrem-test-fargate',
-        'task_family:redis-datadog',
+        'task_family:redis-khulnasoft',
         'task_version:1',
         # Compat
         'ecs_cluster:pierrem-test-fargate',
-        'ecs_task_family:redis-datadog',
+        'ecs_task_family:redis-khulnasoft',
         'ecs_task_version:1',
     ]
 
     container_tags = [
         [
             # Tagger
-            "docker_image:datadog/docker-dd-agent:latest",
-            "image_name:datadog/docker-dd-agent",
+            "docker_image:khulnasoft/docker-dd-agent:latest",
+            "image_name:khulnasoft/docker-dd-agent",
             "short_image:docker-dd-agent",
             "image_tag:latest",
             "ecs_container_name:dd-agent",
             "container_id:e8d4a9a20a0d931f8f632ec166b3f71a6ff00450aa7e99607f650e586df7d068",
-            "container_name:ecs-redis-datadog-1-dd-agent-8085fa82d1d3ada5a601",
+            "container_name:ecs-redis-khulnasoft-1-dd-agent-8085fa82d1d3ada5a601",
             "task_arn:arn:aws:ecs:eu-west-1:172597598159:task/648ca535-cbe0-4de7-b102-28e50b81e888",
             # Compat
-            'docker_name:ecs-redis-datadog-1-dd-agent-8085fa82d1d3ada5a601',
+            'docker_name:ecs-redis-khulnasoft-1-dd-agent-8085fa82d1d3ada5a601',
         ],
         [
             # Tagger
@@ -244,10 +244,10 @@ def test_successful_check_wrong_sys_delta(check, aggregator, dd_run_check):
             "image_tag:latest",
             "ecs_container_name:redis",
             "container_id:c912d0f0f204360ee90ce67c0d083c3514975f149b854f38a48deac611e82e48",
-            "container_name:ecs-redis-datadog-1-redis-ce99d29f8ce998ed4a00",
+            "container_name:ecs-redis-khulnasoft-1-redis-ce99d29f8ce998ed4a00",
             "task_arn:arn:aws:ecs:eu-west-1:172597598159:task/648ca535-cbe0-4de7-b102-28e50b81e888",
             # Compat
-            'docker_name:ecs-redis-datadog-1-redis-ce99d29f8ce998ed4a00',
+            'docker_name:ecs-redis-khulnasoft-1-redis-ce99d29f8ce998ed4a00',
         ],
     ]
 

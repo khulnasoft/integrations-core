@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2021-present
+# (C) Khulnasoft, Inc. 2021-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 
@@ -15,7 +15,7 @@ from khulnasoft_checks.mongo.common import MongosDeployment, ReplicaSetDeploymen
 
 # The name of the application that created this MongoClient instance. MongoDB 3.4 and newer will print this value in
 # the server log upon establishing each connection. It is also recorded in the slow query log and profile collections.
-DD_APP_NAME = 'datadog-agent'
+DD_APP_NAME = 'khulnasoft-agent'
 
 # We collect here all pymongo exceptions that would result in a CRITICAL service check.
 CRITICAL_FAILURE = (
@@ -23,7 +23,7 @@ CRITICAL_FAILURE = (
     ConnectionFailure,  # This is a generic exception for any problems when connecting to mongodb.
     OperationFailure,  # This occurs when authentication is incorrect.
     # This means either no server is available or a replicaset has not elected a primary in the timeout window.
-    # In both cases it makes sense to submit a CRITICAL service check to Datadog.
+    # In both cases it makes sense to submit a CRITICAL service check to Khulnasoft.
     ServerSelectionTimeoutError,
     # Errors at the level of the protocol result in a lost/degraded connection. We can issue a CRITICAL check for this.
     ProtocolError,

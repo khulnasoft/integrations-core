@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2022-present
+# (C) Khulnasoft, Inc. 2022-present
 # All rights reserved
 # Licensed under Simplified BSD License (see LICENSE)
 
@@ -46,7 +46,7 @@ VarMetadata = namedtuple('VarMetadata', ['oid', 'description', 'enum', 'bits'])
 @click.command(
     context_settings=CONTEXT_SETTINGS,
     short_help='Generate a traps database that can be used by the '
-    'Datadog Agent for resolving Traps OIDs to readable strings.',
+    'Khulnasoft Agent for resolving Traps OIDs to readable strings.',
 )
 @click.option(
     '--mib-sources',
@@ -84,13 +84,13 @@ VarMetadata = namedtuple('VarMetadata', ['oid', 'description', 'enum', 'bits'])
 )
 def generate_traps_db(mib_sources, output_dir, output_file, output_format, no_descr, debug, mib_files):
     """Generate yaml or json formatted documents containing various information about traps. These files can be used by
-    the Datadog Agent to enrich trap data.
+    the Khulnasoft Agent to enrich trap data.
     This command is intended for "Network Devices Monitoring" users who need to enrich traps that are not automatically
-    supported by Datadog.
+    supported by Khulnasoft.
 
     The expected workflow is as such:\n
-    1- Identify a type of device that is sending traps that Datadog does not already recognize.\n
-    2- Fetch all the MIBs that Datadog does not support.\n
+    1- Identify a type of device that is sending traps that Khulnasoft does not already recognize.\n
+    2- Fetch all the MIBs that Khulnasoft does not support.\n
     3- Run `ddev meta snmp generate-traps-db -o ./output_dir/ /path/to/my/mib1 /path/to/my/mib2`\n
 
     You'll need to install pysmi manually beforehand.

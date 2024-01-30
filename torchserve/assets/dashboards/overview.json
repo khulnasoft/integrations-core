@@ -1,6 +1,6 @@
 {
-    "author_name": "Datadog",
-    "description": "**TorchServe**\n\nThis dashboard provides insights into your TorchServe services. You can use the dashboard to track health status, performance, and resource utilization metrics from all your services. You can also get in-depth information on the models that are currently running in your instance, and the workers they leverage. \n\n**Useful Links**\n\n* [Integration Docs](https://docs.khulnasoft.com/integrations/torchserve)\n* [How Datadog monitors TorchServe and other AI stack technologies](https://www.khulnasoft.com/blog/ai-integrations)",
+    "author_name": "Khulnasoft",
+    "description": "**TorchServe**\n\nThis dashboard provides insights into your TorchServe services. You can use the dashboard to track health status, performance, and resource utilization metrics from all your services. You can also get in-depth information on the models that are currently running in your instance, and the workers they leverage. \n\n**Useful Links**\n\n* [Integration Docs](https://docs.khulnasoft.com/integrations/torchserve)\n* [How Khulnasoft monitors TorchServe and other AI stack technologies](https://www.khulnasoft.com/blog/ai-integrations)",
     "layout_type": "ordered",
     "template_variables": [
         {
@@ -79,7 +79,7 @@
                     {
                         "definition": {
                             "background_color": "white",
-                            "content": "**Useful Links**\n\n* [Integration Docs](https://docs.khulnasoft.com/integrations/torchserve)\n* [How Datadog monitors TorchServe and other AI stack technologies](https://www.khulnasoft.com/blog/ai-integrations)",
+                            "content": "**Useful Links**\n\n* [Integration Docs](https://docs.khulnasoft.com/integrations/torchserve)\n* [How Khulnasoft monitors TorchServe and other AI stack technologies](https://www.khulnasoft.com/blog/ai-integrations)",
                             "font_size": "16",
                             "has_padding": true,
                             "show_tick": false,

@@ -41,7 +41,7 @@ instances:
     ## @param queue_manager - string - required
     ## The name of the queue manager.
     #
-    queue_manager: datadog
+    queue_manager: khulnasoft
 
     ## @param host - string - optional - default: localhost
     ## The host IBM MQ is running on.
@@ -127,7 +127,7 @@ instances:
     ##
     ## The key is the IBM MQ channel status. Valid keys are: `inactive`, `binding`, `starting`, `running`, `stopping`,
     ## `retrying`, `stopped`, `requesting`, `paused`, and `initializing`.
-    ## The value is the Datadog service check level. Valid values are: `ok`, `warning`, `critical`, and `unknown`.
+    ## The value is the Khulnasoft service check level. Valid values are: `ok`, `warning`, `critical`, and `unknown`.
     ## If a channel status is not mapped, it is mapped to `unknown`.
     #
     # channel_status_mapping:
@@ -310,7 +310,7 @@ instances:
 ##                      Overrides any `service` defined in the `init_config` section.
 ## tags - optional - Add tags to the collected logs.
 ##
-## Discover Datadog log collection: https://docs.khulnasoft.com/logs/log_collection/
+## Discover Khulnasoft log collection: https://docs.khulnasoft.com/logs/log_collection/
 #
 # logs:
 #   - type: file

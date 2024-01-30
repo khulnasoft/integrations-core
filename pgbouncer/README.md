@@ -8,26 +8,26 @@ The PgBouncer check tracks connection pool metrics and lets you monitor traffic 
 
 ### Installation
 
-The PgBouncer check is included in the [Datadog Agent][1] package, so you don't need to install anything else on your PgBouncer nodes.
+The PgBouncer check is included in the [Khulnasoft Agent][1] package, so you don't need to install anything else on your PgBouncer nodes.
 
 This check needs an associated user to query your PgBouncer instance:
 
-1. Create a Datadog user in your PgBouncer `pgbouncer.ini` file:
+1. Create a Khulnasoft user in your PgBouncer `pgbouncer.ini` file:
 
    ```ini
-   stats_users = datadog
+   stats_users = khulnasoft
    ```
 
-2. Add an associated password for the `datadog` user in your PgBouncer `userlist.txt` file:
+2. Add an associated password for the `khulnasoft` user in your PgBouncer `userlist.txt` file:
 
    ```text
-   "datadog" "<PASSWORD>"
+   "khulnasoft" "<PASSWORD>"
    ```
 
 3. To verify the credentials, run the following command:
 
    ```shell
-   psql -h localhost -U datadog -p 6432 pgbouncer -c \
+   psql -h localhost -U khulnasoft -p 6432 pgbouncer -c \
    "SHOW VERSION;" \
    && echo -e "\e[0;32mpgBouncer connection - OK\e[0m" \
    || echo -e "\e[0;31mCannot connect to pgBouncer\e[0m"
@@ -55,7 +55,7 @@ To configure this check for an Agent running on a host:
      ## @param database_url - string - required
      ## `database_url` parameter should point to PgBouncer stats database url (ie. "pgbouncer")
      #
-     - database_url: "postgresql://datadog:<PASSWORD>@<HOSTNAME>:<PORT>/<DATABASE_URL>?sslmode=require"
+     - database_url: "postgresql://khulnasoft:<PASSWORD>@<HOSTNAME>:<PORT>/<DATABASE_URL>?sslmode=require"
    ```
 
    **Note**: If your instance of PgBouncer does not have SSL support, replace `sslmode=require` with `sslmode=allow` to avoid server errors. For details, see the Postgres documentation on [SSL support][4].
@@ -66,7 +66,7 @@ To configure this check for an Agent running on a host:
 
 _Available for Agent versions >6.0_
 
-1. Collecting logs is disabled by default in the Datadog Agent, enable it in your `datadog.yaml` file:
+1. Collecting logs is disabled by default in the Khulnasoft Agent, enable it in your `khulnasoft.yaml` file:
 
    ```yaml
    logs_enabled: true
@@ -99,13 +99,13 @@ For containerized environments, see the [Autodiscovery Integration Templates][7]
 | -------------------- | ------------------------------------------------------------------------------------------------------ |
 | `<INTEGRATION_NAME>` | `pgbouncer`                                                                                            |
 | `<INIT_CONFIG>`      | blank or `{}`                                                                                          |
-| `<INSTANCE_CONFIG>`  | `{"database_url": "postgresql://datadog:<PASSWORD>@%%host%%:%%port%%/<DATABASE_URL>?sslmode=require"}` |
+| `<INSTANCE_CONFIG>`  | `{"database_url": "postgresql://khulnasoft:<PASSWORD>@%%host%%:%%port%%/<DATABASE_URL>?sslmode=require"}` |
 
 ##### Log collection
 
 _Available for Agent versions >6.0_
 
-Collecting logs is disabled by default in the Datadog Agent. To enable it, see [Kubernetes Log Collection][8].
+Collecting logs is disabled by default in the Khulnasoft Agent. To enable it, see [Kubernetes Log Collection][8].
 
 | Parameter      | Value                                           |
 | -------------- | ----------------------------------------------- |
@@ -136,7 +136,7 @@ See [service_checks.json][10] for a list of service checks provided by this inte
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][11].
+Need help? Contact [Khulnasoft support][11].
 
 
 [1]: https://app.khulnasoft.com/account/settings/agent/latest

@@ -8,10 +8,10 @@ The CockroachDB check monitors the overall health and performance of a [Cockroac
 
 ### Installation
 
-The CockroachDB check is included in the [Datadog Agent][2] package, so you do not
+The CockroachDB check is included in the [Khulnasoft Agent][2] package, so you do not
 need to install anything else on your server.
 
-Starting with version 1.9.0, this OpenMetrics-based integration has a latest mode (enabled by setting `openmetrics_endpoint` to point to the target endpoint) and a legacy mode (enabled by setting `prometheus_url` instead). To get all the most up-to-date features, Datadog recommends enabling the latest mode. Note that the latest mode requires Python 3. For more information, see [Latest and Legacy Versioning For OpenMetrics-based Integrations][14].
+Starting with version 1.9.0, this OpenMetrics-based integration has a latest mode (enabled by setting `openmetrics_endpoint` to point to the target endpoint) and a legacy mode (enabled by setting `prometheus_url` instead). To get all the most up-to-date features, Khulnasoft recommends enabling the latest mode. Note that the latest mode requires Python 3. For more information, see [Latest and Legacy Versioning For OpenMetrics-based Integrations][14].
 
 For hosts unable to use Python 3, or to use legacy mode, see the following [configuration][13].
 
@@ -44,7 +44,7 @@ To configure this check for an Agent running on a host:
 
 _Available for Agent version 6.0 or later_
 
-1. Collecting logs is disabled by default in the Datadog Agent. Enable it in `datadog.yaml`:
+1. Collecting logs is disabled by default in the Khulnasoft Agent. Enable it in `khulnasoft.yaml`:
 
    ```yaml
    logs_enabled: true
@@ -83,12 +83,12 @@ For containerized environments, see the [Autodiscovery Integration Templates][6]
 
 ##### Log collection
 
-Collecting logs is disabled by default in the Datadog Agent. To enable it, see the [Docker Log Collection][7].
+Collecting logs is disabled by default in the Khulnasoft Agent. To enable it, see the [Docker Log Collection][7].
 
 Then, set [log integrations][7] as Docker labels:
 
 ```yaml
-LABEL "com.datadoghq.ad.logs"='[{"source": "cockroachdb", "service": "<SERVICE_NAME>"}]'
+LABEL "com.khulnasofthq.ad.logs"='[{"source": "cockroachdb", "service": "<SERVICE_NAME>"}]'
 ```
 
 <!-- xxz tab xxx -->
@@ -114,13 +114,13 @@ The CockroachDB check does not include any events.
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][10].
+Need help? Contact [Khulnasoft support][10].
 
 ## Further Reading
 
 Additional helpful documentation, links, and articles:
 
-- [Monitor CockroachDB performance metrics with Datadog][11]
+- [Monitor CockroachDB performance metrics with Khulnasoft][11]
 
 [1]: https://www.cockroachlabs.com/product/cockroachdb
 [2]: https://app.khulnasoft.com/account/settings/agent/latest
@@ -132,7 +132,7 @@ Additional helpful documentation, links, and articles:
 [8]: https://docs.khulnasoft.com/agent/guide/agent-commands/#agent-status-and-information
 [9]: https://github.com/KhulnaSoft/integrations-core/blob/master/cockroachdb/metadata.csv
 [10]: https://docs.khulnasoft.com/help/
-[11]: https://www.khulnasoft.com/blog/monitor-cockroachdb-performance-metrics-with-datadog
+[11]: https://www.khulnasoft.com/blog/monitor-cockroachdb-performance-metrics-with-khulnasoft
 [12]: https://docs.khulnasoft.com/integrations/openmetrics/
 [13]: https://github.com/KhulnaSoft/integrations-core/blob/7.33.x/cockroachdb/khulnasoft_checks/cockroachdb/data/conf.yaml.example
 [14]: https://docs.khulnasoft.com/integrations/guide/versions-for-openmetrics-based-integrations

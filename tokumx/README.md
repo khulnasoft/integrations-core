@@ -12,7 +12,7 @@ This check collects TokuMX metrics, including:
 
 ### Installation
 
-The TokuMX check is included in the [Datadog Agent][1] package. No additional installation is needed on your server.
+The TokuMX check is included in the [Khulnasoft Agent][1] package. No additional installation is needed on your server.
 
 ### Configuration
 
@@ -32,23 +32,23 @@ The TokuMX check is included in the [Datadog Agent][1] package. No additional in
    echo -e "\033[0;32mpymongo python module - OK\033[0m"
    ```
 
-3. Start the Mongo shell. In the shell, create a read-only user for the Datadog Agent in the `admin` database:
+3. Start the Mongo shell. In the shell, create a read-only user for the Khulnasoft Agent in the `admin` database:
 
    ```shell
    # Authenticate as the admin user.
    use admin
    db.auth("admin", "<YOUR_TOKUMX_ADMIN_PASSWORD>")
-   # Add a user for Datadog Agent
-   db.addUser("datadog", "<UNIQUEPASSWORD>", true)
+   # Add a user for Khulnasoft Agent
+   db.addUser("khulnasoft", "<UNIQUEPASSWORD>", true)
    ```
 
 4. Verify that you created the user with the following command (not in the Mongo shell).
 
    ```shell
-   python -c 'from pymongo import Connection; print Connection().admin.authenticate("datadog", "<UNIQUEPASSWORD>")' | \
+   python -c 'from pymongo import Connection; print Connection().admin.authenticate("khulnasoft", "<UNIQUEPASSWORD>")' | \
    grep True && \
-   echo -e "\033[0;32mdatadog user - OK\033[0m" || \
-   echo -e "\033[0;31mdatadog user - Missing\033[0m"
+   echo -e "\033[0;32mkhulnasoft user - OK\033[0m" || \
+   echo -e "\033[0;31mkhulnasoft user - Missing\033[0m"
    ```
 
 For more details about creating and managing users in MongoDB, see the [MongoDB Security documentation][2].
@@ -70,7 +70,7 @@ To configure this check for an Agent running on a host:
      - server: "mongodb://<USER>:<PASSWORD>@localhost:27017"
    ```
 
-2. [Restart the Agent][5] to start sending TokuMX metrics to Datadog.
+2. [Restart the Agent][5] to start sending TokuMX metrics to Khulnasoft.
 
 <!-- xxz tab xxx -->
 <!-- xxx tab "Containerized" xxx -->
@@ -110,7 +110,7 @@ See [service_checks.json][9] for a list of service checks provided by this integ
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][10].
+Need help? Contact [Khulnasoft support][10].
 
 ## Further Reading
 

@@ -268,8 +268,8 @@ kubelet_cgroup_manager_duration_seconds_sum{operation_type="update"} 6.642291112
 kubelet_cgroup_manager_duration_seconds_count{operation_type="update"} 57055
 # HELP kubelet_container_log_filesystem_used_bytes [ALPHA] Bytes used by the container's logs on the filesystem.
 # TYPE kubelet_container_log_filesystem_used_bytes gauge
-kubelet_container_log_filesystem_used_bytes{container="agent",namespace="datadog-agent-helm",pod="datadog-agent-linux-clusterchecks-798887cdbb-r7ft8",uid="2faa2ee1-7af3-405e-b5d5-cae8b2669028"} 1.536831488e+09
-kubelet_container_log_filesystem_used_bytes{container="agent",namespace="datadog-agent-helm",pod="datadog-agent-linux-z9zbm",uid="b279b6c5-5aa8-4167-9c2e-94b695201503"} 5.242822656e+09
+kubelet_container_log_filesystem_used_bytes{container="agent",namespace="khulnasoft-agent-helm",pod="khulnasoft-agent-linux-clusterchecks-798887cdbb-r7ft8",uid="2faa2ee1-7af3-405e-b5d5-cae8b2669028"} 1.536831488e+09
+kubelet_container_log_filesystem_used_bytes{container="agent",namespace="khulnasoft-agent-helm",pod="khulnasoft-agent-linux-z9zbm",uid="b279b6c5-5aa8-4167-9c2e-94b695201503"} 5.242822656e+09
 kubelet_container_log_filesystem_used_bytes{container="app",namespace="workload-dogstatsd",pod="dogstatsd-uds-5d4b8cbd9c-qwclq",uid="3bbded00-f9c0-48d3-a619-9a342c8092c7"} 7.818420224e+09
 kubelet_container_log_filesystem_used_bytes{container="aws-node",namespace="kube-system",pod="aws-node-tf7nn",uid="adfbb85f-d146-404f-929b-b495ac66385f"} 32768
 kubelet_container_log_filesystem_used_bytes{container="hello",namespace="workload-stress-test-ad",pod="hello-27441723-wsbz7",uid="66b735a5-ea94-497c-9fcf-07528085e561"} 24576
@@ -295,12 +295,12 @@ kubelet_container_log_filesystem_used_bytes{container="hello",namespace="workloa
 kubelet_container_log_filesystem_used_bytes{container="hello",namespace="workload-stress-test-ad",pod="hello-27442157-zb7ph",uid="d1eb5669-be52-46cc-bc3f-d7ea1e320f7a"} 24576
 kubelet_container_log_filesystem_used_bytes{container="hello",namespace="workload-stress-test-ad",pod="hello-27442158-kkd7x",uid="22396904-730e-489c-97fe-5344c0538ca8"} 24576
 kubelet_container_log_filesystem_used_bytes{container="kube-proxy",namespace="kube-system",pod="kube-proxy-wvjt5",uid="a8baa19c-4211-4877-a848-45f179a135f6"} 1.277952e+06
-kubelet_container_log_filesystem_used_bytes{container="kube-state-metrics",namespace="datadog-agent-helm",pod="datadog-agent-windows-kube-state-metrics-59cbc475df-bbnk5",uid="482560a5-07de-46c6-ada1-9d461d6de9c6"} 32768
-kubelet_container_log_filesystem_used_bytes{container="process-agent",namespace="datadog-agent-helm",pod="datadog-agent-linux-z9zbm",uid="b279b6c5-5aa8-4167-9c2e-94b695201503"} 1.397395456e+09
-kubelet_container_log_filesystem_used_bytes{container="security-agent",namespace="datadog-agent-helm",pod="datadog-agent-linux-z9zbm",uid="b279b6c5-5aa8-4167-9c2e-94b695201503"} 9.59901696e+08
+kubelet_container_log_filesystem_used_bytes{container="kube-state-metrics",namespace="khulnasoft-agent-helm",pod="khulnasoft-agent-windows-kube-state-metrics-59cbc475df-bbnk5",uid="482560a5-07de-46c6-ada1-9d461d6de9c6"} 32768
+kubelet_container_log_filesystem_used_bytes{container="process-agent",namespace="khulnasoft-agent-helm",pod="khulnasoft-agent-linux-z9zbm",uid="b279b6c5-5aa8-4167-9c2e-94b695201503"} 1.397395456e+09
+kubelet_container_log_filesystem_used_bytes{container="security-agent",namespace="khulnasoft-agent-helm",pod="khulnasoft-agent-linux-z9zbm",uid="b279b6c5-5aa8-4167-9c2e-94b695201503"} 9.59901696e+08
 kubelet_container_log_filesystem_used_bytes{container="stress-ng-25",namespace="workload-stress-ng",pod="stress-ng-25-69b4b7b476-p559w",uid="8c1e866e-b1e8-463d-8a36-c9bc176ca9f9"} 28672
-kubelet_container_log_filesystem_used_bytes{container="system-probe",namespace="datadog-agent-helm",pod="datadog-agent-linux-z9zbm",uid="b279b6c5-5aa8-4167-9c2e-94b695201503"} 3.715072e+06
-kubelet_container_log_filesystem_used_bytes{container="trace-agent",namespace="datadog-agent-helm",pod="datadog-agent-linux-z9zbm",uid="b279b6c5-5aa8-4167-9c2e-94b695201503"} 4.227072e+06
+kubelet_container_log_filesystem_used_bytes{container="system-probe",namespace="khulnasoft-agent-helm",pod="khulnasoft-agent-linux-z9zbm",uid="b279b6c5-5aa8-4167-9c2e-94b695201503"} 3.715072e+06
+kubelet_container_log_filesystem_used_bytes{container="trace-agent",namespace="khulnasoft-agent-helm",pod="khulnasoft-agent-linux-z9zbm",uid="b279b6c5-5aa8-4167-9c2e-94b695201503"} 4.227072e+06
 # HELP kubelet_containers_per_pod_count [ALPHA] The number of containers per pod.
 # TYPE kubelet_containers_per_pod_count histogram
 kubelet_containers_per_pod_count_bucket{le="1"} 28

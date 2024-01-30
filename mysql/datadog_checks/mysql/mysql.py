@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2013-present
+# (C) Khulnasoft, Inc. 2013-present
 # (C) Patrick Galbraith <patg@patg.net> 2013
 # All rights reserved
 # Licensed under Simplified BSD License (see LICENSE)
@@ -509,13 +509,13 @@ class MySql(AgentCheck):
             metrics.update(PERFORMANCE_VARS)
 
         if is_affirmative(self._config.options.get('schema_size_metrics', False)):
-            # report avg query response time per schema to Datadog
+            # report avg query response time per schema to Khulnasoft
             with tracked_query(self, operation="schema_size_metrics"):
                 results['information_schema_size'] = self._query_size_per_schema(db)
             metrics.update(SCHEMA_VARS)
 
         if is_affirmative(self._config.options.get('table_rows_stats_metrics', False)) and self.userstat_enabled:
-            # report size of tables in MiB to Datadog
+            # report size of tables in MiB to Khulnasoft
             self.log.debug("Collecting Table Row Stats Metrics.")
             with tracked_query(self, operation="table_rows_stats_metrics"):
                 (rows_read_total, rows_changed_total) = self._query_rows_stats_per_table(db)
@@ -524,7 +524,7 @@ class MySql(AgentCheck):
             metrics.update(TABLE_ROWS_STATS_VARS)
 
         if is_affirmative(self._config.options.get('table_size_metrics', False)):
-            # report size of tables in MiB to Datadog
+            # report size of tables in MiB to Khulnasoft
             with tracked_query(self, operation="table_size_metrics"):
                 (table_index_size, table_data_size) = self._query_size_per_table(db)
             results['information_table_index_size'] = table_index_size
@@ -532,7 +532,7 @@ class MySql(AgentCheck):
             metrics.update(TABLE_VARS)
 
         if is_affirmative(self._config.options.get('system_table_size_metrics', False)):
-            # report size of tables in MiB to Datadog
+            # report size of tables in MiB to Khulnasoft
             with tracked_query(self, operation="system_table_size_metrics"):
                 (table_index_size, table_data_size) = self._query_size_per_table(db, system_tables=True)
             if results.get('information_table_index_size'):

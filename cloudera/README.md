@@ -2,7 +2,7 @@
 
 ## Overview
 
-This integration monitors your [Cloudera Data Platform][1] through the Datadog Agent, allowing you to submit metrics and service checks on the health of your Cloudera Data Hub clusters, hosts, and roles.  
+This integration monitors your [Cloudera Data Platform][1] through the Khulnasoft Agent, allowing you to submit metrics and service checks on the health of your Cloudera Data Hub clusters, hosts, and roles.  
 
 ## Setup
 
@@ -10,7 +10,7 @@ Follow the instructions below to install and configure this check for an Agent r
 
 ### Installation
 
-The Cloudera check is included in the [Datadog Agent][2] package.
+The Cloudera check is included in the [Khulnasoft Agent][2] package.
 No additional installation is needed on your server.
 
 ### Configuration
@@ -22,7 +22,7 @@ The Cloudera check requires version 7 of Cloudera Manager.
 1. In Cloudera Data Platform, navigate to the Management Console and click on the **User Management** tab.
 ![User Management][10]
 
-2. Click on **Actions**, then **Create Machine User** to create the machine user that queries the Cloudera Manager through the Datadog Agent.
+2. Click on **Actions**, then **Create Machine User** to create the machine user that queries the Cloudera Manager through the Khulnasoft Agent.
 ![Create Machine User][11]
 
 3. If the workload password hasn't been set, click on **Set Workload Password** after the user is created.
@@ -66,7 +66,7 @@ The Cloudera check requires version 7 of Cloudera Manager.
       - api_url: <API_URL>
    ```
 
-2. [Restart the Agent][5] to start collecting and sending Cloudera Data Hub cluster data to Datadog.
+2. [Restart the Agent][5] to start collecting and sending Cloudera Data Hub cluster data to Khulnasoft.
 
 <!-- xxz tab xxx -->
 <!-- xxx tab "Containerized" xxx -->
@@ -156,7 +156,7 @@ See [metadata.csv][7] for a list of metrics provided by this integration.
 
 The Cloudera integration collects events that are emitted from the `/events` endpoint from the Cloudera Manager API. The event levels are mapped as the following:
 
-| Cloudera                  | Datadog                        |
+| Cloudera                  | Khulnasoft                        |
 |---------------------------|--------------------------------|
 | `UNKNOWN`                 | `error`                        |
 | `INFORMATIONAL`           | `info`                         |
@@ -169,21 +169,21 @@ See [service_checks.json][8] for a list of service checks provided by this integ
 
 ## Troubleshooting
 
-### Collecting metrics of Datadog integrations on Cloudera hosts
-To install the Datadog Agent on a Cloudera host, make sure that the security group associated with the host allows SSH access. 
+### Collecting metrics of Khulnasoft integrations on Cloudera hosts
+To install the Khulnasoft Agent on a Cloudera host, make sure that the security group associated with the host allows SSH access. 
 Then, you need to use the [root user `cloudbreak`][13] when accessing the host with the SSH key generated during the environment creation:
 
 ```
 sudo ssh -i "/path/to/key.pem" cloudbreak@<HOST_IP_ADDRESS>
 ```
 
-The workload username and password can be used to access Cloudera hosts through SSH, although only the `cloudbreak` user can install the Datadog Agent. 
+The workload username and password can be used to access Cloudera hosts through SSH, although only the `cloudbreak` user can install the Khulnasoft Agent. 
 Trying to use any user that is not `cloudbreak` may result in the following error:
 ```
 <NON_CLOUDBREAK_USER> is not allowed to run sudo on <CLOUDERA_HOSTNAME>.  This incident will be reported.
 ```
 
-### Config errors when collecting Datadog metrics
+### Config errors when collecting Khulnasoft metrics
 If you see something similar to the following in the Agent status when collecting metrics from your Cloudera host:
 
 ```
@@ -191,23 +191,23 @@ If you see something similar to the following in the Agent status when collectin
   ==============
     zk
     --
-      open /etc/datadog-agent/conf.d/zk.d/conf.yaml: permission denied
+      open /etc/khulnasoft-agent/conf.d/zk.d/conf.yaml: permission denied
 ```
 
 You need to change the ownership of the `conf.yaml` to `dd-agent`:
 
 ```
-[cloudbreak@<CLOUDERA_HOSTNAME> ~]$ sudo chown -R dd-agent:dd-agent /etc/datadog-agent/conf.d/zk.d/conf.yaml
+[cloudbreak@<CLOUDERA_HOSTNAME> ~]$ sudo chown -R dd-agent:dd-agent /etc/khulnasoft-agent/conf.d/zk.d/conf.yaml
 ```
 
 
-Need help? Contact [Datadog support][9].
+Need help? Contact [Khulnasoft support][9].
 
 ## Further Reading
 
 Additional helpful documentation, links, and articles:
 
-- [Gain visibility into your Cloudera clusters with Datadog][15]
+- [Gain visibility into your Cloudera clusters with Khulnasoft][15]
 
 [1]: https://www.cloudera.com/products/cloudera-data-platform.html
 [2]: https://app.khulnasoft.com/account/settings/agent/latest

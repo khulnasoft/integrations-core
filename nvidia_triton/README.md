@@ -2,7 +2,7 @@
 
 ## Overview
 
-This check monitors [Nvidia Triton][1] through the Datadog Agent.
+This check monitors [Nvidia Triton][1] through the Khulnasoft Agent.
 
 ## Setup
 
@@ -10,7 +10,7 @@ Follow the instructions below to install and configure this check for an Agent r
 
 ### Installation
 
-The Nvidia Triton check is included in the [Datadog Agent][2] package.
+The Nvidia Triton check is included in the [Khulnasoft Agent][2] package.
 No additional installation is needed on your server.
 
 #### OpenMetrics endpoint
@@ -46,8 +46,8 @@ For instance:
 tritonserver --cache-config local,size=1048576
 ```
 
-Nvidia Triton also offers the possibility to expose [custom metrics][12] through their Openemtrics endpoint. Datadog can also collect these custom metrics using the `extra_metrics` option.
-<div class="alert alert-warning">These custom Nvidia Triton metrics are considered standard metrics in Datadog.</div>
+Nvidia Triton also offers the possibility to expose [custom metrics][12] through their Openemtrics endpoint. Khulnasoft can also collect these custom metrics using the `extra_metrics` option.
+<div class="alert alert-warning">These custom Nvidia Triton metrics are considered standard metrics in Khulnasoft.</div>
 
 ### Configuration
 
@@ -77,12 +77,12 @@ See [service_checks.json][8] for a list of service checks provided by this integ
 
 ### Logs
 
-The Nvidia Triton integration can collect logs from the Nvidia Triton server and forward them to Datadog.
+The Nvidia Triton integration can collect logs from the Nvidia Triton server and forward them to Khulnasoft.
 
 <!-- xxx tabs xxx -->
 <!-- xxx tab "Host" xxx -->
 
-1. Collecting logs is disabled by default in the Datadog Agent. Enable it in your `datadog.yaml` file:
+1. Collecting logs is disabled by default in the Khulnasoft Agent. Enable it in your `khulnasoft.yaml` file:
 
    ```yaml
    logs_enabled: true
@@ -100,7 +100,7 @@ The Nvidia Triton integration can collect logs from the Nvidia Triton server and
 <!-- xxz tab xxx -->
 <!-- xxx tab "Kubernetes" xxx -->
 
-Collecting logs is disabled by default in the Datadog Agent. To enable it, see [Kubernetes Log Collection][13].
+Collecting logs is disabled by default in the Khulnasoft Agent. To enable it, see [Kubernetes Log Collection][13].
 
 Then, set Log Integrations as pod annotations. This can also be configured with a file, a configmap, or a key-value store. For more information, see the configuration section of [Kubernetes Log Collection][14].
 
@@ -125,7 +125,7 @@ spec:
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][9].
+Need help? Contact [Khulnasoft support][9].
 
 
 [1]: https://www.nvidia.com/en-us/ai-data-science/products/triton-inference-server/

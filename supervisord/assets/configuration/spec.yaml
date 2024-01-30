@@ -78,9 +78,9 @@ files:
             example: [<PROCESS_NAME_EXCLUDE_1>, <PROCESS_NAME_EXCLUDE_2>]
         - name: status_mapping_override
           description: |
-            The process status mapping override between supervisord status and Datadog status.
+            The process status mapping override between supervisord status and Khulnasoft status.
 
-            This setting overrides default mapping (supervisord => Datadog):
+            This setting overrides default mapping (supervisord => Khulnasoft):
               RUNNING  => up
               BACKOFF  => down
               STOPPING => down
@@ -90,7 +90,7 @@ files:
               STARTING => unknown
               UNKNOWN  => unknown
 
-            Available Datadog status are: up / down / unknown
+            Available Khulnasoft status are: up / down / unknown
           value:
             type: object
             example:

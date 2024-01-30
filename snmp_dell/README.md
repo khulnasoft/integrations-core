@@ -32,13 +32,13 @@ The Dell integration does not include any events.
 
 Additional helpful documentation, links, and articles:
 
-* [Monitor SNMP with Datadog][3]
+* [Monitor SNMP with Khulnasoft][3]
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][4].
+Need help? Contact [Khulnasoft support][4].
 
 [1]: https://docs.khulnasoft.com/network_performance_monitoring/devices/data
 [2]: https://docs.khulnasoft.com/network_performance_monitoring/devices/setup
-[3]: https://www.khulnasoft.com/blog/monitor-snmp-with-datadog/
+[3]: https://www.khulnasoft.com/blog/monitor-snmp-with-khulnasoft/
 [4]: https://docs.khulnasoft.com/help/

@@ -1,6 +1,6 @@
 {
-    "author_name": "Datadog",
-    "description": "This dashboard provides an overview of NetFlow Monitoring for the traffic between your network gear. \n\nFor more information on monitoring on-premise gear with Datadog, check out: \n\n- Our blog post on [Monitoring Datacenters and network devices with Datadog](https://www.khulnasoft.com/blog/datacenter-monitoring-dashboards/)\n- Our blog post on [Monitoring network devices with SNMP](https://www.khulnasoft.com/blog/monitor-snmp-with-datadog/)\n- Network Device Monitoring [docs](https://docs.khulnasoft.com/network_performance_monitoring/devices)",
+    "author_name": "Khulnasoft",
+    "description": "This dashboard provides an overview of NetFlow Monitoring for the traffic between your network gear. \n\nFor more information on monitoring on-premise gear with Khulnasoft, check out: \n\n- Our blog post on [Monitoring Datacenters and network devices with Khulnasoft](https://www.khulnasoft.com/blog/datacenter-monitoring-dashboards/)\n- Our blog post on [Monitoring network devices with SNMP](https://www.khulnasoft.com/blog/monitor-snmp-with-khulnasoft/)\n- Network Device Monitoring [docs](https://docs.khulnasoft.com/network_performance_monitoring/devices)",
     "layout_type": "ordered",
     "template_variables": [
         {
@@ -59,7 +59,7 @@
                     {
                         "definition": {
                             "background_color": "white",
-                            "content": "This dashboard provides an overview of NetFlow Monitoring for the traffic between your network gear. \n\nFor more information on monitoring on-premise gear with Datadog, check out: \n\n- Our blog post on [Monitoring Datacenters and network devices with Datadog](https://www.khulnasoft.com/blog/datacenter-monitoring-dashboards/)\n- Our blog post on [Monitoring network devices with SNMP](https://www.khulnasoft.com/blog/monitor-snmp-with-datadog/)\n- Network Device Monitoring [docs](https://docs.khulnasoft.com/network_performance_monitoring/devices) ",
+                            "content": "This dashboard provides an overview of NetFlow Monitoring for the traffic between your network gear. \n\nFor more information on monitoring on-premise gear with Khulnasoft, check out: \n\n- Our blog post on [Monitoring Datacenters and network devices with Khulnasoft](https://www.khulnasoft.com/blog/datacenter-monitoring-dashboards/)\n- Our blog post on [Monitoring network devices with SNMP](https://www.khulnasoft.com/blog/monitor-snmp-with-khulnasoft/)\n- Network Device Monitoring [docs](https://docs.khulnasoft.com/network_performance_monitoring/devices) ",
                             "font_size": "14",
                             "show_tick": false,
                             "text_align": "left",
@@ -1513,7 +1513,7 @@
                                     ],
                                     "response_format": "scalar",
                                     "style": {
-                                        "palette": "datadog16"
+                                        "palette": "khulnasoft16"
                                     }
                                 }
                             ],
@@ -1743,7 +1743,7 @@
                                     ],
                                     "response_format": "scalar",
                                     "style": {
-                                        "palette": "datadog16"
+                                        "palette": "khulnasoft16"
                                     }
                                 }
                             ],

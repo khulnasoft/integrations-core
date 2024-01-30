@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2022-present
+# (C) Khulnasoft, Inc. 2022-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 import os
@@ -13,7 +13,7 @@ from khulnasoft_checks.dev import run_command
 def _build_pyproject_file(authors):
     return f'''
 [project]
-name = "datadog-my-check"
+name = "khulnasoft-my-check"
 authors = {authors}
 [tool.hatch.version]
 path = "khulnasoft_checks/my_check/__about__.py"
@@ -23,9 +23,9 @@ path = "khulnasoft_checks/my_check/__about__.py"
 @pytest.mark.parametrize(
     'authors,expected_exit_code,expected_output',
     [
-        ('[{ name = "Datadog", email = "packages@khulnasoft.com" }]', 0, '1 valid'),
-        ('[{ name = "Datadog"}]', 0, '1 valid'),
-        ('[{ name = "Datadog", email = "invalid_email" }]', 1, 'Invalid email'),
+        ('[{ name = "Khulnasoft", email = "packages@khulnasoft.com" }]', 0, '1 valid'),
+        ('[{ name = "Khulnasoft"}]', 0, '1 valid'),
+        ('[{ name = "Khulnasoft", email = "invalid_email" }]', 1, 'Invalid email'),
     ],
 )
 def test_validate_package_validates_emails(authors, expected_exit_code, expected_output):

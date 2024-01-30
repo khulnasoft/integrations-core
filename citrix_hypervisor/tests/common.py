@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2021-present
+# (C) Khulnasoft, Inc. 2021-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 import os
@@ -11,24 +11,24 @@ HERE = get_here()
 HOST = get_docker_hostname()
 MOCKED_INSTANCE = {
     'url': 'mocked',
-    'username': 'datadog',
+    'username': 'khulnasoft',
     'password': 'password',
     'tags': ['foo:bar'],
 }
 E2E_INSTANCE = [
     {
         'url': 'http://{}:8081'.format(HOST),
-        'username': 'datadog',
+        'username': 'khulnasoft',
         'password': 'password',
     },
     {
         'url': 'http://{}:8082'.format(HOST),
-        'username': 'datadog',
+        'username': 'khulnasoft',
         'password': 'password',
     },
     {
         'url': 'http://{}:8083'.format(HOST),
-        'username': 'datadog',
+        'username': 'khulnasoft',
         'password': 'password',
     },
 ]

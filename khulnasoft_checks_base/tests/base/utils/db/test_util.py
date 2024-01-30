@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# (C) Datadog, Inc. 2020-present
+# (C) Khulnasoft, Inc. 2020-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 import datetime
@@ -88,41 +88,41 @@ class TestDBExcepption(BaseException):
         (
             json.dumps(
                 {
-                    'query': 'SELECT * FROM datadog',
-                    'metadata': {'tables_csv': 'datadog,', 'commands': ['SELECT'], 'comments': None},
+                    'query': 'SELECT * FROM khulnasoft',
+                    'metadata': {'tables_csv': 'khulnasoft,', 'commands': ['SELECT'], 'comments': None},
                 }
             ),
             {
-                'query': 'SELECT * FROM datadog',
-                'metadata': {'commands': ['SELECT'], 'comments': None, 'tables': ['datadog']},
+                'query': 'SELECT * FROM khulnasoft',
+                'metadata': {'commands': ['SELECT'], 'comments': None, 'tables': ['khulnasoft']},
             },
         ),
         (
             # Whitespace test
-            "  {\"query\":\"SELECT * FROM datadog\",\"metadata\":{\"tables_csv\":\"datadog\",\"commands\":[\"SELECT\"],"
+            "  {\"query\":\"SELECT * FROM khulnasoft\",\"metadata\":{\"tables_csv\":\"khulnasoft\",\"commands\":[\"SELECT\"],"
             "\"comments\":null}}          ",
             {
-                'query': 'SELECT * FROM datadog',
-                'metadata': {'commands': ['SELECT'], 'comments': None, 'tables': ['datadog']},
+                'query': 'SELECT * FROM khulnasoft',
+                'metadata': {'commands': ['SELECT'], 'comments': None, 'tables': ['khulnasoft']},
             },
         ),
         (
             json.dumps(
                 {
-                    'query': 'SELECT * FROM datadog WHERE age = (SELECT AVG(age) FROM datadog2)',
+                    'query': 'SELECT * FROM khulnasoft WHERE age = (SELECT AVG(age) FROM khulnasoft2)',
                     'metadata': {
-                        'tables_csv': '    datadog,  datadog2      ',
+                        'tables_csv': '    khulnasoft,  khulnasoft2      ',
                         'commands': ['SELECT', 'SELECT'],
                         'comments': ['-- Test comment'],
                     },
                 }
             ),
             {
-                'query': 'SELECT * FROM datadog WHERE age = (SELECT AVG(age) FROM datadog2)',
+                'query': 'SELECT * FROM khulnasoft WHERE age = (SELECT AVG(age) FROM khulnasoft2)',
                 'metadata': {
                     'commands': ['SELECT', 'SELECT'],
                     'comments': ['-- Test comment'],
-                    'tables': ['datadog', 'datadog2'],
+                    'tables': ['khulnasoft', 'khulnasoft2'],
                 },
             },
         ),
@@ -139,16 +139,16 @@ class TestDBExcepption(BaseException):
             },
         ),
         (
-            'SELECT * FROM datadog',
+            'SELECT * FROM khulnasoft',
             {
-                'query': 'SELECT * FROM datadog',
+                'query': 'SELECT * FROM khulnasoft',
                 'metadata': {},
             },
         ),
         (
-            'SELECT * FROM datadog',
+            'SELECT * FROM khulnasoft',
             {
-                'query': 'SELECT * FROM datadog',
+                'query': 'SELECT * FROM khulnasoft',
                 'metadata': {},
             },
         ),

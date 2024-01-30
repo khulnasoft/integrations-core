@@ -2,7 +2,7 @@
   "queue": [
     {
       "app": {
-        "id": "/tools/datadog-agent",
+        "id": "/tools/khulnasoft-agent",
         "instances": 5,
         "cpus": 1,
         "mem": 512,
@@ -23,7 +23,7 @@
         "container": {
           "type": "DOCKER",
           "docker": {
-            "image": "datadog/docker-dd-agent:latest",
+            "image": "khulnasoft/docker-dd-agent:latest",
             "network": "HOST",
             "privileged": true,
             "forcePullImage": false

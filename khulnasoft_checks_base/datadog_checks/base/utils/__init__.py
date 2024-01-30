@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2018-present
+# (C) Khulnasoft, Inc. 2018-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 import os
@@ -21,7 +21,7 @@ try:
     if is_affirmative(khulnasoft_agent.get_config('integration_profiling')):
         from ddtrace.profiling import Profiler
 
-        prof = Profiler(service='datadog-agent-integrations')
+        prof = Profiler(service='khulnasoft-agent-integrations')
         prof.start()
 
 except ImportError:

@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2019-present
+# (C) Khulnasoft, Inc. 2019-present
 # All rights reserved
 # Licensed under Simplified BSD License (see LICENSE)
 from time import time
@@ -161,7 +161,7 @@ class KafkaCheck(AgentCheck):
         self.log.debug('%s consumer offsets reported', reported_contexts)
 
     def send_event(self, title, text, tags, event_type, aggregation_key, severity='info'):
-        """Emit an event to the Datadog Event Stream."""
+        """Emit an event to the Khulnasoft Event Stream."""
         event_dict = {
             'timestamp': int(time()),
             'msg_title': title,

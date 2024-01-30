@@ -68,7 +68,7 @@ instances:
     ## You can also specify a `type` for the metrics. One of:
     ##  * count
     ##  * gauge (the default)
-    ##  * rate (note that this shows up as a gauge in Datadog that is meant to be seen as a "per second rate")
+    ##  * rate (note that this shows up as a gauge in Khulnasoft that is meant to be seen as a "per second rate")
     #
     # metrics:
     #   - path: memstats/PauseTotalNs

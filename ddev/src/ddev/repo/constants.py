@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2022-present
+# (C) Khulnasoft, Inc. 2022-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 CONFIG_DIRECTORY = '.ddev'
@@ -7,7 +7,7 @@ FULL_NAMES = {
     'core': 'integrations-core',
     'extras': 'integrations-extras',
     'marketplace': 'marketplace',
-    'agent': 'datadog-agent',
+    'agent': 'khulnasoft-agent',
 }
 
 # This is automatically maintained

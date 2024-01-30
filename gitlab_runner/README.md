@@ -15,7 +15,7 @@ Follow the instructions below to install and configure this check for an Agent r
 
 ### Installation
 
-The GitLab Runner check is included in the [Datadog Agent][3] package, so you don't need to install anything else on your GitLab servers.
+The GitLab Runner check is included in the [Khulnasoft Agent][3] package, so you don't need to install anything else on your GitLab servers.
 
 ### Configuration
 
@@ -41,7 +41,7 @@ See [metadata.csv][7] for a list of metrics provided by this integration.
    log_format = "json"
    ```
 
-2. Collecting logs is disabled by default in the Datadog Agent, you need to enable it in `datadog.yaml`:
+2. Collecting logs is disabled by default in the Khulnasoft Agent, you need to enable it in `khulnasoft.yaml`:
 
    ```yaml
    logs_enabled: true
@@ -74,7 +74,7 @@ The GitLab Runner check provides a service check to confirm that the Runner can 
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][10].
+Need help? Contact [Khulnasoft support][10].
 
 [1]: https://docs.gitlab.com/runner/monitoring/
 [2]: https://docs.khulnasoft.com/agent/kubernetes/integrations/

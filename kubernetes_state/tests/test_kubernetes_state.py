@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2018-present
+# (C) Khulnasoft, Inc. 2018-present
 # All rights reserved
 # Licensed under Simplified BSD License (see LICENSE)
 import os
@@ -615,13 +615,13 @@ def test_join_standard_tags_labels(aggregator, instance, check_with_join_standar
     aggregator.assert_metric(
         NAMESPACE + '.daemonset.desired',
         tags=[
-            'daemonset:datadog-monitoring',
-            'kube_daemon_set:datadog-monitoring',
+            'daemonset:khulnasoft-monitoring',
+            'kube_daemon_set:khulnasoft-monitoring',
             'kube_namespace:default',
             'namespace:default',
             'optional:tag1',
             "env:dev",
-            "service:datadog-agent",
+            "service:khulnasoft-agent",
             "version:7",
         ],
         value=3,

@@ -1,4 +1,4 @@
-# CHANGELOG - Datadog Operator
+# CHANGELOG - Khulnasoft Operator
 
 <!-- towncrier release notes start -->
 
@@ -6,4 +6,4 @@
 
 ***Added***:
 
-* Datadog Operator Dashboard for the GA.
+* Khulnasoft Operator Dashboard for the GA.

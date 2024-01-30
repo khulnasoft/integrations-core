@@ -1,14 +1,14 @@
-# Datadog Operator
+# Khulnasoft Operator
 
 ## Overview
 
-This check monitors the [Datadog Operator][1] through the Datadog Agent.
+This check monitors the [Khulnasoft Operator][1] through the Khulnasoft Agent.
 
 ## Setup
 
 ### Installation
 
-Please see the documentation for [Datadog Operator][1].
+Please see the documentation for [Khulnasoft Operator][1].
 
 ## Data Collected
 
@@ -18,7 +18,7 @@ See [metadata.csv][2] for a list of metrics provided by this check.
 
 ### Events
 
-The Datadog Operator integration does not include any events.
+The Khulnasoft Operator integration does not include any events.
 
 ### Service Checks
 
@@ -26,7 +26,7 @@ See [service_checks.json][3] for a list of service checks provided by this integ
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][4].
+Need help? Contact [Khulnasoft support][4].
 
 [1]: https://docs.khulnasoft.com/containers/khulnasoft_operator/
 [2]: https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_operator/metadata.csv

@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2023-present
+# (C) Khulnasoft, Inc. 2023-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 import pytest
@@ -37,7 +37,7 @@ def fake_repo(tmp_path_factory, config_file, ddev):
         write_file(
             repo_path / integration,
             'hatch.toml',
-            """[env.collectors.datadog-checks]
+            """[env.collectors.khulnasoft-checks]
 
         [[envs.default.matrix]]
         python = ["3.12"]

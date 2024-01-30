@@ -4,12 +4,12 @@ GO
 ALTER login sa WITH PASSWORD = 'Password123';
 GO
 
--- datadog user
-CREATE LOGIN datadog WITH PASSWORD = 'Password12!';
-CREATE USER datadog FOR LOGIN datadog;
-GRANT SELECT on sys.dm_os_performance_counters to datadog;
-GRANT VIEW SERVER STATE to datadog;
-GRANT VIEW ANY DEFINITION to datadog;
+-- khulnasoft user
+CREATE LOGIN khulnasoft WITH PASSWORD = 'Password12!';
+CREATE USER khulnasoft FOR LOGIN khulnasoft;
+GRANT SELECT on sys.dm_os_performance_counters to khulnasoft;
+GRANT VIEW SERVER STATE to khulnasoft;
+GRANT VIEW ANY DEFINITION to khulnasoft;
 
 -- test users
 CREATE LOGIN bob WITH PASSWORD = 'Password12!';
@@ -20,19 +20,19 @@ GO
 
 -- note that we deliberately don't grant "CONNECT ANY DATABASE" to the agent user here because that
 -- permission is not supported in SQL Server 2012. This is OK for the integration tests because in
--- the tests instead we explicitly create the datadog user in each database as a workaround
+-- the tests instead we explicitly create the khulnasoft user in each database as a workaround
 USE model;
 GO
-CREATE USER datadog FOR LOGIN datadog;
+CREATE USER khulnasoft FOR LOGIN khulnasoft;
 GO
 USE msdb;
 GO
-CREATE USER datadog FOR LOGIN datadog;
+CREATE USER khulnasoft FOR LOGIN khulnasoft;
 GO
 
 -- Create test database for integration tests
 -- only bob and fred have read/write access to this database
--- the datadog user has only connect access but can't read any objects
+-- the khulnasoft user has only connect access but can't read any objects
 CREATE DATABASE khulnasoft_test;
 GO
 USE khulnasoft_test;
@@ -45,7 +45,7 @@ INSERT INTO khulnasoft_test.dbo.ϑings VALUES (1, 'foo'), (2, 'bar');
 CREATE CLUSTERED INDEX thingsindex ON khulnasoft_test.dbo.ϑings (name);
 CREATE USER bob FOR LOGIN bob;
 CREATE USER fred FOR LOGIN fred;
--- we don't need to recreate the datadog user in this new DB because it already exists in the model
+-- we don't need to recreate the khulnasoft user in this new DB because it already exists in the model
 -- database so it's copied by default to new databases
 GO
 
@@ -74,7 +74,7 @@ GO
 
 CREATE PROCEDURE procedureWithLargeCommment AS
 /* 
-author: Datadog 
+author: Khulnasoft 
 usage: some random comments
 test: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 description: bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
@@ -107,7 +107,7 @@ USE master;
 GO
 CREATE PROCEDURE pyStoredProc AS
 BEGIN
-CREATE TABLE #Datadog
+CREATE TABLE #Khulnasoft
 (
     [metric] varchar(255) not null,
     [type] varchar(50) not null,
@@ -115,14 +115,14 @@ CREATE TABLE #Datadog
     [tags] varchar(255)
     )
     SET NOCOUNT ON;
-INSERT INTO #Datadog (metric, type, value, tags) VALUES
+INSERT INTO #Khulnasoft (metric, type, value, tags) VALUES
                                                      ('sql.sp.testa', 'gauge', 100, 'foo:bar,baz:qux'),
                                                      ('sql.sp.testb', 'gauge', 1, 'foo:bar,baz:qux'),
                                                      ('sql.sp.testb', 'gauge', 2, 'foo:bar,baz:qux');
-SELECT * FROM #Datadog;
+SELECT * FROM #Khulnasoft;
 END;
 GO
-GRANT EXECUTE on pyStoredProc to datadog;
+GRANT EXECUTE on pyStoredProc to khulnasoft;
 GO
 
 CREATE PROCEDURE exampleProcWithoutNocount AS
@@ -135,7 +135,7 @@ CREATE TABLE #Hello
 select * from #Hello;
 END;
 GO
-GRANT EXECUTE on exampleProcWithoutNocount to datadog;
+GRANT EXECUTE on exampleProcWithoutNocount to khulnasoft;
 GO
 
 CREATE PROCEDURE encryptedProc WITH ENCRYPTION AS

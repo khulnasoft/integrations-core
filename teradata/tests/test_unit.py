@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2022-present
+# (C) Khulnasoft, Inc. 2022-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 import json
@@ -24,7 +24,7 @@ from .common import CHECK_NAME, EXPECTED_TAGS, SERVICE_CHECK_CONNECT, SERVICE_CH
         pytest.param(
             {
                 "server": "localhost",
-                "username": "datadog",
+                "username": "khulnasoft",
                 "password": "dd_teradata",
                 "database": "AdventureWorksDW",
             },
@@ -36,7 +36,7 @@ from .common import CHECK_NAME, EXPECTED_TAGS, SERVICE_CHECK_CONNECT, SERVICE_CH
                 "dbs_port": "1025",
                 "logmech": None,
                 "logdata": "",
-                "user": "datadog",
+                "user": "khulnasoft",
                 "password": "dd_teradata",
                 "https_port": "443",
                 "sslmode": "Prefer",
@@ -49,7 +49,7 @@ from .common import CHECK_NAME, EXPECTED_TAGS, SERVICE_CHECK_CONNECT, SERVICE_CH
                 "server": "td-internal",
                 "port": 1125,
                 "username": "dd",
-                "password": "td_datadog",
+                "password": "td_khulnasoft",
                 "database": "AdventureWorksDW",
             },
             ['teradata_server:td-internal', 'teradata_port:1125'],
@@ -61,7 +61,7 @@ from .common import CHECK_NAME, EXPECTED_TAGS, SERVICE_CHECK_CONNECT, SERVICE_CH
                 "logmech": None,
                 "logdata": "",
                 "user": "dd",
-                "password": "td_datadog",
+                "password": "td_khulnasoft",
                 "https_port": "443",
                 "sslmode": "Prefer",
                 "sslprotocol": "TLSv1.2",
@@ -72,7 +72,7 @@ from .common import CHECK_NAME, EXPECTED_TAGS, SERVICE_CHECK_CONNECT, SERVICE_CH
             {
                 "server": "localhost",
                 "username": "dd",
-                "password": "td_datadog",
+                "password": "td_khulnasoft",
                 "database": "AdventureWorksDW",
             },
             ['teradata_server:localhost', 'teradata_port:1025'],
@@ -84,7 +84,7 @@ from .common import CHECK_NAME, EXPECTED_TAGS, SERVICE_CHECK_CONNECT, SERVICE_CH
                 "logmech": None,
                 "logdata": "",
                 "user": "dd",
-                "password": "td_datadog",
+                "password": "td_khulnasoft",
                 "https_port": "443",
                 "sslmode": "Prefer",
                 "sslprotocol": "TLSv1.2",
@@ -97,7 +97,7 @@ from .common import CHECK_NAME, EXPECTED_TAGS, SERVICE_CHECK_CONNECT, SERVICE_CH
                 "https_port": 543,
                 "ssl_mode": "Require",
                 "username": "dd",
-                "password": "td_datadog",
+                "password": "td_khulnasoft",
                 "database": "AdventureWorksDW",
             },
             ['teradata_server:localhost', 'teradata_port:1025'],
@@ -109,7 +109,7 @@ from .common import CHECK_NAME, EXPECTED_TAGS, SERVICE_CHECK_CONNECT, SERVICE_CH
                 "logmech": None,
                 "logdata": "",
                 "user": "dd",
-                "password": "td_datadog",
+                "password": "td_khulnasoft",
                 "https_port": "543",
                 "sslmode": "Require",
                 "sslprotocol": "TLSv1.2",
@@ -145,7 +145,7 @@ from .common import CHECK_NAME, EXPECTED_TAGS, SERVICE_CHECK_CONNECT, SERVICE_CH
             {
                 "server": "localhost",
                 "auth_mechanism": "KRB5",
-                "auth_data": "dd@localhost@@td_datadog",
+                "auth_data": "dd@localhost@@td_khulnasoft",
                 "database": "AdventureWorksDW",
             },
             ['teradata_server:localhost', 'teradata_port:1025'],
@@ -155,7 +155,7 @@ from .common import CHECK_NAME, EXPECTED_TAGS, SERVICE_CHECK_CONNECT, SERVICE_CH
                 "database": "AdventureWorksDW",
                 "dbs_port": "1025",
                 "logmech": "KRB5",
-                "logdata": "dd@localhost@@td_datadog",
+                "logdata": "dd@localhost@@td_khulnasoft",
                 "user": "",
                 "password": "",
                 "https_port": "443",
@@ -168,7 +168,7 @@ from .common import CHECK_NAME, EXPECTED_TAGS, SERVICE_CHECK_CONNECT, SERVICE_CH
             {
                 "server": "localhost",
                 "auth_mechanism": "LDAP",
-                "auth_data": "dd@@td_datadog",
+                "auth_data": "dd@@td_khulnasoft",
                 "database": "AdventureWorksDW",
             },
             ['teradata_server:localhost', 'teradata_port:1025'],
@@ -178,7 +178,7 @@ from .common import CHECK_NAME, EXPECTED_TAGS, SERVICE_CHECK_CONNECT, SERVICE_CH
                 "database": "AdventureWorksDW",
                 "dbs_port": "1025",
                 "logmech": "LDAP",
-                "logdata": "dd@@td_datadog",
+                "logdata": "dd@@td_khulnasoft",
                 "user": "",
                 "password": "",
                 "https_port": "443",
@@ -212,7 +212,7 @@ from .common import CHECK_NAME, EXPECTED_TAGS, SERVICE_CHECK_CONNECT, SERVICE_CH
         pytest.param(
             {
                 "server": "localhost",
-                "username": "datadog",
+                "username": "khulnasoft",
                 "password": "dd_teradata",
                 "auth_mechanism": "TD2",
                 "database": "AdventureWorksDW",
@@ -225,7 +225,7 @@ from .common import CHECK_NAME, EXPECTED_TAGS, SERVICE_CHECK_CONNECT, SERVICE_CH
                 "dbs_port": "1025",
                 "logmech": "TD2",
                 "logdata": "",
-                "user": "datadog",
+                "user": "khulnasoft",
                 "password": "dd_teradata",
                 "https_port": "443",
                 "sslmode": "Prefer",

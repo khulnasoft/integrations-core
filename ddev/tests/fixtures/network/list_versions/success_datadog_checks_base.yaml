@@ -13,7 +13,7 @@ interactions:
       user-agent:
       - python-httpx/0.24.1
     method: GET
-    uri: https://dd-integrations-core-wheels-build-stable.khulnasoft.com/targets/simple/datadog-checks-base/index.html
+    uri: https://dd-integrations-core-wheels-build-stable.khulnasoft.com/targets/simple/khulnasoft-checks-base/index.html
   response:
     content: '<a href=''khulnasoft_checks_base-10.0.0-py2.py3-none-any.whl''>khulnasoft_checks_base-10.0.0-py2.py3-none-any.whl</a><br
       />

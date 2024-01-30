@@ -10,7 +10,7 @@ Get metrics from Microsoft Exchange Server
 
 ### Installation
 
-The Exchange check is included in the [Datadog Agent][1] package, so you don't need to install anything else on your servers.
+The Exchange check is included in the [Khulnasoft Agent][1] package, so you don't need to install anything else on your servers.
 
 ### Configuration
 
@@ -22,7 +22,7 @@ The Exchange check is included in the [Datadog Agent][1] package, so you don't n
 
 ### Log collection
 
-1. Collecting logs is disabled by default in the Datadog Agent, you need to enable it in `datadog.yaml`:
+1. Collecting logs is disabled by default in the Khulnasoft Agent, you need to enable it in `khulnasoft.yaml`:
 
    ```yaml
    logs_enabled: true
@@ -42,7 +42,7 @@ The Exchange check is included in the [Datadog Agent][1] package, so you don't n
        path: "C:\\Program Files\\Microsoft\\Exchange Server\\V15\\TransportRoles\\Logs\\Hub\\Connectivity\\*"
        source: exchange-server
    ```
-    **Note**: The only logs supported are CommonDiagnosticsLog, ThrottlingService, and Connectivity logs due to Exchange Server outputting many different types of logs. Contact [Datadog support][7] to request other logs formats.
+    **Note**: The only logs supported are CommonDiagnosticsLog, ThrottlingService, and Connectivity logs due to Exchange Server outputting many different types of logs. Contact [Khulnasoft support][7] to request other logs formats.
 
    Change the `path` parameter value and configure it for your environment.
    See the [sample exchange_server.d/conf.yaml][4] for all available configuration options.
@@ -70,7 +70,7 @@ The Exchange server check does not include any service checks.
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][7].
+Need help? Contact [Khulnasoft support][7].
 
 [1]: https://app.khulnasoft.com/account/settings/agent/latest
 [2]: https://docs.khulnasoft.com/agent/guide/agent-configuration-files/#agent-configuration-directory

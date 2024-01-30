@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2018-present
+# (C) Khulnasoft, Inc. 2018-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 import copy
@@ -1025,8 +1025,8 @@ class AgentCheck(object):
         # type: (str, str) -> None
         """Stores `value` in a persistent cache for this check instance.
         The cache is located in a path where the agent is guaranteed to have read & write permissions. Namely in
-            - `%ProgramData%\\Datadog\\run` on Windows.
-            - `/opt/datadog-agent/run` everywhere else.
+            - `%ProgramData%\\Khulnasoft\\run` on Windows.
+            - `/opt/khulnasoft-agent/run` everywhere else.
         The cache is persistent between agent restarts but will be rebuilt if the check instance configuration changes.
 
         Parameters:
@@ -1121,7 +1121,7 @@ class AgentCheck(object):
         # TODO: Remove with Agent 5
         no_proxy_settings = {'http': None, 'https': None, 'no': []}  # type: ProxySettings
 
-        # First we read the proxy configuration from datadog.conf
+        # First we read the proxy configuration from khulnasoft.conf
         proxies = self.agentConfig.get('proxy', khulnasoft_agent.get_config('proxy'))
         if proxies:
             proxies = proxies.copy()

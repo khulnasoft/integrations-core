@@ -8,7 +8,7 @@
     </video>
 </div>
 
-The [Dev package][datadog-checks-dev], often referred to as its [CLI](cli.md) entrypoint `ddev`, is fundamentally split into 2 parts.
+The [Dev package][khulnasoft-checks-dev], often referred to as its [CLI](cli.md) entrypoint `ddev`, is fundamentally split into 2 parts.
 
 ## Test framework
 

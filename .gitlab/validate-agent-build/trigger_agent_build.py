@@ -12,8 +12,8 @@ CI_TOKEN = os.environ['CI_JOB_TOKEN']
 def trigger_pipeline():
     trigger_ref = RELEASE_BRANCH
 
-    # Search for the release branch in the datadog-agent repository
-    r = requests.get(f"https://api.github.com/repos/KhulnaSoft/datadog-agent/branches/{RELEASE_BRANCH}")
+    # Search for the release branch in the khulnasoft-agent repository
+    r = requests.get(f"https://api.github.com/repos/KhulnaSoft/khulnasoft-agent/branches/{RELEASE_BRANCH}")
 
     if r.status_code != 200:
         print(f"Tag '{RELEASE_BRANCH}' is not a release tag, falling back to main")
@@ -37,7 +37,7 @@ def trigger_pipeline():
     res = requests.post(f"{KHULNASOFT_AGENT_PIPELINE_URL}/trigger/pipeline", json=data)
     res.raise_for_status()
     child_pipeline = res.json()
-    print(f"Created a datadog-agent pipeline with id={child_pipeline['id']}, url={child_pipeline['web_url']}")
+    print(f"Created a khulnasoft-agent pipeline with id={child_pipeline['id']}, url={child_pipeline['web_url']}")
     return child_pipeline['id']
 
 

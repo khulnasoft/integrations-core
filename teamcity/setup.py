@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2018-present
+# (C) Khulnasoft, Inc. 2018-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 from codecs import open
@@ -45,14 +45,14 @@ def parse_pyproject_array(name):
 CHECKS_BASE_REQ = parse_pyproject_array('dependencies')[0]
 
 setup(
-    name='datadog-teamcity',
+    name='khulnasoft-teamcity',
     version=ABOUT["__version__"],
     description='The Teamcity check',
     long_description=long_description,
     long_description_content_type='text/markdown',
-    keywords='datadog agent teamcity check',
+    keywords='khulnasoft agent teamcity check',
     url='https://github.com/KhulnaSoft/integrations-core',
-    author='Datadog',
+    author='Khulnasoft',
     author_email='packages@khulnasoft.com',
     license='BSD',
     # See https://pypi.python.org/pypi?%3Aaction=list_classifiers

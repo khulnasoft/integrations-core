@@ -20,13 +20,13 @@ To configure this check for an Agent running on a host:
 
 1. Edit the `iis.d/conf.yaml` file in the [Agent's `conf.d` directory][3] at the root of your [Agent's configuration directory][4] to start collecting your IIS site data. See the [sample iis.d/conf.yaml][5] for all available configuration options.
 
-2. [Restart the Agent][6] to begin sending IIS metrics to Datadog.
+2. [Restart the Agent][6] to begin sending IIS metrics to Khulnasoft.
 
 **Note**: Versions 2.14.0 or later of this check use a new implementation for metric collection, which requires Python 3. For hosts that are unable to use Python 3, or if you would like to use a legacy version of this check, refer to the following [config][11].
 
 ##### Log collection
 
-1. Collecting logs is disabled by default in the Datadog Agent, enable it in your `datadog.yaml` file:
+1. Collecting logs is disabled by default in the Khulnasoft Agent, enable it in your `khulnasoft.yaml` file:
 
    ```yaml
    logs_enabled: true
@@ -46,7 +46,7 @@ To configure this check for an Agent running on a host:
 
 3. [Restart the Agent][6].
 
-**Note**: Ensure the `datadog-agent` user has read and execute access to tail the log files you want to collect from. When IIS creates a new sub-folder (such as when a new site is created), the permissions of the parent folder are not automatically inherited. See [Permission issues tailing log files][12] for more information.
+**Note**: Ensure the `khulnasoft-agent` user has read and execute access to tail the log files you want to collect from. When IIS creates a new sub-folder (such as when a new site is created), the permissions of the parent folder are not automatically inherited. See [Permission issues tailing log files][12] for more information.
 
 
 ### Validation
@@ -69,7 +69,7 @@ See [service_checks.json][9] for a list of service checks provided by this integ
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][10].
+Need help? Contact [Khulnasoft support][10].
 
 
 [1]: https://raw.githubusercontent.com/KhulnaSoft/integrations-core/master/iis/images/iisgraph.png

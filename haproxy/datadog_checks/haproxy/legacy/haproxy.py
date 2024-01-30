@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2012-present
+# (C) Khulnasoft, Inc. 2012-present
 # All rights reserved
 # Licensed under Simplified BSD License (see LICENSE)
 
@@ -442,7 +442,7 @@ class HAProxyCheckLegacy(AgentCheck):
             return []
 
         # match.groupdict() returns tags dictionary in the form of {'name': 'value'}
-        # convert it to Datadog tag LIST: ['name:value']
+        # convert it to Khulnasoft tag LIST: ['name:value']
         return ["%s:%s" % (name, value) for name, value in iteritems(match.groupdict())]
 
     @staticmethod

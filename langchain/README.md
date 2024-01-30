@@ -2,13 +2,13 @@
 
 ## Overview
 
-Get cost estimation, prompt and completion sampling, error tracking, performance metrics, and more out of [LangChain][1] Python library requests using Datadog metrics, APM, and logs.
+Get cost estimation, prompt and completion sampling, error tracking, performance metrics, and more out of [LangChain][1] Python library requests using Khulnasoft metrics, APM, and logs.
 
 ## Setup
 
 ### Installation
 
-1. Enable APM and StatsD in your Datadog Agent. For example, in Docker:
+1. Enable APM and StatsD in your Khulnasoft Agent. For example, in Docker:
 
 ```
 docker run -d --cgroupns host \
@@ -21,10 +21,10 @@ docker run -d --cgroupns host \
               -p 127.0.0.1:8125:8125/udp \
               -e DD_DOGSTATSD_NON_LOCAL_TRAFFIC=true \
               -e DD_APM_ENABLED=true \
-              gcr.io/datadoghq/agent:latest
+              gcr.io/khulnasofthq/agent:latest
 ```
 
-2. Install the Datadog APM Python library.
+2. Install the Khulnasoft APM Python library.
 
 ```
 pip install ddtrace>=1.17
@@ -103,7 +103,7 @@ The LangChain integration does not include any service checks.
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][5].
+Need help? Contact [Khulnasoft support][5].
 
 
 [1]: https://docs.langchain.com/docs/

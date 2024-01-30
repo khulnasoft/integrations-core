@@ -2,7 +2,7 @@
 
 ## Overview
 
-This check monitors [FoundationDB][1] through the Datadog Agent. Aside from
+This check monitors [FoundationDB][1] through the Khulnasoft Agent. Aside from
 checking that the FoundationDB cluster is healthy, it also collects numerous metrics
 and, optionally, FoundationDB transaction logs.
 
@@ -14,7 +14,7 @@ running FoundationDB, but just one with access to it.
 
 ### Installation
 
-The FoundationDB check is included in the [Datadog Agent][2] package,
+The FoundationDB check is included in the [Khulnasoft Agent][2] package,
 but requires the [FoundationDB client][8] to be installed.
 
 ### Configuration
@@ -41,7 +41,7 @@ related options given to `fdbcli` to connect to such a cluster.
 
 ##### Log collection
 
-FoundationDB writes XML logs by default, however, Datadog integrations expect JSON logs. Thus, a configuration change needs to be made to
+FoundationDB writes XML logs by default, however, Khulnasoft integrations expect JSON logs. Thus, a configuration change needs to be made to
 FoundationDB.
 
 1. Locate your `foundationdb.conf` file. Under the `fdbserver` section, add
@@ -58,7 +58,7 @@ FoundationDB.
 2. Restart the FoundationDB server so the changes take effect. Verify that
    logs in the `logdir` are written in JSON.
 
-3. Ensure that log collection is enabled in your `datadog.yaml` file:
+3. Ensure that log collection is enabled in your `khulnasoft.yaml` file:
 
     ```yaml
     logs_enabled: true
@@ -76,10 +76,10 @@ FoundationDB.
         source: foundationdb
     ```
 
-5. Make sure the Datadog Agent has the privileges required to list the
+5. Make sure the Khulnasoft Agent has the privileges required to list the
    directory and read its files.
 
-5. Restart the Datadog Agent.
+5. Restart the Khulnasoft Agent.
 
 <!-- xxz tab xxx -->
 <!-- xxx tab "Containerized" xxx -->
@@ -99,7 +99,7 @@ For containerized environments, see the [Autodiscovery Integration Templates][12
 
 ##### Log collection
 
-Collecting logs is disabled by default in the Datadog Agent. To enable it, see [Kubernetes log collection][13].
+Collecting logs is disabled by default in the Khulnasoft Agent. To enable it, see [Kubernetes log collection][13].
 
 | Parameter      | Value                                     |
 |----------------|-------------------------------------------|
@@ -130,7 +130,7 @@ The FoundationDB check does not include any events.
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][7].
+Need help? Contact [Khulnasoft support][7].
 
 [1]: https://www.foundationdb.org/
 [2]: https://app.khulnasoft.com/account/settings/agent/latest

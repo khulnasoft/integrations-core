@@ -30,7 +30,7 @@
 
 ***Fixed***:
 
-* Bump the minimum datadog-checks-base version ([#15217](https://github.com/KhulnaSoft/integrations-core/pull/15217))
+* Bump the minimum khulnasoft-checks-base version ([#15217](https://github.com/KhulnaSoft/integrations-core/pull/15217))
 
 ## 1.17.0 / 2023-07-10
 
@@ -197,7 +197,7 @@
 * Fix broken link to sample configuration file
 * Moved conf.yaml to root of folder to ensure it is consistent and shipped with the wheel
 * Remove non-existent counters
-* Clean-up import for `PDHBaseCheck` from `datadog-checks-base` wheel. [#1183](https://github.com/KhulnaSoft/integrations-core/issues/1183)
+* Clean-up import for `PDHBaseCheck` from `khulnasoft-checks-base` wheel. [#1183](https://github.com/KhulnaSoft/integrations-core/issues/1183)
 
 ## 1.0.0 / 2017-12-15
 

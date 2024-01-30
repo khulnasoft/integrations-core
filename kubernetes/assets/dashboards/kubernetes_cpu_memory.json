@@ -1,5 +1,5 @@
 {
-  "author_name": "Datadog",
+  "author_name": "Khulnasoft",
   "title": "Kubernetes - CPU & Memory usage",
   "description": "This dashboard aims to provide the relevant information for Kubernetes administrators and users to identify if the CPU and Mem requests are properly configured and not generating unnecessary waste",
   "widgets": [

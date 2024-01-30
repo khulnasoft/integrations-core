@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2010-present
+# (C) Khulnasoft, Inc. 2010-present
 # All rights reserved
 # Licensed under Simplified BSD License (see LICENSE)
 from copy import deepcopy
@@ -39,7 +39,7 @@ def test_parse_instance(aggregator, check):
         "name": "ok_instance",
         "host": "host",
         "port": 1234,
-        "cachemgr_username": "datadog",
+        "cachemgr_username": "khulnasoft",
         "cachemgr_password": "pass",
         "tags": ["foo:bar"],
     }

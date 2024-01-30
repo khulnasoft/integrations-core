@@ -1,6 +1,6 @@
 {
   "title": "Active Directory",
-  "author_name": "Datadog",
+  "author_name": "Khulnasoft",
   "description": "## Active Directory\n\nThis dashboard monitors key Active Directory metrics for LDAP service, and replication inbound and outbound data sizes, objects, and properties\n\n- [Active Directory Integration](https://docs.khulnasoft.com/integrations/active_directory/)\n\n\n- [Troubleshoot Active Directory Performance](https://docs.microsoft.com/en-us/windows-server/administration/performance-tuning/role/active-directory-server/troubleshoot)\n\nYou can clone this dashboard, copy and paste widgets from other out-of-the-box dashboards, and create your own visualizations for your custom applications.",
   "widgets": [
     {

@@ -2,7 +2,7 @@
 
 ## Overview
 
-This check monitors [ClickHouse][1] through the Datadog Agent.
+This check monitors [ClickHouse][1] through the Khulnasoft Agent.
 
 ## Setup
 
@@ -10,7 +10,7 @@ Follow the instructions below to install and configure this check for an Agent r
 
 ### Installation
 
-The ClickHouse check is included in the [Datadog Agent][3] package. No additional installation is needed on your server.
+The ClickHouse check is included in the [Khulnasoft Agent][3] package. No additional installation is needed on your server.
 
 ### Configuration
 
@@ -29,7 +29,7 @@ To configure this check for an Agent running on a host:
 
 ##### Log collection
 
-1. Collecting logs is disabled by default in the Datadog Agent, enable it in your `datadog.yaml` file:
+1. Collecting logs is disabled by default in the Khulnasoft Agent, enable it in your `khulnasoft.yaml` file:
 
    ```yaml
    logs_enabled: true
@@ -66,7 +66,7 @@ For containerized environments, see the [Autodiscovery Integration Templates][2]
 
 ##### Log collection
 
-Collecting logs is disabled by default in the Datadog Agent. To enable it, see [Kubernetes log collection][6].
+Collecting logs is disabled by default in the Khulnasoft Agent. To enable it, see [Kubernetes log collection][6].
 
 | Parameter      | Value                                     |
 |----------------|-------------------------------------------|
@@ -95,7 +95,7 @@ See [service_checks.json][9] for a list of service checks provided by this integ
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][10].
+Need help? Contact [Khulnasoft support][10].
 
 
 [1]: https://clickhouse.yandex

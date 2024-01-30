@@ -1,6 +1,6 @@
 {
   "title": "Systemd Overview",
-  "description": "This dashboard provides an overview of Systemd units and metrics on specific services/sockets to help you monitor and investigate issues. Further reading on Systemd monitoring:\n\n- [Datadog’s Systemd integration docs](https://docs.khulnasoft.com/integrations/systemd/)\n\nClone this template dashboard to make changes and add your own graphs and widgets.",
+  "description": "This dashboard provides an overview of Systemd units and metrics on specific services/sockets to help you monitor and investigate issues. Further reading on Systemd monitoring:\n\n- [Khulnasoft’s Systemd integration docs](https://docs.khulnasoft.com/integrations/systemd/)\n\nClone this template dashboard to make changes and add your own graphs and widgets.",
   "widgets": [
     {
       "id": 0,

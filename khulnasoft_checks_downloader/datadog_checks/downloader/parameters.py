@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2019-present
+# (C) Khulnasoft, Inc. 2019-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 """
@@ -15,7 +15,7 @@ import os.path
 
 from packaging.utils import canonicalize_name
 
-from .exceptions import NonDatadogPackage
+from .exceptions import NonKhulnasoftPackage
 
 EXCEPTIONS = {'khulnasoft_checks_base', 'khulnasoft_checks_dev', 'khulnasoft_checks_downloader'}
 
@@ -26,7 +26,7 @@ def substitute(target_relpath):
     wheel_distribution_name, package_version, python_tag, _, _ = name.split('-')
 
     if not wheel_distribution_name.startswith('khulnasoft_'):
-        raise NonDatadogPackage(wheel_distribution_name)
+        raise NonKhulnasoftPackage(wheel_distribution_name)
 
     standard_distribution_name = canonicalize_name(wheel_distribution_name)
 
@@ -39,7 +39,7 @@ def substitute(target_relpath):
     elif wheel_distribution_name == 'khulnasoft_go_metro':
         package_github_dir = 'go-metro'
     # Otherwise, the prefix of the wheel distribution name is expected to be
-    # "datadog-", and the directory name of the check on GitHub is expected not
+    # "khulnasoft-", and the directory name of the check on GitHub is expected not
     # have this prefix.
     else:
         package_github_dir = wheel_distribution_name[8:]

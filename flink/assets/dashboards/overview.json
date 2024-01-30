@@ -1,6 +1,6 @@
 {
     "title": "Flink Overview",
-    "description": "## Flink Overview\n\nThis dashboard provides a high-level overview of your Flink JobManagers and TaskManagers so you can monitor metrics related to jobs, memory, and checkpoints. For further reading on monitoring Flink, see the [Datadog Flink integration docs](https://docs.khulnasoft.com/integrations/flink/).\n\nClone this template dashboard to make changes and add your own graphs and widgets.",
+    "description": "## Flink Overview\n\nThis dashboard provides a high-level overview of your Flink JobManagers and TaskManagers so you can monitor metrics related to jobs, memory, and checkpoints. For further reading on monitoring Flink, see the [Khulnasoft Flink integration docs](https://docs.khulnasoft.com/integrations/flink/).\n\nClone this template dashboard to make changes and add your own graphs and widgets.",
     "widgets": [
         {
             "id": 0,

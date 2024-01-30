@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2020-present
+# (C) Khulnasoft, Inc. 2020-present
 # All rights reserved
 # Licensed under Simplified BSD License (see LICENSE)
 import logging
@@ -297,7 +297,7 @@ def test_f5(aggregator):
     }
     tags = [
         'snmp_profile:' + profile,
-        'snmp_host:f5-big-ip-adc-good-byol-1-vm.c.datadog-integrations-lab.internal',
+        'snmp_host:f5-big-ip-adc-good-byol-1-vm.c.khulnasoft-integrations-lab.internal',
         'device_vendor:f5',
     ]
     tags += common.CHECK_TAGS
@@ -494,7 +494,7 @@ def test_f5_router(aggregator):
     }
     common_tags = [
         'snmp_profile:router',
-        'snmp_host:f5-big-ip-adc-good-byol-1-vm.c.datadog-integrations-lab.internal',
+        'snmp_host:f5-big-ip-adc-good-byol-1-vm.c.khulnasoft-integrations-lab.internal',
     ]
     common_tags.extend(common.CHECK_TAGS)
 

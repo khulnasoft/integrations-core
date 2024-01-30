@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2018-present
+# (C) Khulnasoft, Inc. 2018-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 from collections import defaultdict
@@ -203,7 +203,7 @@ class PDHBaseCheck(AgentCheck):
         counter_list, (datatypes, remote_machine, check_instance, message) = counter_data
 
         # list of the metrics. Each entry is itself an entry,
-        # which is the pdh name, datadog metric name, type, and the
+        # which is the pdh name, khulnasoft metric name, type, and the
         # pdh counter object
         for counterset, inst_name, counter_name, dd_name, mtype in counter_list:
             if check_instance and self._no_instance(inst_name):

@@ -1,4 +1,4 @@
-# CHANGELOG - Datadog Checks Downloader
+# CHANGELOG - Khulnasoft Checks Downloader
 
 <!-- towncrier release notes start -->
 
@@ -81,7 +81,7 @@
 
 ***Fixed***:
 
-* Fix setup.py keywords in datadog-checks-downloader ([#12951](https://github.com/KhulnaSoft/integrations-core/pull/12951)) Thanks [fridex](https://github.com/fridex).
+* Fix setup.py keywords in khulnasoft-checks-downloader ([#12951](https://github.com/KhulnaSoft/integrations-core/pull/12951)) Thanks [fridex](https://github.com/fridex).
 
 ## 3.9.0 / 2022-09-16 / Agent 7.40.0
 
@@ -101,7 +101,7 @@
 
 ***Fixed***:
 
-* Prevent from publishing datadog-checks-downloader to PyPI ([#12556](https://github.com/KhulnaSoft/integrations-core/pull/12556))
+* Prevent from publishing khulnasoft-checks-downloader to PyPI ([#12556](https://github.com/KhulnaSoft/integrations-core/pull/12556))
 * Revert #12559 to make it compatible with python2 ([#12647](https://github.com/KhulnaSoft/integrations-core/pull/12647))
 * Avoid using assert statement by creating UpdatedTargetsError exception ([#12558](https://github.com/KhulnaSoft/integrations-core/pull/12558))
 * Adjust logging setup when multiple -v flags are supplied ([#12562](https://github.com/KhulnaSoft/integrations-core/pull/12562)) Thanks [fridex](https://github.com/fridex).
@@ -272,4 +272,4 @@
 
 ***Added***:
 
-* Add datadog-checks-downloader ([#3026](https://github.com/KhulnaSoft/integrations-core/pull/3026))
+* Add khulnasoft-checks-downloader ([#3026](https://github.com/KhulnaSoft/integrations-core/pull/3026))

@@ -1,6 +1,6 @@
 {
-    "author_name": "Datadog",
-    "description": "**DCGM Exporter**\n\nThe DCGM exporter is a tool to connect with Nvidia DCGM and exposes GPU telemetry in containerized environments. This dashboard gives you GPU metrics so you can monitor your GPU's health and performance effectively. \n\n\n**Useful Links**\n\n* [Blog Post](https://www.khulnasoft.com/blog/monitor-nvidia-gpus-with-datadog/)\n* [List of GPUs supported](https://docs.nvidia.com/datacenter/dcgm/latest/user-guide/getting-started.html)\n",
+    "author_name": "Khulnasoft",
+    "description": "**DCGM Exporter**\n\nThe DCGM exporter is a tool to connect with Nvidia DCGM and exposes GPU telemetry in containerized environments. This dashboard gives you GPU metrics so you can monitor your GPU's health and performance effectively. \n\n\n**Useful Links**\n\n* [Blog Post](https://www.khulnasoft.com/blog/monitor-nvidia-gpus-with-khulnasoft/)\n* [List of GPUs supported](https://docs.nvidia.com/datacenter/dcgm/latest/user-guide/getting-started.html)\n",
     "layout_type": "ordered",
     "template_variables": [
         {
@@ -50,7 +50,7 @@
                     {
                         "definition": {
                             "background_color": "white",
-                            "content": "**Useful Links**\n\n* [Blog Post](https://www.khulnasoft.com/blog/monitor-nvidia-gpus-with-datadog/)\n* [List of GPUs supported](https://docs.nvidia.com/datacenter/dcgm/latest/user-guide/getting-started.html)\n",
+                            "content": "**Useful Links**\n\n* [Blog Post](https://www.khulnasoft.com/blog/monitor-nvidia-gpus-with-khulnasoft/)\n* [List of GPUs supported](https://docs.nvidia.com/datacenter/dcgm/latest/user-guide/getting-started.html)\n",
                             "font_size": "16",
                             "has_padding": true,
                             "show_tick": false,
@@ -545,7 +545,7 @@
                                     ],
                                     "response_format": "scalar",
                                     "style": {
-                                        "palette": "datadog16"
+                                        "palette": "khulnasoft16"
                                     }
                                 }
                             ],
@@ -680,7 +680,7 @@
                                     ],
                                     "response_format": "scalar",
                                     "style": {
-                                        "palette": "datadog16"
+                                        "palette": "khulnasoft16"
                                     }
                                 }
                             ],

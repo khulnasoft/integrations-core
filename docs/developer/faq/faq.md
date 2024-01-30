@@ -4,7 +4,7 @@
 
 ## Integration vs Check
 
-A Check is any integration whose execution is triggered directly in code by the [Datadog Agent][].
+A Check is any integration whose execution is triggered directly in code by the [Khulnasoft Agent][].
 Therefore, all Agent-based integrations written in Python or Go are considered Checks.
 
 ## Why test tests

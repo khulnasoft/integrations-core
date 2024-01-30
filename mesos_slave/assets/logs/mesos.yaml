@@ -49,7 +49,7 @@ pipeline:
       source: message
       enabled: true
       samples:
-        - I0301 09:55:21.503362    15 http.cpp:391] HTTP GET for /master/roles.json from 172.28.0.1:59406 with User-Agent='Datadog Agent/7.27.0'
+        - I0301 09:55:21.503362    15 http.cpp:391] HTTP GET for /master/roles.json from 172.28.0.1:59406 with User-Agent='Khulnasoft Agent/7.27.0'
         - 'I0301 14:47:46.959683 89194 group.cpp:831] Syncing group operations: queue size (joins, cancels, datas) = (0, 0, 0)'
       grok:
         supportRules: |

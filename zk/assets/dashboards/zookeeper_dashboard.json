@@ -1,6 +1,6 @@
 {
     "title": "ZooKeeper - Overview",
-    "description": "This dashboard presents an overview of your Apache ZooKeeper cluster, helping you ensure the performance and availability of your distributed systems. Further reading for ZooKeeper monitoring:\n\n- [Datadog's Apache ZooKeeper integration docs](https://docs.khulnasoft.com/integrations/zk/)\n\nYou might also be interested in our dashboards for:\n\n- [Apache Kafka](https://app.khulnasoft.com/screen/integration/50/)\n\n- [Apache Hadoop](https://app.khulnasoft.com/screen/integration/90)\n\nClone this template dashboard to make changes and add your own graph widgets.",
+    "description": "This dashboard presents an overview of your Apache ZooKeeper cluster, helping you ensure the performance and availability of your distributed systems. Further reading for ZooKeeper monitoring:\n\n- [Khulnasoft's Apache ZooKeeper integration docs](https://docs.khulnasoft.com/integrations/zk/)\n\nYou might also be interested in our dashboards for:\n\n- [Apache Kafka](https://app.khulnasoft.com/screen/integration/50/)\n\n- [Apache Hadoop](https://app.khulnasoft.com/screen/integration/90)\n\nClone this template dashboard to make changes and add your own graph widgets.",
     "widgets": [
         {
             "id": 0,

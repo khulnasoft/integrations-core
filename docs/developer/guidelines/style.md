@@ -62,7 +62,7 @@ The `dd_mypy_args` defines the [mypy command line option][mypy-command-line] for
 
 The `khulnasoft_checks/ tests/` arguments represent the list of files that `mypy` should type check. Feel free to edit them as desired, including removing `tests/` (if you'd prefer to not type-check the test suite), or targeting specific files (when doing partial type checking).
 
-For a complete example, see the [`khulnasoft_checks_base` tox configuration][datadog-checks-base-tox-ini].
+For a complete example, see the [`khulnasoft_checks_base` tox configuration][khulnasoft-checks-base-tox-ini].
 
 Note that there is a default configuration in the [`mypy.ini`][mypy-ini] file.
 

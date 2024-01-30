@@ -2,7 +2,7 @@
 
 ## Overview
 
-This check monitors Helm deployments through the Datadog Agent.
+This check monitors Helm deployments through the Khulnasoft Agent.
 
 Helm supports multiple storage backends. In v3, Helm defaults to Kubernetes secrets and in v2, Helm defaults to ConfigMaps. This check supports both options.
 
@@ -10,7 +10,7 @@ Helm supports multiple storage backends. In v3, Helm defaults to Kubernetes secr
 
 ### Installation
 
-The Helm check is included in the [Datadog Agent][1] package.
+The Helm check is included in the [Khulnasoft Agent][1] package.
 No additional installation is needed on your server.
 
 ### Configuration
@@ -18,7 +18,7 @@ No additional installation is needed on your server.
 <!-- xxx tabs xxx -->
 <!-- xxx tab "Helm" xxx -->
 
-This is a cluster check. You can enable this check by adding `datadog.helmCheck.enabled` to your Helm chart.
+This is a cluster check. You can enable this check by adding `khulnasoft.helmCheck.enabled` to your Helm chart.
 
 **Note**: If no configuration is required, an empty `conf.d` can be passed.
 
@@ -27,13 +27,13 @@ For more information, see the [Cluster Check documentation][2].
 <!-- xxz tab xxx -->
 <!-- xxx tab "Operator" xxx -->
 
-This is a cluster check. You can enable this check by providing a configuration file `helm.yaml` to the cluster Agent in your `DatadogAgent` deployment configuration.
+This is a cluster check. You can enable this check by providing a configuration file `helm.yaml` to the cluster Agent in your `KhulnasoftAgent` deployment configuration.
 
 ```
 apiVersion: khulnasoft.com/v2alpha1
-kind: DatadogAgent
+kind: KhulnasoftAgent
 metadata:
-  name: datadog
+  name: khulnasoft
 spec:
   [...]
   override:
@@ -53,20 +53,20 @@ This check requires additional permissions bound to the Kubernetes service accou
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
 metadata:
-  name: datadog-helm-check
+  name: khulnasoft-helm-check
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
-  name: datadog-helm-check
+  name: khulnasoft-helm-check
 subjects:
   - kind: ServiceAccount
-    name: datadog-cluster-agent
+    name: khulnasoft-cluster-agent
     namespace: default
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
-  name: datadog-helm-check
+  name: khulnasoft-helm-check
 rules:
 - apiGroups:
   - ""
@@ -114,13 +114,13 @@ See [service_checks.json][5] for a list of service checks provided by this integ
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][6].
+Need help? Contact [Khulnasoft support][6].
 
 ## Further Reading
 
 Additional helpful documentation, links, and articles:
 
-- [Blog: Monitor your Helm-managed Kubernetes applications with Datadog][7]
+- [Blog: Monitor your Helm-managed Kubernetes applications with Khulnasoft][7]
 
 
 [1]: https://docs.khulnasoft.com/agent/kubernetes/integrations/
@@ -129,4 +129,4 @@ Additional helpful documentation, links, and articles:
 [4]: https://github.com/KhulnaSoft/integrations-core/blob/master/helm/metadata.csv
 [5]: https://github.com/KhulnaSoft/integrations-core/blob/master/helm/assets/service_checks.json
 [6]: https://docs.khulnasoft.com/help/
-[7]: https://www.khulnasoft.com/blog/monitor-helm-kubernetes-with-datadog/
+[7]: https://www.khulnasoft.com/blog/monitor-helm-kubernetes-with-khulnasoft/

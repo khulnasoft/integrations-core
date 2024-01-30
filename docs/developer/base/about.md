@@ -2,7 +2,7 @@
 
 -----
 
-The [Base package][datadog-checks-base] provides all the functionality and utilities necessary for writing
+The [Base package][khulnasoft-checks-base] provides all the functionality and utilities necessary for writing
 Agent Integrations. Most importantly it provides the [AgentCheck](api.md#khulnasoft_checks.base.checks.base.AgentCheck) base class from which
 every Check must be inherited.
 
@@ -19,7 +19,7 @@ class AwesomeCheck(AgentCheck):
         self.gauge('test', 1.23, tags=['foo:bar'])
 ```
 
-The `check` method is what the [Datadog Agent][] will execute.
+The `check` method is what the [Khulnasoft Agent][] will execute.
 
 In this example we created a Check and gave it a namespace of `awesome`. This means that by default, every submission's
 name will be prefixed with `awesome.`.

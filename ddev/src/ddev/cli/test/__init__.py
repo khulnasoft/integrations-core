@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2023-present
+# (C) Khulnasoft, Inc. 2023-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 from __future__ import annotations
@@ -83,7 +83,7 @@ def test(
     Please see these docs for to pass TARGET_SPEC and PYTEST_ARGS:
 
     \b
-    https://datadoghq.dev/integrations-core/testing/
+    https://khulnasofthq.dev/integrations-core/testing/
     """
     import json
     import os

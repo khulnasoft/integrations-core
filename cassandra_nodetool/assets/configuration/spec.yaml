@@ -29,7 +29,7 @@ files:
         items:
           type: string
     - name: host
-      description: Host that the Datadog Cassandra Nodetool check connects to.
+      description: Host that the Khulnasoft Cassandra Nodetool check connects to.
       value:
         type: string
         example: localhost
@@ -41,14 +41,14 @@ files:
     - name: username
       description: |
         Username from the credentials needed to connect to the host. These are the credentials for the JMX server.
-        For the check to work, this user must have a read/write access so that the Datadog Cassandra Nodetool
+        For the check to work, this user must have a read/write access so that the Khulnasoft Cassandra Nodetool
         check can execute the `status` command
       value:
         type: string
     - name: password
       description: |
         Password from the credentials needed to connect to the host. These are the credentials for the JMX server.
-        For the check to work, this user must have a read/write access so that the Datadog Cassandra Nodetool
+        For the check to work, this user must have a read/write access so that the Khulnasoft Cassandra Nodetool
         check can execute the `status` command
       value:
         type: string

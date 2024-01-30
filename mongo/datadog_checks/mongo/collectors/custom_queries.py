@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2020-present
+# (C) Khulnasoft, Inc. 2020-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 
@@ -86,7 +86,7 @@ class CustomQueriesCollector(MongoCollector):
         return getattr(self.check, method_name)
 
     def _collect_custom_metrics_for_query(self, api, raw_query):
-        """Validates the raw_query object, executes the mongo query then submits the metrics to Datadog"""
+        """Validates the raw_query object, executes the mongo query then submits the metrics to Khulnasoft"""
         db_name = raw_query.get('database', self.db_name)
         db = api[db_name]
         tags = self.base_tags + ["db:{}".format(db_name)]

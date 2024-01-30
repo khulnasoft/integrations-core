@@ -31,7 +31,7 @@ instances:
   - keyspaces: []
 
     ## @param host - string - optional - default: localhost
-    ## Host that the Datadog Cassandra Nodetool check connects to.
+    ## Host that the Khulnasoft Cassandra Nodetool check connects to.
     #
     # host: localhost
 
@@ -42,14 +42,14 @@ instances:
 
     ## @param username - string - optional
     ## Username from the credentials needed to connect to the host. These are the credentials for the JMX server.
-    ## For the check to work, this user must have a read/write access so that the Datadog Cassandra Nodetool
+    ## For the check to work, this user must have a read/write access so that the Khulnasoft Cassandra Nodetool
     ## check can execute the `status` command
     #
     # username: <USERNAME>
 
     ## @param password - string - optional
     ## Password from the credentials needed to connect to the host. These are the credentials for the JMX server.
-    ## For the check to work, this user must have a read/write access so that the Datadog Cassandra Nodetool
+    ## For the check to work, this user must have a read/write access so that the Khulnasoft Cassandra Nodetool
     ## check can execute the `status` command
     #
     # password: <PASSWORD>

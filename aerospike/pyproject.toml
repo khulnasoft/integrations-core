@@ -7,17 +7,17 @@ requires = [
 build-backend = "hatchling.build"
 
 [project]
-name = "datadog-aerospike"
+name = "khulnasoft-aerospike"
 description = "The Aerospike check"
 readme = "README.md"
 keywords = [
-    "datadog",
-    "datadog agent",
-    "datadog check",
+    "khulnasoft",
+    "khulnasoft agent",
+    "khulnasoft check",
     "aerospike",
 ]
 authors = [
-    { name = "Datadog", email = "packages@khulnasoft.com" },
+    { name = "Khulnasoft", email = "packages@khulnasoft.com" },
 ]
 classifiers = [
     "Development Status :: 5 - Production/Stable",
@@ -30,7 +30,7 @@ classifiers = [
     "Private :: Do Not Upload",
 ]
 dependencies = [
-    "datadog-checks-base>=32.6.0",
+    "khulnasoft-checks-base>=32.6.0",
 ]
 dynamic = [
     "version",

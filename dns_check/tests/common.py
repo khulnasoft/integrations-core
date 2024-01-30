@@ -1,10 +1,10 @@
-# (C) Datadog, Inc. 2019-present
+# (C) Khulnasoft, Inc. 2019-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 from khulnasoft_checks.dev.docker import using_windows_containers
 from khulnasoft_checks.dev.utils import get_metadata_metrics
 
-INSTANCE_INTEGRATION = {'name': 'datadog', 'hostname': 'www.khulnasoft.com', 'nameserver': '8.8.8.8'}
+INSTANCE_INTEGRATION = {'name': 'khulnasoft', 'hostname': 'www.khulnasoft.com', 'nameserver': '8.8.8.8'}
 
 CONFIG_SUCCESS = {
     'instances': [

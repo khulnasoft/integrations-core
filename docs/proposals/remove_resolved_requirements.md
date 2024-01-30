@@ -16,7 +16,7 @@ At the start, there was only one dependency file: `requirements.txt`. It was use
 During the effort to make every check its own Python package, it was also decided that, to further the separation of the agents and their integrations, the builders should install each check as a wheel, thus setting up the scaffolding to move to using every check’s defined dependency file rather than a single large file of dependencies. See:
 
 - https://github.com/KhulnaSoft/dd-agent-omnibus/pull/213
-- https://github.com/KhulnaSoft/datadog-agent/pull/1048
+- https://github.com/KhulnaSoft/khulnasoft-agent/pull/1048
 
 ## New testing framework
 
@@ -31,7 +31,7 @@ The work to unpack each wheel to verify dependency hashes had not been done yet 
 During testing of our new wheel pipeline it was discovered that, since wheels were built with `requirements.in` as `install_requires`, installation had the potential to break other checks’ compatibility. We therefore removed dependencies from `setup.py` and used `requirements.in` in the builders. See:
 
 - https://github.com/KhulnaSoft/integrations-core/pull/1796
-- https://github.com/KhulnaSoft/datadog-agent/pull/1896
+- https://github.com/KhulnaSoft/khulnasoft-agent/pull/1896
 
 ### Dependency conflicts
 

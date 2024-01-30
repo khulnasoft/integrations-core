@@ -12,7 +12,7 @@ See https://github.com/kubernetes/kubernetes/tree/master/cluster/addons/dns for 
 
 ### Installation
 
-The kube-dns check is included in the [Datadog Agent][1] package, so you don't need to install anything else on your servers.
+The kube-dns check is included in the [Khulnasoft Agent][1] package, so you don't need to install anything else on your servers.
 
 ### Configuration
 
@@ -57,7 +57,7 @@ The kube-dns check does not include any service checks.
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][6].
+Need help? Contact [Khulnasoft support][6].
 
 [1]: https://app.khulnasoft.com/account/settings/agent/latest
 [2]: https://docs.khulnasoft.com/agent/guide/agent-configuration-files/#agent-configuration-directory

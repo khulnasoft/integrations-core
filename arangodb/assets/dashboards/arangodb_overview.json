@@ -36,7 +36,7 @@
             "id": 57998799550840,
             "definition": {
               "type": "note",
-              "content": "Further reading on ArangoDB monitoring:\n- [Datadog's ArangoDB integration docs](https://docs.khulnasoft.com/integrations/arangodb)",
+              "content": "Further reading on ArangoDB monitoring:\n- [Khulnasoft's ArangoDB integration docs](https://docs.khulnasoft.com/integrations/arangodb)",
               "background_color": "transparent",
               "font_size": "16",
               "text_align": "left",

@@ -1,5 +1,5 @@
 {
-    "author_name": "Datadog",
+    "author_name": "Khulnasoft",
     "description": "## Vertica Dashboard\n\nThis is an example Vertica dashboard demonstrating the metrics that the integration collects.",
     "layout_type": "ordered",
     "template_variables": [
@@ -24,7 +24,7 @@
                     {
                         "definition": {
                             "background_color": "transparent",
-                            "content": "This is a high-level overview of your Vertica clusters allowing you to identify potential issues at a glance and to track availability and performance from them.\n\n##### [**Datadog Vertica integration docs&nbsp;\u2197**](https://docs.khulnasoft.com/integrations/vertica/)",
+                            "content": "This is a high-level overview of your Vertica clusters allowing you to identify potential issues at a glance and to track availability and performance from them.\n\n##### [**Khulnasoft Vertica integration docs&nbsp;\u2197**](https://docs.khulnasoft.com/integrations/vertica/)",
                             "font_size": "18",
                             "has_padding": true,
                             "show_tick": false,

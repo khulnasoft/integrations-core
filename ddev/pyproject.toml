@@ -4,17 +4,17 @@ build-backend = "hatchling.build"
 
 [project]
 name = "ddev"
-description = "The Datadog Agent integration developer tool"
+description = "The Khulnasoft Agent integration developer tool"
 readme = "README.md"
 requires-python = ">=3.9"
 license = "BSD-3-Clause"
 keywords = [
-    "datadog",
+    "khulnasoft",
     "agent",
     "integration",
 ]
 authors = [
-    { name = "Datadog", email = "packages@khulnasoft.com" },
+    { name = "Khulnasoft", email = "packages@khulnasoft.com" },
 ]
 classifiers = [
     "Development Status :: 5 - Production/Stable",
@@ -28,8 +28,8 @@ classifiers = [
 dependencies = [
     "click~=8.1.6",
     "coverage",
-    "datadog-api-client==2.20.0",
-    "datadog-checks-dev[cli]>=29.0.1,<=30",
+    "khulnasoft-api-client==2.20.0",
+    "khulnasoft-checks-dev[cli]>=29.0.1,<=30",
     "hatch>=1.8.1",
     "httpx",
     "jsonpointer",

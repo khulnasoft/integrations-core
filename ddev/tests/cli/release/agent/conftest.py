@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2023-present
+# (C) Khulnasoft, Inc. 2023-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 import pytest
@@ -23,7 +23,7 @@ def repo_with_history(tmp_path_factory):
     repo.git.run('config', 'commit.gpgsign', 'false')
 
     # Initial version with a single integration
-    write_agent_requirements(repo.path, ['datadog-foo==1.0.0'])
+    write_agent_requirements(repo.path, ['khulnasoft-foo==1.0.0'])
     repo.git.run('add', '.')
     commit('first')
     repo.git.run('tag', '7.37.0')
@@ -33,14 +33,14 @@ def repo_with_history(tmp_path_factory):
     commit('second')
     repo.git.run('tag', '7.38.0')
     # Breaking updates
-    write_agent_requirements(repo.path, ['datadog-bar==2.0.0', 'datadog-checks-base==3.0.0'])
+    write_agent_requirements(repo.path, ['khulnasoft-bar==2.0.0', 'khulnasoft-checks-base==3.0.0'])
     commit('third')
     repo.git.run('tag', '7.39.0')
     # An update with an environment marker
-    write_agent_requirements(repo.path, ["datadog-onlywin==1.0.0; sys_platform == 'win32'"])
+    write_agent_requirements(repo.path, ["khulnasoft-onlywin==1.0.0; sys_platform == 'win32'"])
     commit('fourth')
     repo.git.run('tag', '7.40.0')
-    write_agent_requirements(repo.path, ["datadog-checks-downloader==4.0.0"])
+    write_agent_requirements(repo.path, ["khulnasoft-checks-downloader==4.0.0"])
     commit('fifth')
     repo.git.run('tag', '7.41.0')
 

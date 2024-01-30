@@ -7,16 +7,16 @@ requires = [
 build-backend = "hatchling.build"
 
 [project]
-name = "datadog-checks-base"
-description = "The Datadog Check Toolkit"
+name = "khulnasoft-checks-base"
+description = "The Khulnasoft Check Toolkit"
 readme = "README.md"
 keywords = [
-    "datadog",
+    "khulnasoft",
     "agent",
     "checks",
 ]
 authors = [
-    { name = "Datadog", email = "packages@khulnasoft.com" },
+    { name = "Khulnasoft", email = "packages@khulnasoft.com" },
 ]
 classifiers = [
     "Development Status :: 5 - Production/Stable",

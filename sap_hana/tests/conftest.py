@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2019-present
+# (C) Khulnasoft, Inc. 2019-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 from contextlib import closing
@@ -40,9 +40,9 @@ class DbManager(object):
     def initialize(self):
         with closing(self.conn) as conn:
             with closing(conn.cursor()) as cursor:
-                cursor.execute('CREATE RESTRICTED USER datadog PASSWORD "{}"'.format(CONFIG['password']))
-                cursor.execute('ALTER USER datadog ENABLE CLIENT CONNECT')
-                cursor.execute('ALTER USER datadog DISABLE PASSWORD LIFETIME')
+                cursor.execute('CREATE RESTRICTED USER khulnasoft PASSWORD "{}"'.format(CONFIG['password']))
+                cursor.execute('ALTER USER khulnasoft ENABLE CLIENT CONNECT')
+                cursor.execute('ALTER USER khulnasoft DISABLE PASSWORD LIFETIME')
 
                 # Create a role with the necessary monitoring privileges
                 cursor.execute('CREATE ROLE DD_MONITOR')
@@ -70,7 +70,7 @@ class DbManager(object):
                 cursor.execute('GRANT SELECT ON {}.M_DATA_VOLUMES TO DD_MONITOR'.format(self.schema))
 
                 # Assign the monitoring role to the user
-                cursor.execute('GRANT DD_MONITOR TO datadog')
+                cursor.execute('GRANT DD_MONITOR TO khulnasoft')
 
                 # Trigger a backup
                 cursor.execute("BACKUP DATA USING FILE ('/tmp/backup')")

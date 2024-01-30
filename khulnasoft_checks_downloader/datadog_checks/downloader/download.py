@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2019-present
+# (C) Khulnasoft, Inc. 2019-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 import collections
@@ -29,8 +29,8 @@ from .exceptions import (
     MissingVersions,
     NoInTotoLinkMetadataFound,
     NoInTotoRootLayoutPublicKeysFound,
-    NoSuchDatadogPackage,
-    NoSuchDatadogPackageVersion,
+    NoSuchKhulnasoftPackage,
+    NoSuchKhulnasoftPackageVersion,
     PythonVersionMismatch,
     RevokedDeveloperOrMachine,
     TargetNotFoundError,
@@ -332,7 +332,7 @@ class TUFDownloader:
                 # NOTE: We do not perform in-toto inspection for simple indices; only for wheels.
                 index_abspath, _ = self._download_with_tuf(index_relpath)
             except TargetNotFoundError:
-                raise NoSuchDatadogPackage(standard_distribution_name)
+                raise NoSuchKhulnasoftPackage(standard_distribution_name)
 
         with open(index_abspath) as simple_index:
             for line in simple_index:
@@ -355,7 +355,7 @@ class TUFDownloader:
         """
         Returns:
             If download over TUF is successful, this function will return the
-            latest known version of the Datadog integration.
+            latest known version of the Khulnasoft integration.
         """
         wheels = self.__get_versions(standard_distribution_name)
 
@@ -369,7 +369,7 @@ class TUFDownloader:
 
         python_tags = wheels[version]
         if not python_tags:
-            raise NoSuchDatadogPackageVersion(standard_distribution_name, version)
+            raise NoSuchKhulnasoftPackageVersion(standard_distribution_name, version)
 
         # First, try finding the pure Python wheel for this version.
         this_python = 'py{}'.format(sys.version_info[0])

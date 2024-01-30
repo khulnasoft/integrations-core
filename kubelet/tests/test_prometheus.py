@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2018-present
+# (C) Khulnasoft, Inc. 2018-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 import json
@@ -194,11 +194,11 @@ def test_get_entity_id_if_container_metric(cadvisor_scraper):
 
 
 def test_get_pod_uid(cadvisor_scraper):
-    labels = {"container": "POD", "namespace": "default", "pod": "datadog-agent-pbqt2"}
+    labels = {"container": "POD", "namespace": "default", "pod": "khulnasoft-agent-pbqt2"}
     assert cadvisor_scraper._get_pod_uid(labels) == "b66c40af-997d-11e8-96a3-42010a840157"
 
     # k8s < 1.16
-    labels = {"container_name": "POD", "namespace": "default", "pod_name": "datadog-agent-pbqt2"}
+    labels = {"container_name": "POD", "namespace": "default", "pod_name": "khulnasoft-agent-pbqt2"}
     assert cadvisor_scraper._get_pod_uid(labels) == "b66c40af-997d-11e8-96a3-42010a840157"
     assert cadvisor_scraper._get_pod_uid([]) is None
 
@@ -229,32 +229,32 @@ def test_get_pod_by_metric_label(cadvisor_scraper):
 def test_get_kube_container_name():
     tags = CadvisorPrometheusScraperMixin._get_kube_container_name(
         {
-            "container": "datadog-agent",
+            "container": "khulnasoft-agent",
             "id": "/kubepods/burstable/"
             "podc2319815-10d0-11e8-bd5a-42010af00137/"
             "a335589109ce5506aa69ba7481fc3e6c943abd23c5277016c92dac15d0f40479",
-            "image": "datadog/agent-dev@sha256:894fb66f89be0332a47388d7219ab8b365520ff0e3bbf597bd0a378b19efa7ee",
-            "name": "k8s_datadog-agent_datadog-agent-jbm2k_default_c2319815-10d0-11e8-bd5a-42010af00137_0",
+            "image": "khulnasoft/agent-dev@sha256:894fb66f89be0332a47388d7219ab8b365520ff0e3bbf597bd0a378b19efa7ee",
+            "name": "k8s_khulnasoft-agent_khulnasoft-agent-jbm2k_default_c2319815-10d0-11e8-bd5a-42010af00137_0",
             "namespace": "default",
-            "pod": "datadog-agent-jbm2k",
+            "pod": "khulnasoft-agent-jbm2k",
         }
     )
-    assert tags == ["kube_container_name:datadog-agent"]
+    assert tags == ["kube_container_name:khulnasoft-agent"]
 
     # k8s < 1.16
     tags = CadvisorPrometheusScraperMixin._get_kube_container_name(
         {
-            "container_name": "datadog-agent",
+            "container_name": "khulnasoft-agent",
             "id": "/kubepods/burstable/"
             "podc2319815-10d0-11e8-bd5a-42010af00137/"
             "a335589109ce5506aa69ba7481fc3e6c943abd23c5277016c92dac15d0f40479",
-            "image": "datadog/agent-dev@sha256:894fb66f89be0332a47388d7219ab8b365520ff0e3bbf597bd0a378b19efa7ee",
-            "name": "k8s_datadog-agent_datadog-agent-jbm2k_default_c2319815-10d0-11e8-bd5a-42010af00137_0",
+            "image": "khulnasoft/agent-dev@sha256:894fb66f89be0332a47388d7219ab8b365520ff0e3bbf597bd0a378b19efa7ee",
+            "name": "k8s_khulnasoft-agent_khulnasoft-agent-jbm2k_default_c2319815-10d0-11e8-bd5a-42010af00137_0",
             "namespace": "default",
-            "pod_name": "datadog-agent-jbm2k",
+            "pod_name": "khulnasoft-agent-jbm2k",
         }
     )
-    assert tags == ["kube_container_name:datadog-agent"]
+    assert tags == ["kube_container_name:khulnasoft-agent"]
 
     tags = CadvisorPrometheusScraperMixin._get_kube_container_name([])
     assert tags == []

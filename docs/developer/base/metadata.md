@@ -6,8 +6,8 @@ Often, you will want to collect mostly unstructured data that doesn't map well t
 product version information.
 
 The base class provides [a method](api.md#khulnasoft_checks.base.checks.base.AgentCheck.set_metadata) that
-handles such cases. The collected data is captured by [flares][datadog-agent-flare], displayed on the
-Agent's [status page][datadog-agent-status-page], and will eventually be queryable [in-app][].
+handles such cases. The collected data is captured by [flares][khulnasoft-agent-flare], displayed on the
+Agent's [status page][khulnasoft-agent-status-page], and will eventually be queryable [in-app][].
 
 ## Interface
 

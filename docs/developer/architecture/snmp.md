@@ -11,12 +11,12 @@ While most integrations are either Python, JMX, or implemented in the Agent in G
 
 Here's an overview of what this integration involves:
 
-* A [Python check](https://github.com/KhulnaSoft/datadog-agent/blob/master/snmp), responsible for:
+* A [Python check](https://github.com/KhulnaSoft/khulnasoft-agent/blob/master/snmp), responsible for:
     * Collecting metrics from a specific device IP. Metrics typically come from [profiles](../../tutorials/snmp/profile-format/), but they can also be [specified explicitly](https://github.com/KhulnaSoft/integrations-core/blob/fd6df90135de14d06662e49d7696a42c08476a82/snmp/khulnasoft_checks/snmp/data/conf.yaml.example#L344-L354).
     * Auto-discovering devices over a network. (Pending deprecation in favor of Agent auto-discovery.)
-* An [Agent service listener](https://github.com/KhulnaSoft/datadog-agent/blob/master/pkg/autodiscovery/listeners/snmp.go), responsible for auto-discovering devices over a network and forwarding discovered instances to the existing Agent check scheduling pipeline. Also known as "Agent SNMP auto-discovery".
+* An [Agent service listener](https://github.com/KhulnaSoft/khulnasoft-agent/blob/master/pkg/autodiscovery/listeners/snmp.go), responsible for auto-discovering devices over a network and forwarding discovered instances to the existing Agent check scheduling pipeline. Also known as "Agent SNMP auto-discovery".
 
-The diagram below shows how these components interact for a typical VM-based setup (single Agent on a host). For Datadog Cluster Agent (DCA) deployments, see [Cluster Agent support](#cluster-agent-support).
+The diagram below shows how these components interact for a typical VM-based setup (single Agent on a host). For Khulnasoft Cluster Agent (DCA) deployments, see [Cluster Agent support](#cluster-agent-support).
 
 ![](../assets/images/snmp-architecture.png)
 
@@ -78,12 +78,12 @@ Agent auto-discovery uses [GoSNMP](https://github.com/soniah/gosnmp) to get the 
 
 Agent auto-discovery implements the same logic than the Python auto-discovery, but as a service listener in the Agent Go package.
 
-This approach leverages the existing Agent scheduling logic, and makes it possible to scale device auto-discovery using the Datadog Cluster Agent (see [Cluster Agent support](#cluster-agent-support)).
+This approach leverages the existing Agent scheduling logic, and makes it possible to scale device auto-discovery using the Khulnasoft Cluster Agent (see [Cluster Agent support](#cluster-agent-support)).
 
 Pending official documentation, here is an example configuration:
 
 ```yaml
-# datadog.yaml
+# khulnasoft.yaml
 
 listeners:
   - name: snmp
@@ -111,16 +111,16 @@ For Kubernetes environments, the [Cluster Agent](https://docs.khulnasoft.com/age
 
 ![](../assets/images/snmp-architecture-cluster-agent.png)
 
-The Datadog Cluster Agent (DCA) uses the `snmp_listener` config (Agent auto-discovery) to listen for IP ranges, then schedules snmp check instances to be run by one or more normal Datadog Agents.
+The Khulnasoft Cluster Agent (DCA) uses the `snmp_listener` config (Agent auto-discovery) to listen for IP ranges, then schedules snmp check instances to be run by one or more normal Khulnasoft Agents.
 
 Agent auto-discovery combined with Cluster Agent is very scalable, it can be used to monitor a large number of snmp devices.
 
-#### Example Cluster Agent setup with SNMP Agent auto-discovery using Datadog helm-chart
+#### Example Cluster Agent setup with SNMP Agent auto-discovery using Khulnasoft helm-chart
 
-First you need to [add Datadog Helm repository](https://github.com/KhulnaSoft/helm-charts).
+First you need to [add Khulnasoft Helm repository](https://github.com/KhulnaSoft/helm-charts).
 
 ```bash
-helm repo add datadog https://helm.khulnasoft.com
+helm repo add khulnasoft https://helm.khulnasoft.com
 helm repo update
 ```
 
@@ -128,15 +128,15 @@ helm repo update
 Then run:
 
 ```bash
-helm install datadog-monitoring --set datadog.apiKey=<YOUR_API_KEY> -f cluster-agent-values.yaml datadog/datadog
+helm install khulnasoft-monitoring --set khulnasoft.apiKey=<YOUR_API_KEY> -f cluster-agent-values.yaml khulnasoft/khulnasoft
 ```
 
 ??? example "Example cluster-agent-values.yaml"
 
     ```yaml
-    datadog:
+    khulnasoft:
       ## @param apiKey - string - required
-      ## Set this to your Datadog API key before the Agent runs.
+      ## Set this to your Khulnasoft API key before the Agent runs.
       ## ref: https://app.khulnasoft.com/account/settings/agent/latest?platform=kubernetes
       #
       apiKey: <KHULNASOFT_API_KEY>
@@ -169,14 +169,14 @@ helm install datadog-monitoring --set datadog.apiKey=<YOUR_API_KEY> -f cluster-a
         - 'env:test-snmp-cluster-agent'
 
     ## @param clusterAgent - object - required
-    ## This is the Datadog Cluster Agent implementation that handles cluster-wide
+    ## This is the Khulnasoft Cluster Agent implementation that handles cluster-wide
     ## metrics more cleanly, separates concerns for better rbac, and implements
-    ## the external metrics API so you can autoscale HPAs based on datadog metrics
+    ## the external metrics API so you can autoscale HPAs based on khulnasoft metrics
     ## ref: https://docs.khulnasoft.com/agent/kubernetes/cluster/
     #
     clusterAgent:
       ## @param enabled - boolean - required
-      ## Set this to true to enable Datadog Cluster Agent
+      ## Set this to true to enable Khulnasoft Cluster Agent
       #
       enabled: true
 
@@ -200,7 +200,7 @@ helm install datadog-monitoring --set datadog.apiKey=<YOUR_API_KEY> -f cluster-a
         snmp.yaml: |-
           cluster_check: true
 
-          # AD config below is copied from: https://github.com/KhulnaSoft/datadog-agent/blob/master/cmd/agent/dist/conf.d/snmp.d/auto_conf.yaml
+          # AD config below is copied from: https://github.com/KhulnaSoft/khulnasoft-agent/blob/master/cmd/agent/dist/conf.d/snmp.d/auto_conf.yaml
           ad_identifiers:
             - snmp
           init_config:
@@ -300,14 +300,14 @@ helm install datadog-monitoring --set datadog.apiKey=<YOUR_API_KEY> -f cluster-a
               #
               oid_batch_size: "%%extra_oid_batch_size%%"
 
-      ## @param datadog-cluster.yaml - object - optional
-      ## Specify custom contents for the datadog cluster agent config (datadog-cluster.yaml).
+      ## @param khulnasoft-cluster.yaml - object - optional
+      ## Specify custom contents for the khulnasoft cluster agent config (khulnasoft-cluster.yaml).
       #
       khulnasoft_cluster_yaml:
         listeners:
           - name: snmp
 
-        # See here for all `snmp_listener` configs: https://github.com/KhulnaSoft/datadog-agent/blob/master/pkg/config/config_template.yaml
+        # See here for all `snmp_listener` configs: https://github.com/KhulnaSoft/khulnasoft-agent/blob/master/pkg/config/config_template.yaml
         snmp_listener:
           workers: 2
           discovery_interval: 10

@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2022-present
+# (C) Khulnasoft, Inc. 2022-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 import os
@@ -31,7 +31,7 @@ from ddev.utils.fs import Path
 @click.option('--core', '-c', is_flag=True, help='Work on `integrations-core`.')
 @click.option('--extras', '-e', is_flag=True, help='Work on `integrations-extras`.')
 @click.option('--marketplace', '-m', is_flag=True, help='Work on `marketplace`.')
-@click.option('--agent', '-a', is_flag=True, help='Work on `datadog-agent`.')
+@click.option('--agent', '-a', is_flag=True, help='Work on `khulnasoft-agent`.')
 @click.option('--here', '-x', is_flag=True, help='Work on the current location.')
 @click.option(
     '--color/--no-color',

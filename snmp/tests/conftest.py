@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2018-present
+# (C) Khulnasoft, Inc. 2018-present
 # All rights reserved
 # Licensed under Simplified BSD License (see LICENSE)
 
@@ -34,9 +34,9 @@ FILES = [
 E2E_METADATA = {
     'docker_volumes': [
         # Mount mock user profiles
-        '{}:/etc/datadog-agent/conf.d/snmp.d/profiles'.format(os.path.join(HERE, 'fixtures', 'user_profiles')),
+        '{}:/etc/khulnasoft-agent/conf.d/snmp.d/profiles'.format(os.path.join(HERE, 'fixtures', 'user_profiles')),
         # Ensure the Agent has access to profile definition files
-        '{}:/etc/datadog-agent/conf.d/snmp.d/default_profiles'.format(
+        '{}:/etc/khulnasoft-agent/conf.d/snmp.d/default_profiles'.format(
             os.path.join(os.path.dirname(HERE), 'khulnasoft_checks', 'snmp', 'data', 'default_profiles')
         ),
     ],
@@ -62,7 +62,7 @@ def dd_environment():
             if SNMP_LISTENER_ENV == 'true':
                 instance_config = None
                 new_e2e_metadata['docker_volumes'].append(
-                    '{}:/etc/datadog-agent/datadog.yaml'.format(create_khulnasoft_conf_file(tmp_dir)),
+                    '{}:/etc/khulnasoft-agent/khulnasoft.yaml'.format(create_khulnasoft_conf_file(tmp_dir)),
                 )
             else:
                 instance_config = generate_container_instance_config([])
@@ -92,7 +92,7 @@ def _autodiscovery_ready():
         if 'autodiscovery_subnet' in result_line:
             autodiscovery_checks.append(result_line)
 
-    # assert subnets discovered by `snmp_listener` config from datadog.yaml
+    # assert subnets discovered by `snmp_listener` config from khulnasoft.yaml
     assert len(autodiscovery_checks) == EXPECTED_AUTODISCOVERY_CHECKS, result.stdout
 
 
@@ -102,7 +102,7 @@ def create_khulnasoft_conf_file(tmp_dir):
     khulnasoft_conf = {
         # Set check_runners to -1 to avoid checks being run in background when running `agent check` for e2e testing
         # Setting check_runners to a negative number to disable check runners is a workaround,
-        # Datadog Agent might not guarantee this behaviour in the future.
+        # Khulnasoft Agent might not guarantee this behaviour in the future.
         'check_runners': -1,
         'snmp_listener': {
             'workers': 4,
@@ -137,7 +137,7 @@ def create_khulnasoft_conf_file(tmp_dir):
                     'version': 3,
                     'timeout': 1,
                     'retries': 2,
-                    'user': 'datadogSHADES',
+                    'user': 'khulnasoftSHADES',
                     'authentication_key': 'doggiepass',
                     'authentication_protocol': 'sha',
                     'privacy_key': 'doggiePRIVkey',
@@ -153,7 +153,7 @@ def create_khulnasoft_conf_file(tmp_dir):
                     'version': 3,
                     'timeout': 1,
                     'retries': 2,
-                    'user': 'datadogSHA256AES',
+                    'user': 'khulnasoftSHA256AES',
                     'authentication_key': 'doggiepass',
                     'authentication_protocol': 'SHA256',
                     'privacy_key': 'doggiePRIVkey',
@@ -166,7 +166,7 @@ def create_khulnasoft_conf_file(tmp_dir):
         },
         'listeners': [{'name': 'snmp'}],
     }
-    khulnasoft_conf_file = os.path.join(tmp_dir, 'datadog.yaml')
+    khulnasoft_conf_file = os.path.join(tmp_dir, 'khulnasoft.yaml')
     with open(khulnasoft_conf_file, 'wb') as file:
         file.write(yaml.dump(khulnasoft_conf))
     return khulnasoft_conf_file

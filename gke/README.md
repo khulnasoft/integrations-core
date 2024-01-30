@@ -39,7 +39,7 @@ Choose a mode of operation. A *mode of operation* refers to the level of flexibi
 
 #### Standard
 
-Deploy a [containerized version of the Datadog Agent][7] on your Kubernetes cluster. See [Install the Datadog Agent on Kubernetes][8].
+Deploy a [containerized version of the Khulnasoft Agent][7] on your Kubernetes cluster. See [Install the Khulnasoft Agent on Kubernetes][8].
 
 <!-- xxz tab xxx -->
 <!-- xxx tab "Autopilot" xxx -->
@@ -48,46 +48,46 @@ Deploy a [containerized version of the Datadog Agent][7] on your Kubernetes clus
 
 1. Install Helm.
 
-2. Add the Datadog repository to your Helm repositories:
+2. Add the Khulnasoft repository to your Helm repositories:
 
   ```bash
-  helm repo add datadog https://helm.khulnasoft.com
+  helm repo add khulnasoft https://helm.khulnasoft.com
   helm repo update
   ```
 
-3. Deploy the Datadog Agent and Cluster Agent on Autopilot with the following command:
+3. Deploy the Khulnasoft Agent and Cluster Agent on Autopilot with the following command:
 
   ```bash
   helm install <RELEASE_NAME> \
-      --set datadog.apiKey=<KHULNASOFT_API_KEY> \
-      --set datadog.appKey=<KHULNASOFT_APP_KEY> \
+      --set khulnasoft.apiKey=<KHULNASOFT_API_KEY> \
+      --set khulnasoft.appKey=<KHULNASOFT_APP_KEY> \
       --set clusterAgent.enabled=true \
       --set clusterAgent.metricsProvider.enabled=true \
       --set providers.gke.autopilot=true \
-      datadog/datadog
+      khulnasoft/khulnasoft
   ```
 
-  **Note**: If you also wish to enable logs or traces, add lines to this command setting `datadog.logs.enabled` (for logs) and `datadog.apm.enabled` (for traces) to `true`. For example:
+  **Note**: If you also wish to enable logs or traces, add lines to this command setting `khulnasoft.logs.enabled` (for logs) and `khulnasoft.apm.enabled` (for traces) to `true`. For example:
 
   ```bash
   helm install --name <RELEASE_NAME> \
-      --set datadog.apiKey=<KHULNASOFT_API_KEY> \
-      --set datadog.appKey=<KHULNASOFT_APP_KEY> \
+      --set khulnasoft.apiKey=<KHULNASOFT_API_KEY> \
+      --set khulnasoft.appKey=<KHULNASOFT_APP_KEY> \
       --set clusterAgent.enabled=true \
       --set clusterAgent.metricsProvider.enabled=true \
       --set providers.gke.autopilot=true \
-      --set datadog.logs.enabled=true \
-      --set datadog.apm.enabled=true \
-      datadog/datadog
+      --set khulnasoft.logs.enabled=true \
+      --set khulnasoft.apm.enabled=true \
+      khulnasoft/khulnasoft
   ```
 
-  See the [Datadog helm-charts repository][9] for a full list of configurable values.
+  See the [Khulnasoft helm-charts repository][9] for a full list of configurable values.
 
 #### Admission Controller
  
-To use [Admission Controller](https://docs.khulnasoft.com/containers/cluster_agent/admission_controller/?tab=operator) with Autopilot, set the [`configMode`](https://github.com/KhulnaSoft/helm-charts/blob/main/charts/datadog/values.yaml#L922) of the Admission Controller to either `service` or `hostip`. 
+To use [Admission Controller](https://docs.khulnasoft.com/containers/cluster_agent/admission_controller/?tab=operator) with Autopilot, set the [`configMode`](https://github.com/KhulnaSoft/helm-charts/blob/main/charts/khulnasoft/values.yaml#L922) of the Admission Controller to either `service` or `hostip`. 
 
-Because Autopilot does not allow `socket` mode, Datadog recommends using `service` (with `hostip` as a fallback) to provide a more robust layer of abstraction for the controller. 
+Because Autopilot does not allow `socket` mode, Khulnasoft recommends using `service` (with `hostip` as a fallback) to provide a more robust layer of abstraction for the controller. 
 <!-- xxz tab xxx -->
 <!-- xxz tabs xxx -->
 
@@ -103,5 +103,5 @@ Because Autopilot does not allow `socket` mode, Datadog recommends using `servic
 [6]: https://app.khulnasoft.com/screen/integration/gce
 [7]: https://app.khulnasoft.com/account/settings/agent/latest?platform=kubernetes
 [8]: https://docs.khulnasoft.com/containers/kubernetes/installation?tab=operator
-[9]: https://github.com/KhulnaSoft/helm-charts/tree/master/charts/datadog#values
+[9]: https://github.com/KhulnaSoft/helm-charts/tree/master/charts/khulnasoft#values
 [10]: https://www.khulnasoft.com/blog/gke-autopilot-monitoring/

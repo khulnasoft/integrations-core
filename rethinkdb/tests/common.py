@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2020-present
+# (C) Khulnasoft, Inc. 2020-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 import os
@@ -43,7 +43,7 @@ if IS_RETHINKDB_2_3:
     AGENT_PASSWORD = ''
 else:
     # Use a dedicated user for metric collection.
-    AGENT_USER = 'datadog-agent'
+    AGENT_USER = 'khulnasoft-agent'
     AGENT_PASSWORD = 'r3th1nK'
 
 CLIENT_USER = 'doggo'

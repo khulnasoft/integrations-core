@@ -1813,7 +1813,7 @@
 
 * Expose the single check instance as an attribute ([#3093](https://github.com/KhulnaSoft/integrations-core/pull/3093))
 * Parse raw yaml instances and init_config with dedicated base class method ([#3098](https://github.com/KhulnaSoft/integrations-core/pull/3098))
-* Add datadog-checks-downloader ([#3026](https://github.com/KhulnaSoft/integrations-core/pull/3026))
+* Add khulnasoft-checks-downloader ([#3026](https://github.com/KhulnaSoft/integrations-core/pull/3026))
 * Support Python 3 Base WMI ([#3036](https://github.com/KhulnaSoft/integrations-core/pull/3036))
 * Upgrade psutil ([#3019](https://github.com/KhulnaSoft/integrations-core/pull/3019))
 * Support Python 3 ([#2835](https://github.com/KhulnaSoft/integrations-core/pull/2835))
@@ -2016,7 +2016,7 @@
 
 ***Fixed***:
 
-* Retrieve no_proxy directly from the Datadog Agent's configuration ([#2004](https://github.com/KhulnaSoft/integrations-core/pull/2004))
+* Retrieve no_proxy directly from the Khulnasoft Agent's configuration ([#2004](https://github.com/KhulnaSoft/integrations-core/pull/2004))
 * Properly skip proxy environment variables ([#1935](https://github.com/KhulnaSoft/integrations-core/pull/1935))
 * Update cryptography to 2.3 ([#1927](https://github.com/KhulnaSoft/integrations-core/pull/1927))
 
@@ -2034,7 +2034,7 @@
 
 * fix packaging of agent requirements ([#1911](https://github.com/KhulnaSoft/integrations-core/pull/1911))
 * Properly use skip_proxy for instance configuration ([#1880](https://github.com/KhulnaSoft/integrations-core/pull/1880))
-* Sync WMI utils from dd-agent to datadog-checks-base ([#1897](https://github.com/KhulnaSoft/integrations-core/pull/1897))
+* Sync WMI utils from dd-agent to khulnasoft-checks-base ([#1897](https://github.com/KhulnaSoft/integrations-core/pull/1897))
 * Improve check performance by filtering it's input before parsing ([#1875](https://github.com/KhulnaSoft/integrations-core/pull/1875))
 
 ## 1.3.2 / 2018-06-15

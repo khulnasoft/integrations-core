@@ -110,7 +110,7 @@ instances:
     ##
     ## Note: To collect counter metrics with names ending in `_total`, specify the metric name without the `_total`
     ## suffix. For example, to collect the counter metric `promhttp_metric_handler_requests_total`, specify
-    ## `promhttp_metric_handler_requests`. This submits to Datadog the metric name appended with `.count`.
+    ## `promhttp_metric_handler_requests`. This submits to Khulnasoft the metric name appended with `.count`.
     ## For more information, see:
     ## https://github.com/OpenObservability/OpenMetrics/blob/main/specification/OpenMetrics.md#suffixes
     ##
@@ -227,7 +227,7 @@ instances:
     # non_cumulative_histogram_buckets: false
 
     ## @param histogram_buckets_as_distributions - boolean - optional - default: false
-    ## Whether or not to send histogram buckets as Datadog distribution metrics. This implicitly
+    ## Whether or not to send histogram buckets as Khulnasoft distribution metrics. This implicitly
     ## enables the `collect_histogram_buckets` and `non_cumulative_histogram_buckets` options.
     ##
     ## Learn more about distribution metrics:
@@ -237,7 +237,7 @@ instances:
 
     ## @param collect_counters_with_distributions - boolean - optional - default: false
     ## Whether or not to also collect the observation counter metrics ending in `.sum` and `.count`
-    ## when sending histogram buckets as Datadog distribution metrics. This implicitly enables the
+    ## when sending histogram buckets as Khulnasoft distribution metrics. This implicitly enables the
     ## `histogram_buckets_as_distributions` option.
     #
     # collect_counters_with_distributions: false

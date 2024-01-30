@@ -9,7 +9,7 @@ It is compatible with Hudi [versions][2] `0.10.0` and above.
 
 ### Installation
 
-The Hudi check is included in the [Datadog Agent][3] package.
+The Hudi check is included in the [Khulnasoft Agent][3] package.
 No additional installation is needed on your server.
 
 ### Configuration
@@ -28,10 +28,10 @@ No additional installation is needed on your server.
    Agent's configuration directory to start collecting your hudi performance data.
    See the [sample hudi.d/conf.yaml][6] for all available configuration options.
 
-   This check has a limit of 350 metrics per instance. The number of returned metrics is indicated when running the Datadog Agent [status command][7].
+   This check has a limit of 350 metrics per instance. The number of returned metrics is indicated when running the Khulnasoft Agent [status command][7].
    You can specify the metrics you are interested in by editing the [configuration][6].
    To learn how to customize the metrics to collect see the [JMX Checks documentation][8] for more detailed instructions.
-   If you need to monitor more metrics, contact [Datadog support][9].
+   If you need to monitor more metrics, contact [Khulnasoft support][9].
 
 3. [Restart the Agent][10]
 
@@ -62,7 +62,7 @@ _Available for Agent versions >6.0_
     log4j.appender.file.layout.ConversionPattern=%d{yyyy-MM-dd HH:mm:ss,SSS} %-5p %-60c %x - %m%n
    ```
 
-2. By default, Datadog's integration pipeline supports the following conversion pattern:
+2. By default, Khulnasoft's integration pipeline supports the following conversion pattern:
 
     ```text
     %d{yyyy-MM-dd HH:mm:ss,SSS} %-5p %-60c %x - %m%n
@@ -72,7 +72,7 @@ _Available for Agent versions >6.0_
 
      Clone and edit the [integration pipeline][15] if you have a different format.
 
-3. Collecting logs is disabled by default in the Datadog Agent, enable it in your `datadog.yaml` file:
+3. Collecting logs is disabled by default in the Khulnasoft Agent, enable it in your `khulnasoft.yaml` file:
 
    ```yaml
    logs_enabled: true
@@ -100,7 +100,7 @@ See [service_checks.json][7] for a list of service checks provided by this integ
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][9].
+Need help? Contact [Khulnasoft support][9].
 
 
 [1]: https://hudi.apache.org/

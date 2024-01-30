@@ -1,7 +1,7 @@
 id: "squid"
 tests:
  -
-  sample: "1570784654.576    111 127.0.0.1 TCP_MISS/301 491 GET http://www.datadog.com - HIER_DIRECT/99.86.88.89 - [http_request_headers] [http_response_headers]"
+  sample: "1570784654.576    111 127.0.0.1 TCP_MISS/301 491 GET http://www.khulnasoft.com - HIER_DIRECT/99.86.88.89 - [http_request_headers] [http_response_headers]"
   result:
     custom:
       duration: 1.11E8
@@ -12,9 +12,9 @@ tests:
         method: "GET"
         status_category: "Notice"
         status_code: 301
-        url: "http://www.datadog.com"
+        url: "http://www.khulnasoft.com"
         url_details:
-          host: "www.datadog.com"
+          host: "www.khulnasoft.com"
           path: ""
           scheme: "http"
       network:
@@ -28,12 +28,12 @@ tests:
         peer_status: "HIER_DIRECT"
         status: "MISS"
       timestamp: 1.570784654576E12
-    message: "1570784654.576    111 127.0.0.1 TCP_MISS/301 491 GET http://www.datadog.com - HIER_DIRECT/99.86.88.89 - [http_request_headers] [http_response_headers]"
+    message: "1570784654.576    111 127.0.0.1 TCP_MISS/301 491 GET http://www.khulnasoft.com - HIER_DIRECT/99.86.88.89 - [http_request_headers] [http_response_headers]"
     tags:
      - "source:LOGS_SOURCE"
     timestamp: 1570784654576
  -
-  sample: "1570784663.985    120 127.0.0.1 TCP_MISS/301 491 GET http://datadog.com/test/?queryParam1=1&queryParam2=queryParam2 - HIER_DIRECT/99.86.88.128 -"
+  sample: "1570784663.985    120 127.0.0.1 TCP_MISS/301 491 GET http://khulnasoft.com/test/?queryParam1=1&queryParam2=queryParam2 - HIER_DIRECT/99.86.88.128 -"
   result:
     custom:
       duration: 1.2E8
@@ -41,9 +41,9 @@ tests:
         method: "GET"
         status_category: "Notice"
         status_code: 301
-        url: "http://datadog.com/test/?queryParam1=1&queryParam2=queryParam2"
+        url: "http://khulnasoft.com/test/?queryParam1=1&queryParam2=queryParam2"
         url_details:
-          host: "datadog.com"
+          host: "khulnasoft.com"
           path: "/test/"
           queryString:
             queryParam1: "1"
@@ -60,7 +60,7 @@ tests:
         peer_status: "HIER_DIRECT"
         status: "MISS"
       timestamp: 1.570784663985E12
-    message: "1570784663.985    120 127.0.0.1 TCP_MISS/301 491 GET http://datadog.com/test/?queryParam1=1&queryParam2=queryParam2 - HIER_DIRECT/99.86.88.128 -"
+    message: "1570784663.985    120 127.0.0.1 TCP_MISS/301 491 GET http://khulnasoft.com/test/?queryParam1=1&queryParam2=queryParam2 - HIER_DIRECT/99.86.88.128 -"
     tags:
      - "source:LOGS_SOURCE"
     timestamp: 1570784663985

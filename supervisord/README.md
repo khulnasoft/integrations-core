@@ -10,7 +10,7 @@ This check monitors the uptime, status, and number of processes running under Su
 
 ### Installation
 
-The Supervisor check is included in the [Datadog Agent][2] package, so you don't need to install anything else on servers where Supervisor is running.
+The Supervisor check is included in the [Khulnasoft Agent][2] package, so you don't need to install anything else on servers where Supervisor is running.
 
 ### Configuration
 
@@ -77,7 +77,7 @@ Use the `proc_names` and/or `proc_regex` options to list processes you want the 
 
 See the [example check configuration][4] for comprehensive descriptions of other check options.
 
-[Restart the Agent][5] to start sending Supervisor metrics to Datadog.
+[Restart the Agent][5] to start sending Supervisor metrics to Khulnasoft.
 
 <!-- xxz tab xxx -->
 <!-- xxx tab "Containerized" xxx -->
@@ -99,7 +99,7 @@ For containerized environments, see the [Autodiscovery Integration Templates][6]
 
 
 
-1. Collecting logs is disabled by default in the Datadog Agent, you need to enable it in `datadog.yaml`:
+1. Collecting logs is disabled by default in the Khulnasoft Agent, you need to enable it in `khulnasoft.yaml`:
 
    ```yaml
    logs_enabled: true
@@ -139,11 +139,11 @@ See [service_checks.json][9] for a list of service checks provided by this integ
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][10].
+Need help? Contact [Khulnasoft support][10].
 
 ## Further Reading
 
-- [Supervisor monitors your processes. Datadog monitors Supervisor.][11]
+- [Supervisor monitors your processes. Khulnasoft monitors Supervisor.][11]
 
 [1]: https://raw.githubusercontent.com/KhulnaSoft/integrations-core/master/supervisord/images/supervisorevent.png
 [2]: https://app.khulnasoft.com/account/settings/agent/latest
@@ -155,4 +155,4 @@ Need help? Contact [Datadog support][10].
 [8]: https://github.com/KhulnaSoft/integrations-core/blob/master/supervisord/metadata.csv
 [9]: https://github.com/KhulnaSoft/integrations-core/blob/master/supervisord/assets/service_checks.json
 [10]: https://docs.khulnasoft.com/help/
-[11]: https://www.khulnasoft.com/blog/supervisor-monitors-your-processes-datadog-monitors-supervisor
+[11]: https://www.khulnasoft.com/blog/supervisor-monitors-your-processes-khulnasoft-monitors-supervisor

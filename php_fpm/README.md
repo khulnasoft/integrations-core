@@ -10,7 +10,7 @@ The PHP-FPM check monitors the state of your FPM pool and tracks request perform
 
 ### Installation
 
-The PHP-FPM check is included in the [Datadog Agent][2] package. No additional installation is needed on your server.
+The PHP-FPM check is included in the [Khulnasoft Agent][2] package. No additional installation is needed on your server.
 
 ### Configuration
 
@@ -142,7 +142,7 @@ See [service_checks.json][9] for a list of service checks provided by this integ
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][10].
+Need help? Contact [Khulnasoft support][10].
 
 
 [1]: https://raw.githubusercontent.com/KhulnaSoft/integrations-core/master/php_fpm/images/phpfpmoverview.png

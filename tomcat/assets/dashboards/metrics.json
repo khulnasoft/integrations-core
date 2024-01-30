@@ -1,6 +1,6 @@
 {
-    "author_name": "Datadog",
-    "description": "This dashboard displays key throughput and activity metrics for your Tomcat architecture and helps you correlate Tomcat performance with infrastructure resources. Further reading on Tomcat monitoring:\n\n- [Datadog's Tomcat integration docs](https://docs.khulnasoft.com/integrations/tomcat/)\n\n- [Datadog's guide to key Tomcat metrics](https://www.khulnasoft.com/blog/tomcat-architecture-and-performance/)\n\n- [How to collect key Tomcat metrics using built-in tools](https://www.khulnasoft.com/blog/tomcat-monitoring-tools/)\n\n- [How to monitor Tomcat with Datadog](https://www.khulnasoft.com/blog/analyzing-tomcat-logs-and-metrics-with-datadog/)\n\nClone this template dashboard to make changes and add your own graph widgets. (cloned)",
+    "author_name": "Khulnasoft",
+    "description": "This dashboard displays key throughput and activity metrics for your Tomcat architecture and helps you correlate Tomcat performance with infrastructure resources. Further reading on Tomcat monitoring:\n\n- [Khulnasoft's Tomcat integration docs](https://docs.khulnasoft.com/integrations/tomcat/)\n\n- [Khulnasoft's guide to key Tomcat metrics](https://www.khulnasoft.com/blog/tomcat-architecture-and-performance/)\n\n- [How to collect key Tomcat metrics using built-in tools](https://www.khulnasoft.com/blog/tomcat-monitoring-tools/)\n\n- [How to monitor Tomcat with Khulnasoft](https://www.khulnasoft.com/blog/analyzing-tomcat-logs-and-metrics-with-khulnasoft/)\n\nClone this template dashboard to make changes and add your own graph widgets. (cloned)",
     "layout_type": "ordered",
     "template_variables": [
         {

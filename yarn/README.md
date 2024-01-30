@@ -18,7 +18,7 @@ This check collects metrics from your YARN ResourceManager, including (but not l
 
 ### Installation
 
-The YARN check is included in the [Datadog Agent][2] package, so you don't need to install anything else on your YARN ResourceManager.
+The YARN check is included in the [Khulnasoft Agent][2] package, so you don't need to install anything else on your YARN ResourceManager.
 
 ### Configuration
 
@@ -56,7 +56,7 @@ To configure this check for an Agent running on a host:
 
     See the [example check configuration][4] for a comprehensive list and description of all check options.
 
-2. [Restart the Agent][5] to start sending YARN metrics to Datadog.
+2. [Restart the Agent][5] to start sending YARN metrics to Khulnasoft.
 
 <!-- xxz tab xxx -->
 <!-- xxx tab "Containerized" xxx -->
@@ -73,7 +73,7 @@ For containerized environments, see the [Autodiscovery Integration Templates][6]
 
 ##### Log collection
 
-1. Collecting logs is disabled by default in the Datadog Agent, enable it in your `datadog.yaml` file:
+1. Collecting logs is disabled by default in the Khulnasoft Agent, enable it in your `khulnasoft.yaml` file:
 
     ```yaml
     logs_enabled: true
@@ -121,14 +121,14 @@ See [service_checks.json][10] for a list of service checks provided by this inte
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][11].
+Need help? Contact [Khulnasoft support][11].
 
 ## Further Reading
 
 - [Hadoop architectural overview][12]
 - [How to monitor Hadoop metrics][13]
 - [How to collect Hadoop metrics][14]
-- [How to monitor Hadoop with Datadog][15]
+- [How to monitor Hadoop with Khulnasoft][15]
 
 [1]: https://raw.githubusercontent.com/KhulnaSoft/integrations-core/master/yarn/images/yarn_dashboard.png
 [2]: https://app.khulnasoft.com/account/settings/agent/latest
@@ -144,4 +144,4 @@ Need help? Contact [Datadog support][11].
 [12]: https://www.khulnasoft.com/blog/hadoop-architecture-overview
 [13]: https://www.khulnasoft.com/blog/monitor-hadoop-metrics
 [14]: https://www.khulnasoft.com/blog/collecting-hadoop-metrics
-[15]: https://www.khulnasoft.com/blog/monitor-hadoop-metrics-datadog
+[15]: https://www.khulnasoft.com/blog/monitor-hadoop-metrics-khulnasoft

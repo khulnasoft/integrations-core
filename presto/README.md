@@ -13,14 +13,14 @@ Follow the instructions below to install and configure this check for an Agent r
 
 ### Installation
 
-The Presto check is included in the [Datadog Agent][3] package.
+The Presto check is included in the [Khulnasoft Agent][3] package.
 No additional installation is needed on your server. Install the Agent on each Coordinator and Worker node from which you wish to collect usage and performance metrics.
 
 ### Configuration
 
 1. Edit the `presto.d/conf.yaml` file, in the `conf.d/` folder at the root of your Agent's configuration directory to start collecting your Presto performance data. See the [sample presto.d/conf.yaml][4] for all available configuration options.
 
-    This check has a limit of 350 metrics per instance. The number of returned metrics is indicated in the info page. You can specify the metrics you are interested in by editing the configuration below. To learn how to customize the metrics to collect, see the [JMX Checks documentation][5] for more detailed instructions. If you need to monitor more metrics, contact [Datadog support][6].
+    This check has a limit of 350 metrics per instance. The number of returned metrics is indicated in the info page. You can specify the metrics you are interested in by editing the configuration below. To learn how to customize the metrics to collect, see the [JMX Checks documentation][5] for more detailed instructions. If you need to monitor more metrics, contact [Khulnasoft support][6].
 
 2. [Restart the Agent][7].
 
@@ -32,7 +32,7 @@ Use the default configuration of your `presto.d/conf.yaml` file to activate the 
 
 _Available for Agent versions >6.0_
 
-1. Collecting logs is disabled by default in the Datadog Agent. Enable it in your `datadog.yaml` file:
+1. Collecting logs is disabled by default in the Khulnasoft Agent. Enable it in your `khulnasoft.yaml` file:
 
    ```yaml
    logs_enabled: true
@@ -72,7 +72,7 @@ See [service_checks.json][10] for a list of service checks provided by this inte
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][6].
+Need help? Contact [Khulnasoft support][6].
 
 
 [1]: https://docs.khulnasoft.com/integrations/presto/

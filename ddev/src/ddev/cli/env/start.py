@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2023-present
+# (C) Khulnasoft, Inc. 2023-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 from __future__ import annotations
@@ -26,7 +26,7 @@ if TYPE_CHECKING:
     '-a',
     'agent_build',
     help=(
-        'The Agent build to use e.g. a Docker image like `datadog/agent:latest`. You can '
+        'The Agent build to use e.g. a Docker image like `khulnasoft/agent:latest`. You can '
         'also use the name of an Agent defined in the `agents` configuration section.'
     ),
 )

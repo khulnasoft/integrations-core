@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2020-present
+# (C) Khulnasoft, Inc. 2020-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 import hashlib
@@ -9,7 +9,7 @@ import pytest
 import requests
 
 from khulnasoft_checks.base.stubs.aggregator import AggregatorStub  # noqa: F401
-from khulnasoft_checks.base.stubs.khulnasoft_agent import DatadogAgentStub  # noqa: F401
+from khulnasoft_checks.base.stubs.khulnasoft_agent import KhulnasoftAgentStub  # noqa: F401
 from khulnasoft_checks.voltdb import VoltDBCheck
 from khulnasoft_checks.voltdb.client import Client
 from khulnasoft_checks.voltdb.types import Instance  # noqa: F401
@@ -131,7 +131,7 @@ class MockSysInfoClient(Client):
 class TestVersionMetadata:
     @pytest.mark.integration
     def test_default(self, instance, khulnasoft_agent):
-        # type: (Instance, DatadogAgentStub) -> None
+        # type: (Instance, KhulnasoftAgentStub) -> None
         version = common.VOLTDB_VERSION
         major, minor, patch = version.split('.')
         metadata = {
@@ -151,7 +151,7 @@ class TestVersionMetadata:
 
     @pytest.mark.integration
     def test_malformed(self, instance, khulnasoft_agent):
-        # type: (Instance, DatadogAgentStub) -> None
+        # type: (Instance, KhulnasoftAgentStub) -> None
         def app():
             r = mock.MagicMock()
             r.json.return_value = {'results': [{'data': [('0', 'VERSION', 'not_a_version_string')]}]}
@@ -167,7 +167,7 @@ class TestVersionMetadata:
 
     @pytest.mark.integration
     def test_failure(self, instance, khulnasoft_agent):
-        # type: (Instance, DatadogAgentStub) -> None
+        # type: (Instance, KhulnasoftAgentStub) -> None
         def app():
             raise ValueError('Oops!')
 
@@ -181,7 +181,7 @@ class TestVersionMetadata:
 
     @pytest.mark.integration
     def test_no_version_column(self, aggregator, instance, khulnasoft_agent):
-        # type: (AggregatorStub, Instance, DatadogAgentStub) -> None
+        # type: (AggregatorStub, Instance, KhulnasoftAgentStub) -> None
         def app():
             r = mock.MagicMock()
             r.json.return_value = {'results': [{'data': [('0', 'THIS_IS_NOT_VERSION', 'test')]}]}

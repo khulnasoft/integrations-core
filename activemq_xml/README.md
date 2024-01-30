@@ -11,7 +11,7 @@ Get metrics from ActiveMQ XML in real time to:
 
 ### Installation
 
-The ActiveMQ XML check is included in the [Datadog Agent][1] package, so you don't need to install anything else on your servers.
+The ActiveMQ XML check is included in the [Khulnasoft Agent][1] package, so you don't need to install anything else on your servers.
 
 ### Configuration
 
@@ -26,13 +26,13 @@ To configure this check for an Agent running on a host:
 
 1. Edit `activemq_xml.d/conf.yaml`, in the `conf.d/` folder at the root of your [Agent's configuration directory][2] with your stats `url`. See the [sample activemq_xml.d/conf.yaml][3] for all available configuration options.
 
-   **Note**: The ActiveMQ XML integration can potentially emit [custom metrics][4], which may impact your [billing][5]. By default, there is a limit of 350 metrics. If you require additional metrics, contact [Datadog support][6].
+   **Note**: The ActiveMQ XML integration can potentially emit [custom metrics][4], which may impact your [billing][5]. By default, there is a limit of 350 metrics. If you require additional metrics, contact [Khulnasoft support][6].
 
 2. [Restart the Agent][7].
 
 ##### Log collection
 
-1. Collecting logs is disabled by default in the Datadog Agent, enable it in your `datadog.yaml` file:
+1. Collecting logs is disabled by default in the Khulnasoft Agent, enable it in your `khulnasoft.yaml` file:
 
    ```yaml
    logs_enabled: true
@@ -84,7 +84,7 @@ The ActiveMQ XML check does not include any service checks.
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][6].
+Need help? Contact [Khulnasoft support][6].
 
 ## Further Reading
 

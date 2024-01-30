@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2019-present
+# (C) Khulnasoft, Inc. 2019-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 
@@ -11,7 +11,7 @@ import sys
 
 # 2nd party.
 from .download import DEFAULT_ROOT_LAYOUT_TYPE, REPOSITORY_URL_PREFIX, ROOT_LAYOUTS, TUFDownloader
-from .exceptions import NonCanonicalVersion, NonDatadogPackage
+from .exceptions import NonCanonicalVersion, NonKhulnasoftPackage
 
 # Private module functions.
 
@@ -59,14 +59,14 @@ def instantiate_downloader():
     parser = argparse.ArgumentParser()
 
     parser.add_argument(
-        'standard_distribution_name', type=str, help='Standard distribution name of the desired Datadog check.'
+        'standard_distribution_name', type=str, help='Standard distribution name of the desired Khulnasoft check.'
     )
 
     parser.add_argument(
         '--repository', type=str, default=REPOSITORY_URL_PREFIX, help='The complete URL prefix for the TUF repository.'
     )
 
-    parser.add_argument('--version', type=str, default=None, help='The version number of the desired Datadog check.')
+    parser.add_argument('--version', type=str, default=None, help='The version number of the desired Khulnasoft check.')
 
     parser.add_argument(
         '--type',
@@ -104,8 +104,8 @@ def instantiate_downloader():
     ignore_python_version = args.ignore_python_version
     verbose = args.verbose
 
-    if not standard_distribution_name.startswith('datadog-'):
-        raise NonDatadogPackage(standard_distribution_name)
+    if not standard_distribution_name.startswith('khulnasoft-'):
+        raise NonKhulnasoftPackage(standard_distribution_name)
 
     if version and not __is_canonical(version):
         raise NonCanonicalVersion(version)

@@ -8,7 +8,7 @@ Track overall and per-pool stats on each of your Twemproxy servers. This Agent c
 
 ### Installation
 
-The Agent's Twemproxy check is included in the [Datadog Agent][1] package, so you don't need to install anything else on your Twemproxy servers.
+The Agent's Twemproxy check is included in the [Khulnasoft Agent][1] package, so you don't need to install anything else on your Twemproxy servers.
 
 ### Configuration
 
@@ -29,11 +29,11 @@ To configure this check for an Agent running on a host:
        port: 2222
    ```
 
-2. [Restart the Agent][4] to begin sending Twemproxy metrics to Datadog.
+2. [Restart the Agent][4] to begin sending Twemproxy metrics to Khulnasoft.
 
 ##### Log collection
 
-1. Collecting logs is disabled by default in the Datadog Agent, you need to enable it in `datadog.yaml`:
+1. Collecting logs is disabled by default in the Khulnasoft Agent, you need to enable it in `khulnasoft.yaml`:
 
    ```yaml
    logs_enabled: true
@@ -68,7 +68,7 @@ For containerized environments, see the [Autodiscovery Integration Templates][5]
 
 ##### Log collection
 
-Collecting logs is disabled by default in the Datadog Agent. To enable it, see [Kubernetes log collection documentation][6].
+Collecting logs is disabled by default in the Khulnasoft Agent. To enable it, see [Kubernetes log collection documentation][6].
 
 | Parameter      | Value                                            |
 | -------------- | ------------------------------------------------ |
@@ -97,7 +97,7 @@ See [service_checks.json][9] for a list of service checks provided by this integ
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][10].
+Need help? Contact [Khulnasoft support][10].
 
 
 [1]: https://app.khulnasoft.com/account/settings/agent/latest

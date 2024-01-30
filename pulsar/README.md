@@ -2,7 +2,7 @@
 
 ## Overview
 
-This check monitors [Pulsar][1] through the Datadog Agent.
+This check monitors [Pulsar][1] through the Khulnasoft Agent.
 
 ## Setup
 
@@ -10,7 +10,7 @@ Follow the instructions below to install and configure this check for an Agent r
 
 ### Installation
 
-The Pulsar check is included in the [Datadog Agent][2] package.
+The Pulsar check is included in the [Khulnasoft Agent][2] package.
 No additional installation is needed on your server.
 
 ### Configuration
@@ -34,7 +34,7 @@ See [metadata.csv][7] for a list of metrics provided by this check.
 
 1. The Pulsar log integration supports Pulsar's [default log format][10]. Clone and edit the [integration pipeline][11] if you have a different format.
 
-2. Collecting logs is disabled by default in the Datadog Agent. Enable it in your `datadog.yaml` file:
+2. Collecting logs is disabled by default in the Khulnasoft Agent. Enable it in your `khulnasoft.yaml` file:
    ```yaml
    logs_enabled: true
    ```
@@ -58,7 +58,7 @@ See [service_checks.json][8] for a list of service checks provided by this integ
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][9].
+Need help? Contact [Khulnasoft support][9].
 
 
 [1]: https://pulsar.apache.org

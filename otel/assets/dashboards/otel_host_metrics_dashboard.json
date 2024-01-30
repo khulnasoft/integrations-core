@@ -1,5 +1,5 @@
 {
-    "author_name": "Datadog",
+    "author_name": "Khulnasoft",
     "title": "OpenTelemetry Host Metrics Dashboard",
     "description": "Default dashboard to visualize OpenTelemetry host metrics from the hostmetrics receiver.\n\nFor additional details, see the [specification (https://opentelemetry.io/docs/reference/specification/metrics/semantic_conventions/system-metrics/).",
     "widgets": [
@@ -36,7 +36,7 @@
                         "id": 490124618425900,
                         "definition": {
                             "type": "note",
-                            "content": "**OpenTelemetry guides**\n\n[Datadog Open Standards&nbsp;↗](https://docs.khulnasoft.com/tracing/trace_collection/open_standards/)",
+                            "content": "**OpenTelemetry guides**\n\n[Khulnasoft Open Standards&nbsp;↗](https://docs.khulnasoft.com/tracing/trace_collection/open_standards/)",
                             "background_color": "transparent",
                             "font_size": "14",
                             "text_align": "left",

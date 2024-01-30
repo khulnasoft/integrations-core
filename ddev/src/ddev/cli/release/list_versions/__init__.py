@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2023-present
+# (C) Khulnasoft, Inc. 2023-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 from __future__ import annotations
@@ -20,11 +20,11 @@ def list_versions(ctx: click.Context, integration: str):
     from packaging.version import Version
 
     int_name = integration.replace('_', '-')
-    ignored_prefix = 'datadog-'
+    ignored_prefix = 'khulnasoft-'
     if int_name.startswith(ignored_prefix):
         int_name = int_name[len(ignored_prefix) :]
 
-    url = f'https://dd-integrations-core-wheels-build-stable.khulnasoft.com/targets/simple/datadog-{int_name}/index.html'
+    url = f'https://dd-integrations-core-wheels-build-stable.khulnasoft.com/targets/simple/khulnasoft-{int_name}/index.html'
 
     response = httpx.get(url)
     versions = response.text.splitlines()

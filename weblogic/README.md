@@ -4,7 +4,7 @@
 
 Oracle WebLogic is a platform for developing, running and deploying enterprise Java applications both on-premises and in the cloud. It centralizes application services that include web server functionality, business components such as messaging, and access to backend enterprise systems such as databases. 
 
-Oracle WebLogic monitoring with Datadog enables you to:
+Oracle WebLogic monitoring with Khulnasoft enables you to:
 - Gain awareness of increasing heap size in your Java Virtual Machine (JVM)
 - Track server response time
 - Monitor session details of web applications
@@ -15,7 +15,7 @@ Oracle WebLogic monitoring with Datadog enables you to:
 
 ### Installation
 
-The WebLogic check is included in the [Datadog Agent][2] package.
+The WebLogic check is included in the [Khulnasoft Agent][2] package.
 No additional installation is needed on your server.
 
 1. This check is JMX-based and collects metrics from the Platform MBean Server exported by the JVM, so your WebLogic servers must have JMX Remote Monitoring enabled. See [Remote Monitoring and Management][9] for installation instructions.
@@ -70,11 +70,11 @@ No additional installation is needed on your server.
    Agent's configuration directory to start collecting your WebLogic performance data.
    See the [sample weblogic.d/conf.yaml][3] for all available configuration options.
 
-   This check has a limit of 350 metrics per instance. The number of returned metrics is indicated when running the Datadog Agent [status command][4].
+   This check has a limit of 350 metrics per instance. The number of returned metrics is indicated when running the Khulnasoft Agent [status command][4].
    You can specify the metrics you are interested in by editing the [configuration][3].
    
    To learn how to customize the metrics to collect, see the [JMX Checks documentation][5] for more detailed instructions.
-   If you need to monitor more metrics, contact [Datadog support][6].
+   If you need to monitor more metrics, contact [Khulnasoft support][6].
 
 2. [Restart the Agent][7]
 
@@ -92,7 +92,7 @@ See [`metadata.csv`][11] for a list of metrics provided by this integration.
 
 1. WebLogic logging services use an implementation based on the Java Logging APIs by default. Clone and edit the [integration pipeline][12] if you have a different format.
 
-2. Collecting logs is disabled by default in the Datadog Agent. Enable it in your `datadog.yaml` file:
+2. Collecting logs is disabled by default in the Khulnasoft Agent. Enable it in your `khulnasoft.yaml` file:
    ```yaml
    logs_enabled: true
    ```
@@ -147,7 +147,7 @@ See [service_checks.json][8] for a list of service checks provided by this integ
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][6].
+Need help? Contact [Khulnasoft support][6].
 
 
 [2]: https://app.khulnasoft.com/account/settings/agent/latest

@@ -72,7 +72,7 @@ To see all checks that need to be released, run `ddev release show ready`.
 ## Metadata
 
 You need to run certain backend jobs if any changes modified integration metadata or assets such as dashboards.
-If you are a contributor a datadog employee will handle this.
+If you are a contributor a khulnasoft employee will handle this.
 
 ## New integrations (third party integrations)
 

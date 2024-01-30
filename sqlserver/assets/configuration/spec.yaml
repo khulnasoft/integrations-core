@@ -6,7 +6,7 @@ files:
     options:
     - name: custom_metrics
       description: |
-        Collect custom metrics and send them to Datadog based on
+        Collect custom metrics and send them to Khulnasoft based on
         your SQL server counters.
 
         See https://docs.khulnasoft.com/integrations/guide/collect-sql-server-custom-metrics/
@@ -36,11 +36,11 @@ files:
         type: string
         example: <HOST>,<PORT>
     - name: username
-      description: Username for the Datadog-SQL server check user. It will be ignored if using Windows authentication.
+      description: Username for the Khulnasoft-SQL server check user. It will be ignored if using Windows authentication.
       value:
         type: string
     - name: password
-      description: Password for the Datadog-SQL server check user. It will be ignored if using Windows authentication.
+      description: Password for the Khulnasoft-SQL server check user. It will be ignored if using Windows authentication.
       value:
         type: string
     - name: server_version
@@ -166,7 +166,7 @@ files:
       description: |
         Include log_shipping_primary metrics for a log shipping setup. Required to run
         against the primary instance in a transaction log shipping configuration. Note that
-        the Datadog user needs to be present in msdb and must be added to the db_datareader role.
+        the Khulnasoft user needs to be present in msdb and must be added to the db_datareader role.
       value:
         type: boolean
         example: false
@@ -174,7 +174,7 @@ files:
       description: |
         Include log_shipping_secondary metrics for a log shipping setup. Required to run
         against a secondary instance in a transaction log shipping configuration. Note that
-        the Datadog user needs to be present in msdb and must be added to the db_datareader role.
+        the Khulnasoft user needs to be present in msdb and must be added to the db_datareader role.
       value:
         type: boolean
         example: false
@@ -410,7 +410,7 @@ files:
         Limit the number of characters of the text of a stored procedure that is collected.
         The characters limit is applicable to both query metrics and query samples.
         Please be aware that increasing this value may affect performance,
-        as more data will be gathered from the database and sent to Datadog.
+        as more data will be gathered from the database and sent to Khulnasoft.
       value:
         type: integer
         example: 500
@@ -420,7 +420,7 @@ files:
       description: |
         This block defines the configuration for AWS RDS and Aurora instances.
 
-        Complete this section if you have installed the Datadog AWS Integration
+        Complete this section if you have installed the Khulnasoft AWS Integration
         (https://docs.khulnasoft.com/integrations/amazon_web_services) to enrich instances
         with SQL Server integration telemetry.
 
@@ -441,7 +441,7 @@ files:
       description: |
         This block defines the configuration for Google Cloud SQL instances.
 
-        Complete this section if you have installed the Datadog GCP Integration
+        Complete this section if you have installed the Khulnasoft GCP Integration
         (https://docs.khulnasoft.com/integrations/google_cloud_platform) to enrich instances
         with SQL Server integration telemetry.
 
@@ -471,7 +471,7 @@ files:
         This block defines the configuration for Azure Managed Instance, Azure SQL Database or
         SQLServer on Virtual Machines.
 
-        Complete this section if you have installed the Datadog Azure Integration
+        Complete this section if you have installed the Khulnasoft Azure Integration
         (https://docs.khulnasoft.com/integrations/azure) to enrich instances
         with SQL Server integration telemetry.
 
@@ -633,7 +633,7 @@ files:
       hidden: true
       description: |
         Set to `true` to enable logging of original unobfuscated SQL queries when obfuscation errors occur.
-        For security purposes, it is recommended to use this option for debugging only when requested by Datadog Support.
+        For security purposes, it is recommended to use this option for debugging only when requested by Khulnasoft Support.
         Note: This option only applies when `dbm` is enabled.
       value:
         type: boolean
@@ -643,7 +643,7 @@ files:
       hidden: true
       description: |
         Set to `true` to enable logging of original unobfuscated SQL plans when obfuscation errors occur.
-        For security purposes, it is recommended to use this option for debugging only when requested by Datadog Support.
+        For security purposes, it is recommended to use this option for debugging only when requested by Khulnasoft Support.
         Note: This option only applies when `dbm` is enabled.
       value:
         type: boolean

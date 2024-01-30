@@ -44,17 +44,17 @@ system_probe_config:
 
 ### Configuration with Helm
 
-With the [Datadog Helm chart][3], the `system-probe` must be activated by setting `datadog.systemProbe.enabled` to `true` in the `values.yaml` file.
-Then, the check can be activated by setting the `datadog.systemProbe.enableTCPQueueLength` parameter.
+With the [Khulnasoft Helm chart][3], the `system-probe` must be activated by setting `khulnasoft.systemProbe.enabled` to `true` in the `values.yaml` file.
+Then, the check can be activated by setting the `khulnasoft.systemProbe.enableTCPQueueLength` parameter.
 
 ### Configuration with the Operator (v1.0.0+)
 
-Set the `features.tcpQueueLength.enabled` parameter in the DatadogAgent manifest:
+Set the `features.tcpQueueLength.enabled` parameter in the KhulnasoftAgent manifest:
 ```yaml
 apiVersion: khulnasoft.com/v2alpha1
-kind: DatadogAgent
+kind: KhulnasoftAgent
 metadata:
-  name: datadog
+  name: khulnasoft
 spec:
   features:
     tcpQueueLength:
@@ -64,9 +64,9 @@ spec:
 **Note**: When using COS (Container Optimized OS), override the `src` volume in the node Agent:
 ```yaml
 apiVersion: khulnasoft.com/v2alpha1
-kind: DatadogAgent
+kind: KhulnasoftAgent
 metadata:
-  name: datadog
+  name: khulnasoft
 spec:
   features:
     tcpQueueLength:
@@ -100,9 +100,9 @@ The TCP Queue Length check does not include any events.
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][5].
+Need help? Contact [Khulnasoft support][5].
 
-[1]: https://github.com/KhulnaSoft/datadog-agent/blob/master/cmd/agent/dist/conf.d/tcp_queue_length.d/conf.yaml.example
+[1]: https://github.com/KhulnaSoft/khulnasoft-agent/blob/master/cmd/agent/dist/conf.d/tcp_queue_length.d/conf.yaml.example
 [2]: https://docs.khulnasoft.com/agent/guide/agent-commands/#start-stop-and-restart-the-agent
 [3]: https://github.com/KhulnaSoft/helm-charts
 [4]: https://github.com/KhulnaSoft/integrations-core/blob/master/tcp_queue_length/metadata.csv

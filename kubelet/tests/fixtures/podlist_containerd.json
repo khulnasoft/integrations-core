@@ -5,28 +5,28 @@
     "items": [
         {
             "metadata": {
-                "name": "datadog-agent-pbqt2",
-                "generateName": "datadog-agent-",
+                "name": "khulnasoft-agent-pbqt2",
+                "generateName": "khulnasoft-agent-",
                 "namespace": "default",
-                "selfLink": "/api/v1/namespaces/default/pods/datadog-agent-pbqt2",
+                "selfLink": "/api/v1/namespaces/default/pods/khulnasoft-agent-pbqt2",
                 "uid": "b66c40af-997d-11e8-96a3-42010a840157",
                 "resourceVersion": "701988",
                 "creationTimestamp": "2018-08-06T13:36:24Z",
                 "labels": {
-                    "app": "datadog-agent",
+                    "app": "khulnasoft-agent",
                     "controller-revision-hash": "2029148697",
                     "pod-template-generation": "1"
                 },
                 "annotations": {
                     "kubernetes.io/config.seen": "2018-08-06T13:36:24.535435209Z",
                     "kubernetes.io/config.source": "api",
-                    "kubernetes.io/limit-ranger": "LimitRanger plugin set: cpu request for container datadog-agent"
+                    "kubernetes.io/limit-ranger": "LimitRanger plugin set: cpu request for container khulnasoft-agent"
                 },
                 "ownerReferences": [
                     {
                         "apiVersion": "apps/v1",
                         "kind": "DaemonSet",
-                        "name": "datadog-agent",
+                        "name": "khulnasoft-agent",
                         "uid": "b669e8d7-997d-11e8-96a3-42010a840157",
                         "controller": true,
                         "blockOwnerDeletion": true
@@ -57,24 +57,24 @@
                         }
                     },
                     {
-                        "name": "datadog-config-volume",
+                        "name": "khulnasoft-config-volume",
                         "configMap": {
-                            "name": "datadog-config",
+                            "name": "khulnasoft-config",
                             "defaultMode": 420
                         }
                     },
                     {
-                        "name": "datadog-agent-token-4zt7s",
+                        "name": "khulnasoft-agent-token-4zt7s",
                         "secret": {
-                            "secretName": "datadog-agent-token-4zt7s",
+                            "secretName": "khulnasoft-agent-token-4zt7s",
                             "defaultMode": 420
                         }
                     }
                 ],
                 "containers": [
                     {
-                        "name": "datadog-agent",
-                        "image": "datadog/agent-dev:mfpierre-test-kubelet",
+                        "name": "khulnasoft-agent",
+                        "image": "khulnasoft/agent-dev:mfpierre-test-kubelet",
                         "ports": [
                             {
                                 "name": "dogstatsdport",
@@ -155,13 +155,13 @@
                                 "mountPath": "/host/sys/fs/cgroup"
                             },
                             {
-                                "name": "datadog-config-volume",
+                                "name": "khulnasoft-config-volume",
                                 "readOnly": true,
-                                "mountPath": "/etc/datadog-agent/conf.d/kubernetes_apiserver.d/kubernetes_apiserver.yaml",
+                                "mountPath": "/etc/khulnasoft-agent/conf.d/kubernetes_apiserver.d/kubernetes_apiserver.yaml",
                                 "subPath": "kubernetes_apiserver.yaml"
                             },
                             {
-                                "name": "datadog-agent-token-4zt7s",
+                                "name": "khulnasoft-agent-token-4zt7s",
                                 "readOnly": true,
                                 "mountPath": "/var/run/secrets/kubernetes.io/serviceaccount"
                             }
@@ -174,8 +174,8 @@
                 "restartPolicy": "Always",
                 "terminationGracePeriodSeconds": 30,
                 "dnsPolicy": "ClusterFirst",
-                "serviceAccountName": "datadog-agent",
-                "serviceAccount": "datadog-agent",
+                "serviceAccountName": "khulnasoft-agent",
+                "serviceAccount": "khulnasoft-agent",
                 "nodeName": "gke-xvello-containerd-default-pool-43a2b388-xkm6",
                 "securityContext": {},
                 "schedulerName": "default-scheduler",
@@ -230,7 +230,7 @@
                 "startTime": "2018-08-06T13:36:24Z",
                 "containerStatuses": [
                     {
-                        "name": "datadog-agent",
+                        "name": "khulnasoft-agent",
                         "state": {
                             "running": {
                                 "startedAt": "2018-08-06T13:36:28Z"
@@ -239,8 +239,8 @@
                         "lastState": {},
                         "ready": true,
                         "restartCount": 0,
-                        "image": "docker.io/datadog/agent-dev:mfpierre-test-kubelet",
-                        "imageID": "docker.io/datadog/agent-dev@sha256:efbcc3073de3c2e0cc3df0941ba9d4241f9b0b821e35107fcbe8d18921f072a5",
+                        "image": "docker.io/khulnasoft/agent-dev:mfpierre-test-kubelet",
+                        "imageID": "docker.io/khulnasoft/agent-dev@sha256:efbcc3073de3c2e0cc3df0941ba9d4241f9b0b821e35107fcbe8d18921f072a5",
                         "containerID": "containerd://51cba2ca229069039575750d44ed3a67e9b5ead651312ba7ff218dd9202fde64"
                     }
                 ],

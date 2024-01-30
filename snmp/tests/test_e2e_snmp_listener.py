@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2019-present
+# (C) Khulnasoft, Inc. 2019-present
 # All rights reserved
 # Licensed under Simplified BSD License (see LICENSE)
 
@@ -37,7 +37,7 @@ def test_e2e_snmp_listener(dd_agent_check, container_ip, autodiscovery_ready):
     """
     Test Agent Autodiscovery
 
-    The assertions match `snmp_listener` configuration in `datadog.yaml`.
+    The assertions match `snmp_listener` configuration in `khulnasoft.yaml`.
     See `dd_environment` setup in `conftest.py`.
     """
     snmp_device = _build_device_ip(container_ip)

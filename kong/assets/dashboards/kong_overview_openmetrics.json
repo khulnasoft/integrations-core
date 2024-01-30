@@ -1,6 +1,6 @@
 {
-    "author_name": "Datadog",
-    "description": "Using this dashboard, you can get a high-level view of your Kong metrics so you can monitor the performance of Kong.\n\nTo learn more about the Datadog Kong integration, see:\n\n- [Datadog Kong integration documentation](https://docs.khulnasoft.com/integrations/kong/?tabs=host).\n\n- [Monitoring Kong Performance Metrics](https://www.khulnasoft.com/blog/monitor-kong-datadog/).\n\n\nYou can clone this dashboard, copy and paste widgets from other out-of-the-box dashboards, and create your own visualizations for your custom applications. (cloned)",
+    "author_name": "Khulnasoft",
+    "description": "Using this dashboard, you can get a high-level view of your Kong metrics so you can monitor the performance of Kong.\n\nTo learn more about the Khulnasoft Kong integration, see:\n\n- [Khulnasoft Kong integration documentation](https://docs.khulnasoft.com/integrations/kong/?tabs=host).\n\n- [Monitoring Kong Performance Metrics](https://www.khulnasoft.com/blog/monitor-kong-khulnasoft/).\n\n\nYou can clone this dashboard, copy and paste widgets from other out-of-the-box dashboards, and create your own visualizations for your custom applications. (cloned)",
     "layout_type": "ordered",
     "template_variables": [
         {
@@ -45,7 +45,7 @@
                     {
                         "definition": {
                             "background_color": "transparent",
-                            "content": "\n\n**To learn more about the Datadog Kong integration, see:**\n\n- [Datadog Kong integration documentation](https://docs.khulnasoft.com/integrations/kong/?tabs=host).\n\n- [Monitoring Kong Performance Metrics](https://www.khulnasoft.com/blog/monitor-kong-datadog/).",
+                            "content": "\n\n**To learn more about the Khulnasoft Kong integration, see:**\n\n- [Khulnasoft Kong integration documentation](https://docs.khulnasoft.com/integrations/kong/?tabs=host).\n\n- [Monitoring Kong Performance Metrics](https://www.khulnasoft.com/blog/monitor-kong-khulnasoft/).",
                             "font_size": "12",
                             "has_padding": true,
                             "show_tick": false,

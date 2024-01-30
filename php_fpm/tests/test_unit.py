@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2018-present
+# (C) Khulnasoft, Inc. 2018-present
 # All rights reserved
 # Licensed under Simplified BSD License (see LICENSE)
 import mock
@@ -89,7 +89,7 @@ def test_backoff_success(check, instance, aggregator, payload):
             {"http_host": "foo"},
             {
                 'headers': {
-                    'User-Agent': 'Datadog Agent/0.0.0',
+                    'User-Agent': 'Khulnasoft Agent/0.0.0',
                     'Accept': '*/*',
                     'Accept-Encoding': 'gzip, deflate',
                     'Host': 'foo',

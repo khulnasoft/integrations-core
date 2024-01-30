@@ -104,7 +104,7 @@ jobs:
 
     - name: Publish image
       if: github.event_name == 'push' && steps.changed-files.outputs.builders_any_changed == 'true'
-      run: docker push ghcr.io/datadog/agent-int-builder:${{ matrix.job.image }}
+      run: docker push ghcr.io/khulnasoft/agent-int-builder:${{ matrix.job.image }}
 
   build-deps-macos:
     name: Target macOS

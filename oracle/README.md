@@ -13,7 +13,7 @@ Get metrics from Oracle Database servers in real time to visualize and monitor a
 #### Prerequisite
 
 To use the Oracle integration you can either use the native client (no additional install steps required), the Oracle Instant Client, or download the Oracle JDBC driver (Linux only). To use the Oracle integration with JDBC, download the Oracle JDBC driver. If you are not using the JDBC method, the minimum [supported version][2] is Oracle 12c.
-Due to licensing restrictions, the JDBC library is not included in the Datadog Agent, but can be downloaded directly from Oracle.
+Due to licensing restrictions, the JDBC library is not included in the Khulnasoft Agent, but can be downloaded directly from Oracle.
 
 *NOTE*: Starting in v7.42.x, the Oracle integration only supports Python 3.
 
@@ -76,27 +76,27 @@ Once it is installed, complete the following steps:
 1. [Download the JDBC Driver][4] JAR file.
 2. Add the path to the downloaded file in your `$CLASSPATH` or the check configuration file under `jdbc_driver_path` (see the [sample oracle.yaml][5]).
 
-#### Datadog user creation
+#### Khulnasoft user creation
 
 <!-- xxx tabs xxx -->
 <!-- xxx tab "Stand Alone" xxx -->
 
-Create a read-only `datadog` user with proper access to your Oracle Database Server. Connect to your Oracle database with an administrative user, such as `SYSDBA` or `SYSOPER`, and run:
+Create a read-only `khulnasoft` user with proper access to your Oracle Database Server. Connect to your Oracle database with an administrative user, such as `SYSDBA` or `SYSOPER`, and run:
 
 ```text
 -- Enable Oracle Script.
 ALTER SESSION SET "_ORACLE_SCRIPT"=true;
 
--- Create the datadog user. Replace the password placeholder with a secure password.
-CREATE USER datadog IDENTIFIED BY <PASSWORD>;
+-- Create the khulnasoft user. Replace the password placeholder with a secure password.
+CREATE USER khulnasoft IDENTIFIED BY <PASSWORD>;
 
--- Grant access to the datadog user.
-GRANT CONNECT TO datadog;
-GRANT SELECT ON GV_$PROCESS TO datadog;
-GRANT SELECT ON gv_$sysmetric TO datadog;
-GRANT SELECT ON sys.dba_data_files TO datadog;
-GRANT SELECT ON sys.dba_tablespaces TO datadog;
-GRANT SELECT ON sys.dba_tablespace_usage_metrics TO datadog;
+-- Grant access to the khulnasoft user.
+GRANT CONNECT TO khulnasoft;
+GRANT SELECT ON GV_$PROCESS TO khulnasoft;
+GRANT SELECT ON gv_$sysmetric TO khulnasoft;
+GRANT SELECT ON sys.dba_data_files TO khulnasoft;
+GRANT SELECT ON sys.dba_tablespaces TO khulnasoft;
+GRANT SELECT ON sys.dba_tablespace_usage_metrics TO khulnasoft;
 ```
 
 **Note**: If you're using Oracle 11g, there's no need to run the following line:
@@ -110,15 +110,15 @@ ALTER SESSION SET "_ORACLE_SCRIPT"=true;
 
 ##### Oracle 12c or 19c
 
-Log in to the root database as an Administrator to create a `datadog` user and grant permissions:
+Log in to the root database as an Administrator to create a `khulnasoft` user and grant permissions:
 
 ```text
 alter session set container = cdb$root;
-CREATE USER c##datadog IDENTIFIED BY password CONTAINER=ALL;
-GRANT CREATE SESSION TO c##datadog CONTAINER=ALL;
-Grant select any dictionary to c##datadog container=all;
-GRANT SELECT ON GV_$PROCESS TO c##datadog CONTAINER=ALL;
-GRANT SELECT ON gv_$sysmetric TO c##datadog CONTAINER=ALL;
+CREATE USER c##khulnasoft IDENTIFIED BY password CONTAINER=ALL;
+GRANT CREATE SESSION TO c##khulnasoft CONTAINER=ALL;
+Grant select any dictionary to c##khulnasoft container=all;
+GRANT SELECT ON GV_$PROCESS TO c##khulnasoft CONTAINER=ALL;
+GRANT SELECT ON gv_$sysmetric TO c##khulnasoft CONTAINER=ALL;
 ```
 
 <!-- xxz tab xxx -->
@@ -151,12 +151,12 @@ To configure this check for an Agent running on a host:
         service_name: <SERVICE_NAME>
 
         ## @param username - string - required
-        ## The username for the Datadog user account.
+        ## The username for the Khulnasoft user account.
         #
         username: <USERNAME>
 
         ## @param password - string - required
-        ## The password for the Datadog user account.
+        ## The password for the Khulnasoft user account.
         #
         password: <PASSWORD>
    ```
@@ -166,7 +166,7 @@ To configure this check for an Agent running on a host:
 
 #### Only custom queries
 
-To skip default metric checks for an instance and only run custom queries with an existing metrics gathering user, insert the tag `only_custom_queries` with a value of `true`. This allows a configured instance of the Oracle integration to skip the system, process, and tablespace metrics from running, and allows custom queries to be run without having the permissions described in the [Datadog user creation](#datadog-user-creation) section. If this configuration entry is omitted, the user you specify is required to have those table permissions to run a custom query.
+To skip default metric checks for an instance and only run custom queries with an existing metrics gathering user, insert the tag `only_custom_queries` with a value of `true`. This allows a configured instance of the Oracle integration to skip the system, process, and tablespace metrics from running, and allows custom queries to be run without having the permissions described in the [Khulnasoft user creation](#khulnasoft-user-creation) section. If this configuration entry is omitted, the user you specify is required to have those table permissions to run a custom query.
 
 ```yaml
 init_config:
@@ -246,7 +246,7 @@ instances:
 
 ##### TCPS through Oracle without JDBC
 
-If you are not using JDBC, verify that the Datadog Agent is able to connect to your database. Use the `sqlplus` command line tool with the information inputted in your configuration options:
+If you are not using JDBC, verify that the Khulnasoft Agent is able to connect to your database. Use the `sqlplus` command line tool with the information inputted in your configuration options:
 
 ```shell
 sqlplus <USER>/<PASSWORD>@(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCPS)(HOST=<HOST>)(PORT=<PORT>))(SERVICE_NAME=<SERVICE_NAME>)))
@@ -296,7 +296,7 @@ For containerized environments, see the [Autodiscovery Integration Templates][8]
 | -------------------- | --------------------------------------------------------------------------------------------------------- |
 | `<INTEGRATION_NAME>` | `oracle`                                                                                                  |
 | `<INIT_CONFIG>`      | blank or `{}`                                                                                             |
-| `<INSTANCE_CONFIG>`  | `{"server": "%%host%%:1521", "service_name":"<SERVICE_NAME>", "username":"datadog", "password":"<PASSWORD>"}` |
+| `<INSTANCE_CONFIG>`  | `{"server": "%%host%%:1521", "service_name":"<SERVICE_NAME>", "username":"khulnasoft", "password":"<PASSWORD>"}` |
 
 
 <!-- xxz tab xxx -->
@@ -357,7 +357,7 @@ Create a query configuration to help identify database locks:
   instances:
       - server: localhost:1521
         service_name: orcl11g.us.oracle.com
-        username: datadog
+        username: khulnasoft
         password: xxxxxxx
         jdbc_driver_path: /u01/app/oracle/product/11.2/dbhome_1/jdbc/lib/ojdbc6.jar
         tags:
@@ -387,7 +387,7 @@ Create a query configuration to help identify database locks:
 2. To access `v_$session`, give permission to `KHULNASOFT` and test the permissions.
 
 ```text
-SQL> grant select on sys.v_$session to datadog;
+SQL> grant select on sys.v_$session to khulnasoft;
 
 ##connecting with the DD user to validate the access:
 
@@ -397,7 +397,7 @@ USER is "KHULNASOFT"
 
 
 ##creating a synonym to make the view visible
-SQL> create synonym datadog.v_$session for sys.v_$session;
+SQL> create synonym khulnasoft.v_$session for sys.v_$session;
 
 
 Synonym created.
@@ -498,10 +498,10 @@ variable to the new install as explained above.
 Ensure the displayed output matches the correct value.
 
     ```shell script
-      sudo -u dd-agent -- /opt/datadog-agent/embedded/bin/python -c "import os; print(\"JAVA_HOME:{}\".format(os.environ.get(\"JAVA_HOME\")))"
+      sudo -u dd-agent -- /opt/khulnasoft-agent/embedded/bin/python -c "import os; print(\"JAVA_HOME:{}\".format(os.environ.get(\"JAVA_HOME\")))"
     ```
 
-Need help? Contact [Datadog support][14].
+Need help? Contact [Khulnasoft support][14].
 
 [1]: https://raw.githubusercontent.com/KhulnaSoft/integrations-core/master/oracle/images/oracle_dashboard.png
 [2]: https://oracle.github.io/python-oracledb/

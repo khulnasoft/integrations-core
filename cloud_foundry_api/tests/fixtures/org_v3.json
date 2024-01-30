@@ -5,7 +5,7 @@
    "name": "org_1",
    "links": {
       "self": {
-         "href": "https://api.sys.cf.eu.datadog.green/v3/organizations/671557cf-edcd-49df-9863-ee14513d13c7"
+         "href": "https://api.sys.cf.eu.khulnasoft.green/v3/organizations/671557cf-edcd-49df-9863-ee14513d13c7"
       }
    }
 }

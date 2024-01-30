@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2023-present
+# (C) Khulnasoft, Inc. 2023-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 from khulnasoft_checks.downloader.download import TUFDownloader
@@ -17,8 +17,8 @@ def test_non_official_wheel_filter(mocker):
     downloader = TUFDownloader()
     mock_wheels_call = mocker.patch.object(TUFDownloader, '_TUFDownloader__get_versions', return_value=mocked_wheels)
 
-    integration = "datadog-vsphere"
+    integration = "khulnasoft-vsphere"
     result = downloader.get_wheel_relpath(integration)
 
     mock_wheels_call.assert_called_once()
-    assert result == 'simple/datadog-vsphere/khulnasoft_vsphere-3.6.2-py2.py3-none-any.whl'
+    assert result == 'simple/khulnasoft-vsphere/khulnasoft_vsphere-3.6.2-py2.py3-none-any.whl'

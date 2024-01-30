@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# (C) Datadog, Inc. 2018-present
+# (C) Khulnasoft, Inc. 2018-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 import json
@@ -901,8 +901,8 @@ class TestLimits:
 
         assert len(check.get_warnings()) == 0
         assert len(aggregator.metrics('foo')) == 5
-        aggregator.assert_metric('datadog.agent.metrics.contexts.limit', 10)
-        aggregator.assert_metric('datadog.agent.metrics.contexts.total', 5)
+        aggregator.assert_metric('khulnasoft.agent.metrics.contexts.limit', 10)
+        aggregator.assert_metric('khulnasoft.agent.metrics.contexts.total', 5)
 
     def test_debug_metrics_over_limit(self, aggregator, dd_run_check):
         instance = {'debug_metrics': {'metric_contexts': True}, 'max_returned_metrics': 3}
@@ -911,8 +911,8 @@ class TestLimits:
 
         assert len(check.get_warnings()) == 1
         assert len(aggregator.metrics('foo')) == 3
-        aggregator.assert_metric('datadog.agent.metrics.contexts.limit', 3)
-        aggregator.assert_metric('datadog.agent.metrics.contexts.total', 5)
+        aggregator.assert_metric('khulnasoft.agent.metrics.contexts.limit', 3)
+        aggregator.assert_metric('khulnasoft.agent.metrics.contexts.total', 5)
 
 
 class TestCheckInitializations:

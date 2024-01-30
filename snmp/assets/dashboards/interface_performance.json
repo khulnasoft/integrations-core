@@ -183,7 +183,7 @@
             "id": 6062104962740908,
             "definition": {
               "type": "note",
-              "content": "**Tip:** Bandwidth is calculation measured as the rate at which traffic is sent or received on a specific port over the max speed that traffic can be sent. \n\nWe use the following formula: \n\n![bandwidth usage formula](https://github.com/KhulnaSoft/integrations-core/blob/5c17b0323172687c4ae0fdd75c56b5f8dd1c2dec/snmp/assets/images/bandwidth-usage-formula-small.png?raw=true)\n\nDatadog Agent version 7.25+ includes a packaged metric that calculates bandwidth automatically:\n\n`snmp.ifBandwidthInUsage.rate` & `snmp.ifBandwidthOutUsage.rate`",
+              "content": "**Tip:** Bandwidth is calculation measured as the rate at which traffic is sent or received on a specific port over the max speed that traffic can be sent. \n\nWe use the following formula: \n\n![bandwidth usage formula](https://github.com/KhulnaSoft/integrations-core/blob/5c17b0323172687c4ae0fdd75c56b5f8dd1c2dec/snmp/assets/images/bandwidth-usage-formula-small.png?raw=true)\n\nKhulnasoft Agent version 7.25+ includes a packaged metric that calculates bandwidth automatically:\n\n`snmp.ifBandwidthInUsage.rate` & `snmp.ifBandwidthOutUsage.rate`",
               "background_color": "pink",
               "font_size": "14",
               "text_align": "left",

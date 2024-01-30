@@ -2,7 +2,7 @@
 
 ## Overview
 
-This check monitors [Ray][1] through the Datadog Agent. Ray is an open-source unified compute framework that makes it easy to scale AI and Python workloads, from reinforcement learning to deep learning to tuning, and model serving.
+This check monitors [Ray][1] through the Khulnasoft Agent. Ray is an open-source unified compute framework that makes it easy to scale AI and Python workloads, from reinforcement learning to deep learning to tuning, and model serving.
 
 ## Setup
 
@@ -10,7 +10,7 @@ Follow the instructions below to install and configure this check for an Agent r
 
 ### Installation
 
-Starting from Agent release 7.49.0, the Ray check is included in the [Datadog Agent][2] package. No additional installation is needed on your server.
+Starting from Agent release 7.49.0, the Ray check is included in the [Khulnasoft Agent][2] package. No additional installation is needed on your server.
 
 **WARNING**: This check uses [OpenMetrics](https://docs.khulnasoft.com/integrations/openmetrics/) to collect metrics from the OpenMetrics endpoint Ray can expose, which requires Python 3.
 
@@ -47,7 +47,7 @@ This example demonstrates the configuration as a Docker label inside `docker-com
 
 ```yaml
 labels:
-  com.datadoghq.ad.checks: '{"ray":{"instances":[{"openmetrics_endpoint":"http://%%host%%:8080"}]}}'
+  com.khulnasofthq.ad.checks: '{"ray":{"instances":[{"openmetrics_endpoint":"http://%%host%%:8080"}]}}'
 ```
 
 <!-- xxz tab xxx -->
@@ -87,7 +87,7 @@ spec:
 
 Ray metrics are available on the OpenMetrics endpoint. Additionally, Ray allows you to [export custom application-level metrics][10]. You can configure the Ray integration to collect these metrics using the `extra_metrics` option. All Ray metrics, including your custom metrics, use the `ray.` prefix.
 
-**Note:** Custom Ray metrics are considered standard metrics in Datadog.
+**Note:** Custom Ray metrics are considered standard metrics in Khulnasoft.
 
 This example demonstrates a configuration leveraging the `extra_metrics` option:
 
@@ -123,12 +123,12 @@ See [service_checks.json][8] for a list of service checks provided by this integ
 
 ### Logs
 
-The Ray integration can collect logs from the Ray service and forward them to Datadog. 
+The Ray integration can collect logs from the Ray service and forward them to Khulnasoft. 
 
 <!-- xxx tabs xxx -->
 <!-- xxx tab "Host" xxx -->
 
-1. Collecting logs is disabled by default in the Datadog Agent. Enable it in your `datadog.yaml` file:
+1. Collecting logs is disabled by default in the Khulnasoft Agent. Enable it in your `khulnasoft.yaml` file:
 
    ```yaml
    logs_enabled: true
@@ -151,7 +151,7 @@ The Ray integration can collect logs from the Ray service and forward them to Da
 <!-- xxz tab xxx -->
 <!-- xxx tab "Kubernetes" xxx -->
 
-Collecting logs is disabled by default in the Datadog Agent. To enable it, see [Kubernetes Log Collection][13].
+Collecting logs is disabled by default in the Khulnasoft Agent. To enable it, see [Kubernetes Log Collection][13].
 
 Then, set Log Integrations as pod annotations. This can also be configured with a file, a configmap, or a key-value store. For more information, see the configuration section of [Kubernetes Log Collection][14].
 
@@ -177,7 +177,7 @@ For more information about the logging configuration with Ray and all the log fi
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][9].
+Need help? Contact [Khulnasoft support][9].
 
 [1]: https://www.ray.io/
 [2]: https://app.khulnasoft.com/account/settings/agent/latest

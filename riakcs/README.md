@@ -4,7 +4,7 @@
 
 ## Overview
 
-Capture RiakCS metrics in Datadog to:
+Capture RiakCS metrics in Khulnasoft to:
 
 - Visualize key RiakCS metrics.
 - Correlate RiakCS performance with the rest of your applications.
@@ -13,7 +13,7 @@ Capture RiakCS metrics in Datadog to:
 
 ### Installation
 
-The RiakCS check is included in the [Datadog Agent][2] package, so you don't need to install anything else on your RiakCS nodes.
+The RiakCS check is included in the [Khulnasoft Agent][2] package, so you don't need to install anything else on your RiakCS nodes.
 
 ### Configuration
 
@@ -69,7 +69,7 @@ See [service_checks.json][9] for a list of service checks provided by this integ
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][10].
+Need help? Contact [Khulnasoft support][10].
 
 ## Further Reading
 

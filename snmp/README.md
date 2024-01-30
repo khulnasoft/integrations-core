@@ -19,14 +19,14 @@ To install and configure the SNMP integration, see the [Network Device Monitorin
 
 Additional helpful documentation, links, and articles:
 
-* [Monitor SNMP with Datadog][2]
+* [Monitor SNMP with Khulnasoft][2]
 * [Introduction to SNMP][3]
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][4].
+Need help? Contact [Khulnasoft support][4].
 
 [1]: https://docs.khulnasoft.com/network_performance_monitoring/devices/setup
-[2]: https://www.khulnasoft.com/blog/monitor-snmp-with-datadog/
-[3]: https://datadoghq.dev/integrations-core/tutorials/snmp/introduction/
+[2]: https://www.khulnasoft.com/blog/monitor-snmp-with-khulnasoft/
+[3]: https://khulnasofthq.dev/integrations-core/tutorials/snmp/introduction/
 [4]: https://docs.khulnasoft.com/help/

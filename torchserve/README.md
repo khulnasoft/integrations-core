@@ -2,7 +2,7 @@
 
 ## Overview
 
-This check monitors [TorchServe][1] through the Datadog Agent. 
+This check monitors [TorchServe][1] through the Khulnasoft Agent. 
 
 ## Setup
 
@@ -10,7 +10,7 @@ Follow the instructions below to install and configure this check for an Agent r
 
 ### Installation
 
-Starting from Agent release 7.47.0, the TorchServe check is included in the [Datadog Agent][2] package. No additional installation is needed on your server.
+Starting from Agent release 7.47.0, the TorchServe check is included in the [Khulnasoft Agent][2] package. No additional installation is needed on your server.
 
 <div class="alert alert-warning">This check uses <a href="https://docs.khulnasoft.com/integrations/openmetrics/">OpenMetrics</a> to collect metrics from the OpenMetrics endpoint TorchServe can expose, which requires Python 3.</div>
 
@@ -75,7 +75,7 @@ For more options, see the [sample `torchserve.d/conf.yaml` file][4].
 
 TorchServe allows the custom service code to emit [metrics that will be available based on the configured `metrics_mode`][11]. You can configure this integration to collect these metrics using the `extra_metrics` option. These metrics will have the `torchserve.openmetrics` prefix, just like any other metrics coming from this endpoint.
 
-<div class="alert alert-info">These custom TorchServe metrics are considered standard metrics in Datadog.</div>
+<div class="alert alert-info">These custom TorchServe metrics are considered standard metrics in Khulnasoft.</div>
 
 <!-- xxz tab xxx -->
 <!-- xxx tab "Inference API" xxx -->
@@ -177,7 +177,7 @@ This example demonstrates the complete configuration leveraging the three differ
 
 ```yaml
 labels:
-  com.datadoghq.ad.checks: '{"torchserve":{"instances":[{"openmetrics_endpoint":"http://%%host%%:8082/metrics","extra_metrics":["my_custom_torchserve_metric"]},{"inference_api_url":"http://%%host%%:8080"},{"management_api_url":"http://%%host%%:8081","include":["my_models.*"],"exclude":[".*-test"],"interval":3600}]}}'
+  com.khulnasofthq.ad.checks: '{"torchserve":{"instances":[{"openmetrics_endpoint":"http://%%host%%:8082/metrics","extra_metrics":["my_custom_torchserve_metric"]},{"inference_api_url":"http://%%host%%:8080"},{"management_api_url":"http://%%host%%:8081","include":["my_models.*"],"exclude":[".*-test"],"interval":3600}]}}'
 ```
 
 <!-- xxz tab xxx -->
@@ -258,9 +258,9 @@ See [service_checks.json][8] for a list of service checks provided by this integ
 
 ### Logs
 
-The TorchServe integration can collect logs from the TorchServe service and forward them to Datadog. 
+The TorchServe integration can collect logs from the TorchServe service and forward them to Khulnasoft. 
 
-1. Collecting logs is disabled by default in the Datadog Agent. Enable it in your `datadog.yaml` file:
+1. Collecting logs is disabled by default in the Khulnasoft Agent. Enable it in your `khulnasoft.yaml` file:
 
    ```yaml
    logs_enabled: true
@@ -284,11 +284,11 @@ See [the example configuration file][4] on how to collect all logs.
 
 For more information about the logging configuration with TorchServe, see the [official TorchServe documentation][16].
 
-<div class="alert alert-warning">You can also collect logs from the `access_log.log` file. However, these logs are included in the `ts_log.log` file, leading you to duplicated logs in Datadog if you configure both files.</div>
+<div class="alert alert-warning">You can also collect logs from the `access_log.log` file. However, these logs are included in the `ts_log.log` file, leading you to duplicated logs in Khulnasoft if you configure both files.</div>
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][9].
+Need help? Contact [Khulnasoft support][9].
 
 [1]: https://pytorch.org/serve/
 [2]: https://app.khulnasoft.com/account/settings/agent/latest

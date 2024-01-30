@@ -1,7 +1,7 @@
 {
   "title": "Elasticsearch - Overview",
-  "author_name": "Datadog",
-  "description": "This dashboard provides a **high-level** overview of your Elasticsearch clusters, so you can track the health, performance, and resource utilization of all your nodes. \n\nFurther reading on Elasticsearch monitoring:\n\n- [Datadog's guide to key Elasticsearch metrics](https://www.khulnasoft.com/blog/monitor-elasticsearch-performance-metrics/)\n\n- [How to collect Elasticsearch metrics with native and open source tools](https://www.khulnasoft.com/blog/collect-elasticsearch-metrics/)\n\n- [How to monitor Elasticsearch with Datadog](https://www.khulnasoft.com/blog/monitor-elasticsearch-datadog/)\n\n- [How to solve 5 Elasticsearch performance and scaling problems](https://www.khulnasoft.com/blog/elasticsearch-performance-scaling-problems/)\n\n- [How to resolve unassigned shards in Elasticsearch](https://www.khulnasoft.com/blog/elasticsearch-unassigned-shards/)\n\n- [Datadog's Elasticsearch integration docs](https://docs.khulnasoft.com/integrations/elastic/)\n\nClone this template dashboard to make changes and add your own graph widgets.",
+  "author_name": "Khulnasoft",
+  "description": "This dashboard provides a **high-level** overview of your Elasticsearch clusters, so you can track the health, performance, and resource utilization of all your nodes. \n\nFurther reading on Elasticsearch monitoring:\n\n- [Khulnasoft's guide to key Elasticsearch metrics](https://www.khulnasoft.com/blog/monitor-elasticsearch-performance-metrics/)\n\n- [How to collect Elasticsearch metrics with native and open source tools](https://www.khulnasoft.com/blog/collect-elasticsearch-metrics/)\n\n- [How to monitor Elasticsearch with Khulnasoft](https://www.khulnasoft.com/blog/monitor-elasticsearch-khulnasoft/)\n\n- [How to solve 5 Elasticsearch performance and scaling problems](https://www.khulnasoft.com/blog/elasticsearch-performance-scaling-problems/)\n\n- [How to resolve unassigned shards in Elasticsearch](https://www.khulnasoft.com/blog/elasticsearch-unassigned-shards/)\n\n- [Khulnasoft's Elasticsearch integration docs](https://docs.khulnasoft.com/integrations/elastic/)\n\nClone this template dashboard to make changes and add your own graph widgets.",
   "widgets": [
     {
       "id": 0,
@@ -17,7 +17,7 @@
             "id": 2600149140365818,
             "definition": {
               "type": "note",
-              "content": "**Elasticsearch monitoring guides**\n\n[Datadog guide to key Elasticsearch metrics&nbsp;↗](https://www.khulnasoft.com/blog/monitor-elasticsearch-performance-metrics/)\n\n[How to monitor Elasticsearch with Datadog&nbsp;↗](https://www.khulnasoft.com/blog/monitor-elasticsearch-datadog/)\n\n[Collect metrics with native and open source tools&nbsp;↗](https://www.khulnasoft.com/blog/collect-elasticsearch-metrics/)\n\n[Solve 5 performance and scaling problems&nbsp;↗](https://www.khulnasoft.com/blog/elasticsearch-performance-scaling-problems/)\n\n[Resolve unassigned shards&nbsp;↗](https://www.khulnasoft.com/blog/elasticsearch-unassigned-shards/)",
+              "content": "**Elasticsearch monitoring guides**\n\n[Khulnasoft guide to key Elasticsearch metrics&nbsp;↗](https://www.khulnasoft.com/blog/monitor-elasticsearch-performance-metrics/)\n\n[How to monitor Elasticsearch with Khulnasoft&nbsp;↗](https://www.khulnasoft.com/blog/monitor-elasticsearch-khulnasoft/)\n\n[Collect metrics with native and open source tools&nbsp;↗](https://www.khulnasoft.com/blog/collect-elasticsearch-metrics/)\n\n[Solve 5 performance and scaling problems&nbsp;↗](https://www.khulnasoft.com/blog/elasticsearch-performance-scaling-problems/)\n\n[Resolve unassigned shards&nbsp;↗](https://www.khulnasoft.com/blog/elasticsearch-unassigned-shards/)",
               "background_color": "transparent",
               "font_size": "14",
               "text_align": "left",
@@ -37,7 +37,7 @@
             "id": 4320908621887210,
             "definition": {
               "type": "note",
-              "content": "This is a high-level overview of your Elasticsearch clusters, so you can track health status, search and indexing performance, and resource utilization metrics from all your nodes and be better prepared to address potential issues.\n\n##### [**Datadog Elasticsearch integration docs&nbsp;↗**](https://docs.khulnasoft.com/integrations/elastic/)",
+              "content": "This is a high-level overview of your Elasticsearch clusters, so you can track health status, search and indexing performance, and resource utilization metrics from all your nodes and be better prepared to address potential issues.\n\n##### [**Khulnasoft Elasticsearch integration docs&nbsp;↗**](https://docs.khulnasoft.com/integrations/elastic/)",
               "background_color": "transparent",
               "font_size": "18",
               "text_align": "left",

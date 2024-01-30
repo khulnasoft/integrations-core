@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2019-present
+# (C) Khulnasoft, Inc. 2019-present
 # All rights reserved
 # Licensed under Simplified BSD License (see LICENSE)
 import pytest
@@ -30,7 +30,7 @@ def test_e2e_core_v3_no_auth_no_priv(dd_agent_check):
     instance = config['instances'][0]
     instance.update(
         {
-            'user': 'datadogNoAuthNoPriv',
+            'user': 'khulnasoftNoAuthNoPriv',
             'snmp_version': 3,
             'context_name': 'apc_ups',
             'community_string': '',
@@ -44,7 +44,7 @@ def test_e2e_core_v3_with_auth_no_priv(dd_agent_check):
     instance = config['instances'][0]
     instance.update(
         {
-            'user': 'datadogMD5NoPriv',
+            'user': 'khulnasoftMD5NoPriv',
             'snmp_version': 3,
             'authKey': 'doggiepass',
             'authProtocol': 'MD5',
@@ -194,7 +194,7 @@ def assert_apc_ups_metrics(dd_agent_check, config):
 
     common.assert_common_metrics(aggregator, tags, is_e2e=True, loader='core')
     aggregator.assert_metric(
-        'datadog.snmp.submitted_metrics', metric_type=aggregator.GAUGE, tags=tags + ['loader:core'], value=32
+        'khulnasoft.snmp.submitted_metrics', metric_type=aggregator.GAUGE, tags=tags + ['loader:core'], value=32
     )
 
     for metric in metrics.APC_UPS_METRICS:
@@ -234,7 +234,7 @@ def test_e2e_memory_cpu_f5_big_ip(dd_agent_check):
     tags = [
         'device_namespace:default',
         'device_vendor:f5',
-        'snmp_host:f5-big-ip-adc-good-byol-1-vm.c.datadog-integrations-lab.internal',
+        'snmp_host:f5-big-ip-adc-good-byol-1-vm.c.khulnasoft-integrations-lab.internal',
         'snmp_profile:f5-big-ip',
     ]
     tags += ['snmp_device:{}'.format(instance['ip_address'])]

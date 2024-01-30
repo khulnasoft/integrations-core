@@ -8,7 +8,7 @@ The Agent's Memcache check lets you track Memcache's memory use, hits, misses, e
 
 ### Installation
 
-The Memcache check is included in the [Datadog Agent][1] package, so you don't need to install anything else on your Memcache servers.
+The Memcache check is included in the [Khulnasoft Agent][1] package, so you don't need to install anything else on your Memcache servers.
 
 ### Configuration
 
@@ -37,13 +37,13 @@ To configure this check for an Agent running on a host:
      - url: localhost
    ```
 
-2. [Restart the Agent][4] to begin sending Memcache metrics to Datadog.
+2. [Restart the Agent][4] to begin sending Memcache metrics to Khulnasoft.
 
 ##### Trace collection
 
-Datadog APM integrates with Memcache to see the traces across your distributed system. Trace collection is enabled by default in the Datadog Agent v6+. To start collecting traces:
+Khulnasoft APM integrates with Memcache to see the traces across your distributed system. Trace collection is enabled by default in the Khulnasoft Agent v6+. To start collecting traces:
 
-1. [Enable trace collection in Datadog][5].
+1. [Enable trace collection in Khulnasoft][5].
 2. [Instrument your application that makes requests to Memcache][6].
 
 <!-- xxz tab xxx -->
@@ -118,7 +118,7 @@ See [service_checks.json][12] for a list of service checks provided by this inte
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][13].
+Need help? Contact [Khulnasoft support][13].
 
 ## Further Reading
 

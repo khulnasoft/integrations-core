@@ -1,7 +1,7 @@
 {
-    "author_name": "Datadog",
+    "author_name": "Khulnasoft",
     "title": "OpenTelemetry Collector Metrics Dashboard",
-    "description": "Default dashboard to visualize metrics for the OpenTelemetry Collector.\n\nNote: To view these metrics, enable the Prometheus receiver in the collector configuration, as shown in [this example](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/6946b963820d391325254cb9cc6bb34ae12907a0/exporter/datadogexporter/examples/collector.yaml#L37).",
+    "description": "Default dashboard to visualize metrics for the OpenTelemetry Collector.\n\nNote: To view these metrics, enable the Prometheus receiver in the collector configuration, as shown in [this example](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/6946b963820d391325254cb9cc6bb34ae12907a0/exporter/khulnasoftexporter/examples/collector.yaml#L37).",
     "widgets": [
         {
             "id": 7581494098406438,
@@ -16,7 +16,7 @@
                         "id": 6416205973430436,
                         "definition": {
                             "type": "note",
-                            "content": "This is a default dashboard to visualize metrics from the OpenTelemetry Collector. [These metrics](https://app.khulnasoft.com/metric/summary?filter=otelcol) are scraped by the Prometheus receiver.\n\n## To view these metrics, enable the Prometheus receiver in the collector configuration, as shown in [this example](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/6946b963820d391325254cb9cc6bb34ae12907a0/exporter/datadogexporter/examples/collector.yaml#L37).",
+                            "content": "This is a default dashboard to visualize metrics from the OpenTelemetry Collector. [These metrics](https://app.khulnasoft.com/metric/summary?filter=otelcol) are scraped by the Prometheus receiver.\n\n## To view these metrics, enable the Prometheus receiver in the collector configuration, as shown in [this example](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/6946b963820d391325254cb9cc6bb34ae12907a0/exporter/khulnasoftexporter/examples/collector.yaml#L37).",
                             "background_color": "transparent",
                             "font_size": "18",
                             "text_align": "left",

@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2018-present
+# (C) Khulnasoft, Inc. 2018-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 import os
@@ -15,7 +15,7 @@ COMPOSE_FILE = os.path.join(HERE, 'docker', 'docker-compose.yaml')
 HOST = get_docker_hostname()
 PORT = '1521'
 TCPS_PORT = '2484'
-USER = 'datadog'
+USER = 'khulnasoft'
 PASSWORD = 'Oracle123'
 
 CHECK_NAME = 'oracle'

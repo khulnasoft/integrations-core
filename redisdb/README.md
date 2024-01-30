@@ -2,7 +2,7 @@
 
 ## Overview
 
-Whether you use Redis as a database, cache, or message queue, this integration tracks problems with your Redis servers, cloud service, and the parts of your infrastructure they serve. Use the Datadog Agent's Redis check to collects metrics related to:
+Whether you use Redis as a database, cache, or message queue, this integration tracks problems with your Redis servers, cloud service, and the parts of your infrastructure they serve. Use the Khulnasoft Agent's Redis check to collects metrics related to:
 
 - Performance
 - Memory usage
@@ -16,7 +16,7 @@ Whether you use Redis as a database, cache, or message queue, this integration t
 
 ### Installation
 
-The Redis check is included in the [Datadog Agent][1] package, so you don't need to install anything else on your Redis servers.
+The Redis check is included in the [Khulnasoft Agent][1] package, so you don't need to install anything else on your Redis servers.
 
 ### Configuration
 
@@ -60,7 +60,7 @@ To configure this check for an Agent running on a host:
 
 _Available for Agent versions >6.0_
 
-1. Collecting logs is disabled by default in the Datadog Agent, enable it in your `datadog.yaml` file:
+1. Collecting logs is disabled by default in the Khulnasoft Agent, enable it in your `khulnasoft.yaml` file:
 
    ```yaml
    logs_enabled: true
@@ -82,9 +82,9 @@ _Available for Agent versions >6.0_
 
 ##### Trace collection
 
-Datadog APM integrates with Redis to see the traces across your distributed system. Trace collection is enabled by default in the Datadog Agent v6+. To start collecting traces:
+Khulnasoft APM integrates with Redis to see the traces across your distributed system. Trace collection is enabled by default in the Khulnasoft Agent v6+. To start collecting traces:
 
-1. [Enable trace collection in Datadog][6].
+1. [Enable trace collection in Khulnasoft][6].
 2. [Instrument your application that makes requests to Redis][7].
 
 
@@ -100,9 +100,9 @@ To configure this check for an Agent running on a container:
 Set [Autodiscovery Integrations Templates][8] as Docker labels on your application container:
 
 ```yaml
-LABEL "com.datadoghq.ad.check_names"='["redisdb"]'
-LABEL "com.datadoghq.ad.init_configs"='[{}]'
-LABEL "com.datadoghq.ad.instances"='[{"host":"%%host%%","port":"6379","password":"%%env_REDIS_PASSWORD%%"}]'
+LABEL "com.khulnasofthq.ad.check_names"='["redisdb"]'
+LABEL "com.khulnasofthq.ad.init_configs"='[{}]'
+LABEL "com.khulnasofthq.ad.instances"='[{"host":"%%host%%","port":"6379","password":"%%env_REDIS_PASSWORD%%"}]'
 ```
 
 **Note**: The `"%%env_<ENV_VAR>%%"` template variable logic is used to avoid storing the password in plain text, hence the `REDIS_PASSWORD` environment variable must be set on the Agent container. See the [Autodiscovery Template Variable][9] documentation for more details. Alternatively, the Agent can leverage the `secrets` package to work with any [secrets management][10] backend (such as HashiCorp Vault or AWS Secrets Manager).
@@ -111,12 +111,12 @@ LABEL "com.datadoghq.ad.instances"='[{"host":"%%host%%","port":"6379","password"
 
 _Available for Agent versions >6.0_
 
-Collecting logs is disabled by default in the Datadog Agent. To enable it, see [Docker Log Collection][11].
+Collecting logs is disabled by default in the Khulnasoft Agent. To enable it, see [Docker Log Collection][11].
 
 Then, set [Log Integrations][12] as Docker labels:
 
 ```yaml
-LABEL "com.datadoghq.ad.logs"='[{"source":"redis","service":"<YOUR_APP_NAME>"}]'
+LABEL "com.khulnasofthq.ad.logs"='[{"source":"redis","service":"<YOUR_APP_NAME>"}]'
 ```
 
 ##### Trace collection
@@ -147,7 +147,7 @@ To configure this check for an Agent running on Kubernetes:
 
 Set [Autodiscovery Integrations Templates][14] as pod annotations on your application container. Aside from this, templates can also be configured using a [file, configmap, or key-value store][15].
 
-**Annotations v1** (for Datadog Agent < v7.36)
+**Annotations v1** (for Khulnasoft Agent < v7.36)
 
 ```yaml
 apiVersion: v1
@@ -175,7 +175,7 @@ spec:
         - containerPort: 6379
 ```
 
-**Annotations v2** (for Datadog Agent v7.36+)
+**Annotations v2** (for Khulnasoft Agent v7.36+)
 
 ```yaml
 apiVersion: v1
@@ -212,7 +212,7 @@ spec:
 
 _Available for Agent versions >6.0_
 
-Collecting logs is disabled by default in the Datadog Agent. To enable it, see [Kubernetes Log Collection][16].
+Collecting logs is disabled by default in the Khulnasoft Agent. To enable it, see [Kubernetes Log Collection][16].
 
 Then, set [Log Integrations][12] as pod annotations. This can also be configure using a [file, configmap, or key-value store][17].
 
@@ -268,9 +268,9 @@ Set [Autodiscovery Integrations Templates][8] as Docker labels on your applicati
     "name": "redis",
     "image": "redis:latest",
     "dockerLabels": {
-      "com.datadoghq.ad.check_names": "[\"redisdb\"]",
-      "com.datadoghq.ad.init_configs": "[{}]",
-      "com.datadoghq.ad.instances": "[{\"host\":\"%%host%%\",\"port\":\"6379\",\"password\":\"%%env_REDIS_PASSWORD%%\"}]"
+      "com.khulnasofthq.ad.check_names": "[\"redisdb\"]",
+      "com.khulnasofthq.ad.init_configs": "[{}]",
+      "com.khulnasofthq.ad.instances": "[{\"host\":\"%%host%%\",\"port\":\"6379\",\"password\":\"%%env_REDIS_PASSWORD%%\"}]"
     }
   }]
 }
@@ -282,7 +282,7 @@ Set [Autodiscovery Integrations Templates][8] as Docker labels on your applicati
 
 _Available for Agent versions >6.0_
 
-Collecting logs is disabled by default in the Datadog Agent. To enable it, see [ECS Log Collection][20].
+Collecting logs is disabled by default in the Khulnasoft Agent. To enable it, see [ECS Log Collection][20].
 
 Then, set [Log Integrations][12] as Docker labels:
 
@@ -292,7 +292,7 @@ Then, set [Log Integrations][12] as Docker labels:
     "name": "redis",
     "image": "redis:latest",
     "dockerLabels": {
-      "com.datadoghq.ad.logs": "[{\"source\":\"redis\",\"service\":\"<YOUR_APP_NAME>\"}]"
+      "com.khulnasofthq.ad.logs": "[{\"source\":\"redis\",\"service\":\"<YOUR_APP_NAME>\"}]"
     }
   }]
 }

@@ -1,4 +1,4 @@
-﻿# (C) Datadog, Inc. 2019-present
+﻿# (C) Khulnasoft, Inc. 2019-present
 # All rights reserved
 # Licensed under Simplified BSD License (see LICENSE)
 import datetime as dt
@@ -37,7 +37,7 @@ def test_realtime_metrics(aggregator, dd_run_check, realtime_instance):
                 metric['name'], metric.get('value'), hostname=metric.get('hostname'), tags=metric.get('tags')
             )
 
-    aggregator.assert_metric('datadog.vsphere.collect_events.time', metric_type=aggregator.GAUGE, count=1)
+    aggregator.assert_metric('khulnasoft.vsphere.collect_events.time', metric_type=aggregator.GAUGE, count=1)
     aggregator.assert_all_metrics_covered()
 
 
@@ -90,7 +90,7 @@ def test_events_only(aggregator, events_only_instance):
     check.check(None)
     aggregator.assert_event("vCenter monitor status changed on this alarm, it was green and it's now red.", count=1)
 
-    aggregator.assert_metric('datadog.vsphere.collect_events.time')
+    aggregator.assert_metric('khulnasoft.vsphere.collect_events.time')
 
     # assert all metrics will check that we are not collecting historical and realtime metrics
     aggregator.assert_all_metrics_covered()
@@ -252,7 +252,7 @@ def test_collect_tags(aggregator, dd_run_check, realtime_instance):
         tags=['my_cat_name_2:my_tag_name_2', 'vcenter_server:FAKE'],
         hostname='10.0.0.104',
     )
-    aggregator.assert_metric('datadog.vsphere.query_tags.time', tags=['vcenter_server:FAKE'])
+    aggregator.assert_metric('khulnasoft.vsphere.query_tags.time', tags=['vcenter_server:FAKE'])
 
 
 @pytest.mark.usefixtures('mock_type', 'mock_threadpool', 'mock_api', 'mock_rest_api')
@@ -623,9 +623,9 @@ def test_no_infra_cache(aggregator, realtime_instance, dd_run_check, caplog):
         assert "Did not retrieve any properties from the vCenter. "
         "Metric collection cannot continue. Ensure your user has correct permissions." in caplog.text
 
-        aggregator.assert_metric('datadog.vsphere.collect_events.time')
-        aggregator.assert_metric('datadog.vsphere.refresh_metrics_metadata_cache.time')
-        aggregator.assert_metric('datadog.vsphere.refresh_infrastructure_cache.time')
+        aggregator.assert_metric('khulnasoft.vsphere.collect_events.time')
+        aggregator.assert_metric('khulnasoft.vsphere.refresh_metrics_metadata_cache.time')
+        aggregator.assert_metric('khulnasoft.vsphere.refresh_infrastructure_cache.time')
 
         aggregator.assert_all_metrics_covered()
 
@@ -635,7 +635,7 @@ def test_no_infra_cache_events(aggregator, realtime_instance, dd_run_check, capl
         'pyVmomi.vmodl.query.PropertyCollector'
     ) as mock_property_collector:
         event = vim.event.VmReconfiguredEvent()
-        event.userName = "datadog"
+        event.userName = "khulnasoft"
         event.createdTime = get_current_datetime()
         event.vm = vim.event.VmEventArgument()
         event.vm.name = "vm1"
@@ -683,12 +683,12 @@ def test_no_infra_cache_events(aggregator, realtime_instance, dd_run_check, capl
         assert "Did not retrieve any properties from the vCenter. "
         "Metric collection cannot continue. Ensure your user has correct permissions." in caplog.text
 
-        aggregator.assert_metric('datadog.vsphere.collect_events.time')
-        aggregator.assert_metric('datadog.vsphere.refresh_metrics_metadata_cache.time')
-        aggregator.assert_metric('datadog.vsphere.refresh_infrastructure_cache.time')
+        aggregator.assert_metric('khulnasoft.vsphere.collect_events.time')
+        aggregator.assert_metric('khulnasoft.vsphere.refresh_metrics_metadata_cache.time')
+        aggregator.assert_metric('khulnasoft.vsphere.refresh_infrastructure_cache.time')
 
         aggregator.assert_event(
-            """datadog saved the new configuration:\n@@@\n""",
+            """khulnasoft saved the new configuration:\n@@@\n""",
             exact_match=False,
             msg_title="VM vm1 configuration has been changed",
             host="vm1",
@@ -703,7 +703,7 @@ def test_no_infra_cache_no_perf_values(aggregator, realtime_instance, dd_run_che
     ) as mock_property_collector:
 
         event = vim.event.VmReconfiguredEvent()
-        event.userName = "datadog"
+        event.userName = "khulnasoft"
         event.createdTime = get_current_datetime()
         event.vm = vim.event.VmEventArgument()
         event.vm.name = "vm1"
@@ -725,12 +725,12 @@ def test_no_infra_cache_no_perf_values(aggregator, realtime_instance, dd_run_che
         assert "Did not retrieve any properties from the vCenter. "
         "Metric collection cannot continue. Ensure your user has correct permissions." in caplog.text
 
-        aggregator.assert_metric('datadog.vsphere.collect_events.time')
-        aggregator.assert_metric('datadog.vsphere.refresh_metrics_metadata_cache.time')
-        aggregator.assert_metric('datadog.vsphere.refresh_infrastructure_cache.time')
+        aggregator.assert_metric('khulnasoft.vsphere.collect_events.time')
+        aggregator.assert_metric('khulnasoft.vsphere.refresh_metrics_metadata_cache.time')
+        aggregator.assert_metric('khulnasoft.vsphere.refresh_infrastructure_cache.time')
 
         aggregator.assert_event(
-            """datadog saved the new configuration:\n@@@\n""",
+            """khulnasoft saved the new configuration:\n@@@\n""",
             exact_match=False,
             msg_title="VM vm1 configuration has been changed",
             host="vm1",

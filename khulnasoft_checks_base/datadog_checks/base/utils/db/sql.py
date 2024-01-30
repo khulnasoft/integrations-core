@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# (C) Datadog, Inc. 2020-present
+# (C) Khulnasoft, Inc. 2020-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 from __future__ import unicode_literals
@@ -38,7 +38,7 @@ def normalize_query_tag(query):
     so this replacement is a workaround to display commas in tags but still allow metric
     queries to work.
 
-    For Datadog employees, more background on "Arbitrary Tag Values":
+    For Khulnasoft employees, more background on "Arbitrary Tag Values":
     https://docs.google.com/document/d/1LQWw6ZiQZW18lknsBAZFMrba8BQ5yOmaWoEC7J1nLxU
     """
     query = query.replace(', ', '{} '.format(ARABIC_DECIMAL_SEPARATOR)).replace(',', ARABIC_DECIMAL_SEPARATOR)

@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2018-present
+# (C) Khulnasoft, Inc. 2018-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 import logging
@@ -21,7 +21,7 @@ class TestNfsstat:
     CHECK_NAME = 'nfsstat'
     INSTANCES = {'main': {'tags': ['optional:tag1']}}
 
-    INIT_CONFIG = {'nfsiostat_path': '/opt/datadog-agent/embedded/sbin/nfsiostat'}
+    INIT_CONFIG = {'nfsiostat_path': '/opt/khulnasoft-agent/embedded/sbin/nfsiostat'}
 
     def test_no_devices(self, aggregator):
         instance = self.INSTANCES['main']
@@ -60,13 +60,13 @@ class TestNfsstat:
             c.check(instance)
 
         tags = list(instance['tags'])
-        tags.extend(['nfs_server:192.168.34.1', 'nfs_export:/exports/nfs/datadog/two', 'nfs_mount:/mnt/datadog/two'])
+        tags.extend(['nfs_server:192.168.34.1', 'nfs_export:/exports/nfs/khulnasoft/two', 'nfs_mount:/mnt/khulnasoft/two'])
         tags_unicode = list(instance['tags'])
         tags_unicode.extend(
             [
                 u'nfs_server:192.168.34.1',
-                u'nfs_export:/exports/nfs/datadog/thr\u00E9\u00E9',
-                u'nfs_mount:/mnt/datadog/thr\u00E9\u00E9',
+                u'nfs_export:/exports/nfs/khulnasoft/thr\u00E9\u00E9',
+                u'nfs_mount:/mnt/khulnasoft/thr\u00E9\u00E9',
             ]
         )
 

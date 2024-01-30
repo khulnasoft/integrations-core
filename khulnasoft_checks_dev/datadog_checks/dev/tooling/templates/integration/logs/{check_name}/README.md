@@ -27,7 +27,7 @@ This integration monitors [{integration_name}][4].
 ### Log Collection
 
 
-1. Collecting logs is disabled by default in the Datadog Agent. Enable it in the `datadog.yaml` file with:
+1. Collecting logs is disabled by default in the Khulnasoft Agent. Enable it in the `khulnasoft.yaml` file with:
 
     ```yaml
       logs_enabled: true
@@ -59,6 +59,6 @@ See [service_checks.json][5] for a list of service checks provided by this integ
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][1].
+Need help? Contact [Khulnasoft support][1].
 
 {integration_links}

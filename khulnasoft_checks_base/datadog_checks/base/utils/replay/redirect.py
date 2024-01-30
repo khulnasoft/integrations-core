@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2022-present
+# (C) Khulnasoft, Inc. 2022-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 import logging
@@ -37,7 +37,7 @@ class ReplayAggregator(object):
         return method
 
 
-class ReplayDatadogAgent(object):
+class ReplayKhulnasoftAgent(object):
     def __getattr__(self, name):
         method = self.method_generator(name, name not in KNOWN_KHULNASOFT_AGENT_SETTER_METHODS)
         setattr(self, name, method)
@@ -70,7 +70,7 @@ class ReplayLogger(logging.Logger):
 
 base.using_stub_aggregator = False
 base.aggregator = ReplayAggregator()
-base.khulnasoft_agent = core.khulnasoft_agent = ReplayDatadogAgent()
+base.khulnasoft_agent = core.khulnasoft_agent = ReplayKhulnasoftAgent()
 
 logging.addLevelName(TRACE_LEVEL, 'TRACE')
 logging.setLoggerClass(ReplayLogger)

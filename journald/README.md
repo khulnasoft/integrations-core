@@ -9,7 +9,7 @@ It creates and maintains structured, indexed journals based on logging informati
 
 ### Installation
 
-The journald check is included in the [Datadog Agent][1] package.
+The journald check is included in the [Khulnasoft Agent][1] package.
 No additional installation is needed on your server.
 
 ### Configuration
@@ -31,7 +31,7 @@ Edit the `journald.d/conf.yaml` file, in the `conf.d/` folder at the root of you
 
 #### Log collection
 
-Collecting logs is disabled by default in the Datadog Agent, you need to enable it in the `datadog.yaml` with:
+Collecting logs is disabled by default in the Khulnasoft Agent, you need to enable it in the `khulnasoft.yaml` with:
 
 ```yaml
 logs_enabled: true
@@ -45,7 +45,7 @@ logs:
       container_mode: true
 ```
 
-To fill `source` and `service` attributes, the Agent collects `SYSLOG_IDENTIFIER` , `_SYSTEMD_UNIT` and `_COMM`and set them to the first non empty value. To take advantage of the integration pipelines, Datadog recommends setting the `SyslogIdentifier` parameter in the `systemd` service file directly, or in a `systemd` service override file. Their location depends on your distribution, but you can find the location of the `systemd` service file by using the command `systemctl show -p FragmentPath <unit_name>`.
+To fill `source` and `service` attributes, the Agent collects `SYSLOG_IDENTIFIER` , `_SYSTEMD_UNIT` and `_COMM`and set them to the first non empty value. To take advantage of the integration pipelines, Khulnasoft recommends setting the `SyslogIdentifier` parameter in the `systemd` service file directly, or in a `systemd` service override file. Their location depends on your distribution, but you can find the location of the `systemd` service file by using the command `systemctl show -p FragmentPath <unit_name>`.
 
 **Note**: With Agent 7.17+, if `container_mode` is set to `true`, the default behavior changes for logs coming from Docker containers. The `source` attribute of your logs is automatically set to the corresponding short image name of the container instead of simply `docker`.
 
@@ -60,7 +60,7 @@ For containerized environments, see the [Autodiscovery Integration Templates][4]
 #### Log collection
 
 
-Collecting logs is disabled by default in the Datadog Agent. To enable it, see [Kubernetes Log Collection][5].
+Collecting logs is disabled by default in the Khulnasoft Agent. To enable it, see [Kubernetes Log Collection][5].
 
 | Parameter      | Value                                                  |
 | -------------- | ------------------------------------------------------ |
@@ -100,7 +100,7 @@ logs:
           - sshd.service
 ```
 
-In Datadog Agent version `7.37.0`+, you can filter _user-level_ units by using these parameters:
+In Khulnasoft Agent version `7.37.0`+, you can filter _user-level_ units by using these parameters:
 
 - `include_user_units`: Includes all user-level units specified.
 - `exclude_user_units`: Excludes all user-level units specified.
@@ -119,7 +119,7 @@ logs:
 
 ##### Filter journal messages
 
-In Datadog Agent version `7.39.0`+, you can filter arbitrary messages using key-value pairs with these parameters:
+In Khulnasoft Agent version `7.39.0`+, you can filter arbitrary messages using key-value pairs with these parameters:
 
 - `include_matches`: Includes messages matching `key=value`
 - `exclude_matches`: Excludes messages matching `key=value`
@@ -162,7 +162,7 @@ logs:
 
 Tags are critical for finding information in highly dynamic containerized environments, which is why the Agent can collect container tags in journald logs.
 
-This works automatically when the Agent is running from the host. If you are using the containerized version of the Datadog Agent, mount your journal path and the following file:
+This works automatically when the Agent is running from the host. If you are using the containerized version of the Khulnasoft Agent, mount your journal path and the following file:
 
 - `/etc/machine-id`: this ensures that the Agent can query the journal that is stored on the host.
 
@@ -186,7 +186,7 @@ journald does not include any events.
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][7].
+Need help? Contact [Khulnasoft support][7].
 
 [1]: https://docs.khulnasoft.com/agent/guide/agent-commands/#start-stop-and-restart-the-agent
 [2]: https://app.khulnasoft.com/account/settings/agent/latest

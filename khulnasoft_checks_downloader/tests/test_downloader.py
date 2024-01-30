@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2019-present
+# (C) Khulnasoft, Inc. 2019-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 
@@ -28,7 +28,7 @@ from tuf.api.exceptions import DownloadError, ExpiredMetadataError, RepositoryEr
 import khulnasoft_checks.downloader
 from khulnasoft_checks.downloader.cli import download, instantiate_downloader, run_downloader
 from khulnasoft_checks.downloader.download import REPOSITORY_URL_PREFIX
-from khulnasoft_checks.downloader.exceptions import NonDatadogPackage, NoSuchDatadogPackage
+from khulnasoft_checks.downloader.exceptions import NonKhulnasoftPackage, NoSuchKhulnasoftPackage
 from tests.local_http import local_http_server, local_http_server_local_dir
 
 _LOGGER = logging.getLogger("test_downloader")
@@ -40,7 +40,7 @@ _LOCAL_TESTS_DATA_TIMESTAMP = datetime(year=2022, month=7, day=25)
 _LOCAL_TESTS_DATA_TIMESTAMP_EXPIRED = datetime(year=2522, month=1, day=1)
 
 # The regex corresponding to package names in a global simple index.
-_HTML_PATTERN_RE = re.compile(r"<a href='(datadog-[\w-]+?)/'>\w+?</a><br />")
+_HTML_PATTERN_RE = re.compile(r"<a href='(khulnasoft-[\w-]+?)/'>\w+?</a><br />")
 
 # Number of integrations to test. This eliminates timeouts in CI.
 _TEST_DOWNLOADER_SAMPLE_SIZE = 10
@@ -49,16 +49,16 @@ IntegrationMetadata = namedtuple("IntegrationMetadata", ["version", "root_layout
 
 # Integrations released for the last time by a revoked developer but not shipped anymore.
 EXCLUDED_INTEGRATIONS = [
-    "datadog-docker-daemon",
-    "datadog-dd-cluster-agent",  # excluding this since actual integration is called `datadog-cluster-agent`
-    "datadog-kubernetes",  # excluding this since `kubernetes` check is Agent v5 only
-    "datadog-go-metro",  # excluding this since `go-metro` check is Agent v5 only
+    "khulnasoft-docker-daemon",
+    "khulnasoft-dd-cluster-agent",  # excluding this since actual integration is called `khulnasoft-cluster-agent`
+    "khulnasoft-kubernetes",  # excluding this since `kubernetes` check is Agent v5 only
+    "khulnasoft-go-metro",  # excluding this since `go-metro` check is Agent v5 only
 ]
 
 # Specific integration versions released for the last time by a revoked developer but not shipped anymore.
 EXCLUDED_INTEGRATION_VERSION = [
-    "simple/datadog-ibm-mq/khulnasoft_ibm_mq-4.1.0rc1-py2.py3-none-any.whl",
-    "simple/datadog-network/khulnasoft_network-9.1.1rc1-py2.py3-none-any.whl",
+    "simple/khulnasoft-ibm-mq/khulnasoft_ibm_mq-4.1.0rc1-py2.py3-none-any.whl",
+    "simple/khulnasoft-network/khulnasoft_network-9.1.1rc1-py2.py3-none-any.whl",
 ]
 
 
@@ -79,7 +79,7 @@ def modified_args(argv):
 
 
 def _do_run_downloader(argv):
-    """Run the Datadog checks downloader."""
+    """Run the Khulnasoft checks downloader."""
 
     with modified_args(argv):
         download()
@@ -88,7 +88,7 @@ def _do_run_downloader(argv):
 @pytest.mark.online
 @flaky(max_runs=3, rerun_filter=delay_rerun)
 def test_download(capfd, distribution_name, distribution_version, temporary_local_repo, disable_verification, mocker):
-    """Test datadog-checks-downloader successfully downloads and validates a wheel file."""
+    """Test khulnasoft-checks-downloader successfully downloads and validates a wheel file."""
     argv = [distribution_name, "--version", distribution_version]
 
     if disable_verification:
@@ -140,10 +140,10 @@ def test_expired_metadata_error(distribution_name, distribution_version):
 
 @pytest.mark.offline
 def test_non_khulnasoft_distribution():
-    """Test checking non-datadog distribution."""
+    """Test checking non-khulnasoft distribution."""
     argv = ["some-distribution", "--version", "1.0.0"]
 
-    with pytest.raises(NonDatadogPackage, match="some-distribution"):
+    with pytest.raises(NonKhulnasoftPackage, match="some-distribution"):
         _do_run_downloader(argv)
 
 
@@ -152,9 +152,9 @@ def test_non_khulnasoft_distribution():
     "distribution_name,distribution_version,target",
     [
         (
-            "datadog-active-directory",
+            "khulnasoft-active-directory",
             "1.10.0",
-            "simple/datadog-active-directory/khulnasoft_active_directory-1.10.0-py2.py3-none-any.whl",
+            "simple/khulnasoft-active-directory/khulnasoft_active_directory-1.10.0-py2.py3-none-any.whl",
         ),
     ],
 )
@@ -212,7 +212,7 @@ def test_local_dir_download(capfd, local_dir, distribution_name, distribution_ve
 @pytest.mark.parametrize(
     "distribution_name,distribution_version",
     [
-        ("datadog-active-directory", "1.10.0"),
+        ("khulnasoft-active-directory", "1.10.0"),
     ],
 )
 def test_local_expired_metadata_error(distribution_name, distribution_version):
@@ -235,7 +235,7 @@ def test_local_expired_metadata_error(distribution_name, distribution_version):
 def test_local_unreachable_repository():
     """Test unreachable repository raises an exception."""
     argv = [
-        "datadog-some-distribution",
+        "khulnasoft-some-distribution",
         "--version",
         "1.0.0",
         "--repository",
@@ -250,7 +250,7 @@ def test_local_unreachable_repository():
 @pytest.mark.parametrize(
     "distribution_name,distribution_version",
     [
-        ("datadog-active-directory", "1.10.0"),
+        ("khulnasoft-active-directory", "1.10.0"),
     ],
 )
 @freeze_time(_LOCAL_TESTS_DATA_TIMESTAMP)
@@ -286,12 +286,12 @@ def test_local_wheels_signer_signature_leaf_error(distribution_name, distributio
 @pytest.mark.offline
 @freeze_time(_LOCAL_TESTS_DATA_TIMESTAMP)
 def test_local_tampered_target_triggers_failure():
-    distribution_name = "datadog-active-directory"
+    distribution_name = "khulnasoft-active-directory"
     distribution_version = "1.10.0"
 
     def tamper(repo_dir):
         """Modify the target that we want to download."""
-        files_to_change = (repo_dir / 'targets' / 'simple' / 'datadog-active-directory').glob(
+        files_to_change = (repo_dir / 'targets' / 'simple' / 'khulnasoft-active-directory').glob(
             '*.khulnasoft_active_directory-1.10.0-*.whl'
         )
 
@@ -319,15 +319,15 @@ def test_local_tampered_target_triggers_failure():
 def test_local_download_non_existing_package():
     """Test local verification of a wheel file."""
 
-    with local_http_server("datadog-active-directory-1.10.0".format()) as http_url:
+    with local_http_server("khulnasoft-active-directory-1.10.0".format()) as http_url:
         argv = [
-            "datadog-a-nonexisting",
+            "khulnasoft-a-nonexisting",
             "--version",
             "1.0.0",
             "--repository",
             http_url,
         ]
-        with pytest.raises(NoSuchDatadogPackage):
+        with pytest.raises(NoSuchKhulnasoftPackage):
             _do_run_downloader(argv)
 
 
@@ -414,7 +414,7 @@ def get_all_integrations_metadata():
     This metadata is a tuple of (version, root_layout_type):
         - version: Is the latest (non-rc) version of an integration
         - root_layout_type: 'extras' or 'core' based on the type of integration."""
-    PATTERN = r"simple/(datadog-[\w-]+?)/khulnasoft_[\w-]+?-(.*)-py\d.*.whl"
+    PATTERN = r"simple/(khulnasoft-[\w-]+?)/khulnasoft_[\w-]+?-(.*)-py\d.*.whl"
     results = defaultdict(lambda: IntegrationMetadata("0.0.0", "root"))
     targets = fetch_all_targets()
     for target, metadata in targets.items():

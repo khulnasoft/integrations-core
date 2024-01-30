@@ -8,7 +8,7 @@ Collect metrics related to disk usage and IO.
 
 ### Installation
 
-The disk check is included in the [Datadog Agent][1] package, so you don't need to install anything else on your server.
+The disk check is included in the [Khulnasoft Agent][1] package, so you don't need to install anything else on your server.
 
 ### Configuration
 
@@ -52,7 +52,7 @@ See [service_checks.json][7] for a list of service checks provided by this integ
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][8].
+Need help? Contact [Khulnasoft support][8].
 
 
 [1]: https://app.khulnasoft.com/account/settings/agent/latest

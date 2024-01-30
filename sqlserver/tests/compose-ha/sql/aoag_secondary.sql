@@ -10,12 +10,12 @@ CREATE USER fred FOR LOGIN fred;
 GRANT CONNECT ANY DATABASE to fred;
 GO
 
-CREATE LOGIN datadog WITH PASSWORD = 'Password12!';
-CREATE USER datadog FOR LOGIN datadog;
-GRANT SELECT on sys.dm_os_performance_counters to datadog;
-GRANT VIEW SERVER STATE to datadog;
-GRANT CONNECT ANY DATABASE to datadog;
-GRANT VIEW ANY DEFINITION to datadog;
+CREATE LOGIN khulnasoft WITH PASSWORD = 'Password12!';
+CREATE USER khulnasoft FOR LOGIN khulnasoft;
+GRANT SELECT on sys.dm_os_performance_counters to khulnasoft;
+GRANT VIEW SERVER STATE to khulnasoft;
+GRANT CONNECT ANY DATABASE to khulnasoft;
+GRANT VIEW ANY DEFINITION to khulnasoft;
 
 --create login for aoag
 -- this password could also be originate from an environemnt variable passed in to this script through SQLCMD

@@ -4,7 +4,7 @@
 
 ## Overview
 
-Capture HAProxy activity in Datadog to:
+Capture HAProxy activity in Khulnasoft to:
 
 - Visualize HAProxy load-balancing performance.
 - Know when a server goes down.
@@ -14,7 +14,7 @@ Capture HAProxy activity in Datadog to:
 
 This integration can collect metrics from a Prometheus endpoint (recommended) or from a socket-based integration through the stats endpoint (deprecated). Using the Prometheus endpoint requires HAProxy version 2 (enterprise version 1.9rc1) or later.
 
-When using the Prometheus endpoint, starting with version 4.0.0, this OpenMetrics-based integration has a latest mode (`use_openmetrics`: true) and a legacy mode (`use_openmetrics`: false and `use_prometheus`: true). To get all the most up-to-date features, Datadog recommends enabling the latest mode. For more information, see [Latest and Legacy Versioning For OpenMetrics-based Integrations][29].
+When using the Prometheus endpoint, starting with version 4.0.0, this OpenMetrics-based integration has a latest mode (`use_openmetrics`: true) and a legacy mode (`use_openmetrics`: false and `use_prometheus`: true). To get all the most up-to-date features, Khulnasoft recommends enabling the latest mode. For more information, see [Latest and Legacy Versioning For OpenMetrics-based Integrations][29].
 
 To use the socket-based integration, set both `use_openmetrics` and `use_prometheus` to false and follow the [corresponding instructions](#using-the-stats-endpoint) on the Configuration section.
 
@@ -24,7 +24,7 @@ Metrics marked as `[OpenMetrics V1]` or `[OpenMetrics V2]` are only available us
 
 ### Installation
 
-The HAProxy check is included in the [Datadog Agent][2] package, so you don't need to install anything else on your HAProxy server.
+The HAProxy check is included in the [Khulnasoft Agent][2] package, so you don't need to install anything else on your HAProxy server.
 
 ### Configuration
 
@@ -177,7 +177,7 @@ Edit the `haproxy.d/conf.yaml` file, in the `conf.d/` folder at the root of your
 
 By default Haproxy sends logs over UDP to port 514. The Agent can listen for these logs on this port, however, binding to a port number under 1024 requires elevated permissions. Follow the instructions below to set this up. Alternatively, you can use a different port and skip step 3.
 
-1. Collecting logs is disabled by default in the Datadog Agent, enable it in your `datadog.yaml` file:
+1. Collecting logs is disabled by default in the Khulnasoft Agent, enable it in your `khulnasoft.yaml` file:
 
    ```yaml
    logs_enabled: true
@@ -198,18 +198,18 @@ By default Haproxy sends logs over UDP to port 514. The Agent can listen for the
 3. Grant access to port 514 using the `setcap` command:
 
     ```bash
-    sudo setcap CAP_NET_BIND_SERVICE=+ep /opt/datadog-agent/bin/agent/agent
+    sudo setcap CAP_NET_BIND_SERVICE=+ep /opt/khulnasoft-agent/bin/agent/agent
     ```
 
     Verify the setup is correct by running the `getcap` command:
 
     ```bash
-    sudo getcap /opt/datadog-agent/bin/agent/agent
+    sudo getcap /opt/khulnasoft-agent/bin/agent/agent
     ```
 
     With the expected output:
     ```bash
-    /opt/datadog-agent/bin/agent/agent = cap_net_bind_service+ep
+    /opt/khulnasoft-agent/bin/agent/agent = cap_net_bind_service+ep
     ```
 
     **Note:** Re-run this `setcap` command every time you upgrade the Agent.
@@ -228,19 +228,19 @@ To configure this check for an Agent running on a container:
 Set [Autodiscovery Integrations Templates][9] as Docker labels on your application container:
 
 ```yaml
-LABEL "com.datadoghq.ad.check_names"='["haproxy"]'
-LABEL "com.datadoghq.ad.init_configs"='[{}]'
-LABEL "com.datadoghq.ad.instances"='[{"url": "https://%%host%%/admin?stats"}]'
+LABEL "com.khulnasofthq.ad.check_names"='["haproxy"]'
+LABEL "com.khulnasofthq.ad.init_configs"='[{}]'
+LABEL "com.khulnasofthq.ad.instances"='[{"url": "https://%%host%%/admin?stats"}]'
 ```
 
 ##### Log collection
 
-Collecting logs is disabled by default in the Datadog Agent. To enable it, see [Docker Log Collection][10].
+Collecting logs is disabled by default in the Khulnasoft Agent. To enable it, see [Docker Log Collection][10].
 
 Then, set [Log Integrations][11] as Docker labels:
 
 ```yaml
-LABEL "com.datadoghq.ad.logs"='[{"source":"haproxy","service":"<SERVICE_NAME>"}]'
+LABEL "com.khulnasofthq.ad.logs"='[{"source":"haproxy","service":"<SERVICE_NAME>"}]'
 ```
 
 <!-- xxz tab xxx -->
@@ -254,7 +254,7 @@ To configure this check for an Agent running on Kubernetes:
 
 Set [Autodiscovery Integrations Templates][12] as pod annotations on your application container. Aside from this, templates can also be configured with [a file, a configmap, or a key-value store][13].
 
-**Annotations v1** (for Datadog Agent v7.36 or earlier)
+**Annotations v1** (for Khulnasoft Agent v7.36 or earlier)
 
 ```yaml
 apiVersion: v1
@@ -275,7 +275,7 @@ spec:
     - name: haproxy
 ```
 
-**Annotations v2** (for Datadog Agent v7.36 or later)
+**Annotations v2** (for Khulnasoft Agent v7.36 or later)
 
 ```yaml
 apiVersion: v1
@@ -303,7 +303,7 @@ spec:
 
 _Available for Agent versions >6.0_
 
-Collecting logs is disabled by default in the Datadog Agent. To enable it, see [Kubernetes Log Collection][14].
+Collecting logs is disabled by default in the Khulnasoft Agent. To enable it, see [Kubernetes Log Collection][14].
 
 Then, set [Log Integrations][11] as pod annotations. This can also be configured with [a file, a configmap, or a key-value store][15].
 
@@ -338,9 +338,9 @@ Set [Autodiscovery Integrations Templates][9] as Docker labels on your applicati
     "name": "haproxy",
     "image": "haproxy:latest",
     "dockerLabels": {
-      "com.datadoghq.ad.check_names": "[\"haproxy\"]",
-      "com.datadoghq.ad.init_configs": "[{}]",
-      "com.datadoghq.ad.instances": "[{\"url\": \"https://%%host%%/admin?stats\"}]"
+      "com.khulnasofthq.ad.check_names": "[\"haproxy\"]",
+      "com.khulnasofthq.ad.init_configs": "[{}]",
+      "com.khulnasofthq.ad.instances": "[{\"url\": \"https://%%host%%/admin?stats\"}]"
     }
   }]
 }
@@ -350,7 +350,7 @@ Set [Autodiscovery Integrations Templates][9] as Docker labels on your applicati
 
 _Available for Agent versions 6.0 or later_
 
-Collecting logs is disabled by default in the Datadog Agent. To enable it, see [ECS Log Collection][16].
+Collecting logs is disabled by default in the Khulnasoft Agent. To enable it, see [ECS Log Collection][16].
 
 Then, set [Log Integrations][11] as Docker labels:
 
@@ -360,7 +360,7 @@ Then, set [Log Integrations][11] as Docker labels:
     "name": "haproxy",
     "image": "haproxy:latest",
     "dockerLabels": {
-      "com.datadoghq.ad.logs": "[{\"source\":\"haproxy\",\"service\":\"<SERVICE_NAME>\"}]"
+      "com.khulnasofthq.ad.logs": "[{\"source\":\"haproxy\",\"service\":\"<SERVICE_NAME>\"}]"
     }
   }]
 }
@@ -394,13 +394,13 @@ On systems with syslog, if the Agent is listening for HAProxy logs on port 514, 
 
 This is happening because, by default, syslog is listening on port 514. To resolve this error, syslog can be disabled, or HAProxy can be configured to forward logs to port 514 and another port the Agent is listening for logs on. The port the Agent listens on can be defined in the haproxy.d/conf.yaml file [here][28].
 
-Need help? Contact [Datadog support][20].
+Need help? Contact [Khulnasoft support][20].
 
 ## Further Reading
 
 - [Monitoring HAProxy performance metrics][21]
 - [How to collect HAProxy metrics][22]
-- [Monitor HAProxy with Datadog][23]
+- [Monitor HAProxy with Khulnasoft][23]
 - [HA Proxy Multi Process Configuration][24]
 
 [1]: https://raw.githubusercontent.com/KhulnaSoft/integrations-core/master/haproxy/images/haproxy-dash.png
@@ -425,11 +425,11 @@ Need help? Contact [Datadog support][20].
 [20]: https://docs.khulnasoft.com/help/
 [21]: https://www.khulnasoft.com/blog/monitoring-haproxy-performance-metrics
 [22]: https://www.khulnasoft.com/blog/how-to-collect-haproxy-metrics
-[23]: https://www.khulnasoft.com/blog/monitor-haproxy-with-datadog
+[23]: https://www.khulnasoft.com/blog/monitor-haproxy-with-khulnasoft
 [24]: https://docs.khulnasoft.com/integrations/faq/haproxy-multi-process/
 [25]: https://github.com/KhulnaSoft/integrations-core/blob/7.34.x/haproxy/khulnasoft_checks/haproxy/data/conf.yaml.example
-[26]: https://datadoghq.dev/integrations-core/base/openmetrics/
-[27]: https://docs.khulnasoft.com/agent/guide/agent-v6-python-3/?tab=helm#use-python-3-with-datadog-agent-v6
+[26]: https://khulnasofthq.dev/integrations-core/base/openmetrics/
+[27]: https://docs.khulnasoft.com/agent/guide/agent-v6-python-3/?tab=helm#use-python-3-with-khulnasoft-agent-v6
 [28]: https://github.com/KhulnaSoft/integrations-core/blob/0e34b3309cc1371095762bfcaf121b0b45a4e263/haproxy/khulnasoft_checks/haproxy/data/conf.yaml.example#L631
 [29]: https://docs.khulnasoft.com/integrations/guide/versions-for-openmetrics-based-integrations
 [30]: https://docs.khulnasoft.com/integrations/guide/prometheus-host-collection/

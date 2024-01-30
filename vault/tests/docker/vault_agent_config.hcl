@@ -5,7 +5,7 @@ auto_auth {
   method "jwt" {
     config = {
       path = "/home/jwt/claim"
-      role = "datadog"
+      role = "khulnasoft"
     }
   }
 

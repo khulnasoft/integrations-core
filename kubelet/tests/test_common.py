@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2018-present
+# (C) Khulnasoft, Inc. 2018-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 import json
@@ -27,8 +27,8 @@ def test_container_filter(monkeypatch):
     monkeypatch.setattr('khulnasoft_checks.kubelet.common.c_is_excluded', c_is_excluded)
 
     long_cid = "docker://a335589109ce5506aa69ba7481fc3e6c943abd23c5277016c92dac15d0f40479"
-    ctr_name = "datadog-agent"
-    ctr_image = "datadog/agent-dev:haissam-tagger-pod-entity"
+    ctr_name = "khulnasoft-agent"
+    ctr_image = "khulnasoft/agent-dev:haissam-tagger-pod-entity"
     namespace = "default"
 
     pods = json.loads(mock_from_file('pods.json'))
@@ -264,12 +264,12 @@ def test_get_cid_by_labels():
     pod_list_utils = PodListUtils(pods)
 
     # k8s >= 1.16
-    labels = {"container": "datadog-agent", "namespace": "default", "pod": "datadog-agent-pbqt2"}
+    labels = {"container": "khulnasoft-agent", "namespace": "default", "pod": "khulnasoft-agent-pbqt2"}
     container_id = pod_list_utils.get_cid_by_labels(labels)
     assert container_id == "containerd://51cba2ca229069039575750d44ed3a67e9b5ead651312ba7ff218dd9202fde64"
 
     # k8s < 1.16
-    labels = {"container_name": "datadog-agent", "namespace": "default", "pod_name": "datadog-agent-pbqt2"}
+    labels = {"container_name": "khulnasoft-agent", "namespace": "default", "pod_name": "khulnasoft-agent-pbqt2"}
     container_id = pod_list_utils.get_cid_by_labels(labels)
     assert container_id == "containerd://51cba2ca229069039575750d44ed3a67e9b5ead651312ba7ff218dd9202fde64"
 

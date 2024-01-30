@@ -1,6 +1,6 @@
 {
   "title": "Impala - Overview",
-  "description": "## Impala\n\nThis is a high-level overview of your Impala processes, so you can track health status, search and indexing performance, and resource utilization metrics from all your services and be better prepared to address potential issues.\n\n##### [**Datadog Impala integration docs&nbsp;↗**](https://docs.khulnasoft.com/integrations/impala/)\n\nWe also provide dedicated dashboards for each Impala service:\n\n- [**Impala daemon&nbsp;↗**](/dash/integration/Impala%20-%20Daemon%20-%20Overview)\n- [**Impala catalog&nbsp;↗**](/dash/integration/Impala%20-%20Catalog%20-%20Overview)\n- [**Impala statestore&nbsp;↗**](/dash/integration/Impala%20-%20Statestore%20-%20Overview)\n\nClone this template dashboard to make changes and add your own graph widgets.",
+  "description": "## Impala\n\nThis is a high-level overview of your Impala processes, so you can track health status, search and indexing performance, and resource utilization metrics from all your services and be better prepared to address potential issues.\n\n##### [**Khulnasoft Impala integration docs&nbsp;↗**](https://docs.khulnasoft.com/integrations/impala/)\n\nWe also provide dedicated dashboards for each Impala service:\n\n- [**Impala daemon&nbsp;↗**](/dash/integration/Impala%20-%20Daemon%20-%20Overview)\n- [**Impala catalog&nbsp;↗**](/dash/integration/Impala%20-%20Catalog%20-%20Overview)\n- [**Impala statestore&nbsp;↗**](/dash/integration/Impala%20-%20Statestore%20-%20Overview)\n\nClone this template dashboard to make changes and add your own graph widgets.",
   "widgets": [
     {
       "id": 1171210667439246,
@@ -16,7 +16,7 @@
             "id": 7840582060409836,
             "definition": {
               "type": "note",
-              "content": "This is a high-level overview of your Impala processes, so you can track health status, search and indexing performance, and resource utilization metrics from all your services and be better prepared to address potential issues.\n\n##### [**Datadog Impala integration docs&nbsp;↗**](https://docs.khulnasoft.com/integrations/impala/)\n\nWe also provide dedicated dashboards for each Impala service:\n\n- [**Impala daemon&nbsp;↗**](/dash/integration/Impala%20-%20Daemon%20-%20Overview)\n- [**Impala catalog&nbsp;↗**](/dash/integration/Impala%20-%20Catalog%20-%20Overview)\n- [**Impala statestore&nbsp;↗**](/dash/integration/Impala%20-%20Statestore%20-%20Overview)",
+              "content": "This is a high-level overview of your Impala processes, so you can track health status, search and indexing performance, and resource utilization metrics from all your services and be better prepared to address potential issues.\n\n##### [**Khulnasoft Impala integration docs&nbsp;↗**](https://docs.khulnasoft.com/integrations/impala/)\n\nWe also provide dedicated dashboards for each Impala service:\n\n- [**Impala daemon&nbsp;↗**](/dash/integration/Impala%20-%20Daemon%20-%20Overview)\n- [**Impala catalog&nbsp;↗**](/dash/integration/Impala%20-%20Catalog%20-%20Overview)\n- [**Impala statestore&nbsp;↗**](/dash/integration/Impala%20-%20Statestore%20-%20Overview)",
               "background_color": "transparent",
               "font_size": "12",
               "text_align": "left",

@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2022-present
+# (C) Khulnasoft, Inc. 2022-present
 # All rights reserved
 # Licensed under Simplified BSD License (see LICENSE)
 import os
@@ -50,11 +50,11 @@ class LinuxNetwork(Network):
                 ss_env = {"PROC_ROOT": net_proc_base_location}
 
                 # By providing the environment variables in ss_env, the PATH will be overridden. In CentOS,
-                # datadog-agent PATH is "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin", while sh PATH
+                # khulnasoft-agent PATH is "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin", while sh PATH
                 # will be '/usr/local/bin:/usr/bin'. In CentOS, ss is located in /sbin and /usr/sbin, not
                 # in the sh PATH, which will result in network metric collection failure.
                 #
-                # The line below will set sh PATH explicitly as the datadog-agent PATH to fix that issue.
+                # The line below will set sh PATH explicitly as the khulnasoft-agent PATH to fix that issue.
                 if "PATH" in os.environ:
                     ss_env["PATH"] = os.environ["PATH"]
 

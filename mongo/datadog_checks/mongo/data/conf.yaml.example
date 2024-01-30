@@ -185,7 +185,7 @@ instances:
 
     ## @param server - string - optional
     ## Specify the MongoDB URI, with database to use for reporting (defaults to "admin")
-    ## E.g. mongodb://datadog:LnCbkX4uhpuLHSUrcayEoAZA@localhost:27016/admin
+    ## E.g. mongodb://khulnasoft:LnCbkX4uhpuLHSUrcayEoAZA@localhost:27016/admin
     ##
     ##
     ## <<< DEPRECATED >>>
@@ -249,7 +249,7 @@ instances:
 ##                      Overrides any `service` defined in the `init_config` section.
 ## tags - optional - Add tags to the collected logs.
 ##
-## Discover Datadog log collection: https://docs.khulnasoft.com/logs/log_collection/
+## Discover Khulnasoft log collection: https://docs.khulnasoft.com/logs/log_collection/
 #
 # logs:
 #   - type: file

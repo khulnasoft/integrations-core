@@ -38,14 +38,14 @@ Snmp Cisco does not include any events.
 
 Additional helpful documentation, links, and articles:
 
-* [Monitor SNMP with Datadog][4]
+* [Monitor SNMP with Khulnasoft][4]
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][5].
+Need help? Contact [Khulnasoft support][5].
 
 [1]: https://app.khulnasoft.com/account/settings#integrations/meraki
 [2]: https://app.khulnasoft.com/account/settings#integrations/snmp
 [3]: https://docs.khulnasoft.com/network_performance_monitoring/devices/setup
-[4]: https://www.khulnasoft.com/blog/monitor-snmp-with-datadog/
+[4]: https://www.khulnasoft.com/blog/monitor-snmp-with-khulnasoft/
 [5]: https://docs.khulnasoft.com/help/

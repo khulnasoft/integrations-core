@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2020-present
+# (C) Khulnasoft, Inc. 2020-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 import logging
@@ -51,8 +51,8 @@ def test_build_resource_filters():
         assert 'A resource filter requires at least a pattern and a resource_type' in str(e)
     # Configuration error: wrong resource_type
     with pytest.raises(ConfigurationError) as e:
-        Config.build_resource_filters([{'pattern': 'abc', 'resource_type': 'datadog'}])
-        assert 'Unknown resource_type: datadog' in str(e)
+        Config.build_resource_filters([{'pattern': 'abc', 'resource_type': 'khulnasoft'}])
+        assert 'Unknown resource_type: khulnasoft' in str(e)
 
 
 def test_get_resources_to_monitor():

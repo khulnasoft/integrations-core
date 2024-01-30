@@ -20,7 +20,7 @@ pipeline:
       grok:
         matchRules: |
           # Nvidia Triton server logs by default don't contain the year.
-          # Datadog's grok parser can infer the year by using the time of parse.
+          # Khulnasoft's grok parser can infer the year by using the time of parse.
           # Except for a few edge-cases around New Year's Eve this is good enough.
           tritonserver_default %{_triton_level}%{date("MMdd HH:mm:ss.SSSSSS"):timestamp} %{_triton_payload}
           tritonserver_iso8601 %{date("yyyy-MM-ddHH:mm:ss"):timestamp} %{_triton_level} %{_triton_payload}

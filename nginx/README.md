@@ -4,7 +4,7 @@
 
 ## Overview
 
-The Datadog Agent can collect many metrics from NGINX instances, including (but not limited to)::
+The Khulnasoft Agent can collect many metrics from NGINX instances, including (but not limited to)::
 
 - Total requests
 - Connections, such as accepted, handled, and active
@@ -76,7 +76,7 @@ server {
 
 **NGINX Plus**
 
-NGINX Plus users can also use `stub_status`, but since that module provides fewer metrics, Datadog recommends using `status`.
+NGINX Plus users can also use `stub_status`, but since that module provides fewer metrics, Khulnasoft recommends using `status`.
 
 For NGINX Plus releases 15+, the `status` module is deprecated. Use the [http_api_module][5] instead. For example, enable the `/api` endpoint in your main NGINX configuration file (`/etc/nginx/conf.d/default.conf`):
 
@@ -179,13 +179,13 @@ Follow the instructions below to configure this check for an Agent running on a 
 
 2. Optional - If you are using the NGINX `vhost_traffic_status module`, set the parameter `use_vts` to `true` in your `nginx.d/conf.yaml` configuration file.
 
-3. [Restart the Agent][7] to start sending NGINX metrics to Datadog.
+3. [Restart the Agent][7] to start sending NGINX metrics to Khulnasoft.
 
 ##### Log collection
 
 _Available for Agent versions >6.0_
 
-1. Collecting logs is disabled by default in the Datadog Agent, enable it in your `datadog.yaml` file:
+1. Collecting logs is disabled by default in the Khulnasoft Agent, enable it in your `khulnasoft.yaml` file:
 
    ```yaml
    logs_enabled: true
@@ -235,9 +235,9 @@ To configure this check for an Agent running on a container:
 Set [Autodiscovery Integration Templates][8] as Docker labels on your application container:
 
 ```yaml
-LABEL "com.datadoghq.ad.check_names"='["nginx"]'
-LABEL "com.datadoghq.ad.init_configs"='[{}]'
-LABEL "com.datadoghq.ad.instances"='[{"nginx_status_url": "http://%%host%%:81/nginx_status/"}]'
+LABEL "com.khulnasofthq.ad.check_names"='["nginx"]'
+LABEL "com.khulnasofthq.ad.init_configs"='[{}]'
+LABEL "com.khulnasofthq.ad.instances"='[{"nginx_status_url": "http://%%host%%:81/nginx_status/"}]'
 ```
 
 **Note**: This instance configuration works only with NGINX Open Source. If you are using NGINX Plus, inline the corresponding instance configuration.
@@ -245,12 +245,12 @@ LABEL "com.datadoghq.ad.instances"='[{"nginx_status_url": "http://%%host%%:81/ng
 #### Log collection
 
 
-Collecting logs is disabled by default in the Datadog Agent. To enable it, see [Docker Log Collection][9].
+Collecting logs is disabled by default in the Khulnasoft Agent. To enable it, see [Docker Log Collection][9].
 
 Then, set [Log Integrations][10] as Docker labels:
 
 ```yaml
-LABEL "com.datadoghq.ad.logs"='[{"source":"nginx","service":"nginx"}]'
+LABEL "com.khulnasofthq.ad.logs"='[{"source":"nginx","service":"nginx"}]'
 ```
 
 <!-- xxz tab xxx -->
@@ -264,7 +264,7 @@ To configure this check for an Agent running on Kubernetes:
 
 Set [Autodiscovery Integrations Templates][11] as pod annotations on your application container. Alternatively, you can configure templates with a [file, configmap, or key-value store][12].
 
-**Annotations v1** (for Datadog Agent < v7.36)
+**Annotations v1** (for Khulnasoft Agent < v7.36)
 
 ```yaml
 apiVersion: v1
@@ -284,7 +284,7 @@ metadata:
     name: nginx
 ```
 
-**Annotations v2** (for Datadog Agent v7.36+)
+**Annotations v2** (for Khulnasoft Agent v7.36+)
 
 ```yaml
 apiVersion: v1
@@ -312,7 +312,7 @@ metadata:
 #### Log collection
 
 
-Collecting logs is disabled by default in the Datadog Agent. To enable it, see [Kubernetes Log Collection][13].
+Collecting logs is disabled by default in the Khulnasoft Agent. To enable it, see [Kubernetes Log Collection][13].
 
 Then, set [Log Integrations][10] as pod annotations. Alternatively, you can configure this with a [file, configmap, or key-value store][14].
 
@@ -346,9 +346,9 @@ Set [Autodiscovery Integrations Templates][8] as Docker labels on your applicati
     "name": "nginx",
     "image": "nginx:latest",
     "dockerLabels": {
-      "com.datadoghq.ad.check_names": "[\"nginx\"]",
-      "com.datadoghq.ad.init_configs": "[{}]",
-      "com.datadoghq.ad.instances": "[{\"nginx_status_url\":\"http://%%host%%:81/nginx_status/\"}]"
+      "com.khulnasofthq.ad.check_names": "[\"nginx\"]",
+      "com.khulnasofthq.ad.init_configs": "[{}]",
+      "com.khulnasofthq.ad.instances": "[{\"nginx_status_url\":\"http://%%host%%:81/nginx_status/\"}]"
     }
   }]
 }
@@ -359,7 +359,7 @@ Set [Autodiscovery Integrations Templates][8] as Docker labels on your applicati
 ##### Log collection
 
 
-Collecting logs is disabled by default in the Datadog Agent. To enable it, see [ECS Log Collection][15].
+Collecting logs is disabled by default in the Khulnasoft Agent. To enable it, see [ECS Log Collection][15].
 
 Then, set [Log Integrations][10] as Docker labels:
 
@@ -369,7 +369,7 @@ Then, set [Log Integrations][10] as Docker labels:
     "name": "nginx",
     "image": "nginx:latest",
     "dockerLabels": {
-      "com.datadoghq.ad.logs": "[{\"source\":\"nginx\",\"service\":\"nginx\"}]"
+      "com.khulnasofthq.ad.logs": "[{\"source\":\"nginx\",\"service\":\"nginx\"}]"
     }
   }]
 }
@@ -424,7 +424,7 @@ See [service_checks.json][18] for a list of service checks provided by this inte
 
 - [Why do my logs not have the expected timestamp?][19]
 
-Need help? Contact [Datadog support][20].
+Need help? Contact [Khulnasoft support][20].
 
 ## Further Reading
 
@@ -432,7 +432,7 @@ Additional helpful documentation, links, and articles:
 
 - [How to monitor NGINX][21]
 - [How to collect NGINX metrics][22]
-- [How to monitor NGINX with Datadog][23]
+- [How to monitor NGINX with Khulnasoft][23]
 
 [1]: https://raw.githubusercontent.com/KhulnaSoft/integrations-core/master/nginx/images/nginx_dashboard.png
 [2]: https://nginx.org/en/docs/http/ngx_http_stub_status_module.html
@@ -456,4 +456,4 @@ Additional helpful documentation, links, and articles:
 [20]: https://docs.khulnasoft.com/help/
 [21]: https://www.khulnasoft.com/blog/how-to-monitor-nginx
 [22]: https://www.khulnasoft.com/blog/how-to-collect-nginx-metrics/index.html
-[23]: https://www.khulnasoft.com/blog/how-to-monitor-nginx-with-datadog/index.html
+[23]: https://www.khulnasoft.com/blog/how-to-monitor-nginx-with-khulnasoft/index.html

@@ -1,6 +1,6 @@
 {
     "title": "Memcached - Metrics",
-    "description": "This dashboard shows work metrics to help you understand the memory needs of your Memcached cluster, and resource metrics to help explain how your infrastructure affects its performance. For more information, see:\n\n- [Datadog's Memcached integration documentation](https://docs.khulnasoft.com/integrations/mcache/)\n\n- [Memcached monitoring guide](https://www.khulnasoft.com/blog/speed-up-web-applications-memcached/)\n\nClone this template dashboard to make changes and add your own graph widgets.",
+    "description": "This dashboard shows work metrics to help you understand the memory needs of your Memcached cluster, and resource metrics to help explain how your infrastructure affects its performance. For more information, see:\n\n- [Khulnasoft's Memcached integration documentation](https://docs.khulnasoft.com/integrations/mcache/)\n\n- [Memcached monitoring guide](https://www.khulnasoft.com/blog/speed-up-web-applications-memcached/)\n\nClone this template dashboard to make changes and add your own graph widgets.",
     "layout_type": "ordered",
     "template_variables": [
         {

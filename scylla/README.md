@@ -2,7 +2,7 @@
 
 ## Overview
 
-This Datadog-[Scylla][1] integration collects a majority of the exposed metrics by default, with the ability to customize additional groups based on specific user needs.
+This Khulnasoft-[Scylla][1] integration collects a majority of the exposed metrics by default, with the ability to customize additional groups based on specific user needs.
 
 Scylla is an open-source NoSQL data store that can act as "a drop-in Apache Cassandra alternative." It has rearchitected the Cassandra model tuned for modern hardware, reducing the size of required clusters while improving theoretical throughput and performance.
 
@@ -12,7 +12,7 @@ Follow the instructions below to install and configure this check for an Agent r
 
 ### Installation
 
-The Scylla check is included in the [Datadog Agent][2] package. No additional installation is needed on your server.
+The Scylla check is included in the [Khulnasoft Agent][2] package. No additional installation is needed on your server.
 
 ### Configuration
 
@@ -24,7 +24,7 @@ The Scylla check is included in the [Datadog Agent][2] package. No additional in
 
 Scylla has different modes of outputting logs depending on the environment it's running in. See the [Scylla documentation][5] for more specifics on how the application generates logs.
 
-1. Collecting logs is disabled by default in the Datadog Agent, enable it in your `datadog.yaml` file:
+1. Collecting logs is disabled by default in the Khulnasoft Agent, enable it in your `khulnasoft.yaml` file:
 
       ```yaml
        logs_enabled: true
@@ -69,7 +69,7 @@ See [service_checks.json][9] for a list of service checks provided by this integ
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][10].
+Need help? Contact [Khulnasoft support][10].
 
 
 [1]: https://scylladb.com

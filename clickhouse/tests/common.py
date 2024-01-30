@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2019-present
+# (C) Khulnasoft, Inc. 2019-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 import os
@@ -16,7 +16,7 @@ CLICKHOUSE_VERSION = os.environ['CLICKHOUSE_VERSION']
 CONFIG = {
     'server': HOST,
     'port': TCP_START_PORT,
-    'username': 'datadog',
-    'password': 'Datadog123!',
+    'username': 'khulnasoft',
+    'password': 'Khulnasoft123!',
     'tags': ['foo:bar'],
 }

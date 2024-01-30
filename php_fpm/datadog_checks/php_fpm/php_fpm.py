@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2018-present
+# (C) Khulnasoft, Inc. 2018-present
 # All rights reserved
 # Licensed under Simplified BSD License (see LICENSE)
 import json
@@ -220,7 +220,7 @@ class PHPFPMCheck(AgentCheck):
             'SERVER_NAME': hostname,
             'SERVER_PORT': port,
             'SERVER_PROTOCOL': 'HTTP/1.1',
-            'SERVER_SOFTWARE': 'datadog-php-fpm',
+            'SERVER_SOFTWARE': 'khulnasoft-php-fpm',
             'wsgi.errors': StringIO(),
             'wsgi.input': StringIO(),
         }

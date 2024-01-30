@@ -6,19 +6,19 @@ requires = [
 build-backend = "hatchling.build"
 
 [project]
-name = "datadog-weaviate"
+name = "khulnasoft-weaviate"
 description = "The Weaviate check"
 readme = "README.md"
 license = {text = "BSD-3-Clause"}
 requires-python = ">=3.9"
 keywords = [
-    "datadog",
-    "datadog agent",
-    "datadog check",
+    "khulnasoft",
+    "khulnasoft agent",
+    "khulnasoft check",
     "weaviate",
 ]
 authors = [
-    { name = "Datadog", email = "packages@khulnasoft.com" },
+    { name = "Khulnasoft", email = "packages@khulnasoft.com" },
 ]
 classifiers = [
     "Development Status :: 5 - Production/Stable",
@@ -30,7 +30,7 @@ classifiers = [
     "Topic :: System :: Monitoring",
 ]
 dependencies = [
-    "datadog-checks-base>=32.6.0",
+    "khulnasoft-checks-base>=32.6.0",
 ]
 dynamic = [
     "version",

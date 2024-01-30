@@ -11,12 +11,12 @@ The `containerd` is dedicated to `containerd` runtime and publishes metrics in t
 
 ### Installation
 
-Container is a core Datadog Agent check and is automatically activated if any supported container runtime is detected.
+Container is a core Khulnasoft Agent check and is automatically activated if any supported container runtime is detected.
 Configuring access to supported container runtimes (Docker, containerd) may be required depending on your environment.
 
 #### Installation on containers
 
-The `container` check requires some folders to be mounted to allow for automatic activation. This is handled by the official Helm Chart, the Datadog Operator, and as documented set ups for Kubernetes, Docker, ECS, and ECS Fargate.
+The `container` check requires some folders to be mounted to allow for automatic activation. This is handled by the official Helm Chart, the Khulnasoft Operator, and as documented set ups for Kubernetes, Docker, ECS, and ECS Fargate.
 
 ### Configuration
 
@@ -41,7 +41,7 @@ See [metadata.csv][3] for a list of metrics provided by this integration.
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][1].
+Need help? Contact [Khulnasoft support][1].
 
 [1]: https://docs.khulnasoft.com/help/
 [2]: https://docs.khulnasoft.com/agent/guide/agent-commands/#start-stop-and-restart-the-agent

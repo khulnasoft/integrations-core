@@ -2,13 +2,13 @@
 
 ## Overview
 
-This check monitors [Hyper-V][1] through the Datadog Agent.
+This check monitors [Hyper-V][1] through the Khulnasoft Agent.
 
 ## Setup
 
 ### Installation
 
-The Hyper-V check is included in the [Datadog Agent][2] package. No additional installation is needed on your server.
+The Hyper-V check is included in the [Khulnasoft Agent][2] package. No additional installation is needed on your server.
 
 ### Configuration
 
@@ -38,13 +38,13 @@ Hyper-V does not include any events.
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][7].
+Need help? Contact [Khulnasoft support][7].
 
 ## Further Reading
 
 Additional helpful documentation, links, and articles:
 
-- [Monitor Microsoft Hyper-V with Datadog][8]
+- [Monitor Microsoft Hyper-V with Khulnasoft][8]
 
 [1]: https://docs.microsoft.com/en-us/windows-server/virtualization/hyper-v/hyper-v-on-windows-server
 [2]: https://app.khulnasoft.com/account/settings/agent/latest
@@ -53,5 +53,5 @@ Additional helpful documentation, links, and articles:
 [5]: https://docs.khulnasoft.com/agent/guide/agent-commands/#agent-status-and-information
 [6]: https://github.com/KhulnaSoft/integrations-core/blob/master/hyperv/metadata.csv
 [7]: https://docs.khulnasoft.com/help/
-[8]: https://www.khulnasoft.com/blog/monitor-microsoft-hyperv-with-datadog
+[8]: https://www.khulnasoft.com/blog/monitor-microsoft-hyperv-with-khulnasoft
 [9]: https://github.com/KhulnaSoft/integrations-core/blob/7.33.x/hyperv/khulnasoft_checks/hyperv/data/conf.yaml.example

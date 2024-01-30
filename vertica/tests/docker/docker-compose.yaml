@@ -9,13 +9,13 @@ services:
       dockerfile: ./Dockerfile_custom
       args:
         VERTICA_VERSION: ${VERTICA_VERSION}
-    image: datadog/vertica-ce-custom:${VERTICA_VERSION}
+    image: khulnasoft/vertica-ce-custom:${VERTICA_VERSION}
     environment:
       APP_DB_PASSWORD: "monitor"
       # VERTICA_MEMDEBUG=2 solves problems when running this image on M1
       # https://forum.vertica.com/discussion/242629/support-apple-silicon-m1-for-docker-vertica-ce
       VERTICA_MEMDEBUG: 2
-      VERTICA_DB_NAME: "datadog"
+      VERTICA_DB_NAME: "khulnasoft"
       TZ: "UTC"
     container_name: vertica-ce
     ports:

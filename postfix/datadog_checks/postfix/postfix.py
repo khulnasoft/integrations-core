@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2013-present
+# (C) Khulnasoft, Inc. 2013-present
 # (C) Josiah C Webb <rootkix@gmail.com> 2013
 # All rights reserved
 # Licensed under Simplified BSD License (see LICENSE)
@@ -131,7 +131,7 @@ class PostfixCheck(AgentCheck):
 
         # postque -p sample output
         '''
-        root@postfix:/opt/datadog-agent/agent/checks.d# postqueue -p
+        root@postfix:/opt/khulnasoft-agent/agent/checks.d# postqueue -p
         ----Queue ID----- --Size-- ---Arrival Time---- --Sender/Recipient------
         3xWyLP6Nmfz23fk        367 Tue Aug 15 16:17:33 root@postfix.devnull.home
                                                             (deferred transport)

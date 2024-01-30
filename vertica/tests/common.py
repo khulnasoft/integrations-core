@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2019-present
+# (C) Khulnasoft, Inc. 2019-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 import os
@@ -9,7 +9,7 @@ from khulnasoft_checks.vertica.utils import parse_major_version
 HERE = get_here()
 HOST = get_docker_hostname()
 PORT = 5433
-ID = 'datadog'
+ID = 'khulnasoft'
 
 CONFIG = {
     'db': ID,

@@ -5,14 +5,14 @@ requires = [
 build-backend = "hatchling.build"
 
 [project]
-name = "datadog-{project_name}"
+name = "khulnasoft-{project_name}"
 description = "The {integration_name} check"
 readme = "README.md"
 license = "BSD-3-Clause"
 keywords = [
-    "datadog",
-    "datadog agent",
-    "datadog check",
+    "khulnasoft",
+    "khulnasoft agent",
+    "khulnasoft check",
     "{check_name}",
 ]
 authors = [
@@ -28,7 +28,7 @@ classifiers = [
     "Topic :: System :: Monitoring",
 ]
 dependencies = [
-    "datadog-checks-base>=4.2.0",
+    "khulnasoft-checks-base>=4.2.0",
 ]
 dynamic = [
     "version",

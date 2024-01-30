@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# (C) Datadog, Inc. 2016-present
+# (C) Khulnasoft, Inc. 2016-present
 # All rights reserved
 # Licensed under Simplified BSD License (see LICENSE)
 import copy
@@ -51,7 +51,7 @@ OPENMETRICS_CHECK_INSTANCE = {
 @pytest.fixture
 def mocked_prometheus_check():
     check = OpenMetricsBaseCheck('prometheus_check', {}, {})
-    check.log = logging.getLogger('datadog-prometheus.test')
+    check.log = logging.getLogger('khulnasoft-prometheus.test')
     check.log.debug = mock.MagicMock()
     return check
 
@@ -61,7 +61,7 @@ def mocked_openmetrics_check_factory():
     def factory(instance):
         check = OpenMetricsBaseCheck('openmetrics_check', {}, [instance])
         check.check_id = 'test:123'
-        check.log = logging.getLogger('datadog-openmetrics.test')
+        check.log = logging.getLogger('khulnasoft-openmetrics.test')
         check.log.debug = mock.MagicMock()
         return check
 
@@ -2604,7 +2604,7 @@ class FilterOpenMetricsCheck(OpenMetricsBaseCheck):
 @pytest.fixture
 def mocked_filter_openmetrics_check():
     check = FilterOpenMetricsCheck('prometheus_check', {}, {})
-    check.log = logging.getLogger('datadog-prometheus.test')
+    check.log = logging.getLogger('khulnasoft-prometheus.test')
     check.log.debug = mock.MagicMock()
     return check
 

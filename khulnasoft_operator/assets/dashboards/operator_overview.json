@@ -1,6 +1,6 @@
 {
-    "title": "Datadog Operator",
-    "description": "The Datadog Operator is an open source Kubernetes Operator that enables you to deploy and configure the Datadog Agent in a Kubernetes environment.\n\nThe Datadog Operator dashboard gives you visibility into health and performance metrics of the Operator and overview of the resources it manages.\n\nFurther reading around the Datadog Operator and Kubernetes Controllers\n* [Datadog Operator](https://docs.khulnasoft.com/containers/khulnasoft_operator/)\n* [Kubernetes Metrics Reference](https://kubernetes.io/docs/reference/instrumentation/metrics/)\n* [Kubernetes Operator Pattern](https://kubernetes.io/docs/concepts/extend-kubernetes/operator/)",
+    "title": "Khulnasoft Operator",
+    "description": "The Khulnasoft Operator is an open source Kubernetes Operator that enables you to deploy and configure the Khulnasoft Agent in a Kubernetes environment.\n\nThe Khulnasoft Operator dashboard gives you visibility into health and performance metrics of the Operator and overview of the resources it manages.\n\nFurther reading around the Khulnasoft Operator and Kubernetes Controllers\n* [Khulnasoft Operator](https://docs.khulnasoft.com/containers/khulnasoft_operator/)\n* [Kubernetes Metrics Reference](https://kubernetes.io/docs/reference/instrumentation/metrics/)\n* [Kubernetes Operator Pattern](https://kubernetes.io/docs/concepts/extend-kubernetes/operator/)",
     "widgets": [
         {
             "id": 7545770048236095,
@@ -15,7 +15,7 @@
                         "id": 4981651194825710,
                         "definition": {
                             "type": "note",
-                            "content": "### The Datadog Operator is an open source Kubernetes Operator that enables you to deploy and configure the Datadog Agent in a Kubernetes environment.\n\nThe Datadog Operator dashboard gives you visibility into health and performance metrics of the Operator and overview of the resources it manages.\n\n***Some of the graphs assume `datadog` as the [DatadogAgent](https://docs.khulnasoft.com/containers/kubernetes/installation/?tab=operator#deploy-an-agent-with-the-operator) resource name. They will appear empty if that's not the case.***\n\nFurther reading around the Datadog Operator and Kubernetes Controllers\n* [Datadog Operator](https://docs.khulnasoft.com/containers/khulnasoft_operator/)\n* [Kubernetes Metrics Reference](https://kubernetes.io/docs/reference/instrumentation/metrics/)\n* [Kubernetes Operator Pattern](https://kubernetes.io/docs/concepts/extend-kubernetes/operator/)",
+                            "content": "### The Khulnasoft Operator is an open source Kubernetes Operator that enables you to deploy and configure the Khulnasoft Agent in a Kubernetes environment.\n\nThe Khulnasoft Operator dashboard gives you visibility into health and performance metrics of the Operator and overview of the resources it manages.\n\n***Some of the graphs assume `khulnasoft` as the [KhulnasoftAgent](https://docs.khulnasoft.com/containers/kubernetes/installation/?tab=operator#deploy-an-agent-with-the-operator) resource name. They will appear empty if that's not the case.***\n\nFurther reading around the Khulnasoft Operator and Kubernetes Controllers\n* [Khulnasoft Operator](https://docs.khulnasoft.com/containers/khulnasoft_operator/)\n* [Kubernetes Metrics Reference](https://kubernetes.io/docs/reference/instrumentation/metrics/)\n* [Kubernetes Operator Pattern](https://kubernetes.io/docs/concepts/extend-kubernetes/operator/)",
                             "background_color": "white",
                             "font_size": "14",
                             "text_align": "left",
@@ -77,13 +77,13 @@
                                     "response_format": "scalar",
                                     "queries": [
                                         {
-                                            "query": "sum:datadog.operator.controller_runtime_reconcile_total{$scope,$cluster,kube_app_name:datadog-operator}.as_count()",
+                                            "query": "sum:khulnasoft.operator.controller_runtime_reconcile_total{$scope,$cluster,kube_app_name:khulnasoft-operator}.as_count()",
                                             "data_source": "metrics",
                                             "name": "query2",
                                             "aggregator": "avg"
                                         },
                                         {
-                                            "query": "avg:datadog.operator.controller_runtime_reconcile_errors_total{$scope,$cluster,kube_app_name:datadog-operator}.as_count()",
+                                            "query": "avg:khulnasoft.operator.controller_runtime_reconcile_errors_total{$scope,$cluster,kube_app_name:khulnasoft-operator}.as_count()",
                                             "data_source": "metrics",
                                             "name": "query1",
                                             "aggregator": "avg"
@@ -130,13 +130,13 @@
                                     "response_format": "scalar",
                                     "queries": [
                                         {
-                                            "query": "sum:kubernetes.liveness_probe.success.total{$scope,$cluster,kube_app_name:datadog-operator}.as_count()",
+                                            "query": "sum:kubernetes.liveness_probe.success.total{$scope,$cluster,kube_app_name:khulnasoft-operator}.as_count()",
                                             "data_source": "metrics",
                                             "name": "query1",
                                             "aggregator": "avg"
                                         },
                                         {
-                                            "query": "sum:kubernetes.liveness_probe.failure.total{$scope,$cluster,kube_app_name:datadog-operator}.as_count()",
+                                            "query": "sum:kubernetes.liveness_probe.failure.total{$scope,$cluster,kube_app_name:khulnasoft-operator}.as_count()",
                                             "data_source": "metrics",
                                             "name": "query2",
                                             "aggregator": "avg"
@@ -161,7 +161,7 @@
                             "title_size": "16",
                             "title_align": "left",
                             "type": "event_timeline",
-                            "query": "source:kubernetes pod_name:datadog-operator* kube_cluster_name:$cluster.value",
+                            "query": "source:kubernetes pod_name:khulnasoft-operator* kube_cluster_name:$cluster.value",
                             "tags_execution": "and"
                         },
                         "layout": {
@@ -182,12 +182,12 @@
                                     "response_format": "timeseries",
                                     "queries": [
                                         {
-                                            "query": "sum:datadog.operator.controller_runtime_reconcile_total{$scope,$cluster,kube_app_name:datadog-operator}.as_count()",
+                                            "query": "sum:khulnasoft.operator.controller_runtime_reconcile_total{$scope,$cluster,kube_app_name:khulnasoft-operator}.as_count()",
                                             "data_source": "metrics",
                                             "name": "query2"
                                         },
                                         {
-                                            "query": "avg:datadog.operator.controller_runtime_reconcile_errors_total{$scope,$cluster,kube_app_name:datadog-operator}.as_count()",
+                                            "query": "avg:khulnasoft.operator.controller_runtime_reconcile_errors_total{$scope,$cluster,kube_app_name:khulnasoft-operator}.as_count()",
                                             "data_source": "metrics",
                                             "name": "query1"
                                         }
@@ -226,12 +226,12 @@
                                     "response_format": "timeseries",
                                     "queries": [
                                         {
-                                            "query": "sum:kubernetes.liveness_probe.success.total{$scope,$cluster,kube_app_name:datadog-operator}.as_count()",
+                                            "query": "sum:kubernetes.liveness_probe.success.total{$scope,$cluster,kube_app_name:khulnasoft-operator}.as_count()",
                                             "data_source": "metrics",
                                             "name": "query1"
                                         },
                                         {
-                                            "query": "sum:kubernetes.liveness_probe.failure.total{$scope,$cluster,kube_app_name:datadog-operator}.as_count()",
+                                            "query": "sum:kubernetes.liveness_probe.failure.total{$scope,$cluster,kube_app_name:khulnasoft-operator}.as_count()",
                                             "data_source": "metrics",
                                             "name": "query2"
                                         }
@@ -279,7 +279,7 @@
                                     "response_format": "scalar",
                                     "queries": [
                                         {
-                                            "query": "sum:datadog.operator.go_info{$scope,$cluster,kube_app_name:datadog-operator,kube_cluster_name:*} by {kube_cluster_name,image_tag}",
+                                            "query": "sum:khulnasoft.operator.go_info{$scope,$cluster,kube_app_name:khulnasoft-operator,kube_cluster_name:*} by {kube_cluster_name,image_tag}",
                                             "data_source": "metrics",
                                             "name": "query1",
                                             "aggregator": "last"
@@ -365,7 +365,7 @@
                                     "response_format": "scalar",
                                     "queries": [
                                         {
-                                            "query": "sum:datadog.operator.go_info{$scope,$cluster,kube_app_name:datadog-operator,kube_deployment:*} by {kube_deployment,kube_cluster_name,kube_namespace}",
+                                            "query": "sum:khulnasoft.operator.go_info{$scope,$cluster,kube_app_name:khulnasoft-operator,kube_deployment:*} by {kube_deployment,kube_cluster_name,kube_namespace}",
                                             "data_source": "metrics",
                                             "name": "query1",
                                             "aggregator": "avg"
@@ -400,7 +400,7 @@
                                     "response_format": "scalar",
                                     "queries": [
                                         {
-                                            "query": "avg:kubernetes.memory.rss{$scope,$cluster,kube_app_managed_by:datadog-operator,kube_app_component:agent} by {kube_cluster_name,kube_namespace}",
+                                            "query": "avg:kubernetes.memory.rss{$scope,$cluster,kube_app_managed_by:khulnasoft-operator,kube_app_component:agent} by {kube_cluster_name,kube_namespace}",
                                             "data_source": "metrics",
                                             "name": "query1",
                                             "aggregator": "last"
@@ -435,7 +435,7 @@
                                     "response_format": "scalar",
                                     "queries": [
                                         {
-                                            "query": "sum:kubernetes.memory.rss{$scope,$cluster,kube_app_managed_by:datadog-operator,kube_app_component:cluster-agent} by {kube_cluster_name,kube_namespace}",
+                                            "query": "sum:kubernetes.memory.rss{$scope,$cluster,kube_app_managed_by:khulnasoft-operator,kube_app_component:cluster-agent} by {kube_cluster_name,kube_namespace}",
                                             "data_source": "metrics",
                                             "name": "query1",
                                             "aggregator": "last"
@@ -470,7 +470,7 @@
                                     "response_format": "scalar",
                                     "queries": [
                                         {
-                                            "query": "sum:kubernetes.memory.rss{$scope,$cluster,kube_app_managed_by:datadog-operator, kube_app_component:cluster-checks-runner} by {kube_cluster_name,kube_namespace}",
+                                            "query": "sum:kubernetes.memory.rss{$scope,$cluster,kube_app_managed_by:khulnasoft-operator, kube_app_component:cluster-checks-runner} by {kube_cluster_name,kube_namespace}",
                                             "data_source": "metrics",
                                             "name": "query1",
                                             "aggregator": "last"
@@ -540,7 +540,7 @@
                                     "response_format": "scalar",
                                     "queries": [
                                         {
-                                            "query": "sum:datadog.operator.go_info{$scope,$cluster,kube_app_name:datadog-operator}",
+                                            "query": "sum:khulnasoft.operator.go_info{$scope,$cluster,kube_app_name:khulnasoft-operator}",
                                             "data_source": "metrics",
                                             "name": "query1",
                                             "aggregator": "last"
@@ -575,7 +575,7 @@
                                     "response_format": "scalar",
                                     "queries": [
                                         {
-                                            "query": "avg:kubernetes.memory.rss{$scope,$cluster,kube_app_managed_by:datadog-operator,kube_app_component:agent} by {pod_name}",
+                                            "query": "avg:kubernetes.memory.rss{$scope,$cluster,kube_app_managed_by:khulnasoft-operator,kube_app_component:agent} by {pod_name}",
                                             "data_source": "metrics",
                                             "name": "query1",
                                             "aggregator": "last"
@@ -615,7 +615,7 @@
                                     "response_format": "scalar",
                                     "queries": [
                                         {
-                                            "query": "avg:kubernetes.memory.rss{$scope,$cluster,kube_app_managed_by:datadog-operator,kube_app_component:cluster-agent} by {pod_name}",
+                                            "query": "avg:kubernetes.memory.rss{$scope,$cluster,kube_app_managed_by:khulnasoft-operator,kube_app_component:cluster-agent} by {pod_name}",
                                             "data_source": "metrics",
                                             "name": "query1",
                                             "aggregator": "last"
@@ -650,7 +650,7 @@
                                     "response_format": "scalar",
                                     "queries": [
                                         {
-                                            "query": "avg:kubernetes.memory.rss{$scope,$cluster,kube_app_managed_by:datadog-operator,kube_app_component:cluster-checks-runner} by {pod_name}",
+                                            "query": "avg:kubernetes.memory.rss{$scope,$cluster,kube_app_managed_by:khulnasoft-operator,kube_app_component:cluster-checks-runner} by {pod_name}",
                                             "data_source": "metrics",
                                             "name": "query1",
                                             "aggregator": "last"
@@ -708,7 +708,7 @@
                                     "response_format": "scalar",
                                     "queries": [
                                         {
-                                            "query": "sum:kubernetes.containers.state.waiting{$scope,$cluster,kube_app_name:datadog-operator,reason:crashloopbackoff} by {kube_cluster_name,image_tag}",
+                                            "query": "sum:kubernetes.containers.state.waiting{$scope,$cluster,kube_app_name:khulnasoft-operator,reason:crashloopbackoff} by {kube_cluster_name,image_tag}",
                                             "data_source": "metrics",
                                             "name": "query1",
                                             "aggregator": "last"
@@ -733,7 +733,7 @@
                             "requests": [
                                 {
                                     "query": {
-                                        "query_string": "kube_app_name:datadog-operator status:error $scope $cluster",
+                                        "query_string": "kube_app_name:khulnasoft-operator status:error $scope $cluster",
                                         "data_source": "logs_stream",
                                         "indexes": []
                                     },
@@ -794,7 +794,7 @@
                                     "response_format": "scalar",
                                     "queries": [
                                         {
-                                            "query": "sum:datadog.operator.controller_runtime_reconcile_errors_total{$scope,$cluster,kube_app_name:datadog-operator,kube_cluster_name:*} by {kube_cluster_name,image_tag}.as_count()",
+                                            "query": "sum:khulnasoft.operator.controller_runtime_reconcile_errors_total{$scope,$cluster,kube_app_name:khulnasoft-operator,kube_cluster_name:*} by {kube_cluster_name,image_tag}.as_count()",
                                             "data_source": "metrics",
                                             "name": "query1",
                                             "aggregator": "sum"
@@ -833,7 +833,7 @@
                                             "data_source": "logs",
                                             "name": "query2",
                                             "search": {
-                                                "query": "kube_app_name:datadog-operator status:error $scope $cluster"
+                                                "query": "kube_app_name:khulnasoft-operator status:error $scope $cluster"
                                             },
                                             "indexes": [
                                                 "*"
@@ -906,7 +906,7 @@
                                     "response_format": "timeseries",
                                     "queries": [
                                         {
-                                            "query": "sum:datadog.operator.controller_runtime_reconcile_total{$scope,$cluster,kube_app_name:datadog-operator} by {kube_cluster_name,result}.as_count()",
+                                            "query": "sum:khulnasoft.operator.controller_runtime_reconcile_total{$scope,$cluster,kube_app_name:khulnasoft-operator} by {kube_cluster_name,result}.as_count()",
                                             "data_source": "metrics",
                                             "name": "query1"
                                         }
@@ -951,22 +951,22 @@
                                     "response_format": "timeseries",
                                     "queries": [
                                         {
-                                            "query": "sum:datadog.operator.controller_runtime_reconcile_total{$scope,$cluster,kube_app_name:datadog-operator,result:error} by {kube_cluster_name}.as_count()",
+                                            "query": "sum:khulnasoft.operator.controller_runtime_reconcile_total{$scope,$cluster,kube_app_name:khulnasoft-operator,result:error} by {kube_cluster_name}.as_count()",
                                             "data_source": "metrics",
                                             "name": "query1"
                                         },
                                         {
-                                            "query": "sum:datadog.operator.controller_runtime_reconcile_total{$scope,$cluster,kube_app_name:datadog-operator,result:success} by {kube_cluster_name}.as_count()",
+                                            "query": "sum:khulnasoft.operator.controller_runtime_reconcile_total{$scope,$cluster,kube_app_name:khulnasoft-operator,result:success} by {kube_cluster_name}.as_count()",
                                             "data_source": "metrics",
                                             "name": "query2"
                                         },
                                         {
-                                            "query": "sum:datadog.operator.controller_runtime_reconcile_total{$scope,$cluster,kube_app_name:datadog-operator,result:requeue} by {kube_cluster_name}.as_count()",
+                                            "query": "sum:khulnasoft.operator.controller_runtime_reconcile_total{$scope,$cluster,kube_app_name:khulnasoft-operator,result:requeue} by {kube_cluster_name}.as_count()",
                                             "data_source": "metrics",
                                             "name": "query3"
                                         },
                                         {
-                                            "query": "sum:datadog.operator.controller_runtime_reconcile_total{$scope,$cluster,kube_app_name:datadog-operator,result:requeue_after} by {kube_cluster_name}.as_count()",
+                                            "query": "sum:khulnasoft.operator.controller_runtime_reconcile_total{$scope,$cluster,kube_app_name:khulnasoft-operator,result:requeue_after} by {kube_cluster_name}.as_count()",
                                             "data_source": "metrics",
                                             "name": "query4"
                                         }
@@ -1011,7 +1011,7 @@
                                     "response_format": "timeseries",
                                     "queries": [
                                         {
-                                            "query": "sum:datadog.operator.controller_runtime_reconcile_errors_total{$scope,$cluster,kube_app_name:datadog-operator} by {kube_cluster_name}.as_count()",
+                                            "query": "sum:khulnasoft.operator.controller_runtime_reconcile_errors_total{$scope,$cluster,kube_app_name:khulnasoft-operator} by {kube_cluster_name}.as_count()",
                                             "data_source": "metrics",
                                             "name": "query1"
                                         }
@@ -1055,12 +1055,12 @@
                                     ],
                                     "queries": [
                                         {
-                                            "query": "avg:datadog.operator.controller_runtime_reconcile_time_seconds.sum{$scope,$cluster,kube_app_name:datadog-operator} by {kube_cluster_name}",
+                                            "query": "avg:khulnasoft.operator.controller_runtime_reconcile_time_seconds.sum{$scope,$cluster,kube_app_name:khulnasoft-operator} by {kube_cluster_name}",
                                             "data_source": "metrics",
                                             "name": "query2"
                                         },
                                         {
-                                            "query": "avg:datadog.operator.controller_runtime_reconcile_time_seconds.count{$scope,$cluster,kube_app_name:datadog-operator} by {kube_cluster_name}",
+                                            "query": "avg:khulnasoft.operator.controller_runtime_reconcile_time_seconds.count{$scope,$cluster,kube_app_name:khulnasoft-operator} by {kube_cluster_name}",
                                             "data_source": "metrics",
                                             "name": "query1"
                                         }
@@ -1105,12 +1105,12 @@
                                     ],
                                     "queries": [
                                         {
-                                            "query": "avg:datadog.operator.workqueue_work_duration_seconds.sum{$scope,$cluster,kube_app_name:datadog-operator} by {kube_cluster_name}",
+                                            "query": "avg:khulnasoft.operator.workqueue_work_duration_seconds.sum{$scope,$cluster,kube_app_name:khulnasoft-operator} by {kube_cluster_name}",
                                             "data_source": "metrics",
                                             "name": "query1"
                                         },
                                         {
-                                            "query": "avg:datadog.operator.workqueue_work_duration_seconds.count{$scope,$cluster,kube_app_name:datadog-operator} by {kube_cluster_name}",
+                                            "query": "avg:khulnasoft.operator.workqueue_work_duration_seconds.count{$scope,$cluster,kube_app_name:khulnasoft-operator} by {kube_cluster_name}",
                                             "data_source": "metrics",
                                             "name": "query2"
                                         }
@@ -1155,12 +1155,12 @@
                                     ],
                                     "queries": [
                                         {
-                                            "query": "avg:datadog.operator.workqueue_queue_duration_seconds.sum{$scope,$cluster,kube_app_name:datadog-operator} by {kube_cluster_name}",
+                                            "query": "avg:khulnasoft.operator.workqueue_queue_duration_seconds.sum{$scope,$cluster,kube_app_name:khulnasoft-operator} by {kube_cluster_name}",
                                             "data_source": "metrics",
                                             "name": "query1"
                                         },
                                         {
-                                            "query": "avg:datadog.operator.workqueue_queue_duration_seconds.count{$scope,$cluster,kube_app_name:datadog-operator} by {kube_cluster_name}",
+                                            "query": "avg:khulnasoft.operator.workqueue_queue_duration_seconds.count{$scope,$cluster,kube_app_name:khulnasoft-operator} by {kube_cluster_name}",
                                             "data_source": "metrics",
                                             "name": "query2"
                                         }
@@ -1206,7 +1206,7 @@
                                     "response_format": "timeseries",
                                     "queries": [
                                         {
-                                            "query": "avg:datadog.operator.workqueue_depth{$scope,$cluster,kube_app_name:datadog-operator} by {kube_cluster_name}",
+                                            "query": "avg:khulnasoft.operator.workqueue_depth{$scope,$cluster,kube_app_name:khulnasoft-operator} by {kube_cluster_name}",
                                             "data_source": "metrics",
                                             "name": "query1"
                                         }
@@ -1251,7 +1251,7 @@
                                     "response_format": "timeseries",
                                     "queries": [
                                         {
-                                            "query": "sum:datadog.operator.workqueue_retries_total{$scope,$cluster,kube_app_name:datadog-operator} by {kube_cluster_name}.as_count()",
+                                            "query": "sum:khulnasoft.operator.workqueue_retries_total{$scope,$cluster,kube_app_name:khulnasoft-operator} by {kube_cluster_name}.as_count()",
                                             "data_source": "metrics",
                                             "name": "query1"
                                         }
@@ -1296,7 +1296,7 @@
                                     "response_format": "timeseries",
                                     "queries": [
                                         {
-                                            "query": "sum:datadog.operator.workqueue_adds_total{$scope,$cluster,kube_app_name:datadog-operator} by {kube_cluster_name}.as_count()",
+                                            "query": "sum:khulnasoft.operator.workqueue_adds_total{$scope,$cluster,kube_app_name:khulnasoft-operator} by {kube_cluster_name}.as_count()",
                                             "data_source": "metrics",
                                             "name": "query1"
                                         }
@@ -1341,7 +1341,7 @@
                                     "response_format": "timeseries",
                                     "queries": [
                                         {
-                                            "query": "max:datadog.operator.workqueue_longest_running_processor_seconds{$scope,$cluster,kube_app_name:datadog-operator} by {kube_cluster_name}",
+                                            "query": "max:khulnasoft.operator.workqueue_longest_running_processor_seconds{$scope,$cluster,kube_app_name:khulnasoft-operator} by {kube_cluster_name}",
                                             "data_source": "metrics",
                                             "name": "query1"
                                         }
@@ -1385,12 +1385,12 @@
                                     ],
                                     "queries": [
                                         {
-                                            "query": "avg:datadog.operator.controller_runtime_webhook_latency_seconds.sum{$scope,$cluster,kube_app_name:datadog-operator} by {kube_cluster_name}",
+                                            "query": "avg:khulnasoft.operator.controller_runtime_webhook_latency_seconds.sum{$scope,$cluster,kube_app_name:khulnasoft-operator} by {kube_cluster_name}",
                                             "data_source": "metrics",
                                             "name": "query1"
                                         },
                                         {
-                                            "query": "avg:datadog.operator.controller_runtime_webhook_latency_seconds.count{$scope,$cluster,kube_app_name:datadog-operator} by {kube_cluster_name}",
+                                            "query": "avg:khulnasoft.operator.controller_runtime_webhook_latency_seconds.count{$scope,$cluster,kube_app_name:khulnasoft-operator} by {kube_cluster_name}",
                                             "data_source": "metrics",
                                             "name": "query2"
                                         }
@@ -1436,7 +1436,7 @@
                                     "response_format": "timeseries",
                                     "queries": [
                                         {
-                                            "query": "sum:datadog.operator.controller_runtime_webhook_requests_in_flight{$scope,$cluster,kube_app_name:datadog-operator,kube_cluster_name:*} by {kube_cluster_name}",
+                                            "query": "sum:khulnasoft.operator.controller_runtime_webhook_requests_in_flight{$scope,$cluster,kube_app_name:khulnasoft-operator,kube_cluster_name:*} by {kube_cluster_name}",
                                             "data_source": "metrics",
                                             "name": "query1"
                                         }
@@ -1549,7 +1549,7 @@
                                     "response_format": "timeseries",
                                     "queries": [
                                         {
-                                            "query": "avg:kubernetes.cpu.usage.total{$scope,$cluster,kube_app_name:datadog-operator} by {kube_cluster_name}",
+                                            "query": "avg:kubernetes.cpu.usage.total{$scope,$cluster,kube_app_name:khulnasoft-operator} by {kube_cluster_name}",
                                             "data_source": "metrics",
                                             "name": "query1"
                                         }
@@ -1594,7 +1594,7 @@
                                     "response_format": "timeseries",
                                     "queries": [
                                         {
-                                            "query": "avg:kubernetes.cpu.usage.total{$scope,$cluster,kube_app_name:datadog-operator} by {pod_name}",
+                                            "query": "avg:kubernetes.cpu.usage.total{$scope,$cluster,kube_app_name:khulnasoft-operator} by {pod_name}",
                                             "data_source": "metrics",
                                             "name": "query1"
                                         }
@@ -1641,7 +1641,7 @@
                                     "response_format": "timeseries",
                                     "queries": [
                                         {
-                                            "query": "avg:kubernetes.memory.usage{$scope,$cluster,kube_app_name:datadog-operator} by {kube_cluster_name}",
+                                            "query": "avg:kubernetes.memory.usage{$scope,$cluster,kube_app_name:khulnasoft-operator} by {kube_cluster_name}",
                                             "data_source": "metrics",
                                             "name": "query1"
                                         }
@@ -1686,7 +1686,7 @@
                                     "response_format": "timeseries",
                                     "queries": [
                                         {
-                                            "query": "avg:kubernetes.memory.rss{$scope,$cluster,kube_app_name:datadog-operator} by {kube_cluster_name}.fill(null)",
+                                            "query": "avg:kubernetes.memory.rss{$scope,$cluster,kube_app_name:khulnasoft-operator} by {kube_cluster_name}.fill(null)",
                                             "data_source": "metrics",
                                             "name": "query1"
                                         }
@@ -1752,7 +1752,7 @@
                                     "response_format": "timeseries",
                                     "queries": [
                                         {
-                                            "query": "avg:datadog.operator.go_goroutines{$scope,$cluster,kube_app_name:datadog-operator} by {kube_cluster_name}",
+                                            "query": "avg:khulnasoft.operator.go_goroutines{$scope,$cluster,kube_app_name:khulnasoft-operator} by {kube_cluster_name}",
                                             "data_source": "metrics",
                                             "name": "query1"
                                         }
@@ -1799,7 +1799,7 @@
                                     "response_format": "timeseries",
                                     "queries": [
                                         {
-                                            "query": "avg:datadog.operator.go_threads{$scope,$cluster,kube_app_name:datadog-operator} by {kube_cluster_name}",
+                                            "query": "avg:khulnasoft.operator.go_threads{$scope,$cluster,kube_app_name:khulnasoft-operator} by {kube_cluster_name}",
                                             "data_source": "metrics",
                                             "name": "query1"
                                         }
@@ -1841,7 +1841,7 @@
                                     "response_format": "scalar",
                                     "queries": [
                                         {
-                                            "query": "sum:datadog.operator.go_info{$scope,$cluster,kube_app_name:datadog-operator} by {version}",
+                                            "query": "sum:khulnasoft.operator.go_info{$scope,$cluster,kube_app_name:khulnasoft-operator} by {version}",
                                             "data_source": "metrics",
                                             "name": "query1",
                                             "aggregator": "last"
@@ -1883,7 +1883,7 @@
                                     "response_format": "timeseries",
                                     "queries": [
                                         {
-                                            "query": "avg:datadog.operator.go_memstats_gc_cpu_fraction{$scope,$cluster,kube_app_name:datadog-operator} by {kube_cluster_name}",
+                                            "query": "avg:khulnasoft.operator.go_memstats_gc_cpu_fraction{$scope,$cluster,kube_app_name:khulnasoft-operator} by {kube_cluster_name}",
                                             "data_source": "metrics",
                                             "name": "query1"
                                         }
@@ -1930,12 +1930,12 @@
                                     "response_format": "timeseries",
                                     "queries": [
                                         {
-                                            "query": "avg:datadog.operator.go_gc_duration_seconds.sum{$scope,$cluster,kube_app_name:datadog-operator} by {kube_cluster_name}",
+                                            "query": "avg:khulnasoft.operator.go_gc_duration_seconds.sum{$scope,$cluster,kube_app_name:khulnasoft-operator} by {kube_cluster_name}",
                                             "data_source": "metrics",
                                             "name": "query1"
                                         },
                                         {
-                                            "query": "avg:datadog.operator.go_gc_duration_seconds.count{$scope,$cluster,kube_app_name:datadog-operator} by {kube_cluster_name}",
+                                            "query": "avg:khulnasoft.operator.go_gc_duration_seconds.count{$scope,$cluster,kube_app_name:khulnasoft-operator} by {kube_cluster_name}",
                                             "data_source": "metrics",
                                             "name": "query2"
                                         }

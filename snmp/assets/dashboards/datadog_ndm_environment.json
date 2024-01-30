@@ -1,5 +1,5 @@
 {
-    "author_name": "Datadog",
+    "author_name": "Khulnasoft",
     "description": null,
     "layout_type": "ordered",
     "template_variables": [
@@ -27,20 +27,20 @@
             "name": "Custom_Tag"
         }
     ],
-    "title": "Datadog NDM Environment",
+    "title": "Khulnasoft NDM Environment",
     "widgets": [
         {
             "definition": {
                 "background_color": "white",
                 "layout_type": "ordered",
                 "show_title": true,
-                "title": "Datadog NDM Environment",
+                "title": "Khulnasoft NDM Environment",
                 "type": "group",
                 "widgets": [
                     {
                         "definition": {
                             "background_color": "transparent",
-                            "content": "This dashboard provides a high-level overview to help you monitor and troubleshoot the health of your Network Device Monitoring environment. You can track health and performance of your running agents, as well as SNMP, Traps, and NetFlow Monitoring integrations.\n\n**Further reading on NDM**\n\n- Our blog post on [Monitoring Datacenters and network devices with Datadog](https://www.khulnasoft.com/blog/datacenter-monitoring-dashboards/)\n- Our blog post on [Monitoring network devices with SNMP](https://www.khulnasoft.com/blog/monitor-snmp-with-datadog/)\n- Network Device Monitoring [docs](https://docs.khulnasoft.com/network_performance_monitoring/devices) ",
+                            "content": "This dashboard provides a high-level overview to help you monitor and troubleshoot the health of your Network Device Monitoring environment. You can track health and performance of your running agents, as well as SNMP, Traps, and NetFlow Monitoring integrations.\n\n**Further reading on NDM**\n\n- Our blog post on [Monitoring Datacenters and network devices with Khulnasoft](https://www.khulnasoft.com/blog/datacenter-monitoring-dashboards/)\n- Our blog post on [Monitoring network devices with SNMP](https://www.khulnasoft.com/blog/monitor-snmp-with-khulnasoft/)\n- Network Device Monitoring [docs](https://docs.khulnasoft.com/network_performance_monitoring/devices) ",
                             "font_size": "14",
                             "has_padding": true,
                             "show_tick": false,
@@ -133,7 +133,7 @@
                                             "aggregator": "sum",
                                             "data_source": "metrics",
                                             "name": "query1",
-                                            "query": "sum:datadog.snmp.submitted_metrics{agent_host:$Agent_Hostname.value}"
+                                            "query": "sum:khulnasoft.snmp.submitted_metrics{agent_host:$Agent_Hostname.value}"
                                         }
                                     ],
                                     "response_format": "scalar"
@@ -494,7 +494,7 @@
                                         {
                                             "data_source": "metrics",
                                             "name": "query1",
-                                            "query": "sum:datadog.agent.running{$Agent_Hostname,$Custom_Tag} by {version}"
+                                            "query": "sum:khulnasoft.agent.running{$Agent_Hostname,$Custom_Tag} by {version}"
                                         }
                                     ],
                                     "response_format": "timeseries",
@@ -541,7 +541,7 @@
                                         {
                                             "data_source": "metrics",
                                             "name": "query1",
-                                            "query": "sum:datadog.agent.started{$Agent_Hostname,$Custom_Tag} by {host}.as_count()"
+                                            "query": "sum:khulnasoft.agent.started{$Agent_Hostname,$Custom_Tag} by {host}.as_count()"
                                         }
                                     ],
                                     "response_format": "timeseries",
@@ -957,7 +957,7 @@
                                             "aggregator": "avg",
                                             "data_source": "metrics",
                                             "name": "query1",
-                                            "query": "avg:datadog.snmp.check_duration{agent_host:$Agent_Hostname.value,snmp_device:$SNMP_Device.value,$Custom_Tag} by {snmp_host,snmp_device,snmp_profile}"
+                                            "query": "avg:khulnasoft.snmp.check_duration{agent_host:$Agent_Hostname.value,snmp_device:$SNMP_Device.value,$Custom_Tag} by {snmp_host,snmp_device,snmp_profile}"
                                         }
                                     ],
                                     "response_format": "scalar"
@@ -979,7 +979,7 @@
                     {
                         "definition": {
                             "background_color": "white",
-                            "content": "**Abnormal check duration/interval?**\n\n- Try increasing the number of check runners (`check_runners:`) in your `datadog.yaml` configuration.\n- Try also increasing the `oid_batch_size` in your SNMP configuration. **Note:** A high value can lead to timeouts on some network devices.\n- If neither suggestions work, you may need to split the monitoring of your devices across several agents.",
+                            "content": "**Abnormal check duration/interval?**\n\n- Try increasing the number of check runners (`check_runners:`) in your `khulnasoft.yaml` configuration.\n- Try also increasing the `oid_batch_size` in your SNMP configuration. **Note:** A high value can lead to timeouts on some network devices.\n- If neither suggestions work, you may need to split the monitoring of your devices across several agents.",
                             "font_size": "14",
                             "has_padding": true,
                             "show_tick": true,
@@ -1011,7 +1011,7 @@
                                             "aggregator": "avg",
                                             "data_source": "metrics",
                                             "name": "query1",
-                                            "query": "avg:datadog.snmp.check_duration{$Custom_Tag,agent_host:$Agent_Hostname.value} by {snmp_host}"
+                                            "query": "avg:khulnasoft.snmp.check_duration{$Custom_Tag,agent_host:$Agent_Hostname.value} by {snmp_host}"
                                         }
                                     ],
                                     "response_format": "scalar",
@@ -1092,12 +1092,12 @@
                                         {
                                             "data_source": "metrics",
                                             "name": "query1",
-                                            "query": "avg:datadog.snmp.check_duration{agent_host:$Agent_Hostname.value,snmp_device:$SNMP_Device.value,$Custom_Tag} by {snmp_device,snmp_host}"
+                                            "query": "avg:khulnasoft.snmp.check_duration{agent_host:$Agent_Hostname.value,snmp_device:$SNMP_Device.value,$Custom_Tag} by {snmp_device,snmp_host}"
                                         },
                                         {
                                             "data_source": "metrics",
                                             "name": "query2",
-                                            "query": "avg:datadog.snmp.check_duration{agent_host:$Agent_Hostname.value,$Custom_Tag}"
+                                            "query": "avg:khulnasoft.snmp.check_duration{agent_host:$Agent_Hostname.value,$Custom_Tag}"
                                         }
                                     ],
                                     "response_format": "timeseries",
@@ -1160,12 +1160,12 @@
                                         {
                                             "data_source": "metrics",
                                             "name": "query2",
-                                            "query": "avg:datadog.snmp.check_interval{agent_host:$Agent_Hostname.value,snmp_device:$SNMP_Device.value,$Custom_Tag} by {agent_host,snmp_device}.as_count()"
+                                            "query": "avg:khulnasoft.snmp.check_interval{agent_host:$Agent_Hostname.value,snmp_device:$SNMP_Device.value,$Custom_Tag} by {agent_host,snmp_device}.as_count()"
                                         },
                                         {
                                             "data_source": "metrics",
                                             "name": "query1",
-                                            "query": "avg:datadog.snmp.check_interval{agent_host:$Agent_Hostname.value,$Custom_Tag} by {agent_host}.as_count()"
+                                            "query": "avg:khulnasoft.snmp.check_interval{agent_host:$Agent_Hostname.value,$Custom_Tag} by {agent_host}.as_count()"
                                         }
                                     ],
                                     "response_format": "timeseries",
@@ -1233,7 +1233,7 @@
                                         {
                                             "data_source": "metrics",
                                             "name": "query1",
-                                            "query": "sum:datadog.snmp.submitted_metrics{agent_host:$Agent_Hostname.value,snmp_device:$SNMP_Device.value,$Custom_Tag} by {snmp_device,snmp_host}"
+                                            "query": "sum:khulnasoft.snmp.submitted_metrics{agent_host:$Agent_Hostname.value,snmp_device:$SNMP_Device.value,$Custom_Tag} by {snmp_device,snmp_host}"
                                         }
                                     ],
                                     "response_format": "timeseries",
@@ -1261,7 +1261,7 @@
                     {
                         "definition": {
                             "background_color": "white",
-                            "content": "**Why are no metrics being collected?**\n\n- Try loosening ACLs/firewall rules for your devices. You can check connectivity from the Agent host to a network device by using the integrated `agent snmp walk` command.\n- Check connectivity between the Agent host and Datadog.",
+                            "content": "**Why are no metrics being collected?**\n\n- Try loosening ACLs/firewall rules for your devices. You can check connectivity from the Agent host to a network device by using the integrated `agent snmp walk` command.\n- Check connectivity between the Agent host and Khulnasoft.",
                             "font_size": "14",
                             "has_padding": true,
                             "show_tick": true,
@@ -1364,7 +1364,7 @@
                     {
                         "definition": {
                             "background_color": "white",
-                            "content": "You can find more information on how to setup network devices Autodiscovery using the Datadog Agent. \n\n See [Collect SNMP Metrics From Your Network Devices](https://docs.khulnasoft.com/network_monitoring/devices/snmp_metrics/?tab=snmpv2#autodiscovery).",
+                            "content": "You can find more information on how to setup network devices Autodiscovery using the Khulnasoft Agent. \n\n See [Collect SNMP Metrics From Your Network Devices](https://docs.khulnasoft.com/network_monitoring/devices/snmp_metrics/?tab=snmpv2#autodiscovery).",
                             "font_size": "14",
                             "has_padding": true,
                             "show_tick": true,
@@ -1501,12 +1501,12 @@
                                         {
                                             "data_source": "metrics",
                                             "name": "query2",
-                                            "query": "sum:datadog.snmp_traps.received{$SNMP_Device, $Agent_Hostname, $Custom_Tag}.as_count()"
+                                            "query": "sum:khulnasoft.snmp_traps.received{$SNMP_Device, $Agent_Hostname, $Custom_Tag}.as_count()"
                                         },
                                         {
                                             "data_source": "metrics",
                                             "name": "query3",
-                                            "query": "sum:datadog.snmp_traps.forwarded{$SNMP_Device, $Agent_Hostname, $Custom_Tag}.as_count()"
+                                            "query": "sum:khulnasoft.snmp_traps.forwarded{$SNMP_Device, $Agent_Hostname, $Custom_Tag}.as_count()"
                                         }
                                     ],
                                     "response_format": "timeseries",
@@ -1518,7 +1518,7 @@
                                 }
                             ],
                             "show_legend": true,
-                            "title": "Traps received, forwarded and stored in Datadog",
+                            "title": "Traps received, forwarded and stored in Khulnasoft",
                             "title_align": "left",
                             "title_size": "16",
                             "type": "timeseries",
@@ -1541,7 +1541,7 @@
                     {
                         "definition": {
                             "background_color": "white",
-                            "content": "**Why are traps not being received?**\n\n- Check your device configuration and ensure it is sending traps to the right port.\n- Check the Traps server listening port and ensure it is using an unprivileged port (> 1024). Or, allow the Datadog Agent to listen on privileged ports.\n\nTraps telemetry metrics requires Agent 7.47+",
+                            "content": "**Why are traps not being received?**\n\n- Check your device configuration and ensure it is sending traps to the right port.\n- Check the Traps server listening port and ensure it is using an unprivileged port (> 1024). Or, allow the Khulnasoft Agent to listen on privileged ports.\n\nTraps telemetry metrics requires Agent 7.47+",
                             "font_size": "14",
                             "has_padding": true,
                             "show_tick": true,
@@ -1581,7 +1581,7 @@
                                         {
                                             "data_source": "metrics",
                                             "name": "query1",
-                                            "query": "sum:datadog.snmp_traps.invalid_packet{$SNMP_Device, $Agent_Hostname, $Custom_Tag} by {snmp_device,reason}.as_count()"
+                                            "query": "sum:khulnasoft.snmp_traps.invalid_packet{$SNMP_Device, $Agent_Hostname, $Custom_Tag} by {snmp_device,reason}.as_count()"
                                         }
                                     ],
                                     "response_format": "timeseries",
@@ -1628,7 +1628,7 @@
                                         {
                                             "data_source": "metrics",
                                             "name": "query1",
-                                            "query": "sum:datadog.snmp_traps.incorrect_format{$SNMP_Device, $Agent_Hostname, $Custom_Tag} by {error}.as_count()"
+                                            "query": "sum:khulnasoft.snmp_traps.incorrect_format{$SNMP_Device, $Agent_Hostname, $Custom_Tag} by {error}.as_count()"
                                         }
                                     ],
                                     "response_format": "timeseries",
@@ -1681,12 +1681,12 @@
                                         {
                                             "data_source": "metrics",
                                             "name": "query1",
-                                            "query": "sum:datadog.snmp_traps.traps_not_enriched{$SNMP_Device, $Agent_Hostname, $Custom_Tag}.as_count()"
+                                            "query": "sum:khulnasoft.snmp_traps.traps_not_enriched{$SNMP_Device, $Agent_Hostname, $Custom_Tag}.as_count()"
                                         },
                                         {
                                             "data_source": "metrics",
                                             "name": "query2",
-                                            "query": "sum:datadog.snmp_traps.vars_not_enriched{$SNMP_Device, $Agent_Hostname, $Custom_Tag}.as_count()"
+                                            "query": "sum:khulnasoft.snmp_traps.vars_not_enriched{$SNMP_Device, $Agent_Hostname, $Custom_Tag}.as_count()"
                                         }
                                     ],
                                     "response_format": "timeseries",
@@ -1762,12 +1762,12 @@
                                         {
                                             "data_source": "metrics",
                                             "name": "query1",
-                                            "query": "sum:datadog.netflow.aggregator.flows_received{$Agent_Hostname,$Custom_Tag} by {host}.as_count()"
+                                            "query": "sum:khulnasoft.netflow.aggregator.flows_received{$Agent_Hostname,$Custom_Tag} by {host}.as_count()"
                                         },
                                         {
                                             "data_source": "metrics",
                                             "name": "query2",
-                                            "query": "sum:datadog.netflow.aggregator.flows_flushed{$Agent_Hostname,$Custom_Tag} by {host}.as_count()"
+                                            "query": "sum:khulnasoft.netflow.aggregator.flows_flushed{$Agent_Hostname,$Custom_Tag} by {host}.as_count()"
                                         },
                                         {
                                             "compute": {
@@ -1793,7 +1793,7 @@
                                 }
                             ],
                             "show_legend": true,
-                            "title": "Netflow records received, flushed, and stored in Datadog",
+                            "title": "Netflow records received, flushed, and stored in Khulnasoft",
                             "title_align": "left",
                             "title_size": "16",
                             "type": "timeseries"
@@ -1809,7 +1809,7 @@
                     {
                         "definition": {
                             "background_color": "white",
-                            "content": "**Why is there a difference between the number of received Netflow records and Netflow records sent to Datadog?**\n\nNetflow records are aggregated Agent side, with a default flush time of 5 minutes. It means that if two records with the same source, destination, and protocol are collected within 5 minutes, they appear as one in the UI. \n",
+                            "content": "**Why is there a difference between the number of received Netflow records and Netflow records sent to Khulnasoft?**\n\nNetflow records are aggregated Agent side, with a default flush time of 5 minutes. It means that if two records with the same source, destination, and protocol are collected within 5 minutes, they appear as one in the UI. \n",
                             "font_size": "14",
                             "has_padding": true,
                             "show_tick": true,
@@ -1846,7 +1846,7 @@
                                             "aggregator": "avg",
                                             "data_source": "metrics",
                                             "name": "query1",
-                                            "query": "sum:datadog.netflow.aggregator.sequence.last{environment:mimic,$Netflow_Exporter} by {exporter_ip,flow_type}.fill(null)"
+                                            "query": "sum:khulnasoft.netflow.aggregator.sequence.last{environment:mimic,$Netflow_Exporter} by {exporter_ip,flow_type}.fill(null)"
                                         }
                                     ],
                                     "response_format": "scalar"
@@ -1887,7 +1887,7 @@
                                         {
                                             "data_source": "metrics",
                                             "name": "query3",
-                                            "query": "sum:datadog.netflow.traffic.packets{$Agent_Hostname,$Netflow_Exporter,$Custom_Tag} by {listener_port,exporter_ip}.as_count()"
+                                            "query": "sum:khulnasoft.netflow.traffic.packets{$Agent_Hostname,$Netflow_Exporter,$Custom_Tag} by {listener_port,exporter_ip}.as_count()"
                                         }
                                     ],
                                     "response_format": "timeseries",
@@ -1935,7 +1935,7 @@
                                         {
                                             "data_source": "metrics",
                                             "name": "query2",
-                                            "query": "sum:datadog.netflow.aggregator.flows_flushed{$Agent_Hostname}.as_count()"
+                                            "query": "sum:khulnasoft.netflow.aggregator.flows_flushed{$Agent_Hostname}.as_count()"
                                         },
                                         {
                                             "compute": {
@@ -1961,7 +1961,7 @@
                                 }
                             ],
                             "show_legend": true,
-                            "title": "Gap in Flows (Agent Flushed - Stored in Datadog)",
+                            "title": "Gap in Flows (Agent Flushed - Stored in Khulnasoft)",
                             "title_align": "left",
                             "title_size": "16",
                             "type": "timeseries"
@@ -2062,7 +2062,7 @@
                                         {
                                             "data_source": "metrics",
                                             "name": "query1",
-                                            "query": "avg:datadog.netflow.aggregator.flows_flushed{$Agent_Hostname,$Custom_Tag} by {host}.as_count()"
+                                            "query": "avg:khulnasoft.netflow.aggregator.flows_flushed{$Agent_Hostname,$Custom_Tag} by {host}.as_count()"
                                         }
                                     ],
                                     "response_format": "timeseries",
@@ -2109,7 +2109,7 @@
                                         {
                                             "data_source": "metrics",
                                             "name": "query1",
-                                            "query": "avg:datadog.netflow.aggregator.flows_contexts{$Agent_Hostname,$Custom_Tag} by {host}"
+                                            "query": "avg:khulnasoft.netflow.aggregator.flows_contexts{$Agent_Hostname,$Custom_Tag} by {host}"
                                         }
                                     ],
                                     "response_format": "timeseries",
@@ -2161,12 +2161,12 @@
                                         {
                                             "data_source": "metrics",
                                             "name": "query1",
-                                            "query": "avg:datadog.netflow.aggregator.flush_duration{$Agent_Hostname,$Custom_Tag} by {host}"
+                                            "query": "avg:khulnasoft.netflow.aggregator.flush_duration{$Agent_Hostname,$Custom_Tag} by {host}"
                                         },
                                         {
                                             "data_source": "metrics",
                                             "name": "query2",
-                                            "query": "avg:datadog.netflow.aggregator.flush_interval{$Agent_Hostname,$Custom_Tag} by {host}"
+                                            "query": "avg:khulnasoft.netflow.aggregator.flush_interval{$Agent_Hostname,$Custom_Tag} by {host}"
                                         }
                                     ],
                                     "response_format": "timeseries",
@@ -2218,12 +2218,12 @@
                                         {
                                             "data_source": "metrics",
                                             "name": "query1",
-                                            "query": "sum:datadog.netflow.decoder.messages{$Agent_Hostname,$Custom_Tag} by {host}.as_count()"
+                                            "query": "sum:khulnasoft.netflow.decoder.messages{$Agent_Hostname,$Custom_Tag} by {host}.as_count()"
                                         },
                                         {
                                             "data_source": "metrics",
                                             "name": "query2",
-                                            "query": "sum:datadog.netflow.processor.processed{$Agent_Hostname,$Custom_Tag} by {host}.as_count()"
+                                            "query": "sum:khulnasoft.netflow.processor.processed{$Agent_Hostname,$Custom_Tag} by {host}.as_count()"
                                         }
                                     ],
                                     "response_format": "timeseries",
@@ -2251,7 +2251,7 @@
                     {
                         "definition": {
                             "background_color": "white",
-                            "content": "**What is NetFlow port rollup?**\n\nNetFlow records with a source or destination port that is detected as ephemeral are aggregated together. To detect these ephemeral ports, Datadog keeps a record of every source/destination port combination seen in the last 5 minutes. If a specific source port is associated with more than 10 different destination ports during that time, the destination port is marked as ephemeral and all NetFlow records with this source port will be aggregated.\n\n  ",
+                            "content": "**What is NetFlow port rollup?**\n\nNetFlow records with a source or destination port that is detected as ephemeral are aggregated together. To detect these ephemeral ports, Khulnasoft keeps a record of every source/destination port combination seen in the last 5 minutes. If a specific source port is associated with more than 10 different destination ports during that time, the destination port is marked as ephemeral and all NetFlow records with this source port will be aggregated.\n\n  ",
                             "font_size": "14",
                             "has_padding": true,
                             "show_tick": true,
@@ -2296,12 +2296,12 @@
                                         {
                                             "data_source": "metrics",
                                             "name": "query1",
-                                            "query": "avg:datadog.netflow.aggregator.port_rollup.current_store_size{$Agent_Hostname,$Custom_Tag} by {host}"
+                                            "query": "avg:khulnasoft.netflow.aggregator.port_rollup.current_store_size{$Agent_Hostname,$Custom_Tag} by {host}"
                                         },
                                         {
                                             "data_source": "metrics",
                                             "name": "query2",
-                                            "query": "avg:datadog.netflow.aggregator.port_rollup.new_store_size{$Agent_Hostname,$Custom_Tag} by {host}"
+                                            "query": "avg:khulnasoft.netflow.aggregator.port_rollup.new_store_size{$Agent_Hostname,$Custom_Tag} by {host}"
                                         }
                                     ],
                                     "response_format": "timeseries",
@@ -2348,7 +2348,7 @@
                                         {
                                             "data_source": "metrics",
                                             "name": "query1",
-                                            "query": "sum:datadog.netflow.traffic.bytes{$Agent_Hostname,$Custom_Tag} by {host}.as_count()"
+                                            "query": "sum:khulnasoft.netflow.traffic.bytes{$Agent_Hostname,$Custom_Tag} by {host}.as_count()"
                                         }
                                     ],
                                     "response_format": "timeseries",
@@ -2395,7 +2395,7 @@
                                         {
                                             "data_source": "metrics",
                                             "name": "query1",
-                                            "query": "sum:datadog.netflow.traffic.packets{$Agent_Hostname,$Custom_Tag} by {host}.as_count()"
+                                            "query": "sum:khulnasoft.netflow.traffic.packets{$Agent_Hostname,$Custom_Tag} by {host}.as_count()"
                                         }
                                     ],
                                     "response_format": "timeseries",
@@ -2423,7 +2423,7 @@
                     {
                         "definition": {
                             "background_color": "white",
-                            "content": "**Why are packets not being received?**\n\n- Check your NetFlow exporter configuration and ensure it is sending flows to the right port.\n- Check the NetFlow server listening port and ensure that it is using an unprivileged port (> 1024). Or, allow the Datadog Agent to listen on privileged ports.\n",
+                            "content": "**Why are packets not being received?**\n\n- Check your NetFlow exporter configuration and ensure it is sending flows to the right port.\n- Check the NetFlow server listening port and ensure that it is using an unprivileged port (> 1024). Or, allow the Khulnasoft Agent to listen on privileged ports.\n",
                             "font_size": "14",
                             "has_padding": true,
                             "show_tick": true,
@@ -2444,7 +2444,7 @@
                     {
                         "definition": {
                             "background_color": "white",
-                            "content": "**Why are there bursts in buffer length?**\n\nIf the buffer length is close to the buffer capacity, you can increase the buffer capacity by updating `aggregator_buffer_size` in your `datadog.yaml` configuration.\n",
+                            "content": "**Why are there bursts in buffer length?**\n\nIf the buffer length is close to the buffer capacity, you can increase the buffer capacity by updating `aggregator_buffer_size` in your `khulnasoft.yaml` configuration.\n",
                             "font_size": "14",
                             "has_padding": true,
                             "show_tick": true,
@@ -2489,12 +2489,12 @@
                                         {
                                             "data_source": "metrics",
                                             "name": "query1",
-                                            "query": "avg:datadog.netflow.aggregator.input_buffer.length{$Agent_Hostname,$Custom_Tag} by {host}"
+                                            "query": "avg:khulnasoft.netflow.aggregator.input_buffer.length{$Agent_Hostname,$Custom_Tag} by {host}"
                                         },
                                         {
                                             "data_source": "metrics",
                                             "name": "query2",
-                                            "query": "avg:datadog.netflow.aggregator.input_buffer.capacity{$Agent_Hostname,$Custom_Tag} by {host}"
+                                            "query": "avg:khulnasoft.netflow.aggregator.input_buffer.capacity{$Agent_Hostname,$Custom_Tag} by {host}"
                                         }
                                     ],
                                     "response_format": "timeseries",
@@ -2544,7 +2544,7 @@
                                         {
                                             "data_source": "metrics",
                                             "name": "query1",
-                                            "query": "sum:datadog.netflow.aggregator.hash_collisions{$Agent_Hostname,$Custom_Tag} by {host}.as_count()"
+                                            "query": "sum:khulnasoft.netflow.aggregator.hash_collisions{$Agent_Hostname,$Custom_Tag} by {host}.as_count()"
                                         }
                                     ],
                                     "response_format": "timeseries",
@@ -2632,7 +2632,7 @@
                     {
                         "definition": {
                             "background_color": "white",
-                            "content": "**How can I detect missing NetFlow records?**\n\nNetFlow missing packet detection helps you identify potential issues in your network. It is an estimation of the number of packet (or flows, depending on NetFlow version) that are lost.\n\nThis metric can appear noisy depending on time aggregation, but a significant increase indicates that some NetFlow packets are lost between the exporter and the Datadog Agent.",
+                            "content": "**How can I detect missing NetFlow records?**\n\nNetFlow missing packet detection helps you identify potential issues in your network. It is an estimation of the number of packet (or flows, depending on NetFlow version) that are lost.\n\nThis metric can appear noisy depending on time aggregation, but a significant increase indicates that some NetFlow packets are lost between the exporter and the Khulnasoft Agent.",
                             "font_size": "14",
                             "has_padding": true,
                             "show_tick": true,
@@ -2672,12 +2672,12 @@
                                         {
                                             "data_source": "metrics",
                                             "name": "query1",
-                                            "query": "sum:datadog.netflow.aggregator.sequence.delta{environment:mimic,$Netflow_Exporter} by {exporter_ip}.as_count().fill(null)"
+                                            "query": "sum:khulnasoft.netflow.aggregator.sequence.delta{environment:mimic,$Netflow_Exporter} by {exporter_ip}.as_count().fill(null)"
                                         },
                                         {
                                             "data_source": "metrics",
                                             "name": "query2",
-                                            "query": "sum:datadog.netflow.processor.flowsets{environment:mimic,$Netflow_Exporter} by {exporter_ip}.as_count().fill(null)"
+                                            "query": "sum:khulnasoft.netflow.processor.flowsets{environment:mimic,$Netflow_Exporter} by {exporter_ip}.as_count().fill(null)"
                                         }
                                     ],
                                     "response_format": "timeseries",
@@ -2724,12 +2724,12 @@
                                         {
                                             "data_source": "metrics",
                                             "name": "query1",
-                                            "query": "sum:datadog.netflow.aggregator.sequence.delta{environment:mimic,$Netflow_Exporter} by {exporter_ip}.as_count().fill(null)"
+                                            "query": "sum:khulnasoft.netflow.aggregator.sequence.delta{environment:mimic,$Netflow_Exporter} by {exporter_ip}.as_count().fill(null)"
                                         },
                                         {
                                             "data_source": "metrics",
                                             "name": "query2",
-                                            "query": "sum:datadog.netflow.processor.processed{environment:mimic,$Netflow_Exporter} by {exporter_ip}.as_count().fill(null)"
+                                            "query": "sum:khulnasoft.netflow.processor.processed{environment:mimic,$Netflow_Exporter} by {exporter_ip}.as_count().fill(null)"
                                         }
                                     ],
                                     "response_format": "timeseries",
@@ -2776,7 +2776,7 @@
                                         {
                                             "data_source": "metrics",
                                             "name": "query1",
-                                            "query": "sum:datadog.netflow.aggregator.sequence.delta{environment:mimic,$Netflow_Exporter} by {exporter_ip,flow_type}.as_count().fill(null)"
+                                            "query": "sum:khulnasoft.netflow.aggregator.sequence.delta{environment:mimic,$Netflow_Exporter} by {exporter_ip,flow_type}.as_count().fill(null)"
                                         }
                                     ],
                                     "response_format": "timeseries",
@@ -2823,7 +2823,7 @@
                                         {
                                             "data_source": "metrics",
                                             "name": "query1",
-                                            "query": "sum:datadog.netflow.aggregator.sequence.reset{environment:mimic,$Netflow_Exporter} by {exporter_ip,flow_type}.fill(null)"
+                                            "query": "sum:khulnasoft.netflow.aggregator.sequence.reset{environment:mimic,$Netflow_Exporter} by {exporter_ip,flow_type}.fill(null)"
                                         }
                                     ],
                                     "response_format": "timeseries",

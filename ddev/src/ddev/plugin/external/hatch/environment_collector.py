@@ -4,8 +4,8 @@ from functools import cached_property
 from hatch.env.collectors.plugin.interface import EnvironmentCollectorInterface
 
 
-class DatadogChecksEnvironmentCollector(EnvironmentCollectorInterface):
-    PLUGIN_NAME = 'datadog-checks'
+class KhulnasoftChecksEnvironmentCollector(EnvironmentCollectorInterface):
+    PLUGIN_NAME = 'khulnasoft-checks'
 
     @cached_property
     def in_core_repo(self):
@@ -55,7 +55,7 @@ class DatadogChecksEnvironmentCollector(EnvironmentCollectorInterface):
     @cached_property
     def test_package_install_command(self):
         if not self.in_core_repo:
-            return self.pip_install_command('datadog-checks-dev')
+            return self.pip_install_command('khulnasoft-checks-dev')
         elif not (self.is_test_package or self.is_dev_package):
             return self.pip_install_command('-e', '../khulnasoft_checks_dev')
 
@@ -74,7 +74,7 @@ class DatadogChecksEnvironmentCollector(EnvironmentCollectorInterface):
         if not features:
             features = ['deps']
 
-        base_package = '../khulnasoft_checks_base' if local else 'datadog-checks-base'
+        base_package = '../khulnasoft_checks_base' if local else 'khulnasoft-checks-base'
         formatted = f'{base_package}[{",".join(sorted(features))}]'
         if version:
             formatted += f'=={version}'

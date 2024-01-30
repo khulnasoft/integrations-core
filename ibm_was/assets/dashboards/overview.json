@@ -1,6 +1,6 @@
 {
   "title": "IBM WebSphere Application Server - Overview",
-  "description": "This dashboard provides insight into your WebSphere Application server environment and collected PMI Counters, so you can view aggregated JDBC and JVM performance metrics and PerfServlet availability. Further reading on monitoring your IBM WebSphere Application Server:\n\n- [Datadog's IBM WAS integration docs](https://docs.khulnasoft.com/integrations/ibm_was/#overview)\n\nClone this template dashboard to make changes and add your own graph widgets.",
+  "description": "This dashboard provides insight into your WebSphere Application server environment and collected PMI Counters, so you can view aggregated JDBC and JVM performance metrics and PerfServlet availability. Further reading on monitoring your IBM WebSphere Application Server:\n\n- [Khulnasoft's IBM WAS integration docs](https://docs.khulnasoft.com/integrations/ibm_was/#overview)\n\nClone this template dashboard to make changes and add your own graph widgets.",
   "widgets": [
     {
       "id": 0,

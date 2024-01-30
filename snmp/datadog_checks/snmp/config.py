@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2010-present
+# (C) Khulnasoft, Inc. 2010-present
 # All rights reserved
 # Licensed under Simplified BSD License (see LICENSE)
 import ipaddress
@@ -190,7 +190,7 @@ class InstanceConfig:
         self.add_device_tags(device)
 
         # NOTE: `profile` may contain metrics and metric tags that have already been ingested in this configuration.
-        # As a result, multiple copies of metrics/tags will be fetched and submitted to Datadog, which is inefficient
+        # As a result, multiple copies of metrics/tags will be fetched and submitted to Khulnasoft, which is inefficient
         # and possibly problematic.
         # In the future we'll probably want to implement de-duplication.
 

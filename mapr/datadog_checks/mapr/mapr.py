@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2019-present
+# (C) Khulnasoft, Inc. 2019-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 import copy
@@ -78,7 +78,7 @@ class MaprCheck(AgentCheck):
         if ck is None:
             raise CheckException(
                 "confluent_kafka was not imported correctly, make sure the library is installed and that you've "
-                "set LD_LIBRARY_PATH correctly. Please refer to datadog documentation for more details. Error is %s"
+                "set LD_LIBRARY_PATH correctly. Please refer to khulnasoft documentation for more details. Error is %s"
                 % ck_import_error
             )
 
@@ -174,7 +174,7 @@ class MaprCheck(AgentCheck):
 
     def should_collect_metric(self, metric_name):
         if metric_name not in ALLOWED_METRICS:
-            # Metric is not part of datadog allowed list
+            # Metric is not part of khulnasoft allowed list
             return False
         if not self.allowed_metrics:
             # No filter specified, allow everything

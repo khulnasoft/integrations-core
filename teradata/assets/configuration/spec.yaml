@@ -21,17 +21,17 @@ files:
         type: integer
         example: 1025
     - name: username
-      description: Username for the Datadog-Teradata check user.
+      description: Username for the Khulnasoft-Teradata check user.
       value:
         type: string
     - name: password
       secret: true
-      description: Password for the Datadog-Teradata check user.
+      description: Password for the Khulnasoft-Teradata check user.
       value:
         type: string
     - name: account
       description: |
-        The Datadog-Teradata check user's account string to use when logging into the database.
+        The Khulnasoft-Teradata check user's account string to use when logging into the database.
       value:
         type: string
     - name: database

@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2019-present
+# (C) Khulnasoft, Inc. 2019-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 import clickhouse_driver
@@ -111,7 +111,7 @@ class ClickhouseCheck(AgentCheck):
                 secure=self._tls_verify,
                 settings={},
                 # Make every client unique for server logs
-                client_name='datadog-{}'.format(self.check_id),
+                client_name='khulnasoft-{}'.format(self.check_id),
             )
             client.connection.connect()
         except Exception as e:

@@ -12,7 +12,7 @@ Get metrics from Windows performance counters in real time to:
 
 ### Installation
 
-The PDH check is included in the [Datadog Agent][1] package. No additional installation is needed.
+The PDH check is included in the [Khulnasoft Agent][1] package. No additional installation is needed.
 
 ### Configuration
 
@@ -28,7 +28,7 @@ Run the [Agent's status subcommand][5] and look for `pdh_check` under the Checks
 
 ### Metrics
 
-All metrics collected by the PDH check are forwarded to Datadog as [custom metrics][6], which may impact your [billing][7].
+All metrics collected by the PDH check are forwarded to Khulnasoft as [custom metrics][6], which may impact your [billing][7].
 
 ### Events
 
@@ -40,7 +40,7 @@ The PDH check does not include any service checks.
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][9].
+Need help? Contact [Khulnasoft support][9].
 
 [1]: https://app.khulnasoft.com/account/settings/agent/latest
 [2]: https://docs.khulnasoft.com/agent/guide/agent-configuration-files/#agent-configuration-directory

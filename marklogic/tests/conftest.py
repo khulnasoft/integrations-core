@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2020-present
+# (C) Khulnasoft, Inc. 2020-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 import os
@@ -71,7 +71,7 @@ def setup_admin_user():
 
 def setup_khulnasoft_users():
     # type: () -> None
-    # Create datadog users with the admin account
+    # Create khulnasoft users with the admin account
     r = requests.post(
         '{}/manage/v2/users'.format(API_URL),
         headers={'Content-Type': 'application/json'},

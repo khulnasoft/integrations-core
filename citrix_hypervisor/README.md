@@ -2,7 +2,7 @@
 
 ## Overview
 
-This check monitors [Citrix Hypervisor][1] through the Datadog Agent.
+This check monitors [Citrix Hypervisor][1] through the Khulnasoft Agent.
 
 ## Setup
 
@@ -10,11 +10,11 @@ Follow the instructions below to install and configure this check for an Agent r
 
 ### Installation
 
-The Citrix Hypervisor check is included in the [Datadog Agent][3] package.
+The Citrix Hypervisor check is included in the [Khulnasoft Agent][3] package.
 No additional installation is needed on your server.  
-The recommended way to monitor Citrix hypervisors is to install one Datadog Agent on each hypervisor.
+The recommended way to monitor Citrix hypervisors is to install one Khulnasoft Agent on each hypervisor.
 
-#### Datadog user
+#### Khulnasoft user
 
 The Citrix Hypervisor integration requires a user with at least [`read-only`][4] access to monitor the service.
 
@@ -30,7 +30,7 @@ The Citrix Hypervisor integration requires a user with at least [`read-only`][4]
 
 _Available for Agent versions >6.0_
 
-1. Collecting logs is disabled by default in the Datadog Agent. Enable it in `datadog.yaml`:
+1. Collecting logs is disabled by default in the Khulnasoft Agent. Enable it in `khulnasoft.yaml`:
 
    ```yaml
    logs_enabled: true
@@ -67,13 +67,13 @@ See [service_checks.json][9] for a list of service checks provided by this integ
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][10].
+Need help? Contact [Khulnasoft support][10].
 
 ## Further reading
 
 Additional helpful documentation, links, and articles:
 
-- [Monitor Citrix Hypervisor performance with Datadog][11]
+- [Monitor Citrix Hypervisor performance with Khulnasoft][11]
 
 [1]: https://www.citrix.com/products/citrix-hypervisor/
 [2]: https://docs.khulnasoft.com/agent/kubernetes/integrations/
@@ -85,4 +85,4 @@ Additional helpful documentation, links, and articles:
 [8]: https://github.com/KhulnaSoft/integrations-core/blob/master/citrix_hypervisor/metadata.csv
 [9]: https://github.com/KhulnaSoft/integrations-core/blob/master/citrix_hypervisor/assets/service_checks.json
 [10]: https://docs.khulnasoft.com/help/
-[11]: https://www.khulnasoft.com/blog/monitor-citrix-hypervisor-datadog/
+[11]: https://www.khulnasoft.com/blog/monitor-citrix-hypervisor-khulnasoft/

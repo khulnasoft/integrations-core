@@ -6,7 +6,7 @@ services:
     ports:
       - "5432:5432"
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U datadog -d khulnasoft_test && if [[ ! -e /tmp/container_ready.txt ]]; then exit 1; fi"]
+      test: ["CMD-SHELL", "pg_isready -U khulnasoft -d khulnasoft_test && if [[ ! -e /tmp/container_ready.txt ]]; then exit 1; fi"]
       interval: 1s
       timeout: 5s
       retries: 5

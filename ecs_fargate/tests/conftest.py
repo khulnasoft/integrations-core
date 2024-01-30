@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2021-present
+# (C) Khulnasoft, Inc. 2021-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 import os
@@ -121,16 +121,16 @@ def mocked_get_tags(entity, _):
     # Values taken from Agent6's TestParseMetadataV10 test
     tag_store = {
         "container_id://e8d4a9a20a0d931f8f632ec166b3f71a6ff00450aa7e99607f650e586df7d068": [
-            "docker_image:datadog/docker-dd-agent:latest",
-            "image_name:datadog/docker-dd-agent",
+            "docker_image:khulnasoft/docker-dd-agent:latest",
+            "image_name:khulnasoft/docker-dd-agent",
             "short_image:docker-dd-agent",
             "image_tag:latest",
             "cluster_name:pierrem-test-fargate",
-            "task_family:redis-datadog",
+            "task_family:redis-khulnasoft",
             "task_version:1",
             "ecs_container_name:dd-agent",
             "container_id:e8d4a9a20a0d931f8f632ec166b3f71a6ff00450aa7e99607f650e586df7d068",
-            "container_name:ecs-redis-datadog-1-dd-agent-8085fa82d1d3ada5a601",
+            "container_name:ecs-redis-khulnasoft-1-dd-agent-8085fa82d1d3ada5a601",
             "task_arn:arn:aws:ecs:eu-west-1:172597598159:task/648ca535-cbe0-4de7-b102-28e50b81e888",
         ],
         "container_id://c912d0f0f204360ee90ce67c0d083c3514975f149b854f38a48deac611e82e48": [
@@ -139,11 +139,11 @@ def mocked_get_tags(entity, _):
             "short_image:redis",
             "image_tag:latest",
             "cluster_name:pierrem-test-fargate",
-            "task_family:redis-datadog",
+            "task_family:redis-khulnasoft",
             "task_version:1",
             "ecs_container_name:redis",
             "container_id:c912d0f0f204360ee90ce67c0d083c3514975f149b854f38a48deac611e82e48",
-            "container_name:ecs-redis-datadog-1-redis-ce99d29f8ce998ed4a00",
+            "container_name:ecs-redis-khulnasoft-1-redis-ce99d29f8ce998ed4a00",
             "task_arn:arn:aws:ecs:eu-west-1:172597598159:task/648ca535-cbe0-4de7-b102-28e50b81e888",
         ],
         "container_id://39e13ccc425e7777187a603fe33f466a18515030707c4063de1dc1b63d14d411": [
@@ -152,16 +152,16 @@ def mocked_get_tags(entity, _):
             "short_image:amazon-ecs-pause",
             "image_tag:0.1.0",
             "cluster_name:pierrem-test-fargate",
-            "task_family:redis-datadog",
+            "task_family:redis-khulnasoft",
             "task_version:1",
             "ecs_container_name:~internal~ecs~pause",
             "container_id:39e13ccc425e7777187a603fe33f466a18515030707c4063de1dc1b63d14d411",
-            "container_name:ecs-redis-datadog-1-internalecspause-a2df9cefc2938ec19e01",
+            "container_name:ecs-redis-khulnasoft-1-internalecspause-a2df9cefc2938ec19e01",
             "task_arn:arn:aws:ecs:eu-west-1:172597598159:task/648ca535-cbe0-4de7-b102-28e50b81e888",
         ],
         "internal://global-entity-id": [
             "cluster_name:pierrem-test-fargate",
-            "task_family:redis-datadog",
+            "task_family:redis-khulnasoft",
             "task_version:1",
             "task_arn:arn:aws:ecs:eu-west-1:172597598159:task/648ca535-cbe0-4de7-b102-28e50b81e888",
         ],

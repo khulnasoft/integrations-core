@@ -13,7 +13,7 @@
 # rr = revision
 # xx = pre-release id (0xff is the final release)
 # So in the example: 2.2.0
-VERSION_HEX=$(grep "#define RD_KAFKA_VERSION" /opt/datadog-agent/embedded/include/librdkafka/rdkafka.h | cut -d ' ' -f 3)
+VERSION_HEX=$(grep "#define RD_KAFKA_VERSION" /opt/khulnasoft-agent/embedded/include/librdkafka/rdkafka.h | cut -d ' ' -f 3)
 
 if [ "$VERSION_HEX" != "0x${LIBRDKAFKA_VERSION}ff" ]; then
     apt-get update
@@ -28,11 +28,11 @@ if [ "$VERSION_HEX" != "0x${LIBRDKAFKA_VERSION}ff" ]; then
 
     cd librdkafka
 
-    export LDFLAGS="-L/opt/datadog-agent/embedded/lib -I/opt/datadog-agent/embedded/include"
-    export CFLAGS="-L/opt/datadog-agent/embedded/lib -I/opt/datadog-agent/embedded/include"
-    export LD_RUN_PATH="/opt/datadog-agent/embedded/lib"
+    export LDFLAGS="-L/opt/khulnasoft-agent/embedded/lib -I/opt/khulnasoft-agent/embedded/include"
+    export CFLAGS="-L/opt/khulnasoft-agent/embedded/lib -I/opt/khulnasoft-agent/embedded/include"
+    export LD_RUN_PATH="/opt/khulnasoft-agent/embedded/lib"
 
-    ./configure --enable-sasl --prefix=/opt/datadog-agent/embedded
+    ./configure --enable-sasl --prefix=/opt/khulnasoft-agent/embedded
     make
     make install
 

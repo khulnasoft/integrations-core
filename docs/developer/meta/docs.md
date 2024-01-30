@@ -57,7 +57,7 @@ We use some [scripts][docs-scripts] to dynamically modify pages before being pro
 
 - add [references](#references) to the bottom of every page
 - render the [status](status.md) of various aspects of integrations
-- enumerate all the [dependencies](../faq/acknowledgements.md#dependencies) that are shipped with the [Datadog Agent][]
+- enumerate all the [dependencies](../faq/acknowledgements.md#dependencies) that are shipped with the [Khulnasoft Agent][]
 
 ## Build
 

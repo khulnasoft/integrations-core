@@ -2,27 +2,27 @@
 
 ## Overview
 
-Datadog monitors every aspect of your Istio environment, so you can:
+Khulnasoft monitors every aspect of your Istio environment, so you can:
 - Assess the health of Envoy and the Istio control plane with [logs](#log-collection).
 - Break down the performance of your service mesh with [request, bandwidth, and resource consumption metrics](#metrics).
 - Map network communication between containers, pods, and services over the mesh with [Network Performance Monitoring][1].
 - Drill into distributed traces for applications transacting over the mesh with [APM][2].
 
-To learn more about monitoring your Istio environment with Datadog, [see the Monitor blog post][3].
+To learn more about monitoring your Istio environment with Khulnasoft, [see the Monitor blog post][3].
 
 ## Setup
 
 Follow the instructions below to install and configure this check for an Agent running on a host. For containerized environments, see the [Autodiscovery Integration Templates][4] for guidance on applying these instructions.
 
-This OpenMetrics-based integration has a latest mode (`use_openmetrics`: true) and a legacy mode (`use_openmetrics`: false). To get all the most up-to-date features, Datadog recommends enabling the latest mode. For more information, see [Latest and Legacy Versioning For OpenMetrics-based Integrations][25].
+This OpenMetrics-based integration has a latest mode (`use_openmetrics`: true) and a legacy mode (`use_openmetrics`: false). To get all the most up-to-date features, Khulnasoft recommends enabling the latest mode. For more information, see [Latest and Legacy Versioning For OpenMetrics-based Integrations][25].
 
-If you have multiple instances of Datadog collecting Istio metrics, make sure you are using the same mode for all of them. Otherwise, metrics data may fluctuate on the Datadog site.
+If you have multiple instances of Khulnasoft collecting Istio metrics, make sure you are using the same mode for all of them. Otherwise, metrics data may fluctuate on the Khulnasoft site.
 
 Metrics marked as `[OpenMetrics V1]`, `[OpenMetrics V2]`, or `[OpenMetrics V1 and V2]` are only available using the corresponding mode of the Istio integration. Metrics marked as `Istio v1.5+` are collected using Istio version 1.5 or later.
 
 ### Installation
 
-Istio is included in the Datadog Agent. [Install the Datadog Agent][5] on your Istio servers or in your cluster and point it at Istio.
+Istio is included in the Khulnasoft Agent. [Install the Khulnasoft Agent][5] on your Istio servers or in your cluster and point it at Istio.
 
 #### Envoy
 
@@ -75,13 +75,13 @@ The method for applying these annotations varies depending on the [Istio deploym
 
 These annotations reference `discovery` as the `<CONTAINER_IDENTIFIER>` to match the default container name of the pods for the `istiod` deployment. If your container name is different, adjust accordingly.
 
-#### Disable sidecar injection for Datadog Agent pods
+#### Disable sidecar injection for Khulnasoft Agent pods
 
-If you are installing the [Datadog Agent in a container][10], Datadog recommends that you first disable Istio's sidecar injection.
+If you are installing the [Khulnasoft Agent in a container][10], Khulnasoft recommends that you first disable Istio's sidecar injection.
 
 _Istio versions >= 1.10:_
 
-Add the `sidecar.istio.io/inject: "false"` **label** to the `datadog-agent` DaemonSet:
+Add the `sidecar.istio.io/inject: "false"` **label** to the `khulnasoft-agent` DaemonSet:
 
 ```yaml
 # (...)
@@ -96,12 +96,12 @@ spec:
 This can also be done with the `kubectl patch` command.
 
 ```shell
-kubectl patch daemonset datadog-agent -p '{"spec":{"template":{"metadata":{"labels":{"sidecar.istio.io/inject":"false"}}}}}'
+kubectl patch daemonset khulnasoft-agent -p '{"spec":{"template":{"metadata":{"labels":{"sidecar.istio.io/inject":"false"}}}}}'
 ```
 
 _Istio versions <= 1.9:_
 
-Add the `sidecar.istio.io/inject: "false"` **annotation** to the `datadog-agent` DaemonSet:
+Add the `sidecar.istio.io/inject: "false"` **annotation** to the `khulnasoft-agent` DaemonSet:
 
 ```yaml
 # (...)
@@ -116,7 +116,7 @@ spec:
 Using the `kubectl patch` command:
 
 ```shell
-kubectl patch daemonset datadog-agent -p '{"spec":{"template":{"metadata":{"annotations":{"sidecar.istio.io/inject":"false"}}}}}'
+kubectl patch daemonset khulnasoft-agent -p '{"spec":{"template":{"metadata":{"annotations":{"sidecar.istio.io/inject":"false"}}}}}'
 ```
 
 #### Log collection
@@ -126,7 +126,7 @@ Istio contains two types of logs: Envoy access logs that are collected with the 
 _Available for Agent versions >6.0_
 
 See the [Autodiscovery Integration Templates][4] for guidance on applying the parameters below.
-Collecting logs is disabled by default in the Datadog Agent. To enable it, see [Kubernetes Log Collection][13].
+Collecting logs is disabled by default in the Khulnasoft Agent. To enable it, see [Kubernetes Log Collection][13].
 
 | Parameter      | Value                                                |
 | -------------- | ---------------------------------------------------- |
@@ -203,19 +203,19 @@ instances:
       - envoy_*
 ```
 
-Need help? Contact [Datadog support][17].
+Need help? Contact [Khulnasoft support][17].
 
 ## Further Reading
 
 Additional helpful documentation, links, and articles:
 
-- [Monitor your Istio service mesh with Datadog][18]
-- [Learn how Datadog collects key metrics to monitor Istio][19]
-- [How to monitor Istio with Datadog][3]
+- [Monitor your Istio service mesh with Khulnasoft][18]
+- [Learn how Khulnasoft collects key metrics to monitor Istio][19]
+- [How to monitor Istio with Khulnasoft][3]
 
 [1]: https://www.khulnasoft.com/blog/monitor-istio-with-npm/
 [2]: https://docs.khulnasoft.com/tracing/setup_overview/proxy_setup/?tab=istio
-[3]: https://www.khulnasoft.com/blog/istio-datadog/
+[3]: https://www.khulnasoft.com/blog/istio-khulnasoft/
 [4]: https://docs.khulnasoft.com/agent/kubernetes/integrations/
 [5]: https://app.khulnasoft.com/account/settings/agent/latest
 [6]: https://github.com/KhulnaSoft/integrations-core/tree/master/envoy#istio
@@ -230,7 +230,7 @@ Additional helpful documentation, links, and articles:
 [15]: https://github.com/KhulnaSoft/integrations-core/blob/master/istio/metadata.csv
 [16]: https://github.com/KhulnaSoft/integrations-core/blob/master/istio/assets/service_checks.json
 [17]: https://docs.khulnasoft.com/help/
-[18]: https://www.khulnasoft.com/blog/monitor-istio-with-datadog
+[18]: https://www.khulnasoft.com/blog/monitor-istio-with-khulnasoft
 [19]: https://www.khulnasoft.com/blog/istio-metrics/
 [20]: https://docs.khulnasoft.com/integrations/openmetrics/
 [21]: https://github.com/KhulnaSoft/integrations-core/blob/7.32.x/istio/khulnasoft_checks/istio/data/conf.yaml.example

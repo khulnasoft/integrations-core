@@ -3,6 +3,6 @@ from hatchling.plugin import hookimpl
 
 @hookimpl
 def hatch_register_environment_collector():
-    from .environment_collector import DatadogChecksEnvironmentCollector
+    from .environment_collector import KhulnasoftChecksEnvironmentCollector
 
-    return DatadogChecksEnvironmentCollector
+    return KhulnasoftChecksEnvironmentCollector

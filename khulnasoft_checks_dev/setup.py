@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2018-present
+# (C) Khulnasoft, Inc. 2018-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 from io import open
@@ -39,12 +39,12 @@ def parse_pyproject_array(name):
 setup(
     name='khulnasoft_checks_dev',
     version=VERSION,
-    description='The Datadog Checks Developer Tools',
+    description='The Khulnasoft Checks Developer Tools',
     long_description=README,
     long_description_content_type='text/markdown',
-    keywords='datadog agent checks dev tools tests',
+    keywords='khulnasoft agent checks dev tools tests',
     url='https://github.com/KhulnaSoft/integrations-core',
-    author='Datadog',
+    author='Khulnasoft',
     author_email='packages@khulnasoft.com',
     license='BSD',
     # See https://pypi.org/classifiers

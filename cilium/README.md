@@ -2,7 +2,7 @@
 
 ## Overview
 
-This check monitors [Cilium][1] through the Datadog Agent. The integration can either collect metrics from the `cilium-agent` or `cilium-operator`.
+This check monitors [Cilium][1] through the Khulnasoft Agent. The integration can either collect metrics from the `cilium-agent` or `cilium-operator`.
 
 ## Setup
 
@@ -10,9 +10,9 @@ Follow the instructions below to install and configure this check for an Agent r
 
 ### Installation
 
-The Cilium check is included in the [Datadog Agent][3] package, but it requires additional setup steps to expose Prometheus metrics.
+The Cilium check is included in the [Khulnasoft Agent][3] package, but it requires additional setup steps to expose Prometheus metrics.
 
-Starting with version 1.10.0, this OpenMetrics-based integration has a latest mode (`use_openmetrics`: true) and a legacy mode (`use_openmetrics`: false). To get all the most up-to-date features, Datadog recommends enabling the latest mode. For more information, see [Latest and Legacy Versioning For OpenMetrics-based Integrations][13].
+Starting with version 1.10.0, this OpenMetrics-based integration has a latest mode (`use_openmetrics`: true) and a legacy mode (`use_openmetrics`: false). To get all the most up-to-date features, Khulnasoft recommends enabling the latest mode. For more information, see [Latest and Legacy Versioning For OpenMetrics-based Integrations][13].
 
 1. In order to enable Prometheus metrics in both the `cilium-agent` and `cilium-operator`, deploy Cilium with the following Helm values set according to your version of Cilium:
    * Cilium < v1.8.x:
@@ -89,7 +89,7 @@ To configure this check for an Agent running on a host:
 
 Cilium contains two types of logs: `cilium-agent` and `cilium-operator`.
 
-1. Collecting logs is disabled by default in the Datadog Agent. Enable it in your [DaemonSet configuration][4]:
+1. Collecting logs is disabled by default in the Khulnasoft Agent. Enable it in your [DaemonSet configuration][4]:
 
    ```yaml
      # (...)
@@ -102,7 +102,7 @@ Cilium contains two types of logs: `cilium-agent` and `cilium-operator`.
      # (...)
    ```
 
-2. Mount the Docker socket to the Datadog Agent through the manifest or mount the `/var/log/pods` directory if you are not using Docker. For example manifests see the [Kubernetes Installation instructions for DaemonSet][6].
+2. Mount the Docker socket to the Khulnasoft Agent through the manifest or mount the `/var/log/pods` directory if you are not using Docker. For example manifests see the [Kubernetes Installation instructions for DaemonSet][6].
 
 3. [Restart the Agent][5].
 
@@ -113,7 +113,7 @@ Cilium contains two types of logs: `cilium-agent` and `cilium-operator`.
 
 For containerized environments, see the [Autodiscovery Integration Templates][2] for guidance on applying the parameters below.
 
-Collecting logs is disabled by default in the Datadog Agent. To enable it, see [Kubernetes Log Collection][7].
+Collecting logs is disabled by default in the Khulnasoft Agent. To enable it, see [Kubernetes Log Collection][7].
 
 ##### To collect `cilium-agent` metrics and logs: 
 
@@ -170,7 +170,7 @@ See [service_checks.json][10] for a list of service checks provided by this inte
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][11].
+Need help? Contact [Khulnasoft support][11].
 
 [1]: https://cilium.io
 [2]: https://docs.khulnasoft.com/agent/kubernetes/integrations/

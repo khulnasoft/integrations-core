@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2018-present
+# (C) Khulnasoft, Inc. 2018-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 from __future__ import division
@@ -60,9 +60,9 @@ def check_tag_names(metric, tags):
 class AggregatorStub(object):
     """
     This implements the methods defined by the Agent's
-    [C bindings](https://github.com/KhulnaSoft/datadog-agent/blob/master/rtloader/common/builtins/aggregator.c)
+    [C bindings](https://github.com/KhulnaSoft/khulnasoft-agent/blob/master/rtloader/common/builtins/aggregator.c)
     which in turn call the
-    [Go backend](https://github.com/KhulnaSoft/datadog-agent/blob/master/pkg/collector/python/aggregator.go).
+    [Go backend](https://github.com/KhulnaSoft/khulnasoft-agent/blob/master/pkg/collector/python/aggregator.go).
 
     It also provides utility methods for test assertions.
     """
@@ -82,7 +82,7 @@ class AggregatorStub(object):
     METRIC_ENUM_MAP_REV = {v: k for k, v in iteritems(METRIC_ENUM_MAP)}
     GAUGE, RATE, COUNT, MONOTONIC_COUNT, COUNTER, HISTOGRAM, HISTORATE = list(METRIC_ENUM_MAP.values())
     AGGREGATE_TYPES = {COUNT, COUNTER}
-    IGNORED_METRICS = {'datadog.agent.profile.memory.check_run_alloc'}
+    IGNORED_METRICS = {'khulnasoft.agent.profile.memory.check_run_alloc'}
     METRIC_TYPE_SUBMISSION_TO_BACKEND_MAP = {
         'gauge': 'gauge',
         'rate': 'gauge',

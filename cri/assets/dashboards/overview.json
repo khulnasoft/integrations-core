@@ -1,6 +1,6 @@
 {
   "title": "CRI - Overview",
-  "description": "This dashboard provides a high-level overview of your Kubernetes images managed by a container runtime interface (e.g., Docker, Containerd, CRI-O), so you can track resource utilization for all of your images. Further reading on CRI:\n\n- [Datadog's Kubernetes integration docs](https://docs.khulnasoft.com/integrations/kubernetes/)\n\n- [Datadog's CRI docs](https://docs.khulnasoft.com/integrations/cri/)\n\nClone this template dashboard to make changes and add your own graph widgets.",
+  "description": "This dashboard provides a high-level overview of your Kubernetes images managed by a container runtime interface (e.g., Docker, Containerd, CRI-O), so you can track resource utilization for all of your images. Further reading on CRI:\n\n- [Khulnasoft's Kubernetes integration docs](https://docs.khulnasoft.com/integrations/kubernetes/)\n\n- [Khulnasoft's CRI docs](https://docs.khulnasoft.com/integrations/cri/)\n\nClone this template dashboard to make changes and add your own graph widgets.",
   "widgets": [
     {
       "id": 0,

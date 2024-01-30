@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2019-present
+# (C) Khulnasoft, Inc. 2019-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 from copy import deepcopy
@@ -53,9 +53,9 @@ class DbManager(object):
             ),
             check=True,
         )
-        run_command('docker exec ibm_db2 su - db2inst1 -c "db2 -c deactivate db datadog"', check=True)
-        run_command('docker exec ibm_db2 su - db2inst1 -c "db2 -c backup db datadog"', check=True)
-        run_command('docker exec ibm_db2 su - db2inst1 -c "db2 -c activate db datadog"', check=True)
+        run_command('docker exec ibm_db2 su - db2inst1 -c "db2 -c deactivate db khulnasoft"', check=True)
+        run_command('docker exec ibm_db2 su - db2inst1 -c "db2 -c backup db khulnasoft"', check=True)
+        run_command('docker exec ibm_db2 su - db2inst1 -c "db2 -c activate db khulnasoft"', check=True)
         run_command('docker exec ibm_db2 su - db2inst1 -c "db2 -c unquiesce instance db2inst1"', check=True)
 
     def connect(self):

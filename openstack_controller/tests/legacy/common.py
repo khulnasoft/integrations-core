@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2023-present
+# (C) Khulnasoft, Inc. 2023-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 
@@ -142,7 +142,7 @@ EXAMPLE_AUTH_RESPONSE = {
         u'user': {
             u'domain': {u'id': u'default', u'name': u'Default'},
             u'id': u'5f10e63fbd6b411186e561dc62a9a675',
-            u'name': u'datadog',
+            u'name': u'khulnasoft',
         },
         u'audit_ids': [u'OMQQg9g3QmmxRHwKrfWxyQ'],
         u'issued_at': u'2015-11-02T14: 57: 43.911697Z',

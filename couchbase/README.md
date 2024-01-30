@@ -18,7 +18,7 @@ And many more.
 
 ### Installation
 
-The Couchbase check is included in the [Datadog Agent][2] package, so you don't need to install anything else on your Couchbase nodes.
+The Couchbase check is included in the [Khulnasoft Agent][2] package, so you don't need to install anything else on your Couchbase nodes.
 
 ### Configuration
 
@@ -49,7 +49,7 @@ To configure this check for an Agent running on a host:
 
 _Available for Agent versions >6.0_
 
-1. Collecting logs is disabled by default in the Datadog Agent, you need to enable it in `datadog.yaml`:
+1. Collecting logs is disabled by default in the Khulnasoft Agent, you need to enable it in `khulnasoft.yaml`:
 
    ```yaml
    logs_enabled: true
@@ -98,7 +98,7 @@ See [metadata.csv][8] for a list of metrics provided by this integration.
 
 ### Events
 
-The Couchbase check emits an event to Datadog each time the cluster is rebalanced.
+The Couchbase check emits an event to Khulnasoft each time the cluster is rebalanced.
 
 ### Service Checks
 
@@ -106,7 +106,7 @@ See [service_checks.json][9] for a list of service checks provided by this integ
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][10].
+Need help? Contact [Khulnasoft support][10].
 
 ## Further Reading
 
@@ -122,4 +122,4 @@ Need help? Contact [Datadog support][10].
 [8]: https://github.com/KhulnaSoft/integrations-core/blob/master/couchbase/metadata.csv
 [9]: https://github.com/KhulnaSoft/integrations-core/blob/master/couchbase/assets/service_checks.json
 [10]: https://docs.khulnasoft.com/help/
-[11]: https://www.khulnasoft.com/blog/monitoring-couchbase-performance-datadog
+[11]: https://www.khulnasoft.com/blog/monitoring-couchbase-performance-khulnasoft

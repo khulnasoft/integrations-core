@@ -60,7 +60,7 @@ Development Tips
 
 ```
 $ ddev env start ibm_mq py27-8
-$ docker exec -it ibm_mq runmqsc datadog
+$ docker exec -it ibm_mq runmqsc khulnasoft
 ```
 
 # IBM MQ Console example commands

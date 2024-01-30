@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2021-present
+# (C) Khulnasoft, Inc. 2021-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 
@@ -202,13 +202,13 @@ class MySQLStatementSamples(DBMAsyncJob):
         )
         self._explain_procedure = self._config.statement_samples_config.get('explain_procedure', 'explain_statement')
         self._fully_qualified_explain_procedure = self._config.statement_samples_config.get(
-            'fully_qualified_explain_procedure', 'datadog.explain_statement'
+            'fully_qualified_explain_procedure', 'khulnasoft.explain_statement'
         )
         self._events_statements_temp_table = self._config.statement_samples_config.get(
-            'events_statements_temp_table_name', 'datadog.temp_events'
+            'events_statements_temp_table_name', 'khulnasoft.temp_events'
         )
         self._events_statements_enable_procedure = self._config.statement_samples_config.get(
-            'events_statements_enable_procedure', 'datadog.enable_events_statements_consumers'
+            'events_statements_enable_procedure', 'khulnasoft.enable_events_statements_consumers'
         )
         self._explain_strategies = {
             'PROCEDURE': self._run_explain_procedure,
@@ -656,7 +656,7 @@ class MySQLStatementSamples(DBMAsyncJob):
         # if there is a default schema on the connection then the only way we can guarantee collection of plans is
         # by having that same default schema set when invoking the EXPLAIN, which is what we do with the "PROCEDURE"
         # strategy. If there is no default schema then we can collect it from anywhere, typically FQ_PROCEDURE, which
-        # is expected to be in the dedicated datadog schema.
+        # is expected to be in the dedicated khulnasoft schema.
         optimal_strategy = "PROCEDURE" if schema else "FQ_PROCEDURE"
         is_optimal_strategy_cached = explain_state.strategy == optimal_strategy and not explain_state.error_code
         if is_optimal_strategy_cached:

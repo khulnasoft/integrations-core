@@ -1,19 +1,19 @@
 ALTER SYSTEM SET max_connections = '1000';
 ALTER SYSTEM SET shared_buffers = '240MB';
 
-CREATE USER datadog WITH PASSWORD 'datadog';
-CREATE USER khulnasoft_no_catalog WITH PASSWORD 'datadog';
+CREATE USER khulnasoft WITH PASSWORD 'khulnasoft';
+CREATE USER khulnasoft_no_catalog WITH PASSWORD 'khulnasoft';
 CREATE USER bob WITH PASSWORD 'bob';
 CREATE USER blocking_bob WITH PASSWORD 'bob';
 CREATE USER dd_admin WITH PASSWORD 'dd_admin';
 CREATE USER replicator WITH REPLICATION;
 ALTER USER dd_admin WITH SUPERUSER;
 REVOKE SELECT ON ALL tables IN SCHEMA pg_catalog from public;
-GRANT SELECT ON pg_stat_database TO datadog;
+GRANT SELECT ON pg_stat_database TO khulnasoft;
 GRANT SELECT ON pg_stat_database TO khulnasoft_no_catalog;
-GRANT SELECT ON ALL tables IN SCHEMA pg_catalog to datadog;
+GRANT SELECT ON ALL tables IN SCHEMA pg_catalog to khulnasoft;
 CREATE DATABASE khulnasoft_test;
-GRANT ALL PRIVILEGES ON DATABASE khulnasoft_test TO datadog;
+GRANT ALL PRIVILEGES ON DATABASE khulnasoft_test TO khulnasoft;
 CREATE DATABASE dogs;
 GRANT USAGE on SCHEMA public to bob;
 GRANT USAGE on SCHEMA public to blocking_bob;

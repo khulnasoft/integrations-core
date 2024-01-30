@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2010-present
+# (C) Khulnasoft, Inc. 2010-present
 # All rights reserved
 # Licensed under Simplified BSD License (see LICENSE)
 import json
@@ -42,7 +42,7 @@ class MockedMOR(Mock):
             self.guest_hostName = guest_hostname
 
         if kwargs.get('label', False):
-            self.customValue.append(Mock(value="DatadogMonitored"))
+            self.customValue.append(Mock(value="KhulnasoftMonitored"))
 
 
 def create_topology(topology_json):

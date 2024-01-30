@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2021-present
+# (C) Khulnasoft, Inc. 2021-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 from khulnasoft_checks.dev.tooling.datastructures import JSONDict
@@ -8,7 +8,7 @@ from khulnasoft_checks.dev.tooling.datastructures import JSONDict
 ORACLE_METADATA_CSV_EXAMPLE = [(0, {"metric_name": "oracle.session_count"})]
 
 V2_VALID_MANIFEST = {
-    "app_id": "datadog-oracle",
+    "app_id": "khulnasoft-oracle",
     "assets": {
         "dashboards": {"oracle": "assets/dashboards/example.json"},
         "integration": {
@@ -27,7 +27,7 @@ V2_VALID_MANIFEST = {
     },
     "author": {
         "homepage": "https://www.khulnasoft.com",
-        "name": "Datadog",
+        "name": "Khulnasoft",
         "sales_email": "help@khulnasoft.com",
         "support_email": "help@khulnasoft.com",
     },

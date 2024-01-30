@@ -2,7 +2,7 @@
 
 ## Overview
 
-This check monitors [IBM ACE][1] through the Datadog Agent.
+This check monitors [IBM ACE][1] through the Khulnasoft Agent.
 
 ## Setup
 
@@ -68,7 +68,7 @@ For Linux, make sure to set the LD_LIBRARY_PATH environment variable as describe
 
 ### Installation
 
-The IBM ACE check is included in the [Datadog Agent][2] package.
+The IBM ACE check is included in the [Khulnasoft Agent][2] package.
 No additional installation is needed on your server.
 
 ### Configuration
@@ -97,7 +97,7 @@ See [service_checks.json][8] for a list of service checks provided by this integ
 
 ### Log collection
 
-1. Collecting logs is disabled by default in the Datadog Agent. Enable it in your `datadog.yaml` file:
+1. Collecting logs is disabled by default in the Khulnasoft Agent. Enable it in your `khulnasoft.yaml` file:
 
     ```yaml
     logs_enabled: true
@@ -116,7 +116,7 @@ See [service_checks.json][8] for a list of service checks provided by this integ
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][9].
+Need help? Contact [Khulnasoft support][9].
 
 
 [1]: https://www.ibm.com/docs/en/app-connect/12.0?topic=overview-app-connect-enterprise-introduction

@@ -26,7 +26,7 @@
 
 ***Fixed***:
 
-* Bump the minimum datadog-checks-base version ([#15217](https://github.com/KhulnaSoft/integrations-core/pull/15217))
+* Bump the minimum khulnasoft-checks-base version ([#15217](https://github.com/KhulnaSoft/integrations-core/pull/15217))
 
 ## 1.1.1 / 2023-07-10
 
@@ -43,7 +43,7 @@
 ***Fixed***:
 
 * Add DEFAULT_METRIC_LIMIT for OpenMetrics-based checks ([#14527](https://github.com/KhulnaSoft/integrations-core/pull/14527))
-* Update minimum datadog base package version ([#14463](https://github.com/KhulnaSoft/integrations-core/pull/14463))
+* Update minimum khulnasoft base package version ([#14463](https://github.com/KhulnaSoft/integrations-core/pull/14463))
 * Deprecate `use_latest_spec` option ([#14446](https://github.com/KhulnaSoft/integrations-core/pull/14446))
 
 ## 1.0.1 / 2022-09-22 / Agent 7.40.0

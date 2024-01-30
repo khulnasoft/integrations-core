@@ -2,13 +2,13 @@
 
 ## Overview
 
-This check monitors [Harbor][1] through the Datadog Agent.
+This check monitors [Harbor][1] through the Khulnasoft Agent.
 
 ## Setup
 
 ### Installation
 
-The Harbor check is included in the [Datadog Agent][2] package. No additional installation is needed on your server.
+The Harbor check is included in the [Khulnasoft Agent][2] package. No additional installation is needed on your server.
 
 ### Configuration
 
@@ -31,7 +31,7 @@ To configure this check for an Agent running on a host:
 
 _Available for Agent versions >6.0_
 
-1. Collecting logs is disabled by default in the Datadog Agent, you need to enable it in `datadog.yaml`:
+1. Collecting logs is disabled by default in the Khulnasoft Agent, you need to enable it in `khulnasoft.yaml`:
 
    ```yaml
    logs_enabled: true
@@ -68,7 +68,7 @@ For containerized environments, see the [Autodiscovery Integration Templates][6]
 
 _Available for Agent versions >6.0_
 
-Collecting logs is disabled by default in the Datadog Agent. To enable it, see [Kubernetes Log Collection][7].
+Collecting logs is disabled by default in the Khulnasoft Agent. To enable it, see [Kubernetes Log Collection][7].
 
 | Parameter      | Value                                               |
 | -------------- | --------------------------------------------------- |
@@ -97,7 +97,7 @@ See [service_checks.json][10] for a list of service checks provided by this inte
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][11].
+Need help? Contact [Khulnasoft support][11].
 
 
 [1]: https://goharbor.io

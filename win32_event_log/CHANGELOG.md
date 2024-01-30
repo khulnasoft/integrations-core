@@ -12,7 +12,7 @@
 
 ***Deprecated***:
 
-* Deprecate the Python implementation of the check. Setting `legacy_mode: false` now runs a check defined in [datadog-agent](https://github.com/KhulnaSoft/datadog-agent). See [datadog-agent#20701](https://github.com/KhulnaSoft/datadog-agent/pull/20701) for more information on the new check implementation. Set `legacy_mode_v2: true` to revert to the Python implementation of the check. The Python implementation may be removed in a future version of the agent. ([#16108](https://github.com/KhulnaSoft/integrations-core/pull/16108))
+* Deprecate the Python implementation of the check. Setting `legacy_mode: false` now runs a check defined in [khulnasoft-agent](https://github.com/KhulnaSoft/khulnasoft-agent). See [khulnasoft-agent#20701](https://github.com/KhulnaSoft/khulnasoft-agent/pull/20701) for more information on the new check implementation. Set `legacy_mode_v2: true` to revert to the Python implementation of the check. The Python implementation may be removed in a future version of the agent. ([#16108](https://github.com/KhulnaSoft/integrations-core/pull/16108))
 
 ## 3.1.1 / 2023-10-26
 
@@ -49,7 +49,7 @@
 
 ***Fixed***:
 
-* Bump the minimum datadog-checks-base version ([#15217](https://github.com/KhulnaSoft/integrations-core/pull/15217))
+* Bump the minimum khulnasoft-checks-base version ([#15217](https://github.com/KhulnaSoft/integrations-core/pull/15217))
 
 ## 2.14.0 / 2023-07-10
 

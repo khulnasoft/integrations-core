@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2020-present
+# (C) Khulnasoft, Inc. 2020-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 
@@ -49,7 +49,7 @@ def get_long_state_name(state):
     if state in REPLSET_MEMBER_STATES:
         return REPLSET_MEMBER_STATES[state][1]
     else:
-        return 'Replset state %d is unknown to the Datadog agent' % state
+        return 'Replset state %d is unknown to the Khulnasoft agent' % state
 
 
 class Deployment(object):
@@ -73,7 +73,7 @@ class MongosDeployment(Deployment):
         self.use_shards = True
 
     def is_principal(self):
-        # A mongos has full visibility on the data, Datadog agents should only communicate
+        # A mongos has full visibility on the data, Khulnasoft agents should only communicate
         # with one mongos.
         return True
 

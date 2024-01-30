@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2022-present
+# (C) Khulnasoft, Inc. 2022-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 import os
@@ -12,14 +12,14 @@ def pytest_addoption(parser):
     parser.addoption(
         "--distribution-name",
         action="store",
-        default="datadog-active-directory",
-        help="Standard distribution name of the desired Datadog check.",
+        default="khulnasoft-active-directory",
+        help="Standard distribution name of the desired Khulnasoft check.",
     )
     parser.addoption(
         "--distribution-version",
         action="store",
         default="1.10.0",
-        help="The version number of the desired Datadog check.",
+        help="The version number of the desired Khulnasoft check.",
     )
     parser.addoption(
         "--local-dir",

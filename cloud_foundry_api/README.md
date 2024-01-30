@@ -2,7 +2,7 @@
 
 ## Overview
 
-This check queries the [Cloud Foundry API][1] to collect audit events and send them to Datadog through the Agent.
+This check queries the [Cloud Foundry API][1] to collect audit events and send them to Khulnasoft through the Agent.
 
 ## Setup
 
@@ -10,7 +10,7 @@ Follow the instructions below to install and configure this check for an Agent r
 
 ### Installation
 
-The Cloud Foundry API check is included in the [Datadog Agent][3] package.
+The Cloud Foundry API check is included in the [Khulnasoft Agent][3] package.
 No additional installation is needed on your server.
 
 ### Configuration
@@ -39,7 +39,7 @@ See [service_checks.json][8] for a list of service checks provided by this integ
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][9].
+Need help? Contact [Khulnasoft support][9].
 
 
 [1]: http://v3-apidocs.cloudfoundry.org

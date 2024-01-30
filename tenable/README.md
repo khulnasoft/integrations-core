@@ -1,6 +1,6 @@
 ## Overview
 
-This integration monitors [Tenable Nessus][1] logs through the Datadog Agent.
+This integration monitors [Tenable Nessus][1] logs through the Khulnasoft Agent.
 
 ## Setup
 
@@ -22,7 +22,7 @@ The Agent tails the Tenable Nessus `webserver` and `backend` logs to collect dat
 
 _Available for Agent versions >6.0_
 
-1. Collecting logs is disabled by default in the Datadog Agent, enable it in your `datadog.yaml` file:
+1. Collecting logs is disabled by default in the Khulnasoft Agent, enable it in your `khulnasoft.yaml` file:
 
    ```yaml
    logs_enabled: true
@@ -64,7 +64,7 @@ This integration does not include any events.
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][5].
+Need help? Contact [Khulnasoft support][5].
 
 [1]: https://www.tenable.com/products/nessus
 [2]: https://docs.khulnasoft.com/agent/guide/integration-management/#install

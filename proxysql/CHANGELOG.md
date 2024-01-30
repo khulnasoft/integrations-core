@@ -106,7 +106,7 @@
 
 ***Added***:
 
-* Add version verification for datadog-checks-base ([#8255](https://github.com/KhulnaSoft/integrations-core/pull/8255))
+* Add version verification for khulnasoft-checks-base ([#8255](https://github.com/KhulnaSoft/integrations-core/pull/8255))
 
 ## 2.0.0 / 2020-10-31 / Agent 7.24.0
 

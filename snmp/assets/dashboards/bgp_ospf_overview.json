@@ -6,7 +6,7 @@
             "id": 13,
             "definition": {
                 "type": "image",
-                "url": "https://imgix.khulnasoft.com/img/blog/monitor-snmp-with-datadog/snmp-hero-image.png?fit=crop&w=1200&h=630",
+                "url": "https://imgix.khulnasoft.com/img/blog/monitor-snmp-with-khulnasoft/snmp-hero-image.png?fit=crop&w=1200&h=630",
                 "sizing": "zoom"
             },
             "layout": {

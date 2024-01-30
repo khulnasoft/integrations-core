@@ -41,7 +41,7 @@ files:
         required: true
         description: The name of the queue manager.
         value:
-          example: 'datadog'
+          example: 'khulnasoft'
           type: string
           minLength: 1
       - name: host
@@ -143,7 +143,7 @@ files:
 
           The key is the IBM MQ channel status. Valid keys are: `inactive`, `binding`, `starting`, `running`, `stopping`,
           `retrying`, `stopped`, `requesting`, `paused`, and `initializing`.
-          The value is the Datadog service check level. Valid values are: `ok`, `warning`, `critical`, and `unknown`.
+          The value is the Khulnasoft service check level. Valid values are: `ok`, `warning`, `critical`, and `unknown`.
           If a channel status is not mapped, it is mapped to `unknown`.
         value:
           example:

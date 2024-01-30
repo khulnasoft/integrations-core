@@ -41,12 +41,12 @@ files:
         type: string
         example: TCP
     - name: username
-      description: The username for the Datadog user account.
+      description: The username for the Khulnasoft user account.
       required: true
       value:
         type: string
     - name: password
-      description: The password for the Datadog user account.
+      description: The password for the Khulnasoft user account.
       required: true
       value:
         type: string

@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2023-present
+# (C) Khulnasoft, Inc. 2023-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 import copy
@@ -32,7 +32,7 @@ def dd_environment():
         wrappers=[create_log_volumes()],
     ):
         # Run the workflow a couple of times.
-        for param in ("World", "Datadog", "Agent Integrations"):
+        for param in ("World", "Khulnasoft", "Agent Integrations"):
             run_command(
                 "docker exec temporal-admin-tools tctl workflow start "
                 "   --taskqueue python-task-queue "

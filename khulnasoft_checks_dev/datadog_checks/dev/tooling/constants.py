@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2018-present
+# (C) Khulnasoft, Inc. 2018-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 import os
@@ -31,7 +31,7 @@ REPO_CHOICES = {
     'core': 'integrations-core',
     'extras': 'integrations-extras',
     'internal': 'integrations-internal',
-    'agent': 'datadog-agent',
+    'agent': 'khulnasoft-agent',
     'marketplace': 'marketplace',
     'integrations-internal-core': 'integrations-internal-core',
 }
@@ -121,7 +121,7 @@ SNMP_TILE_LINKS = """\
 [2]: https://docs.khulnasoft.com/network_performance_monitoring/devices/setup
 [3]: https://github.com/KhulnaSoft/{repository}/blob/master/snmp_{name}/assets/service_checks.json
 [4]: https://docs.khulnasoft.com/help/
-[5]: https://www.khulnasoft.com/blog/monitor-snmp-with-datadog/
+[5]: https://www.khulnasoft.com/blog/monitor-snmp-with-khulnasoft/
 """
 
 TILE_LINKS = """\
@@ -206,7 +206,7 @@ def get_agent_requirements():
 def get_agent_integrations_file():
     """
     Return the full path to the file containing the full list of integrations
-    shipped with any Datadog Agent release.
+    shipped with any Khulnasoft Agent release.
     """
     return os.path.join(get_root(), 'AGENT_INTEGRATIONS.md')
 
@@ -214,7 +214,7 @@ def get_agent_integrations_file():
 def get_agent_changelog():
     """
     Return the full path to the file containing the list of integrations that
-    have changed with any Datadog Agent release.
+    have changed with any Khulnasoft Agent release.
     """
     return os.path.join(get_root(), 'AGENT_CHANGELOG.md')
 

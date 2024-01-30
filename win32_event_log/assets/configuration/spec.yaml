@@ -404,7 +404,7 @@ files:
     - name: event_format
       description: |
         The `event_format` parameter instructs the check to generate
-        Datadog's event bodies with the specified list of event properties.
+        Khulnasoft's event bodies with the specified list of event properties.
         If unspecified, the EventLog's `Message` or `InsertionStrings` are used by default.
         Available values are: Logfile, SourceName, EventCode, Message, InsertionStrings, TimeGenerated, Type
 

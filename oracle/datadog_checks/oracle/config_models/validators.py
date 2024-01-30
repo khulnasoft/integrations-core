@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2021-present
+# (C) Khulnasoft, Inc. 2021-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 from khulnasoft_checks.oracle.oracle import PROTOCOL_TCPS, VALID_PROTOCOLS, VALID_TRUSTSTORE_TYPES

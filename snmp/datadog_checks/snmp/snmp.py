@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2010-present
+# (C) Khulnasoft, Inc. 2010-present
 # All rights reserved
 # Licensed under Simplified BSD License (see LICENSE)
 import copy
@@ -408,9 +408,9 @@ class SnmpCheck(AgentCheck):
         # - for single device, tags contain device specific tags
         # - for network, tags contain network tags, but won't contain individual device tags
         check_duration = time.time() - start_time
-        self.monotonic_count('datadog.snmp.check_interval', time.time(), tags=telemetry_tags)
-        self.gauge('datadog.snmp.check_duration', check_duration, tags=telemetry_tags)
-        self.gauge('datadog.snmp.submitted_metrics', self._submitted_metrics, tags=telemetry_tags)
+        self.monotonic_count('khulnasoft.snmp.check_interval', time.time(), tags=telemetry_tags)
+        self.gauge('khulnasoft.snmp.check_duration', check_duration, tags=telemetry_tags)
+        self.gauge('khulnasoft.snmp.submitted_metrics', self._submitted_metrics, tags=telemetry_tags)
 
     def _on_check_device_done(self, host, future):
         # type: (str, futures.Future) -> None

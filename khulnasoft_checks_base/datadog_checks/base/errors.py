@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2018-present
+# (C) Khulnasoft, Inc. 2018-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 
@@ -47,7 +47,7 @@ class SkipInstanceError(ConfigNotSupportedError):
     different version of the check (Go vs Python check loader).
     """
 
-    # Keep this error prefix in sync with the Python check loader in datadogagent.
+    # Keep this error prefix in sync with the Python check loader in khulnasoftagent.
     # The string is used to identify this error across the rtloader boundary.
     PREFIX_PATTERN = "The integration refused to load the check configuration, it may be too old or too new."
 

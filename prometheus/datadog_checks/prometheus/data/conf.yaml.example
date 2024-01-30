@@ -25,7 +25,7 @@ instances:
 
     ## @param metrics - (list of mapping or string) - required
     ## List of `<METRIC_TO_FETCH>: <NEW_METRIC_NAME>` for metrics to be fetched from the Prometheus endpoint.
-    ## `<NEW_METRIC_NAME>` is optional. If set, it transforms the name in Datadog.
+    ## `<NEW_METRIC_NAME>` is optional. If set, it transforms the name in Khulnasoft.
     ## This list should contain at least one metric.
     #
     metrics:

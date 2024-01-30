@@ -1,12 +1,12 @@
 id: "calico"
 tests:
  -
-  sample: "2022-03-08 13:20:34.092 [INFO][760] felix/int_dataplane.go 1484: Received *proto.ActiveProfileUpdate update from calculation graph msg=id:<name:\"ksa.default.datadog-agent-kube-state-metrics\" > profile:<> "
+  sample: "2022-03-08 13:20:34.092 [INFO][760] felix/int_dataplane.go 1484: Received *proto.ActiveProfileUpdate update from calculation graph msg=id:<name:\"ksa.default.khulnasoft-agent-kube-state-metrics\" > profile:<> "
   result:
     custom:
       calico:
         id:
-          name: "ksa.default.datadog-agent-kube-state-metrics"
+          name: "ksa.default.khulnasoft-agent-kube-state-metrics"
       logger:
         line_number: 1484
         name: "felix/int_dataplane.go"
@@ -19,13 +19,13 @@ tests:
      - "source:LOGS_SOURCE"
     timestamp: 1646745634092
  -
-  sample: "2022-03-08 13:20:34.092 [INFO][760] felix/int_dataplane.go 1484: Received *proto.ActiveProfileUpdate update from calculation graph msg=id:<name:\"ksa.default.datadog-agent-kube-state-metrics\" > endpoint:<hello> profile:<world> "
+  sample: "2022-03-08 13:20:34.092 [INFO][760] felix/int_dataplane.go 1484: Received *proto.ActiveProfileUpdate update from calculation graph msg=id:<name:\"ksa.default.khulnasoft-agent-kube-state-metrics\" > endpoint:<hello> profile:<world> "
   result:
     custom:
       calico:
         endpoint: "hello"
         id:
-          name: "ksa.default.datadog-agent-kube-state-metrics"
+          name: "ksa.default.khulnasoft-agent-kube-state-metrics"
         profile: "world"
       logger:
         line_number: 1484

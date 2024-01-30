@@ -1,4 +1,4 @@
-﻿# (C) Datadog, Inc. 2021-present
+﻿# (C) Khulnasoft, Inc. 2021-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 
@@ -856,7 +856,7 @@ def test_async_job_cancel_cancel(aggregator, dd_run_check, dbm_instance):
             {
                 'now': '2023-10-06T19:36:10.550+00:00',
                 'query_start': '2023-10-06T19:36:10.483+00:00',
-                'user_name': 'datadog',
+                'user_name': 'khulnasoft',
                 'last_request_start_time': datetime.datetime(2023, 10, 6, 19, 36, 10, 483000),
                 'id': 161,
                 'database_name': 'master',

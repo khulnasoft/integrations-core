@@ -13,7 +13,7 @@ This check monitors [TLS][1] protocol versions, certificate expiration and valid
 
 ### Installation
 
-The TLS check is included in the [Datadog Agent][2] package.
+The TLS check is included in the [Khulnasoft Agent][2] package.
 No additional installation is needed on your server.
 
 ### Configuration
@@ -42,7 +42,7 @@ For containerized environments, see the [Autodiscovery Integration Templates][5]
 | `<INIT_CONFIG>`      | blank or `{}`                          |
 | `<INSTANCE_CONFIG>`  | `{"server": "%%host%%", "port":"443"}` |
 
-**Note**: If you are using internal certificates that are not from a well-known, trusted CA, certain metrics may not report to Datadog. Use `tls_verify: false` in your integration template to report all metrics in this instance.
+**Note**: If you are using internal certificates that are not from a well-known, trusted CA, certain metrics may not report to Khulnasoft. Use `tls_verify: false` in your integration template to report all metrics in this instance.
 
 <!-- xxz tab xxx -->
 <!-- xxz tabs xxx -->
@@ -67,7 +67,7 @@ See [service_checks.json][8] for a list of service checks provided by this integ
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][9].
+Need help? Contact [Khulnasoft support][9].
 
 
 [1]: https://en.wikipedia.org/wiki/Transport_Layer_Security

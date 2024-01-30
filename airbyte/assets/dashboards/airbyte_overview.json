@@ -1,6 +1,6 @@
 {
   "title": "Airbyte Overview",
-  "description": "**Airbyte**\n\nThis dashboard provides an overview of your [Airbyte](https://airbyte.com/) deployment.\nIt focuses on the jobs that run every time you synchronize data from source to destination in your connections.\n\n**Useful Links**\n\n* [Integration Docs](https://docs.khulnasoft.com/integrations/airbyte)\n* [How Datadog monitors Airbyte and other AI stack technologies](https://www.khulnasoft.com/blog/ai-integrations)\n* [Airbyte Open Source Deployment](https://docs.airbyte.com/quickstart/deploy-airbyte/)\n* [Airbyte Core Concepts](https://docs.airbyte.com/cloud/core-concepts)",
+  "description": "**Airbyte**\n\nThis dashboard provides an overview of your [Airbyte](https://airbyte.com/) deployment.\nIt focuses on the jobs that run every time you synchronize data from source to destination in your connections.\n\n**Useful Links**\n\n* [Integration Docs](https://docs.khulnasoft.com/integrations/airbyte)\n* [How Khulnasoft monitors Airbyte and other AI stack technologies](https://www.khulnasoft.com/blog/ai-integrations)\n* [Airbyte Open Source Deployment](https://docs.airbyte.com/quickstart/deploy-airbyte/)\n* [Airbyte Core Concepts](https://docs.airbyte.com/cloud/core-concepts)",
   "widgets": [{
     "id": 5398344842010224,
     "definition": {
@@ -33,7 +33,7 @@
         "id": 6394363111995732,
         "definition": {
           "type": "note",
-          "content": "**Useful Links**\n\n* [Integration Docs](https://docs.khulnasoft.com/integrations/airbyte)\n* [How Datadog monitors Airbyte and other AI stack technologies](https://www.khulnasoft.com/blog/ai-integrations)\n* [Airbyte Open Source Deployment](https://docs.airbyte.com/quickstart/deploy-airbyte/)\n* [Airbyte Core Concepts](https://docs.airbyte.com/cloud/core-concepts)",
+          "content": "**Useful Links**\n\n* [Integration Docs](https://docs.khulnasoft.com/integrations/airbyte)\n* [How Khulnasoft monitors Airbyte and other AI stack technologies](https://www.khulnasoft.com/blog/ai-integrations)\n* [Airbyte Open Source Deployment](https://docs.airbyte.com/quickstart/deploy-airbyte/)\n* [Airbyte Core Concepts](https://docs.airbyte.com/cloud/core-concepts)",
           "background_color": "white",
           "font_size": "16",
           "text_align": "left",

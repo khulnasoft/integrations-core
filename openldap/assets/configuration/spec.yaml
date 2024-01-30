@@ -51,7 +51,7 @@ files:
     - name: custom_queries
       description: |
         Specifies custom search queries that are run by the check, which then sends the duration of
-        the query, and the number of results to Datadog.
+        the query, and the number of results to Khulnasoft.
         Each custom query has the following parameters:
         * `name` - string - required: A name to identify your query. Used to tag the metrics for this query.
         * `search_base` - string - required: The search base for the query.

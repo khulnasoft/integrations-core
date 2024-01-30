@@ -15,7 +15,7 @@
             "id": 5606184472955838,
             "definition": {
               "type": "note",
-              "content": "This dashboard provides a high-level overview of your Teradata environment for monitoring database and table disk space, system resource usage, and AMP resource usage to spot potential issues.\n\nFurther reading on Teradata Monitoring:\n\n* [Datadog's Teradata Integration Docs](https://docs.khulnasoft.com/integrations/teradata)",
+              "content": "This dashboard provides a high-level overview of your Teradata environment for monitoring database and table disk space, system resource usage, and AMP resource usage to spot potential issues.\n\nFurther reading on Teradata Monitoring:\n\n* [Khulnasoft's Teradata Integration Docs](https://docs.khulnasoft.com/integrations/teradata)",
               "background_color": "white",
               "font_size": "16",
               "text_align": "left",

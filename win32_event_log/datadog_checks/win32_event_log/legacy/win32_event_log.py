@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2010-present
+# (C) Khulnasoft, Inc. 2010-present
 # All rights reserved
 # Licensed under Simplified BSD License (see LICENSE)
 import calendar
@@ -222,7 +222,7 @@ class LogEvent(object):
     @property
     def _msg_text(self):
         """
-        Generate the event's body to send to Datadog.
+        Generate the event's body to send to Khulnasoft.
 
         Consider `event_format` parameter:
         * Only use the specified list of event properties.
@@ -262,7 +262,7 @@ class LogEvent(object):
     @property
     def _alert_type(self):
         event_type = self.event['Type']
-        # Convert to a Datadog alert type
+        # Convert to a Khulnasoft alert type
         if event_type == 'Warning':
             return 'warning'
         elif event_type == 'Error':

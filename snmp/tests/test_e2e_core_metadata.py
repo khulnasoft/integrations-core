@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2021-present
+# (C) Khulnasoft, Inc. 2021-present
 # All rights reserved
 # Licensed under Simplified BSD License (see LICENSE)
 import json
@@ -74,7 +74,7 @@ def test_e2e_core_metadata_f5(dd_agent_check):
                     ],
                     u'ip_address': device_ip,
                     u'location': u'Network Closet 1',
-                    u'name': u'f5-big-ip-adc-good-byol-1-vm.c.datadog-integrations-lab.internal',
+                    u'name': u'f5-big-ip-adc-good-byol-1-vm.c.khulnasoft-integrations-lab.internal',
                     u'profile': u'f5-big-ip',
                     u'status': 1,
                     u'sys_object_id': u'1.3.6.1.4.1.3375.2.1.3.4.43',
@@ -82,7 +82,7 @@ def test_e2e_core_metadata_f5(dd_agent_check):
                         u'device_namespace:default',
                         u'device_vendor:f5',
                         u'snmp_device:' + device_ip,
-                        u'snmp_host:f5-big-ip-adc-good-byol-1-vm.c.datadog-integrations-lab.internal',
+                        u'snmp_host:f5-big-ip-adc-good-byol-1-vm.c.khulnasoft-integrations-lab.internal',
                         u'snmp_profile:f5-big-ip',
                     ],
                     u'vendor': u'f5',
@@ -1290,7 +1290,7 @@ def test_e2e_core_metadata_cisco_wlc(dd_agent_check):
             u'snmp_device:' + device_ip,
         ],
         u'ip_address': device_ip,
-        u'location': 'Datadog Paris',
+        u'location': 'Khulnasoft Paris',
         u'name': 'DDOGWLC',
         u'profile': u'cisco-legacy-wlc',
         u'status': 1,

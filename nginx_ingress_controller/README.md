@@ -2,14 +2,14 @@
 
 ## Overview
 
-This check monitors the Kubernetes [NGINX Ingress Controller][1]. To monitor the F5 NGINX Ingress Controller, set up the [Datadog Prometheus integration][10] to monitor desired metrics from the list provided by the [NGINX Prometheus Exporter][11].
+This check monitors the Kubernetes [NGINX Ingress Controller][1]. To monitor the F5 NGINX Ingress Controller, set up the [Khulnasoft Prometheus integration][10] to monitor desired metrics from the list provided by the [NGINX Prometheus Exporter][11].
 
 
 ## Setup
 
 ### Installation
 
-The `nginx-ingress-controller` check is included in the [Datadog Agent][2] package, so you do not need to install anything else on your server.
+The `nginx-ingress-controller` check is included in the [Khulnasoft Agent][2] package, so you do not need to install anything else on your server.
 
 ### Configuration
 
@@ -68,7 +68,7 @@ See the [sample nginx_ingress_controller.d/conf.yaml][3] for all available confi
 
 _Available for Agent versions >6.0_
 
-Collecting logs is disabled by default in the Datadog Agent. To enable it, see [Kubernetes log collection][6].
+Collecting logs is disabled by default in the Khulnasoft Agent. To enable it, see [Kubernetes log collection][6].
 
 | Parameter      | Value                                                              |
 | -------------- | ------------------------------------------------------------------ |
@@ -94,7 +94,7 @@ The NGINX Ingress Controller does not include any service checks.
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][9].
+Need help? Contact [Khulnasoft support][9].
 
 [1]: https://kubernetes.github.io/ingress-nginx
 [2]: https://app.khulnasoft.com/account/settings/agent/latest

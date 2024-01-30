@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2019-present
+# (C) Khulnasoft, Inc. 2019-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 import pytest
@@ -59,7 +59,7 @@ def test_submit_gauge(instance, aggregator):
             'mapr_cluster:demo',
             'process_name:apiserver',
             'mapr_cluster_id:7616098736519857348',
-            'fqdn:mapr-lab-2-ghs6.c.datadog-integrations-lab.internal',
+            'fqdn:mapr-lab-2-ghs6.c.khulnasoft-integrations-lab.internal',
         ],
     )
 
@@ -77,7 +77,7 @@ def test_submit_gauge_additional_tags(instance, aggregator):
             'mapr_cluster:demo',
             'process_name:apiserver',
             'mapr_cluster_id:7616098736519857348',
-            'fqdn:mapr-lab-2-ghs6.c.datadog-integrations-lab.internal',
+            'fqdn:mapr-lab-2-ghs6.c.khulnasoft-integrations-lab.internal',
             'foo:bar',
             'baz:biz',
         ],
@@ -92,7 +92,7 @@ def test_submit_bucket(instance, aggregator):
     expected_tags = [
         "mapr_cluster_id:7616098736519857348",
         "mapr_cluster:demo",
-        "fqdn:mapr-lab-2-dhk4.c.datadog-integrations-lab.internal",
+        "fqdn:mapr-lab-2-dhk4.c.khulnasoft-integrations-lab.internal",
         "noindex://primary",
         "rpc_type:put",
         "table_fid:2070.42.262546",

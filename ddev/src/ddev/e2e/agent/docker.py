@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2023-present
+# (C) Khulnasoft, Inc. 2023-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 from __future__ import annotations
@@ -19,7 +19,7 @@ if TYPE_CHECKING:
 
     from ddev.utils.fs import Path
 
-AGENT_VERSION_REGEX = r'^datadog/agent:\d+(?:$|\.(\d+\.\d(?:$|-jmx$)|$))'
+AGENT_VERSION_REGEX = r'^khulnasoft/agent:\d+(?:$|\.(\d+\.\d(?:$|-jmx$)|$))'
 
 
 class DockerAgent(AgentInterface):
@@ -49,17 +49,17 @@ class DockerAgent(AgentInterface):
     @cached_property
     def _config_mount_dir(self) -> str:
         return (
-            f'C:\\ProgramData\\Datadog\\conf.d\\{self.integration.name}.d'
+            f'C:\\ProgramData\\Khulnasoft\\conf.d\\{self.integration.name}.d'
             if self._is_windows_container
-            else f'/etc/datadog-agent/conf.d/{self.integration.name}.d'
+            else f'/etc/khulnasoft-agent/conf.d/{self.integration.name}.d'
         )
 
     @cached_property
     def _python_path(self) -> str:
         return (
-            f'C:\\Program Files\\Datadog\\Datadog Agent\\embedded{self.python_version[0]}\\python.exe'
+            f'C:\\Program Files\\Khulnasoft\\Khulnasoft Agent\\embedded{self.python_version[0]}\\python.exe'
             if self._is_windows_container
-            else f'/opt/datadog-agent/embedded/bin/python{self.python_version[0]}'
+            else f'/opt/khulnasoft-agent/embedded/bin/python{self.python_version[0]}'
         )
 
     def _format_command(self, command: list[str]) -> list[str]:
@@ -92,9 +92,9 @@ class DockerAgent(AgentInterface):
 
     def start(self, *, agent_build: str, local_packages: dict[Path, str], env_vars: dict[str, str]) -> None:
         if not agent_build:
-            agent_build = 'datadog/agent-dev:master'
+            agent_build = 'khulnasoft/agent-dev:master'
 
-        if agent_build.startswith("datadog/"):
+        if agent_build.startswith("khulnasoft/"):
             # Add a potentially missing `py` suffix for default non-RC builds
             if 'rc' not in agent_build and 'py' not in agent_build and not re.match(AGENT_VERSION_REGEX, agent_build):
                 agent_build = f'{agent_build}-py{self.python_version[0]}'

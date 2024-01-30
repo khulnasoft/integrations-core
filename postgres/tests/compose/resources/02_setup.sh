@@ -7,33 +7,33 @@ set -e
 # therefore we will only add this database to which you can't connect in 10+ for testing purposes.
 if [[ !("$PG_MAJOR" == 9.* ) ]]; then
 psql -v ON_ERROR_STOP=1 --username "$POSTGRES_USER" khulnasoft_test <<-'EOSQL'
-    GRANT pg_monitor TO datadog;
+    GRANT pg_monitor TO khulnasoft;
 EOSQL
 fi
 
 psql -v ON_ERROR_STOP=1 --username "$POSTGRES_USER" "khulnasoft_test" <<-'EOSQL'
     CREATE EXTENSION pg_stat_statements SCHEMA public;
-    GRANT SELECT ON pg_stat_statements TO datadog;
+    GRANT SELECT ON pg_stat_statements TO khulnasoft;
 
-    CREATE SCHEMA IF NOT EXISTS datadog;
-    GRANT USAGE ON SCHEMA datadog TO datadog;
+    CREATE SCHEMA IF NOT EXISTS khulnasoft;
+    GRANT USAGE ON SCHEMA khulnasoft TO khulnasoft;
 
-    CREATE OR REPLACE FUNCTION datadog.pg_stat_statements() RETURNS SETOF pg_stat_statements AS
+    CREATE OR REPLACE FUNCTION khulnasoft.pg_stat_statements() RETURNS SETOF pg_stat_statements AS
       $$ SELECT * FROM pg_stat_statements; $$
     LANGUAGE sql
     SECURITY DEFINER;
 
-    ALTER FUNCTION datadog.pg_stat_statements() owner to postgres;
+    ALTER FUNCTION khulnasoft.pg_stat_statements() owner to postgres;
 EOSQL
 
 # dogs_noschema deliberately excluded
 for DBNAME in khulnasoft_test dogs dogs_nofunc; do
 
 psql -v ON_ERROR_STOP=1 --username "$POSTGRES_USER" "$DBNAME" <<-'EOSQL'
-    CREATE SCHEMA IF NOT EXISTS datadog;
-    GRANT USAGE ON SCHEMA datadog TO datadog;
+    CREATE SCHEMA IF NOT EXISTS khulnasoft;
+    GRANT USAGE ON SCHEMA khulnasoft TO khulnasoft;
 
-    CREATE OR REPLACE FUNCTION datadog.explain_statement(
+    CREATE OR REPLACE FUNCTION khulnasoft.explain_statement(
       l_query TEXT,
       OUT explain JSON
     )
@@ -54,17 +54,17 @@ psql -v ON_ERROR_STOP=1 --username "$POSTGRES_USER" "$DBNAME" <<-'EOSQL'
     RETURNS NULL ON NULL INPUT
     SECURITY DEFINER;
 
-    CREATE OR REPLACE FUNCTION datadog.pg_stat_activity() RETURNS SETOF pg_stat_activity AS
+    CREATE OR REPLACE FUNCTION khulnasoft.pg_stat_activity() RETURNS SETOF pg_stat_activity AS
     $$ SELECT * FROM pg_catalog.pg_stat_activity; $$
     LANGUAGE sql
     SECURITY DEFINER;
 
-    ALTER FUNCTION datadog.explain_statement(l_query text, out explain json) OWNER TO postgres;
-    ALTER FUNCTION datadog.pg_stat_activity() owner to postgres;
+    ALTER FUNCTION khulnasoft.explain_statement(l_query text, out explain json) OWNER TO postgres;
+    ALTER FUNCTION khulnasoft.pg_stat_activity() owner to postgres;
 
-    -- datadog.explain_statement_noaccess is not part of the standard setup
+    -- khulnasoft.explain_statement_noaccess is not part of the standard setup
     -- it's added only for the purpose of testing an explain function owned by a user with inadequate permissions
-    CREATE OR REPLACE FUNCTION datadog.explain_statement_noaccess(
+    CREATE OR REPLACE FUNCTION khulnasoft.explain_statement_noaccess(
       l_query TEXT,
       OUT explain JSON
     )
@@ -84,7 +84,7 @@ psql -v ON_ERROR_STOP=1 --username "$POSTGRES_USER" "$DBNAME" <<-'EOSQL'
     LANGUAGE 'plpgsql'
     RETURNS NULL ON NULL INPUT
     SECURITY DEFINER;
-    ALTER FUNCTION datadog.explain_statement_noaccess(l_query TEXT, OUT explain JSON) OWNER TO datadog;
+    ALTER FUNCTION khulnasoft.explain_statement_noaccess(l_query TEXT, OUT explain JSON) OWNER TO khulnasoft;
 
     -- create dummy function to be executed to populate function metrics
     CREATE OR REPLACE FUNCTION dummy_function()
@@ -96,12 +96,12 @@ psql -v ON_ERROR_STOP=1 --username "$POSTGRES_USER" "$DBNAME" <<-'EOSQL'
     $$
     LANGUAGE 'plpgsql'
     SECURITY DEFINER;
-    ALTER FUNCTION dummy_function() OWNER TO datadog;
+    ALTER FUNCTION dummy_function() OWNER TO khulnasoft;
 EOSQL
 done
 
 psql -v ON_ERROR_STOP=1 --username "$POSTGRES_USER" dogs_nofunc <<-'EOSQL'
-    DROP FUNCTION datadog.explain_statement(l_query text, out explain JSON)
+    DROP FUNCTION khulnasoft.explain_statement(l_query text, out explain JSON)
 EOSQL
 
 # Somehow, on old postgres version (11 and 12), wal_level is incorrectly set despite

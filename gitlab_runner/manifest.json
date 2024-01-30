@@ -8,7 +8,7 @@
     "configuration": "README.md#Setup",
     "support": "README.md#Support",
     "changelog": "CHANGELOG.md",
-    "description": "Track all the metrics from your GitLab runners with Datadog.",
+    "description": "Track all the metrics from your GitLab runners with Khulnasoft.",
     "title": "GitLab Runners",
     "media": [],
     "classifier_tags": [
@@ -23,7 +23,7 @@
   },
   "author": {
     "support_email": "help@khulnasoft.com",
-    "name": "Datadog",
+    "name": "Khulnasoft",
     "homepage": "https://www.khulnasoft.com",
     "sales_email": "info@khulnasoft.com"
   },

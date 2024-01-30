@@ -6,15 +6,15 @@
 
 The MySQL integration tracks the performance of your MySQL instances. It collects metrics related to throughput, connections, errors, and InnoDB metrics.
 
-Enable [Database Monitoring][32] (DBM) for enhanced insights into query performance and database health. In addition to the standard integration, Datadog DBM provides query-level metrics, live and historical query snapshots, wait event analysis, database load, and query explain plans.
+Enable [Database Monitoring][32] (DBM) for enhanced insights into query performance and database health. In addition to the standard integration, Khulnasoft DBM provides query-level metrics, live and historical query snapshots, wait event analysis, database load, and query explain plans.
 
 ## Setup
 
-<div class="alert alert-info">This page describes the MySQL Agent standard integration. If you are looking for the Database Monitoring product for MySQL, see <a href="https://docs.khulnasoft.com/database_monitoring" target="_blank">Datadog Database Monitoring</a>.</div>
+<div class="alert alert-info">This page describes the MySQL Agent standard integration. If you are looking for the Database Monitoring product for MySQL, see <a href="https://docs.khulnasoft.com/database_monitoring" target="_blank">Khulnasoft Database Monitoring</a>.</div>
 
 ### Installation
 
-The MySQL check is included in the [Datadog Agent][4] package. No additional installation is needed on your MySQL server.
+The MySQL check is included in the [Khulnasoft Agent][4] package. No additional installation is needed on your MySQL server.
 
 #### Prepare MySQL
 
@@ -22,54 +22,54 @@ The MySQL check is included in the [Datadog Agent][4] package. No additional ins
 
 Proceed with the following steps in this guide only if you are installing the standard integration alone.
 
-On each MySQL server, create a database user for the Datadog Agent.
+On each MySQL server, create a database user for the Khulnasoft Agent.
 
-The following instructions grant the Agent permission to login from any host using `datadog@'%'`. You can restrict the `datadog` user to be allowed to login only from localhost by using `datadog@'localhost'`. See [MySQL Adding Accounts, Assigning Privileges, and Dropping Accounts][5] for more info.
+The following instructions grant the Agent permission to login from any host using `khulnasoft@'%'`. You can restrict the `khulnasoft` user to be allowed to login only from localhost by using `khulnasoft@'localhost'`. See [MySQL Adding Accounts, Assigning Privileges, and Dropping Accounts][5] for more info.
 
-Create the `datadog` user with the following command:
+Create the `khulnasoft` user with the following command:
 
 ```shell
-mysql> CREATE USER 'datadog'@'%' IDENTIFIED BY '<UNIQUEPASSWORD>';
+mysql> CREATE USER 'khulnasoft'@'%' IDENTIFIED BY '<UNIQUEPASSWORD>';
 Query OK, 0 rows affected (0.00 sec)
 ```
 
 Verify the user was created successfully using the following commands - replace `<UNIQUEPASSWORD>` with the password you created above:
 
 ```shell
-mysql -u datadog --password=<UNIQUEPASSWORD> -e "show status" | \
+mysql -u khulnasoft --password=<UNIQUEPASSWORD> -e "show status" | \
 grep Uptime && echo -e "\033[0;32mMySQL user - OK\033[0m" || \
 echo -e "\033[0;31mCannot connect to MySQL\033[0m"
 ```
 
-The Agent needs a few privileges to collect metrics. Grant the `datadog` user only the following limited privileges.
+The Agent needs a few privileges to collect metrics. Grant the `khulnasoft` user only the following limited privileges.
 
 For MySQL versions 5.6 and 5.7, grant `replication client` and set `max_user_connections` with the following command:
 
 ```shell
-mysql> GRANT REPLICATION CLIENT ON *.* TO 'datadog'@'%' WITH MAX_USER_CONNECTIONS 5;
+mysql> GRANT REPLICATION CLIENT ON *.* TO 'khulnasoft'@'%' WITH MAX_USER_CONNECTIONS 5;
 Query OK, 0 rows affected, 1 warning (0.00 sec)
 ```
 
 For MySQL 8.0 or greater, grant `replication client` and set `max_user_connections` with the following commands:
 
 ```shell
-mysql> GRANT REPLICATION CLIENT ON *.* TO 'datadog'@'%'
+mysql> GRANT REPLICATION CLIENT ON *.* TO 'khulnasoft'@'%'
 Query OK, 0 rows affected (0.00 sec)
-mysql> ALTER USER 'datadog'@'%' WITH MAX_USER_CONNECTIONS 5;
+mysql> ALTER USER 'khulnasoft'@'%' WITH MAX_USER_CONNECTIONS 5;
 Query OK, 0 rows affected (0.00 sec)
 ```
 
-Grant the `datadog` user the process privilege:
+Grant the `khulnasoft` user the process privilege:
 
 ```shell
-mysql> GRANT PROCESS ON *.* TO 'datadog'@'%';
+mysql> GRANT PROCESS ON *.* TO 'khulnasoft'@'%';
 Query OK, 0 rows affected (0.00 sec)
 ```
 
 Verify the replication client. Replace `<UNIQUEPASSWORD>` with the password you created above:
 
 ```shell
-mysql -u datadog --password=<UNIQUEPASSWORD> -e "show slave status" && \
+mysql -u khulnasoft --password=<UNIQUEPASSWORD> -e "show slave status" && \
 echo -e "\033[0;32mMySQL grant - OK\033[0m" || \
 echo -e "\033[0;31mMissing REPLICATION CLIENT grant\033[0m"
 ```
@@ -85,7 +85,7 @@ mysql> show databases like 'performance_schema';
 +-------------------------------+
 1 row in set (0.00 sec)
 
-mysql> GRANT SELECT ON performance_schema.* TO 'datadog'@'%';
+mysql> GRANT SELECT ON performance_schema.* TO 'khulnasoft'@'%';
 Query OK, 0 rows affected (0.00 sec)
 ```
 
@@ -115,7 +115,7 @@ For a full list of available configuration options, see the [sample `mysql.d/con
 
   instances:
     - host: 127.0.0.1
-      username: datadog
+      username: khulnasoft
       password: "<YOUR_CHOSEN_PASSWORD>" # from the CREATE USER step earlier
       port: "<YOUR_MYSQL_PORT>" # e.g. 3306
       options:
@@ -131,9 +131,9 @@ For a full list of available configuration options, see the [sample `mysql.d/con
 
 To collect `extra_performance_metrics`, your MySQL server must have `performance_schema` enabled - otherwise set `extra_performance_metrics` to `false`. For more information on `performance_schema`, see [MySQL Performance Schema Quick Start][9].
 
-**Note**: The `datadog` user should be set up in the MySQL integration configuration as `host: 127.0.0.1` instead of `localhost`. Alternatively, you may also use `sock`.
+**Note**: The `khulnasoft` user should be set up in the MySQL integration configuration as `host: 127.0.0.1` instead of `localhost`. Alternatively, you may also use `sock`.
 
-[Restart the Agent][10] to start sending MySQL metrics to Datadog.
+[Restart the Agent][10] to start sending MySQL metrics to Khulnasoft.
 
 ##### Log collection
 
@@ -172,7 +172,7 @@ _Available for Agent versions >6.0_
        }
      ```
 
-2. Collecting logs is disabled by default in the Datadog Agent, enable it in your `datadog.yaml` file:
+2. Collecting logs is disabled by default in the Khulnasoft Agent, enable it in your `khulnasoft.yaml` file:
 
    ```yaml
    logs_enabled: true
@@ -236,9 +236,9 @@ To configure this check for an Agent running on a container:
 Set [Autodiscovery Integration Templates][11] as Docker labels on your application container:
 
 ```yaml
-LABEL "com.datadoghq.ad.check_names"='["mysql"]'
-LABEL "com.datadoghq.ad.init_configs"='[{}]'
-LABEL "com.datadoghq.ad.instances"='[{"server": "%%host%%", "username": "datadog","password": "<UNIQUEPASSWORD>"}]'
+LABEL "com.khulnasofthq.ad.check_names"='["mysql"]'
+LABEL "com.khulnasofthq.ad.init_configs"='[{}]'
+LABEL "com.khulnasofthq.ad.instances"='[{"server": "%%host%%", "username": "khulnasoft","password": "<UNIQUEPASSWORD>"}]'
 ```
 
 See [Autodiscovery template variables][12] for details on using `<UNIQUEPASSWORD>` as an environment variable instead of a label.
@@ -246,12 +246,12 @@ See [Autodiscovery template variables][12] for details on using `<UNIQUEPASSWORD
 #### Log collection
 
 
-Collecting logs is disabled by default in the Datadog Agent. To enable it, see [Docker Log Collection][13].
+Collecting logs is disabled by default in the Khulnasoft Agent. To enable it, see [Docker Log Collection][13].
 
 Then, set [Log Integrations][14] as Docker labels:
 
 ```yaml
-LABEL "com.datadoghq.ad.logs"='[{"source":"mysql","service":"mysql"}]'
+LABEL "com.khulnasofthq.ad.logs"='[{"source":"mysql","service":"mysql"}]'
 ```
 
 <!-- xxz tab xxx -->
@@ -265,7 +265,7 @@ To configure this check for an Agent running on Kubernetes:
 
 Set [Autodiscovery Integrations Templates][15] as pod annotations on your application container. Alternatively, you can configure templates with a [file, configmap, or key-value store][16].
 
-**Annotations v1** (for Datadog Agent < v7.36)
+**Annotations v1** (for Khulnasoft Agent < v7.36)
 
 ```yaml
 apiVersion: v1
@@ -279,7 +279,7 @@ metadata:
       [
         {
           "server": "%%host%%", 
-          "username": "datadog",
+          "username": "khulnasoft",
           "password": "<UNIQUEPASSWORD>"
         }
       ]
@@ -290,7 +290,7 @@ spec:
     - name: mysql
 ```
 
-**Annotations v2** (for Datadog Agent v7.36+)
+**Annotations v2** (for Khulnasoft Agent v7.36+)
 
 ```yaml
 apiVersion: v1
@@ -304,7 +304,7 @@ metadata:
           "instances": [
             {
               "server": "%%host%%", 
-              "username": "datadog",
+              "username": "khulnasoft",
               "password": "<UNIQUEPASSWORD>"
             }
           ]
@@ -322,7 +322,7 @@ See [Autodiscovery template variables][12] for details on using `<UNIQUEPASSWORD
 #### Log collection
 
 
-Collecting logs is disabled by default in the Datadog Agent. To enable it, see [Kubernetes Log Collection][17].
+Collecting logs is disabled by default in the Khulnasoft Agent. To enable it, see [Kubernetes Log Collection][17].
 
 Then, set [Log Integrations][14] as pod annotations. Alternatively, you can configure this with a [file, configmap, or key-value store][18].
 
@@ -356,9 +356,9 @@ Set [Autodiscovery Integrations Templates][11] as Docker labels on your applicat
     "name": "mysql",
     "image": "mysql:latest",
     "dockerLabels": {
-      "com.datadoghq.ad.check_names": "[\"mysql\"]",
-      "com.datadoghq.ad.init_configs": "[{}]",
-      "com.datadoghq.ad.instances": "[{\"server\": \"%%host%%\", \"username\": \"datadog\",\"password\": \"<UNIQUEPASSWORD>\"}]"
+      "com.khulnasofthq.ad.check_names": "[\"mysql\"]",
+      "com.khulnasofthq.ad.init_configs": "[{}]",
+      "com.khulnasofthq.ad.instances": "[{\"server\": \"%%host%%\", \"username\": \"khulnasoft\",\"password\": \"<UNIQUEPASSWORD>\"}]"
     }
   }]
 }
@@ -370,7 +370,7 @@ See [Autodiscovery template variables][12] for details on using `<UNIQUEPASSWORD
 
 _Available for Agent versions >6.0_
 
-Collecting logs is disabled by default in the Datadog Agent. To enable it, see [ECS Log Collection][19].
+Collecting logs is disabled by default in the Khulnasoft Agent. To enable it, see [ECS Log Collection][19].
 
 Then, set [Log Integrations][14] as Docker labels:
 
@@ -380,7 +380,7 @@ Then, set [Log Integrations][14] as Docker labels:
     "name": "mysql",
     "image": "mysql:latest",
     "dockerLabels": {
-      "com.datadoghq.ad.logs": "[{\"source\":\"mysql\",\"service\":\"mysql\"}]"
+      "com.khulnasofthq.ad.logs": "[{\"source\":\"mysql\",\"service\":\"mysql\"}]"
     }
   }]
 }

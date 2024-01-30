@@ -204,9 +204,9 @@ files:
         - name: collect_project_metrics
           hidden: true
           description: |
-           The admin user defined for Datadog starts with a "default" project.
+           The admin user defined for Khulnasoft starts with a "default" project.
            If this option is disabled, project limits metrics are only collected from projects the
-           datadog defined user has access to view.
+           khulnasoft defined user has access to view.
           value:
             example: true
             display_default: true

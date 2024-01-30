@@ -10,7 +10,7 @@ The Solr check tracks the state and performance of a Solr cluster. It collects m
 
 ### Installation
 
-The Solr check is included in the [Datadog Agent][2] package, so you don't need to install anything else on your Solr nodes.
+The Solr check is included in the [Khulnasoft Agent][2] package, so you don't need to install anything else on your Solr nodes.
 
 This check is JMX-based, so you need to enable JMX Remote on your Solr servers. See the [JMX Check documentation][3] for more details.
 
@@ -65,13 +65,13 @@ mydomain:attr0=val0,attr1=val1
 
 In this example, your metric is `mydomain` (or some variation depending on the attribute inside the bean) and has the tags `attr0:val0`, `attr1:val1`, and `domain:mydomain`.
 
-If you specify an alias in an `include` key that is formatted as _camel case_, it is converted to _snake case_. For example, `MyMetricName` is shown in Datadog as `my_metric_name`.
+If you specify an alias in an `include` key that is formatted as _camel case_, it is converted to _snake case_. For example, `MyMetricName` is shown in Khulnasoft as `my_metric_name`.
 
 ##### The attribute filter
 
 The `attribute` filter can accept two types of values:
 
-- A dictionary whose keys are attributes names (see below). For this case, you can specify an alias for the metric that becomes the metric name in Datadog. You can also specify the metric type as a gauge or counter. If you choose counter, a rate per second is computed for the metric.
+- A dictionary whose keys are attributes names (see below). For this case, you can specify an alias for the metric that becomes the metric name in Khulnasoft. You can also specify the metric type as a gauge or counter. If you choose counter, a rate per second is computed for the metric.
 
   ```yaml
   conf:
@@ -108,17 +108,17 @@ The `attribute` filter can accept two types of values:
 
 #### Older versions
 
-List of filters is only supported in Datadog Agent > 5.3.0. If you are using an older version, use singletons and multiple `include` statements instead.
+List of filters is only supported in Khulnasoft Agent > 5.3.0. If you are using an older version, use singletons and multiple `include` statements instead.
 
 ```yaml
-# Datadog Agent > 5.3.0
+# Khulnasoft Agent > 5.3.0
   conf:
     - include:
       domain: domain_name
       bean:
         - first_bean_name
         - second_bean_name
-# Older Datadog Agent versions
+# Older Khulnasoft Agent versions
   conf:
     - include:
       domain: domain_name
@@ -137,13 +137,13 @@ For containerized environments, see the [Autodiscovery with JMX][7] guide.
 
 ##### Log collection
 
-1. Collecting logs is disabled by default in the Datadog Agent, enable it in your `datadog.yaml` file:
+1. Collecting logs is disabled by default in the Khulnasoft Agent, enable it in your `khulnasoft.yaml` file:
 
       ```yaml
        logs_enabled: true
      ```
 
-2. Solr uses the `log4j` logger by default. To customize the logging format, edit the [`server/resources/log4j2.xml`][8] file. By default, Datadog's integration pipeline supports the following conversion [pattern][9]:
+2. Solr uses the `log4j` logger by default. To customize the logging format, edit the [`server/resources/log4j2.xml`][8] file. By default, Khulnasoft's integration pipeline supports the following conversion [pattern][9]:
 
    ```text
    %maxLen{%d{yyyy-MM-dd HH:mm:ss.SSS} %-5p (%t) [%X{collection} %X{shard} %X{replica} %X{core}] %c{1.} %m%notEmpty{ =>%ex{short}}}{10240}%n
@@ -195,26 +195,26 @@ See [service_checks.json][14] for a list of service checks provided by this inte
 
 ### Commands to view the available metrics
 
-The `datadog-agent jmx` command was added in version 4.1.0.
+The `khulnasoft-agent jmx` command was added in version 4.1.0.
 
 - List attributes that match at least one of your instances configuration:
-  `sudo datadog-agent jmx list matching`
+  `sudo khulnasoft-agent jmx list matching`
 - List attributes that do match one of your instances configuration but that are not being collected because it would exceed the number of metrics that can be collected:
-  `sudo datadog-agent jmx list limited`
+  `sudo khulnasoft-agent jmx list limited`
 - List attributes expected to be collected by your current instances configuration:
-  `sudo datadog-agent jmx list collected`
+  `sudo khulnasoft-agent jmx list collected`
 - List attributes that don't match any of your instances configuration:
-  `sudo datadog-agent jmx list not-matching`
+  `sudo khulnasoft-agent jmx list not-matching`
 - List every attributes available that has a type supported by JMXFetch:
-  `sudo datadog-agent jmx list everything`
+  `sudo khulnasoft-agent jmx list everything`
 - Start the collection of metrics based on your current configuration and display them in the console:
-  `sudo datadog-agent jmx collect`
+  `sudo khulnasoft-agent jmx collect`
 
 ## Further Reading
 
 ### Parsing a string value into a number
 
-If your jmxfetch returns only string values like **false** and **true** and you want to transform it into a Datadog gauge metric for advanced usages. For instance if you want the following equivalence for your jmxfetch:
+If your jmxfetch returns only string values like **false** and **true** and you want to transform it into a Khulnasoft gauge metric for advanced usages. For instance if you want the following equivalence for your jmxfetch:
 
 ```text
 "myJmxfetch:false" = myJmxfetch:0

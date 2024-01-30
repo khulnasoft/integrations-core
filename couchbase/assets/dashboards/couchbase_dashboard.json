@@ -1,6 +1,6 @@
 {
     "title": "Couchbase - Metrics",
-    "description": "This dashboard provides key Couchbase metrics to help you identify which clusters consume the most resources and to spot unexpected changes in network traffic. For further reading on Couchbase monitoring: \n\n- [How to monitoring Couchbase performance with Datadog](https://www.khulnasoft.com/blog/monitoring-couchbase-performance-datadog/)  \n\n- [Datadog’s Couchbase integration docs](https://docs.khulnasoft.com/integrations/couchbase/). \n\nClone this template dashboard to make changes and add your own graph widgets.",
+    "description": "This dashboard provides key Couchbase metrics to help you identify which clusters consume the most resources and to spot unexpected changes in network traffic. For further reading on Couchbase monitoring: \n\n- [How to monitoring Couchbase performance with Khulnasoft](https://www.khulnasoft.com/blog/monitoring-couchbase-performance-khulnasoft/)  \n\n- [Khulnasoft’s Couchbase integration docs](https://docs.khulnasoft.com/integrations/couchbase/). \n\nClone this template dashboard to make changes and add your own graph widgets.",
     "layout_type": "ordered",
     "template_variables": [
         {

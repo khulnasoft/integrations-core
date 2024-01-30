@@ -2,18 +2,18 @@
 
 ## Overview
 
-This check monitors [Airbyte][1]. Metrics are sent to Datadog through [DogStatsD][2].
+This check monitors [Airbyte][1]. Metrics are sent to Khulnasoft through [DogStatsD][2].
 
 ## Setup
 
 ### Installation
 
-All steps below are needed for the Airbyte integration to work properly. Before you begin, [install the Datadog Agent][3] version `>=6.17` or `>=7.17`, which includes the StatsD/DogStatsD mapping feature.
+All steps below are needed for the Airbyte integration to work properly. Before you begin, [install the Khulnasoft Agent][3] version `>=6.17` or `>=7.17`, which includes the StatsD/DogStatsD mapping feature.
 
 ### Configuration
 
-1. Configure your Airbyte deployment [to send metrics to Datadog][6].
-2. Update the [Datadog Agent main configuration file][7] `datadog.yaml` by adding the following configuration:
+1. Configure your Airbyte deployment [to send metrics to Khulnasoft][6].
+2. Update the [Khulnasoft Agent main configuration file][7] `khulnasoft.yaml` by adding the following configuration:
 
 ```yaml
 dogstatsd_mapper_profiles:
@@ -93,7 +93,7 @@ The Airbyte check does not include any events.
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][4].
+Need help? Contact [Khulnasoft support][4].
 
 [1]: https://airbyte.com/
 [2]: https://docs.khulnasoft.com/developers/dogstatsd

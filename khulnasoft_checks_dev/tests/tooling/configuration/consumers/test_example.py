@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2019-present
+# (C) Khulnasoft, Inc. 2019-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 import pytest
@@ -323,7 +323,7 @@ def test_section_example_indent():
         ##                      Overrides any `service` defined in the `init_config` section.
         ## tags - optional - Add tags to the collected logs.
         ##
-        ## Discover Datadog log collection: https://docs.khulnasoft.com/logs/log_collection/
+        ## Discover Khulnasoft log collection: https://docs.khulnasoft.com/logs/log_collection/
         #
         # logs:
         #   - type: file
@@ -387,7 +387,7 @@ def test_section_example_indent_required():
         ##                      Overrides any `service` defined in the `init_config` section.
         ## tags - optional - Add tags to the collected logs.
         ##
-        ## Discover Datadog log collection: https://docs.khulnasoft.com/logs/log_collection/
+        ## Discover Khulnasoft log collection: https://docs.khulnasoft.com/logs/log_collection/
         #
         logs:
           - type: file

@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2023-present
+# (C) Khulnasoft, Inc. 2023-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 import os
@@ -31,11 +31,11 @@ class TestStart:
     @pytest.mark.parametrize(
         'agent_build, agent_image, use_jmx',
         [
-            pytest.param('', 'datadog/agent-dev:master-py3', False, id='default'),
-            pytest.param('datadog/agent:7', 'datadog/agent:7', False, id='release'),
-            pytest.param('datadog/agent-dev:master-py3', 'datadog/agent-dev:master-py3', False, id='exact'),
-            pytest.param('datadog/agent-dev:master', 'datadog/agent-dev:master-py3-jmx', True, id='jmx'),
-            pytest.param('datadog/agent-dev:master-py3-jmx', 'datadog/agent-dev:master-py3-jmx', True, id='jmx exact'),
+            pytest.param('', 'khulnasoft/agent-dev:master-py3', False, id='default'),
+            pytest.param('khulnasoft/agent:7', 'khulnasoft/agent:7', False, id='release'),
+            pytest.param('khulnasoft/agent-dev:master-py3', 'khulnasoft/agent-dev:master-py3', False, id='exact'),
+            pytest.param('khulnasoft/agent-dev:master', 'khulnasoft/agent-dev:master-py3-jmx', True, id='jmx'),
+            pytest.param('khulnasoft/agent-dev:master-py3-jmx', 'khulnasoft/agent-dev:master-py3-jmx', True, id='jmx exact'),
             pytest.param(
                 'my-custom-build-that-I-have-locally', 'my-custom-build-that-I-have-locally', False, id='custom build'
             ),
@@ -46,20 +46,20 @@ class TestStart:
                 id='custom build with jmx',
             ),
             pytest.param(
-                'datadog/agent:7.46.0',
-                'datadog/agent:7.46.0',
+                'khulnasoft/agent:7.46.0',
+                'khulnasoft/agent:7.46.0',
                 False,
                 id='Specific stable release',
             ),
             pytest.param(
-                'datadog/agent:7.45.0',
-                'datadog/agent:7.45.0-jmx',
+                'khulnasoft/agent:7.45.0',
+                'khulnasoft/agent:7.45.0-jmx',
                 True,
                 id='Specific stable release with jmx',
             ),
             pytest.param(
-                'datadog/agent:6.44.0-jmx',
-                'datadog/agent:6.44.0-jmx',
+                'khulnasoft/agent:6.44.0-jmx',
+                'khulnasoft/agent:6.44.0-jmx',
                 True,
                 id='Specific stable release with jmx exact',
             ),
@@ -105,7 +105,7 @@ class TestStart:
                     '-v',
                     '/proc:/host/proc',
                     '-v',
-                    f'{config_file.parent}:/etc/datadog-agent/conf.d/{integration}.d',
+                    f'{config_file.parent}:/etc/khulnasoft-agent/conf.d/{integration}.d',
                     '-e',
                     'DD_API_KEY=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
                     '-e',
@@ -156,7 +156,7 @@ class TestStart:
         )
 
         assert run.call_args_list == [
-            mocker.call([docker_path, 'pull', 'datadog/agent-dev:master-py3'], shell=False),
+            mocker.call([docker_path, 'pull', 'khulnasoft/agent-dev:master-py3'], shell=False),
             mocker.call(
                 [
                     docker_path,
@@ -169,7 +169,7 @@ class TestStart:
                     '-v',
                     '/proc:/host/proc',
                     '-v',
-                    f'{config_file.parent}:/etc/datadog-agent/conf.d/{integration}.d',
+                    f'{config_file.parent}:/etc/khulnasoft-agent/conf.d/{integration}.d',
                     '-e',
                     'DD_API_KEY=bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb',
                     '-e',
@@ -186,7 +186,7 @@ class TestStart:
                     'DD_TELEMETRY_ENABLED=1',
                     '-e',
                     'PYTHONDONTWRITEBYTECODE=1',
-                    'datadog/agent-dev:master-py3',
+                    'khulnasoft/agent-dev:master-py3',
                 ],
                 shell=False,
                 stdout=subprocess.PIPE,
@@ -214,7 +214,7 @@ class TestStart:
         agent.start(agent_build='', local_packages={}, env_vars={})
 
         assert run.call_args_list == [
-            mocker.call([docker_path, 'pull', 'datadog/agent-dev:master-py3'], shell=False),
+            mocker.call([docker_path, 'pull', 'khulnasoft/agent-dev:master-py3'], shell=False),
             mocker.call(
                 [
                     docker_path,
@@ -240,7 +240,7 @@ class TestStart:
                     'DD_TELEMETRY_ENABLED=1',
                     '-e',
                     'PYTHONDONTWRITEBYTECODE=1',
-                    'datadog/agent-dev:master-py3',
+                    'khulnasoft/agent-dev:master-py3',
                 ],
                 shell=False,
                 stdout=subprocess.PIPE,
@@ -272,7 +272,7 @@ class TestStart:
         agent.start(agent_build='', local_packages={}, env_vars={})
 
         assert run.call_args_list == [
-            mocker.call([docker_path, 'pull', 'datadog/agent-dev:master-py3'], shell=False),
+            mocker.call([docker_path, 'pull', 'khulnasoft/agent-dev:master-py3'], shell=False),
             mocker.call(
                 [
                     docker_path,
@@ -281,7 +281,7 @@ class TestStart:
                     '--name',
                     f'dd_{integration}_{environment}',
                     '-v',
-                    f'{config_file.parent}:C:\\ProgramData\\Datadog\\conf.d\\{integration}.d',
+                    f'{config_file.parent}:C:\\ProgramData\\Khulnasoft\\conf.d\\{integration}.d',
                     '-e',
                     'DD_API_KEY=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
                     '-e',
@@ -296,7 +296,7 @@ class TestStart:
                     'DD_TELEMETRY_ENABLED=1',
                     '-e',
                     'PYTHONDONTWRITEBYTECODE=1',
-                    'datadog/agent-dev:master-py3',
+                    'khulnasoft/agent-dev:master-py3',
                 ],
                 shell=False,
                 stdout=subprocess.PIPE,
@@ -329,7 +329,7 @@ class TestStart:
         agent.start(agent_build='', local_packages={}, env_vars={})
 
         assert run.call_args_list == [
-            mocker.call([docker_path, 'pull', 'datadog/agent-dev:master-py3'], shell=False),
+            mocker.call([docker_path, 'pull', 'khulnasoft/agent-dev:master-py3'], shell=False),
             mocker.call(
                 [
                     docker_path,
@@ -342,7 +342,7 @@ class TestStart:
                     '-v',
                     '/proc:/host/proc',
                     '-v',
-                    f'{config_file.parent}:/etc/datadog-agent/conf.d/{integration}.d',
+                    f'{config_file.parent}:/etc/khulnasoft-agent/conf.d/{integration}.d',
                     '-v',
                     '/a/b/c:/d/e/f',
                     '-e',
@@ -359,7 +359,7 @@ class TestStart:
                     'DD_TELEMETRY_ENABLED=1',
                     '-e',
                     'PYTHONDONTWRITEBYTECODE=1',
-                    'datadog/agent-dev:master-py3',
+                    'khulnasoft/agent-dev:master-py3',
                 ],
                 shell=False,
                 stdout=subprocess.PIPE,
@@ -392,7 +392,7 @@ class TestStart:
         agent.start(agent_build='', local_packages={}, env_vars={})
 
         assert run.call_args_list == [
-            mocker.call([docker_path, 'pull', 'datadog/agent-dev:master-py3'], shell=False),
+            mocker.call([docker_path, 'pull', 'khulnasoft/agent-dev:master-py3'], shell=False),
             mocker.call(
                 [
                     docker_path,
@@ -405,7 +405,7 @@ class TestStart:
                     '-v',
                     '/proc:/host/proc',
                     '-v',
-                    f'{config_file.parent}:/etc/datadog-agent/conf.d/{integration}.d',
+                    f'{config_file.parent}:/etc/khulnasoft-agent/conf.d/{integration}.d',
                     '-v',
                     '/a/b/c:/d/e/f',
                     '-v',
@@ -424,7 +424,7 @@ class TestStart:
                     'DD_TELEMETRY_ENABLED=1',
                     '-e',
                     'PYTHONDONTWRITEBYTECODE=1',
-                    'datadog/agent-dev:master-py3',
+                    'khulnasoft/agent-dev:master-py3',
                 ],
                 shell=False,
                 stdout=subprocess.PIPE,
@@ -457,7 +457,7 @@ class TestStart:
         agent.start(agent_build='', local_packages={}, env_vars={})
 
         assert run.call_args_list == [
-            mocker.call([docker_path, 'pull', 'datadog/agent-dev:master-py3'], shell=False),
+            mocker.call([docker_path, 'pull', 'khulnasoft/agent-dev:master-py3'], shell=False),
             mocker.call(
                 [
                     docker_path,
@@ -466,7 +466,7 @@ class TestStart:
                     '--name',
                     f'dd_{integration}_{environment}',
                     '-v',
-                    f'{config_file.parent}:C:\\ProgramData\\Datadog\\conf.d\\{integration}.d',
+                    f'{config_file.parent}:C:\\ProgramData\\Khulnasoft\\conf.d\\{integration}.d',
                     '-v',
                     f'{config_file.parent.parent}:C:\\mnt',
                     '-e',
@@ -483,7 +483,7 @@ class TestStart:
                     'DD_TELEMETRY_ENABLED=1',
                     '-e',
                     'PYTHONDONTWRITEBYTECODE=1',
-                    'datadog/agent-dev:master-py3',
+                    'khulnasoft/agent-dev:master-py3',
                 ],
                 shell=False,
                 stdout=subprocess.PIPE,
@@ -519,9 +519,9 @@ class TestStart:
         agent.start(agent_build='', local_packages={}, env_vars={})
 
         assert run.call_args_list == [
-            mocker.call([docker_path, 'pull', 'datadog/agent-dev:master-py3'], shell=False),
-            mocker.call([docker_path, 'pull', 'datadog/agent-dev:master-py3'], shell=False),
-            mocker.call([docker_path, 'pull', 'datadog/agent-dev:master-py3'], shell=False),
+            mocker.call([docker_path, 'pull', 'khulnasoft/agent-dev:master-py3'], shell=False),
+            mocker.call([docker_path, 'pull', 'khulnasoft/agent-dev:master-py3'], shell=False),
+            mocker.call([docker_path, 'pull', 'khulnasoft/agent-dev:master-py3'], shell=False),
             mocker.call(
                 [
                     docker_path,
@@ -547,7 +547,7 @@ class TestStart:
                     'DD_TELEMETRY_ENABLED=1',
                     '-e',
                     'PYTHONDONTWRITEBYTECODE=1',
-                    'datadog/agent-dev:master-py3',
+                    'khulnasoft/agent-dev:master-py3',
                 ],
                 shell=False,
                 stdout=subprocess.PIPE,
@@ -579,7 +579,7 @@ class TestStart:
         agent.start(agent_build='', local_packages={}, env_vars={})
 
         assert run.call_args_list == [
-            mocker.call([docker_path, 'pull', 'datadog/agent-dev:master-py3'], shell=False),
+            mocker.call([docker_path, 'pull', 'khulnasoft/agent-dev:master-py3'], shell=False),
             mocker.call(
                 [
                     docker_path,
@@ -592,7 +592,7 @@ class TestStart:
                     '-v',
                     '/proc:/host/proc',
                     '-v',
-                    f'{config_file.parent}:/etc/datadog-agent/conf.d/{integration}.d',
+                    f'{config_file.parent}:/etc/khulnasoft-agent/conf.d/{integration}.d',
                     '-e',
                     'DD_API_KEY=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
                     '-e',
@@ -611,7 +611,7 @@ class TestStart:
                     'host2:127.0.0.1',
                     '--add-host',
                     'host1:127.0.0.1',
-                    'datadog/agent-dev:master-py3',
+                    'khulnasoft/agent-dev:master-py3',
                 ],
                 shell=False,
                 stdout=subprocess.PIPE,
@@ -643,7 +643,7 @@ class TestStart:
         agent.start(agent_build='', local_packages={}, env_vars={'DD_DOGSTATSD_PORT': '9000'})
 
         assert run.call_args_list == [
-            mocker.call([docker_path, 'pull', 'datadog/agent-dev:master-py3'], shell=False),
+            mocker.call([docker_path, 'pull', 'khulnasoft/agent-dev:master-py3'], shell=False),
             mocker.call(
                 [
                     docker_path,
@@ -656,7 +656,7 @@ class TestStart:
                     '-v',
                     '/proc:/host/proc',
                     '-v',
-                    f'{config_file.parent}:/etc/datadog-agent/conf.d/{integration}.d',
+                    f'{config_file.parent}:/etc/khulnasoft-agent/conf.d/{integration}.d',
                     '-e',
                     'DD_API_KEY=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
                     '-e',
@@ -675,7 +675,7 @@ class TestStart:
                     'PYTHONDONTWRITEBYTECODE=1',
                     '-p',
                     '9000:9000/udp',
-                    'datadog/agent-dev:master-py3',
+                    'khulnasoft/agent-dev:master-py3',
                 ],
                 shell=False,
                 stdout=subprocess.PIPE,
@@ -707,7 +707,7 @@ class TestStart:
         agent.start(agent_build='', local_packages={}, env_vars={})
 
         assert run.call_args_list == [
-            mocker.call([docker_path, 'pull', 'datadog/agent-dev:master-py3'], shell=False),
+            mocker.call([docker_path, 'pull', 'khulnasoft/agent-dev:master-py3'], shell=False),
             mocker.call(
                 [
                     docker_path,
@@ -720,7 +720,7 @@ class TestStart:
                     '-v',
                     '/proc:/host/proc',
                     '-v',
-                    f'{config_file.parent}:/etc/datadog-agent/conf.d/{integration}.d',
+                    f'{config_file.parent}:/etc/khulnasoft-agent/conf.d/{integration}.d',
                     '-e',
                     'DD_API_KEY=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
                     '-e',
@@ -739,7 +739,7 @@ class TestStart:
                     'DD_TELEMETRY_ENABLED=1',
                     '-e',
                     'PYTHONDONTWRITEBYTECODE=1',
-                    'datadog/agent-dev:master-py3',
+                    'khulnasoft/agent-dev:master-py3',
                 ],
                 shell=False,
                 stdout=subprocess.PIPE,
@@ -771,7 +771,7 @@ class TestStart:
         agent.start(agent_build='', local_packages={}, env_vars={})
 
         assert run.call_args_list == [
-            mocker.call([docker_path, 'pull', 'datadog/agent-dev:master-py3'], shell=False),
+            mocker.call([docker_path, 'pull', 'khulnasoft/agent-dev:master-py3'], shell=False),
             mocker.call(
                 [
                     docker_path,
@@ -784,7 +784,7 @@ class TestStart:
                     '-v',
                     '/proc:/host/proc',
                     '-v',
-                    f'{config_file.parent}:/etc/datadog-agent/conf.d/{integration}.d',
+                    f'{config_file.parent}:/etc/khulnasoft-agent/conf.d/{integration}.d',
                     '-e',
                     'DD_API_KEY=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
                     '-e',
@@ -799,7 +799,7 @@ class TestStart:
                     'DD_TELEMETRY_ENABLED=1',
                     '-e',
                     'PYTHONDONTWRITEBYTECODE=1',
-                    'datadog/agent-dev:master-py3',
+                    'khulnasoft/agent-dev:master-py3',
                 ],
                 shell=False,
                 stdout=subprocess.PIPE,
@@ -838,7 +838,7 @@ class TestStart:
         agent.start(agent_build='', local_packages={}, env_vars={})
 
         assert run.call_args_list == [
-            mocker.call([docker_path, 'pull', 'datadog/agent-dev:master-py3'], shell=False),
+            mocker.call([docker_path, 'pull', 'khulnasoft/agent-dev:master-py3'], shell=False),
             mocker.call(
                 [
                     docker_path,
@@ -851,7 +851,7 @@ class TestStart:
                     '-v',
                     '/proc:/host/proc',
                     '-v',
-                    f'{config_file.parent}:/etc/datadog-agent/conf.d/{integration}.d',
+                    f'{config_file.parent}:/etc/khulnasoft-agent/conf.d/{integration}.d',
                     '-e',
                     'DD_API_KEY=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
                     '-e',
@@ -866,7 +866,7 @@ class TestStart:
                     'DD_TELEMETRY_ENABLED=1',
                     '-e',
                     'PYTHONDONTWRITEBYTECODE=1',
-                    'datadog/agent-dev:master-py3',
+                    'khulnasoft/agent-dev:master-py3',
                 ],
                 shell=False,
                 stdout=subprocess.PIPE,
@@ -905,7 +905,7 @@ class TestStart:
         agent.start(agent_build='', local_packages={temp_dir / 'foo': '[deps]'}, env_vars={})
 
         assert run.call_args_list == [
-            mocker.call([docker_path, 'pull', 'datadog/agent-dev:master-py3'], shell=False),
+            mocker.call([docker_path, 'pull', 'khulnasoft/agent-dev:master-py3'], shell=False),
             mocker.call(
                 [
                     docker_path,
@@ -918,7 +918,7 @@ class TestStart:
                     '-v',
                     '/proc:/host/proc',
                     '-v',
-                    f'{config_file.parent}:/etc/datadog-agent/conf.d/{integration}.d',
+                    f'{config_file.parent}:/etc/khulnasoft-agent/conf.d/{integration}.d',
                     '-v',
                     f'{temp_dir / "foo"}:/home/foo',
                     '-e',
@@ -935,7 +935,7 @@ class TestStart:
                     'DD_TELEMETRY_ENABLED=1',
                     '-e',
                     'PYTHONDONTWRITEBYTECODE=1',
-                    'datadog/agent-dev:master-py3',
+                    'khulnasoft/agent-dev:master-py3',
                 ],
                 shell=False,
                 stdout=subprocess.PIPE,
@@ -946,7 +946,7 @@ class TestStart:
                     docker_path,
                     'exec',
                     f'dd_{integration}_{environment}',
-                    '/opt/datadog-agent/embedded/bin/python3',
+                    '/opt/khulnasoft-agent/embedded/bin/python3',
                     '-m',
                     'pip',
                     'install',
@@ -988,7 +988,7 @@ class TestStart:
         agent.start(agent_build='', local_packages={temp_dir / 'foo': '[deps]'}, env_vars={})
 
         assert run.call_args_list == [
-            mocker.call([docker_path, 'pull', 'datadog/agent-dev:master-py3'], shell=False),
+            mocker.call([docker_path, 'pull', 'khulnasoft/agent-dev:master-py3'], shell=False),
             mocker.call(
                 [
                     docker_path,
@@ -997,7 +997,7 @@ class TestStart:
                     '--name',
                     f'dd_{integration}_{environment}',
                     '-v',
-                    f'{config_file.parent}:C:\\ProgramData\\Datadog\\conf.d\\{integration}.d',
+                    f'{config_file.parent}:C:\\ProgramData\\Khulnasoft\\conf.d\\{integration}.d',
                     '-v',
                     f'{temp_dir / "foo"}:C:\\Users\\ContainerAdministrator\\foo',
                     '-e',
@@ -1014,7 +1014,7 @@ class TestStart:
                     'DD_TELEMETRY_ENABLED=1',
                     '-e',
                     'PYTHONDONTWRITEBYTECODE=1',
-                    'datadog/agent-dev:master-py3',
+                    'khulnasoft/agent-dev:master-py3',
                 ],
                 shell=False,
                 stdout=subprocess.PIPE,
@@ -1025,7 +1025,7 @@ class TestStart:
                     docker_path,
                     'exec',
                     f'dd_{integration}_{environment}',
-                    'C:\\Program Files\\Datadog\\Datadog Agent\\embedded3\\python.exe',
+                    'C:\\Program Files\\Khulnasoft\\Khulnasoft Agent\\embedded3\\python.exe',
                     '-m',
                     'pip',
                     'install',
@@ -1067,7 +1067,7 @@ class TestStart:
         agent.start(agent_build='', local_packages={temp_dir / 'foo': '[deps]'}, env_vars={})
 
         assert run.call_args_list == [
-            mocker.call([docker_path, 'pull', 'datadog/agent-dev:master-py3'], shell=False),
+            mocker.call([docker_path, 'pull', 'khulnasoft/agent-dev:master-py3'], shell=False),
             mocker.call(
                 [
                     docker_path,
@@ -1080,7 +1080,7 @@ class TestStart:
                     '-v',
                     '/proc:/host/proc',
                     '-v',
-                    f'{config_file.parent}:/etc/datadog-agent/conf.d/{integration}.d',
+                    f'{config_file.parent}:/etc/khulnasoft-agent/conf.d/{integration}.d',
                     '-v',
                     f'{temp_dir / "foo"}:/home/foo',
                     '-e',
@@ -1097,7 +1097,7 @@ class TestStart:
                     'DD_TELEMETRY_ENABLED=1',
                     '-e',
                     'PYTHONDONTWRITEBYTECODE=1',
-                    'datadog/agent-dev:master-py3',
+                    'khulnasoft/agent-dev:master-py3',
                 ],
                 shell=False,
                 stdout=subprocess.PIPE,
@@ -1109,7 +1109,7 @@ class TestStart:
                     docker_path,
                     'exec',
                     f'dd_{integration}_{environment}',
-                    '/opt/datadog-agent/embedded/bin/python3',
+                    '/opt/khulnasoft-agent/embedded/bin/python3',
                     '-m',
                     'pip',
                     'install',

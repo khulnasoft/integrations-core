@@ -10,7 +10,7 @@ Follow the instructions below to install and configure this check for an Agent r
 
 ### Installation
 
-The NFSstat check is included in the [Datadog Agent][2] package, so you don't need to install anything else on your servers.
+The NFSstat check is included in the [Khulnasoft Agent][2] package, so you don't need to install anything else on your servers.
 
 ### Configuration
 
@@ -18,7 +18,7 @@ Edit the `nfsstat.d/conf.yaml` file, in the `conf.d/` folder at the root of your
 
 ### Log collection
 
-1. Collecting logs is disabled by default in the Datadog Agent, so to enable it in `datadog.yaml`, update this setting:
+1. Collecting logs is disabled by default in the Khulnasoft Agent, so to enable it in `khulnasoft.yaml`, update this setting:
 
    ```yaml
    logs_enabled: true
@@ -54,7 +54,7 @@ The Nfsstat check does not include any events.
 The Nfsstat check does not include any service checks.
 
 ## Troubleshooting
-Need help? Contact [Datadog support][8].
+Need help? Contact [Khulnasoft support][8].
 
 ## Further Reading
 

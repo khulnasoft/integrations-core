@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2018-present
+# (C) Khulnasoft, Inc. 2018-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 import os
@@ -24,7 +24,7 @@ from .utils import initialize_root
 @click.group(context_settings=CONTEXT_SETTINGS, invoke_without_command=True)
 @click.option('--core', '-c', is_flag=True, help='Work on `integrations-core`.')
 @click.option('--extras', '-e', is_flag=True, help='Work on `integrations-extras`.')
-@click.option('--agent', '-a', is_flag=True, help='Work on `datadog-agent`.')
+@click.option('--agent', '-a', is_flag=True, help='Work on `khulnasoft-agent`.')
 @click.option('--marketplace', '-m', is_flag=True, help='Work on `marketplace`.')
 @click.option('--here', '-x', is_flag=True, help='Work on the current location.')
 @click.option('--color/--no-color', default=None, help='Whether or not to display colored output (default true).')

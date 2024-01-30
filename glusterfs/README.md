@@ -2,7 +2,7 @@
 
 ## Overview
 
-This check monitors [Red Hat Gluster Storage][1] cluster health, volume, and brick status through the Datadog Agent. 
+This check monitors [Red Hat Gluster Storage][1] cluster health, volume, and brick status through the Khulnasoft Agent. 
 This GlusterFS integration is compatible with both Red Hat vendored and open-source versions of GlusterFS.
 
 ## Setup
@@ -11,7 +11,7 @@ Follow the instructions below to install and configure this check for an Agent r
 
 ### Installation
 
-The GlusterFS check is included in the [Datadog Agent][3] package.
+The GlusterFS check is included in the [Khulnasoft Agent][3] package.
 No additional installation is needed on your server.
 
 ### Configuration
@@ -21,13 +21,13 @@ No additional installation is needed on your server.
    ```yaml
    init_config:
 
-    ## @param gstatus_path - string - optional - default: /opt/datadog-agent/embedded/sbin/gstatus
+    ## @param gstatus_path - string - optional - default: /opt/khulnasoft-agent/embedded/sbin/gstatus
     ## Path to the gstatus command.
     ##
     ## A version of the gstatus is shipped with the Agent binary.
     ## If you are using a source install, specify the location of gstatus.
     #
-    # gstatus_path: /opt/datadog-agent/embedded/sbin/gstatus
+    # gstatus_path: /opt/khulnasoft-agent/embedded/sbin/gstatus
 
     instances:
       -
@@ -54,7 +54,7 @@ No additional installation is needed on your server.
 #### Log collection
 
 
-1. Collecting logs is disabled by default in the Datadog Agent, enable it in your `datadog.yaml` file:
+1. Collecting logs is disabled by default in the Khulnasoft Agent, enable it in your `khulnasoft.yaml` file:
 
     ```yaml
     logs_enabled: true
@@ -98,7 +98,7 @@ See [service_checks.json][10] for a list of service checks provided by this inte
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][11].
+Need help? Contact [Khulnasoft support][11].
 
 
 [1]: https://www.redhat.com/en/technologies/storage/gluster

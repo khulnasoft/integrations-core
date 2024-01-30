@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2018
+# (C) Khulnasoft, Inc. 2018
 # All rights reserved
 # Licensed under Simplified BSD License see LICENSE
 
@@ -20,8 +20,8 @@ FABRIC_FIXTURES_DIR = os.path.join(FIXTURES_DIR, 'fabric')
 TENANT_FIXTURES_DIR = os.path.join(FIXTURES_DIR, 'tenant')
 ALL_FIXTURE_DIR = [FIXTURES_DIR, CAPACITY_FIXTURES_DIR, FABRIC_FIXTURES_DIR, TENANT_FIXTURES_DIR]
 
-USERNAME = 'datadog'
-PASSWORD = 'datadog'
+USERNAME = 'khulnasoft'
+PASSWORD = 'khulnasoft'
 ACI_URL = 'https://khulnasoft.com'
 ACI_URLS = [ACI_URL]
 CONFIG = {'aci_urls': ACI_URLS, 'username': USERNAME, 'pwd': PASSWORD, 'tenant': ['KhulnaSoft']}

@@ -90,7 +90,7 @@ jobs:
   jb232c8c:
     uses: ./.github/workflows/test-target.yml
     with:
-      job-name: Datadog Checks Base on Linux
+      job-name: Khulnasoft Checks Base on Linux
       target: khulnasoft_checks_base
       platform: linux
       runner: '["ubuntu-22.04"]'
@@ -109,7 +109,7 @@ jobs:
   jda96080:
     uses: ./.github/workflows/test-target.yml
     with:
-      job-name: Datadog Checks Base on Windows
+      job-name: Khulnasoft Checks Base on Windows
       target: khulnasoft_checks_base
       platform: windows
       runner: '["windows-2022"]'
@@ -128,7 +128,7 @@ jobs:
   j77217e9:
     uses: ./.github/workflows/test-target.yml
     with:
-      job-name: Datadog Checks Dev on Linux
+      job-name: Khulnasoft Checks Dev on Linux
       target: khulnasoft_checks_dev
       platform: linux
       runner: '["ubuntu-22.04"]'
@@ -147,7 +147,7 @@ jobs:
   j1176210:
     uses: ./.github/workflows/test-target.yml
     with:
-      job-name: Datadog Checks Dev on Windows
+      job-name: Khulnasoft Checks Dev on Windows
       target: khulnasoft_checks_dev
       platform: windows
       runner: '["windows-2022"]'
@@ -166,7 +166,7 @@ jobs:
   j8cdb65b:
     uses: ./.github/workflows/test-target.yml
     with:
-      job-name: Datadog Checks Downloader on Linux
+      job-name: Khulnasoft Checks Downloader on Linux
       target: khulnasoft_checks_downloader
       platform: linux
       runner: '["ubuntu-22.04"]'
@@ -185,7 +185,7 @@ jobs:
   j8c73c41:
     uses: ./.github/workflows/test-target.yml
     with:
-      job-name: Datadog Checks Downloader on Windows
+      job-name: Khulnasoft Checks Downloader on Windows
       target: khulnasoft_checks_downloader
       platform: windows
       runner: '["windows-2022"]'
@@ -850,7 +850,7 @@ jobs:
   j2d21154:
     uses: ./.github/workflows/test-target.yml
     with:
-      job-name: Datadog Cluster Agent
+      job-name: Khulnasoft Cluster Agent
       target: khulnasoft_cluster_agent
       platform: linux
       runner: '["ubuntu-22.04"]'

@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2022-present
+# (C) Khulnasoft, Inc. 2022-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 from __future__ import annotations
@@ -59,7 +59,7 @@ class Application(Terminal):
         # core = "~/dd/integrations-core"
         # extras = "~/dd/integrations-extras"
         # marketplace = "~/dd/marketplace"
-        # agent = "~/dd/datadog-agent"
+        # agent = "~/dd/khulnasoft-agent"
         if core:
             self.__repo = Repository('core', self.config.repos['core'])
         elif extras:

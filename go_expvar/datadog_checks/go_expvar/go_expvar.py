@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2014-present
+# (C) Khulnasoft, Inc. 2014-present
 # (C) Cory Watson <cory@stripe.com> 2015-2016
 # All rights reserved
 # Licensed under Simplified BSD License (see LICENSE)

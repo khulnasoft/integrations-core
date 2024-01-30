@@ -6,18 +6,18 @@ requires = [
 build-backend = "hatchling.build"
 
 [project]
-name = "datadog-mongo"
+name = "khulnasoft-mongo"
 description = "The MongoDB check"
 readme = "README.md"
 requires-python = ">=3.9"
 keywords = [
-    "datadog",
-    "datadog agent",
-    "datadog check",
+    "khulnasoft",
+    "khulnasoft agent",
+    "khulnasoft check",
     "mongo",
 ]
 authors = [
-    { name = "Datadog", email = "packages@khulnasoft.com" },
+    { name = "Khulnasoft", email = "packages@khulnasoft.com" },
 ]
 classifiers = [
     "Development Status :: 5 - Production/Stable",
@@ -29,7 +29,7 @@ classifiers = [
     "Private :: Do Not Upload",
 ]
 dependencies = [
-    "datadog-checks-base>=32.7.0",
+    "khulnasoft-checks-base>=32.7.0",
 ]
 dynamic = [
     "version",

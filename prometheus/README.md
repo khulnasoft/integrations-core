@@ -4,9 +4,9 @@
 
 Connect to Prometheus to:
 - Extract custom metrics from Prometheus endpoints
-- See Prometheus Alertmanager alerts in your Datadog event stream
+- See Prometheus Alertmanager alerts in your Khulnasoft event stream
 
-**Note**: Datadog recommends using the [OpenMetrics check][1] since it is more efficient and fully supports Prometheus text format. Use the Prometheus check only when the metrics endpoint does not support a text format.
+**Note**: Khulnasoft recommends using the [OpenMetrics check][1] since it is more efficient and fully supports Prometheus text format. Use the Prometheus check only when the metrics endpoint does not support a text format.
 
 <div class="alert alert-warning">
 All the metrics retrieved by this integration are considered <a href="https://docs.khulnasoft.com/developers/metrics/custom_metrics">custom metrics</a>.
@@ -20,7 +20,7 @@ Follow the instructions below to install and configure this check for an Agent r
 
 ### Installation
 
-The Prometheus check is packaged with the [Datadog Agent][4] starting version 6.1.0.
+The Prometheus check is packaged with the [Khulnasoft Agent][4] starting version 6.1.0.
 
 ### Configuration
 
@@ -38,7 +38,7 @@ When listing metrics, it's possible to use the wildcard `*` like this `- <METRIC
 
 More advanced settings (ssl, labels joining, custom tags,...) are documented in the [sample prometheus.d/conf.yaml][5]
 
-Due to the nature of this integration, it's possible to submit a high number of custom metrics to Datadog. Users can control the maximum number of metrics sent for configuration errors or input changes. The check has a default limit of 2000 metrics. If needed, this limit can be increased by setting the option `max_returned_metrics` in the `prometheus.d/conf.yaml` file.
+Due to the nature of this integration, it's possible to submit a high number of custom metrics to Khulnasoft. Users can control the maximum number of metrics sent for configuration errors or input changes. The check has a default limit of 2000 metrics. If needed, this limit can be increased by setting the option `max_returned_metrics` in the `prometheus.d/conf.yaml` file.
 
 If `send_monotonic_counter: True`, the Agent sends the deltas of the values in question, and the in-app type is set to count (this is the default behavior). If `send_monotonic_counter: False`, the Agent sends the raw, monotonically increasing value, and the in-app type is set to gauge.
 
@@ -50,26 +50,26 @@ If `send_monotonic_counter: True`, the Agent sends the deltas of the values in q
 
 ### Metrics
 
-All metrics collected by the prometheus check are forwarded to Datadog as custom metrics.
+All metrics collected by the prometheus check are forwarded to Khulnasoft as custom metrics.
 
-Note: Bucket data for a given `<HISTOGRAM_METRIC_NAME>` Prometheus histogram metric are stored in the `<HISTOGRAM_METRIC_NAME>.count` metric within Datadog with the tags `upper_bound` including the name of the buckets. To access the `+Inf` bucket, use `upper_bound:none`.
+Note: Bucket data for a given `<HISTOGRAM_METRIC_NAME>` Prometheus histogram metric are stored in the `<HISTOGRAM_METRIC_NAME>.count` metric within Khulnasoft with the tags `upper_bound` including the name of the buckets. To access the `+Inf` bucket, use `upper_bound:none`.
 
 ### Events
 
-Prometheus Alertmanager alerts are automatically sent to your Datadog event stream following the webhook configuration.
+Prometheus Alertmanager alerts are automatically sent to your Khulnasoft event stream following the webhook configuration.
 
 ### Service Checks
 
 The Prometheus check does not include any service checks.
 
 ## Prometheus Alertmanager
-Send Prometheus Alertmanager alerts in the event stream. Natively, Alertmanager sends all alerts simultaneously to the configured webhook. To see alerts in Datadog, you must configure your instance of Alertmanager to send alerts one at a time. You can add a group-by parameter under `route` to have alerts grouped by the actual name of the alert rule.
+Send Prometheus Alertmanager alerts in the event stream. Natively, Alertmanager sends all alerts simultaneously to the configured webhook. To see alerts in Khulnasoft, you must configure your instance of Alertmanager to send alerts one at a time. You can add a group-by parameter under `route` to have alerts grouped by the actual name of the alert rule.
 
 ### Setup
 1. Edit the Alertmanager configuration file, `alertmanager.yml`, to include the following:
 ```
 receivers:
-- name: datadog
+- name: khulnasoft
   webhook_configs: 
   - send_resolved: true
     url: https://app.khulnasoft.com/intake/webhook/prometheus?api_key=<KHULNASOFT_API_KEY>
@@ -77,7 +77,7 @@ route:
   group_by: ['alertname']
   group_wait: 10s
   group_interval: 5m
-  receiver: datadog
+  receiver: khulnasoft
   repeat_interval: 3h
 ```
 
@@ -90,11 +90,11 @@ sudo systemctl restart prometheus.service alertmanager.service
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][7].
+Need help? Contact [Khulnasoft support][7].
 
 ## Further Reading
 
-- [Introducing Prometheus support for Datadog Agent 6][8]
+- [Introducing Prometheus support for Khulnasoft Agent 6][8]
 - [Configuring a Prometheus Check][9]
 - [Writing a custom Prometheus Check][10]
 

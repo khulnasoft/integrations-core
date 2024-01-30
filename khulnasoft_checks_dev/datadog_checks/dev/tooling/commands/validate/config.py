@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2018-present
+# (C) Khulnasoft, Inc. 2018-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 import difflib
@@ -95,8 +95,8 @@ def config(ctx, check, sync, verbose):
 
         # source is the default file name
         if check == 'agent':
-            display_name = 'Datadog Agent'
-            source = 'datadog'
+            display_name = 'Khulnasoft Agent'
+            source = 'khulnasoft'
             version = None
         else:
             display_name = manifest.get_display_name()

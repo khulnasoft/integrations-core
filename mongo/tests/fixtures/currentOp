@@ -53,7 +53,7 @@
 			"desc" : "conn4",
 			"connectionId" : 4,
 			"client" : "192.168.208.1:59392",
-			"appName" : "datadog-agent",
+			"appName" : "khulnasoft-agent",
 			"clientMetadata" : {
 				"driver" : {
 					"name" : "PyMongo",
@@ -67,7 +67,7 @@
 				},
 				"platform" : "CPython 3.11.5.final.0",
 				"application" : {
-					"name" : "datadog-agent"
+					"name" : "khulnasoft-agent"
 				}
 			},
 			"active" : true,

@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2010-present
+# (C) Khulnasoft, Inc. 2010-present
 # All rights reserved
 # Licensed under Simplified BSD License (see LICENSE)
 import socket
@@ -345,7 +345,7 @@ def test_activity_metrics(aggregator, integration_check, pg_instance):
     check = integration_check(pg_instance)
     check.check(pg_instance)
 
-    expected_tags = _get_expected_tags(check, pg_instance, db=DB_NAME, app='datadog-agent', user='datadog')
+    expected_tags = _get_expected_tags(check, pg_instance, db=DB_NAME, app='khulnasoft-agent', user='khulnasoft')
     check_activity_metrics(aggregator, expected_tags)
 
 
@@ -355,7 +355,7 @@ def test_activity_metrics_no_application_aggregation(aggregator, integration_che
     check = integration_check(pg_instance)
     check.check(pg_instance)
 
-    expected_tags = _get_expected_tags(check, pg_instance, db=DB_NAME, user='datadog')
+    expected_tags = _get_expected_tags(check, pg_instance, db=DB_NAME, user='khulnasoft')
     check_activity_metrics(aggregator, expected_tags)
 
 
@@ -418,8 +418,8 @@ def test_backend_transaction_age(aggregator, integration_check, pg_instance):
 
     check.check(pg_instance)
 
-    dd_agent_tags = _get_expected_tags(check, pg_instance, db=DB_NAME, app='datadog-agent', user='datadog')
-    test_tags = _get_expected_tags(check, pg_instance, db=DB_NAME, app='test', user='datadog')
+    dd_agent_tags = _get_expected_tags(check, pg_instance, db=DB_NAME, app='khulnasoft-agent', user='khulnasoft')
+    test_tags = _get_expected_tags(check, pg_instance, db=DB_NAME, app='test', user='khulnasoft')
     # No transaction in progress, we have 0
     if float(POSTGRES_VERSION) >= 9.6:
         aggregator.assert_metric('postgresql.activity.backend_xmin_age', value=0, count=1, tags=dd_agent_tags)
@@ -684,7 +684,7 @@ def test_correct_hostname(dbm_enabled, reported_hostname, expected_hostname, agg
 
     expected_tags_no_db = _get_expected_tags(check, pg_instance, server=HOST)
     expected_tags_with_db = expected_tags_no_db + ['db:khulnasoft_test']
-    expected_activity_tags = expected_tags_with_db + ['app:datadog-agent', 'user:datadog']
+    expected_activity_tags = expected_tags_with_db + ['app:khulnasoft-agent', 'user:khulnasoft']
     c_metrics = COMMON_METRICS
     if not dbm_enabled:
         c_metrics = c_metrics + DBM_MIGRATED_METRICS

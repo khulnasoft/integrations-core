@@ -12,7 +12,7 @@ Follow the instructions below to install and configure this check for an Agent r
 
 ### Installation
 
-The network check is included in the [Datadog Agent][2] package, so you don't need to install anything else on your server.
+The network check is included in the [Khulnasoft Agent][2] package, so you don't need to install anything else on your server.
 
 To collect metrics with this integration, make sure the conntrack module is activated on your host. If it's not the case, run:
 
@@ -49,10 +49,10 @@ In order to collect [AWS ENA metrics][12]:
 - Update `network` check to enable collection of AWS ENA metrics with `collect_aws_ena_metrics: true`.
 - Update Agent containers to use `host` network mode and add `NET_ADMIN` capabilities. 
 
-For Datadog [Helm Chart][11] deployment, update chart values with:
+For Khulnasoft [Helm Chart][11] deployment, update chart values with:
 
 ```yaml
-datadog:
+khulnasoft:
  # Enable AWS ENA metrics collection for network check
  confd:
    network.yaml: |-
@@ -72,7 +72,7 @@ agents:
 
 ```
 
-For Agents manually deployed with DaemonSet, apply `datadog` DaemonSet patch:
+For Agents manually deployed with DaemonSet, apply `khulnasoft` DaemonSet patch:
 
 ```yaml
 spec:
@@ -117,7 +117,7 @@ The Network check does not include any service checks.
 
 ## Troubleshooting
 
-- [Send TCP/UDP host metrics to the Datadog API][9]
+- [Send TCP/UDP host metrics to the Khulnasoft API][9]
 
 ## Further Reading
 
@@ -131,7 +131,7 @@ The Network check does not include any service checks.
 [6]: https://docs.khulnasoft.com/agent/guide/agent-commands/#agent-status-and-information
 [7]: https://github.com/KhulnaSoft/integrations-core/blob/master/network/metadata.csv
 [8]: https://github.com/KhulnaSoft/integrations-core/blob/master/network/CHANGELOG.md#1110--2019-05-14
-[9]: https://docs.khulnasoft.com/integrations/guide/send-tcp-udp-host-metrics-to-the-datadog-api/
+[9]: https://docs.khulnasoft.com/integrations/guide/send-tcp-udp-host-metrics-to-the-khulnasoft-api/
 [10]: https://docs.khulnasoft.com/monitors/monitor_types/network/
 [11]: https://docs.khulnasoft.com/containers/kubernetes/installation/?tab=helm#installation
 [12]: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-network-performance-ena.html

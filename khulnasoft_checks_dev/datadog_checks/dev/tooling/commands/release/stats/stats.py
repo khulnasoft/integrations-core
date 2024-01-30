@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2018-present
+# (C) Khulnasoft, Inc. 2018-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 import csv
@@ -91,7 +91,7 @@ def export_changes_as_csv(changes, filename):
 @click.option('--export-csv', help="CSV file where the list will be exported", required=False)
 @click.pass_context
 def merged_prs(ctx, from_ref, to_ref, release_milestone, exclude_releases, export_csv):
-    agent_release = Release.from_github(ctx, 'datadog-agent', release_milestone, from_ref=from_ref, to_ref=to_ref)
+    agent_release = Release.from_github(ctx, 'khulnasoft-agent', release_milestone, from_ref=from_ref, to_ref=to_ref)
     integrations_release = Release.from_github(
         ctx, 'integrations-core', release_milestone, from_ref=from_ref, to_ref=to_ref
     )
@@ -122,13 +122,13 @@ def merged_prs(ctx, from_ref, to_ref, release_milestone, exclude_releases, expor
 @click.pass_context
 def report(ctx, from_ref, to_ref, release_milestone):
 
-    agent_release = Release.from_github(ctx, 'datadog-agent', release_milestone, from_ref=from_ref, to_ref=to_ref)
+    agent_release = Release.from_github(ctx, 'khulnasoft-agent', release_milestone, from_ref=from_ref, to_ref=to_ref)
     integrations_release = Release.from_github(
         ctx, 'integrations-core', release_milestone, from_ref=from_ref, to_ref=to_ref
     )
 
     print('Release Branch:', agent_release.release_version)
     print('Release candidates:', len(agent_release.rc_tags))
-    print('Number of Commits (datadog-agent):', len(agent_release.commits))
+    print('Number of Commits (khulnasoft-agent):', len(agent_release.commits))
     print('Number of Commits (integrations-core):', len(integrations_release.commits))
     print('Release time in days:', agent_release.release_duration_days())

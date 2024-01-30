@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2018-present
+# (C) Khulnasoft, Inc. 2018-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 from __future__ import division, unicode_literals
@@ -38,7 +38,7 @@ from .objects_queue import ObjectsQueue
 # Default vCenter sampling interval
 REAL_TIME_INTERVAL = 20
 # Metrics are only collected on vSphere VMs marked by custom field value
-VM_MONITORING_FLAG = 'DatadogMonitored'
+VM_MONITORING_FLAG = 'KhulnasoftMonitored'
 # The size of the ThreadPool used to process the request queue
 DEFAULT_SIZE_POOL = 4
 # The maximum number of historical metrics allowed to be queried
@@ -86,7 +86,7 @@ def trace_method(method):
 
 
 class VSphereLegacyCheck(AgentCheck):
-    """Get performance metrics from a vCenter server and upload them to Datadog
+    """Get performance metrics from a vCenter server and upload them to Khulnasoft
     References:
         http://pubs.vmware.com/vsphere-51/index.jsp#com.vmware.wssdk.apiref.doc/vim.PerformanceManager.html
 
@@ -688,7 +688,7 @@ class VSphereLegacyCheck(AgentCheck):
 
         # TEST-INSTRUMENTATION
         custom_tags = instance.get('tags', []) + ['instance:{}'.format(i_key)]
-        self.histogram('datadog.agent.vsphere.morlist_process_atomic.time', time.time() - t, tags=custom_tags)
+        self.histogram('khulnasoft.agent.vsphere.morlist_process_atomic.time', time.time() - t, tags=custom_tags)
 
     def _process_mor_objects_queue(self, instance):
         """
@@ -774,7 +774,7 @@ class VSphereLegacyCheck(AgentCheck):
 
         # ## <TEST-INSTRUMENTATION>
         custom_tags = instance.get('tags', []) + ['instance:{}'.format(i_key)]
-        self.histogram('datadog.agent.vsphere.metric_metadata_collection.time', t.total(), tags=custom_tags)
+        self.histogram('khulnasoft.agent.vsphere.metric_metadata_collection.time', t.total(), tags=custom_tags)
         # ## </TEST-INSTRUMENTATION>
 
     @staticmethod
@@ -891,7 +891,7 @@ class VSphereLegacyCheck(AgentCheck):
 
         # ## <TEST-INSTRUMENTATION>
         custom_tags = instance.get('tags', []) + ['instance:{}'.format(i_key)]
-        self.histogram('datadog.agent.vsphere.metric_colection.time', t.total(), tags=custom_tags)
+        self.histogram('khulnasoft.agent.vsphere.metric_colection.time', t.total(), tags=custom_tags)
         # ## </TEST-INSTRUMENTATION>
 
     def collect_metrics(self, instance):

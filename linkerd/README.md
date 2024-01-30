@@ -7,18 +7,18 @@
 - Adds latency-aware load balancing, request retries, timeouts, and blue-green deploys to keep your applications resilient.
 - Provides platform health metrics by tracking success rates, latencies, and request volumes for every meshed workload.
 
-This integration sends your Linkerd metrics to Datadog, including application success rates, latency, and saturation.
+This integration sends your Linkerd metrics to Khulnasoft, including application success rates, latency, and saturation.
 
 
 ## Setup
 
-This OpenMetrics-based integration has a latest mode (enabled by setting `openmetrics_endpoint` to point to the target endpoint) and a legacy mode (enabled by setting `prometheus_url` instead). To get all the most up-to-date features, Datadog recommends enabling the latest mode. For more information, see [Latest and Legacy Versioning For OpenMetrics-based Integrations][16].
+This OpenMetrics-based integration has a latest mode (enabled by setting `openmetrics_endpoint` to point to the target endpoint) and a legacy mode (enabled by setting `prometheus_url` instead). To get all the most up-to-date features, Khulnasoft recommends enabling the latest mode. For more information, see [Latest and Legacy Versioning For OpenMetrics-based Integrations][16].
 
 Metrics marked as `[OpenMetrics V1]` or `[OpenMetrics V2]` are only available using the corresponding mode of the Linkerd integration. Metrics not marked are collected by all modes.
 
 ### Installation
 
-The Linkerd check is included in the [Datadog Agent][2] package, so you don't need to install anything else on your server.
+The Linkerd check is included in the [Khulnasoft Agent][2] package, so you don't need to install anything else on your server.
 
 ### Configuration
 
@@ -64,7 +64,7 @@ For containerized environments, see the [Autodiscovery Integration Templates][7]
 
 ##### Log collection
 
-Collecting logs is disabled by default in the Datadog Agent. To enable it, see [Kubernetes log collection][8].
+Collecting logs is disabled by default in the Khulnasoft Agent. To enable it, see [Kubernetes log collection][8].
 
 | Parameter      | Value                                                |
 | -------------- | ---------------------------------------------------- |
@@ -87,7 +87,7 @@ See [metadata.csv][11] for a list of metrics provided by this integration.
 
 For Linkerd v1, see the [finagle metrics guide][12] for metric descriptions and [this gist][13] for an example of metrics exposed by Linkerd.
 
-Linkerd is a Prometheus-based integration. Depending on your Linkerd configuration, some metrics might not be exposed by Linkerd. If any metric is not present in the cURL output, the Datadog Agent is unable to collect that particular metric.
+Linkerd is a Prometheus-based integration. Depending on your Linkerd configuration, some metrics might not be exposed by Linkerd. If any metric is not present in the cURL output, the Khulnasoft Agent is unable to collect that particular metric.
 
 To list the metrics exposed by your current configuration, run:
 
@@ -108,7 +108,7 @@ See [service_checks.json][14] for a list of service checks provided by this inte
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][15].
+Need help? Contact [Khulnasoft support][15].
 
 
 [1]: https://linkerd.io

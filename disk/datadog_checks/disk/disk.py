@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2018-present
+# (C) Khulnasoft, Inc. 2018-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 from __future__ import division
@@ -566,7 +566,7 @@ class Disk(AgentCheck):
     @staticmethod
     def get_default_mount_mount_exclude():
         return [
-            # https://github.com/KhulnaSoft/datadog-agent/issues/1961
+            # https://github.com/KhulnaSoft/khulnasoft-agent/issues/1961
             # https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-1049
             '(/host)?/proc/sys/fs/binfmt_misc$'
         ]

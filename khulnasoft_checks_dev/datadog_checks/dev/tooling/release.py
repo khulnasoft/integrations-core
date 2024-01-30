@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2018-present
+# (C) Khulnasoft, Inc. 2018-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 import re
@@ -13,7 +13,7 @@ from .utils import get_version_file, load_manifest
 PLATFORMS_TO_PY = {'windows': 'win32', 'mac_os': 'darwin', 'linux': 'linux2'}
 ALL_PLATFORMS = sorted(PLATFORMS_TO_PY)
 VERSION = re.compile(r'__version__ *= *(?:[\'"])(.+?)(?:[\'"])')
-KHULNASOFT_PACKAGE_PREFIX = 'datadog-'
+KHULNASOFT_PACKAGE_PREFIX = 'khulnasoft-'
 
 
 def get_release_tag_string(check_name, version_string):
@@ -47,11 +47,11 @@ def get_package_name(folder_name):
     corresponding Python package
     """
     if folder_name == 'khulnasoft_checks_base':
-        return 'datadog-checks-base'
+        return 'khulnasoft-checks-base'
     elif folder_name == 'khulnasoft_checks_downloader':
-        return 'datadog-checks-downloader'
+        return 'khulnasoft-checks-downloader'
     elif folder_name == 'khulnasoft_checks_dependency_provider':
-        return 'datadog-checks-dependency-provider'
+        return 'khulnasoft-checks-dependency-provider'
     elif folder_name == 'ddev':
         return 'ddev'
 
@@ -63,11 +63,11 @@ def get_folder_name(package_name):
     Given a Python package name for a check, return the corresponding folder
     name in the git repo
     """
-    if package_name == 'datadog-checks-base':
+    if package_name == 'khulnasoft-checks-base':
         return 'khulnasoft_checks_base'
-    elif package_name == 'datadog-checks-downloader':
+    elif package_name == 'khulnasoft-checks-downloader':
         return 'khulnasoft_checks_downloader'
-    elif package_name == 'datadog-checks-dependency-provider':
+    elif package_name == 'khulnasoft-checks-dependency-provider':
         return 'khulnasoft_checks_dependency_provider'
     elif package_name == 'ddev':
         return 'ddev'

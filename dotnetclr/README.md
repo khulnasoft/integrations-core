@@ -11,7 +11,7 @@ Get metrics from the .NET CLR service in real time to:
 
 ### Installation
 
-The .NET CLR check is included in the [Datadog Agent][1] package. No additional installation is needed on your server.
+The .NET CLR check is included in the [Khulnasoft Agent][1] package. No additional installation is needed on your server.
 
 ### Configuration
 
@@ -40,7 +40,7 @@ The .NET CLR check does not include any events.
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][7].
+Need help? Contact [Khulnasoft support][7].
 
 [1]: https://app.khulnasoft.com/account/settings/agent/latest
 [2]: https://docs.khulnasoft.com/agent/guide/agent-configuration-files/#agent-configuration-directory

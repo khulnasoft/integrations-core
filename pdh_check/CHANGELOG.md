@@ -185,7 +185,7 @@
 ***Fixed***:
 
 * Added resilience to failed import of `WinPDHCounter`. [#1183](https://github.com/KhulnaSoft/integrations-core/issues/1183)
-* Use `WinPDHCounter` shipped with `datadog-checks-base` wheel. [#1183](https://github.com/KhulnaSoft/integrations-core/issues/1183)
+* Use `WinPDHCounter` shipped with `khulnasoft-checks-base` wheel. [#1183](https://github.com/KhulnaSoft/integrations-core/issues/1183)
 
 ## 1.1.0 / 2018-01-10
 

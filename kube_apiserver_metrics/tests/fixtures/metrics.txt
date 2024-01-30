@@ -4444,23 +4444,23 @@ apiserver_longrunning_gauge{resource="validatingwebhookconfigurations",scope="cl
 apiserver_longrunning_gauge{resource="volumeattachments",scope="cluster",subresource="",verb="WATCH"} 2
 # HELP apiserver_dropped_requests_total Number of requests dropped with 'Try again later' response.
 # TYPE apiserver_dropped_requests_total counter
-apiserver_dropped_requests_total{client="Datadog Agent/6.8.2",code="500",contentType="application/json",resource="componentstatuses",scope="cluster",subresource="",verb="GET"} 3
+apiserver_dropped_requests_total{client="Khulnasoft Agent/6.8.2",code="500",contentType="application/json",resource="componentstatuses",scope="cluster",subresource="",verb="GET"} 3
 # HELP apiserver_request_count Counter of apiserver requests broken out for each verb, API resource, client, and HTTP response contentType and code.
 # TYPE apiserver_request_count counter
-apiserver_request_count{client="Datadog Agent/6.8.2",code="200",contentType="application/json",resource="componentstatuses",scope="cluster",subresource="",verb="GET"} 10134
+apiserver_request_count{client="Khulnasoft Agent/6.8.2",code="200",contentType="application/json",resource="componentstatuses",scope="cluster",subresource="",verb="GET"} 10134
 apiserver_request_count{client="coredns/v0.0.0 (linux/amd64) kubernetes/$Format",code="200",contentType="application/vnd.kubernetes.protobuf",resource="endpoints",scope="cluster",subresource="",verb="LIST"} 3
 apiserver_request_count{client="coredns/v0.0.0 (linux/amd64) kubernetes/$Format",code="200",contentType="application/vnd.kubernetes.protobuf",resource="namespaces",scope="cluster",subresource="",verb="LIST"} 3
 apiserver_request_count{client="coredns/v0.0.0 (linux/amd64) kubernetes/$Format",code="200",contentType="application/vnd.kubernetes.protobuf",resource="services",scope="cluster",subresource="",verb="LIST"} 3
 apiserver_request_count{client="coredns/v0.0.0 (linux/amd64) kubernetes/$Format",code="200",contentType="application/vnd.kubernetes.protobuf;stream=watch",resource="endpoints",scope="cluster",subresource="",verb="WATCH"} 137
 apiserver_request_count{client="coredns/v0.0.0 (linux/amd64) kubernetes/$Format",code="200",contentType="application/vnd.kubernetes.protobuf;stream=watch",resource="namespaces",scope="cluster",subresource="",verb="WATCH"} 135
 apiserver_request_count{client="coredns/v0.0.0 (linux/amd64) kubernetes/$Format",code="200",contentType="application/vnd.kubernetes.protobuf;stream=watch",resource="services",scope="cluster",subresource="",verb="WATCH"} 136
-apiserver_request_count{client="datadog-cluster-agent/v0.0.0 (linux/amd64) kubernetes/$Format",code="200",contentType="application/json",resource="endpoints",scope="cluster",subresource="",verb="LIST"} 1
-apiserver_request_count{client="datadog-cluster-agent/v0.0.0 (linux/amd64) kubernetes/$Format",code="200",contentType="application/json",resource="endpoints",scope="cluster",subresource="",verb="WATCH"} 68
-apiserver_request_count{client="datadog-cluster-agent/v0.0.0 (linux/amd64) kubernetes/$Format",code="200",contentType="application/json",resource="horizontalpodautoscalers",scope="cluster",subresource="",verb="LIST"} 1
-apiserver_request_count{client="datadog-cluster-agent/v0.0.0 (linux/amd64) kubernetes/$Format",code="200",contentType="application/json",resource="horizontalpodautoscalers",scope="cluster",subresource="",verb="WATCH"} 69
-apiserver_request_count{client="datadog-cluster-agent/v0.0.0 (linux/amd64) kubernetes/$Format",code="200",contentType="application/json",resource="nodes",scope="cluster",subresource="",verb="LIST"} 1
-apiserver_request_count{client="datadog-cluster-agent/v0.0.0 (linux/amd64) kubernetes/$Format",code="200",contentType="application/json",resource="nodes",scope="cluster",subresource="",verb="WATCH"} 71
-apiserver_request_count{client="datadog-cluster-agent/v0.0.0 (linux/amd64) kubernetes/$Format",code="201",contentType="application/json",resource="subjectaccessreviews",scope="cluster",subresource="",verb="POST"} 2027
+apiserver_request_count{client="khulnasoft-cluster-agent/v0.0.0 (linux/amd64) kubernetes/$Format",code="200",contentType="application/json",resource="endpoints",scope="cluster",subresource="",verb="LIST"} 1
+apiserver_request_count{client="khulnasoft-cluster-agent/v0.0.0 (linux/amd64) kubernetes/$Format",code="200",contentType="application/json",resource="endpoints",scope="cluster",subresource="",verb="WATCH"} 68
+apiserver_request_count{client="khulnasoft-cluster-agent/v0.0.0 (linux/amd64) kubernetes/$Format",code="200",contentType="application/json",resource="horizontalpodautoscalers",scope="cluster",subresource="",verb="LIST"} 1
+apiserver_request_count{client="khulnasoft-cluster-agent/v0.0.0 (linux/amd64) kubernetes/$Format",code="200",contentType="application/json",resource="horizontalpodautoscalers",scope="cluster",subresource="",verb="WATCH"} 69
+apiserver_request_count{client="khulnasoft-cluster-agent/v0.0.0 (linux/amd64) kubernetes/$Format",code="200",contentType="application/json",resource="nodes",scope="cluster",subresource="",verb="LIST"} 1
+apiserver_request_count{client="khulnasoft-cluster-agent/v0.0.0 (linux/amd64) kubernetes/$Format",code="200",contentType="application/json",resource="nodes",scope="cluster",subresource="",verb="WATCH"} 71
+apiserver_request_count{client="khulnasoft-cluster-agent/v0.0.0 (linux/amd64) kubernetes/$Format",code="201",contentType="application/json",resource="subjectaccessreviews",scope="cluster",subresource="",verb="POST"} 2027
 apiserver_request_count{client="etcd-backup-operator/v0.0.0 (linux/amd64) kubernetes/$Format",code="200",contentType="application/json",resource="endpoints",scope="namespace",subresource="",verb="GET"} 17021
 apiserver_request_count{client="etcd-backup-operator/v0.0.0 (linux/amd64) kubernetes/$Format",code="200",contentType="application/json",resource="endpoints",scope="namespace",subresource="",verb="PUT"} 7564
 apiserver_request_count{client="etcd-backup-operator/v0.0.0 (linux/amd64) kubernetes/$Format",code="200",contentType="application/json",resource="etcdbackups",scope="namespace",subresource="",verb="LIST"} 1

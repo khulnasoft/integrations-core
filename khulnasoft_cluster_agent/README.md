@@ -1,8 +1,8 @@
-# Agent Check: Datadog Cluster Agent
+# Agent Check: Khulnasoft Cluster Agent
 
 ## Overview
 
-This check monitors the [Datadog Cluster Agent][1] through the Datadog Agent.
+This check monitors the [Khulnasoft Cluster Agent][1] through the Khulnasoft Agent.
 
 ## Setup
 
@@ -10,7 +10,7 @@ Follow the instructions below to install and configure this check for an Agent r
 
 ### Installation
 
-The Datadog-Cluster-Agent check is included in the [Datadog Agent][2] package.
+The Khulnasoft-Cluster-Agent check is included in the [Khulnasoft Agent][2] package.
 No additional installation is needed on your server.
 
 ### Configuration
@@ -31,7 +31,7 @@ See [metadata.csv][6] for a list of metrics provided by this check.
 
 ### Events
 
-The Datadog-Cluster-Agent integration does not include any events.
+The Khulnasoft-Cluster-Agent integration does not include any events.
 
 ### Service Checks
 
@@ -39,7 +39,7 @@ See [service_checks.json][7] for a list of service checks provided by this integ
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][8].
+Need help? Contact [Khulnasoft support][8].
 
 
 [1]: https://docs.khulnasoft.com/agent/cluster_agent/

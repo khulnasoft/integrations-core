@@ -1,6 +1,6 @@
 {
   "title": "Helm - Overview",
-  "description": "## Helm - Overview\n\nThis dashboard provides a high-level overview of the Helm releases monitored by Datadog.",
+  "description": "## Helm - Overview\n\nThis dashboard provides a high-level overview of the Helm releases monitored by Khulnasoft.",
   "widgets": [
     {
       "id": 6341809895193038,

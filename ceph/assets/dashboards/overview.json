@@ -1,6 +1,6 @@
 {
-    "author_name": "Datadog",
-    "description": "This dashboard displays a high-level overview of Ceph operations and performance, so you can track throughput and latency metrics from your clusters, hosts, and pools and spot performance bottlenecks. Further reading on Ceph monitoring:\n\n- [Datadog's Ceph integration docs](https://docs.khulnasoft.com/integrations/ceph/)\n\n- [How to monitor Ceph with Datadog](https://www.khulnasoft.com/blog/monitor-ceph-datadog/)\n\nClone this template dashboard to make changes and add your own graph widgets.",
+    "author_name": "Khulnasoft",
+    "description": "This dashboard displays a high-level overview of Ceph operations and performance, so you can track throughput and latency metrics from your clusters, hosts, and pools and spot performance bottlenecks. Further reading on Ceph monitoring:\n\n- [Khulnasoft's Ceph integration docs](https://docs.khulnasoft.com/integrations/ceph/)\n\n- [How to monitor Ceph with Khulnasoft](https://www.khulnasoft.com/blog/monitor-ceph-khulnasoft/)\n\nClone this template dashboard to make changes and add your own graph widgets.",
     "layout_type": "free",
     "template_variables": [
         {
@@ -19,7 +19,7 @@
         {
             "definition": {
                 "background_color": "white",
-                "content": "This dashboard displays a high-level overview of Ceph operations and performance, so you can track throughput and latency metrics from your clusters, hosts, and pools and spot performance bottlenecks. Further reading on Ceph monitoring:\n\n- [Datadog's Ceph integration docs](https://docs.khulnasoft.com/integrations/ceph/)\n\n- [How to monitor Ceph with Datadog](https://www.khulnasoft.com/blog/monitor-ceph-datadog/)\n\nClone this template dashboard to make changes and add your own graph widgets.",
+                "content": "This dashboard displays a high-level overview of Ceph operations and performance, so you can track throughput and latency metrics from your clusters, hosts, and pools and spot performance bottlenecks. Further reading on Ceph monitoring:\n\n- [Khulnasoft's Ceph integration docs](https://docs.khulnasoft.com/integrations/ceph/)\n\n- [How to monitor Ceph with Khulnasoft](https://www.khulnasoft.com/blog/monitor-ceph-khulnasoft/)\n\nClone this template dashboard to make changes and add your own graph widgets.",
                 "font_size": "14",
                 "show_tick": false,
                 "text_align": "left",
@@ -640,7 +640,7 @@
         {
             "definition": {
                 "background_color": "gray",
-                "content": "Datadog provides read/write throughput, capacity usage, and number of objects stored with pool-level resolution. You can leverage this feature to gather details about each pool\u2019s usage pattern and quickly spot overloaded pools to tune the application for better performance.",
+                "content": "Khulnasoft provides read/write throughput, capacity usage, and number of objects stored with pool-level resolution. You can leverage this feature to gather details about each pool\u2019s usage pattern and quickly spot overloaded pools to tune the application for better performance.",
                 "font_size": "14",
                 "show_tick": true,
                 "text_align": "left",

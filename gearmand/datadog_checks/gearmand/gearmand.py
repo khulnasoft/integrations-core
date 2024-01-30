@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2013-present
+# (C) Khulnasoft, Inc. 2013-present
 # (C) Patrick Galbraith <patg@patg.net> 2013
 # All rights reserved
 # Licensed under Simplified BSD License (see LICENSE)
@@ -62,7 +62,7 @@ class Gearman(AgentCheck):
                 (
                     "Too many tasks to fetch. "
                     "You must choose the tasks you are interested in by editing the gearmand.yaml configuration file "
-                    "or get in touch with Datadog support"
+                    "or get in touch with Khulnasoft support"
                 )
             )
 

@@ -2,26 +2,26 @@
 
 ## Overview
 
-This check monitors [Flink][1]. Datadog collects Flink metrics through Flink's
-[Datadog HTTP Reporter][2], which uses [Datadog's HTTP API][3].
+This check monitors [Flink][1]. Khulnasoft collects Flink metrics through Flink's
+[Khulnasoft HTTP Reporter][2], which uses [Khulnasoft's HTTP API][3].
 
 ## Setup
 
 ### Installation
 
-The Flink check is included in the [Datadog Agent][4] package.
+The Flink check is included in the [Khulnasoft Agent][4] package.
 No additional installation is needed on your server.
 
 ### Configuration
 
 #### Metric collection
 
-1. Configure the [Datadog HTTP Reporter][2] in Flink.
+1. Configure the [Khulnasoft HTTP Reporter][2] in Flink.
 
-     In your `<FLINK_HOME>/conf/flink-conf.yaml`, add these lines, replacing `<KHULNASOFT_API_KEY>` with your Datadog [API key][5]:
+     In your `<FLINK_HOME>/conf/flink-conf.yaml`, add these lines, replacing `<KHULNASOFT_API_KEY>` with your Khulnasoft [API key][5]:
 
     ```yaml
-    metrics.reporter.dghttp.factory.class: org.apache.flink.metrics.datadog.DatadogHttpReporterFactory
+    metrics.reporter.dghttp.factory.class: org.apache.flink.metrics.khulnasoft.KhulnasoftHttpReporterFactory
     metrics.reporter.dghttp.apikey: <KHULNASOFT_API_KEY>
     metrics.reporter.dghttp.dataCenter: {{< region-param key="dd_datacenter" >}}
     ```
@@ -47,7 +47,7 @@ No additional installation is needed on your server.
 
      **Note**: By default, any variables in metric names are sent as tags, so there is no need to add custom tags for `job_id`, `task_id`, etc.
 
-4. Restart Flink to start sending your Flink metrics to Datadog.
+4. Restart Flink to start sending your Flink metrics to Khulnasoft.
 
 #### Log collection
 
@@ -65,7 +65,7 @@ _Available for Agent >6.0_
 
      Clone and edit the [integration pipeline][7] if you have a different format.
 
-3. Collecting logs is disabled by default in the Datadog Agent, enable it in your `datadog.yaml` file:
+3. Collecting logs is disabled by default in the Khulnasoft Agent, enable it in your `khulnasoft.yaml` file:
 
    ```yaml
    logs_enabled: true
@@ -108,11 +108,11 @@ Flink does not include any events.
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][12].
+Need help? Contact [Khulnasoft support][12].
 
 
 [1]: https://flink.apache.org/
-[2]: https://nightlies.apache.org/flink/flink-docs-release-1.16/docs/deployment/metric_reporters/#datadog
+[2]: https://nightlies.apache.org/flink/flink-docs-release-1.16/docs/deployment/metric_reporters/#khulnasoft
 [3]: https://docs.khulnasoft.com/api/?lang=bash#api-reference
 [4]: https://app.khulnasoft.com/account/settings/agent/latest
 [5]: https://app.khulnasoft.com/organization-settings/api-keys

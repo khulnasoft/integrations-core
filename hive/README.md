@@ -8,7 +8,7 @@ This check monitors two parts of [Hive][1]: Hive Metastore and HiveServer2.
 
 ### Installation
 
-The Hive check is included in the [Datadog Agent][2] package. No additional installation is needed on your server.
+The Hive check is included in the [Khulnasoft Agent][2] package. No additional installation is needed on your server.
 
 ### Configuration
 
@@ -51,7 +51,7 @@ Follow the instructions below to configure this check for an Agent running on a 
 1. Edit the `hive.d/conf.yaml` file, in the `conf.d/` folder at the root of your Agent's configuration directory to start collecting your hive performance data. See the [sample hive.d/conf.yaml][4] for all available configuration options.
 
     This check has a limit of 350 metrics per instance. The number of returned metrics is indicated in the info page. You can specify the metrics you are interested in by editing the configuration below.
-    To learn how to customize the metrics to collect, see the [JMX Checks documentation][5] for more detailed instructions. If you need to monitor more metrics, contact [Datadog support][6].
+    To learn how to customize the metrics to collect, see the [JMX Checks documentation][5] for more detailed instructions. If you need to monitor more metrics, contact [Khulnasoft support][6].
 
 2. [Restart the Agent][7].
 
@@ -59,7 +59,7 @@ Follow the instructions below to configure this check for an Agent running on a 
 
 _Available for Agent versions >6.0_
 
-1. Collecting logs is disabled by default in the Datadog Agent, you need to enable it in `datadog.yaml`:
+1. Collecting logs is disabled by default in the Khulnasoft Agent, you need to enable it in `khulnasoft.yaml`:
 
    ```yaml
    logs_enabled: true
@@ -92,13 +92,13 @@ For containerized environments, see the [Autodiscovery Integration Templates][8]
 
 ##### Metric collection
 
-To collect metrics with the Datadog-Hive integration, see the [Autodiscovery with JMX][9] guide.
+To collect metrics with the Khulnasoft-Hive integration, see the [Autodiscovery with JMX][9] guide.
 
 ##### Log collection
 
 _Available for Agent versions >6.0_
 
-Collecting logs is disabled by default in the Datadog Agent. To enable it, see [Kubernetes Log Collection][10].
+Collecting logs is disabled by default in the Khulnasoft Agent. To enable it, see [Kubernetes Log Collection][10].
 
 | Parameter      | Value                                                                                                                                                             |
 | -------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -127,7 +127,7 @@ See [service_checks.json][13] for a list of service checks provided by this inte
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][6].
+Need help? Contact [Khulnasoft support][6].
 
 [1]: https://cwiki.apache.org/confluence/display/Hive/Home
 [2]: https://app.khulnasoft.com/account/settings/agent/latest

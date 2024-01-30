@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2018-present
+# (C) Khulnasoft, Inc. 2018-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 from __future__ import division
@@ -231,7 +231,7 @@ class CactiCheck(AgentCheck):
 
     @staticmethod
     def _format_metric_name(m_name, cfunc):
-        """Format a cacti metric name into a Datadog-friendly name."""
+        """Format a cacti metric name into a Khulnasoft-friendly name."""
         try:
             aggr = CFUNC_TO_AGGR[cfunc]
         except KeyError:

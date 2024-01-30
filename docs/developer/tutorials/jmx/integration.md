@@ -27,7 +27,7 @@ Other init and instance configs can be found on [JMX integration page](https://d
 
 Select what metrics you want to collect from JMX. Available metrics can be usually found on official documentation of the service you want to monitor.
 
-You can also use tools like [VisualVM](https://visualvm.github.io/), [JConsole](https://docs.oracle.com/javase/7/docs/technotes/guides/management/jconsole.html) or [jmxterm](https://datadoghq.dev/integrations-core/tutorials/jmx/tools/) to explore the available JMX beans and their descriptions.
+You can also use tools like [VisualVM](https://visualvm.github.io/), [JConsole](https://docs.oracle.com/javase/7/docs/technotes/guides/management/jconsole.html) or [jmxterm](https://khulnasofthq.dev/integrations-core/tutorials/jmx/tools/) to explore the available JMX beans and their descriptions.
 
 
 ## Step 3: Define metrics filters
@@ -56,7 +56,7 @@ jmx_metrics:
 
 ### Testing
 
-Using [`ddev` tool](https://datadoghq.dev/integrations-core/ddev/cli/), you can test against the JMX service by providing a `dd_environment` in `tests/conftest.py` like this one:
+Using [`ddev` tool](https://khulnasofthq.dev/integrations-core/ddev/cli/), you can test against the JMX service by providing a `dd_environment` in `tests/conftest.py` like this one:
 
 ```python
 @pytest.fixture(scope="session")

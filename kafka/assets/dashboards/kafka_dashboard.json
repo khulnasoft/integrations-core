@@ -1,6 +1,6 @@
 {
   "title": "Kafka, Zookeeper and Kafka Consumer Overview",
-  "description": "## Kafka Overview Dashboard\n\nThis dashboard provides an overview of your Kafka environment. It displays metrics from Kafka, Zookeeper, and Kafka Consumer Integrations with Datadog, giving you a complete view of the health and observability measures of your Kafka Cluster. Enabling the Kafka integration alone populates most of the dashboard widgets. To have the all groups populated with data, enable all three integrations.\n\nIf you would benefit from visualizing the topology of your streaming data pipelines, or from investigating localized bottlenecks within your data streams setup, check out [Data Streams Monitoring](https://www.khulnasoft.com/product/data-streams-monitoring/).\n\nFor more information, read:\n* [Kafka integration documentation](https://docs.khulnasoft.com/integrations/kafka/?tab=host)\n* [Monitoring Kafka blog post](https://www.khulnasoft.com/blog/monitor-kafka-with-datadog/)\n* [ZooKeeper integration documentation](https://docs.khulnasoft.com/integrations/zk/?tab=host)",
+  "description": "## Kafka Overview Dashboard\n\nThis dashboard provides an overview of your Kafka environment. It displays metrics from Kafka, Zookeeper, and Kafka Consumer Integrations with Khulnasoft, giving you a complete view of the health and observability measures of your Kafka Cluster. Enabling the Kafka integration alone populates most of the dashboard widgets. To have the all groups populated with data, enable all three integrations.\n\nIf you would benefit from visualizing the topology of your streaming data pipelines, or from investigating localized bottlenecks within your data streams setup, check out [Data Streams Monitoring](https://www.khulnasoft.com/product/data-streams-monitoring/).\n\nFor more information, read:\n* [Kafka integration documentation](https://docs.khulnasoft.com/integrations/kafka/?tab=host)\n* [Monitoring Kafka blog post](https://www.khulnasoft.com/blog/monitor-kafka-with-khulnasoft/)\n* [ZooKeeper integration documentation](https://docs.khulnasoft.com/integrations/zk/?tab=host)",
   "widgets": [
     {
       "id": 236806910885332,
@@ -35,7 +35,7 @@
             "id": 2594907126478070,
             "definition": {
               "type": "note",
-              "content": "**Kafka Integration Overview Dashboard**\n\nThis dashboard provides an overview of your Kafka environment. It displays metrics from Kafka, Zookeeper and Kafka Consumer Integrations with Datadog, giving you a 360-view of the health and observability measures of your Kafka Cluster. To have the all groups populated with data, you will have to enable all 3 integrations. However, enabling the Kafka integration alone will populate most of the dashboard widgets.\n\nIf you would benefit from visualizing the topology of your streaming data pipelines, or from investigating localized bottlenecks within your data streams setup, check out [Data Streams Monitoring](https://www.khulnasoft.com/product/data-streams-monitoring/).",
+              "content": "**Kafka Integration Overview Dashboard**\n\nThis dashboard provides an overview of your Kafka environment. It displays metrics from Kafka, Zookeeper and Kafka Consumer Integrations with Khulnasoft, giving you a 360-view of the health and observability measures of your Kafka Cluster. To have the all groups populated with data, you will have to enable all 3 integrations. However, enabling the Kafka integration alone will populate most of the dashboard widgets.\n\nIf you would benefit from visualizing the topology of your streaming data pipelines, or from investigating localized bottlenecks within your data streams setup, check out [Data Streams Monitoring](https://www.khulnasoft.com/product/data-streams-monitoring/).",
               "background_color": "white",
               "font_size": "14",
               "text_align": "left",
@@ -56,7 +56,7 @@
             "id": 7914240170882312,
             "definition": {
               "type": "note",
-              "content": "**Useful Links**\n\n* [Kafka Integration Doc](https://docs.khulnasoft.com/integrations/kafka/?tab=host)\n* [Kafka Blog by Datadog](https://www.khulnasoft.com/blog/monitor-kafka-with-datadog/)\n* [ZooKeeper Integration Doc](https://docs.khulnasoft.com/integrations/zk/?tab=host)\n* [Data Streams Monitoring](https://www.khulnasoft.com/product/data-streams-monitoring/)",
+              "content": "**Useful Links**\n\n* [Kafka Integration Doc](https://docs.khulnasoft.com/integrations/kafka/?tab=host)\n* [Kafka Blog by Khulnasoft](https://www.khulnasoft.com/blog/monitor-kafka-with-khulnasoft/)\n* [ZooKeeper Integration Doc](https://docs.khulnasoft.com/integrations/zk/?tab=host)\n* [Data Streams Monitoring](https://www.khulnasoft.com/product/data-streams-monitoring/)",
               "background_color": "white",
               "font_size": "16",
               "text_align": "left",
@@ -1224,7 +1224,7 @@
             "id": 3441872316411158,
             "definition": {
               "type": "note",
-              "content": "Zookeeper is a distributed coordination service for Kafka clusters. It coordinates activities like leader election, partition reassignment, and broker registration. This group will only be populated if you are using Zookeeper and have enabled [Datadog's Zookeeper Integration](https://docs.khulnasoft.com/integrations/zk/?tab=host). Running Zookeeper is not mandatory if you are using Kafka version 3.0 onwards, in which case, you can delete this group.",
+              "content": "Zookeeper is a distributed coordination service for Kafka clusters. It coordinates activities like leader election, partition reassignment, and broker registration. This group will only be populated if you are using Zookeeper and have enabled [Khulnasoft's Zookeeper Integration](https://docs.khulnasoft.com/integrations/zk/?tab=host). Running Zookeeper is not mandatory if you are using Kafka version 3.0 onwards, in which case, you can delete this group.",
               "background_color": "gray",
               "font_size": "14",
               "text_align": "center",

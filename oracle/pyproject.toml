@@ -5,18 +5,18 @@ requires = [
 build-backend = "hatchling.build"
 
 [project]
-name = "datadog-oracle"
+name = "khulnasoft-oracle"
 description = "The Oracle Database check"
 readme = "README.md"
 requires-python = ">=3.8"
 keywords = [
-    "datadog",
-    "datadog agent",
-    "datadog check",
+    "khulnasoft",
+    "khulnasoft agent",
+    "khulnasoft check",
     "oracle",
 ]
 authors = [
-    { name = "Datadog", email = "packages@khulnasoft.com" },
+    { name = "Khulnasoft", email = "packages@khulnasoft.com" },
 ]
 classifiers = [
     "Development Status :: 5 - Production/Stable",
@@ -28,7 +28,7 @@ classifiers = [
     "Private :: Do Not Upload",
 ]
 dependencies = [
-    "datadog-checks-base>=32.6.0",
+    "khulnasoft-checks-base>=32.6.0",
 ]
 dynamic = [
     "version",

@@ -10,13 +10,13 @@ vSphere is an integrated solution and provides an easy managing interface over c
 
 ### Terminology
 
-This section details some of vSphere specific elements. This section does not intend to be an extensive list, but rather a place for those unfamiliar with the product to have the basics required to understand how the Datadog integration works.
+This section details some of vSphere specific elements. This section does not intend to be an extensive list, but rather a place for those unfamiliar with the product to have the basics required to understand how the Khulnasoft integration works.
 
 -   vSphere - The complete suite of tools and technologies detailed in this article.
 -   vCenter server - The main machine which controls ESXi hosts and provides both a web UI and an API to control the vSphere environment.
 -   vCSA (vCenter Server Appliance) - A specific kind of vCenter where the software runs in a dedicated Linux machine (more recent). By opposition, the legacy vCenter is typically installed on an existing Windows machine.
 -   ESXi host - The physical machine controlled by vCenter where the ESXi (bare-metal) virtualizer is installed. The host boots a minimal OS that can run Virtual Machines.
--   VM - What anyone using vSphere really needs in the end, instances that can run applications and code. Note: Datadog monitors both ESXi hosts and VMs and it calls them both "host" (they are in the host map).
+-   VM - What anyone using vSphere really needs in the end, instances that can run applications and code. Note: Khulnasoft monitors both ESXi hosts and VMs and it calls them both "host" (they are in the host map).
 -   Attributes/tags - It is possible to add attributes and tags to any vSphere resource, note that those two are now very similar with "attributes" being the deprecated thing to use.
 -   Datacenter - A set of resources grouped together. A single vCenter server can handle multiple datacenters.
 -   Datastore - A virtual vSphere concept to represent data storing capabilities. It can be an NFS server that ESXi hosts have read/write access to, it can be a mounted disk on the host and more. Datastores are often shared between multiple hosts. This allows Virtual Machines to be migrated from one host to another.
@@ -27,7 +27,7 @@ This section details some of vSphere specific elements. This section does not in
 
 ### Setup
 
-The Datadog vSphere integration runs from a single agent and pulls all the information from a single vCenter endpoint. Because the agent cannot run directly on Photon OS, it is usually required that the agent runs within a dedicated VM inside the vSphere infrastructure.
+The Khulnasoft vSphere integration runs from a single agent and pulls all the information from a single vCenter endpoint. Because the agent cannot run directly on Photon OS, it is usually required that the agent runs within a dedicated VM inside the vSphere infrastructure.
 
 Once the agent is running, the minimal configuration (as of version 5.x) is as follows:
 
@@ -47,7 +47,7 @@ instances:
 
 -   `use_legacy_check_version` is a backward compatibility flag. It should always be set to false and this flag will be removed in a future version of the integration. Setting it to true tells the agent to use an older and deprecated version of the vSphere integration.
 
--   `empty_default_hostname` is a field used by the agent directly (and not the integration). By default, the agent does not allow submitting metrics without attaching an explicit host tag unless this flag is set to true. The vSphere integration uses that behavior for some metrics and service checks. For example, the `vsphere.vm.count` metric which gives a count of the VMs in the infra is not submitted with a host tag. This is particularly important if the agent runs inside a vSphere VM. If the `vsphere.vm.count` was submitted with a host tag, the Datadog backend would attach all the other host tags to the metric, for example `vsphere_type:vm` or `vsphere_host:<NAME_OF_THE_ESX_HOST>` which makes the metric almost impossible to use.
+-   `empty_default_hostname` is a field used by the agent directly (and not the integration). By default, the agent does not allow submitting metrics without attaching an explicit host tag unless this flag is set to true. The vSphere integration uses that behavior for some metrics and service checks. For example, the `vsphere.vm.count` metric which gives a count of the VMs in the infra is not submitted with a host tag. This is particularly important if the agent runs inside a vSphere VM. If the `vsphere.vm.count` was submitted with a host tag, the Khulnasoft backend would attach all the other host tags to the metric, for example `vsphere_type:vm` or `vsphere_host:<NAME_OF_THE_ESX_HOST>` which makes the metric almost impossible to use.
 
 
 ### Concepts
@@ -71,7 +71,7 @@ By default, only the level 1 metrics are collected but this can be increased in 
 
 The reason for such an important distinction is that historical metrics are **much MUCH** slower to collect than realtime metrics. The vSphere integration will always collect the "realtime" data for metrics that concern ESXi hosts and VMs. But the integration also collects metrics for Datastores, ClusterComputeResources, Datacenters, and maybe others in the future.
 
-That's why, in the context of the Datadog vSphere integration, we usually simplify by considering that:
+That's why, in the context of the Khulnasoft vSphere integration, we usually simplify by considering that:
 
 -   VMs and ESXi hosts are "realtime resources". Metrics for such resources are quick and easy to get by querying vCenter that will in turn query all the ESXi hosts.
 
@@ -82,7 +82,7 @@ To collect all metrics (realtime and historical), it is advised to use two "chec
 
 #### vSphere tags and attributes
 
-Similarly to how Datadog allows you to add tags to your different hosts (thins like the `os` or the `instance-type` of your machines), vSphere has "tags" and "attributes".
+Similarly to how Khulnasoft allows you to add tags to your different hosts (thins like the `os` or the `instance-type` of your machines), vSphere has "tags" and "attributes".
 
 A lot of details can be found here: [https://docs.vmware.com/en/VMware-vSphere/7.0/com.vmware.vsphere.vcenterhost.doc/GUID-E8E854DD-AA97-4E0C-8419-CE84F93C4058.html#:~:text=Tags%20and%20attributes%20allow%20you,that%20tag%20to%20a%20category.](https://docs.vmware.com/en/VMware-vSphere/7.0/com.vmware.vsphere.vcenterhost.doc/GUID-E8E854DD-AA97-4E0C-8419-CE84F93C4058.html#:~:text=Tags%20and%20attributes%20allow%20you,that%20tag%20to%20a%20category.)
 
@@ -164,9 +164,9 @@ In vSphere each metric is defined by three "dimensions".
 - The name of the metric (for example cpu.usage).
 - An additional available dimension that varies between metrics. (for example the cpu core id)
 
-This is similar to how Datadog represent metrics, except that the context cardinality is limited to two "keys", the name of the resource (usually the "host" tag), and there is space for one additional tag key.
+This is similar to how Khulnasoft represent metrics, except that the context cardinality is limited to two "keys", the name of the resource (usually the "host" tag), and there is space for one additional tag key.
 
-This available tag key is defined as the "instance" property, or "instance tag" in vSphere, and this dimension is not collected by default by the Datadog integration as it can have too big performance implications in large systems when compared to their added value from a monitoring perspective.
+This available tag key is defined as the "instance" property, or "instance tag" in vSphere, and this dimension is not collected by default by the Khulnasoft integration as it can have too big performance implications in large systems when compared to their added value from a monitoring perspective.
 
 Also when fetching metrics with the instance tag, vSphere only provides the value of the instance tag, it doesn't expose a human-readable "key" for that tag. In the `cpu.usage` metric with the core_id as the instance tag, the integration has to "know" that the meaning of the instance tag and that's why we rely on a hardcoded list in the integration.
 

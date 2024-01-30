@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2020-present
+# (C) Khulnasoft, Inc. 2020-present
 # All rights reserved
 # Licensed under Simplified BSD License (see LICENSE)
 # https://www.postgresql.org/docs/current/libpq-connect.html#LIBPQ-PARAMKEYWORDS
@@ -49,7 +49,7 @@ class PostgresConfig:
                 "To monitor more databases, add them to the `database_autodiscovery` includelist."
             )
 
-        self.application_name = instance.get('application_name', 'datadog-agent')
+        self.application_name = instance.get('application_name', 'khulnasoft-agent')
         if not self.isascii(self.application_name):
             raise ConfigurationError("Application name can include only ASCII characters: %s", self.application_name)
 
@@ -95,7 +95,7 @@ class PostgresConfig:
         self.full_statement_text_samples_per_hour_per_query = instance.get(
             'full_statement_text_samples_per_hour_per_query', 1
         )
-        # Support a custom view when datadog user has insufficient privilege to see queries
+        # Support a custom view when khulnasoft user has insufficient privilege to see queries
         self.pg_stat_statements_view = instance.get('pg_stat_statements_view', 'pg_stat_statements')
         # statement samples & execution plans
         self.pg_stat_activity_view = instance.get('pg_stat_activity_view', 'pg_stat_activity')
@@ -142,7 +142,7 @@ class PostgresConfig:
             'collect_commands': is_affirmative(obfuscator_options_config.get('collect_commands', True)),
             'collect_comments': is_affirmative(obfuscator_options_config.get('collect_comments', True)),
             # Config to enable/disable obfuscation of sql statements with go-sqllexer pkg
-            # Valid values for this can be found at https://github.com/KhulnaSoft/datadog-agent/blob/main/pkg/obfuscate/obfuscate.go#L108
+            # Valid values for this can be found at https://github.com/KhulnaSoft/khulnasoft-agent/blob/main/pkg/obfuscate/obfuscate.go#L108
             'obfuscation_mode': obfuscator_options_config.get('obfuscation_mode', 'obfuscate_and_normalize'),
             'remove_space_between_parentheses': is_affirmative(
                 obfuscator_options_config.get('remove_space_between_parentheses', False)

@@ -44,7 +44,7 @@
 * Revert protobuf dependency update ([#14618](https://github.com/KhulnaSoft/integrations-core/pull/14618))
 * Update dependencies ([#14594](https://github.com/KhulnaSoft/integrations-core/pull/14594))
 * Refactor how we manage the namespaces ([#14462](https://github.com/KhulnaSoft/integrations-core/pull/14462))
-* Update minimum datadog base package version ([#14463](https://github.com/KhulnaSoft/integrations-core/pull/14463))
+* Update minimum khulnasoft base package version ([#14463](https://github.com/KhulnaSoft/integrations-core/pull/14463))
 * Deprecate `use_latest_spec` option ([#14446](https://github.com/KhulnaSoft/integrations-core/pull/14446))
 
 ## 6.0.2 / 2023-04-21 / Agent 7.45.0

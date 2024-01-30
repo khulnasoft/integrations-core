@@ -2,7 +2,7 @@
 
 ## Overview
 
-This check monitors [VoltDB][1] through the Datadog Agent.
+This check monitors [VoltDB][1] through the Khulnasoft Agent.
 
 ## Setup
 
@@ -12,17 +12,17 @@ Follow the instructions below to install and configure this check for an Agent r
 
 ### Installation
 
-The VoltDB check is included in the [Datadog Agent][3] package.
+The VoltDB check is included in the [Khulnasoft Agent][3] package.
 No additional installation is needed on your server.
 
 ### Configuration
 
-1. Add a `datadog-agent` user. You can do so by editing your VoltDB `deployment.xml` file. **Note**: No specific roles are required, so assign the built-in `user` role.
+1. Add a `khulnasoft-agent` user. You can do so by editing your VoltDB `deployment.xml` file. **Note**: No specific roles are required, so assign the built-in `user` role.
 
     ```xml
     <users>
         <!-- ... -->
-        <user name="datadog-agent" password="<PASSWORD>" roles="user" />
+        <user name="khulnasoft-agent" password="<PASSWORD>" roles="user" />
     </users>
     ```
 
@@ -33,7 +33,7 @@ No additional installation is needed on your server.
 
     instances:
       - url: http://localhost:8080
-        username: datadog-agent
+        username: khulnasoft-agent
         password: "<PASSWORD>"
     ```
 
@@ -80,7 +80,7 @@ If [TLS/SSL][6] is enabled on the client HTTP port:
 
 #### Log collection
 
-1. Collecting logs is disabled by default in the Datadog Agent, enable it in your `datadog.yaml` file:
+1. Collecting logs is disabled by default in the Khulnasoft Agent, enable it in your `khulnasoft.yaml` file:
 
     ```yaml
     logs_enabled: true
@@ -121,7 +121,7 @@ See [service_checks.json][10] for a list of service checks provided by this inte
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][11].
+Need help? Contact [Khulnasoft support][11].
 
 ## Further Reading
 

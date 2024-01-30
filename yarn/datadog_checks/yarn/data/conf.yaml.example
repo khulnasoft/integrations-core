@@ -105,7 +105,7 @@ instances:
     ##
     ## The key is the Yarn application channel status. Valid keys are: `ALL`, `NEW`,
     ## `NEW_SAVING`, `SUBMITTED`, `ACCEPTED`, `RUNNING`, `FINISHED`, `FAILED` and `KILLED`.
-    ## The value is the Datadog service check level.
+    ## The value is the Khulnasoft service check level.
     ## Valid values are: `ok`, `warning`, `critical`, and `unknown`.
     ## If a channel status is not mapped, it is mapped to `unknown`.
     ##
@@ -174,7 +174,7 @@ instances:
 
     ## @param split_yarn_application_tags - boolean - optional - default: false
     ## Set this parameter to true to split YARN application tags string formatted as
-    ## `key1:value1,key2:value2,...` into Datadog application tags as such:
+    ## `key1:value1,key2:value2,...` into Khulnasoft application tags as such:
     ## `app_key1: value1`, `app_key2: value2`, etc.
     #
     # split_yarn_application_tags: false
@@ -543,7 +543,7 @@ instances:
 ##                      Overrides any `service` defined in the `init_config` section.
 ## tags - optional - Add tags to the collected logs.
 ##
-## Discover Datadog log collection: https://docs.khulnasoft.com/logs/log_collection/
+## Discover Khulnasoft log collection: https://docs.khulnasoft.com/logs/log_collection/
 #
 # logs:
 #   - type: file

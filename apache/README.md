@@ -10,7 +10,7 @@ The Apache check tracks requests per second, bytes served, number of worker thre
 
 ### Installation
 
-The Apache check is packaged with the [Datadog Agent][2]. To start gathering your Apache metrics and logs, you need to:
+The Apache check is packaged with the [Khulnasoft Agent][2]. To start gathering your Apache metrics and logs, you need to:
 
 1. [Install the Agent][3] on your Apache servers.
 
@@ -45,7 +45,7 @@ To configure this check for an Agent running on a host:
 
 _Available for Agent versions >6.0_
 
-1. Collecting logs is disabled by default in the Datadog Agent. Enable it in `datadog.yaml`:
+1. Collecting logs is disabled by default in the Khulnasoft Agent. Enable it in `khulnasoft.yaml`:
 
    ```yaml
    logs_enabled: true
@@ -84,20 +84,20 @@ To configure this check for an Agent running on a container:
 Set [Autodiscovery Integrations Templates][7] as Docker labels on your application container:
 
 ```yaml
-LABEL "com.datadoghq.ad.check_names"='["apache"]'
-LABEL "com.datadoghq.ad.init_configs"='[{}]'
-LABEL "com.datadoghq.ad.instances"='[{"apache_status_url": "http://%%host%%/server-status?auto"}]'
+LABEL "com.khulnasofthq.ad.check_names"='["apache"]'
+LABEL "com.khulnasofthq.ad.init_configs"='[{}]'
+LABEL "com.khulnasofthq.ad.instances"='[{"apache_status_url": "http://%%host%%/server-status?auto"}]'
 ```
 
 ##### Log collection
 
 
-Collecting logs is disabled by default in the Datadog Agent. To enable it, see [Docker Log Collection][8].
+Collecting logs is disabled by default in the Khulnasoft Agent. To enable it, see [Docker Log Collection][8].
 
 Then, set [Log Integrations][9] as Docker labels:
 
 ```yaml
-LABEL "com.datadoghq.ad.logs"='[{"source": "apache", "service": "<SERVICE_NAME>"}]'
+LABEL "com.khulnasofthq.ad.logs"='[{"source": "apache", "service": "<SERVICE_NAME>"}]'
 ```
 
 <!-- xxz tab xxx -->
@@ -111,7 +111,7 @@ To configure this check for an Agent running on Kubernetes:
 
 Set [Autodiscovery Integrations Templates][10] as pod annotations on your application container. Aside from this, templates can also be configured with [a file, a configmap, or a key-value store][11].
 
-**Annotations v1** (for Datadog Agent < v7.36)
+**Annotations v1** (for Khulnasoft Agent < v7.36)
 
 ```yaml
 apiVersion: v1
@@ -132,7 +132,7 @@ spec:
     - name: apache
 ```
 
-**Annotations v2** (for Datadog Agent v7.36+)
+**Annotations v2** (for Khulnasoft Agent v7.36+)
 
 ```yaml
 apiVersion: v1
@@ -159,7 +159,7 @@ spec:
 ##### Log collection
 
 
-Collecting logs is disabled by default in the Datadog Agent. To enable it, see [Kubernetes Log Collection][12].
+Collecting logs is disabled by default in the Khulnasoft Agent. To enable it, see [Kubernetes Log Collection][12].
 
 Then, set [Log Integrations][9] as pod annotations. This can also be configured with [a file, a configmap, or a key-value store][13].
 
@@ -195,9 +195,9 @@ Set [Autodiscovery Integrations Templates][7] as Docker labels on your applicati
     "name": "apache",
     "image": "apache:latest",
     "dockerLabels": {
-      "com.datadoghq.ad.check_names": "[\"apache\"]",
-      "com.datadoghq.ad.init_configs": "[{}]",
-      "com.datadoghq.ad.instances": "[{\"apache_status_url\": \"http://%%host%%/server-status?auto\"}]"
+      "com.khulnasofthq.ad.check_names": "[\"apache\"]",
+      "com.khulnasofthq.ad.init_configs": "[{}]",
+      "com.khulnasofthq.ad.instances": "[{\"apache_status_url\": \"http://%%host%%/server-status?auto\"}]"
     }
   }]
 }
@@ -206,7 +206,7 @@ Set [Autodiscovery Integrations Templates][7] as Docker labels on your applicati
 ##### Log collection
 
 
-Collecting logs is disabled by default in the Datadog Agent. To enable it, see [ECS Log Collection][14].
+Collecting logs is disabled by default in the Khulnasoft Agent. To enable it, see [ECS Log Collection][14].
 
 Then, set [Log Integrations][9] as Docker labels:
 
@@ -216,7 +216,7 @@ Then, set [Log Integrations][9] as Docker labels:
     "name": "apache",
     "image": "apache:latest",
     "dockerLabels": {
-      "com.datadoghq.ad.logs": "[{\"source\":\"apache\",\"service\":\"<YOUR_APP_NAME>\"}]"
+      "com.khulnasofthq.ad.logs": "[{\"source\":\"apache\",\"service\":\"<YOUR_APP_NAME>\"}]"
     }
   }]
 }
@@ -255,10 +255,10 @@ If you are having issues with your Apache integration, it is mostly like due to 
 
 Additional helpful documentation, links, and articles:
 
-- [Deploying and configuring Datadog with CloudFormation][19]
+- [Deploying and configuring Khulnasoft with CloudFormation][19]
 - [Monitoring Apache web server performance][20]
 - [How to collect Apache performance metrics][21]
-- [How to monitor Apache web server with Datadog][22]
+- [How to monitor Apache web server with Khulnasoft][22]
 
 [1]: https://raw.githubusercontent.com/KhulnaSoft/integrations-core/master/apache/images/apache_dashboard.png
 [2]: https://app.khulnasoft.com/account/settings/agent/latest
@@ -278,7 +278,7 @@ Additional helpful documentation, links, and articles:
 [16]: https://github.com/KhulnaSoft/integrations-core/blob/master/apache/metadata.csv
 [17]: https://github.com/KhulnaSoft/integrations-core/blob/master/apache/assets/service_checks.json
 [18]: https://docs.khulnasoft.com/integrations/faq/apache-ssl-certificate-issues/
-[19]: https://www.khulnasoft.com/blog/deploying-datadog-with-cloudformation
+[19]: https://www.khulnasoft.com/blog/deploying-khulnasoft-with-cloudformation
 [20]: https://www.khulnasoft.com/blog/monitoring-apache-web-server-performance
 [21]: https://www.khulnasoft.com/blog/collect-apache-performance-metrics
-[22]: https://www.khulnasoft.com/blog/monitor-apache-web-server-datadog
+[22]: https://www.khulnasoft.com/blog/monitor-apache-web-server-khulnasoft

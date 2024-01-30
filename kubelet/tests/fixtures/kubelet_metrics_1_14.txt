@@ -253,17 +253,17 @@ kubelet_cgroup_manager_latency_microseconds_sum{operation_type="update"} 1.15173
 kubelet_cgroup_manager_latency_microseconds_count{operation_type="update"} 1557
 # HELP kubelet_container_log_filesystem_used_bytes Bytes used by the container's logs on the filesystem.
 # TYPE kubelet_container_log_filesystem_used_bytes gauge
-kubelet_container_log_filesystem_used_bytes{container="cluster-agent",namespace="default",pod="datadog-monitoring-cluster-agent-c4fc98b6f-5xcxk"} 40960
+kubelet_container_log_filesystem_used_bytes{container="cluster-agent",namespace="default",pod="khulnasoft-monitoring-cluster-agent-c4fc98b6f-5xcxk"} 40960
 kubelet_container_log_filesystem_used_bytes{container="coredns",namespace="kube-system",pod="coredns-6dcc67dcbc-k74pm"} 28672
 kubelet_container_log_filesystem_used_bytes{container="coredns",namespace="kube-system",pod="coredns-6dcc67dcbc-xg7f9"} 28672
-kubelet_container_log_filesystem_used_bytes{container="datadog",namespace="default",pod="datadog-monitoring-kp46r"} 1.040384e+06
+kubelet_container_log_filesystem_used_bytes{container="khulnasoft",namespace="default",pod="khulnasoft-monitoring-kp46r"} 1.040384e+06
 kubelet_container_log_filesystem_used_bytes{container="etcd",namespace="kube-system",pod="etcd-minikube"} 712704
 kubelet_container_log_filesystem_used_bytes{container="kube-addon-manager",namespace="kube-system",pod="kube-addon-manager-minikube"} 7.3728e+06
 kubelet_container_log_filesystem_used_bytes{container="kube-apiserver",namespace="kube-system",pod="kube-apiserver-minikube"} 905216
 kubelet_container_log_filesystem_used_bytes{container="kube-controller-manager",namespace="kube-system",pod="kube-controller-manager-minikube"} 61440
 kubelet_container_log_filesystem_used_bytes{container="kube-proxy",namespace="kube-system",pod="kube-proxy-tfn5n"} 28672
 kubelet_container_log_filesystem_used_bytes{container="kube-scheduler",namespace="kube-system",pod="kube-scheduler-minikube"} 28672
-kubelet_container_log_filesystem_used_bytes{container="kube-state-metrics",namespace="default",pod="datadog-monitoring-kube-state-metrics-c99f4db8d-dn2x4"} 32768
+kubelet_container_log_filesystem_used_bytes{container="kube-state-metrics",namespace="default",pod="khulnasoft-monitoring-kube-state-metrics-c99f4db8d-dn2x4"} 32768
 kubelet_container_log_filesystem_used_bytes{container="storage-provisioner",namespace="kube-system",pod="storage-provisioner"} 24576
 # HELP kubelet_containers_per_pod_count The number of containers per pod.
 # TYPE kubelet_containers_per_pod_count histogram

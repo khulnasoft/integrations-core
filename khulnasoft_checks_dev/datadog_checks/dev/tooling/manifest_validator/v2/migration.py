@@ -1,4 +1,4 @@
-#  (C) Datadog, Inc. 2022-present
+#  (C) Khulnasoft, Inc. 2022-present
 #  All rights reserved
 #  Licensed under a 3-clause BSD style license (see LICENSE)
 
@@ -174,7 +174,7 @@ def migrate_manifest(repo_name, integration, to_version):
 
     # Temporarily required official fields
     if repo_name == "integrations-core":
-        migrated_manifest.set_path("/author/name", "Datadog")
+        migrated_manifest.set_path("/author/name", "Khulnasoft")
         migrated_manifest.set_path("/author/homepage", "https://www.khulnasoft.com")
         migrated_manifest.set_path("/author/sales_email", "info@khulnasoft.com")
     # Marketplace-only fields

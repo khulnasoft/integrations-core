@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2018-present
+# (C) Khulnasoft, Inc. 2018-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 import asyncio
@@ -42,7 +42,7 @@ IGNORED_DEPS = {
     'pyvmomi',  # 7->8 breaks vsphere tests.
     # 4.3->4.4 changes the license field in the package metadata to something our validations cannot handle.
     'pymongo',
-    # We need pydantic 2.0.2 for the rpm x64 agent build (see https://github.com/KhulnaSoft/datadog-agent/pull/18303)
+    # We need pydantic 2.0.2 for the rpm x64 agent build (see https://github.com/KhulnaSoft/khulnasoft-agent/pull/18303)
     'pydantic',
     # We're not ready to switch to v3 of the postgress library, see:
     # https://github.com/KhulnaSoft/integrations-core/pull/15859

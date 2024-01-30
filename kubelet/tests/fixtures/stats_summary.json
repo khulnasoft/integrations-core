@@ -310,7 +310,7 @@
       "inodesFree": 473357,
       "inodes": 473366,
       "inodesUsed": 9,
-      "name": "datadog-token-kj5hr"
+      "name": "khulnasoft-token-kj5hr"
      }
     ],
     "ephemeral-storage": {
@@ -1119,14 +1119,14 @@
    },
    {
     "podRef": {
-     "name": "datadog-clusterchecks-7847b57bbf-5ph92",
-     "namespace": "datadog",
+     "name": "khulnasoft-clusterchecks-7847b57bbf-5ph92",
+     "namespace": "khulnasoft",
      "uid": "ec6de2ce-0a09-11ea-abb1-42010a84017a"
     },
     "startTime": "2019-11-18T13:47:16Z",
     "containers": [
      {
-      "name": "datadog",
+      "name": "khulnasoft",
       "startTime": "2019-11-18T13:47:33Z",
       "cpu": {
        "time": "2019-11-20T13:13:12Z",
@@ -1221,7 +1221,7 @@
       "inodesFree": 473357,
       "inodes": 473366,
       "inodesUsed": 9,
-      "name": "datadog-token-kj5hr"
+      "name": "khulnasoft-token-kj5hr"
      }
     ],
     "ephemeral-storage": {
@@ -1236,8 +1236,8 @@
    },
    {
     "podRef": {
-     "name": "datadog-cluster-agent-c6fbddf4-vc7fx",
-     "namespace": "datadog",
+     "name": "khulnasoft-cluster-agent-c6fbddf4-vc7fx",
+     "namespace": "khulnasoft",
      "uid": "266c2066-0a07-11ea-abb1-42010a84017a"
     },
     "startTime": "2019-11-18T13:27:21Z",
@@ -1318,7 +1318,7 @@
       "inodesFree": 473357,
       "inodes": 473366,
       "inodesUsed": 9,
-      "name": "datadog-cluster-agent-token-kgzx9"
+      "name": "khulnasoft-cluster-agent-token-kgzx9"
      }
     ],
     "ephemeral-storage": {
@@ -1333,7 +1333,7 @@
    },
    {
     "podRef": {
-     "name": "datadog-agent-ntepl",
+     "name": "khulnasoft-agent-ntepl",
      "namespace": "default",
      "uid": "c2319815-10d0-11e8-bd5a-42010af00137"
     },

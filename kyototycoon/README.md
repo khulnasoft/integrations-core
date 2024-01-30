@@ -8,7 +8,7 @@ The Agent's KyotoTycoon check tracks get, set, and delete operations, and lets y
 
 ### Installation
 
-The KyotoTycoon check is included in the [Datadog Agent][1] package, so you don't need to install anything else on your KyotoTycoon servers.
+The KyotoTycoon check is included in the [Khulnasoft Agent][1] package, so you don't need to install anything else on your KyotoTycoon servers.
 
 ### Configuration
 
@@ -28,7 +28,7 @@ The KyotoTycoon check is included in the [Datadog Agent][1] package, so you don'
 
 ##### Log collection
 
-1. Collecting logs is disabled by default in the Datadog Agent, enable it in your `datadog.yaml` file:
+1. Collecting logs is disabled by default in the Khulnasoft Agent, enable it in your `khulnasoft.yaml` file:
 
     ```yaml
     logs_enabled: true
@@ -67,7 +67,7 @@ See [service_checks.json][7] for a list of service checks provided by this integ
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][8].
+Need help? Contact [Khulnasoft support][8].
 
 
 [1]: https://app.khulnasoft.com/account/settings/agent/latest

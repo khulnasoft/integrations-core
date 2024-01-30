@@ -4930,7 +4930,7 @@ gitlab_sli_rails_request_apdex_success_total{endpoint_id="PUT /api/:version/proj
 gitlab_sli_rails_request_apdex_success_total{endpoint_id="PUT /api/:version/projects/:id/integrations/campfire",feature_category="integrations",request_urgency="default"} 0
 gitlab_sli_rails_request_apdex_success_total{endpoint_id="PUT /api/:version/projects/:id/integrations/confluence",feature_category="integrations",request_urgency="default"} 0
 gitlab_sli_rails_request_apdex_success_total{endpoint_id="PUT /api/:version/projects/:id/integrations/custom-issue-tracker",feature_category="integrations",request_urgency="default"} 0
-gitlab_sli_rails_request_apdex_success_total{endpoint_id="PUT /api/:version/projects/:id/integrations/datadog",feature_category="integrations",request_urgency="default"} 0
+gitlab_sli_rails_request_apdex_success_total{endpoint_id="PUT /api/:version/projects/:id/integrations/khulnasoft",feature_category="integrations",request_urgency="default"} 0
 gitlab_sli_rails_request_apdex_success_total{endpoint_id="PUT /api/:version/projects/:id/integrations/discord",feature_category="integrations",request_urgency="default"} 0
 gitlab_sli_rails_request_apdex_success_total{endpoint_id="PUT /api/:version/projects/:id/integrations/drone-ci",feature_category="integrations",request_urgency="default"} 0
 gitlab_sli_rails_request_apdex_success_total{endpoint_id="PUT /api/:version/projects/:id/integrations/emails-on-push",feature_category="integrations",request_urgency="default"} 0
@@ -5021,7 +5021,7 @@ gitlab_sli_rails_request_apdex_success_total{endpoint_id="PUT /api/:version/proj
 gitlab_sli_rails_request_apdex_success_total{endpoint_id="PUT /api/:version/projects/:id/services/campfire",feature_category="integrations",request_urgency="default"} 0
 gitlab_sli_rails_request_apdex_success_total{endpoint_id="PUT /api/:version/projects/:id/services/confluence",feature_category="integrations",request_urgency="default"} 0
 gitlab_sli_rails_request_apdex_success_total{endpoint_id="PUT /api/:version/projects/:id/services/custom-issue-tracker",feature_category="integrations",request_urgency="default"} 0
-gitlab_sli_rails_request_apdex_success_total{endpoint_id="PUT /api/:version/projects/:id/services/datadog",feature_category="integrations",request_urgency="default"} 0
+gitlab_sli_rails_request_apdex_success_total{endpoint_id="PUT /api/:version/projects/:id/services/khulnasoft",feature_category="integrations",request_urgency="default"} 0
 gitlab_sli_rails_request_apdex_success_total{endpoint_id="PUT /api/:version/projects/:id/services/discord",feature_category="integrations",request_urgency="default"} 0
 gitlab_sli_rails_request_apdex_success_total{endpoint_id="PUT /api/:version/projects/:id/services/drone-ci",feature_category="integrations",request_urgency="default"} 0
 gitlab_sli_rails_request_apdex_success_total{endpoint_id="PUT /api/:version/projects/:id/services/emails-on-push",feature_category="integrations",request_urgency="default"} 0
@@ -6047,7 +6047,7 @@ gitlab_sli_rails_request_apdex_total{endpoint_id="PUT /api/:version/projects/:id
 gitlab_sli_rails_request_apdex_total{endpoint_id="PUT /api/:version/projects/:id/integrations/campfire",feature_category="integrations",request_urgency="default"} 0
 gitlab_sli_rails_request_apdex_total{endpoint_id="PUT /api/:version/projects/:id/integrations/confluence",feature_category="integrations",request_urgency="default"} 0
 gitlab_sli_rails_request_apdex_total{endpoint_id="PUT /api/:version/projects/:id/integrations/custom-issue-tracker",feature_category="integrations",request_urgency="default"} 0
-gitlab_sli_rails_request_apdex_total{endpoint_id="PUT /api/:version/projects/:id/integrations/datadog",feature_category="integrations",request_urgency="default"} 0
+gitlab_sli_rails_request_apdex_total{endpoint_id="PUT /api/:version/projects/:id/integrations/khulnasoft",feature_category="integrations",request_urgency="default"} 0
 gitlab_sli_rails_request_apdex_total{endpoint_id="PUT /api/:version/projects/:id/integrations/discord",feature_category="integrations",request_urgency="default"} 0
 gitlab_sli_rails_request_apdex_total{endpoint_id="PUT /api/:version/projects/:id/integrations/drone-ci",feature_category="integrations",request_urgency="default"} 0
 gitlab_sli_rails_request_apdex_total{endpoint_id="PUT /api/:version/projects/:id/integrations/emails-on-push",feature_category="integrations",request_urgency="default"} 0
@@ -6138,7 +6138,7 @@ gitlab_sli_rails_request_apdex_total{endpoint_id="PUT /api/:version/projects/:id
 gitlab_sli_rails_request_apdex_total{endpoint_id="PUT /api/:version/projects/:id/services/campfire",feature_category="integrations",request_urgency="default"} 0
 gitlab_sli_rails_request_apdex_total{endpoint_id="PUT /api/:version/projects/:id/services/confluence",feature_category="integrations",request_urgency="default"} 0
 gitlab_sli_rails_request_apdex_total{endpoint_id="PUT /api/:version/projects/:id/services/custom-issue-tracker",feature_category="integrations",request_urgency="default"} 0
-gitlab_sli_rails_request_apdex_total{endpoint_id="PUT /api/:version/projects/:id/services/datadog",feature_category="integrations",request_urgency="default"} 0
+gitlab_sli_rails_request_apdex_total{endpoint_id="PUT /api/:version/projects/:id/services/khulnasoft",feature_category="integrations",request_urgency="default"} 0
 gitlab_sli_rails_request_apdex_total{endpoint_id="PUT /api/:version/projects/:id/services/discord",feature_category="integrations",request_urgency="default"} 0
 gitlab_sli_rails_request_apdex_total{endpoint_id="PUT /api/:version/projects/:id/services/drone-ci",feature_category="integrations",request_urgency="default"} 0
 gitlab_sli_rails_request_apdex_total{endpoint_id="PUT /api/:version/projects/:id/services/emails-on-push",feature_category="integrations",request_urgency="default"} 0
@@ -7164,7 +7164,7 @@ gitlab_sli_rails_request_error_total{endpoint_id="PUT /api/:version/projects/:id
 gitlab_sli_rails_request_error_total{endpoint_id="PUT /api/:version/projects/:id/integrations/campfire",feature_category="integrations",request_urgency="default"} 0
 gitlab_sli_rails_request_error_total{endpoint_id="PUT /api/:version/projects/:id/integrations/confluence",feature_category="integrations",request_urgency="default"} 0
 gitlab_sli_rails_request_error_total{endpoint_id="PUT /api/:version/projects/:id/integrations/custom-issue-tracker",feature_category="integrations",request_urgency="default"} 0
-gitlab_sli_rails_request_error_total{endpoint_id="PUT /api/:version/projects/:id/integrations/datadog",feature_category="integrations",request_urgency="default"} 0
+gitlab_sli_rails_request_error_total{endpoint_id="PUT /api/:version/projects/:id/integrations/khulnasoft",feature_category="integrations",request_urgency="default"} 0
 gitlab_sli_rails_request_error_total{endpoint_id="PUT /api/:version/projects/:id/integrations/discord",feature_category="integrations",request_urgency="default"} 0
 gitlab_sli_rails_request_error_total{endpoint_id="PUT /api/:version/projects/:id/integrations/drone-ci",feature_category="integrations",request_urgency="default"} 0
 gitlab_sli_rails_request_error_total{endpoint_id="PUT /api/:version/projects/:id/integrations/emails-on-push",feature_category="integrations",request_urgency="default"} 0
@@ -7255,7 +7255,7 @@ gitlab_sli_rails_request_error_total{endpoint_id="PUT /api/:version/projects/:id
 gitlab_sli_rails_request_error_total{endpoint_id="PUT /api/:version/projects/:id/services/campfire",feature_category="integrations",request_urgency="default"} 0
 gitlab_sli_rails_request_error_total{endpoint_id="PUT /api/:version/projects/:id/services/confluence",feature_category="integrations",request_urgency="default"} 0
 gitlab_sli_rails_request_error_total{endpoint_id="PUT /api/:version/projects/:id/services/custom-issue-tracker",feature_category="integrations",request_urgency="default"} 0
-gitlab_sli_rails_request_error_total{endpoint_id="PUT /api/:version/projects/:id/services/datadog",feature_category="integrations",request_urgency="default"} 0
+gitlab_sli_rails_request_error_total{endpoint_id="PUT /api/:version/projects/:id/services/khulnasoft",feature_category="integrations",request_urgency="default"} 0
 gitlab_sli_rails_request_error_total{endpoint_id="PUT /api/:version/projects/:id/services/discord",feature_category="integrations",request_urgency="default"} 0
 gitlab_sli_rails_request_error_total{endpoint_id="PUT /api/:version/projects/:id/services/drone-ci",feature_category="integrations",request_urgency="default"} 0
 gitlab_sli_rails_request_error_total{endpoint_id="PUT /api/:version/projects/:id/services/emails-on-push",feature_category="integrations",request_urgency="default"} 0
@@ -8279,7 +8279,7 @@ gitlab_sli_rails_request_total{endpoint_id="PUT /api/:version/projects/:id/integ
 gitlab_sli_rails_request_total{endpoint_id="PUT /api/:version/projects/:id/integrations/campfire",feature_category="integrations",request_urgency="default"} 0
 gitlab_sli_rails_request_total{endpoint_id="PUT /api/:version/projects/:id/integrations/confluence",feature_category="integrations",request_urgency="default"} 0
 gitlab_sli_rails_request_total{endpoint_id="PUT /api/:version/projects/:id/integrations/custom-issue-tracker",feature_category="integrations",request_urgency="default"} 0
-gitlab_sli_rails_request_total{endpoint_id="PUT /api/:version/projects/:id/integrations/datadog",feature_category="integrations",request_urgency="default"} 0
+gitlab_sli_rails_request_total{endpoint_id="PUT /api/:version/projects/:id/integrations/khulnasoft",feature_category="integrations",request_urgency="default"} 0
 gitlab_sli_rails_request_total{endpoint_id="PUT /api/:version/projects/:id/integrations/discord",feature_category="integrations",request_urgency="default"} 0
 gitlab_sli_rails_request_total{endpoint_id="PUT /api/:version/projects/:id/integrations/drone-ci",feature_category="integrations",request_urgency="default"} 0
 gitlab_sli_rails_request_total{endpoint_id="PUT /api/:version/projects/:id/integrations/emails-on-push",feature_category="integrations",request_urgency="default"} 0
@@ -8370,7 +8370,7 @@ gitlab_sli_rails_request_total{endpoint_id="PUT /api/:version/projects/:id/servi
 gitlab_sli_rails_request_total{endpoint_id="PUT /api/:version/projects/:id/services/campfire",feature_category="integrations",request_urgency="default"} 0
 gitlab_sli_rails_request_total{endpoint_id="PUT /api/:version/projects/:id/services/confluence",feature_category="integrations",request_urgency="default"} 0
 gitlab_sli_rails_request_total{endpoint_id="PUT /api/:version/projects/:id/services/custom-issue-tracker",feature_category="integrations",request_urgency="default"} 0
-gitlab_sli_rails_request_total{endpoint_id="PUT /api/:version/projects/:id/services/datadog",feature_category="integrations",request_urgency="default"} 0
+gitlab_sli_rails_request_total{endpoint_id="PUT /api/:version/projects/:id/services/khulnasoft",feature_category="integrations",request_urgency="default"} 0
 gitlab_sli_rails_request_total{endpoint_id="PUT /api/:version/projects/:id/services/discord",feature_category="integrations",request_urgency="default"} 0
 gitlab_sli_rails_request_total{endpoint_id="PUT /api/:version/projects/:id/services/drone-ci",feature_category="integrations",request_urgency="default"} 0
 gitlab_sli_rails_request_total{endpoint_id="PUT /api/:version/projects/:id/services/emails-on-push",feature_category="integrations",request_urgency="default"} 0

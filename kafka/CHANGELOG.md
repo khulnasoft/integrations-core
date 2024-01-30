@@ -13,7 +13,7 @@
 
 ***Fixed***:
 
-* Update datadog-checks-base dependency version to 32.6.0 ([#15604](https://github.com/KhulnaSoft/integrations-core/pull/15604))
+* Update khulnasoft-checks-base dependency version to 32.6.0 ([#15604](https://github.com/KhulnaSoft/integrations-core/pull/15604))
 
 ## 2.14.0 / 2023-08-10
 
@@ -121,7 +121,7 @@
 
 ***Added***:
 
-* Add version verification for datadog-checks-base ([#8255](https://github.com/KhulnaSoft/integrations-core/pull/8255))
+* Add version verification for khulnasoft-checks-base ([#8255](https://github.com/KhulnaSoft/integrations-core/pull/8255))
 
 ## 2.4.0 / 2020-12-11 / Agent 7.25.0
 

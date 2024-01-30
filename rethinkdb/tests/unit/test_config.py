@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2020-present
+# (C) Khulnasoft, Inc. 2020-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 from typing import Any  # noqa: F401
@@ -29,7 +29,7 @@ def test_config(port_28016, min_collection_interval_10):
     instance = {
         'host': '192.168.121.1',
         'port': port_28016,
-        'username': 'datadog-agent',
+        'username': 'khulnasoft-agent',
         'password': 's3kr3t',
         'tls_ca_cert': '/path/to/client.cert',
         'tags': ['rethinkdb_env:testing'],
@@ -38,7 +38,7 @@ def test_config(port_28016, min_collection_interval_10):
     config = Config(instance)
     assert config.host == '192.168.121.1'
     assert config.port == 28016
-    assert config.user == 'datadog-agent'
+    assert config.user == 'khulnasoft-agent'
     assert config.tls_ca_cert == '/path/to/client.cert'
     assert config.tags == ['rethinkdb_env:testing']
 

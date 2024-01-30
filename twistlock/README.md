@@ -8,7 +8,7 @@
 
 ### Installation
 
-The Prisma Cloud Compute Edition check is included in the [Datadog Agent][2] package, so you do not need to install anything else on your server.
+The Prisma Cloud Compute Edition check is included in the [Khulnasoft Agent][2] package, so you do not need to install anything else on your server.
 
 ### Configuration
 
@@ -71,13 +71,13 @@ spec:
 
 <!-- partial
 {{< site-region region="us3" >}}
-**Log collection is not supported for the Datadog {{< region-param key="dd_site_name" >}} site**.
+**Log collection is not supported for the Khulnasoft {{< region-param key="dd_site_name" >}} site**.
 {{< /site-region >}}
 partial -->
 
 _Available for Agent versions >6.0_
 
-Collecting logs is disabled by default in the Datadog Agent. To enable it, see [Kubernetes Log Collection][6].
+Collecting logs is disabled by default in the Khulnasoft Agent. To enable it, see [Kubernetes Log Collection][6].
 
 | Parameter      | Value                                             |
 | -------------- | ------------------------------------------------- |
@@ -85,7 +85,7 @@ Collecting logs is disabled by default in the Datadog Agent. To enable it, see [
 
 ###### Kubernetes
 
-1. Collecting logs is disabled by default in the Datadog Agent. Enable it in your [DaemonSet configuration][7]:
+1. Collecting logs is disabled by default in the Khulnasoft Agent. Enable it in your [DaemonSet configuration][7]:
 
    ```yaml
      #(...)
@@ -98,7 +98,7 @@ Collecting logs is disabled by default in the Datadog Agent. To enable it, see [
      #(...)
    ```
 
-2. Mount the Docker socket to the Datadog Agent. See the Datadog Kubernetes [example manifests][8].
+2. Mount the Docker socket to the Khulnasoft Agent. See the Khulnasoft Kubernetes [example manifests][8].
 
 3. Make sure the log section is included in the Pod annotation for the defender, where the container name can be found just below in the pod spec:
 
@@ -110,7 +110,7 @@ Collecting logs is disabled by default in the Datadog Agent. To enable it, see [
 
 ###### Docker
 
-1. Collecting logs is disabled by default in the Datadog Agent. Enable it with the environment variable:
+1. Collecting logs is disabled by default in the Khulnasoft Agent. Enable it with the environment variable:
 
    ```shell
    DD_LOGS_ENABLED=true
@@ -122,7 +122,7 @@ Collecting logs is disabled by default in the Datadog Agent. To enable it, see [
    ad.khulnasoft.com/<container-name>.logs: '[{"source": "twistlock", "service": "twistlock"}]'
    ```
 
-3. Mount the Docker socket to the Datadog Agent. More information about the required configuration to collect logs with the Datadog Agent available in [Docker Log Collection][9].
+3. Mount the Docker socket to the Khulnasoft Agent. More information about the required configuration to collect logs with the Khulnasoft Agent available in [Docker Log Collection][9].
 
 4. [Restart the Agent][4].
 
@@ -149,7 +149,7 @@ See [service_checks.json][12] for a list of service checks provided by this inte
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][13].
+Need help? Contact [Khulnasoft support][13].
 
 
 [1]: https://www.paloaltonetworks.com/prisma/cloud

@@ -4,7 +4,7 @@
 
 ## Overview
 
-This check monitors [RabbitMQ][2] through the Datadog Agent. It allows you to:
+This check monitors [RabbitMQ][2] through the Khulnasoft Agent. It allows you to:
 
 - Track queue-based stats: queue size, consumer count, unacknowledged messages, redelivered messages, and more.
 - Track node-based stats: waiting processes, used sockets, used file descriptors, and more.
@@ -14,11 +14,11 @@ This check monitors [RabbitMQ][2] through the Datadog Agent. It allows you to:
 
 ### Installation
 
-The RabbitMQ check is included in the [Datadog Agent][3] package. No additional installation is needed on your server.
+The RabbitMQ check is included in the [Khulnasoft Agent][3] package. No additional installation is needed on your server.
 
 ### Configuration
 
-RabbitMQ exposes metrics in two ways: the [RabbitMQ Management Plugin][4] and the [RabbitMQ Prometheus Plugin][19]. The Datadog integration supports both versions. Follow the configuration instruction in this file that pertain to the version you intend to use. The Datadog integration also comes with an out-of-the-box dashboard and monitors for each version, as labeled by the Dashboard and Monitor titles.
+RabbitMQ exposes metrics in two ways: the [RabbitMQ Management Plugin][4] and the [RabbitMQ Prometheus Plugin][19]. The Khulnasoft integration supports both versions. Follow the configuration instruction in this file that pertain to the version you intend to use. The Khulnasoft integration also comes with an out-of-the-box dashboard and monitors for each version, as labeled by the Dashboard and Monitor titles.
 
 #### Prepare RabbitMQ
 
@@ -26,7 +26,7 @@ RabbitMQ exposes metrics in two ways: the [RabbitMQ Management Plugin][4] and th
 
 *Starting with RabbitMQ v3.8, the [RabbitMQ Prometheus Plugin][19] is enabled by default.*
 
-*The Prometheus plugin version of RabbitMQ requires Python 3 support by the Datadog Agent, and so can only be supported by Agent v6 or later. Please ensure your agent is updated before configuring the Prometheus plugin version of the integration.*
+*The Prometheus plugin version of RabbitMQ requires Python 3 support by the Khulnasoft Agent, and so can only be supported by Agent v6 or later. Please ensure your agent is updated before configuring the Prometheus plugin version of the integration.*
 
 Configure the `prometheus_plugin` section in your instance configuration. When using the `prometheus_plugin` option, settings related to the Management Plugin are ignored.
 
@@ -36,7 +36,7 @@ Configure the `prometheus_plugin` section in your instance configuration. When u
        url: http://<HOST>:15692
  ```
 
- This enables scraping of the [`/metrics` endpoint][20] on one RabbitMQ node. Datadog can also collect data from the [`/metrics/detailed` endpoint][22].
+ This enables scraping of the [`/metrics` endpoint][20] on one RabbitMQ node. Khulnasoft can also collect data from the [`/metrics/detailed` endpoint][22].
 
  ```yaml
  instances:
@@ -59,9 +59,9 @@ Enable the plugin. The Agent user then needs at least the `monitoring` tag and t
 Create an Agent user for your default vhost with the following commands:
 
 ```text
-rabbitmqctl add_user datadog <SECRET>
-rabbitmqctl set_permissions  -p / datadog "^aliveness-test$" "^amq\.default$" ".*"
-rabbitmqctl set_user_tags datadog monitoring
+rabbitmqctl add_user khulnasoft <SECRET>
+rabbitmqctl set_permissions  -p / khulnasoft "^aliveness-test$" "^amq\.default$" ".*"
+rabbitmqctl set_user_tags khulnasoft monitoring
 ```
 
 Here, `/` refers to the default host. Set this to your specified virtual host name. See the [RabbitMQ documentation][5] for more information.
@@ -92,7 +92,7 @@ _Available for Agent versions >6.0_
      log.file = rabbit.log
    ```
 
-2. Collecting logs is disabled by default in the Datadog Agent, enable it in your `datadog.yaml` file:
+2. Collecting logs is disabled by default in the Khulnasoft Agent, enable it in your `khulnasoft.yaml` file:
 
    ```yaml
    logs_enabled: true
@@ -119,7 +119,7 @@ _Available for Agent versions >6.0_
 
 #### Containerized
 
-You can take advantage of Datadog's [Docker container Autodiscovery][21], see the `auto_conf.yaml` example configuration for RabbitMQ-specific settings.
+You can take advantage of Khulnasoft's [Docker container Autodiscovery][21], see the `auto_conf.yaml` example configuration for RabbitMQ-specific settings.
 
 For container environments such as Kubernetes, see the [Autodiscovery Integration Templates][9] for guidance on applying the parameters below.
 
@@ -135,7 +135,7 @@ For container environments such as Kubernetes, see the [Autodiscovery Integratio
 
 _Available for Agent v6.0 or later_
 
-Collecting logs is disabled by default in the Datadog Agent. To enable it, see [Kubernetes Log Collection][10].
+Collecting logs is disabled by default in the Khulnasoft Agent. To enable it, see [Kubernetes Log Collection][10].
 
 | Parameter      | Value                                                                                                                                               |
 | -------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -182,7 +182,7 @@ The Prometheus Plugin changes some tags. The table below describes the changes t
 
 For more information, see [Tagging RabbitMQ queues by tag family][18].
 
-Need help? Contact [Datadog support][13].
+Need help? Contact [Khulnasoft support][13].
 
 ## Further Reading
 
@@ -190,7 +190,7 @@ Additional helpful documentation, links, and articles:
 
 - [Key metrics for RabbitMQ monitoring][15]
 - [Collecting metrics with RabbitMQ monitoring tools][16]
-- [Monitoring RabbitMQ performance with Datadog][17]
+- [Monitoring RabbitMQ performance with Khulnasoft][17]
 
 [1]: https://raw.githubusercontent.com/KhulnaSoft/integrations-core/master/rabbitmq/images/rabbitmq_dashboard.png
 [2]: https://www.rabbitmq.com
@@ -208,7 +208,7 @@ Additional helpful documentation, links, and articles:
 [14]: https://github.com/KhulnaSoft/integrations-core/blob/master/rabbitmq/assets/service_checks.json
 [15]: https://www.khulnasoft.com/blog/rabbitmq-monitoring
 [16]: https://www.khulnasoft.com/blog/rabbitmq-monitoring-tools
-[17]: https://www.khulnasoft.com/blog/monitoring-rabbitmq-performance-with-datadog
+[17]: https://www.khulnasoft.com/blog/monitoring-rabbitmq-performance-with-khulnasoft
 [18]: https://docs.khulnasoft.com/integrations/faq/tagging-rabbitmq-queues-by-tag-family/
 [19]: https://www.rabbitmq.com/prometheus.html
 [20]: https://www.rabbitmq.com/prometheus.html#default-endpoint

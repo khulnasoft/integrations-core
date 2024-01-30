@@ -10,7 +10,7 @@ This check lets you track node, vnode, and ring performance metrics from RiakKV 
 
 ### Installation
 
-The Riak check is included in the [Datadog Agent][2] package, so you don't need to install anything else on your Riak servers.
+The Riak check is included in the [Khulnasoft Agent][2] package, so you don't need to install anything else on your Riak servers.
 
 ### Configuration
 
@@ -35,13 +35,13 @@ To configure this check for an Agent running on a host:
      - url: http://127.0.0.1:8098/stats
    ```
 
-2. [Restart the Agent][5] to start sending Riak metrics to Datadog.
+2. [Restart the Agent][5] to start sending Riak metrics to Khulnasoft.
 
 ##### Log collection
 
 _Available for Agent versions >6.0_
 
-1. Collecting logs is disabled by default in the Datadog Agent, enable it in your `datadog.yaml` file:
+1. Collecting logs is disabled by default in the Khulnasoft Agent, enable it in your `khulnasoft.yaml` file:
 
    ```yaml
    logs_enabled: true
@@ -96,7 +96,7 @@ For containerized environments, see the [Autodiscovery Integration Templates][6]
 
 _Available for Agent versions >6.0_
 
-Collecting logs is disabled by default in the Datadog Agent. To enable it, see [Kubernetes Log Collection][7].
+Collecting logs is disabled by default in the Khulnasoft Agent. To enable it, see [Kubernetes Log Collection][7].
 
 | Parameter      | Value                                                                                                                                                        |
 | -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -125,7 +125,7 @@ See [service_checks.json][10] for a list of service checks provided by this inte
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][11].
+Need help? Contact [Khulnasoft support][11].
 
 
 [1]: https://raw.githubusercontent.com/KhulnaSoft/integrations-core/master/riak/images/riak_graph.png

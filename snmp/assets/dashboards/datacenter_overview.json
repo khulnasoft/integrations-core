@@ -1,6 +1,6 @@
 {
   "title": "Network Device Monitoring",
-  "description": "## Network Device Monitoring Dashboard\n\nKeep track of all of your monitored on-premise appliances monitored with SNMP all in one place. At a glance, see all of the devices currently responding metrics, top interfaces reporting bandwidth and forecasted performance.\nRead more about: \n\nRead more about:\n\n*  [Monitoring datacenters and network devices with Datadog](https://www.khulnasoft.com/blog/datacenter-monitoring-dashboards/)\n* [Monitoring network devices with SNMP](https://www.khulnasoft.com/blog/monitor-snmp-with-datadog/)\n* Learn more about the data collected in our [docs](https://docs.khulnasoft.com/network_performance_monitoring/devices) ",
+  "description": "## Network Device Monitoring Dashboard\n\nKeep track of all of your monitored on-premise appliances monitored with SNMP all in one place. At a glance, see all of the devices currently responding metrics, top interfaces reporting bandwidth and forecasted performance.\nRead more about: \n\nRead more about:\n\n*  [Monitoring datacenters and network devices with Khulnasoft](https://www.khulnasoft.com/blog/datacenter-monitoring-dashboards/)\n* [Monitoring network devices with SNMP](https://www.khulnasoft.com/blog/monitor-snmp-with-khulnasoft/)\n* Learn more about the data collected in our [docs](https://docs.khulnasoft.com/network_performance_monitoring/devices) ",
   "widgets": [
     {
       "id": 7507125964146004,
@@ -14,7 +14,7 @@
             "id": 5962709499618832,
             "definition": {
               "type": "note",
-              "content": "This dashboard provides an overview of how all the network devices in your datacenter are performing. \n\nFor more information on monitoring on-premise gear with Datadog, check out: \n\n- Our blog post on [Monitoring Datacenters and network devices with Datadog](https://www.khulnasoft.com/blog/datacenter-monitoring-dashboards/)\n- Our blog post on [Monitoring network devices with SNMP](https://www.khulnasoft.com/blog/monitor-snmp-with-datadog/)\n- Network Device Monitoring [docs](https://docs.khulnasoft.com/network_performance_monitoring/devices) ",
+              "content": "This dashboard provides an overview of how all the network devices in your datacenter are performing. \n\nFor more information on monitoring on-premise gear with Khulnasoft, check out: \n\n- Our blog post on [Monitoring Datacenters and network devices with Khulnasoft](https://www.khulnasoft.com/blog/datacenter-monitoring-dashboards/)\n- Our blog post on [Monitoring network devices with SNMP](https://www.khulnasoft.com/blog/monitor-snmp-with-khulnasoft/)\n- Network Device Monitoring [docs](https://docs.khulnasoft.com/network_performance_monitoring/devices) ",
               "background_color": "white",
               "font_size": "14",
               "text_align": "left",

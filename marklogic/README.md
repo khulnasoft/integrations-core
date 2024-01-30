@@ -2,7 +2,7 @@
 
 ## Overview
 
-This check monitors [MarkLogic][1] through the Datadog Agent. MarkLogic Server is a multi-model database designed to be a data hub for operational and analytical data.
+This check monitors [MarkLogic][1] through the Khulnasoft Agent. MarkLogic Server is a multi-model database designed to be a data hub for operational and analytical data.
 
 ## Setup
 
@@ -10,21 +10,21 @@ Follow the instructions below to install and configure this check for an Agent r
 
 ### Installation
 
-The MarkLogic check is included in the [Datadog Agent][3] package.
+The MarkLogic check is included in the [Khulnasoft Agent][3] package.
 No additional installation is needed on your server.
 
 #### Prepare MarkLogic
 
-Using the API or the Admin interface, create a user for the Datadog Agent with the [`manage-user`][4] role permissions at minimum.
-If you plan to use the `enable_health_service_checks` configuration, give the Datadog MarkLogic user at least the [`manage-admin`][5] role.
+Using the API or the Admin interface, create a user for the Khulnasoft Agent with the [`manage-user`][4] role permissions at minimum.
+If you plan to use the `enable_health_service_checks` configuration, give the Khulnasoft MarkLogic user at least the [`manage-admin`][5] role.
 
 ##### API
 
-1. Create the Datadog user by modifying this request with your specific values:
+1. Create the Khulnasoft user by modifying this request with your specific values:
     ```shell
     curl -X POST --anyauth --user <ADMIN_USER>:<ADMIN_PASSWORD> -i -H "Content-Type: application/json" -d '{"user-name": "<USER>", "password": "<PASSWORD>", "roles": {"role": "manage-user"}}' http://<HOSTNAME>:8002/manage/v2/users
     ```
-    Use the correct `<ADMIN_USER>` and `<ADMIN_PASSWORD>`, and replace `<USER>` and `<PASSWORD>` with the username and password that the Datadog Agent uses.
+    Use the correct `<ADMIN_USER>` and `<ADMIN_PASSWORD>`, and replace `<USER>` and `<PASSWORD>` with the username and password that the Khulnasoft Agent uses.
     For more details, see the MarkLogic documentation: [POST /manage/v2/users][6].
 
 2. To verify the user was created with enough permissions:
@@ -38,7 +38,7 @@ If you plan to use the `enable_health_service_checks` configuration, give the Da
 
 2. Select `Security` as Database and `XQuery` as query type.
 
-3. Run this query, replacing `<USER>` and `<PASSWORD>` with the ones that the Datadog Agent uses:
+3. Run this query, replacing `<USER>` and `<PASSWORD>` with the ones that the Khulnasoft Agent uses:
     ```
     xquery version "1.0-ml";
     import module namespace sec="http://marklogic.com/xdmp/security" at 
@@ -46,7 +46,7 @@ If you plan to use the `enable_health_service_checks` configuration, give the Da
 
     sec:create-user(
         "<USER>",
-        "Datadog Agent user",
+        "Khulnasoft Agent user",
         "<PASSWORD>",
         "manage-user",
         (xdmp:permission("security", "read")),
@@ -61,7 +61,7 @@ If you plan to use the `enable_health_service_checks` configuration, give the Da
 
 #### Host
 
-1. Edit the `marklogic.d/conf.yaml` file, in the `conf.d/` folder at the root of your Agent's configuration directory to start collecting your MarkLogic performance data. See the [sample `marklogic.d/conf.yaml` file][8] for all available configuration options. For user-related settings in the config file, use the Datadog Agent user you created.
+1. Edit the `marklogic.d/conf.yaml` file, in the `conf.d/` folder at the root of your Agent's configuration directory to start collecting your MarkLogic performance data. See the [sample `marklogic.d/conf.yaml` file][8] for all available configuration options. For user-related settings in the config file, use the Khulnasoft Agent user you created.
 
 2. [Restart the Agent][9].
 
@@ -69,7 +69,7 @@ If you plan to use the `enable_health_service_checks` configuration, give the Da
 
 _Available for Agent versions >6.0_
 
-1. Collecting logs is disabled by default in the Datadog Agent, you need to enable it in `datadog.yaml`:
+1. Collecting logs is disabled by default in the Khulnasoft Agent, you need to enable it in `khulnasoft.yaml`:
 
    ```yaml
    logs_enabled: true
@@ -111,7 +111,7 @@ See [service_checks.json][12] for a list of service checks provided by this inte
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][13].
+Need help? Contact [Khulnasoft support][13].
 
 
 [1]: https://www.marklogic.com

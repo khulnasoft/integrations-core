@@ -20,11 +20,11 @@ files:
         type: integer
         example: 5432
     - name: username
-      description: The Datadog username created to connect to PostgreSQL.
+      description: The Khulnasoft username created to connect to PostgreSQL.
       value:
           type: string
     - name: password
-      description: The password associated with the Datadog user.
+      description: The password associated with the Khulnasoft user.
       value:
         type: string
     - name: dbname
@@ -284,7 +284,7 @@ files:
     - name: custom_queries
       description: |
         Define custom queries to collect custom metrics from your PostgreSQL
-        See Datadog FAQ article for a guide on collecting custom metrics from PostgreSQL:
+        See Khulnasoft FAQ article for a guide on collecting custom metrics from PostgreSQL:
         https://docs.khulnasoft.com/integrations/faq/postgres-custom-metric-collection-explained/
       value:
         type: array
@@ -368,7 +368,7 @@ files:
         The name is displayed in the pg_stat_activity view and included in CSV log entries.
       value:
         type: string
-        example: "datadog-agent"
+        example: "khulnasoft-agent"
     - name: dbm
       description: |
         Set to `true` to enable Database Monitoring.
@@ -378,8 +378,8 @@ files:
         display_default: false
     - name: pg_stat_statements_view
       description: |
-        Set this value if you want to define a custom view or function to allow the datadog user to query the
-        `pg_stat_statements` table, which is useful for restricting the permissions given to the datadog agent.
+        Set this value if you want to define a custom view or function to allow the khulnasoft user to query the
+        `pg_stat_statements` table, which is useful for restricting the permissions given to the khulnasoft agent.
         Please note this is an ALPHA feature and is subject to change or deprecation without notice.
       value:
         type: string
@@ -430,7 +430,7 @@ files:
             Override the default function used to collect execution plans for queries.
           value:
             type: string
-            example: datadog.explain_statement
+            example: khulnasoft.explain_statement
         - name: explained_queries_per_hour_per_query
           description: |
             Set the rate limit for how many execution plans will be collected per hour per normalized query.
@@ -555,7 +555,7 @@ files:
       description: |
         This block defines the configuration for AWS RDS and Aurora instances.
 
-        Complete this section if you have installed the Datadog AWS Integration
+        Complete this section if you have installed the Khulnasoft AWS Integration
         (https://docs.khulnasoft.com/integrations/amazon_web_services) to enrich instances
         with Postgres integration telemetry.
 
@@ -604,7 +604,7 @@ files:
       description: |
         This block defines the configuration for Google Cloud SQL instances.
 
-        Complete this section if you have installed the Datadog GCP Integration
+        Complete this section if you have installed the Khulnasoft GCP Integration
         (https://docs.khulnasoft.com/integrations/google_cloud_platform) to enrich instances
         with Postgres integration telemetry.
 
@@ -633,7 +633,7 @@ files:
       description: |
         This block defines the configuration for Azure Database for PostgreSQL.
 
-        Complete this section if you have installed the Datadog Azure Integration
+        Complete this section if you have installed the Khulnasoft Azure Integration
         (https://docs.khulnasoft.com/integrations/azure) to enrich instances
         with Postgres integration telemetry.
         These values are only applied when `dbm: true` option is set.
@@ -834,7 +834,7 @@ files:
       hidden: true
       description: |
         Set to `true` to enable logging of original unobfuscated SQL queries when obfuscation errors occur.
-        For security purposes, it is recommended to use this option for debugging only when requested by Datadog Support.
+        For security purposes, it is recommended to use this option for debugging only when requested by Khulnasoft Support.
         Note: This option only applies when `dbm` is enabled.
       value:
         type: boolean
@@ -844,7 +844,7 @@ files:
       hidden: true
       description: |
         Set to `true` to enable logging of original unobfuscated SQL plans when obfuscation errors occur.
-        For security purposes, it is recommended to use this option for debugging only when requested by Datadog Support.
+        For security purposes, it is recommended to use this option for debugging only when requested by Khulnasoft Support.
         Note: This option only applies when `dbm` is enabled.
       value:
         type: boolean

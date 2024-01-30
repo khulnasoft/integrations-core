@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2018-present
+# (C) Khulnasoft, Inc. 2018-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 from __future__ import division
@@ -391,14 +391,14 @@ class ProcessCheck(AgentCheck):
         if self._conflicting_procfs:
             self.warning(
                 'The `procfs_path` defined in `process.yaml is different from the one defined in '
-                '`datadog.conf` This is currently not supported by the Agent. Defaulting to the '
-                'value defined in `datadog.conf`: %s',
+                '`khulnasoft.conf` This is currently not supported by the Agent. Defaulting to the '
+                'value defined in `khulnasoft.conf`: %s',
                 psutil.PROCFS_PATH,
             )
         elif self._deprecated_init_procfs:
             self.warning(
                 'DEPRECATION NOTICE: Specifying `procfs_path` in process.yaml` is deprecated. '
-                'Please specify it in `datadog.conf` instead'
+                'Please specify it in `khulnasoft.conf` instead'
             )
 
         if not isinstance(self.search_string, list) and self.pid is None and self.pid_file is None:

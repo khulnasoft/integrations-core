@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2018-present
+# (C) Khulnasoft, Inc. 2018-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 import os
@@ -58,7 +58,7 @@ def test_new_check_test(integration_type, installable):
             assert 'Nothing to test!' not in result.stdout
 
             result = run_command(
-                [sys.executable, '-m', 'pip', 'uninstall', '-y', 'datadog-my-check'], capture=True, check=True
+                [sys.executable, '-m', 'pip', 'uninstall', '-y', 'khulnasoft-my-check'], capture=True, check=True
             )
             # `pip uninstall` is idempotent, so it will not fail if `check_package_name` is incorrect (i.e. the package
             # could not be found). Instead, it will log a warning, so we test for that warning to verify the package was

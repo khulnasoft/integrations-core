@@ -215,13 +215,13 @@ khulnasoft_checks_base/khulnasoft_checks/base/checks/windows/              @Khul
 /cicso_umbrella_dns/manifest.json                                    @KhulnaSoft/saas-integrations @KhulnaSoft/documentation
 
 # To keep Security up-to-date with changes to the signing tool.
-/khulnasoft_checks_dev/khulnasoft_checks/dev/tooling/signing.py             @KhulnaSoft/software-integrity-and-trust @KhulnaSoft/agent-integrations @trishankatdatadog
+/khulnasoft_checks_dev/khulnasoft_checks/dev/tooling/signing.py             @KhulnaSoft/software-integrity-and-trust @KhulnaSoft/agent-integrations @trishankatkhulnasoft
 # As well as the secure downloader.
-/khulnasoft_checks_downloader/                                           @KhulnaSoft/software-integrity-and-trust @KhulnaSoft/agent-integrations @trishankatdatadog
-docs/developer/process/integration-release.md                         @KhulnaSoft/software-integrity-and-trust @KhulnaSoft/agent-integrations @trishankatdatadog
+/khulnasoft_checks_downloader/                                           @KhulnaSoft/software-integrity-and-trust @KhulnaSoft/agent-integrations @trishankatkhulnasoft
+docs/developer/process/integration-release.md                         @KhulnaSoft/software-integrity-and-trust @KhulnaSoft/agent-integrations @trishankatkhulnasoft
 # As well as the pipelines.
 /.github/workflows/                                                   @KhulnaSoft/agent-integrations
-/.gitlab-ci.yml                                                       @KhulnaSoft/agent-integrations @trishankatdatadog
+/.gitlab-ci.yml                                                       @KhulnaSoft/agent-integrations @trishankatkhulnasoft
 
 # Dev container
 /.devcontainer/                                                        @KhulnaSoft/agent-integrations @KhulnaSoft/container-integrations

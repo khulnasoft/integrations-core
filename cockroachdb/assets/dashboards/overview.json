@@ -1,6 +1,6 @@
 {
   "title": "CockroachDB Overview",
-  "description": "## CockroachDB Overview\n\nThis dashboard provides a high-level view of your CockroachDB cluster, including:\n- A high-level view of SQL performance & latency.\n- Information about resource consumption to help aid in capacity planning.\nFurther reading on CockroachDB monitoring:\n\n- [Monitor CockroachDB with Datadog](https://www.khulnasoft.com/blog/monitor-cockroachdb-performance-metrics-with-datadog/)\n\n- [Datadog's CockroachDB docs](https://docs.khulnasoft.com/integrations/cockroachdb/).\n\nClone this template dashboard to make changes and add your own graphs and widgets.",
+  "description": "## CockroachDB Overview\n\nThis dashboard provides a high-level view of your CockroachDB cluster, including:\n- A high-level view of SQL performance & latency.\n- Information about resource consumption to help aid in capacity planning.\nFurther reading on CockroachDB monitoring:\n\n- [Monitor CockroachDB with Khulnasoft](https://www.khulnasoft.com/blog/monitor-cockroachdb-performance-metrics-with-khulnasoft/)\n\n- [Khulnasoft's CockroachDB docs](https://docs.khulnasoft.com/integrations/cockroachdb/).\n\nClone this template dashboard to make changes and add your own graphs and widgets.",
   "widgets": [
     {
       "id": 8635810201263258,

@@ -2,25 +2,25 @@
 
 ## Overview
 
-This check monitors [SAP HANA][1] 2.0, SPS 2 through the Datadog Agent.
+This check monitors [SAP HANA][1] 2.0, SPS 2 through the Khulnasoft Agent.
 
 ## Setup
 
 ### Installation
 
-The SAP HANA check is included in the [Datadog Agent][2] package. To use this integration, you need to manually install the [hdbcli][10] library.
+The SAP HANA check is included in the [Khulnasoft Agent][2] package. To use this integration, you need to manually install the [hdbcli][10] library.
 
 
 For Unix:
 
 ```text
-sudo -Hu dd-agent /opt/datadog-agent/embedded/bin/pip install hdbcli==2.10.15
+sudo -Hu dd-agent /opt/khulnasoft-agent/embedded/bin/pip install hdbcli==2.10.15
 ```
 
 For Windows:
 
 ```text
-"C:\Program Files\Datadog\Datadog Agent\embedded<PYTHON_MAJOR_VERSION>\python.exe" -m pip install hdbcli==2.10.15
+"C:\Program Files\Khulnasoft\Khulnasoft Agent\embedded<PYTHON_MAJOR_VERSION>\python.exe" -m pip install hdbcli==2.10.15
 ```
 
 #### Prepare HANA
@@ -111,7 +111,7 @@ See [service_checks.json][8] for a list of service checks provided by this integ
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][9].
+Need help? Contact [Khulnasoft support][9].
 
 
 [1]: https://www.sap.com/products/hana.html

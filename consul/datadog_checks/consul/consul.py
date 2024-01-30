@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2018-present
+# (C) Khulnasoft, Inc. 2018-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 from __future__ import division
@@ -224,7 +224,7 @@ class ConsulCheck(OpenMetricsBaseCheck):
             # A few things could be happening here.
             #   1. Consul Agent is Down
             #   2. The cluster is in the midst of a leader election
-            #   3. The Datadog agent is not able to reach the Consul instance (network partition et al.)
+            #   3. The Khulnasoft agent is not able to reach the Consul instance (network partition et al.)
             self.log.warning('Consul Leader information is not available!')
             return
 

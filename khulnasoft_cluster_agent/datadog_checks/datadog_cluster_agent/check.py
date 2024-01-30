@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2021-present
+# (C) Khulnasoft, Inc. 2021-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 
@@ -35,7 +35,7 @@ DEFAULT_METRICS = {
     'cluster_checks_rebalancing_duration_seconds': 'cluster_checks.rebalancing_duration_seconds',
     'cluster_checks_successful_rebalancing_moves': 'cluster_checks.successful_rebalancing_moves',
     'cluster_checks_updating_stats_duration_seconds': 'cluster_checks.updating_stats_duration_seconds',
-    'khulnasoft_requests': 'datadog.requests',
+    'khulnasoft_requests': 'khulnasoft.requests',
     'endpoint_checks_configs_dispatched': 'endpoint_checks.configs_dispatched',
     'external_metrics': 'external_metrics',
     'external_metrics_api_elapsed': 'external_metrics.api_elapsed',
@@ -48,27 +48,27 @@ DEFAULT_METRICS = {
     'go_threads': 'go.threads',
     'kubernetes_apiserver_emitted_events': 'kubernetes_apiserver.emitted_events',
     'kubernetes_apiserver_kube_events': 'kubernetes_apiserver.kube_events',
-    'rate_limit_queries_limit': 'datadog.rate_limit_queries.limit',
-    'rate_limit_queries_period': 'datadog.rate_limit_queries.period',
-    'rate_limit_queries_remaining': 'datadog.rate_limit_queries.remaining',
-    'rate_limit_queries_remaining_min': 'datadog.rate_limit_queries.remaining_min',
-    'rate_limit_queries_reset': 'datadog.rate_limit_queries.reset',
+    'rate_limit_queries_limit': 'khulnasoft.rate_limit_queries.limit',
+    'rate_limit_queries_period': 'khulnasoft.rate_limit_queries.period',
+    'rate_limit_queries_remaining': 'khulnasoft.rate_limit_queries.remaining',
+    'rate_limit_queries_remaining_min': 'khulnasoft.rate_limit_queries.remaining_min',
+    'rate_limit_queries_reset': 'khulnasoft.rate_limit_queries.reset',
     'secret_backend__elapsed_ms': 'secret_backend.elapsed',
 }
 
 
-class DatadogClusterAgentCheck(OpenMetricsBaseCheck):
+class KhulnasoftClusterAgentCheck(OpenMetricsBaseCheck):
     DEFAULT_METRIC_LIMIT = 0
 
     def __init__(self, name, init_config, instances):
-        super(DatadogClusterAgentCheck, self).__init__(
+        super(KhulnasoftClusterAgentCheck, self).__init__(
             name,
             init_config,
             instances,
             default_instances={
-                'datadog.cluster_agent': {
+                'khulnasoft.cluster_agent': {
                     'prometheus_url': 'http://localhost:5000/metrics',
-                    'namespace': 'datadog.cluster_agent',
+                    'namespace': 'khulnasoft.cluster_agent',
                     'metrics': [DEFAULT_METRICS],
                     'label_joins': {
                         'leader_election_is_leader': {
@@ -81,5 +81,5 @@ class DatadogClusterAgentCheck(OpenMetricsBaseCheck):
                     'send_distribution_sums_as_monotonic': True,
                 }
             },
-            default_namespace='datadog.cluster_agent',
+            default_namespace='khulnasoft.cluster_agent',
         )

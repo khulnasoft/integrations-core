@@ -1,4 +1,4 @@
-[env.collectors.datadog-checks]
+[env.collectors.khulnasoft-checks]
 check-types = false
 mypy-args = [
     "--disallow-untyped-defs",

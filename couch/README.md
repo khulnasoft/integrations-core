@@ -4,7 +4,7 @@
 
 ## Overview
 
-Capture CouchDB data in Datadog to:
+Capture CouchDB data in Khulnasoft to:
 
 - Visualize key CouchDB metrics.
 - Correlate CouchDB performance with the rest of your applications.
@@ -15,7 +15,7 @@ For performance reasons, the CouchDB version you're using is cached, so you cann
 
 ### Installation
 
-The CouchDB check is included in the [Datadog Agent][2] package, so you don't need to install anything else on your CouchDB servers.
+The CouchDB check is included in the [Khulnasoft Agent][2] package, so you don't need to install anything else on your CouchDB servers.
 
 ### Configuration
 
@@ -48,7 +48,7 @@ To configure this check for an Agent running on a host:
 
 _Available for Agent versions >6.0_
 
-1. Collecting logs is disabled by default in the Datadog Agent, you need to enable it in `datadog.yaml`:
+1. Collecting logs is disabled by default in the Khulnasoft Agent, you need to enable it in `khulnasoft.yaml`:
 
    ```yaml
    logs_enabled: true
@@ -87,7 +87,7 @@ For containerized environments, see the [Autodiscovery Integration Templates][6]
 
 _Available for Agent versions >6.0_
 
-Collecting logs is disabled by default in the Datadog Agent. To enable it, see [Kubernetes Log Collection][7].
+Collecting logs is disabled by default in the Khulnasoft Agent. To enable it, see [Kubernetes Log Collection][7].
 
 | Parameter      | Value                                                |
 | -------------- | ---------------------------------------------------- |
@@ -116,11 +116,11 @@ See [service_checks.json][10] for a list of service checks provided by this inte
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][11].
+Need help? Contact [Khulnasoft support][11].
 
 ## Further Reading
 
-- [Monitoring CouchDB performance with Datadog][12]
+- [Monitoring CouchDB performance with Khulnasoft][12]
 
 [1]: https://raw.githubusercontent.com/KhulnaSoft/integrations-core/master/couch/images/couchdb_dashboard.png
 [2]: https://app.khulnasoft.com/account/settings/agent/latest
@@ -133,4 +133,4 @@ Need help? Contact [Datadog support][11].
 [9]: https://github.com/KhulnaSoft/integrations-core/blob/master/couch/metadata.csv
 [10]: https://github.com/KhulnaSoft/integrations-core/blob/master/couch/assets/service_checks.json
 [11]: https://docs.khulnasoft.com/help/
-[12]: https://www.khulnasoft.com/blog/monitoring-couchdb-with-datadog
+[12]: https://www.khulnasoft.com/blog/monitoring-couchdb-with-khulnasoft

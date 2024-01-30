@@ -4,7 +4,7 @@
 
 ## Overview
 
-The Datadog Agent collects many metrics from Consul nodes, including those for:
+The Khulnasoft Agent collects many metrics from Consul nodes, including those for:
 
 - Total Consul peers
 - Service health - for a given service, how many of its nodes are up, passing, warning, critical?
@@ -19,13 +19,13 @@ The _Consul_ Agent can provide further metrics with DogStatsD. These metrics are
 
 And many more.
 
-Finally, in addition to metrics, the Datadog Agent also sends a service check for each of Consul's health checks, and an event after each new leader election.
+Finally, in addition to metrics, the Khulnasoft Agent also sends a service check for each of Consul's health checks, and an event after each new leader election.
 
 ## Setup
 
 ### Installation
 
-The Datadog Agent's Consul check is included in the [Datadog Agent][2] package, so you don't need to install anything else on your Consul nodes.
+The Khulnasoft Agent's Consul check is included in the [Khulnasoft Agent][2] package, so you don't need to install anything else on your Consul nodes.
 
 ### Configuration
 
@@ -97,7 +97,7 @@ Instead of using the Prometheus endpoint, you can configure Consul to send the s
     }
     ```
 
-2. Update the [Datadog Agent main configuration file][8] `datadog.yaml` by adding the following configs to ensure metrics are tagged correctly:
+2. Update the [Khulnasoft Agent main configuration file][8] `khulnasoft.yaml` by adding the following configs to ensure metrics are tagged correctly:
 
    ```yaml
    # dogstatsd_mapper_cache_size: 1000  # default to 1000
@@ -134,7 +134,7 @@ Instead of using the Prometheus endpoint, you can configure Consul to send the s
 
 _Available for Agent versions >6.0_
 
-1. Collecting logs is disabled by default in the Datadog Agent, enable it in `datadog.yaml` with:
+1. Collecting logs is disabled by default in the Khulnasoft Agent, enable it in `khulnasoft.yaml` with:
 
    ```yaml
    logs_enabled: true
@@ -174,7 +174,7 @@ For containerized environments, see the [Autodiscovery Integration Templates][9]
 
 _Available for Agent versions >6.0_
 
-Collecting logs is disabled by default in the Datadog Agent. To enable it, see [Kubernetes Log Collection][10].
+Collecting logs is disabled by default in the Khulnasoft Agent. To enable it, see [Kubernetes Log Collection][10].
 
 | Parameter      | Value                                               |
 | -------------- | --------------------------------------------------- |
@@ -188,7 +188,7 @@ Collecting logs is disabled by default in the Datadog Agent. To enable it, see [
 
 [Run the Agent's status subcommand][11] and look for `consul` under the Checks section.
 
-**Note**: If your Consul nodes have debug logging enabled, the Datadog Agent's regular polling shows in the Consul log:
+**Note**: If your Consul nodes have debug logging enabled, the Khulnasoft Agent's regular polling shows in the Consul log:
 
 ```text
 2017/03/27 21:38:12 [DEBUG] http: Request GET /v1/status/leader (59.344us) from=127.0.0.1:53768
@@ -222,7 +222,7 @@ See [Consul's Network Coordinates doc][14] for details on how the network latenc
 ### Events
 
 **consul.new_leader**:<br>
-The Datadog Agent emits an event when the Consul cluster elects a new leader, tagging it with `prev_consul_leader`, `curr_consul_leader`, and `consul_datacenter`.
+The Khulnasoft Agent emits an event when the Consul cluster elects a new leader, tagging it with `prev_consul_leader`, `curr_consul_leader`, and `consul_datacenter`.
 
 ### Service Checks
 
@@ -230,19 +230,19 @@ See [service_checks.json][15] for a list of service checks provided by this inte
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][16].
+Need help? Contact [Khulnasoft support][16].
 
 ## Further Reading
 
 Additional helpful documentation, links, and articles:
 
-- [Monitoring HCP Consul with Datadog][17]
-- [Monitor Consul health and performance with Datadog][18]
-- [Consul at Datadog][19]
+- [Monitoring HCP Consul with Khulnasoft][17]
+- [Monitor Consul health and performance with Khulnasoft][18]
+- [Consul at Khulnasoft][19]
 - [Key metrics for monitoring Consul][20]
 - [Consul monitoring tools][21]
-- [How to monitor Consul with Datadog][22]
-- [Datadog NPM now supports Consul networking][23]
+- [How to monitor Consul with Khulnasoft][22]
+- [Khulnasoft NPM now supports Consul networking][23]
 
 [1]: https://raw.githubusercontent.com/KhulnaSoft/integrations-core/master/consul/images/consul-dash.png
 [2]: https://app.khulnasoft.com/account/settings/agent/latest
@@ -261,9 +261,9 @@ Additional helpful documentation, links, and articles:
 [15]: https://github.com/KhulnaSoft/integrations-core/blob/master/consul/assets/service_checks.json
 [16]: https://docs.khulnasoft.com/help/
 [17]: https://docs.khulnasoft.com/integrations/guide/hcp-consul
-[18]: https://www.khulnasoft.com/blog/monitor-consul-health-and-performance-with-datadog
-[19]: https://engineering.khulnasoft.com/consul-at-datadog
+[18]: https://www.khulnasoft.com/blog/monitor-consul-health-and-performance-with-khulnasoft
+[19]: https://engineering.khulnasoft.com/consul-at-khulnasoft
 [20]: https://www.khulnasoft.com/blog/consul-metrics/
 [21]: https://www.khulnasoft.com/blog/consul-monitoring-tools/
-[22]: https://www.khulnasoft.com/blog/consul-datadog/
-[23]: https://www.khulnasoft.com/blog/monitor-consul-with-datadog-npm/
+[22]: https://www.khulnasoft.com/blog/consul-khulnasoft/
+[23]: https://www.khulnasoft.com/blog/monitor-consul-with-khulnasoft-npm/

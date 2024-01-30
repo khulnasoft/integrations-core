@@ -66,7 +66,7 @@
          "target": {
             "guid": "1d386537-c90b-46ca-b14c-6d73ac0feab1",
             "type": "app",
-            "name": "hello-datadog-cf-ruby-full"
+            "name": "hello-khulnasoft-cf-ruby-full"
          },
          "data": {},
          "space": {

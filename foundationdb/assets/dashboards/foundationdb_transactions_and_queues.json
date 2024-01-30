@@ -15,7 +15,7 @@
                    "id":7263335183093038,
                    "definition":{
                       "type":"note",
-                      "content":"This dashboard gives you a birds-eye view of your FoundationDB cluster health by tracking transaction volume and storage lag time. You can find more information about this dashboard on our blog [here](http://khulnasoft.com/blog/monitor-foundationdb-with-datadog).",
+                      "content":"This dashboard gives you a birds-eye view of your FoundationDB cluster health by tracking transaction volume and storage lag time. You can find more information about this dashboard on our blog [here](http://khulnasoft.com/blog/monitor-foundationdb-with-khulnasoft).",
                       "background_color":"transparent",
                       "font_size":"16",
                       "text_align":"left",

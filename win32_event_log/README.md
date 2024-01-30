@@ -2,11 +2,11 @@
 
 ## Overview
 
-This integration watches for Windows Event Logs and forwards them to Datadog. 
+This integration watches for Windows Event Logs and forwards them to Khulnasoft. 
 
 Enable this integration to:
 
-- Track system and application events in Datadog.
+- Track system and application events in Khulnasoft.
 - Correlate system and application events with the rest of your application.
 
 For more information, see the [Windows Event Logging documentation][13].
@@ -15,14 +15,14 @@ For more information, see the [Windows Event Logging documentation][13].
 
 ### Installation
 
-The Windows Event Log check is included in the [Datadog Agent][1] package. There is no additional installation required.
+The Windows Event Log check is included in the [Khulnasoft Agent][1] package. There is no additional installation required.
 
 ### Configuration
 
 Windows Event Logs can be collected as one or both of the following methods.
 
-- As [Datadog Events][16]
-- As [Datadog Logs][17]
+- As [Khulnasoft Events][16]
+- As [Khulnasoft Logs][17]
 
 Both methods are configured in `win32_event_log.d/conf.yaml` in the `conf.d/` folder at the root of your [Agent's configuration directory][2]. See the [sample win32_event_log.d/conf.yaml][3] for all available configuration options.
 
@@ -33,9 +33,9 @@ First, identify the Windows Event Log channels you want to monitor.
 
 Depending on collection method, the channel name can be used for the following configuration parameters:
 
-- Datadog Logs: `channel_path`
-- Datadog Events: `path`
-- Datadog Events (legacy): `log_file`
+- Khulnasoft Logs: `channel_path`
+- Khulnasoft Events: `path`
+- Khulnasoft Events (legacy): `log_file`
 
 ##### PowerShell
 
@@ -77,9 +77,9 @@ To find the channel name for an Event Log in the Windows Event Viewer, open the 
 
 _Available for Agent versions 6.0 or later_
 
-Log collection is disabled by default in the Datadog Agent. To collect Windows Event Logs as Datadog logs, [activate log collection][18] by setting `logs_enabled: true` in your `datadog.yaml` file.
+Log collection is disabled by default in the Khulnasoft Agent. To collect Windows Event Logs as Khulnasoft logs, [activate log collection][18] by setting `logs_enabled: true` in your `khulnasoft.yaml` file.
 
-To collect Windows Event Logs as Datadog logs, configure channels under the `logs:` section of your `win32_event_log.d/conf.yaml` configuration file. This example shows entries for the `Security` and `<CHANNEL_2>` channels:
+To collect Windows Event Logs as Khulnasoft logs, configure channels under the `logs:` section of your `win32_event_log.d/conf.yaml` configuration file. This example shows entries for the `Security` and `<CHANNEL_2>` channels:
 
 ```yaml
 logs:
@@ -101,9 +101,9 @@ Set the corresponding `source` parameter to `windows.events` to benefit from the
 
 #### Event collection using the Event Log API (Recommended)
 
-The Datadog Agent can be configured to collect Windows Event Logs as Datadog events using the Event Log API. Datadog recommends using the Event Log API because it has better performance than the legacy method below. Note, each method has its own configuration syntax for channels and for filters. For more information, see [Filtering Events](?tab=events#filtering-events). 
+The Khulnasoft Agent can be configured to collect Windows Event Logs as Khulnasoft events using the Event Log API. Khulnasoft recommends using the Event Log API because it has better performance than the legacy method below. Note, each method has its own configuration syntax for channels and for filters. For more information, see [Filtering Events](?tab=events#filtering-events). 
 
-To collect Windows Event Logs as Datadog events, configure channels under the `instances:` section of your `win32_event_log.d/conf.yaml` configuration file. 
+To collect Windows Event Logs as Khulnasoft events, configure channels under the `instances:` section of your `win32_event_log.d/conf.yaml` configuration file. 
 
   </br> Set `legacy_mode: false` in each instance. If `legacy_mode: false` is set, the `path` is required to be set in the `\win32_event_log.d\conf.yaml` file. 
 
@@ -140,7 +140,7 @@ Agent versions 7.49 and later support setting `legacy_mode` in the shared `init_
 
 The legacy method uses WMI (Windows Management Instrumentation) and was deprecated in Agent version 7.20. 
 
-To collect Windows Event Logs as Datadog events, configure channels under the `instances:` section of your `win32_event_log.d/conf.yaml` configuration file.
+To collect Windows Event Logs as Khulnasoft events, configure channels under the `instances:` section of your `win32_event_log.d/conf.yaml` configuration file.
   
   </br> To use Legacy Mode, set `legacy_mode` to `true`. Then, set at least one of the following filters: `source_name`, `event_id`, `message_filters`, `log_file`, or `type`.
 
@@ -168,21 +168,21 @@ Edit the `<CHANNEL_2>` parameters with the Windows channel name you want to coll
 
 Finally, [restart the Agent][4].
 
-**Note**: For the Security logs channel, add your Datadog Agent user to the `Event Log Readers` user group.
+**Note**: For the Security logs channel, add your Khulnasoft Agent user to the `Event Log Readers` user group.
 
 ### Filtering events
 
-Configure one or more filters for the event log. A filter allows you to choose what log events you want to get into Datadog.
+Configure one or more filters for the event log. A filter allows you to choose what log events you want to get into Khulnasoft.
 
 <!-- xxx tabs xxx -->
 
 <!-- xxx tab "Logs" xxx -->
 
-You can use the `query`, as well as the `log_processing_rules` regex option, to filter event logs. Datadog recommends using the `query` option which is faster at high rates of Windows Event Log generation and requires less CPU and memory than the `log_processing_rules` filters. When using the `log_processing_rules` filters, the Agent is forced to process and format each event, even if it will be excluded by `log_processing_rules` regex. With the `query` option, these events are not reported to the Agent.
+You can use the `query`, as well as the `log_processing_rules` regex option, to filter event logs. Khulnasoft recommends using the `query` option which is faster at high rates of Windows Event Log generation and requires less CPU and memory than the `log_processing_rules` filters. When using the `log_processing_rules` filters, the Agent is forced to process and format each event, even if it will be excluded by `log_processing_rules` regex. With the `query` option, these events are not reported to the Agent.
 
 You can use the `query` option to filter events with an [XPATH or structured XML query][21]. The `query` option can reduce the number of events that are processed by `log_processing_rules` and improve performance. There is an expression limit on the syntax of XPath and XML queries. For additional filtering, use `log_processing_rules` filters.
 
-Datadog recommends creating and testing the query in Event Viewer's filter editor until the events shown in Event Viewer match what you want the Agent to collect.
+Khulnasoft recommends creating and testing the query in Event Viewer's filter editor until the events shown in Event Viewer match what you want the Agent to collect.
 
 ![Filter Current Log][23]
 
@@ -359,7 +359,7 @@ The configuration option using the Event Log API includes the following filters:
         - 7036
   ```
 
-You can use the [`query` option][20] to filter events with an [XPATH or structured XML query][21]. Datadog recommends creating the query in Event Viewer's filter editor until the events shown in Event Viewer match what you want the Datadog Agent to collect. The `filters` option is ignored when the `query` option is used.
+You can use the [`query` option][20] to filter events with an [XPATH or structured XML query][21]. Khulnasoft recommends creating the query in Event Viewer's filter editor until the events shown in Event Viewer match what you want the Khulnasoft Agent to collect. The `filters` option is ignored when the `query` option is used.
 
   ```yaml
   init_config:
@@ -425,7 +425,7 @@ When you're done setting up filters, [restart the Agent][4] using the Agent Mana
 <!-- xxx tabs xxx -->
 <!-- xxx tab "Logs" xxx -->
 
-Check the information page in the Datadog Agent Manager or run the [Agent's `status` subcommand][6] and look for `win32_event_log` under the Logs Agent section. 
+Check the information page in the Khulnasoft Agent Manager or run the [Agent's `status` subcommand][6] and look for `win32_event_log` under the Logs Agent section. 
 
 It should display a section similar to the following:
 
@@ -445,7 +445,7 @@ Logs Agent
 <!-- xxz tab xxx -->
 <!-- xxx tab "Events" xxx -->
 
-Check the information page in the Datadog Agent Manager or run the [Agent's `status` subcommand][6] and look for `win32_event_log` under the Checks section. 
+Check the information page in the Khulnasoft Agent Manager or run the [Agent's `status` subcommand][6] and look for `win32_event_log` under the Checks section. 
 
 It should display a section similar to the following:
 
@@ -472,7 +472,7 @@ The Windows Event Log check does not include any metrics.
 
 ### Events
 
-All Windows events are forwarded to Datadog.
+All Windows events are forwarded to Khulnasoft.
 
 ### Service Checks
 
@@ -480,7 +480,7 @@ The Windows Event Log check does not include any service checks.
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][7] with an [Agent Flare][25].
+Need help? Contact [Khulnasoft support][7] with an [Agent Flare][25].
 
 ### Log processing rules are not working
 
@@ -500,7 +500,7 @@ If you are using log processing rules to filter out logs, verify that the raw lo
 To troubleshoot your log processing rules:
 1. Remove or comment out the `log_processing_rules` stanza.
 2. Restart the Agent.
-3. Send a test log that includes the values you're attempting to catch. If the log appears in Datadog, there is probably an issue with your regex. Compare your regex against the log file to make sure you're capturing the right phrases.
+3. Send a test log that includes the values you're attempting to catch. If the log appears in Khulnasoft, there is probably an issue with your regex. Compare your regex against the log file to make sure you're capturing the right phrases.
 
 ## Further Reading
 
@@ -509,8 +509,8 @@ Additional helpful documentation, links, and articles:
 - [Advanced Log Collection][26]
 - [Monitoring Windows Server 2012][9]
 - [How to collect Windows Server 2012 metrics][10]
-- [Monitoring Windows Server 2012 with Datadog][11]
-- [Monitor Windows event logs with Datadog][27]
+- [Monitoring Windows Server 2012 with Khulnasoft][11]
+- [Monitor Windows event logs with Khulnasoft][27]
 
 [1]: https://app.khulnasoft.com/account/settings/agent/latest?platform=windows
 [2]: https://docs.khulnasoft.com/agent/guide/agent-configuration-files/#agent-configuration-directory
@@ -537,5 +537,5 @@ Additional helpful documentation, links, and articles:
 [24]: https://raw.githubusercontent.com/KhulnaSoft/integrations-core/master/win32_event_log/images/xml-query-event-viewer.png
 [25]: https://docs.khulnasoft.com/agent/troubleshooting/send_a_flare/?tab=agentv6v7
 [26]: https://docs.khulnasoft.com/agent/logs/advanced_log_collection/?tab=configurationfile
-[27]: https://www.khulnasoft.com/blog/monitor-windows-event-logs-with-datadog/
+[27]: https://www.khulnasoft.com/blog/monitor-windows-event-logs-with-khulnasoft/
 [28]: https://docs.khulnasoft.com/integrations/guide/add-event-log-files-to-the-win32-ntlogevent-wmi-class/

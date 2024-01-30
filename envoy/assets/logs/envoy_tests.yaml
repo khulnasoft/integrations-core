@@ -130,7 +130,7 @@ tests:
      - "source:LOGS_SOURCE"
     timestamp: 1531497418312
  -
-  sample: "[2021-03-12T09:11:51.592Z] \"GET /server_info HTTP/1.1\" 200 - 0 27805 1 - \"64.145.79.247\" \"Datadog Agent/7.26.0\" \"d0000a1f-0000-4b42-0000-0000e13d78ca\" \"64.145.79.247:8001\" \"-\""
+  sample: "[2021-03-12T09:11:51.592Z] \"GET /server_info HTTP/1.1\" 200 - 0 27805 1 - \"64.145.79.247\" \"Khulnasoft Agent/7.26.0\" \"d0000a1f-0000-4b42-0000-0000e13d78ca\" \"64.145.79.247:8001\" \"-\""
   result:
     custom:
       date: 1615540311592
@@ -146,7 +146,7 @@ tests:
         url: "/server_info"
         url_details:
           path: "/server_info"
-        useragent: "Datadog Agent/7.26.0"
+        useragent: "Khulnasoft Agent/7.26.0"
         useragent_details:
           browser:
             family: "Other"
@@ -161,7 +161,7 @@ tests:
       response:
         flags: "-"
       upstream_host: "\"-\""
-    message: "[2021-03-12T09:11:51.592Z] \"GET /server_info HTTP/1.1\" 200 - 0 27805 1 - \"64.145.79.247\" \"Datadog Agent/7.26.0\" \"d0000a1f-0000-4b42-0000-0000e13d78ca\" \"64.145.79.247:8001\" \"-\""
+    message: "[2021-03-12T09:11:51.592Z] \"GET /server_info HTTP/1.1\" 200 - 0 27805 1 - \"64.145.79.247\" \"Khulnasoft Agent/7.26.0\" \"d0000a1f-0000-4b42-0000-0000e13d78ca\" \"64.145.79.247:8001\" \"-\""
     tags:
      - "source:LOGS_SOURCE"
     timestamp: 1615540311592

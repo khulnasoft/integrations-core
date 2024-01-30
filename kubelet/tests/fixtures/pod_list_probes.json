@@ -667,19 +667,19 @@
         },
         {
             "metadata": {
-                "name": "datadog-t9f28",
-                "generateName": "datadog-",
+                "name": "khulnasoft-t9f28",
+                "generateName": "khulnasoft-",
                 "namespace": "default",
-                "selfLink": "/api/v1/namespaces/default/pods/datadog-t9f28",
+                "selfLink": "/api/v1/namespaces/default/pods/khulnasoft-t9f28",
                 "uid": "2e4619c2-15e1-4a2f-8b27-f1bb9d57b957",
                 "resourceVersion": "469639411",
                 "creationTimestamp": "2022-03-16T09:16:25Z",
                 "labels": {
-                    "app": "datadog",
+                    "app": "khulnasoft",
                     "app.kubernetes.io/component": "agent",
-                    "app.kubernetes.io/instance": "datadog",
+                    "app.kubernetes.io/instance": "khulnasoft",
                     "app.kubernetes.io/managed-by": "Helm",
-                    "app.kubernetes.io/name": "datadog",
+                    "app.kubernetes.io/name": "khulnasoft",
                     "controller-revision-hash": "67d57c74d7",
                     "pod-template-generation": "1"
                 },
@@ -699,7 +699,7 @@
                     {
                         "apiVersion": "apps/v1",
                         "kind": "DaemonSet",
-                        "name": "datadog",
+                        "name": "khulnasoft",
                         "uid": "58d3c436-a025-4a8e-ba45-09dc33a03389",
                         "controller": true,
                         "blockOwnerDeletion": true
@@ -711,7 +711,7 @@
                     {
                         "name": "installinfo",
                         "configMap": {
-                            "name": "datadog-installinfo",
+                            "name": "khulnasoft-installinfo",
                             "defaultMode": 420
                         }
                     },
@@ -720,7 +720,7 @@
                         "emptyDir": {}
                     },
                     {
-                        "name": "logdatadog",
+                        "name": "logkhulnasoft",
                         "emptyDir": {}
                     },
                     {
@@ -772,7 +772,7 @@
                     {
                         "name": "dsdsocket",
                         "hostPath": {
-                            "path": "/var/run/datadog/",
+                            "path": "/var/run/khulnasoft/",
                             "type": "DirectoryOrCreate"
                         }
                     },
@@ -790,7 +790,7 @@
                     {
                         "name": "pointerdir",
                         "hostPath": {
-                            "path": "/var/lib/datadog-agent/logs",
+                            "path": "/var/lib/khulnasoft-agent/logs",
                             "type": ""
                         }
                     },
@@ -823,9 +823,9 @@
                         }
                     },
                     {
-                        "name": "datadog-token-c2vxr",
+                        "name": "khulnasoft-token-c2vxr",
                         "secret": {
-                            "secretName": "datadog-token-c2vxr",
+                            "secretName": "khulnasoft-token-c2vxr",
                             "defaultMode": 420
                         }
                     }
@@ -833,13 +833,13 @@
                 "initContainers": [
                     {
                         "name": "init-volume",
-                        "image": "gcr.io/datadoghq/agent:7.35.0-rc.4",
+                        "image": "gcr.io/khulnasofthq/agent:7.35.0-rc.4",
                         "command": [
                             "bash",
                             "-c"
                         ],
                         "args": [
-                            "cp -r /etc/datadog-agent /opt"
+                            "cp -r /etc/khulnasoft-agent /opt"
                         ],
                         "resources": {
                             "requests": {
@@ -849,10 +849,10 @@
                         "volumeMounts": [
                             {
                                 "name": "config",
-                                "mountPath": "/opt/datadog-agent"
+                                "mountPath": "/opt/khulnasoft-agent"
                             },
                             {
-                                "name": "datadog-token-c2vxr",
+                                "name": "khulnasoft-token-c2vxr",
                                 "readOnly": true,
                                 "mountPath": "/var/run/secrets/kubernetes.io/serviceaccount"
                             }
@@ -863,7 +863,7 @@
                     },
                     {
                         "name": "init-config",
-                        "image": "gcr.io/datadoghq/agent:7.35.0-rc.4",
+                        "image": "gcr.io/khulnasofthq/agent:7.35.0-rc.4",
                         "command": [
                             "bash",
                             "-c"
@@ -880,7 +880,7 @@
                                 "name": "DD_API_KEY",
                                 "valueFrom": {
                                     "secretKeyRef": {
-                                        "name": "datadog",
+                                        "name": "khulnasoft",
                                         "key": "api-key"
                                     }
                                 }
@@ -910,12 +910,12 @@
                         },
                         "volumeMounts": [
                             {
-                                "name": "logdatadog",
-                                "mountPath": "/var/log/datadog"
+                                "name": "logkhulnasoft",
+                                "mountPath": "/var/log/khulnasoft"
                             },
                             {
                                 "name": "config",
-                                "mountPath": "/etc/datadog-agent"
+                                "mountPath": "/etc/khulnasoft-agent"
                             },
                             {
                                 "name": "procdir",
@@ -930,7 +930,7 @@
                                 "mountPropagation": "None"
                             },
                             {
-                                "name": "datadog-token-c2vxr",
+                                "name": "khulnasoft-token-c2vxr",
                                 "readOnly": true,
                                 "mountPath": "/var/run/secrets/kubernetes.io/serviceaccount"
                             }
@@ -943,7 +943,7 @@
                 "containers": [
                     {
                         "name": "agent",
-                        "image": "gcr.io/datadoghq/agent:7.35.0-rc.4",
+                        "image": "gcr.io/khulnasofthq/agent:7.35.0-rc.4",
                         "command": [
                             "agent",
                             "run"
@@ -964,7 +964,7 @@
                                 "name": "DD_API_KEY",
                                 "valueFrom": {
                                     "secretKeyRef": {
-                                        "name": "datadog",
+                                        "name": "khulnasoft",
                                         "key": "api-key"
                                     }
                                 }
@@ -1004,13 +1004,13 @@
                             },
                             {
                                 "name": "DD_CLUSTER_AGENT_KUBERNETES_SERVICE_NAME",
-                                "value": "datadog-cluster-agent"
+                                "value": "khulnasoft-cluster-agent"
                             },
                             {
                                 "name": "DD_CLUSTER_AGENT_AUTH_TOKEN",
                                 "valueFrom": {
                                     "secretKeyRef": {
-                                        "name": "datadog-cluster-agent",
+                                        "name": "khulnasoft-cluster-agent",
                                         "key": "token"
                                     }
                                 }
@@ -1037,7 +1037,7 @@
                             },
                             {
                                 "name": "DD_DOGSTATSD_SOCKET",
-                                "value": "/var/run/datadog/dsd.socket"
+                                "value": "/var/run/khulnasoft/dsd.socket"
                             },
                             {
                                 "name": "DD_IGNORE_AUTOCONF",
@@ -1057,12 +1057,12 @@
                             {
                                 "name": "installinfo",
                                 "readOnly": true,
-                                "mountPath": "/etc/datadog-agent/install_info",
+                                "mountPath": "/etc/khulnasoft-agent/install_info",
                                 "subPath": "install_info"
                             },
                             {
-                                "name": "logdatadog",
-                                "mountPath": "/var/log/datadog"
+                                "name": "logkhulnasoft",
+                                "mountPath": "/var/log/khulnasoft"
                             },
                             {
                                 "name": "tmpdir",
@@ -1070,7 +1070,7 @@
                             },
                             {
                                 "name": "config",
-                                "mountPath": "/etc/datadog-agent"
+                                "mountPath": "/etc/khulnasoft-agent"
                             },
                             {
                                 "name": "runtimesocketdir",
@@ -1080,7 +1080,7 @@
                             },
                             {
                                 "name": "dsdsocket",
-                                "mountPath": "/var/run/datadog"
+                                "mountPath": "/var/run/khulnasoft"
                             },
                             {
                                 "name": "procdir",
@@ -1096,7 +1096,7 @@
                             },
                             {
                                 "name": "pointerdir",
-                                "mountPath": "/opt/datadog-agent/run",
+                                "mountPath": "/opt/khulnasoft-agent/run",
                                 "mountPropagation": "None"
                             },
                             {
@@ -1118,7 +1118,7 @@
                                 "mountPropagation": "None"
                             },
                             {
-                                "name": "datadog-token-c2vxr",
+                                "name": "khulnasoft-token-c2vxr",
                                 "readOnly": true,
                                 "mountPath": "/var/run/secrets/kubernetes.io/serviceaccount"
                             }
@@ -1153,10 +1153,10 @@
                     },
                     {
                         "name": "process-agent",
-                        "image": "gcr.io/datadoghq/agent:7.35.0-rc.4",
+                        "image": "gcr.io/khulnasofthq/agent:7.35.0-rc.4",
                         "command": [
                             "process-agent",
-                            "-config=/etc/datadog-agent/datadog.yaml"
+                            "-config=/etc/khulnasoft-agent/khulnasoft.yaml"
                         ],
                         "env": [
                             {
@@ -1167,7 +1167,7 @@
                                 "name": "DD_API_KEY",
                                 "valueFrom": {
                                     "secretKeyRef": {
-                                        "name": "datadog",
+                                        "name": "khulnasoft",
                                         "key": "api-key"
                                     }
                                 }
@@ -1195,13 +1195,13 @@
                             },
                             {
                                 "name": "DD_CLUSTER_AGENT_KUBERNETES_SERVICE_NAME",
-                                "value": "datadog-cluster-agent"
+                                "value": "khulnasoft-cluster-agent"
                             },
                             {
                                 "name": "DD_CLUSTER_AGENT_AUTH_TOKEN",
                                 "valueFrom": {
                                     "secretKeyRef": {
-                                        "name": "datadog-cluster-agent",
+                                        "name": "khulnasoft-cluster-agent",
                                         "key": "token"
                                     }
                                 }
@@ -1220,7 +1220,7 @@
                             },
                             {
                                 "name": "DD_DOGSTATSD_SOCKET",
-                                "value": "/var/run/datadog/dsd.socket"
+                                "value": "/var/run/khulnasoft/dsd.socket"
                             },
                             {
                                 "name": "DD_ORCHESTRATOR_EXPLORER_ENABLED",
@@ -1235,11 +1235,11 @@
                         "volumeMounts": [
                             {
                                 "name": "config",
-                                "mountPath": "/etc/datadog-agent"
+                                "mountPath": "/etc/khulnasoft-agent"
                             },
                             {
-                                "name": "logdatadog",
-                                "mountPath": "/var/log/datadog"
+                                "name": "logkhulnasoft",
+                                "mountPath": "/var/log/khulnasoft"
                             },
                             {
                                 "name": "tmpdir",
@@ -1271,10 +1271,10 @@
                             {
                                 "name": "dsdsocket",
                                 "readOnly": true,
-                                "mountPath": "/var/run/datadog"
+                                "mountPath": "/var/run/khulnasoft"
                             },
                             {
-                                "name": "datadog-token-c2vxr",
+                                "name": "khulnasoft-token-c2vxr",
                                 "readOnly": true,
                                 "mountPath": "/var/run/secrets/kubernetes.io/serviceaccount"
                             }
@@ -1290,8 +1290,8 @@
                 "nodeSelector": {
                     "kubernetes.io/os": "linux"
                 },
-                "serviceAccountName": "datadog",
-                "serviceAccount": "datadog",
+                "serviceAccountName": "khulnasoft",
+                "serviceAccount": "khulnasoft",
                 "nodeName": "gke-ahmed-default-pool-4658d5d4-q4j7",
                 "securityContext": {},
                 "affinity": {
@@ -1400,8 +1400,8 @@
                         "lastState": {},
                         "ready": true,
                         "restartCount": 0,
-                        "image": "gcr.io/datadoghq/agent:7.35.0-rc.4",
-                        "imageID": "docker-pullable://gcr.io/datadoghq/agent@sha256:a65ca0ff6415ec63565d52d06e097b646faf392abe32518e36a5b81fd2bc8ca8",
+                        "image": "gcr.io/khulnasofthq/agent:7.35.0-rc.4",
+                        "imageID": "docker-pullable://gcr.io/khulnasofthq/agent@sha256:a65ca0ff6415ec63565d52d06e097b646faf392abe32518e36a5b81fd2bc8ca8",
                         "containerID": "docker://094e720ed0e2ff3e165dad8ed2e4ed49cd45f3bde7f567d0c20768e0f0ff8ec5"
                     },
                     {
@@ -1418,8 +1418,8 @@
                         "lastState": {},
                         "ready": true,
                         "restartCount": 0,
-                        "image": "gcr.io/datadoghq/agent:7.35.0-rc.4",
-                        "imageID": "docker-pullable://gcr.io/datadoghq/agent@sha256:a65ca0ff6415ec63565d52d06e097b646faf392abe32518e36a5b81fd2bc8ca8",
+                        "image": "gcr.io/khulnasofthq/agent:7.35.0-rc.4",
+                        "imageID": "docker-pullable://gcr.io/khulnasofthq/agent@sha256:a65ca0ff6415ec63565d52d06e097b646faf392abe32518e36a5b81fd2bc8ca8",
                         "containerID": "docker://fbeb65e16c9c98bad4abab849698d0d38a6acb04d248e32cd2f3a20246239d34"
                     }
                 ],
@@ -1434,8 +1434,8 @@
                         "lastState": {},
                         "ready": true,
                         "restartCount": 0,
-                        "image": "gcr.io/datadoghq/agent:7.35.0-rc.4",
-                        "imageID": "docker-pullable://gcr.io/datadoghq/agent@sha256:a65ca0ff6415ec63565d52d06e097b646faf392abe32518e36a5b81fd2bc8ca8",
+                        "image": "gcr.io/khulnasofthq/agent:7.35.0-rc.4",
+                        "imageID": "docker-pullable://gcr.io/khulnasofthq/agent@sha256:a65ca0ff6415ec63565d52d06e097b646faf392abe32518e36a5b81fd2bc8ca8",
                         "containerID": "docker://c81dfc25dd24b538a880bfd0f807ba9ec1ff4541e8b8eb49a8d1afcdecc5ef59",
                         "started": true
                     },
@@ -1449,8 +1449,8 @@
                         "lastState": {},
                         "ready": true,
                         "restartCount": 0,
-                        "image": "gcr.io/datadoghq/agent:7.35.0-rc.4",
-                        "imageID": "docker-pullable://gcr.io/datadoghq/agent@sha256:a65ca0ff6415ec63565d52d06e097b646faf392abe32518e36a5b81fd2bc8ca8",
+                        "image": "gcr.io/khulnasofthq/agent:7.35.0-rc.4",
+                        "imageID": "docker-pullable://gcr.io/khulnasofthq/agent@sha256:a65ca0ff6415ec63565d52d06e097b646faf392abe32518e36a5b81fd2bc8ca8",
                         "containerID": "docker://a670bc474cfeb082ae1fdccf8039d58986938a30aa5be89d6c0fe3d82639734e",
                         "started": true
                     }

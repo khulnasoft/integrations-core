@@ -8,7 +8,7 @@ Monitor the up and down status of local or remote HTTP endpoints. The HTTP check
 
 ### Installation
 
-The HTTP check is included in the [Datadog Agent][1] package. No additional installation is needed on your server. Though many metrics-oriented checks are best run on the same host(s) as the monitored service, you may want to run this status-oriented check from hosts that do not run the monitored sites.
+The HTTP check is included in the [Khulnasoft Agent][1] package. No additional installation is needed on your server. Though many metrics-oriented checks are best run on the same host(s) as the monitored service, you may want to run this status-oriented check from hosts that do not run the monitored sites.
 
 ### Configuration
 
@@ -53,11 +53,11 @@ See the [sample http_check.d/conf.yaml][3] for a full list and description of av
 | `days_warning` & `days_critical` | When `check_certificate_expiration` is enabled, these settings raise a warning or critical alert when the SSL certificate is within the specified number of days from expiration.                                                                |
 | `ssl_server_name`                | When `check_certificate_expiration` is enabled, this setting specifies the hostname of the service to connect to and it also overrides the host to match with if check_hostname is enabled.                                                      |
 | `check_hostname`                 | If set to `true` the check log a warning if the checked `url` hostname is different than the SSL certificate hostname.                                                                                                                           |
-| `skip_proxy`                     | If set, the check bypasses proxy settings and attempt to reach the check url directly. This defaults to `false`. This integration's proxy settings default to the proxy settings defined in the `datadog.yaml` configuration file if this is not set. |
+| `skip_proxy`                     | If set, the check bypasses proxy settings and attempt to reach the check url directly. This defaults to `false`. This integration's proxy settings default to the proxy settings defined in the `khulnasoft.yaml` configuration file if this is not set. |
 | `allow_redirects`                | This setting allows the service check to follow HTTP redirects and defaults to `true`.                                                                                                                                                           |
 | `tags`                           | A list of arbitrary tags that are associated with the check. For more information about tags, see the [Guide to tagging][5] and blog post, [The power of tagged metrics][6]                                                                  |
 
-When you have finished configuring `http_check.d/conf.yaml`, [restart the Agent][7] to begin sending HTTP service checks and response times to Datadog.
+When you have finished configuring `http_check.d/conf.yaml`, [restart the Agent][7] to begin sending HTTP service checks and response times to Khulnasoft.
 
 ### Validation
 
@@ -83,7 +83,7 @@ To disable `http.ssl_cert`, set `check_certificate_expiration` to false.
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][12].
+Need help? Contact [Khulnasoft support][12].
 
 [1]: https://app.khulnasoft.com/account/settings/agent/latest
 [2]: https://docs.khulnasoft.com/agent/guide/agent-configuration-files/#agent-configuration-directory

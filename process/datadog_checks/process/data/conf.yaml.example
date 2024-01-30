@@ -24,7 +24,7 @@ init_config:
 
     ## @param procfs_path - string - optional
     ## Used to override the default procfs path, e.g. for docker containers with the outside fs mounted at /host/proc
-    ## DEPRECATED: please specify `procfs_path` globally in `datadog.conf` instead
+    ## DEPRECATED: please specify `procfs_path` globally in `khulnasoft.conf` instead
     #
     # procfs_path: /proc
 
@@ -40,7 +40,7 @@ init_config:
 instances:
 
     ## @param name - string - required
-    ## Used to uniquely identify your metrics as they are tagged with this name in Datadog.
+    ## Used to uniquely identify your metrics as they are tagged with this name in Khulnasoft.
     #
   - name: <NAME>
 

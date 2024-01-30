@@ -1,4 +1,4 @@
-[env.collectors.datadog-checks]
+[env.collectors.khulnasoft-checks]
 base-package-features = ["deps", "db", "json"]
 check-types = false
 mypy-args = [

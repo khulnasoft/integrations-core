@@ -57,7 +57,7 @@ instances:
     ## Authentication can use either a user auth or a certificate.
     ## If using the user auth, enter the `username` and `pwd` configuration.
     #
-    username: datadog
+    username: khulnasoft
 
     ## @param pwd - string - optional
     ## Authentication can use either a user auth or a certificate.

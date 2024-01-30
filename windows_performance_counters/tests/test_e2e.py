@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2021-present
+# (C) Khulnasoft, Inc. 2021-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 import subprocess
@@ -17,7 +17,7 @@ def test(dd_agent_check):
     aggregator = dd_agent_check(INSTANCE, rate=True)
 
     container_name = f'dd_windows_performance_counters_{get_active_env()}'
-    python_path = r'C:\Program Files\Datadog\Datadog Agent\embedded3\python.exe'
+    python_path = r'C:\Program Files\Khulnasoft\Khulnasoft Agent\embedded3\python.exe'
     num_threads = subprocess.check_output(
         ['docker', 'exec', container_name, python_path, '-c', 'import os;print(os.cpu_count())'],
         text=True,

@@ -11,7 +11,7 @@ The Agent's Marathon check lets you:
 
 ### Installation
 
-The Marathon check is included in the [Datadog Agent][1] package. No additional installation is needed on your server.
+The Marathon check is included in the [Khulnasoft Agent][1] package. No additional installation is needed on your server.
 
 ### Configuration
 
@@ -52,16 +52,16 @@ To configure this check for an Agent running on a host:
 
 _Available for Agent versions >6.0_
 
-1. Collecting logs is disabled by default in the Datadog Agent, enable it in your `datadog.yaml` file:
+1. Collecting logs is disabled by default in the Khulnasoft Agent, enable it in your `khulnasoft.yaml` file:
 
    ```yaml
    logs_enabled: true
    ```
 
-2. Because Marathon uses logback, you can specify a custom log format. With Datadog, two formats are supported out of the box: the default one provided by Marathon and the Datadog recommended format. Add a file appender to your configuration as in the following example and replace `$PATTERN$` with your selected format:
+2. Because Marathon uses logback, you can specify a custom log format. With Khulnasoft, two formats are supported out of the box: the default one provided by Marathon and the Khulnasoft recommended format. Add a file appender to your configuration as in the following example and replace `$PATTERN$` with your selected format:
 
    - Marathon default: `[%date] %-5level %message \(%logger:%thread\)%n`
-   - Datadog recommended: `%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n`
+   - Khulnasoft recommended: `%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n`
 
    ```xml
      <?xml version="1.0" encoding="UTF-8"?>
@@ -124,7 +124,7 @@ For containerized environments, see the [Autodiscovery Integration Templates][5]
 
 _Available for Agent versions >6.0_
 
-Collecting logs is disabled by default in the Datadog Agent. To enable it, see [Kubernetes Log Collection][6].
+Collecting logs is disabled by default in the Khulnasoft Agent. To enable it, see [Kubernetes Log Collection][6].
 
 | Parameter      | Value                                                 |
 | -------------- | ----------------------------------------------------- |
@@ -153,7 +153,7 @@ See [service_checks.json][9] for a list of service checks provided by this integ
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][10].
+Need help? Contact [Khulnasoft support][10].
 
 
 [1]: https://app.khulnasoft.com/account/settings/agent/latest

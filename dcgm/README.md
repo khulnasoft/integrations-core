@@ -2,13 +2,13 @@
 
 ## Overview
 
-This check submits metrics exposed by the [NVIDIA DCGM Exporter][16] in Datadog Agent format. For more information on NVIDIA Data Center GPU Manager (DCGM), see [NVIDIA DCGM][15].
+This check submits metrics exposed by the [NVIDIA DCGM Exporter][16] in Khulnasoft Agent format. For more information on NVIDIA Data Center GPU Manager (DCGM), see [NVIDIA DCGM][15].
 
 ## Setup
 
 ### Installation
 
-Starting from Agent release 7.47.0, the DCGM check is included in the [Datadog Agent][1] package. However, you need to spin up the DCGM Exporter container to expose the GPU metrics in order for the Agent to collect this data. As the default counters are not sufficient, Datadog recommends using the following DCGM configuration to cover the same ground as the NVML integration in addition to having useful metrics.
+Starting from Agent release 7.47.0, the DCGM check is included in the [Khulnasoft Agent][1] package. However, you need to spin up the DCGM Exporter container to expose the GPU metrics in order for the Agent to collect this data. As the default counters are not sufficient, Khulnasoft recommends using the following DCGM configuration to cover the same ground as the NVML integration in addition to having useful metrics.
 
 ```
 # Format
@@ -66,7 +66,7 @@ DCGM_FI_PROF_PIPE_FP64_ACTIVE                                     ,gauge        
 DCGM_FI_PROF_PIPE_FP32_ACTIVE                                     ,gauge                  ,Ratio of cycles the fp32 pipes are active (in %).
 DCGM_FI_PROF_PIPE_FP16_ACTIVE                                     ,gauge                  ,Ratio of cycles the fp16 pipes are active (in %).
 
-# Datadog additional recommended fields
+# Khulnasoft additional recommended fields
 DCGM_FI_DEV_COUNT                                                 ,counter                ,Number of Devices on the node.
 DCGM_FI_DEV_FAN_SPEED                                             ,gauge                  ,Fan speed for the device in percent 0-100.
 DCGM_FI_DEV_SLOWDOWN_TEMP                                         ,gauge                  ,Slowdown temperature for the device.
@@ -94,7 +94,7 @@ DCGM_FI_DEV_SERIAL                                                ,label        
 
 To configure the exporter in a Docker environment:
 
-1. Create the file `$PWD/default-counters.csv` which contains the default fields from NVIDIA `etc/default-counters.csv` as well as additional Datadog-recommended fields. To add more fields for collection, follow [these instructions][9]. For the complete list of fields, see the [DCGM API reference manual][10].
+1. Create the file `$PWD/default-counters.csv` which contains the default fields from NVIDIA `etc/default-counters.csv` as well as additional Khulnasoft-recommended fields. To add more fields for collection, follow [these instructions][9]. For the complete list of fields, see the [DCGM API reference manual][10].
 2. Run the Docker container using the following command:
    ```shell
    sudo docker run --pid=host --privileged -e DCGM_EXPORTER_INTERVAL=3 --gpus all -d -v /proc:/proc -v $PWD/default-counters.csv:/etc/dcgm-exporter/default-counters.csv -p 9400:9400 --name dcgm-exporter nvcr.io/nvidia/k8s/dcgm-exporter:3.1.7-3.1.4-ubuntu20.04
@@ -111,37 +111,37 @@ The DCGM exporter can quickly be installed in a Kubernetes environment using the
    ```shell
    helm repo add gpu-helm-charts https://nvidia.github.io/dcgm-exporter/helm-charts && helm repo update
    ```
-2. Create a `ConfigMap` containing the Datadog-recommended metrics from [Installation](#Installation), as well as the `RoleBinding` and `Role` used by the DCGM pods to retrieve the `ConfigMap` using the manifest below :
+2. Create a `ConfigMap` containing the Khulnasoft-recommended metrics from [Installation](#Installation), as well as the `RoleBinding` and `Role` used by the DCGM pods to retrieve the `ConfigMap` using the manifest below :
    ```yaml
    apiVersion: rbac.authorization.k8s.io/v1
    kind: Role
    metadata:
-     name: dcgm-exporter-read-datadog-cm
+     name: dcgm-exporter-read-khulnasoft-cm
      namespace: default
    rules:
    - apiGroups: [""]
      resources: ["configmaps"]
-     resourceNames: ["datadog-dcgm-exporter-configmap"]
+     resourceNames: ["khulnasoft-dcgm-exporter-configmap"]
      verbs: ["get"]
    ---
    apiVersion: rbac.authorization.k8s.io/v1
    kind: RoleBinding
    metadata:
-     name: dcgm-exporter-datadog
+     name: dcgm-exporter-khulnasoft
      namespace: default
    subjects:
    - kind: ServiceAccount
-     name: dcgm-datadog-dcgm-exporter
+     name: dcgm-khulnasoft-dcgm-exporter
      namespace: default
    roleRef:
      kind: Role 
-     name: dcgm-exporter-read-datadog-cm
+     name: dcgm-exporter-read-khulnasoft-cm
      apiGroup: rbac.authorization.k8s.io
    ---
    apiVersion: v1
    kind: ConfigMap
    metadata:
-     name: datadog-dcgm-exporter-configmap
+     name: khulnasoft-dcgm-exporter-configmap
      namespace: default
    data:
      metrics: |
@@ -151,9 +151,9 @@ The DCGM exporter can quickly be installed in a Kubernetes environment using the
    ```yaml
    # Exposing more metrics than the default for additional monitoring - this requires the use of a dedicated ConfigMap for which the Kubernetes ServiceAccount used by the exporter has access thanks to step 1.
    # Ref: https://github.com/NVIDIA/dcgm-exporter/blob/e55ec750def325f9f1fdbd0a6f98c932672002e4/deployment/values.yaml#L38
-   arguments: ["-m", "default:datadog-dcgm-exporter-configmap"]
+   arguments: ["-m", "default:khulnasoft-dcgm-exporter-configmap"]
 
-   # Datadog Autodiscovery V2 annotations
+   # Khulnasoft Autodiscovery V2 annotations
    podAnnotations:
      ad.khulnasoft.com/exporter.checks: |-
        {
@@ -171,10 +171,10 @@ The DCGM exporter can quickly be installed in a Kubernetes environment using the
    ```
 4. Install the DCGM Exporter Helm chart in the `default` namespace with the following command, while being in the directory with your `dcgm-values.yaml` :
    ```shell
-   helm install dcgm-datadog gpu-helm-charts/dcgm-exporter -n default -f dcgm-values.yaml
+   helm install dcgm-khulnasoft gpu-helm-charts/dcgm-exporter -n default -f dcgm-values.yaml
    ```
 
-**Note**: You can modify the release name `dcgm-datadog` as well as the namespace, but you must modify accordingly the manifest from step 1.
+**Note**: You can modify the release name `dcgm-khulnasoft` as well as the namespace, but you must modify accordingly the manifest from step 1.
 
 <!-- xxz tab xxx -->
 <!-- xxx tab "Operator" xxx -->
@@ -189,7 +189,7 @@ The DCGM exporter can be installed in a Kubernetes environment by using NVIDIA G
    ```
 2. Follow the [Custom Metrics Config](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/latest/getting-started.html#custom-metrics-config) instructions with the CSV from [Installation](#installation) :
     * Fetch the metrics file and save as `dcgm-metrics.csv`: `curl https://raw.githubusercontent.com/NVIDIA/dcgm-exporter/main/etc/dcp-metrics-included.csv > dcgm-metrics.csv`
-    * Edit the metrics file by replacing its content with the Datadog-provided mapping.
+    * Edit the metrics file by replacing its content with the Khulnasoft-provided mapping.
     * Create a namespace `gpu-operator` if one is not already present: `kubectl create namespace gpu-operator`.
     * Create a ConfigMap using the file edited above: `kubectl create configmap metrics-config -n gpu-operator --from-file=dcgm-metrics.csv`
 3. Create your GPU Operator Helm chart `dcgm-values.yaml` with the following content: 
@@ -199,7 +199,7 @@ The DCGM exporter can be installed in a Kubernetes environment by using NVIDIA G
      enabled: true
    toolkit:
      version: v1.13.5-centos7
-   # Using custom metrics configuration to collect recommended Datadog additional metrics - requires the creation of the metrics-config ConfigMap from the previous step
+   # Using custom metrics configuration to collect recommended Khulnasoft additional metrics - requires the creation of the metrics-config ConfigMap from the previous step
    # Ref: https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/latest/getting-started.html#custom-metrics-config
    dcgmExporter:
      config:
@@ -207,7 +207,7 @@ The DCGM exporter can be installed in a Kubernetes environment by using NVIDIA G
      env:
      - name: DCGM_EXPORTER_COLLECTORS
        value: /etc/dcgm-exporter/dcgm-metrics.csv
-   # Adding Datadog autodiscovery V2 annotations
+   # Adding Khulnasoft autodiscovery V2 annotations
    daemonsets:
      annotations:
        ad.khulnasoft.com/nvidia-dcgm-exporter.checks: |-
@@ -223,7 +223,7 @@ The DCGM exporter can be installed in a Kubernetes environment by using NVIDIA G
    ```
 4. Install the DCGM Exporter Helm chart in the `default` namespace with the following command, while being in the directory with your `dcgm-values.yaml`:
    ```bash
-   helm install datadog-dcgm-gpu-operator -n gpu-operator nvidia/gpu-operator -f dcgm-values.yaml
+   helm install khulnasoft-dcgm-gpu-operator -n gpu-operator nvidia/gpu-operator -f dcgm-values.yaml
    ```
 
 <!-- xxz tab xxx -->
@@ -252,7 +252,7 @@ The DCGM exporter can be installed in a Kubernetes environment by using NVIDIA G
       - openmetrics_endpoint: http://localhost:9400/metrics
    ```
 
-Use the `extra_metrics` configuration field to add metrics that go beyond the ones Datadog [supports out of the box][6]. See the [NVIDIA docs][10] for the full list of metrics that dcgm-exporter can collect. Make sure to [enable these fields in the dcgm-exporter configuration][9] as well.
+Use the `extra_metrics` configuration field to add metrics that go beyond the ones Khulnasoft [supports out of the box][6]. See the [NVIDIA docs][10] for the full list of metrics that dcgm-exporter can collect. Make sure to [enable these fields in the dcgm-exporter configuration][9] as well.
 
 <!-- xxz tab xxx -->
 <!-- xxx tab "Docker" xxx -->
@@ -264,9 +264,9 @@ Use the `extra_metrics` configuration field to add metrics that go beyond the on
 Set [Autodiscovery Integrations Templates][5] as Docker labels on your DCGM exporter container:
 
 ```yaml
-LABEL "com.datadoghq.ad.check_names"='["dcgm"]'
-LABEL "com.datadoghq.ad.init_configs"='[{}]'
-LABEL "com.datadoghq.ad.instances"='[{"openmetrics_endpoint": "http://%%host%%:9400/metrics"}]'
+LABEL "com.khulnasofthq.ad.check_names"='["dcgm"]'
+LABEL "com.khulnasofthq.ad.init_configs"='[{}]'
+LABEL "com.khulnasofthq.ad.instances"='[{"openmetrics_endpoint": "http://%%host%%:9400/metrics"}]'
 ```
 
 <!-- xxz tab xxx -->
@@ -282,7 +282,7 @@ LABEL "com.datadoghq.ad.instances"='[{"openmetrics_endpoint": "http://%%host%%:9
 
 Set [Autodiscovery Integrations Templates][12] as pod annotations on your application container. Aside from this, templates can also be configured with [a file, a configmap, or a key-value store][11].
 
-**Annotations v2** (for Datadog Agent v7.47+)
+**Annotations v2** (for Khulnasoft Agent v7.47+)
 
 ```yaml
 apiVersion: v1
@@ -319,7 +319,7 @@ When you're finished making configuration changes, [restart the Agent][4].
 ### Adjusting Monitors
 
 The out-of-the-box monitors that come with this integration have some default values based on their alert thresholds. For example, the GPU temperature is determined based on an [acceptable range for industrial devices][13].
-However, Datadog recommends that you check to make sure these values suit your particular needs.
+However, Khulnasoft recommends that you check to make sure these values suit your particular needs.
 
 ## Data Collected
 
@@ -376,11 +376,11 @@ In some cases, the `DCGM_FI_DEV_GPU_UTIL` metric can cause heavier resource cons
    - `DCGM_FI_PROF_PIPE_TENSOR_ACTIVE`
    - `DCGM_FI_PROF_SM_ACTIVE`
    - `DCGM_FI_PROF_SM_OCCUPANCY`
-3. Restart both dcgm-exporter and the Datadog Agent.
+3. Restart both dcgm-exporter and the Khulnasoft Agent.
 
 ### Need help?
 
-Contact [Datadog support][8].
+Contact [Khulnasoft support][8].
 
 ## Further Reading
 

@@ -2,7 +2,7 @@
 
 ## Overview
 
-Get cost estimation, prompt and completion sampling, error tracking, performance metrics, and more out of [OpenAI][1] account-level, Python, and Node.js library requests using Datadog metrics, APM, and logs.
+Get cost estimation, prompt and completion sampling, error tracking, performance metrics, and more out of [OpenAI][1] account-level, Python, and Node.js library requests using Khulnasoft metrics, APM, and logs.
 
 ## Setup
 
@@ -18,7 +18,7 @@ Get cost estimation, prompt and completion sampling, error tracking, performance
 <!-- web-ui. Make sure to update the markdown / code there to see any changes take -->
 <!-- effect on the tile. -->
 
-1. Enable APM and StatsD in your Datadog Agent. For example, in Docker:
+1. Enable APM and StatsD in your Khulnasoft Agent. For example, in Docker:
 
 ```shell
 docker run -d
@@ -32,10 +32,10 @@ docker run -d
   -p 127.0.0.1:8125:8125/udp \
   -e DD_DOGSTATSD_NON_LOCAL_TRAFFIC=true \
   -e DD_APM_ENABLED=true \
-  gcr.io/datadoghq/agent:latest
+  gcr.io/khulnasofthq/agent:latest
 ```
 
-2. Install the Datadog APM Python library.
+2. Install the Khulnasoft APM Python library.
 
 ```shell
 pip install ddtrace>=1.13
@@ -51,7 +51,7 @@ DD_SERVICE="my-service" DD_ENV="staging" DD_API_KEY=<KHULNASOFT_API_KEY> ddtrace
 **Notes**:
 <!-- partial
 {{% site-region region="us3,us5,eu,gov,ap1" %}}
-- Non-US1 customers must set `DD_SITE` on the application command to the correct Datadog site parameter as specified in the table in the <a href="https://docs.khulnasoft.com/getting_started/site/#access-the-datadog-site">Datadog Site</a> page (for example, `datadoghq.eu` for EU1 customers).{{% /site-region %}}
+- Non-US1 customers must set `DD_SITE` on the application command to the correct Khulnasoft site parameter as specified in the table in the <a href="https://docs.khulnasoft.com/getting_started/site/#access-the-khulnasoft-site">Khulnasoft Site</a> page (for example, `khulnasofthq.eu` for EU1 customers).{{% /site-region %}}
 partial -->
 
 - If the Agent is using a non-default hostname or port, be sure to also set `DD_AGENT_HOST`, `DD_TRACE_AGENT_PORT`, or `DD_DOGSTATSD_PORT`.
@@ -110,7 +110,7 @@ DEBUG:ddtrace.contrib.openai._logging.py:sent 2 logs to 'http-intake.logs.khulna
 
 ### Installation
 
-1. Enable APM and StatsD in your Datadog Agent. For example, in Docker:
+1. Enable APM and StatsD in your Khulnasoft Agent. For example, in Docker:
 
 ```shell
 docker run -d
@@ -124,10 +124,10 @@ docker run -d
   -p 127.0.0.1:8125:8125/udp \
   -e DD_DOGSTATSD_NON_LOCAL_TRAFFIC=true \
   -e DD_APM_ENABLED=true \
-  gcr.io/datadoghq/agent:latest
+  gcr.io/khulnasofthq/agent:latest
 ```
 
-2. Install the Datadog APM Node.js library.
+2. Install the Khulnasoft APM Node.js library.
 
 ```shell
 npm install dd-trace
@@ -197,7 +197,7 @@ Validate that the APM Node.js library can communicate with your Agent by examini
 
 ### Configuration
 
-1. Navigate to the configuration tab inside Datadog [OpenAI integration tile][11].
+1. Navigate to the configuration tab inside Khulnasoft [OpenAI integration tile][11].
 2. Enter an account name and OpenAI API key copied above in the accounts configuration.
 
 <!-- xxz tab xxx -->
@@ -222,14 +222,14 @@ The OpenAI integration does not include any service checks.
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][5].
+Need help? Contact [Khulnasoft support][5].
 
 ## Further Reading
 
 Additional helpful documentation, links, and articles:
 
-- [Monitor your OpenAI usage with Datadog][6]
-- [Monitor Azure OpenAI with Datadog][7]
+- [Monitor your OpenAI usage with Khulnasoft][6]
+- [Monitor Azure OpenAI with Khulnasoft][7]
 - [OpenAI Monitor Templates][12]
 
 [1]: https://openai.com/
@@ -237,11 +237,11 @@ Additional helpful documentation, links, and articles:
 [3]: https://ddtrace.readthedocs.io/en/stable/integrations.html#openai
 [4]: https://github.com/KhulnaSoft/integrations-core/blob/master/openai/metadata.csv
 [5]: https://docs.khulnasoft.com/help/
-[6]: https://www.khulnasoft.com/blog/monitor-openai-with-datadog/
-[7]: https://www.khulnasoft.com/blog/monitor-azure-openai-with-datadog/
-[8]: https://datadoghq.dev/dd-trace-js/interfaces/plugins.openai.html
+[6]: https://www.khulnasoft.com/blog/monitor-openai-with-khulnasoft/
+[7]: https://www.khulnasoft.com/blog/monitor-azure-openai-with-khulnasoft/
+[8]: https://khulnasofthq.dev/dd-trace-js/interfaces/plugins.openai.html
 [9]: https://github.com/KhulnaSoft/dd-trace-js
 [10]: https://platform.openai.com/
 [11]: https://app.khulnasoft.com/integrations/openai
 [12]: https://app.khulnasoft.com/monitors/recommended?q=integration%3AOpenAI&only_installed=false&p=1
-[13]: https://docs.khulnasoft.com/getting_started/site/#access-the-datadog-site
+[13]: https://docs.khulnasoft.com/getting_started/site/#access-the-khulnasoft-site

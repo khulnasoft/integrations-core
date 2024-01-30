@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2019-present
+# (C) Khulnasoft, Inc. 2019-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 import click
@@ -19,7 +19,7 @@ from .stop import stop
     '--agent',
     '-a',
     help=(
-        'The agent build to use e.g. a Docker image like `datadog/agent:latest`. You can '
+        'The agent build to use e.g. a Docker image like `khulnasoft/agent:latest`. You can '
         'also use the name of an agent defined in the `agents` configuration section.'
     ),
 )

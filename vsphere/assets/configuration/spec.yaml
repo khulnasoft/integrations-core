@@ -132,7 +132,7 @@ files:
                    The filter also work for tags set by this vSphere integration: vsphere_host,
                    vsphere_datastore_cluster, vsphere_folder, vsphere_cluster, vsphere_compute,
                    vsphere_datacenter and vsphere_datastore.
-             - attribute to filter only the resources with a given attribute. Datadog has stricter rules (i.e no space),
+             - attribute to filter only the resources with a given attribute. Khulnasoft has stricter rules (i.e no space),
                    but the filter is applied on the value coming from vCenter directly.
                    The value to match is the one composed by <ATTR_PREFIX><ATTR_KEY>:<ATTR_VALUE>
              - hostname to filter on the ESXi Host name (only valid for if 'resource' equals 'vm')
@@ -289,7 +289,7 @@ files:
       - name: collect_tags
         description: |
           If true, the vSphere Tags will be collected.
-          The final tag sent to Datadog is composed of the vSphere tags prefix + vSphere tag category as key and
+          The final tag sent to Khulnasoft is composed of the vSphere tags prefix + vSphere tag category as key and
           vSphere tag name as value:
             <TAG_PREFIX><TAG_CATEGORY>:<TAG_NAME>
           Examples:
@@ -306,7 +306,7 @@ files:
           Custom tags attached to vSphere resources will be prefixed with this prefix when collected.
           Example use cases:
             - You have vSphere tags that might conflict with vSphere attributes or tags added by this integration or the
-              Datadog Agent
+              Khulnasoft Agent
             - You want a prefix to better recognise tags coming from vSphere
           Examples with using `vtag_` prefix:
           - vtag_os_type:windows            # where `os_type` is the category name and `windows` the tag name
@@ -318,8 +318,8 @@ files:
           example: ''
       - name: collect_attributes
         description: |
-          If true, the vSphere attributes will be collected and submitted as Datadog tags.
-          The final tag sent to Datadog is composed of 'attribute_prefix' + vSphere attribute category as key and
+          If true, the vSphere attributes will be collected and submitted as Khulnasoft tags.
+          The final tag sent to Khulnasoft is composed of 'attribute_prefix' + vSphere attribute category as key and
           the vSphere attribute value as value:
             <ATTR_PREFIX><ATTR_CATEGORY>:<ATTR_VAL>
           Examples:
@@ -345,7 +345,7 @@ files:
           Custom attributes attached to vSphere resources will be prefixed with this prefix when collected.
           Example use cases:
             - You have vSphere attributes that might conflict with vSphere tags or tags added by this integration or the
-              Datadog Agent
+              Khulnasoft Agent
             - You want a prefix to better recognise attributes coming from vSphere
           Examples with using `vattr_` prefix:
           - vattr_os_type:windows            # where `os_type` is the attribute key and `windows` the attribute value

@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2018-present
+# (C) Khulnasoft, Inc. 2018-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 import os
@@ -23,10 +23,10 @@ REPO_ROOT = os.path.abspath(os.path.join(os.path.dirname(os.path.realpath(__file
 
 
 def test_parse_agent_req_file():
-    contents = "datadog-active-directory==1.1.1; sys_platform == 'win32'\nthis is garbage"
+    contents = "khulnasoft-active-directory==1.1.1; sys_platform == 'win32'\nthis is garbage"
     catalog = parse_agent_req_file(contents)
     assert len(catalog) == 1
-    assert catalog['datadog-active-directory'] == '1.1.1'
+    assert catalog['khulnasoft-active-directory'] == '1.1.1'
 
 
 def test_get_version_string():

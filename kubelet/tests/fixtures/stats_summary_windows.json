@@ -126,7 +126,7 @@
   "pods": [
    {
     "podRef": {
-     "name": "dd-datadog-lbvkl",
+     "name": "dd-khulnasoft-lbvkl",
      "namespace": "default",
      "uid": "8ddf0e3f-ac6c-4d44-87d7-0bc41f6729ec"
     },
@@ -313,7 +313,7 @@
       "inodesFree": 0,
       "inodes": 0,
       "inodesUsed": 0,
-      "name": "dd-datadog-token-8lqzd"
+      "name": "dd-khulnasoft-token-8lqzd"
      }
     ],
     "ephemeral-storage": {

@@ -27,13 +27,13 @@ See [service_checks.json][3] for a list of service checks provided by this integ
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][4].
+Need help? Contact [Khulnasoft support][4].
 
 ## Further Reading
 
 Additional helpful documentation, links, and articles:
 
-* [Monitor SNMP with Datadog][5]
+* [Monitor SNMP with Khulnasoft][5]
 
 
 {integration_links}

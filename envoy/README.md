@@ -8,7 +8,7 @@ This check collects distributed system observability metrics from [Envoy][1].
 
 ### Installation
 
-The Envoy check is included in the [Datadog Agent][2] package, so you don't need to install anything else on your server.
+The Envoy check is included in the [Khulnasoft Agent][2] package, so you don't need to install anything else on your server.
 
 #### Istio
 
@@ -112,14 +112,14 @@ To configure this check for an Agent running on a host:
 
     ```
 
-2. Check if the Datadog Agent can access Envoy's [admin endpoint][5].
+2. Check if the Khulnasoft Agent can access Envoy's [admin endpoint][5].
 3. [Restart the Agent][9].
 
 ##### Log collection
 
 _Available for Agent versions >6.0_
 
-1. Collecting logs is disabled by default in the Datadog Agent, enable it in your `datadog.yaml` file:
+1. Collecting logs is disabled by default in the Khulnasoft Agent, enable it in your `khulnasoft.yaml` file:
 
    ```yaml
    logs_enabled: true
@@ -157,7 +157,7 @@ For containerized environments, see the [Autodiscovery Integration Templates][11
 
 _Available for Agent versions >6.0_
 
-Collecting logs is disabled by default in the Datadog Agent. To enable it, see [Kubernetes Log Collection][12].
+Collecting logs is disabled by default in the Khulnasoft Agent. To enable it, see [Kubernetes Log Collection][12].
 
 | Parameter      | Value                                              |
 | -------------- | -------------------------------------------------- |
@@ -195,7 +195,7 @@ See [service_checks.json][15] for a list of service checks provided by this inte
 
 **Note**: Envoy version data is not collected.
 
-Need help? Contact [Datadog support][16].
+Need help? Contact [Khulnasoft support][16].
 
 [1]: https://www.envoyproxy.io
 [2]: https://app.khulnasoft.com/account/settings/agent/latest

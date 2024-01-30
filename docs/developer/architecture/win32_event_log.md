@@ -31,7 +31,7 @@ duplicate events being sent as a consequence of Agent restarts, especially when 
 ## Logs
 
 Events may alternatively be configured to be submitted as logs. The code for that resides
-[here](https://github.com/KhulnaSoft/datadog-agent/tree/main/pkg/logs/internal/tailers/windowsevent).
+[here](https://github.com/KhulnaSoft/khulnasoft-agent/tree/main/pkg/logs/internal/tailers/windowsevent).
 
 Only a subset of the check's functionality is available. Namely, each log configuration
 will collect all events of the given channel without filtering, tagging, nor remote

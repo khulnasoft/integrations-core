@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2018-present
+# (C) Khulnasoft, Inc. 2018-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 
@@ -47,14 +47,14 @@ CHECKS_BASE_REQ = parse_pyproject_array('dependencies')[0]
 
 
 setup(
-    name='datadog-coredns',
+    name='khulnasoft-coredns',
     version=ABOUT["__version__"],
     description='CoreDNS collects DNS metrics in Kubernetes.',
     long_description=long_description,
     long_description_content_type='text/markdown',
-    keywords='datadog agent check',
+    keywords='khulnasoft agent check',
     url='https://github.com/KhulnaSoft/integrations-core',
-    author='Datadog',
+    author='Khulnasoft',
     author_email='packages@khulnasoft.com',
     license='BSD',
     # See https://pypi.python.org/pypi?%3Aaction=list_classifiers

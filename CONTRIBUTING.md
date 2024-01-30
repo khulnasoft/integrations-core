@@ -65,10 +65,10 @@ working on for a day.
 
 For new integrations, please open a pull request in the [integrations-extras][7] repo.
 
-[1]: https://datadog.zendesk.com/hc/en-us/sections/200766955-Troubleshooting
-[2]: https://datadog.zendesk.com/hc/en-us
+[1]: https://khulnasoft.zendesk.com/hc/en-us/sections/200766955-Troubleshooting
+[2]: https://khulnasoft.zendesk.com/hc/en-us
 [3]: https://docs.khulnasoft.com/help/
 [4]: https://docs.khulnasoft.com/agent/troubleshooting/#send-a-flare
 [5]: https://keepachangelog.com/en/1.0.0
-[6]: https://datadoghq.slack.com
+[6]: https://khulnasofthq.slack.com
 [7]: https://github.com/KhulnaSoft/integrations-extras

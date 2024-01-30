@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2020-present
+# (C) Khulnasoft, Inc. 2020-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 import copy
@@ -10,7 +10,7 @@ import requests
 from khulnasoft_checks.azure_iot_edge import AzureIoTEdgeCheck
 from khulnasoft_checks.azure_iot_edge.types import Instance  # noqa: F401
 from khulnasoft_checks.base.stubs.aggregator import AggregatorStub  # noqa: F401
-from khulnasoft_checks.base.stubs.khulnasoft_agent import DatadogAgentStub  # noqa: F401
+from khulnasoft_checks.base.stubs.khulnasoft_agent import KhulnasoftAgentStub  # noqa: F401
 from khulnasoft_checks.dev.utils import get_metadata_metrics
 
 from . import common
@@ -59,7 +59,7 @@ def test_check(aggregator, mock_instance, dd_run_check):
 
 @pytest.mark.usefixtures("mock_server")
 def test_version_metadata(khulnasoft_agent, dd_run_check, mock_instance):
-    # type: (DatadogAgentStub, Callable, Instance) -> None
+    # type: (KhulnasoftAgentStub, Callable, Instance) -> None
     check = AzureIoTEdgeCheck('azure_iot_edge', {}, [mock_instance])
     check.check_id = 'test:123'
     dd_run_check(check)

@@ -4,7 +4,7 @@
 
 ## Overview
 
-The Datadog Agent collects metrics from Druid using [DogStatsD][2]. DogStatsD collects metrics on Druid queries, ingestion, and coordination data. For more information, see the [Druid metrics documentation][3].
+The Khulnasoft Agent collects metrics from Druid using [DogStatsD][2]. DogStatsD collects metrics on Druid queries, ingestion, and coordination data. For more information, see the [Druid metrics documentation][3].
 
 In addition to collecting metrics, the Agent also sends a Service Check related to Druid's health.
 
@@ -16,16 +16,16 @@ Druid 0.16 or above is required for this integration to work properly.
 
 ### Installation
 
-Both steps below are needed for Druid integration to work properly. Before you begin, you should [install the Datadog Agent][4].
+Both steps below are needed for Druid integration to work properly. Before you begin, you should [install the Khulnasoft Agent][4].
 
 #### Step 1: Configure Druid to collect health metrics and service checks
 
-Configure the Druid check included in the [Datadog Agent][5] package to collect health metrics and service checks.
+Configure the Druid check included in the [Khulnasoft Agent][5] package to collect health metrics and service checks.
 
 1. Edit the `druid.d/conf.yaml` file, in the `conf.d/` folder at the root of your Agent's configuration directory to start collecting your druid service checks. See the [sample druid.d/conf.yaml][6] for all available configuration options.
 2. [Restart the Agent][7].
 
-#### Step 2: Connect Druid to DogStatsD (included in the Datadog Agent) by using the extension `statsd-emitter` to collect metrics
+#### Step 2: Connect Druid to DogStatsD (included in the Khulnasoft Agent) by using the extension `statsd-emitter` to collect metrics
 
 Step to configure `statsd-emitter` extension to collect the majority of [Druid metrics][3].
 
@@ -60,7 +60,7 @@ Step to configure `statsd-emitter` extension to collect the majority of [Druid m
    druid.emitter.statsd.hostname=127.0.0.1
    druid.emitter.statsd.port:8125
 
-   # Configure `statsd-emitter` to use dogstatsd format. Must be set to true, otherwise tags are not reported correctly to Datadog.
+   # Configure `statsd-emitter` to use dogstatsd format. Must be set to true, otherwise tags are not reported correctly to Khulnasoft.
    druid.emitter.statsd.dogstatsd=true
    druid.emitter.statsd.dogstatsdServiceAsTag=true
    ```
@@ -75,7 +75,7 @@ Use the default configuration of your `druid.d/conf.yaml` file to activate the c
 
 _Available for Agent versions >6.0_
 
-1. Collecting logs is disabled by default in the Datadog Agent, enable it in your datadog.yaml file:
+1. Collecting logs is disabled by default in the Khulnasoft Agent, enable it in your khulnasoft.yaml file:
 
    ```yaml
    logs_enabled: true
@@ -119,7 +119,7 @@ See [service_checks.json][12] for a list of service checks provided by this inte
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][13].
+Need help? Contact [Khulnasoft support][13].
 
 
 [1]: https://raw.githubusercontent.com/KhulnaSoft/integrations-core/master/druid/images/druid_dashboard_overview.png

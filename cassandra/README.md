@@ -13,9 +13,9 @@ Get metrics from Cassandra in real time to:
 
 ### Installation
 
-The Cassandra check is included in the [Datadog Agent][2] package, so you don't need to install anything else on your Cassandra nodes. It's recommended to use Oracle's JDK for this integration.
+The Cassandra check is included in the [Khulnasoft Agent][2] package, so you don't need to install anything else on your Cassandra nodes. It's recommended to use Oracle's JDK for this integration.
 
-**Note**: This check has a limit of 350 metrics per instance. The number of returned metrics is indicated in the info page. You can specify the metrics you are interested in by editing the configuration below. To learn how to customize the metrics to collect see the [JMX documentation][3] for detailed instructions. If you need to monitor more metrics, contact [Datadog support][4].
+**Note**: This check has a limit of 350 metrics per instance. The number of returned metrics is indicated in the info page. You can specify the metrics you are interested in by editing the configuration below. To learn how to customize the metrics to collect see the [JMX documentation][3] for detailed instructions. If you need to monitor more metrics, contact [Khulnasoft support][4].
 
 ### Configuration
 
@@ -31,7 +31,7 @@ _Available for Agent versions >6.0_
 
 For containerized environments, follow the instructions on the [Kubernetes Log Collection][18] or [Docker Log Collection][19] pages.
 
-1. Collecting logs is disabled by default in the Datadog Agent, enable it in your `datadog.yaml` file:
+1. Collecting logs is disabled by default in the Khulnasoft Agent, enable it in your `khulnasoft.yaml` file:
 
    ```yaml
    logs_enabled: true
@@ -78,13 +78,13 @@ See [service_checks.json][13] for a list of service checks provided by this inte
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][4].
+Need help? Contact [Khulnasoft support][4].
 
 ## Further Reading
 
 - [How to monitor Cassandra performance metrics][14]
 - [How to collect Cassandra metrics][15]
-- [Monitoring Cassandra with Datadog][16]
+- [Monitoring Cassandra with Khulnasoft][16]
 
 [1]: https://raw.githubusercontent.com/KhulnaSoft/integrations-core/master/cassandra/images/cassandra_dashboard.png
 [2]: https://app.khulnasoft.com/account/settings/agent/latest
@@ -101,7 +101,7 @@ Need help? Contact [Datadog support][4].
 [13]: https://github.com/KhulnaSoft/integrations-core/blob/master/cassandra/assets/service_checks.json
 [14]: https://www.khulnasoft.com/blog/how-to-monitor-cassandra-performance-metrics
 [15]: https://www.khulnasoft.com/blog/how-to-collect-cassandra-metrics
-[16]: https://www.khulnasoft.com/blog/monitoring-cassandra-with-datadog
+[16]: https://www.khulnasoft.com/blog/monitoring-cassandra-with-khulnasoft
 [17]: https://docs.khulnasoft.com/agent/guide/autodiscovery-with-jmx/?tab=containeragent#autodiscovery-annotations
 [18]: https://docs.khulnasoft.com/containers/kubernetes/log/
 [19]: https://docs.khulnasoft.com/containers/docker/log/

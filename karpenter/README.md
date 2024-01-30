@@ -2,7 +2,7 @@
 
 ## Overview
 
-This check monitors [Karpenter][1] through the Datadog Agent. For more information, see [Karpenter monitoring][10].
+This check monitors [Karpenter][1] through the Khulnasoft Agent. For more information, see [Karpenter monitoring][10].
 
 ## Setup
 
@@ -10,7 +10,7 @@ Follow the instructions below to install and configure this check for an Agent r
 
 ### Installation
 
-Starting from Agent release 7.50.0, the Karpenter check is included in the [Datadog Agent][2] package. No additional installation is needed in your environment.
+Starting from Agent release 7.50.0, the Karpenter check is included in the [Khulnasoft Agent][2] package. No additional installation is needed in your environment.
 
 This check uses [OpenMetrics][5] to collect metrics from the OpenMetrics endpoint that Karpenter exposes, which requires Python 3.
 
@@ -54,7 +54,7 @@ spec:
 
 _Available for Agent versions >6.0_
 
-Karpenter logs can be collected from the different Karpenter pods through Kubernetes. Collecting logs is disabled by default in the Datadog Agent. To enable it, see [Kubernetes Log Collection][11].
+Karpenter logs can be collected from the different Karpenter pods through Kubernetes. Collecting logs is disabled by default in the Khulnasoft Agent. To enable it, see [Kubernetes Log Collection][11].
 
 See the [Autodiscovery Integration Templates][3] for guidance on applying the parameters below.
 
@@ -82,7 +82,7 @@ See [service_checks.json][8] for a list of service checks provided by this integ
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][9].
+Need help? Contact [Khulnasoft support][9].
 
 
 [1]: https://karpenter.sh/

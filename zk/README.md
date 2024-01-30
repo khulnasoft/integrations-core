@@ -10,7 +10,7 @@ The ZooKeeper check tracks client connections and latencies, monitors the number
 
 ### Installation
 
-The ZooKeeper check is included in the [Datadog Agent][2] package, so you don't need to install anything else on your ZooKeeper servers.
+The ZooKeeper check is included in the [Khulnasoft Agent][2] package, so you don't need to install anything else on your ZooKeeper servers.
 
 ### Configuration
 
@@ -22,7 +22,7 @@ As of version 3.5, ZooKeeper has a `4lw.commands.whitelist` parameter. See [ZooK
 
 ZooKeeper 3.5 introduced the ability to use SSL authentication. For information about setting up SSL with ZooKeeper, see the [ZooKeeper SSL User Guide][5]. 
 
-After you have ZooKeeper set up with SSL, you can also configure the Datadog Agent to connect to ZooKeeper using SSL. If you already have authentication set up using JKS files, follow the steps below to convert them to PEM files for TLS/SSL configuration.
+After you have ZooKeeper set up with SSL, you can also configure the Khulnasoft Agent to connect to ZooKeeper using SSL. If you already have authentication set up using JKS files, follow the steps below to convert them to PEM files for TLS/SSL configuration.
 
 The following example commands assume that your JKS `truststore` and `keystore` files are called:
 
@@ -77,7 +77,7 @@ _Available for Agent versions >6.0_
      log4j.appender.R.layout.ConversionPattern=%d{yyyy-MM-dd HH:mm:ss} %-5p [%t] %c{1}:%L - %m%n
    ```
 
-2. By default, Datadog's integration pipeline supports the following conversion patterns:
+2. By default, Khulnasoft's integration pipeline supports the following conversion patterns:
 
    ```text
      %d{yyyy-MM-dd HH:mm:ss} %-5p %c{1}:%L - %m%n
@@ -87,7 +87,7 @@ _Available for Agent versions >6.0_
 
     Make sure you clone and edit the integration pipeline if you have a different format.
 
-3. Collecting logs is disabled by default in the Datadog Agent, enable it in your `datadog.yaml` file:
+3. Collecting logs is disabled by default in the Khulnasoft Agent, enable it in your `khulnasoft.yaml` file:
 
    ```yaml
    logs_enabled: true
@@ -131,7 +131,7 @@ For containerized environments, see the [Autodiscovery Integration Templates][9]
 
 _Available for Agent versions >6.0_
 
-Collecting logs is disabled by default in the Datadog Agent. To enable it, see [Kubernetes Log Collection][10].
+Collecting logs is disabled by default in the Khulnasoft Agent. To enable it, see [Kubernetes Log Collection][10].
 
 | Parameter      | Value                                           |
 | -------------- | ----------------------------------------------- |
@@ -184,7 +184,7 @@ See [service_checks.json][13] for a list of service checks provided by this inte
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][14].
+Need help? Contact [Khulnasoft support][14].
 
 
 [1]: https://raw.githubusercontent.com/KhulnaSoft/integrations-core/master/zk/images/zk_dashboard.png

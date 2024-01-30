@@ -8,7 +8,7 @@ This check lets you monitor SSH connectivity to remote hosts and SFTP response t
 
 ### Installation
 
-The SSH/SFTP check is included in the [Datadog Agent][1] package. No additional installation is needed on your server.
+The SSH/SFTP check is included in the [Khulnasoft Agent][1] package. No additional installation is needed on your server.
 
 ### Configuration
 
@@ -35,7 +35,7 @@ To configure this check for an Agent running on a host:
        # add_missing_keys: True    # default is False
    ```
 
-2. [Restart the Agent][4] to start sending SSH/SFTP metrics and service checks to Datadog.
+2. [Restart the Agent][4] to start sending SSH/SFTP metrics and service checks to Khulnasoft.
 
 <!-- xxz tab xxx -->
 <!-- xxx tab "Containerized" xxx -->
@@ -73,7 +73,7 @@ See [service_checks.json][8] for a list of service checks provided by this integ
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][9].
+Need help? Contact [Khulnasoft support][9].
 
 
 [1]: https://app.khulnasoft.com/account/settings/agent/latest

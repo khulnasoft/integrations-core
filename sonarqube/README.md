@@ -8,7 +8,7 @@ This check monitors [SonarQube][1].
 
 ### Installation
 
-The SonarQube check is included in the [Datadog Agent][2] package.
+The SonarQube check is included in the [Khulnasoft Agent][2] package.
 No additional installation is needed on your server.
 
 ### Configuration
@@ -84,7 +84,7 @@ instances:
     password: <password>  # Defined in SonarQube's sonar.properties file
 ```
 
-**Note**: Once the integration is configured, have SonarQube scan at least one project to send metrics to Datadog.
+**Note**: Once the integration is configured, have SonarQube scan at least one project to send metrics to Khulnasoft.
 
 Metrics collected by this integration are tagged with a `component` tag by default. If you wish to change the tag
 name on a per component basis, specify the `tag` property within the component definition. To set it for all projects,
@@ -134,7 +134,7 @@ To configure this check for an Agent running on a host:
    This check has a limit of 350 metrics per JMX instance. The number of returned metrics is indicated in the info page.
    You can specify the metrics you are interested in by editing the configuration below.
    To learn how to customize the metrics to collect, see the [JMX Checks documentation][6] for more detailed instructions.
-   If you need to monitor more metrics, contact [Datadog support][8].
+   If you need to monitor more metrics, contact [Khulnasoft support][8].
 
 2. [Restart the Agent][9].
 
@@ -142,7 +142,7 @@ To configure this check for an Agent running on a host:
 
 1. Enable SonarQube [logging][10].
 
-2. Collecting logs is disabled by default in the Datadog Agent. Enable it in your `datadog.yaml` file:
+2. Collecting logs is disabled by default in the Khulnasoft Agent. Enable it in your `khulnasoft.yaml` file:
 
    ```yaml
    logs_enabled: true
@@ -198,7 +198,7 @@ For containerized environments, see the [Autodiscovery with JMX][11] guide.
 
 ##### Log collection
 
-Collecting logs is disabled by default in the Datadog Agent. To enable it, see [Docker log collection][12].
+Collecting logs is disabled by default in the Khulnasoft Agent. To enable it, see [Docker log collection][12].
 
 | Parameter      | Value                                              |
 | -------------- | -------------------------------------------------- |
@@ -289,7 +289,7 @@ Collector
     sonarqube (1.1.0)
     -----------------
       Instance ID: sonarqube:1249c1ed7c7b489a [OK]
-      Configuration Source: file:/etc/datadog-agent/conf.d/sonarqube.d/conf.yaml
+      Configuration Source: file:/etc/khulnasoft-agent/conf.d/sonarqube.d/conf.yaml
       Total Runs: 51
       Metric Samples: Last Run: 39, Total: 1,989
       Events: Last Run: 0, Total: 0
@@ -315,7 +315,7 @@ See [service_checks.json][15] for a list of service checks provided by this inte
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][8].
+Need help? Contact [Khulnasoft support][8].
 
 ## Further Reading
 

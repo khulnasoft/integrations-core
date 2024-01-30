@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2018-present
+# (C) Khulnasoft, Inc. 2018-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 from __future__ import division
@@ -623,7 +623,7 @@ class SQLServer(AgentCheck):
     def get_sql_counter_type(self, counter_name):
         """
         Return the type of the performance counter so that we can report it to
-        Datadog correctly
+        Khulnasoft correctly
         If the sql_counter_type is one that needs a base (PERF_RAW_LARGE_FRACTION and
         PERF_AVERAGE_BULK), the name of the base counter will also be returned
         """

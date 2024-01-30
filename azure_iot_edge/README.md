@@ -4,7 +4,7 @@
 
 [Azure IoT Edge][1] is a fully managed service to deploy Cloud workloads to run on Internet of Things (IoT) Edge devices using standard containers.
 
-Use the Datadog-Azure IoT Edge integration to collect metrics and health status from IoT Edge devices.
+Use the Khulnasoft-Azure IoT Edge integration to collect metrics and health status from IoT Edge devices.
 
 **Note**: This integration requires IoT Edge runtime version 1.0.10 or above.
 
@@ -14,7 +14,7 @@ Follow the instructions below to install and configure this check for an IoT Edg
 
 ### Installation
 
-The Azure IoT Edge check is included in the [Datadog Agent][2] package.
+The Azure IoT Edge check is included in the [Khulnasoft Agent][2] package.
 
 No additional installation is needed on your device.
 
@@ -22,26 +22,26 @@ No additional installation is needed on your device.
 
 Configure the IoT Edge device so that the Agent runs as a custom module. Follow the Microsoft documentation on [deploying Azure IoT Edge modules][3] for information on installing and working with custom modules for Azure IoT Edge.
 
-Follow the steps below to configure the IoT Edge device, runtime modules, and the Datadog Agent to start collecting IoT Edge metrics.
+Follow the steps below to configure the IoT Edge device, runtime modules, and the Khulnasoft Agent to start collecting IoT Edge metrics.
 
 1. Configure the **Edge Agent** runtime module as follows:
     - Image version must be `1.0.10` or above.
-    - Under "Create Options", add the following `Labels`. Edit the `com.datadoghq.ad.instances` label as appropriate. See the [sample azure_iot_edge.d/conf.yaml][4] for all available configuration options. See the documentation on [Docker Integrations Autodiscovery][5] for more information on labels-based integration configuration.
+    - Under "Create Options", add the following `Labels`. Edit the `com.khulnasofthq.ad.instances` label as appropriate. See the [sample azure_iot_edge.d/conf.yaml][4] for all available configuration options. See the documentation on [Docker Integrations Autodiscovery][5] for more information on labels-based integration configuration.
 
         ```json
         "Labels": {
-            "com.datadoghq.ad.check_names": "[\"azure_iot_edge\"]",
-            "com.datadoghq.ad.init_configs": "[{}]",
-            "com.datadoghq.ad.instances": "[{\"edge_hub_prometheus_url\": \"http://edgeHub:9600/metrics\", \"edge_agent_prometheus_url\": \"http://edgeAgent:9600/metrics\"}]"
+            "com.khulnasofthq.ad.check_names": "[\"azure_iot_edge\"]",
+            "com.khulnasofthq.ad.init_configs": "[{}]",
+            "com.khulnasofthq.ad.instances": "[{\"edge_hub_prometheus_url\": \"http://edgeHub:9600/metrics\", \"edge_agent_prometheus_url\": \"http://edgeAgent:9600/metrics\"}]"
         }
         ```
 
 2. Configure the **Edge Hub** runtime module as follows:
     - Image version must be `1.0.10` or above.
 
-3. Install and configure the Datadog Agent as a **custom module**:
-    - Set the module name. For example: `datadog-agent`.
-    - Set the Agent image URI. For example: `datadog/agent:7`.
+3. Install and configure the Khulnasoft Agent as a **custom module**:
+    - Set the module name. For example: `khulnasoft-agent`.
+    - Set the Agent image URI. For example: `khulnasoft/agent:7`.
     - Under "Environment Variables", configure your `DD_API_KEY`. You may also set extra Agent configuration here (see [Agent Environment Variables][6]).
     - Under "Container Create Options", enter the following configuration based on your device OS. **Note**: `NetworkId` must correspond to the network name set in the device `config.yaml` file.
 
@@ -66,13 +66,13 @@ Follow the steps below to configure the IoT Edge device, runtime modules, and th
             }
             ```
 
-    - Save the Datadog Agent custom module.
+    - Save the Khulnasoft Agent custom module.
 
 4. Save and deploy changes to your device configuration.
 
 #### Log collection
 
-1. Collecting logs is disabled by default in the Datadog Agent, enable it by configuring your Datadog Agent custom module:
+1. Collecting logs is disabled by default in the Khulnasoft Agent, enable it by configuring your Khulnasoft Agent custom module:
     - Under "Environment Variables", set the `DD_LOGS_ENABLED` environment variable:
 
         ```yaml
@@ -83,7 +83,7 @@ Follow the steps below to configure the IoT Edge device, runtime modules, and th
 
     ```json
     "Labels": {
-        "com.datadoghq.ad.logs": "[{\"source\": \"azure.iot_edge\", \"service\": \"<SERVICE>\"}]",
+        "com.khulnasofthq.ad.logs": "[{\"source\": \"azure.iot_edge\", \"service\": \"<SERVICE>\"}]",
         "...": "..."
     }
     ```
@@ -114,11 +114,11 @@ See [service_checks.json][9] for a list of service checks provided by this integ
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][10].
+Need help? Contact [Khulnasoft support][10].
 
 ## Further Reading
 
-- [Monitor Azure IoT Edge with Datadog][11]
+- [Monitor Azure IoT Edge with Khulnasoft][11]
 
 [1]: https://azure.microsoft.com/en-us/services/iot-edge/
 [2]: https://app.khulnasoft.com/account/settings/agent/latest
@@ -130,4 +130,4 @@ Need help? Contact [Datadog support][10].
 [8]: https://github.com/KhulnaSoft/integrations-core/blob/master/azure_iot_edge/metadata.csv
 [9]: https://github.com/KhulnaSoft/integrations-core/blob/master/azure_iot_edge/assets/service_checks.json
 [10]: https://docs.khulnasoft.com/help/
-[11]: https://www.khulnasoft.com/blog/monitor-azure-iot-edge-with-datadog/
+[11]: https://www.khulnasoft.com/blog/monitor-azure-iot-edge-with-khulnasoft/

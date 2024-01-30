@@ -29,14 +29,14 @@ orapki wallet add -wallet client_wallet -trusted_cert -cert server-cert.crt -pwd
 cp server-cert.crt client_wallet/cert.pem
 ```
 
-This creates the `server_wallet` and `client_wallet` directories which contain valid keys to access the database from the Datadog Agent.
+This creates the `server_wallet` and `client_wallet` directories which contain valid keys to access the database from the Khulnasoft Agent.
 
 After the keys are generated, place `server_wallet` in `oracle/tests/docker/server` and `client_wallet` in `oracle/tests/docker/client`. You can also place them within their respective Docker containers in the `$TNS_ADMIN` file path for both containers.  
 
 As mentioned in the main README, you can verify that the keys and other configuration files are valid by using the `sqlplus` command included in the Oracle test environment: 
 
 ```shell
-sqlplus datadog/Oracle123@alias
+sqlplus khulnasoft/Oracle123@alias
 ```
 
 Note that `alias` is used in-place of the full DSN address. This is because `tnsnames.ora` adds `alias` to direct to the correct TCPS host and port. 

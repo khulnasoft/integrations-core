@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2018-present
+# (C) Khulnasoft, Inc. 2018-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 import os
@@ -49,19 +49,19 @@ To install the {integration_name} check on your host:
 
 2. Run `ddev release build {normalized_integration_name}` to build the package.
 
-3. [Download the Datadog Agent][2].
+3. [Download the Khulnasoft Agent][2].
 
 4. Upload the build artifact to any host with an Agent and
- run `datadog-agent integration install -w
+ run `khulnasoft-agent integration install -w
  path/to/{normalized_integration_name}/dist/<ARTIFACT_NAME>.whl`."""
 
     if repo_choice == 'core':
         check_name = normalized_integration_name
-        author = 'Datadog'
+        author = 'Khulnasoft'
         email = 'help@khulnasoft.com'
         email_packages = 'packages@khulnasoft.com'
         install_info = (
-            'The {integration_name} check is included in the [Datadog Agent][2] package.\n'
+            'The {integration_name} check is included in the [Khulnasoft Agent][2] package.\n'
             'No additional installation is needed on your server.'.format(integration_name=integration_name)
         )
         license_header = get_license_header()
@@ -71,7 +71,7 @@ To install the {integration_name} check on your host:
         )
     elif repo_choice == 'integrations-internal-core':
         check_name = normalized_integration_name
-        author = 'Datadog'
+        author = 'Khulnasoft'
         email = 'help@khulnasoft.com'
         email_packages = ''
         install_info = ''
@@ -94,7 +94,7 @@ To install the {integration_name} check on your host:
     else:
         check_name = normalized_integration_name
         author = 'U.N. Owen'
-        email = email_packages = 'friend@datadog.community'
+        email = email_packages = 'friend@khulnasoft.community'
         install_info = third_party_install_info
         license_header = ''
         support_type = 'contrib'

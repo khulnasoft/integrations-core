@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2023-present
+# (C) Khulnasoft, Inc. 2023-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 import pytest
@@ -20,7 +20,7 @@ def fake_repo(tmp_path_factory, config_file, ddev):
     write_file(
         repo_path / 'ddev' / 'src' / 'ddev' / 'repo',
         'constants.py',
-        f"""# (C) Datadog, Inc. 2022-present
+        f"""# (C) Khulnasoft, Inc. 2022-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 CONFIG_DIRECTORY = '.ddev'
@@ -29,7 +29,7 @@ FULL_NAMES = {{
     'core': 'integrations-core',
     'extras': 'integrations-extras',
     'marketplace': 'marketplace',
-    'agent': 'datadog-agent',
+    'agent': 'khulnasoft-agent',
 }}
 
 # This is automatically maintained
@@ -40,7 +40,7 @@ PYTHON_VERSION = '{OLD_PYTHON_VERSION}'
     write_file(
         repo_path / 'dummy',
         'hatch.toml',
-        f"""[env.collectors.datadog-checks]
+        f"""[env.collectors.khulnasoft-checks]
 
 [[envs.default.matrix]]
 python = ["2.7", "{OLD_PYTHON_VERSION}"]

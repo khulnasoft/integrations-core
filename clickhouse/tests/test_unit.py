@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2019-present
+# (C) Khulnasoft, Inc. 2019-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 import mock
@@ -31,7 +31,7 @@ def test_config(instance):
             compression=False,
             secure=False,
             settings={},
-            client_name='datadog-test-clickhouse',
+            client_name='khulnasoft-test-clickhouse',
         )
 
 

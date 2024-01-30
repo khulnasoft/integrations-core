@@ -1,4 +1,4 @@
-name: Datadog Cluster Agent
+name: Khulnasoft Cluster Agent
 files:
 - name: khulnasoft_cluster_agent.yaml
   options:

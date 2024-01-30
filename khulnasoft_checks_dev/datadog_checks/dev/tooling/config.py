@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2018-present
+# (C) Khulnasoft, Inc. 2018-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 import os
@@ -38,14 +38,14 @@ DEFAULT_CONFIG = {
     'repos': {
         'core': os.path.join('~', 'dd', 'integrations-core'),
         'extras': os.path.join('~', 'dd', 'integrations-extras'),
-        'agent': os.path.join('~', 'dd', 'datadog-agent'),
+        'agent': os.path.join('~', 'dd', 'khulnasoft-agent'),
         'marketplace': os.path.join('~', 'dd', 'marketplace'),
         'integrations-internal-core': os.path.join('~', 'dd', 'integrations-internal-core'),
     },
     'agents': {
-        'master': {'docker': 'datadog/agent-dev:master', 'local': 'latest'},
-        '7': {'docker': 'datadog/agent:7', 'local': '7'},
-        '6': {'docker': 'datadog/agent:6', 'local': '6'},
+        'master': {'docker': 'khulnasoft/agent-dev:master', 'local': 'latest'},
+        '7': {'docker': 'khulnasoft/agent:7', 'local': '7'},
+        '6': {'docker': 'khulnasoft/agent:6', 'local': '6'},
     },
     'orgs': {
         'default': {

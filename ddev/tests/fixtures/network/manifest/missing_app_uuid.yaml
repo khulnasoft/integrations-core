@@ -7,7 +7,7 @@ interactions:
       replicas, collection metrics, and more.", "title": "MongoDB", "media": [], "classifier_tags":
       ["Supported OS::Linux", "Supported OS::macOS", "Supported OS::Windows", "Category::Data
       Store", "Category::Log Collection", "Category::Autodiscovery"]}, "author": {"support_email":
-      "help@khulnasoft.com", "name": "Datadog", "homepage": "https://www.khulnasoft.com",
+      "help@khulnasoft.com", "name": "Khulnasoft", "homepage": "https://www.khulnasoft.com",
       "sales_email": "info@khulnasoft.com"}, "oauth": {}, "assets": {"integration":
       {"source_type_name": "MongoDB", "configuration": {"spec": "assets/configuration/spec.yaml"},
       "events": {"creates_events": true}, "metrics": {"prefix": "mongodb.", "check":
@@ -81,7 +81,7 @@ interactions:
       "changelog": "CHANGELOG.md", "description": "Understand how vSphere resource
       usage affects your application.", "title": "vSphere", "media": [], "classifier_tags":
       ["Supported OS::Linux", "Supported OS::macOS", "Supported OS::Windows", "Category::Cloud"]},
-      "author": {"support_email": "help@khulnasoft.com", "name": "Datadog", "homepage":
+      "author": {"support_email": "help@khulnasoft.com", "name": "Khulnasoft", "homepage":
       "https://www.khulnasoft.com", "sales_email": "info@khulnasoft.com"}, "oauth":
       {}, "assets": {"integration": {"source_type_name": "vSphere", "configuration":
       {"spec": "assets/configuration/spec.yaml"}, "events": {"creates_events": true},

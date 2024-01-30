@@ -4,20 +4,20 @@
 
 ## Overview
 
-Connect MongoDB to Datadog in order to:
+Connect MongoDB to Khulnasoft in order to:
 
 - Visualize key MongoDB metrics.
 - Correlate MongoDB performance with the rest of your applications.
 
 You can also create your own metrics using custom `find`, `count` and `aggregate` queries.
 
-**Note**: MongoDB v3.0+ is required for this integration. Integration of MongoDB Atlas with Datadog is only available on M10+ clusters.
+**Note**: MongoDB v3.0+ is required for this integration. Integration of MongoDB Atlas with Khulnasoft is only available on M10+ clusters.
 
 ## Setup
 
 ### Installation
 
-The MongoDB check is included in the [Datadog Agent][2] package. No additional installation is necessary.
+The MongoDB check is included in the [Khulnasoft Agent][2] package. No additional installation is necessary.
 
 ### Architecture
 
@@ -30,16 +30,16 @@ Most low-level metrics (uptime, storage size etc.) needs to be collected on ever
 To configure this integration for a single node MongoDB deployment:
 
 ##### Prepare MongoDB
-In a Mongo shell, create a read-only user for the Datadog Agent in the `admin` database:
+In a Mongo shell, create a read-only user for the Khulnasoft Agent in the `admin` database:
 
 ```shell
 # Authenticate as the admin user.
 use admin
 db.auth("admin", "<YOUR_MONGODB_ADMIN_PASSWORD>")
 
-# Create the user for the Datadog Agent.
+# Create the user for the Khulnasoft Agent.
 db.createUser({
-  "user": "datadog",
+  "user": "khulnasoft",
   "pwd": "<UNIQUEPASSWORD>",
   "roles": [
     { role: "read", db: "admin" },
@@ -58,16 +58,16 @@ You only need a single agent, preferably running on the same node, to collect al
 To configure this integration for a MongoDB replica set:
 
 ##### Prepare MongoDB
-In a Mongo shell, authenticate to the primary and create a read-only user for the Datadog Agent in the `admin` database:
+In a Mongo shell, authenticate to the primary and create a read-only user for the Khulnasoft Agent in the `admin` database:
 
 ```shell
 # Authenticate as the admin user.
 use admin
 db.auth("admin", "<YOUR_MONGODB_ADMIN_PASSWORD>")
 
-# Create the user for the Datadog Agent.
+# Create the user for the Khulnasoft Agent.
 db.createUser({
-  "user": "datadog",
+  "user": "khulnasoft",
   "pwd": "<UNIQUEPASSWORD>",
   "roles": [
     { role: "read", db: "admin" },
@@ -79,7 +79,7 @@ db.createUser({
 
 ##### Configure the agents
 
-Install the Datadog Agent on each host in the MongoDB replica set and configure the Agent to connect to the replica on that host (`localhost`). Running an Agent on each host results in lower latency and execution times, and ensures that data is still connected in the event a host fails.
+Install the Khulnasoft Agent on each host in the MongoDB replica set and configure the Agent to connect to the replica on that host (`localhost`). Running an Agent on each host results in lower latency and execution times, and ensures that data is still connected in the event a host fails.
 
 For example, on the primary node:
 
@@ -115,16 +115,16 @@ instances:
 To configure this integration for a MongoDB sharded cluster:
 
 ##### Prepare MongoDB
-For each shard in your cluster, connect to the primary of the replica set and create a local read-only user for the Datadog Agent in the `admin` database:
+For each shard in your cluster, connect to the primary of the replica set and create a local read-only user for the Khulnasoft Agent in the `admin` database:
 
 ```shell
 # Authenticate as the admin user.
 use admin
 db.auth("admin", "<YOUR_MONGODB_ADMIN_PASSWORD>")
 
-# Create the user for the Datadog Agent.
+# Create the user for the Khulnasoft Agent.
 db.createUser({
-  "user": "datadog",
+  "user": "khulnasoft",
   "pwd": "<UNIQUEPASSWORD>",
   "roles": [
     { role: "read", db: "admin" },
@@ -178,7 +178,7 @@ To configure this check for an Agent running on a host:
        ## @param username - string - optional
        ## The username to use for authentication.
        #
-       username: datadog
+       username: khulnasoft
 
        ## @param password - string - optional
        ## The password to use for authentication.
@@ -202,16 +202,16 @@ To configure this check for an Agent running on a host:
 
 ##### Trace collection
 
-Datadog APM integrates with Mongo to see the traces across your distributed system. Trace collection is enabled by default in the Datadog Agent v6+. To start collecting traces:
+Khulnasoft APM integrates with Mongo to see the traces across your distributed system. Trace collection is enabled by default in the Khulnasoft Agent v6+. To start collecting traces:
 
-1. [Enable trace collection in Datadog][7].
+1. [Enable trace collection in Khulnasoft][7].
 2. [Instrument your application that makes requests to Mongo][8].
 
 ##### Log collection
 
 _Available for Agent versions >6.0_
 
-1. Collecting logs is disabled by default in the Datadog Agent, enable it in your `datadog.yaml` file:
+1. Collecting logs is disabled by default in the Khulnasoft Agent, enable it in your `khulnasoft.yaml` file:
 
    ```yaml
    logs_enabled: true
@@ -243,19 +243,19 @@ To configure this check for an Agent running on a container:
 Set [Autodiscovery Integrations Templates][9] as Docker labels on your application container:
 
 ```yaml
-LABEL "com.datadoghq.ad.check_names"='["mongo"]'
-LABEL "com.datadoghq.ad.init_configs"='[{}]'
-LABEL "com.datadoghq.ad.instances"='[{"hosts": ["%%host%%:%%port%%"], "username": "datadog", "password" : "<UNIQUEPASSWORD>", "database": "<DATABASE>"}]'
+LABEL "com.khulnasofthq.ad.check_names"='["mongo"]'
+LABEL "com.khulnasofthq.ad.init_configs"='[{}]'
+LABEL "com.khulnasofthq.ad.instances"='[{"hosts": ["%%host%%:%%port%%"], "username": "khulnasoft", "password" : "<UNIQUEPASSWORD>", "database": "<DATABASE>"}]'
 ```
 
 ##### Log collection
 
-Collecting logs is disabled by default in the Datadog Agent. To enable it, see [Docker Log Collection][10].
+Collecting logs is disabled by default in the Khulnasoft Agent. To enable it, see [Docker Log Collection][10].
 
 Then, set [Log Integrations][11] as Docker labels:
 
 ```yaml
-LABEL "com.datadoghq.ad.logs"='[{"source":"mongodb","service":"<SERVICE_NAME>"}]'
+LABEL "com.khulnasofthq.ad.logs"='[{"source":"mongodb","service":"<SERVICE_NAME>"}]'
 ```
 
 ##### Trace collection
@@ -286,7 +286,7 @@ To configure this check for an Agent running on Kubernetes:
 
 Set [Autodiscovery Integrations Templates][13] as pod annotations on your application container. Aside from this, templates can also be configure with a [file, configmap, or key-value store][14].
 
-**Annotations v1** (for Datadog Agent < v7.36)
+**Annotations v1** (for Khulnasoft Agent < v7.36)
 
 ```yaml
 apiVersion: v1
@@ -300,7 +300,7 @@ metadata:
       [
         {
           "hosts": ["%%host%%:%%port%%"], 
-          "username": "datadog", 
+          "username": "khulnasoft", 
           "password": "<UNIQUEPASSWORD>", 
           "database": "<DATABASE>"
         }
@@ -310,7 +310,7 @@ spec:
     - name: mongo
 ```
 
-**Annotations v2** (for Datadog Agent v7.36+)
+**Annotations v2** (for Khulnasoft Agent v7.36+)
 
 ```yaml
 apiVersion: v1
@@ -325,7 +325,7 @@ metadata:
           "instances": [
             {
               "hosts": ["%%host%%:%%port%%"], 
-              "username": "datadog", 
+              "username": "khulnasoft", 
               "password": "<UNIQUEPASSWORD>", 
               "database": "<DATABASE>"
             }
@@ -339,7 +339,7 @@ spec:
 
 ##### Log collection
 
-Collecting logs is disabled by default in the Datadog Agent. To enable it, see [Kubernetes Log Collection][15].
+Collecting logs is disabled by default in the Khulnasoft Agent. To enable it, see [Kubernetes Log Collection][15].
 
 Then, set [Log Integrations][11] as pod annotations. This can also be configured with [a file, a configmap, or a key-value store][16].
 
@@ -390,9 +390,9 @@ Set [Autodiscovery Integrations Templates][9] as Docker labels on your applicati
     "name": "mongo",
     "image": "mongo:latest",
     "dockerLabels": {
-      "com.datadoghq.ad.check_names": "[\"mongo\"]",
-      "com.datadoghq.ad.init_configs": "[{}]",
-      "com.datadoghq.ad.instances": "[{\"hosts\": [\"%%host%%:%%port%%\"], \"username\": \"datadog\", \"password\": \"<UNIQUEPASSWORD>\", \"database\": \"<DATABASE>\"}]"
+      "com.khulnasofthq.ad.check_names": "[\"mongo\"]",
+      "com.khulnasofthq.ad.init_configs": "[{}]",
+      "com.khulnasofthq.ad.instances": "[{\"hosts\": [\"%%host%%:%%port%%\"], \"username\": \"khulnasoft\", \"password\": \"<UNIQUEPASSWORD>\", \"database\": \"<DATABASE>\"}]"
     }
   }]
 }
@@ -402,7 +402,7 @@ Set [Autodiscovery Integrations Templates][9] as Docker labels on your applicati
 
 _Available for Agent versions >6.0_
 
-Collecting logs is disabled by default in the Datadog Agent. To enable it, see [ECS Log Collection][19].
+Collecting logs is disabled by default in the Khulnasoft Agent. To enable it, see [ECS Log Collection][19].
 
 Then, set [Log Integrations][11] as Docker labels:
 
@@ -412,7 +412,7 @@ Then, set [Log Integrations][11] as Docker labels:
     "name": "mongo",
     "image": "mongo:latest",
     "dockerLabels": {
-      "com.datadoghq.ad.logs": "[{\"source\":\"mongodb\",\"service\":\"<SERVICE_NAME>\"}]"
+      "com.khulnasofthq.ad.logs": "[{\"source\":\"mongodb\",\"service\":\"<SERVICE_NAME>\"}]"
     }
   }]
 }
@@ -481,7 +481,7 @@ See [service_checks.json][24] for a list of service checks provided by this inte
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][25].
+Need help? Contact [Khulnasoft support][25].
 
 ## Further Reading
 

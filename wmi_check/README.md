@@ -4,7 +4,7 @@
 
 ## Overview
 
-**Note:** Datadog no longer maintains or recommends the use of this integration. Instead, use the [Windows performance counters integration][2] in all cases due to its significantly lower overhead and thus better scalability.
+**Note:** Khulnasoft no longer maintains or recommends the use of this integration. Instead, use the [Windows performance counters integration][2] in all cases due to its significantly lower overhead and thus better scalability.
 
 Get metrics from your Windows applications and servers with Windows Management Instrumentation (WMI) in real time to
 
@@ -30,7 +30,7 @@ If the metric isn't showing up in WMI, try running `winmgmt /resyncperf` to forc
 ### Configuration
 
 1. Click the **Install Integration** button on the WMI Integration Tile.
-2. Open the Datadog Agent Manager on the Windows server.
+2. Open the Khulnasoft Agent Manager on the Windows server.
 3. Edit the `Wmi Check` configuration.
 
 ```yaml
@@ -61,7 +61,7 @@ The default configuration uses the filter clause to limit the metrics pulled. Ei
 The metrics definitions include three components:
 
 - Class property in WMI.
-- Metric name as it appears in Datadog.
+- Metric name as it appears in Khulnasoft.
 - The metric type.
 
 The following sample configuration populates many more metrics on a Windows 2012 server.
@@ -141,7 +141,7 @@ Each WMI query has 2 required options, `class` and `metrics` and six optional op
   list being a set of `[<WMI_PROPERTY_NAME>, <METRIC_NAME>, <METRIC_TYPE>]`:
 
   - `<WMI_PROPERTY_NAME>` is something like `NumberOfUsers` or `ThreadCount`. The standard properties are also available on the MSDN docs for each class.
-  - `<METRIC_NAME>` is the name you want to show up in Datadog.
+  - `<METRIC_NAME>` is the name you want to show up in Khulnasoft.
   - `<METRIC_TYPE>` is from the standard choices for all agent checks, such as gauge, rate, histogram or counter.
 
 - `host` is the optional target of the WMI query, `localhost` is assumed by default. If you set this option, make sure that Remote Management is enabled on the target host. See [Configure Remote Management in Server Manager][8] for more information.
@@ -150,7 +150,7 @@ Each WMI query has 2 required options, `class` and `metrics` and six optional op
 
 - `filters` is a list of filters on the WMI query you may want. For example, for a process-based WMI class you may want metrics for only certain processes running on your machine, so you could add a filter for each process name. You can also use the '%' character as a wildcard.
 
-- `provider` is the optional WMI provider (default to `32` on Datadog Agent 32-bit or `64`). It is used to request WMI data from the non-default provider. Available options are: `32` or `64`.
+- `provider` is the optional WMI provider (default to `32` on Khulnasoft Agent 32-bit or `64`). It is used to request WMI data from the non-default provider. Available options are: `32` or `64`.
   See [MSDN][9] for more information.
 
 - `tag_by` optionally lets you tag each metric with a property from the WMI class you're using. This is only useful when you have multiple values for your WMI query.
@@ -179,7 +179,7 @@ Run the [Agent's status subcommand][10] and look for `wmi_check` under the Check
 
 ### Metrics
 
-All metrics collected by the WMI check are forwarded to Datadog as [custom metrics][11], which may impact your [billing][12].
+All metrics collected by the WMI check are forwarded to Khulnasoft as [custom metrics][11], which may impact your [billing][12].
 
 ### Events
 
@@ -191,7 +191,7 @@ The WMI check does not include any service checks.
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][13].
+Need help? Contact [Khulnasoft support][13].
 
 [1]: https://raw.githubusercontent.com/KhulnaSoft/integrations-core/master/wmi_check/images/wmimetric.png
 [2]: https://docs.khulnasoft.com/integrations/windows_performance_counters/

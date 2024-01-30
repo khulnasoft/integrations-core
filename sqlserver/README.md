@@ -6,17 +6,17 @@
 
 The SQL Server integration tracks the performance of your SQL Server instances. It collects metrics for number of user connections, rate of SQL compilations, and more.
 
-Enable [Database Monitoring](https://docs.khulnasoft.com/database_monitoring/) (DBM) for enhanced insight into query performance and database health. In addition to the standard integration, Datadog DBM provides query-level metrics, live and historical query snapshots, wait event analysis, database load, query explain plans, and blocking query insights.
+Enable [Database Monitoring](https://docs.khulnasoft.com/database_monitoring/) (DBM) for enhanced insight into query performance and database health. In addition to the standard integration, Khulnasoft DBM provides query-level metrics, live and historical query snapshots, wait event analysis, database load, query explain plans, and blocking query insights.
 
 All editions of SQL Server 2012 and above are supported.
 
 ## Setup
 
-<div class="alert alert-info">This page describes the SQL Server Agent standard integration. If you are looking for the Database Monitoring product for SQL Server, see <a href="https://docs.khulnasoft.com/database_monitoring" target="_blank">Datadog Database Monitoring</a>.</div>
+<div class="alert alert-info">This page describes the SQL Server Agent standard integration. If you are looking for the Database Monitoring product for SQL Server, see <a href="https://docs.khulnasoft.com/database_monitoring" target="_blank">Khulnasoft Database Monitoring</a>.</div>
 
 ### Installation
 
-The SQL Server check is included in the [Datadog Agent][2] package. No additional installation is necessary on your SQL Server instances.
+The SQL Server check is included in the [Khulnasoft Agent][2] package. No additional installation is necessary on your SQL Server instances.
 
 Make sure that your SQL Server instance supports SQL Server authentication by enabling "SQL Server and Windows Authentication mode" in the server properties:
 
@@ -33,22 +33,22 @@ Proceed with the following steps in this guide only if you are installing the st
 1. Create a read-only login to connect to your server:
 
     ```SQL
-        CREATE LOGIN datadog WITH PASSWORD = '<PASSWORD>';
-        CREATE USER datadog FOR LOGIN datadog;
-        GRANT SELECT on sys.dm_os_performance_counters to datadog;
-        GRANT VIEW SERVER STATE to datadog;
+        CREATE LOGIN khulnasoft WITH PASSWORD = '<PASSWORD>';
+        CREATE USER khulnasoft FOR LOGIN khulnasoft;
+        GRANT SELECT on sys.dm_os_performance_counters to khulnasoft;
+        GRANT VIEW SERVER STATE to khulnasoft;
     ```
    
-   To collect file size metrics per database, ensure the user you created (`datadog`) has [connect permission access][3] to your databases by running:
+   To collect file size metrics per database, ensure the user you created (`khulnasoft`) has [connect permission access][3] to your databases by running:
    
    ```SQL
-       GRANT CONNECT ANY DATABASE to datadog; 
+       GRANT CONNECT ANY DATABASE to khulnasoft; 
    ```
 
 2. (Required for AlwaysOn and `sys.master_files` metrics) To gather AlwaysOn and `sys.master_files` metrics, grant the following additional permission:
 
     ```SQL
-        GRANT VIEW ANY DEFINITION to datadog;
+        GRANT VIEW ANY DEFINITION to khulnasoft;
     ```
 
 ### Configuration
@@ -67,7 +67,7 @@ To configure this check for an Agent running on a host:
 
    instances:
      - host: "<SQL_HOST>,<SQL_PORT>"
-       username: datadog
+       username: khulnasoft
        password: "<YOUR_PASSWORD>"
        connector: odbc # alternative is 'adodbapi'
        driver: SQL Server
@@ -89,14 +89,14 @@ To configure this check for an Agent running on a host:
 Extra configuration steps are required to get the SQL Server integration running on a Linux host:
 
 1. Install an ODBC SQL Server driver, for example the [Microsoft ODBC driver][9] or the [FreeTDS driver][10].
-2. Copy the `odbc.ini` and `odbcinst.ini` files into the `/opt/datadog-agent/embedded/etc` folder.
+2. Copy the `odbc.ini` and `odbcinst.ini` files into the `/opt/khulnasoft-agent/embedded/etc` folder.
 3. Configure the `conf.yaml` file to use the `odbc` connector and specify the proper driver as indicated in the `odbcinst.ini` file.
 
 ##### Log collection
 
 _Available for Agent versions >6.0_
 
-1. Collecting logs is disabled by default in the Datadog Agent, enable it in your `datadog.yaml` file:
+1. Collecting logs is disabled by default in the Khulnasoft Agent, enable it in your `khulnasoft.yaml` file:
 
     ```yaml
     logs_enabled: true
@@ -130,7 +130,7 @@ For containerized environments, see the [Autodiscovery Integration Templates][12
 | -------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
 | `<INTEGRATION_NAME>` | `sqlserver`                                                                                                                      |
 | `<INIT_CONFIG>`      | blank or `{}`                                                                                                                    |
-| `<INSTANCE_CONFIG>`  | `{"host": "%%host%%,%%port%%", "username": "datadog", "password": "<UNIQUEPASSWORD>", "connector": "odbc", "driver": "FreeTDS"}` |
+| `<INSTANCE_CONFIG>`  | `{"host": "%%host%%,%%port%%", "username": "khulnasoft", "password": "<UNIQUEPASSWORD>", "connector": "odbc", "driver": "FreeTDS"}` |
 
 See [Autodiscovery template variables][13] for details on passing `<UNIQUEPASSWORD>` as an environment variable instead of a label.
 
@@ -138,7 +138,7 @@ See [Autodiscovery template variables][13] for details on passing `<UNIQUEPASSWO
 
 _Available for Agent versions >6.0_
 
-Collecting logs is disabled by default in the Datadog Agent. To enable it, see [Kubernetes Log Collection][11].
+Collecting logs is disabled by default in the Khulnasoft Agent. To enable it, see [Kubernetes Log Collection][11].
 
 | Parameter      | Value                                             |
 | -------------- | ------------------------------------------------- |
@@ -169,7 +169,7 @@ See [service_checks.json][16] for a list of service checks provided by this inte
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][17].
+Need help? Contact [Khulnasoft support][17].
 
 If you are running the Agent on an ARM aarch64 processor, there is a known issue starting in version 14.0.0 of this check, which is bundled with Agent version 7.48.0. A Python dependency fails to load, and you'll see the following message when running [the Agent's status subcommand][14]:
 
@@ -190,12 +190,12 @@ A fix for this is currently being developed, and in the meantime Agent versions 
 
 ## Further Reading
 
-- [Monitor your Azure SQL Databases with Datadog][18]
+- [Monitor your Azure SQL Databases with Khulnasoft][18]
 - [Key metrics for SQL Server monitoring][19]
 - [SQL Server monitoring tools][20]
-- [Monitor SQL Server performance with Datadog][21]
+- [Monitor SQL Server performance with Khulnasoft][21]
 - [Custom SQL Server metrics for detailed monitoring][22]
-- [Strategize your Azure migration for SQL workloads with Datadog][23]
+- [Strategize your Azure migration for SQL workloads with Khulnasoft][23]
 
 [1]: https://raw.githubusercontent.com/KhulnaSoft/integrations-core/master/sqlserver/images/sqlserver_dashboard.png
 [2]: https://app.khulnasoft.com/account/settings/agent/latest
@@ -214,9 +214,9 @@ A fix for this is currently being developed, and in the meantime Agent versions 
 [15]: https://github.com/KhulnaSoft/integrations-core/blob/master/sqlserver/metadata.csv
 [16]: https://github.com/KhulnaSoft/integrations-core/blob/master/sqlserver/assets/service_checks.json
 [17]: https://docs.khulnasoft.com/help/
-[18]: https://www.khulnasoft.com/blog/monitor-azure-sql-databases-datadog
+[18]: https://www.khulnasoft.com/blog/monitor-azure-sql-databases-khulnasoft
 [19]: https://www.khulnasoft.com/blog/sql-server-monitoring
 [20]: https://www.khulnasoft.com/blog/sql-server-monitoring-tools
 [21]: https://www.khulnasoft.com/blog/sql-server-performance
 [22]: https://www.khulnasoft.com/blog/sql-server-metrics
-[23]: https://www.khulnasoft.com/blog/migrate-sql-workloads-to-azure-with-datadog/
+[23]: https://www.khulnasoft.com/blog/migrate-sql-workloads-to-azure-with-khulnasoft/

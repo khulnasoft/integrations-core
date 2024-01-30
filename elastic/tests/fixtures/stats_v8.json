@@ -839,7 +839,7 @@
 				"clients": [
 					{
 						"id": 7980904,
-						"agent": "Datadog Agent/7.46.0",
+						"agent": "Khulnasoft Agent/7.46.0",
 						"local_address": "127.0.0.1:9200",
 						"remote_address": "127.0.0.1:50418",
 						"last_uri": "/",
@@ -851,7 +851,7 @@
 					},
 					{
 						"id": 112282883,
-						"agent": "Datadog Agent/7.46.0",
+						"agent": "Khulnasoft Agent/7.46.0",
 						"local_address": "127.0.0.1:9200",
 						"remote_address": "127.0.0.1:50424",
 						"last_uri": "/_nodes/stats",
@@ -863,7 +863,7 @@
 					},
 					{
 						"id": 1319120317,
-						"agent": "Datadog Agent/7.46.0",
+						"agent": "Khulnasoft Agent/7.46.0",
 						"local_address": "127.0.0.1:9200",
 						"remote_address": "127.0.0.1:50438",
 						"last_uri": "/_cat/templates?format=json",

@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2020-present
+# (C) Khulnasoft, Inc. 2020-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 
@@ -174,7 +174,7 @@ def org_v2():
 @pytest.fixture()
 def dd_events():
     """
-    Returns a dict of formatted events ready to send to Datadog
+    Returns a dict of formatted events ready to send to Khulnasoft
     """
     with open(os.path.join(HERE, 'fixtures', 'dd_events.json')) as f:
         return json.loads(f.read())

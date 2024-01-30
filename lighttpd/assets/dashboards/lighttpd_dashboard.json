@@ -1,6 +1,6 @@
 {
     "title": "Lighttpd - Overview",
-    "description": "This dashboard tracks server usage and throughput for your Lighttpd infrastructure, so you can identify resource limitations and ensure your web tier has enough capacity to handle request traffic. Further reading on Lighttpd monitoring:\n\n- [How to monitor Lighttpd with Datadog](https://www.khulnasoft.com/blog/monitor-lighttpd-web-server-metrics/)\n\n- [Datadog’s integration docs for  Lighttpd](https://docs.khulnasoft.com/integrations/lighttpd/)\n\nClone this template dashboard to make changes and add your own graph widgets.",
+    "description": "This dashboard tracks server usage and throughput for your Lighttpd infrastructure, so you can identify resource limitations and ensure your web tier has enough capacity to handle request traffic. Further reading on Lighttpd monitoring:\n\n- [How to monitor Lighttpd with Khulnasoft](https://www.khulnasoft.com/blog/monitor-lighttpd-web-server-metrics/)\n\n- [Khulnasoft’s integration docs for  Lighttpd](https://docs.khulnasoft.com/integrations/lighttpd/)\n\nClone this template dashboard to make changes and add your own graph widgets.",
     "widgets": [
         {
             "id": 0,

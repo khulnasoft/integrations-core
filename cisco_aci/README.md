@@ -38,7 +38,7 @@ To configure this check for an Agent running on a host:
         ## Authentication can use either a user auth or a certificate.
         ## If using the user auth, enter the `username` and `pwd` configuration.
         #
-        username: datadog
+        username: khulnasoft
     
         ## @param pwd - string - required
         ## Authentication can use either a user auth or a certificate.
@@ -56,7 +56,7 @@ To configure this check for an Agent running on a host:
    
    *NOTE*: Be sure to specify any tenants for the integration to collect metrics on applications, EPG, etc.
 
-2. [Restart the Agent][4] to begin sending Cisco ACI metrics to Datadog.
+2. [Restart the Agent][4] to begin sending Cisco ACI metrics to Khulnasoft.
 
 <!-- xxz tab xxx -->
 <!-- xxx tab "Containerized" xxx -->
@@ -109,7 +109,7 @@ Because this check queries all the tenants, apps, and endpoints listed before re
     cisco_aci (2.2.0)
   -----------------
     Instance ID: cisco_aci:d3a2958f66f46212 [OK]
-    Configuration Source: file:/etc/datadog-agent/conf.d/cisco_aci.d/conf.yaml
+    Configuration Source: file:/etc/khulnasoft-agent/conf.d/cisco_aci.d/conf.yaml
     Total Runs: 1
     Metric Samples: Last Run: 678, Total: 678
     Events: Last Run: 0, Total: 0
@@ -119,7 +119,7 @@ Because this check queries all the tenants, apps, and endpoints listed before re
     Last Successful Execution Date : 2023-01-04 15:58:04 CST / 2023-01-04 21:58:04 UTC (1672869484000)
   ```
 
-Need help? Contact [Datadog support][9].
+Need help? Contact [Khulnasoft support][9].
 
 [1]: https://app.khulnasoft.com/account/settings/agent/latest
 [2]: https://docs.khulnasoft.com/agent/guide/agent-configuration-files/#agent-configuration-directory

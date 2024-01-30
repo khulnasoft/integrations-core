@@ -1,6 +1,6 @@
 {
-    "author_name": "Datadog",
-    "description": "## Apache\n\nThis dashboard provides a high-level overview of your Apache web server. Monitor asynchronous connections, network throughput and performance.\n\n- [Apache integration docs](https://docs.khulnasoft.com/integrations/apache/?tab=host)\n- [How to monitor Apache web server](https://www.khulnasoft.com/blog/monitor-apache-web-server-datadog/)",
+    "author_name": "Khulnasoft",
+    "description": "## Apache\n\nThis dashboard provides a high-level overview of your Apache web server. Monitor asynchronous connections, network throughput and performance.\n\n- [Apache integration docs](https://docs.khulnasoft.com/integrations/apache/?tab=host)\n- [How to monitor Apache web server](https://www.khulnasoft.com/blog/monitor-apache-web-server-khulnasoft/)",
     "layout_type": "free",
     "template_variables": [
         {

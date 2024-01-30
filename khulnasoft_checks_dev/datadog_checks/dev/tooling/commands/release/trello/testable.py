@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2018-present
+# (C) Khulnasoft, Inc. 2018-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 import random
@@ -268,7 +268,7 @@ def testable(
     """
     root = get_root()
     repo = basepath(root)
-    if repo not in ('integrations-core', 'datadog-agent'):
+    if repo not in ('integrations-core', 'khulnasoft-agent'):
         abort(f'Repo `{repo}` is unsupported.')
 
     commits = get_commits_between(base_ref, target_ref, root=root)

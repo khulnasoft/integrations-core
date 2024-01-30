@@ -18,7 +18,7 @@ CLIENT_CERT_FILE="$CERTS_DIR/client.pem"
 rm -f $KEYSTORE $TRUSTSTORE $CA_FILE $CLIENT_CERT_FILE
 
 ## Generate server keystore and truststore.
-keytool -genkeypair -keystore $KEYSTORE -storepass $PASSWORD -alias $ALIAS -dname "cn=localhost, ou=Datadog, o=Datadog, c=New York" -keyalg rsa -keysize 2048 -validity $VALIDITY -storetype jks
+keytool -genkeypair -keystore $KEYSTORE -storepass $PASSWORD -alias $ALIAS -dname "cn=localhost, ou=Khulnasoft, o=Khulnasoft, c=New York" -keyalg rsa -keysize 2048 -validity $VALIDITY -storetype jks
 keytool -certreq -keystore $KEYSTORE -storepass $PASSWORD -alias $ALIAS -keyalg rsa -file $TMP_REQ_FILE
 keytool -gencert -keystore $KEYSTORE -storepass $PASSWORD -alias $ALIAS -infile $TMP_REQ_FILE -outfile $TMP_CERT_FILE -validity $VALIDITY -ext "san=dns:localhost"
 keytool -import -keystore $KEYSTORE -storepass $PASSWORD -alias $ALIAS -noprompt -file $TMP_CERT_FILE

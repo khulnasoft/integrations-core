@@ -1,5 +1,5 @@
 {
-    "author_name": "Datadog",
+    "author_name": "Khulnasoft",
     "description": "## Amazon MSK (Agent) Overview\n\nThis is an example Amazon MSK dashboard demonstrating the metrics that the integration collects.",
     "layout_type": "ordered",
     "reflow_type": "fixed",
@@ -33,7 +33,7 @@
                     {
                         "definition": {
                             "background_color": "transparent",
-                            "content": "This dashboard displays metrics from Amazon MSK's [Open Monitoring](https://docs.aws.amazon.com/msk/latest/developerguide/open-monitoring.html). You can monitor for topic message and data rates, partition counts, network request rates, and node disk utilization.\n\n##### [**Datadog Amazon MSK integration docs&nbsp;\u2197**](https://docs.khulnasoft.com/integrations/amazon_msk/)",
+                            "content": "This dashboard displays metrics from Amazon MSK's [Open Monitoring](https://docs.aws.amazon.com/msk/latest/developerguide/open-monitoring.html). You can monitor for topic message and data rates, partition counts, network request rates, and node disk utilization.\n\n##### [**Khulnasoft Amazon MSK integration docs&nbsp;\u2197**](https://docs.khulnasoft.com/integrations/amazon_msk/)",
                             "font_size": "18",
                             "has_padding": true,
                             "show_tick": false,

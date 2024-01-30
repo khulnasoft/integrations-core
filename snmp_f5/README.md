@@ -20,21 +20,21 @@ There are no service checks included with the F5 integration.
 
 ### Events
 
-No additional events are sent to Datadog from any component of the F5 platform.
+No additional events are sent to Khulnasoft from any component of the F5 platform.
 
 ## Further Reading
 
 Additional helpful documentation, links, and articles:
 
-* [Monitoring Datacenters and Network Devices with Datadog][4]
-* [SNMP Monitoring with Datadog][3]
+* [Monitoring Datacenters and Network Devices with Khulnasoft][4]
+* [SNMP Monitoring with Khulnasoft][3]
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][5].
+Need help? Contact [Khulnasoft support][5].
 
 [1]: https://docs.khulnasoft.com/network_monitoring/devices/data
 [2]: https://docs.khulnasoft.com/network_monitoring/devices/setup
-[3]: https://www.khulnasoft.com/blog/monitor-snmp-with-datadog/
+[3]: https://www.khulnasoft.com/blog/monitor-snmp-with-khulnasoft/
 [4]: https://www.khulnasoft.com/blog/datacenter-monitoring-dashboards/
 [5]: https://docs.khulnasoft.com/help/

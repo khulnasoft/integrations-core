@@ -10,7 +10,7 @@ This check monitors [OpenStack][2] from the controller node.
 
 ### Installation
 
-The OpenStack Controller check is included in the [Datadog Agent][3] package, so you do not need to install anything else on your server.
+The OpenStack Controller check is included in the [Khulnasoft Agent][3] package, so you do not need to install anything else on your server.
 
 ### Configuration
 
@@ -18,7 +18,7 @@ The OpenStack Controller integration is designed to collect information from all
 
 #### Prepare OpenStack
 
-Create a `datadog` user that is used in your `openstack_controller.d/conf.yaml` file. This user requires admin read-only permissions across your environment so that it can be run from a single node and read high level system information about all nodes and servers.
+Create a `khulnasoft` user that is used in your `openstack_controller.d/conf.yaml` file. This user requires admin read-only permissions across your environment so that it can be run from a single node and read high level system information about all nodes and servers.
 
 #### Agent configuration
 
@@ -40,7 +40,7 @@ Create a `datadog` user that is used in your `openstack_controller.d/conf.yaml` 
 
 ##### Log collection
 
-1. Collecting logs is disabled by default in the Datadog Agent, you can enable it in `datadog.yaml`:
+1. Collecting logs is disabled by default in the Khulnasoft Agent, you can enable it in `khulnasoft.yaml`:
 
    ```yaml
    logs_enabled: true
@@ -78,7 +78,7 @@ See [service_checks.json][8] for a list of service checks provided by this integ
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][9].
+Need help? Contact [Khulnasoft support][9].
 
 
 [1]: https://docs.khulnasoft.com/integrations/openstack/

@@ -19,7 +19,7 @@ jobs:
 
     services:
       dd-agent:
-        image: gcr.io/datadoghq/agent:latest
+        image: gcr.io/khulnasofthq/agent:latest
         ports:
         - "8126:8126"
         env:

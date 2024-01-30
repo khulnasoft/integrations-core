@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2021-present
+# (C) Khulnasoft, Inc. 2021-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 
@@ -13,7 +13,7 @@ def instance_activity_metrics_excluded_aggregations():
 
 
 def instance_application_name():
-    return 'datadog-agent'
+    return 'khulnasoft-agent'
 
 
 def instance_collect_activity_metrics():

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# (C) Datadog, Inc. 2016-present
+# (C) Khulnasoft, Inc. 2016-present
 # All rights reserved
 # Licensed under Simplified BSD License (see LICENSE)
 import logging
@@ -59,7 +59,7 @@ def mocked_prometheus_check():
     check = PrometheusCheck('prometheus_check', {}, {}, {})
     check.gauge = mock.MagicMock()
     check.rate = mock.MagicMock()
-    check.log = logging.getLogger('datadog-prometheus.test')
+    check.log = logging.getLogger('khulnasoft-prometheus.test')
     check.log.debug = mock.MagicMock()
     check.metrics_mapper = {'process_virtual_memory_bytes': 'process.vm.bytes'}
     check.NAMESPACE = 'prometheus'
@@ -2008,7 +2008,7 @@ def test_requests_wrapper_config():
 
     expected_headers = OrderedDict(
         [
-            ('User-Agent', 'Datadog Agent/0.0.0'),
+            ('User-Agent', 'Khulnasoft Agent/0.0.0'),
             ('Accept', '*/*'),
             ('Accept-Encoding', 'gzip'),
             ('foo', 'bar'),

@@ -1,6 +1,6 @@
 {
   "title": "Envoy - Overview",
-  "description": "## Envoy\n\nThis dashboard provides a high-level overview of your Envoy cluster so you can monitor its performance and resource usage.\n\nFor further reading on monitoring Envoy, see:\n\n- [Datadog Envoy integration docs](https://docs.khulnasoft.com/integrations/envoy/)\n- [Monitoring AWS App Mesh and Envoy with Datadog](https://www.khulnasoft.com/blog/envoy-app-mesh-monitoring/)\n\nClone this template to make changes and add your own graphs and widgets.",
+  "description": "## Envoy\n\nThis dashboard provides a high-level overview of your Envoy cluster so you can monitor its performance and resource usage.\n\nFor further reading on monitoring Envoy, see:\n\n- [Khulnasoft Envoy integration docs](https://docs.khulnasoft.com/integrations/envoy/)\n- [Monitoring AWS App Mesh and Envoy with Khulnasoft](https://www.khulnasoft.com/blog/envoy-app-mesh-monitoring/)\n\nClone this template to make changes and add your own graphs and widgets.",
   "widgets": [
     {
       "id": 2469678217434246,
@@ -35,7 +35,7 @@
             "id": 6583474077558724,
             "definition": {
               "type": "note",
-              "content": "**Refer to the following resources for more information**\n\n- [Datadog Envoy documentation](https://www.envoyproxy.io/docs/envoy/latest/)\n\n- [Available Envoy metrics](https://docs.khulnasoft.com/integrations/envoy/?tab=host#data-collected) \n\n- [How to monitor Envoy using AWS App Mesh](https://www.khulnasoft.com/blog/envoy-app-mesh-monitoring/)",
+              "content": "**Refer to the following resources for more information**\n\n- [Khulnasoft Envoy documentation](https://www.envoyproxy.io/docs/envoy/latest/)\n\n- [Available Envoy metrics](https://docs.khulnasoft.com/integrations/envoy/?tab=host#data-collected) \n\n- [How to monitor Envoy using AWS App Mesh](https://www.khulnasoft.com/blog/envoy-app-mesh-monitoring/)",
               "background_color": "transparent",
               "font_size": "12",
               "text_align": "left",

@@ -2,7 +2,7 @@
 
 ## Overview
 
-This check monitors [SingleStore][1] through the Datadog Agent. SingleStore offers transactional and analytical processing of stored data. Enable the Datadog-SingleStoreDB integration to:
+This check monitors [SingleStore][1] through the Khulnasoft Agent. SingleStore offers transactional and analytical processing of stored data. Enable the Khulnasoft-SingleStoreDB integration to:
 
 - Understand the health of clusters and nodes through metrics and events.
 - Address drops in storage capacity.
@@ -15,7 +15,7 @@ Follow the instructions below to install and configure this check for an Agent r
 
 ### Installation
 
-The SingleStore check is included in the [Datadog Agent][3] package.
+The SingleStore check is included in the [Khulnasoft Agent][3] package.
 No additional installation is needed on your server.
 
 ### Configuration
@@ -37,7 +37,7 @@ No additional installation is needed on your server.
 {{< /site-region >}}
 partial -->
 
-1. Collecting logs is disabled by default in the Datadog Agent, enable it in your `datadog.yaml` file:
+1. Collecting logs is disabled by default in the Khulnasoft Agent, enable it in your `khulnasoft.yaml` file:
 
    ```yaml
    logs_enabled: true
@@ -77,7 +77,7 @@ For containerized environments, see the [Autodiscovery Integration Templates][2]
 {{< /site-region >}}
 partial -->
 
-Collecting logs is disabled by default in the Datadog Agent. To enable it, see [Kubernetes Log Collection][6].
+Collecting logs is disabled by default in the Khulnasoft Agent. To enable it, see [Kubernetes Log Collection][6].
 
 | Parameter      | Value                                     |
 |----------------|-------------------------------------------|
@@ -105,7 +105,7 @@ See [service_checks.json][9] for a list of service checks provided by this integ
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][10].
+Need help? Contact [Khulnasoft support][10].
 
 
 [1]: https://www.singlestore.com/

@@ -2,13 +2,13 @@
 
 ## Overview
 
-This check monitors [Vertica][1] through the Datadog Agent.
+This check monitors [Vertica][1] through the Khulnasoft Agent.
 
 ## Setup
 
 ### Installation
 
-The Vertica check is included in the [Datadog Agent][2] package. No additional installation is needed on your server.
+The Vertica check is included in the [Khulnasoft Agent][2] package. No additional installation is needed on your server.
 
 ### Configuration
 
@@ -22,27 +22,27 @@ The Vertica integration supports connecting to Vertica through SSL. To enable th
 
 #### Prepare Vertica
 
-Create a database user for the Datadog Agent. From [vsql][4], connect to the database as a superuser. Then run the `CREATE USER` statement.
+Create a database user for the Khulnasoft Agent. From [vsql][4], connect to the database as a superuser. Then run the `CREATE USER` statement.
 
 ```text
-CREATE USER datadog IDENTIFIED BY '<PASSWORD>';
+CREATE USER khulnasoft IDENTIFIED BY '<PASSWORD>';
 ```
 
 The user used to connect to the database must be granted the [SYSMONITOR][5] role in order to access the monitoring system tables.
 
 ```text
-GRANT SYSMONITOR TO datadog WITH ADMIN OPTION;
+GRANT SYSMONITOR TO khulnasoft WITH ADMIN OPTION;
 ```
 
-As the metrics for current license usage use the values from the most recent [audit][6], Datadog recommends scheduling audits to occur as often as possible. For more information, see the [Vertica audit license guide][7].
+As the metrics for current license usage use the values from the most recent [audit][6], Khulnasoft recommends scheduling audits to occur as often as possible. For more information, see the [Vertica audit license guide][7].
 
-[Restart the Agent][8] to start sending Vertica metrics to Datadog.
+[Restart the Agent][8] to start sending Vertica metrics to Khulnasoft.
 
 #### Log collection
 
 _Available for Agent versions >6.0_
 
-1. Collecting logs is disabled by default in the Datadog Agent, enable it in your `datadog.yaml` file:
+1. Collecting logs is disabled by default in the Khulnasoft Agent, enable it in your `khulnasoft.yaml` file:
 
     ```yaml
     logs_enabled: true
@@ -80,7 +80,7 @@ See [service_checks.json][11] for a list of service checks provided by this inte
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][12].
+Need help? Contact [Khulnasoft support][12].
 
 
 [1]: https://www.vertica.com

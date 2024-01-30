@@ -3,7 +3,7 @@
 -----
 
 Any integration that makes use of our [pytest plugin](ddev/plugins.md#pytest) in its test suite supports
-end-to-end testing on a live [Datadog Agent][].
+end-to-end testing on a live [Khulnasoft Agent][].
 
 The entrypoint for E2E management is the command group [`env`](ddev/cli.md#ddev-env).
 
@@ -48,10 +48,10 @@ $ ddev env start postgres py3.9-14.0
  - Container compose-postgres_replica-1   Started                                            0.9s
  - Container compose-postgres-1           Started                                            0.9s
 
-master-py3: Pulling from datadog/agent-dev
+master-py3: Pulling from khulnasoft/agent-dev
 Digest: sha256:72824c9a986b0ef017eabba4e2cc9872333c7e16eec453b02b2276a40518655c
-Status: Image is up to date for datadog/agent-dev:master-py3
-docker.io/datadog/agent-dev:master-py3
+Status: Image is up to date for khulnasoft/agent-dev:master-py3
+docker.io/khulnasoft/agent-dev:master-py3
 
 Stop environment -> ddev env stop postgres py3.9-14.0
 Execute tests -> ddev env test postgres py3.9-14.0
@@ -71,7 +71,7 @@ Let's see what we have running:
 ```
 $ docker ps --format "table {{.Image}}\t{{.Status}}\t{{.Ports}}\t{{.Names}}"
 IMAGE                          STATUS                   PORTS                              NAMES
-datadog/agent-dev:master-py3   Up 3 minutes (healthy)                                      dd_postgres_py3.9-14.0
+khulnasoft/agent-dev:master-py3   Up 3 minutes (healthy)                                      dd_postgres_py3.9-14.0
 postgres:14-alpine             Up 3 minutes (healthy)   5432/tcp, 0.0.0.0:5434->5434/tcp   compose-postgres_replica2-1
 postgres:14-alpine             Up 3 minutes (healthy)   0.0.0.0:5432->5432/tcp             compose-postgres-1
 postgres:14-alpine             Up 3 minutes (healthy)   5432/tcp, 0.0.0.0:5433->5433/tcp   compose-postgres_replica-1
@@ -79,9 +79,9 @@ postgres:14-alpine             Up 3 minutes (healthy)   5432/tcp, 0.0.0.0:5433->
 
 ### Agent version
 
-You can select a particular build of the Agent to use with the `--agent`/`-a` option. Any Docker image is valid e.g. `datadog/agent:7.47.0`.
+You can select a particular build of the Agent to use with the `--agent`/`-a` option. Any Docker image is valid e.g. `khulnasoft/agent:7.47.0`.
 
-A custom nightly build will be used by default, which is re-built on every commit to the [Datadog Agent repository][datadog-agent].
+A custom nightly build will be used by default, which is re-built on every commit to the [Khulnasoft Agent repository][khulnasoft-agent].
 
 ### Integration version
 
@@ -139,7 +139,7 @@ Collector
     postgres (15.0.0)
     -----------------
       Instance ID: postgres:973e44c6a9b27d18 [OK]
-      Configuration Source: file:/etc/datadog-agent/conf.d/postgres.d/postgres.yaml
+      Configuration Source: file:/etc/khulnasoft-agent/conf.d/postgres.d/postgres.yaml
       Total Runs: 1
       Metric Samples: Last Run: 2,971, Total: 2,971
       Events: Last Run: 0, Total: 0
@@ -171,7 +171,7 @@ the first and last line of the integration's `check` method, respectively.
 
 ```
 $ ddev env agent postgres py3.9-14.0 check -b 0
-> /opt/datadog-agent/embedded/lib/python3.9/site-packages/khulnasoft_checks/postgres/postgres.py(851)check()
+> /opt/khulnasoft-agent/embedded/lib/python3.9/site-packages/khulnasoft_checks/postgres/postgres.py(851)check()
 -> tags = copy.copy(self.tags)
 (Pdb) list
 846                 }

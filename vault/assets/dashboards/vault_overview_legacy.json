@@ -1,7 +1,7 @@
 {
-  "author_name": "Datadog",
+  "author_name": "Khulnasoft",
   "title": "Vault - Overview (Legacy)",
-  "description": "## Vault\n\nThis dashboard provides a high-level overview of your Vault clusters so you can monitor its performance and cluster health.\n\n- [Official Vault integration docs](https://docs.khulnasoft.com/integrations/vault/)\n- [Monitoring HashiCorp Vault with Datadog](https://www.khulnasoft.com/blog/monitor-hashicorp-vault-with-datadog/)\n\nClone this template dashboard to make changes and add your own graph widgets.",
+  "description": "## Vault\n\nThis dashboard provides a high-level overview of your Vault clusters so you can monitor its performance and cluster health.\n\n- [Official Vault integration docs](https://docs.khulnasoft.com/integrations/vault/)\n- [Monitoring HashiCorp Vault with Khulnasoft](https://www.khulnasoft.com/blog/monitor-hashicorp-vault-with-khulnasoft/)\n\nClone this template dashboard to make changes and add your own graph widgets.",
   "layout_type": "ordered",
   "is_read_only": true,
   "notify_list": [],
@@ -42,7 +42,7 @@
             "id": 3660302701095376,
             "definition": {
               "type": "note",
-              "content": "## Useful Links\n\n- [Monitoring Vault with Datadog ↗](https://www.khulnasoft.com/blog/vault-monitoring-with-datadog/#collect-and-analyze-all-your-vault-logs)\n- [Hashicorp Vault Auditing Documentation ↗](https://www.vaultproject.io/docs/audit#enabling-disabling-audit-devices)\n- [Datadog Vault Integration Documentation ↗](https://docs.khulnasoft.com/integrations/vault)\n- [Datadog Vault Monitoring 3 Blog Part Series ↗](https://www.khulnasoft.com/blog/monitor-vault-metrics-and-logs)",
+              "content": "## Useful Links\n\n- [Monitoring Vault with Khulnasoft ↗](https://www.khulnasoft.com/blog/vault-monitoring-with-khulnasoft/#collect-and-analyze-all-your-vault-logs)\n- [Hashicorp Vault Auditing Documentation ↗](https://www.vaultproject.io/docs/audit#enabling-disabling-audit-devices)\n- [Khulnasoft Vault Integration Documentation ↗](https://docs.khulnasoft.com/integrations/vault)\n- [Khulnasoft Vault Monitoring 3 Blog Part Series ↗](https://www.khulnasoft.com/blog/monitor-vault-metrics-and-logs)",
               "background_color": "transparent",
               "font_size": "12",
               "text_align": "left",
@@ -1621,7 +1621,7 @@
     {
       "id": 9,
       "definition": {
-        "title": "Datadog Security Monitoring",
+        "title": "Khulnasoft Security Monitoring",
         "type": "group",
         "background_color": "vivid_purple",
         "show_title": true,
@@ -1631,7 +1631,7 @@
             "id": 5944879021383970,
             "definition": {
               "type": "note",
-              "content": "Datadog Security Monitoring analyzes HashiCorp Vault audit logs to detect threats to your environment in real time. If you aren't currently using  [Datadog Security Monitoring](https://app.khulnasoft.com/security), please sign up. ",
+              "content": "Khulnasoft Security Monitoring analyzes HashiCorp Vault audit logs to detect threats to your environment in real time. If you aren't currently using  [Khulnasoft Security Monitoring](https://app.khulnasoft.com/security), please sign up. ",
               "background_color": "gray",
               "font_size": "14",
               "text_align": "left",

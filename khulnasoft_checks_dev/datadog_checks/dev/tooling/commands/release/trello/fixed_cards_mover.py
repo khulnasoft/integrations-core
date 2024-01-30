@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2020-present
+# (C) Khulnasoft, Inc. 2020-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 
@@ -11,7 +11,7 @@ from ...console import echo_success
 
 class FixedCardsMover:
     GITHUB_TRELLO_ACTION_ID = '56097d35feef6f3281d58087'
-    GITHUB_URL_REGEX = 'https://github.com/KhulnaSoft/datadog-agent/pull/\\d*'
+    GITHUB_URL_REGEX = 'https://github.com/KhulnaSoft/khulnasoft-agent/pull/\\d*'
 
     def __init__(self, client: TrelloClient, dry_run: bool):
         self.__client = client

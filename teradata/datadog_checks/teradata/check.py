@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2022-present
+# (C) Khulnasoft, Inc. 2022-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 import json
@@ -129,7 +129,7 @@ class TeradataCheck(AgentCheck, ConfigMixin):
         if TERADATASQL_IMPORT_ERROR:
             self.log.error(
                 'Teradata SQL Driver module is unavailable. Please double check your installation and refer to the '
-                'Datadog documentation for more information. %s',
+                'Khulnasoft documentation for more information. %s',
                 TERADATASQL_IMPORT_ERROR,
             )
             raise TERADATASQL_IMPORT_ERROR

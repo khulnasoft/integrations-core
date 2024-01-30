@@ -140,7 +140,7 @@ We provide an easy way to utilize [log collection][integration-log-collection] w
         - If `mount_logs` is a sequence of `int`, only the selected indices (starting at 1) will be used. So,
           using the Apache example above, to only monitor the error log you would set it to `[2]`.
         - In lieu of a config spec, for whatever reason, you may set `mount_logs` to a `dict` containing the
-          standard [logs][datadog-agent-logs] key.
+          standard [logs][khulnasoft-agent-logs] key.
 
 1. All requested log files are available to reference as environment variables for any Docker calls as
    `DD_LOG_<LOG_CONFIG_INDEX>` where the indices start at 1.

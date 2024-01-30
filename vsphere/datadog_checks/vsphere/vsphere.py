@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2019-present
+# (C) Khulnasoft, Inc. 2019-present
 # All rights reserved
 # Licensed under Simplified BSD License (see LICENSE)
 from __future__ import division
@@ -140,7 +140,7 @@ class VSphereCheck(AgentCheck):
         t0 = Timer()
         counters = self.api.get_perf_counter_by_level(self._config.collection_level)
         self.gauge(
-            "datadog.vsphere.refresh_metrics_metadata_cache.time",
+            "khulnasoft.vsphere.refresh_metrics_metadata_cache.time",
             t0.total(),
             tags=self._config.base_tags,
             raw=True,
@@ -195,7 +195,7 @@ class VSphereCheck(AgentCheck):
             return {}
 
         self.gauge(
-            'datadog.vsphere.query_tags.time',
+            'khulnasoft.vsphere.query_tags.time',
             t0.total(),
             tags=self._config.base_tags,
             raw=True,
@@ -214,7 +214,7 @@ class VSphereCheck(AgentCheck):
         infrastructure_data = self.api.get_infrastructure()
         collect_property_metrics = self._config.collect_property_metrics
         self.gauge(
-            "datadog.vsphere.refresh_infrastructure_cache.time",
+            "khulnasoft.vsphere.refresh_infrastructure_cache.time",
             t0.total(),
             tags=self._config.base_tags + ['collect_property_metrics:{}'.format(collect_property_metrics)],
             raw=True,
@@ -465,7 +465,7 @@ class VSphereCheck(AgentCheck):
         t0 = Timer()
         metrics_values = self.api.query_metrics(query_specs)
         self.histogram(
-            'datadog.vsphere.query_metrics.time',
+            'khulnasoft.vsphere.query_metrics.time',
             t0.total(),
             tags=self._config.base_tags,
             raw=True,
@@ -596,8 +596,8 @@ class VSphereCheck(AgentCheck):
 
     def submit_external_host_tags(self):
         # type: () -> None
-        """Send external host tags to the Datadog backend. This is only useful for a REALTIME instance because
-        only VMs and Hosts appear as 'datadog hosts'."""
+        """Send external host tags to the Khulnasoft backend. This is only useful for a REALTIME instance because
+        only VMs and Hosts appear as 'khulnasoft hosts'."""
         external_host_tags = []
 
         for resource_type in HOST_RESOURCES:
@@ -626,7 +626,7 @@ class VSphereCheck(AgentCheck):
             t0 = Timer()
             new_events = self.api.get_new_events(start_time=self.latest_event_query)
             self.gauge(
-                'datadog.vsphere.collect_events.time',
+                'khulnasoft.vsphere.collect_events.time',
                 t0.total(),
                 tags=self._config.base_tags,
                 raw=True,

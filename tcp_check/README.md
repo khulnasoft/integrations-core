@@ -10,7 +10,7 @@ Monitor TCP connectivity and response time for any host and port.
 
 ### Installation
 
-The TCP check is included in the [Datadog Agent][2] package. No additional installation is needed on your server.
+The TCP check is included in the [Khulnasoft Agent][2] package. No additional installation is needed on your server.
 
 Many metrics checks are best run on the same host(s) as the monitored service. However, it's recommended to run this check from hosts that do not run the monitored TCP services to test remote connectivity.
 
@@ -44,7 +44,7 @@ Configuration Options:
 - `collect_response_time` (Optional) - Defaults to false, which means no response time metric is collected. If set to true, the metric returned is `network.tcp.response_time`.
 - `tags` (Optional) - Tags to be assigned to the metric.
 
-[Restart the Agent][5] to start sending TCP service checks and response times to Datadog.
+[Restart the Agent][5] to start sending TCP service checks and response times to Khulnasoft.
 
 <!-- xxz tab xxx -->
 <!-- xxx tab "Containerized" xxx -->
@@ -84,7 +84,7 @@ See [service_checks.json][9] for a list of service checks provided by this integ
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][11].
+Need help? Contact [Khulnasoft support][11].
 
 [1]: https://raw.githubusercontent.com/KhulnaSoft/integrations-core/master/tcp_check/images/netgraphs.png
 [2]: https://app.khulnasoft.com/account/settings/agent/latest

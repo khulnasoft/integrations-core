@@ -2,13 +2,13 @@
 
 ## Overview
 
-This check monitors [Ambari][1] through the Datadog Agent.
+This check monitors [Ambari][1] through the Khulnasoft Agent.
 
 ## Setup
 
 ### Installation
 
-The Ambari check is included in the [Datadog Agent][2] package. No additional installation is needed on your server.
+The Ambari check is included in the [Khulnasoft Agent][2] package. No additional installation is needed on your server.
 
 ### Configuration
 
@@ -39,7 +39,7 @@ To configure this check for an Agent running on a host:
 
 _Available for Agent versions >6.0_
 
-1. Collecting logs is disabled by default in the Datadog Agent. Enable it in your `datadog.yaml` file:
+1. Collecting logs is disabled by default in the Khulnasoft Agent. Enable it in your `khulnasoft.yaml` file:
 
     ```yaml
     logs_enabled: true
@@ -82,7 +82,7 @@ For containerized environments, see the [Autodiscovery Integration Templates][5]
 
 _Available for Agent versions >6.0_
 
-Collecting logs is disabled by default in the Datadog Agent. To enable it, see [Kubernetes Log Collection][6].
+Collecting logs is disabled by default in the Khulnasoft Agent. To enable it, see [Kubernetes Log Collection][6].
 
 | Parameter      | Value                                                                                                                                                                                             |
 | -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -123,7 +123,7 @@ See [service_checks.json][9] for a list of service checks provided by this integ
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][10].
+Need help? Contact [Khulnasoft support][10].
 
 
 [1]: https://ambari.apache.org

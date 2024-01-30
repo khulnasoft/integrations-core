@@ -1,6 +1,6 @@
 {
     "title": "RabbitMQ Overview (Management Version)",
-    "description": "## RabbitMQ Integration\n\nThis dashboard provides an overview of your RabbitMQ (Management plugin) environment. It monitors node status, provides information on message statuses, and gives you insight into various other observability measures of your RMQ setup. \n\n*Note:* If you are using the Prometheus plugin version of RabbitMQ, please use the alternate dashboard.\n\nFor more information, please refer to:\n* [RabbitMQ Integration Doc](https://docs.khulnasoft.com/integrations/rabbitmq/?tab=host)\n* [RabbitMQ Blog by Datadog](https://www.khulnasoft.com/blog/monitoring-rabbitmq-performance-with-datadog/) ",
+    "description": "## RabbitMQ Integration\n\nThis dashboard provides an overview of your RabbitMQ (Management plugin) environment. It monitors node status, provides information on message statuses, and gives you insight into various other observability measures of your RMQ setup. \n\n*Note:* If you are using the Prometheus plugin version of RabbitMQ, please use the alternate dashboard.\n\nFor more information, please refer to:\n* [RabbitMQ Integration Doc](https://docs.khulnasoft.com/integrations/rabbitmq/?tab=host)\n* [RabbitMQ Blog by Khulnasoft](https://www.khulnasoft.com/blog/monitoring-rabbitmq-performance-with-khulnasoft/) ",
     "widgets": [{
         "id": 539814910975430,
         "definition": {
@@ -33,7 +33,7 @@
                 "id": 7472223195597488,
                 "definition": {
                     "type": "note",
-                    "content": "**Useful Links**\n\n* [Integration Docs](https://docs.khulnasoft.com/integrations/rabbitmq/?tab=host)\n* [RabbitMQ Blog by Datadog](https://www.khulnasoft.com/blog/monitoring-rabbitmq-performance-with-datadog/)\n* [RabbitMQ Documentation](https://www.rabbitmq.com/documentation.html)",
+                    "content": "**Useful Links**\n\n* [Integration Docs](https://docs.khulnasoft.com/integrations/rabbitmq/?tab=host)\n* [RabbitMQ Blog by Khulnasoft](https://www.khulnasoft.com/blog/monitoring-rabbitmq-performance-with-khulnasoft/)\n* [RabbitMQ Documentation](https://www.rabbitmq.com/documentation.html)",
                     "background_color": "white",
                     "font_size": "16",
                     "text_align": "left",

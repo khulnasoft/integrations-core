@@ -1,6 +1,6 @@
 {
-    "author_name": "Datadog",
-    "description": "This is a high-level overview of your Temporal cluster, helping you keep track of its global as well as service-wise health.\n\n##### [**Datadog Temporal integration docs&nbsp;\u2197**](https://docs.khulnasoft.com/integrations/temporal/)",
+    "author_name": "Khulnasoft",
+    "description": "This is a high-level overview of your Temporal cluster, helping you keep track of its global as well as service-wise health.\n\n##### [**Khulnasoft Temporal integration docs&nbsp;\u2197**](https://docs.khulnasoft.com/integrations/temporal/)",
     "layout_type": "ordered",
     "template_variables": [
         {
@@ -23,7 +23,7 @@
                     {
                         "definition": {
                             "background_color": "transparent",
-                            "content": "This is a high-level overview of your Temporal cluster, helping you keep track of its global as well as service-wise health.\n\n##### [**Datadog Temporal integration docs&nbsp;\u2197**](https://docs.khulnasoft.com/integrations/temporal/)",
+                            "content": "This is a high-level overview of your Temporal cluster, helping you keep track of its global as well as service-wise health.\n\n##### [**Khulnasoft Temporal integration docs&nbsp;\u2197**](https://docs.khulnasoft.com/integrations/temporal/)",
                             "font_size": "18",
                             "has_padding": true,
                             "show_tick": false,

@@ -2,8 +2,8 @@
 
 -----
 
-TLS/SSL is widely used to provide communications over a secure network. Many of the software that Datadog supports has features to allow TLS/SSL.
-Therefore, the Datadog Agent may need to connect with TLS/SSL to get metrics.
+TLS/SSL is widely used to provide communications over a secure network. Many of the software that Khulnasoft supports has features to allow TLS/SSL.
+Therefore, the Khulnasoft Agent may need to connect with TLS/SSL to get metrics.
 
 
 ## Getting started

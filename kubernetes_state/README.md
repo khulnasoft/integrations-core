@@ -11,7 +11,7 @@ Get metrics from kubernetes_state service in real time to:
 
 ### Installation
 
-The Kubernetes-State check is included in the [Datadog Agent][1] package, so you don't need to install anything else on your Kubernetes servers.
+The Kubernetes-State check is included in the [Khulnasoft Agent][1] package, so you don't need to install anything else on your Kubernetes servers.
 
 ### Configuration
 
@@ -37,7 +37,7 @@ See [../kubernetes/assets/service_checks.json][6] for a list of service checks p
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][7].
+Need help? Contact [Khulnasoft support][7].
 
 
 [1]: https://app.khulnasoft.com/account/settings/agent/latest

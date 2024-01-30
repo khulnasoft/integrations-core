@@ -2,19 +2,19 @@
 
 ## Overview
 
-<div class="alert alert-warning"> This page describes the ECS Fargate integration. For EKS Fargate, see the documentation for Datadog's <a href="http://docs.khulnasoft.com/integrations/eks_fargate">EKS Fargate integration</a>.
+<div class="alert alert-warning"> This page describes the ECS Fargate integration. For EKS Fargate, see the documentation for Khulnasoft's <a href="http://docs.khulnasoft.com/integrations/eks_fargate">EKS Fargate integration</a>.
 </div>
 
 Get metrics from all your containers running in ECS Fargate:
 
 - CPU/Memory usage & limit metrics
-- Monitor your applications running on Fargate using Datadog integrations or custom metrics.
+- Monitor your applications running on Fargate using Khulnasoft integrations or custom metrics.
 
-The Datadog Agent retrieves metrics for the task definition's containers with the ECS task metadata endpoint. According to the [ECS Documentation][2] on that endpoint:
+The Khulnasoft Agent retrieves metrics for the task definition's containers with the ECS task metadata endpoint. According to the [ECS Documentation][2] on that endpoint:
 
 - This endpoint returns Docker stats JSON for all of the containers associated with the task. For more information about each of the returned stats, see [ContainerStats][3] in the Docker API documentation.
 
-The Task Metadata endpoint is only available from within the task definition itself, which is why the Datadog Agent needs to be run as an additional container within each task definition to be monitored.
+The Task Metadata endpoint is only available from within the task definition itself, which is why the Khulnasoft Agent needs to be run as an additional container within each task definition to be monitored.
 
 The only configuration required to enable this metrics collection is to set an environment variable `ECS_FARGATE` to `"true"` in the task definition.
 
@@ -22,13 +22,13 @@ The only configuration required to enable this metrics collection is to set an e
 
 ## Setup
 
-The following steps cover setup of the Datadog Container Agent within AWS ECS Fargate. **Note**: Datadog Agent version 6.1.1 or higher is needed to take full advantage of the Fargate integration.
+The following steps cover setup of the Khulnasoft Container Agent within AWS ECS Fargate. **Note**: Khulnasoft Agent version 6.1.1 or higher is needed to take full advantage of the Fargate integration.
 
-Tasks that do not have the Datadog Agent still report metrics with Cloudwatch, however the Agent is needed for Autodiscovery, detailed container metrics, tracing, and more. Additionally, Cloudwatch metrics are less granular, and have more latency in reporting than metrics shipped directly through the Datadog Agent.
+Tasks that do not have the Khulnasoft Agent still report metrics with Cloudwatch, however the Agent is needed for Autodiscovery, detailed container metrics, tracing, and more. Additionally, Cloudwatch metrics are less granular, and have more latency in reporting than metrics shipped directly through the Khulnasoft Agent.
 
 ### Installation
 
-To monitor your ECS Fargate tasks with Datadog, run the Agent as a container in **same task definition** as your application container. To collect metrics with Datadog, each task definition should include a Datadog Agent container in addition to the application containers. Follow these setup steps:
+To monitor your ECS Fargate tasks with Khulnasoft, run the Agent as a container in **same task definition** as your application container. To collect metrics with Khulnasoft, each task definition should include a Khulnasoft Agent container in addition to the application containers. Follow these setup steps:
 
 1. **Create an ECS Fargate task**
 2. **Create or Modify your IAM Policy**
@@ -36,7 +36,7 @@ To monitor your ECS Fargate tasks with Datadog, run the Agent as a container in 
 
 #### Create an ECS Fargate task
 
-The primary unit of work in Fargate is the task, which is configured in the task definition. A task definition is comparable to a pod in Kubernetes. A task definition must contain one or more containers. In order to run the Datadog Agent, create your task definition to run your application container(s), as well as the Datadog Agent container.
+The primary unit of work in Fargate is the task, which is configured in the task definition. A task definition is comparable to a pod in Kubernetes. A task definition must contain one or more containers. In order to run the Khulnasoft Agent, create your task definition to run your application container(s), as well as the Khulnasoft Agent container.
 
 The instructions below show you how to configure the task using the [Amazon Web Console][4], [AWS CLI tools][5], or [AWS CloudFormation][6].
 
@@ -51,13 +51,13 @@ The instructions below show you how to configure the task using the [Amazon Web 
 2. Click on **Task Definitions** in the left menu, then click the **Create new Task Definition** button or choose an existing Fargate task definition.
 3. For new task definitions:
     1. Select **Fargate** as the launch type, then click the **Next step** button.
-    2. Enter a **Task Definition Name**, such as `my-app-and-datadog`.
+    2. Enter a **Task Definition Name**, such as `my-app-and-khulnasoft`.
     3. Select a task execution IAM role. See permission requirements in the [Create or Modify your IAM Policy](#create-or-modify-your-iam-policy) section below.
     4. Choose **Task memory** and **Task CPU** based on your needs.
-4. Click the **Add container** button to begin adding the Datadog Agent container.
-    1. For **Container name** enter `datadog-agent`.
-    2. For **Image** enter `public.ecr.aws/datadog/agent:latest`.
-    3. For **Env Variables**, add the **Key** `DD_API_KEY` and enter your [Datadog API Key][41] as the value.
+4. Click the **Add container** button to begin adding the Khulnasoft Agent container.
+    1. For **Container name** enter `khulnasoft-agent`.
+    2. For **Image** enter `public.ecr.aws/khulnasoft/agent:latest`.
+    3. For **Env Variables**, add the **Key** `DD_API_KEY` and enter your [Khulnasoft API Key][41] as the value.
     4. Add another environment variable using the **Key** `ECS_FARGATE` and the value `true`. Click **Add** to add the container.
     5. Add another environment variable using the **Key** `DD_SITE` and the value {{< region-param key="dd_site" code="true" >}}. This defaults to `khulnasoft.com` if you don't set it.
     6. (Windows Only) Select `C:\` as the working directory.
@@ -76,10 +76,10 @@ partial -->
 <!-- xxx tab "AWS CLI" xxx -->
 ##### AWS CLI Task Definition
 
-1. Download [datadog-agent-ecs-fargate.json][42]. **Note**: If you are using Internet Explorer, this may download as a gzip file, which contains the JSON file mentioned below.
+1. Download [khulnasoft-agent-ecs-fargate.json][42]. **Note**: If you are using Internet Explorer, this may download as a gzip file, which contains the JSON file mentioned below.
 <!-- partial
 {{< site-region region="us,us3,us5,eu,ap1,gov" >}}
-2. Update the JSON with a `TASK_NAME`, your [Datadog API Key][41], and the appropriate `DD_SITE` ({{< region-param key="dd_site" code="true" >}}). **Note**: The environment variable `ECS_FARGATE` is already set to `"true"`.
+2. Update the JSON with a `TASK_NAME`, your [Khulnasoft API Key][41], and the appropriate `DD_SITE` ({{< region-param key="dd_site" code="true" >}}). **Note**: The environment variable `ECS_FARGATE` is already set to `"true"`.
 
 [41]: https://app.khulnasoft.com/organization-settings/api-keys
 {{< /site-region >}}
@@ -101,7 +101,7 @@ partial -->
 5. Execute the following command to register the ECS task definition:
 
 ```bash
-aws ecs register-task-definition --cli-input-json file://<PATH_TO_FILE>/datadog-agent-ecs-fargate.json
+aws ecs register-task-definition --cli-input-json file://<PATH_TO_FILE>/khulnasoft-agent-ecs-fargate.json
 ```
 
 <!-- xxz tab xxx -->
@@ -113,7 +113,7 @@ You can use [AWS CloudFormation][6] templating to configure your Fargate contain
 
 <!-- partial
 {{< site-region region="us,us3,us5,eu,ap1,gov" >}}
-Update this CloudFormation template below with your [Datadog API Key][41]. As well as include the appropriate `DD_SITE` ({{< region-param key="dd_site" code="true" >}}) environment variable if necessary, as this defaults to `khulnasoft.com` if you don't set it.
+Update this CloudFormation template below with your [Khulnasoft API Key][41]. As well as include the appropriate `DD_SITE` ({{< region-param key="dd_site" code="true" >}}) environment variable if necessary, as this defaults to `khulnasoft.com` if you don't set it.
 
 [41]: https://app.khulnasoft.com/organization-settings/api-keys
 {{< /site-region >}}
@@ -130,8 +130,8 @@ Resources:
       Cpu: 256
       Memory: 512
       ContainerDefinitions:
-        - Name: datadog-agent
-          Image: 'public.ecr.aws/datadog/agent:latest'
+        - Name: khulnasoft-agent
+          Image: 'public.ecr.aws/khulnasoft/agent:latest'
           Environment:
             - Name: DD_API_KEY
               Value: <KHULNASOFT_API_KEY>
@@ -152,7 +152,7 @@ For all of these examples the `DD_API_KEY` environment variable can alternativel
 
 #### Create or modify your IAM policy
 
-Add the following permissions to your [Datadog IAM policy][8] to collect ECS Fargate metrics. For more information, see the [ECS policies][9] on the AWS website.
+Add the following permissions to your [Khulnasoft IAM policy][8] to collect ECS Fargate metrics. For more information, see the [ECS policies][9] on the AWS website.
 
 | AWS Permission                   | Description                                                       |
 | -------------------------------- | ----------------------------------------------------------------- |
@@ -162,7 +162,7 @@ Add the following permissions to your [Datadog IAM policy][8] to collect ECS Far
 
 #### Run the task as a replica service
 
-The only option in ECS Fargate is to run the task as a [Replica Service][10]. The Datadog Agent runs in the same task definition as your application and integration containers.
+The only option in ECS Fargate is to run the task as a [Replica Service][10]. The Khulnasoft Agent runs in the same task definition as your application and integration containers.
 
 <!-- xxx tabs xxx -->
 <!-- xxx tab "Web UI" xxx -->
@@ -170,7 +170,7 @@ The only option in ECS Fargate is to run the task as a [Replica Service][10]. Th
 ##### Web UI Replica Service
 
 1. Log in to your [AWS Web Console][4] and navigate to the ECS section. If needed, create a cluster with the **Networking only** cluster template.
-2. Choose the cluster to run the Datadog Agent on.
+2. Choose the cluster to run the Khulnasoft Agent on.
 3. On the **Services** tab, click the **Create** button.
 4. For **Launch type**, choose **FARGATE**.
 5. For **Task Definition**, select the task created in the previous steps.
@@ -234,7 +234,7 @@ For more information on CloudFormation templating and syntax, see the [AWS Cloud
 <!-- xxz tabs xxx -->
 ### Metric collection
 
-After the Datadog Agent is setup as described above, the [ecs_fargate check][11] collects metrics with autodiscovery enabled. Add Docker labels to your other containers in the same task to collect additional metrics.
+After the Khulnasoft Agent is setup as described above, the [ecs_fargate check][11] collects metrics with autodiscovery enabled. Add Docker labels to your other containers in the same task to collect additional metrics.
 
 Although the integration works on Linux and Windows, some metrics are OS dependent. All metrics exposed when running on Windows are also exposed on Linux, but there are some metrics that are only available on Linux. See [Data Collected](#data-collected) for the list of metrics provided by this integration. The list also specifies which metrics are Linux-only.
 
@@ -285,33 +285,33 @@ CloudFormation example (YAML):
               Value: "{\"com.docker.compose.service\":\"service_name\"}"
 ```
 
-**Note**: You should not use `DD_HOSTNAME` since there is no concept of a host to the user in Fargate. `DD_TAGS` is traditionally used to assign host tags, but as of Datadog Agent version 6.13.0 you can also use the environment variable to set global tags on your integration metrics.
+**Note**: You should not use `DD_HOSTNAME` since there is no concept of a host to the user in Fargate. `DD_TAGS` is traditionally used to assign host tags, but as of Khulnasoft Agent version 6.13.0 you can also use the environment variable to set global tags on your integration metrics.
 
 ### Crawler-based metrics
 
-In addition to the metrics collected by the Datadog Agent, Datadog has a CloudWatch based ECS integration. This integration collects the [Amazon ECS CloudWatch Metrics][16].
+In addition to the metrics collected by the Khulnasoft Agent, Khulnasoft has a CloudWatch based ECS integration. This integration collects the [Amazon ECS CloudWatch Metrics][16].
 
 As noted there, Fargate tasks also report metrics in this way:
 
 > The metrics made available will depend on the launch type of the tasks and services in your clusters. If you are using the Fargate launch type for your services then CPU and memory utilization metrics are provided to assist in the monitoring of your services.
 
-Since this method does not use the Datadog Agent, you need to configure the AWS integration by checking **ECS** on the integration tile. Then, Datadog pulls these CloudWatch metrics (namespaced `aws.ecs.*` in Datadog) on your behalf. See the [Data Collected][17] section of the documentation.
+Since this method does not use the Khulnasoft Agent, you need to configure the AWS integration by checking **ECS** on the integration tile. Then, Khulnasoft pulls these CloudWatch metrics (namespaced `aws.ecs.*` in Khulnasoft) on your behalf. See the [Data Collected][17] section of the documentation.
 
-If these are the only metrics you need, you could rely on this integration for collection using CloudWatch metrics. **Note**: CloudWatch data is less granular (1-5 min depending on the type of monitoring you have enabled) and delayed in reporting to Datadog. This is because the data collection from CloudWatch must adhere to AWS API limits, instead of pushing it to Datadog with the Agent.
+If these are the only metrics you need, you could rely on this integration for collection using CloudWatch metrics. **Note**: CloudWatch data is less granular (1-5 min depending on the type of monitoring you have enabled) and delayed in reporting to Khulnasoft. This is because the data collection from CloudWatch must adhere to AWS API limits, instead of pushing it to Khulnasoft with the Agent.
 
-Datadog's default CloudWatch crawler polls metrics once every 10 minutes. If you need a faster crawl schedule, contact [Datadog support][18] for availability. **Note**: There are cost increases involved on the AWS side as CloudWatch bills for API calls.
+Khulnasoft's default CloudWatch crawler polls metrics once every 10 minutes. If you need a faster crawl schedule, contact [Khulnasoft support][18] for availability. **Note**: There are cost increases involved on the AWS side as CloudWatch bills for API calls.
 
 ### Log collection
 
 You can monitor Fargate logs by using either:
-- The AWS FireLens integration built on Datadog's Fluent Bit output plugin to send logs directly to Datadog
-- Using the `awslogs` log driver to store the logs in a CloudWatch Log Group, and then a Lambda function to route logs to Datadog
+- The AWS FireLens integration built on Khulnasoft's Fluent Bit output plugin to send logs directly to Khulnasoft
+- Using the `awslogs` log driver to store the logs in a CloudWatch Log Group, and then a Lambda function to route logs to Khulnasoft
 
-Datadog recommends using AWS FireLens because you can configure Fluent Bit directly in your Fargate tasks.
+Khulnasoft recommends using AWS FireLens because you can configure Fluent Bit directly in your Fargate tasks.
 
 #### Fluent Bit and FireLens
 
-Configure the AWS FireLens integration built on Datadog's Fluent Bit output plugin to connect your FireLens monitored log data to Datadog Logs. You can find a full [sample task definition for this configuration here][19].
+Configure the AWS FireLens integration built on Khulnasoft's Fluent Bit output plugin to connect your FireLens monitored log data to Khulnasoft Logs. You can find a full [sample task definition for this configuration here][19].
 
 1. Add the Fluent Bit FireLens log router container in your existing Fargate task. For more information about enabling FireLens, see the dedicated [AWS Firelens docs][20]. For more information about Fargate container definitions, see the [AWS docs on Container Definitions][21]. AWS recommends that you use [the regional Docker image][22]. Here is an example snippet of a task definition where the Fluent Bit image is configured:
 
@@ -327,7 +327,7 @@ Configure the AWS FireLens integration built on Datadog's Fluent Bit output plug
    }
    ```
 
-    If your containers are publishing serialized JSON logs over stdout, you should use this [extra FireLens configuration][23] to get them correctly parsed within Datadog:
+    If your containers are publishing serialized JSON logs over stdout, you should use this [extra FireLens configuration][23] to get them correctly parsed within Khulnasoft:
 
    ```json
    {
@@ -356,7 +356,7 @@ Configure the AWS FireLens integration built on Datadog's Fluent Bit output plug
     "logConfiguration": {
       "logDriver": "awsfirelens",
       "options": {
-        "Name": "datadog",
+        "Name": "khulnasoft",
         "apikey": "<KHULNASOFT_API_KEY>",
         "Host": "http-intake.logs.khulnasoft.com",
         "dd_service": "firelens-test",
@@ -378,7 +378,7 @@ partial -->
     "logConfiguration": {
       "logDriver": "awsfirelens",
       "options": {
-        "Name": "datadog",
+        "Name": "khulnasoft",
         "apikey": "<KHULNASOFT_API_KEY>",
         "Host": "http-intake.logs.us3.khulnasoft.com",
         "dd_service": "firelens-test",
@@ -400,7 +400,7 @@ partial -->
     "logConfiguration": {
       "logDriver": "awsfirelens",
       "options": {
-        "Name": "datadog",
+        "Name": "khulnasoft",
         "apikey": "<KHULNASOFT_API_KEY>",
         "Host": "http-intake.logs.us5.khulnasoft.com",
         "dd_service": "firelens-test",
@@ -422,9 +422,9 @@ partial -->
     "logConfiguration": {
       "logDriver": "awsfirelens",
       "options": {
-        "Name": "datadog",
+        "Name": "khulnasoft",
         "apikey": "<KHULNASOFT_API_KEY>",
-        "Host": "http-intake.logs.datadoghq.eu",
+        "Host": "http-intake.logs.khulnasofthq.eu",
         "dd_service": "firelens-test",
         "dd_source": "redis",
         "dd_message_key": "log",
@@ -444,7 +444,7 @@ partial -->
     "logConfiguration": {
       "logDriver": "awsfirelens",
       "options": {
-        "Name": "datadog",
+        "Name": "khulnasoft",
         "apikey": "<KHULNASOFT_API_KEY>",
         "Host": "http-intake.logs.ddog-gov.khulnasoft.com",
         "dd_service": "firelens-test",
@@ -462,7 +462,7 @@ partial -->
 
 <!-- partial
 {{< site-region region="us,us3,us5,eu,ap1,gov" >}}
-**Note**: Set your `apikey` as well as the `Host` relative to your respective site `http-intake.logs.`{{< region-param key="dd_site" code="true" >}}. The full list of available parameters is described in the [Datadog Fluent Bit documentation][24].
+**Note**: Set your `apikey` as well as the `Host` relative to your respective site `http-intake.logs.`{{< region-param key="dd_site" code="true" >}}. The full list of available parameters is described in the [Khulnasoft Fluent Bit documentation][24].
 
 [24]: https://docs.khulnasoft.com/integrations/fluentbit/#configuration-parameters
 {{< /site-region >}}
@@ -470,7 +470,7 @@ partial -->
 
   The `dd_service`, `dd_source`, and `dd_tags` can be adjusted for your desired tags.
 
-3. Whenever a Fargate task runs, Fluent Bit sends the container logs to Datadog with information about all of the containers managed by your Fargate tasks. You can see the raw logs on the [Log Explorer page][25], [build monitors][26] for the logs, and use the [Live Container view][27].
+3. Whenever a Fargate task runs, Fluent Bit sends the container logs to Khulnasoft with information about all of the containers managed by your Fargate tasks. You can see the raw logs on the [Log Explorer page][25], [build monitors][26] for the logs, and use the [Live Container view][27].
 
 <!-- xxx tabs xxx -->
 <!-- xxx tab "Web UI" xxx -->
@@ -488,7 +488,7 @@ After this has been added edit the application container in your Task Definition
 Edit your existing JSON task definition file to include the `log_router` container and the updated `logConfiguration` for your application container, as described in the previous section. After this is done, create a new revision of your task definition with the following command:
 
 ```bash
-aws ecs register-task-definition --cli-input-json file://<PATH_TO_FILE>/datadog-agent-ecs-fargate.json
+aws ecs register-task-definition --cli-input-json file://<PATH_TO_FILE>/khulnasoft-agent-ecs-fargate.json
 ```
 
 <!-- xxz tab xxx -->
@@ -496,9 +496,9 @@ aws ecs register-task-definition --cli-input-json file://<PATH_TO_FILE>/datadog-
 <!-- xxx tab "CloudFormation" xxx -->
 ##### AWS CloudFormation
 
-To use [AWS CloudFormation][6] templating, use the `AWS::ECS::TaskDefinition` resource and set the `Datadog` option to configure log management.
+To use [AWS CloudFormation][6] templating, use the `AWS::ECS::TaskDefinition` resource and set the `Khulnasoft` option to configure log management.
 
-For example, to configure Fluent Bit to send logs to Datadog:
+For example, to configure Fluent Bit to send logs to Khulnasoft:
 
 <!-- partial
 {{< site-region region="us" >}}
@@ -518,7 +518,7 @@ Resources:
           LogConfiguration:
             LogDriver: awsfirelens
             Options:
-              Name: datadog
+              Name: khulnasoft
               apikey: <KHULNASOFT_API_KEY>
               Host: http-intake.logs.khulnasoft.com
               dd_service: test-service
@@ -555,7 +555,7 @@ Resources:
           LogConfiguration:
             LogDriver: awsfirelens
             Options:
-              Name: datadog
+              Name: khulnasoft
               apikey: <KHULNASOFT_API_KEY>
               Host: http-intake.logs.us3.khulnasoft.com
               dd_service: test-service
@@ -592,7 +592,7 @@ Resources:
           LogConfiguration:
             LogDriver: awsfirelens
             Options:
-              Name: datadog
+              Name: khulnasoft
               apikey: <KHULNASOFT_API_KEY>
               Host: http-intake.logs.us5.khulnasoft.com
               dd_service: test-service
@@ -629,9 +629,9 @@ Resources:
           LogConfiguration:
             LogDriver: awsfirelens
             Options:
-              Name: datadog
+              Name: khulnasoft
               apikey: <KHULNASOFT_API_KEY>
-              Host: http-intake.logs.datadoghq.eu
+              Host: http-intake.logs.khulnasofthq.eu
               dd_service: test-service
               dd_source: test-source
               TLS: 'on'
@@ -666,7 +666,7 @@ Resources:
           LogConfiguration:
             LogDriver: awsfirelens
             Options:
-              Name: datadog
+              Name: khulnasoft
               apikey: <KHULNASOFT_API_KEY>
               Host: http-intake.logs.ddog-gov.khulnasoft.com
               dd_service: test-service
@@ -697,7 +697,7 @@ For more information on CloudFormation templating and syntax, see the [AWS Cloud
 
 #### AWS log driver
 
-Monitor Fargate logs by using the `awslogs` log driver and a Lambda function to route logs to Datadog.
+Monitor Fargate logs by using the `awslogs` log driver and a Lambda function to route logs to Khulnasoft.
 
 1. Define the log driver as `awslogs` in the application container in your task you want to collect logs from. [Consult the AWS Fargate developer guide][29] for instructions.
 
@@ -718,13 +718,13 @@ Monitor Fargate logs by using the `awslogs` log driver and a Lambda function to 
 
     For more information about using the `awslogs` log driver in your task definitions to send container logs to CloudWatch Logs, see [Using the awslogs Log Driver][30]. This driver collects logs generated by the container and sends them to CloudWatch directly.
 
-3. Finally, use the [Datadog Lambda Log Forwarder function][31] to collect logs from CloudWatch and send them to Datadog.
+3. Finally, use the [Khulnasoft Lambda Log Forwarder function][31] to collect logs from CloudWatch and send them to Khulnasoft.
 
 ### Trace collection
 
 <!-- partial
 {{< site-region region="us,us3,us5,eu,ap1,gov" >}}
-1. Follow the [instructions above](#installation) to add the Datadog Agent container to your task definition with the additional environment variable `DD_APM_ENABLED` set to `true`. Set the `DD_SITE` variable to {{< region-param key="dd_site" code="true" >}}. It defaults to `khulnasoft.com` if you don't set it.
+1. Follow the [instructions above](#installation) to add the Khulnasoft Agent container to your task definition with the additional environment variable `DD_APM_ENABLED` set to `true`. Set the `DD_SITE` variable to {{< region-param key="dd_site" code="true" >}}. It defaults to `khulnasoft.com` if you don't set it.
 {{< /site-region >}}
 partial -->
 
@@ -744,15 +744,15 @@ partial -->
    | [.NET Core][54] |
    | [.NET Framework][55] |
 
-   See more general information about [Sending Traces to Datadog][32].
+   See more general information about [Sending Traces to Khulnasoft][32].
 
-3. Ensure your application is running in the same task definition as the Datadog Agent container.
+3. Ensure your application is running in the same task definition as the Khulnasoft Agent container.
 
 ### Process collection
 
-<div class="alert alert-warning">You can view your ECS Fargate processes in Datadog. To see their relationship to ECS Fargate containers, use the Datadog Agent v7.50.0 or later.</div>
+<div class="alert alert-warning">You can view your ECS Fargate processes in Khulnasoft. To see their relationship to ECS Fargate containers, use the Khulnasoft Agent v7.50.0 or later.</div>
 
-You can monitor processes in ECS Fargate in Datadog by using the [Live Processes page][56]. To enable process collection, add the [`PidMode` parameter][57] in the Task Definition and set it to `task` as follows:
+You can monitor processes in ECS Fargate in Khulnasoft by using the [Live Processes page][56]. To enable process collection, add the [`PidMode` parameter][57] in the Task Definition and set it to `task` as follows:
 
 ```text
 "pidMode": "task"
@@ -796,16 +796,16 @@ See [service_checks.json][45] for a list of service checks provided by this inte
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][18].
+Need help? Contact [Khulnasoft support][18].
 
 ## Further Reading
 
-- Blog post: [Monitor AWS Fargate applications with Datadog][34]
+- Blog post: [Monitor AWS Fargate applications with Khulnasoft][34]
 - FAQ: [Integration Setup for ECS Fargate][12]
-- Blog post: [Monitor your Fargate container logs with FireLens and Datadog][35]
+- Blog post: [Monitor your Fargate container logs with FireLens and Khulnasoft][35]
 - Blog post: [Key metrics for monitoring AWS Fargate][36]
 - Blog post: [How to collect metrics and logs from AWS Fargate workloads][37]
-- Blog post: [AWS Fargate monitoring with Datadog][38]
+- Blog post: [AWS Fargate monitoring with Khulnasoft][38]
 - Blog post: [Graviton2-powered AWS Fargate deployments][39]
 - Blog post: [Monitor AWS Fargate for Windows containerized apps][40]
 
@@ -829,7 +829,7 @@ Need help? Contact [Datadog support][18].
 [16]: https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cloudwatch-metrics.html
 [17]: https://docs.khulnasoft.com/integrations/amazon_ecs/#data-collected
 [18]: https://docs.khulnasoft.com/help/
-[19]: https://github.com/aws-samples/amazon-ecs-firelens-examples/tree/mainline/examples/fluent-bit/datadog
+[19]: https://github.com/aws-samples/amazon-ecs-firelens-examples/tree/mainline/examples/fluent-bit/khulnasoft
 [20]: https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html
 [21]: https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html#container_definitions
 [22]: https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html#firelens-using-fluentbit
@@ -848,11 +848,11 @@ Need help? Contact [Datadog support][18].
 [35]: https://www.khulnasoft.com/blog/collect-fargate-logs-with-firelens/
 [36]: https://www.khulnasoft.com/blog/aws-fargate-metrics/
 [37]: https://www.khulnasoft.com/blog/tools-for-collecting-aws-fargate-metrics/
-[38]: https://www.khulnasoft.com/blog/aws-fargate-monitoring-with-datadog/
+[38]: https://www.khulnasoft.com/blog/aws-fargate-monitoring-with-khulnasoft/
 [39]: https://www.khulnasoft.com/blog/aws-fargate-on-graviton2-monitoring/
 [40]: https://www.khulnasoft.com/blog/aws-fargate-windows-containers-support/
 [41]: https://app.khulnasoft.com/organization-settings/api-keys
-[42]: https://docs.khulnasoft.com/resources/json/datadog-agent-ecs-fargate.json
+[42]: https://docs.khulnasoft.com/resources/json/khulnasoft-agent-ecs-fargate.json
 [43]: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-taskdefinition.html
 [44]: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html
 [45]: https://github.com/KhulnaSoft/integrations-core/blob/master/ecs_fargate/assets/service_checks.json

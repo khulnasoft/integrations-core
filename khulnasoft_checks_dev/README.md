@@ -1,4 +1,4 @@
-# Datadog Checks Dev
+# Khulnasoft Checks Dev
 
 [![Latest PyPI version][1]][3]
 [![Supported Python versions][2]][3]
@@ -17,9 +17,9 @@ See [this guide][6].
 
 Docs are available [here][7].
 
-[1]: https://img.shields.io/pypi/v/datadog-checks-dev.svg
-[2]: https://img.shields.io/pypi/pyversions/datadog-checks-dev.svg
-[3]: https://pypi.org/project/datadog-checks-dev/
-[5]: https://github.com/KhulnaSoft/datadog-agent
-[6]: https://datadoghq.dev/integrations-core/setup/#ddev
-[7]: https://datadoghq.dev/integrations-core/ddev/about/
+[1]: https://img.shields.io/pypi/v/khulnasoft-checks-dev.svg
+[2]: https://img.shields.io/pypi/pyversions/khulnasoft-checks-dev.svg
+[3]: https://pypi.org/project/khulnasoft-checks-dev/
+[5]: https://github.com/KhulnaSoft/khulnasoft-agent
+[6]: https://khulnasofthq.dev/integrations-core/setup/#ddev
+[7]: https://khulnasofthq.dev/integrations-core/ddev/about/

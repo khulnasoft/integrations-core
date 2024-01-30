@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2018-present
+# (C) Khulnasoft, Inc. 2018-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 
@@ -66,7 +66,7 @@ class GitlabRunnerCheck(OpenMetricsBaseCheck):
         """
         Set up the gitlab_runner instance so it can be used in OpenMetricsBaseCheck
         """
-        # Mapping from Prometheus metrics names to Datadog ones
+        # Mapping from Prometheus metrics names to Khulnasoft ones
         # For now it's a 1:1 mapping
         allowed_metrics = init_config.get('allowed_metrics')
         if allowed_metrics is None:

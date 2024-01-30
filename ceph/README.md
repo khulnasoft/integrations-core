@@ -4,7 +4,7 @@
 
 ## Overview
 
-Enable the Datadog-Ceph integration to:
+Enable the Khulnasoft-Ceph integration to:
 
 - Track disk usage across storage pools
 - Receive service checks in case of issues
@@ -14,7 +14,7 @@ Enable the Datadog-Ceph integration to:
 
 ### Installation
 
-The Ceph check is included in the [Datadog Agent][2] package, so you don't need to install anything else on your Ceph servers.
+The Ceph check is included in the [Khulnasoft Agent][2] package, so you don't need to install anything else on your Ceph servers.
 
 ### Configuration
 
@@ -39,7 +39,7 @@ dd-agent ALL=(ALL) NOPASSWD:/path/to/your/ceph
 
 _Available for Agent versions >6.0_
 
-1. Collecting logs is disabled by default in the Datadog Agent, enable it in your `datadog.yaml` file:
+1. Collecting logs is disabled by default in the Khulnasoft Agent, enable it in your `khulnasoft.yaml` file:
 
    ```yaml
    logs_enabled: true
@@ -79,7 +79,7 @@ See [service_checks.json][8] for a list of service checks provided by this integ
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][9].
+Need help? Contact [Khulnasoft support][9].
 
 ## Further Reading
 
@@ -94,4 +94,4 @@ Need help? Contact [Datadog support][9].
 [7]: https://github.com/KhulnaSoft/integrations-core/blob/master/ceph/metadata.csv
 [8]: https://github.com/KhulnaSoft/integrations-core/blob/master/ceph/assets/service_checks.json
 [9]: https://docs.khulnasoft.com/help/
-[10]: https://www.khulnasoft.com/blog/monitor-ceph-datadog
+[10]: https://www.khulnasoft.com/blog/monitor-ceph-khulnasoft

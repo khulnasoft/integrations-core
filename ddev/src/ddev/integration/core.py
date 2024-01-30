@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2022-present
+# (C) Khulnasoft, Inc. 2022-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 from __future__ import annotations
@@ -146,7 +146,7 @@ class Integration:
         data = load_toml_data(self.project_file.read_text())
         for entry in data['project'].get('dependencies', []):
             dep = Requirement(entry)
-            if canonicalize_name(dep.name) == 'datadog-checks-base':
+            if canonicalize_name(dep.name) == 'khulnasoft-checks-base':
                 if dep.specifier:
                     specifier = str(sorted(dep.specifier, key=str)[-1])
 

@@ -1,7 +1,7 @@
 {
     "title": "Tomcat - Overview",
-    "author_name": "Datadog",
-    "description": "## Tomcat Integration\n\nThe Tomcat overview dashboard provides a high-level view and insight into your Tomcat server activity, including performance, utilization, and errors.\n\nFor more information on setup and monitoring, check out the following:\n\n- [Tomcat integration docs](https://docs.khulnasoft.com/integrations/tomcat/)\n- [Blog post on key metrics for monitoring Tomcat](https://www.khulnasoft.com/blog/tomcat-architecture-and-performance/)\n- [Blog post on collecting metrics with Tomcat monitoring tools](https://www.khulnasoft.com/blog/tomcat-monitoring-tools/)\n- [Blog post on analyzing Tomcat logs and metrics](https://www.khulnasoft.com/blog/analyzing-tomcat-logs-and-metrics-with-datadog/)",
+    "author_name": "Khulnasoft",
+    "description": "## Tomcat Integration\n\nThe Tomcat overview dashboard provides a high-level view and insight into your Tomcat server activity, including performance, utilization, and errors.\n\nFor more information on setup and monitoring, check out the following:\n\n- [Tomcat integration docs](https://docs.khulnasoft.com/integrations/tomcat/)\n- [Blog post on key metrics for monitoring Tomcat](https://www.khulnasoft.com/blog/tomcat-architecture-and-performance/)\n- [Blog post on collecting metrics with Tomcat monitoring tools](https://www.khulnasoft.com/blog/tomcat-monitoring-tools/)\n- [Blog post on analyzing Tomcat logs and metrics](https://www.khulnasoft.com/blog/analyzing-tomcat-logs-and-metrics-with-khulnasoft/)",
     "widgets": [
       {
         "id": 6506668793177520,
@@ -31,7 +31,7 @@
               "id": 2136547723220728,
               "definition": {
                 "type": "note",
-                "content": "**For more information on setup and monitoring, check out the following**\n\n- [Tomcat integration docs&nbsp;↗](https://docs.khulnasoft.com/integrations/tomcat/)\n- [Blog post on key metrics for monitoring Tomcat&nbsp;↗](https://www.khulnasoft.com/blog/tomcat-architecture-and-performance/)\n- [Blog post on collecting metrics with Tomcat monitoring tools&nbsp;↗](https://www.khulnasoft.com/blog/tomcat-monitoring-tools/)\n- [Blog post on analyzing Tomcat logs and metrics&nbsp;↗](https://www.khulnasoft.com/blog/analyzing-tomcat-logs-and-metrics-with-datadog/)",
+                "content": "**For more information on setup and monitoring, check out the following**\n\n- [Tomcat integration docs&nbsp;↗](https://docs.khulnasoft.com/integrations/tomcat/)\n- [Blog post on key metrics for monitoring Tomcat&nbsp;↗](https://www.khulnasoft.com/blog/tomcat-architecture-and-performance/)\n- [Blog post on collecting metrics with Tomcat monitoring tools&nbsp;↗](https://www.khulnasoft.com/blog/tomcat-monitoring-tools/)\n- [Blog post on analyzing Tomcat logs and metrics&nbsp;↗](https://www.khulnasoft.com/blog/analyzing-tomcat-logs-and-metrics-with-khulnasoft/)",
                 "background_color": "transparent",
                 "font_size": "14",
                 "text_align": "left",

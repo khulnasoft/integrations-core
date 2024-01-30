@@ -74,7 +74,7 @@ pipeline:
       enabled: true
       sources:
         - DateTime
-    - name: Map FoundationDB Severity to Datadog Status
+    - name: Map FoundationDB Severity to Khulnasoft Status
       enabled: true
       source: Severity
       target: Status

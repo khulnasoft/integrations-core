@@ -12,7 +12,7 @@ Follow the instructions below to install and configure this check for an Agent r
 
 ### Installation
 
-The cert_manager check is included in the [Datadog Agent][3] package.
+The cert_manager check is included in the [Khulnasoft Agent][3] package.
 No additional installation is needed on your server.
 
 ### Configuration
@@ -43,7 +43,7 @@ See [service_checks.json][8] for a list of service checks provided by this integ
 
 ### Duplicate name tags
 
-Each certificate name is exposed within the `name` label in the Prometheus payload and is converted to a tag by the Datadog Agent. If your hosts also use the `name` tag (for instance, automatically collected by the [AWS integration][9]), metrics coming from this integration will present both values. To avoid duplicate `name` tags, you can use the [`rename_labels`configuration parameter][10] to map the Prometheus label `name` to the Datadog tag `cert_name`. This ensures you have a single value within the tag `cert_name` to identify your certificates :
+Each certificate name is exposed within the `name` label in the Prometheus payload and is converted to a tag by the Khulnasoft Agent. If your hosts also use the `name` tag (for instance, automatically collected by the [AWS integration][9]), metrics coming from this integration will present both values. To avoid duplicate `name` tags, you can use the [`rename_labels`configuration parameter][10] to map the Prometheus label `name` to the Khulnasoft tag `cert_name`. This ensures you have a single value within the tag `cert_name` to identify your certificates :
 ```yaml
 init_config:
 instances:
@@ -52,7 +52,7 @@ instances:
     name: cert_name
 ```
 
-Need further help? Contact [Datadog support][11].
+Need further help? Contact [Khulnasoft support][11].
 
 [1]: https://github.com/jetstack/cert-manager
 [2]: https://raw.githubusercontent.com/KhulnaSoft/integrations-core/master/cert_manager/images/overview_dashboard.png

@@ -2,9 +2,9 @@
 
 ## Overview
 
-This check monitors [Traffic Server][1] through the Datadog Agent. 
+This check monitors [Traffic Server][1] through the Khulnasoft Agent. 
 
-Enable the Datadog-Apache Traffic Server integration to:
+Enable the Khulnasoft-Apache Traffic Server integration to:
 
 - Ensure the availability and performance of online resources, such as websites and applications.
 - Track metrics such as hits, volume, and changes in traffic to websites and applications.
@@ -18,7 +18,7 @@ Follow the instructions below to install and configure this check for an Agent r
 
 ### Installation
 
-The Traffic Server check is included in the [Datadog Agent][2] package.
+The Traffic Server check is included in the [Khulnasoft Agent][2] package.
 
 To enable monitoring in Traffic Server, enable the [Stats Over HTTP plugin][10] on your Traffic Server by adding the following line to your `plugin.config` file and reloading Traffic Server:
 
@@ -63,9 +63,9 @@ See [metadata.csv][7] for a list of metrics provided by this integration.
 
 _Available for Agent versions >6.0_
 
-1. Traffic Server logs are highly [customizable][11], but Datadog's integration pipeline supports the default conversion pattern. Clone and edit the [integration pipeline][12] if you have a different format.
+1. Traffic Server logs are highly [customizable][11], but Khulnasoft's integration pipeline supports the default conversion pattern. Clone and edit the [integration pipeline][12] if you have a different format.
 
-2. Collecting logs is disabled by default in the Datadog Agent. Enable it in your `datadog.yaml` file:
+2. Collecting logs is disabled by default in the Khulnasoft Agent. Enable it in your `khulnasoft.yaml` file:
 
    ```yaml
    logs_enabled: true
@@ -96,7 +96,7 @@ See [service_checks.json][8] for a list of service checks provided by this integ
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][9].
+Need help? Contact [Khulnasoft support][9].
 
 
 [1]: https://trafficserver.apache.org/

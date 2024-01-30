@@ -21,16 +21,16 @@ To capture your OpenStack metrics, [install the Agent][3] on your hosts running 
 
 #### Prepare OpenStack
 
-Configure a Datadog role and user with your identity server:
+Configure a Khulnasoft role and user with your identity server:
 
 ```console
 openstack role create khulnasoft_monitoring
-openstack user create datadog \
+openstack user create khulnasoft \
     --password my_password \
     --project my_project_name
 openstack role add khulnasoft_monitoring \
     --project my_project_name \
-    --user datadog
+    --user khulnasoft
 ```
 
 Then, update your `policy.json` files to grant the needed permissions. `role:khulnasoft_monitoring` requires access to the following operations:
@@ -74,11 +74,11 @@ Then, update your `policy.json` files to grant the needed permissions. `role:khu
 
 You may need to restart your Keystone, Neutron, and Nova API services to ensure that the policy changes take.
 
-**Note**: Installing the OpenStack integration could increase the number of VMs that Datadog monitors. For more information on how this may affect your billing, see the Billing FAQ.
+**Note**: Installing the OpenStack integration could increase the number of VMs that Khulnasoft monitors. For more information on how this may affect your billing, see the Billing FAQ.
 
 #### Agent configuration
 
-1. Configure the Datadog Agent to connect to your Keystone server, and specify individual projects to monitor. Edit the `openstack.d/conf.yaml` file in the `conf.d/` folder at the root of your [Agent's configuration directory][4] with the configuration below. See the [sample openstack.d/conf.yaml][5] for all available configuration options:
+1. Configure the Khulnasoft Agent to connect to your Keystone server, and specify individual projects to monitor. Edit the `openstack.d/conf.yaml` file in the `conf.d/` folder at the root of your [Agent's configuration directory][4] with the configuration below. See the [sample openstack.d/conf.yaml][5] for all available configuration options:
 
    ```yaml
    init_config:
@@ -106,7 +106,7 @@ You may need to restart your Keystone, Neutron, and Nova API services to ensure 
        #
        user:
          password: "<PASSWORD>"
-         name: datadog
+         name: khulnasoft
          domain:
            id: "<DOMAINE_ID>"
    ```
@@ -115,7 +115,7 @@ You may need to restart your Keystone, Neutron, and Nova API services to ensure 
 
 ##### Log collection
 
-1. Collecting logs is disabled by default in the Datadog Agent, you can enable it in `datadog.yaml`:
+1. Collecting logs is disabled by default in the Khulnasoft Agent, you can enable it in `khulnasoft.yaml`:
 
    ```yaml
    logs_enabled: true
@@ -153,7 +153,7 @@ See [service_checks.json][9] for a list of service checks provided by this integ
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][10].
+Need help? Contact [Khulnasoft support][10].
 
 ## Further Reading
 

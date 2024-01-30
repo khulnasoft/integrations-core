@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2021-present
+# (C) Khulnasoft, Inc. 2021-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 
@@ -578,7 +578,7 @@ def test_tag_with_dots():
     metric = 'cluster{}.lb_healthy_panic'
     untagged_metric = metric.format('')
     tags = [tag for tags in METRICS[untagged_metric]['tags'] for tag in tags]
-    tag0 = 'out.alerting-event-evaluator-test.datadog.svc.cluster.local|iperf'
+    tag0 = 'out.alerting-event-evaluator-test.khulnasoft.svc.cluster.local|iperf'
     tagged_metric = metric.format('.{}'.format(tag0))
 
     assert parse_metric(tagged_metric, disable_legacy_cluster_tag=True) == (

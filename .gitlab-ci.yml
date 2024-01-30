@@ -43,9 +43,9 @@ validate-log-integrations:
     - cd /app
     - export WEBUI_INTGS_FILE=$(aws ssm get-parameter --region us-east-1 --name ci.integrations-core.webui_intgs_file --with-decryption --query "Parameter.Value" --out text)
     - export LOGS_BACKEND_INTGS_ROOT=$(aws ssm get-parameter --region us-east-1 --name ci.integrations-core.logs_backend_intgs_root --with-decryption --query "Parameter.Value" --out text)
-    - git clone -b prod https://gitlab-ci-token:${CI_JOB_TOKEN}@gitlab.ddbuild.io/Datadog/web-ui.git --depth 1
+    - git clone -b prod https://gitlab-ci-token:${CI_JOB_TOKEN}@gitlab.ddbuild.io/Khulnasoft/web-ui.git --depth 1
     - ts-node parse_ts.ts > logs_integrations.json
-    - git clone -b prod https://gitlab-ci-token:${CI_JOB_TOKEN}@gitlab.ddbuild.io/Datadog/logs-backend.git --depth 1
+    - git clone -b prod https://gitlab-ci-token:${CI_JOB_TOKEN}@gitlab.ddbuild.io/Khulnasoft/logs-backend.git --depth 1
     - python3 validate_log_intgs.py logs_integrations.json 2> $CI_PROJECT_DIR/errors.txt
   artifacts:
     paths:
@@ -69,7 +69,7 @@ trigger-agent-build:
     <<: *slack-cache
   script:
     - export SLACK_CACHE_DIR="${PWD}/.slack-cache"
-    - KHULNASOFT_AGENT_PIPELINE_URL=$(aws ssm get-parameter --region us-east-1 --name ci.integrations-core.datadog-agent-pipeline-url --with-decryption --query "Parameter.Value" --out text)
+    - KHULNASOFT_AGENT_PIPELINE_URL=$(aws ssm get-parameter --region us-east-1 --name ci.integrations-core.khulnasoft-agent-pipeline-url --with-decryption --query "Parameter.Value" --out text)
     - export AGENT_REQUIREMENTS_CHANGED="false"
     - git fetch origin master
     - BASE_REF=$(git merge-base HEAD FETCH_HEAD)
@@ -111,7 +111,7 @@ validate-agent-build:
       if [[ -s ./pipeline_id.txt ]]; then
           # Fetch secrets from SCM
           GITLAB_TOKEN=$(aws ssm get-parameter --region us-east-1 --name ci.integrations-core.temp_gitlab_token --with-decryption --query "Parameter.Value" --out text)
-          KHULNASOFT_AGENT_PIPELINE_URL=$(aws ssm get-parameter --region us-east-1 --name ci.integrations-core.datadog-agent-pipeline-url --with-decryption --query "Parameter.Value" --out text)
+          KHULNASOFT_AGENT_PIPELINE_URL=$(aws ssm get-parameter --region us-east-1 --name ci.integrations-core.khulnasoft-agent-pipeline-url --with-decryption --query "Parameter.Value" --out text)
           PIPELINE_ID=$(cat pipeline_id.txt)
 
           # Get slack user
@@ -270,7 +270,7 @@ validate-agent-build-builder:
       - master
   script:
     - cd .gitlab/validate-agent-build/
-    - git clone https://gitlab-ci-token:${CI_JOB_TOKEN}@gitlab.ddbuild.io/Datadog/devtools.git --depth 1
+    - git clone https://gitlab-ci-token:${CI_JOB_TOKEN}@gitlab.ddbuild.io/Khulnasoft/devtools.git --depth 1
     - docker build --tag $VALIDATE_AGENT_BUILD .
     - docker images $VALIDATE_AGENT_BUILD
     - docker push $VALIDATE_AGENT_BUILD

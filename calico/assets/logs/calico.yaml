@@ -70,7 +70,7 @@ pipeline:
         - '2022-02-25 15:28:43.671 [INFO][282] felix/table.go 506: Queueing update of chain. chainName="cali-tw-calib74ad9ce491" ipVersion=0x4 table="filter"'
         - '2022-03-08 14:50:42.293 [INFO][642] felix/config_params.go 502: Parsing value for LogSeverityFile:  (from config file)'
         - '2022-10-31 14:35:18.602 [INFO][262] felix/int_dataplane.go 1695: Received interface update msg=&intdataplane.ifaceUpdate{Name:\"calif1127a92742\", State:\"up\", Index:11}'
-        - '2022-03-08 13:20:34.092 [INFO][760] felix/int_dataplane.go 1484: Received *proto.ActiveProfileUpdate update from calculation graph msg=id:<name:\"ksa.default.datadog-agent-kube-state-metrics\" > profile:<>'
+        - '2022-03-08 13:20:34.092 [INFO][760] felix/int_dataplane.go 1484: Received *proto.ActiveProfileUpdate update from calculation graph msg=id:<name:\"ksa.default.khulnasoft-agent-kube-state-metrics\" > profile:<>'
       grok:
         supportRules: |
           _timestamp %{date("yyyy-MM-dd HH:mm:ss.SSS","UTC"):timestamp}

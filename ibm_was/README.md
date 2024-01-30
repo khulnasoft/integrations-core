@@ -2,19 +2,19 @@
 
 ## Overview
 
-This check monitors [IBM Websphere Application Server (WAS)][1] through the Datadog Agent. This check supports IBM WAS versions >= 8.5.5.
+This check monitors [IBM Websphere Application Server (WAS)][1] through the Khulnasoft Agent. This check supports IBM WAS versions >= 8.5.5.
 
 ## Setup
 
 Follow the instructions below to install and configure this check for an Agent running on a host. For containerized environments, see the [Autodiscovery Integration Templates][2] for guidance on applying these instructions.
 
-The IBM WAS Datadog integration collects enabled PMI Counters from the WebSphere Application Server environment. Setup requires enabling the PerfServlet, which provides a way for Datadog to retrieve performance data from WAS.
+The IBM WAS Khulnasoft integration collects enabled PMI Counters from the WebSphere Application Server environment. Setup requires enabling the PerfServlet, which provides a way for Khulnasoft to retrieve performance data from WAS.
 
 By default, this check collects JDBC, JVM, thread pool, and Servlet Session Manager metrics. You may optionally specify additional metrics to collect in the "custom_queries" section. See the [sample check configuration][3] for examples.
 
 ### Installation
 
-The IBM WAS check is included in the [Datadog Agent][4] package.
+The IBM WAS check is included in the [Khulnasoft Agent][4] package.
 
 #### Enable the `PerfServlet`
 
@@ -30,7 +30,7 @@ By default, your application server is only configured for "Basic" monitoring. T
 
 From the Websphere Administration Console, you can find this setting in `Application servers > <YOUR_APP_SERVER> > Performance Monitoring Infrastructure (PMI)`.
 
-Once you've made this change, click "Apply" to save the configuration and restart your application server. Additional JDBC, JVM, and servlet metrics should appear in Datadog shortly after this change.
+Once you've made this change, click "Apply" to save the configuration and restart your application server. Additional JDBC, JVM, and servlet metrics should appear in Khulnasoft shortly after this change.
 
 ### Configuration
 
@@ -51,7 +51,7 @@ To configure this check for an Agent running on a host:
 
 _Available for Agent versions >6.0_
 
-1. Collecting logs is disabled by default in the Datadog Agent, enable it in your `datadog.yaml` file:
+1. Collecting logs is disabled by default in the Khulnasoft Agent, enable it in your `khulnasoft.yaml` file:
 
    ```yaml
    logs_enabled: true
@@ -88,7 +88,7 @@ For containerized environments, see the [Autodiscovery Integration Templates][2]
 
 _Available for Agent versions >6.0_
 
-Collecting logs is disabled by default in the Datadog Agent. To enable it, see [Kubernetes Log Collection][6].
+Collecting logs is disabled by default in the Khulnasoft Agent. To enable it, see [Kubernetes Log Collection][6].
 
 | Parameter      | Value                                                |
 | -------------- | ---------------------------------------------------- |
@@ -117,7 +117,7 @@ See [service_checks.json][9] for a list of service checks provided by this integ
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][10].
+Need help? Contact [Khulnasoft support][10].
 
 [1]: https://www.ibm.com/cloud/websphere-application-platform
 [2]: https://docs.khulnasoft.com/agent/kubernetes/integrations/

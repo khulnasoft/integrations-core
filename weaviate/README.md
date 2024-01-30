@@ -2,7 +2,7 @@
 
 ## Overview
 
-This check monitors [Weaviate][1] through the Datadog Agent. For more information, see [Weaviate monitoring][10].
+This check monitors [Weaviate][1] through the Khulnasoft Agent. For more information, see [Weaviate monitoring][10].
 
 ## Setup
 
@@ -10,13 +10,13 @@ Follow the instructions below to install and configure this check for an Agent r
 
 ### Installation
 
-Starting from Agent release 7.47.0, the Weaviate check is included in the [Datadog Agent][2] package. 
+Starting from Agent release 7.47.0, the Weaviate check is included in the [Khulnasoft Agent][2] package. 
 
 **Note**: This check requires Agent v7.47.0 or later.
 
 ### Configuration
 
-Weaviate can be configured to expose Prometheus-formatted metrics. The Datadog Agent can collect these metrics using the integration described below. Follow the instructions to configure data collection for your Weaviate instances. For the required configurations to expose the Prometheus metrics, see the [Monitoring][10] page in the Weaviate documentation.
+Weaviate can be configured to expose Prometheus-formatted metrics. The Khulnasoft Agent can collect these metrics using the integration described below. Follow the instructions to configure data collection for your Weaviate instances. For the required configurations to expose the Prometheus metrics, see the [Monitoring][10] page in the Weaviate documentation.
 
 In addition, a small subset of metrics can be collected by communicating with different [API endpoints][11]. Specifically:
 - `/v1/meta`: Version information
@@ -88,7 +88,7 @@ See [service_checks.json][8] for a list of service checks provided by this integ
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][9].
+Need help? Contact [Khulnasoft support][9].
 
 
 [1]: https://weaviate.io/developers/weaviate

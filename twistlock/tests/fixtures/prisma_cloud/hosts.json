@@ -87,12 +87,12 @@
             },
             {
                 "name": "",
-                "path": "/opt/datadog-agent/embedded/bin/process-agent",
+                "path": "/opt/khulnasoft-agent/embedded/bin/process-agent",
                 "md5": "",
                 "cveCount": 0,
                 "layerTime": 0,
                 "services": [
-                    "datadog-agent-process"
+                    "khulnasoft-agent-process"
                 ]
             },
             {
@@ -128,12 +128,12 @@
             },
             {
                 "name": "",
-                "path": "/opt/datadog-agent/embedded/bin/trace-agent",
+                "path": "/opt/khulnasoft-agent/embedded/bin/trace-agent",
                 "md5": "",
                 "cveCount": 0,
                 "layerTime": 0,
                 "services": [
-                    "datadog-agent-trace"
+                    "khulnasoft-agent-trace"
                 ]
             },
             {
@@ -248,12 +248,12 @@
             },
             {
                 "name": "",
-                "path": "/opt/datadog-agent/bin/agent/agent",
+                "path": "/opt/khulnasoft-agent/bin/agent/agent",
                 "md5": "",
                 "cveCount": 0,
                 "layerTime": 0,
                 "services": [
-                    "datadog-agent"
+                    "khulnasoft-agent"
                 ]
             },
             {
@@ -1767,7 +1767,7 @@
                     },
                     {
                         "version": "1:6.16.1001~beta~airflow-1",
-                        "name": "datadog-agent",
+                        "name": "khulnasoft-agent",
                         "cveCount": 0,
                         "license": "",
                         "layerTime": 0,

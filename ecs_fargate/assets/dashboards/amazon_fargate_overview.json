@@ -1,6 +1,6 @@
 {
     "title": "Amazon Fargate Overview",
-    "description": "## Amazon Fargate\n\nThis dashboard displays key metrics from your Amazon ECS cluster on AWS Fargate, such as cpu, memory, IO usage, network and Ephemeral Storage\n\nFurther reading on ECS-Fargate:\n\n- [Datadog ECS-Fargate integration docs](https://docs.khulnasoft.com/integrations/ecs_fargate/)\n- [Integration setup docs](https://docs.khulnasoft.com/integrations/faq/integration-setup-ecs-fargate/?tab=rediswebui)\n",
+    "description": "## Amazon Fargate\n\nThis dashboard displays key metrics from your Amazon ECS cluster on AWS Fargate, such as cpu, memory, IO usage, network and Ephemeral Storage\n\nFurther reading on ECS-Fargate:\n\n- [Khulnasoft ECS-Fargate integration docs](https://docs.khulnasoft.com/integrations/ecs_fargate/)\n- [Integration setup docs](https://docs.khulnasoft.com/integrations/faq/integration-setup-ecs-fargate/?tab=rediswebui)\n",
     "widgets": [
         {
             "id": 0,

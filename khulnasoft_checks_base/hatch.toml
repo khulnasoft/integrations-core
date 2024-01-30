@@ -1,4 +1,4 @@
-[env.collectors.datadog-checks]
+[env.collectors.khulnasoft-checks]
 check-types = false
 mypy-args = [
   "--py2",
@@ -21,7 +21,7 @@ dependencies = [
 e2e-env = false
 
 [envs.default.env-vars]
-PIP_EXTRA_INDEX_URL = "https://datadoghq.dev/ci-wheels/bin"
+PIP_EXTRA_INDEX_URL = "https://khulnasofthq.dev/ci-wheels/bin"
 DDEV_SKIP_GENERIC_TAGS_CHECK = "true"
 
 [envs.bench]

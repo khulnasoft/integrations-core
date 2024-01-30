@@ -10,7 +10,7 @@ This check collects the number of CPU cores on a host and CPU times, such as `sy
 
 ### Installation
 
-The System Core check is included in the [Datadog Agent][2] package. No additional installation is needed on your server.
+The System Core check is included in the [Khulnasoft Agent][2] package. No additional installation is needed on your server.
 
 ### Configuration
 
@@ -47,7 +47,7 @@ See [service_checks.json][8] for a list of service checks provided by this integ
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][9].
+Need help? Contact [Khulnasoft support][9].
 
 ### Windows and high numbers of processors
 
@@ -59,7 +59,7 @@ portion of the cores.
 Note that `*.total` metrics should still reflect accurate values in
 the above situation, and only per-core metrics are affected.
 
-Datadog recommends that users with this type of configuration set up the
+Khulnasoft recommends that users with this type of configuration set up the
 [Windows Performance Counters integration][11] to track counters
 inside the `Processor Information`. This enables users to get accurate per-core
 metrics.

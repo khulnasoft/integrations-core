@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2012-present
+# (C) Khulnasoft, Inc. 2012-present
 # All rights reserved
 # Licensed under Simplified BSD License (see LICENSE)
 
@@ -171,13 +171,13 @@ def test_check_service_check(aggregator, check, instance):
 @pytest.mark.usefixtures('dd_environment')
 @pytest.mark.integration
 def test_check_service_filter(aggregator, check, instance):
-    instance['services_include'] = ['datadog']
+    instance['services_include'] = ['khulnasoft']
     instance['services_exclude'] = ['.*']
     check = check(instance)
     check.check(instance)
     shared_tag = ["instance_url:{0}".format(STATS_URL)]
 
-    _test_backend_metrics(aggregator, shared_tag + ['active:false'], ['datadog'], check_aggregates=True)
+    _test_backend_metrics(aggregator, shared_tag + ['active:false'], ['khulnasoft'], check_aggregates=True)
 
     aggregator.assert_all_metrics_covered()
 
@@ -187,14 +187,14 @@ def test_check_service_filter(aggregator, check, instance):
 @pytest.mark.integration
 def test_check_service_filter_tcp(aggregator, check):
     instance = copy.deepcopy(CONFIG_TCPSOCKET)
-    instance['services_include'] = ['datadog']
+    instance['services_include'] = ['khulnasoft']
     instance['services_exclude'] = ['.*']
     check = check(instance)
     check.check(instance)
     shared_tag = ["instance_url:{0}".format(STATS_SOCKET)]
 
-    _test_backend_metrics(aggregator, shared_tag, ['datadog'], check_aggregates=False, add_addr_tag=True)
-    _test_sticktable_metrics(aggregator, services=['datadog'])
+    _test_backend_metrics(aggregator, shared_tag, ['khulnasoft'], check_aggregates=False, add_addr_tag=True)
+    _test_sticktable_metrics(aggregator, services=['khulnasoft'])
 
     aggregator.assert_all_metrics_covered()
 

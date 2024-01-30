@@ -30,7 +30,7 @@ files:
       - name: procfs_path
         description: |
           Used to override the default procfs path, e.g. for docker containers with the outside fs mounted at /host/proc
-          DEPRECATED: please specify `procfs_path` globally in `datadog.conf` instead
+          DEPRECATED: please specify `procfs_path` globally in `khulnasoft.conf` instead
         value:
           type: string
           example: /proc
@@ -39,7 +39,7 @@ files:
     - template: instances
       options:
       - name: name
-        description: Used to uniquely identify your metrics as they are tagged with this name in Datadog.
+        description: Used to uniquely identify your metrics as they are tagged with this name in Khulnasoft.
         required: true
         value:
           type: string

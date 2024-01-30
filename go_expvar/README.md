@@ -18,7 +18,7 @@ The Go Expvar check is packaged with the Agent, so [install the Agent][3] anywhe
 
 #### Prepare the service
 
-If your Go service doesn't use the [expvar package][4] already, import it (`import "expvar"`). If you don't want to instrument your own metrics with expvar - that is you only want to collect your service's memory metrics - import the package using the blank identifier (`import _ "expvar"`). If your service doesn't already listen for HTTP requests (with the http package), [make it listen][5] locally just for the Datadog Agent.
+If your Go service doesn't use the [expvar package][4] already, import it (`import "expvar"`). If you don't want to instrument your own metrics with expvar - that is you only want to collect your service's memory metrics - import the package using the blank identifier (`import _ "expvar"`). If your service doesn't already listen for HTTP requests (with the http package), [make it listen][5] locally just for the Khulnasoft Agent.
 
 <!-- xxx tabs xxx -->
 <!-- xxx tab "Host" xxx -->
@@ -35,7 +35,7 @@ To configure this check for an Agent running on a host:
 
 2. [Restart the Agent][8].
 
-**Note**: The Go Expvar integration can potentially emit [custom metrics][9], which may impact your [billing][10]. By default, there is a limit of 350 metrics. If you require additional metrics, contact [Datadog support][11].
+**Note**: The Go Expvar integration can potentially emit [custom metrics][9], which may impact your [billing][10]. By default, there is a limit of 350 metrics. If you require additional metrics, contact [Khulnasoft support][11].
 
 <!-- xxz tab xxx -->
 <!-- xxx tab "Containerized" xxx -->
@@ -73,14 +73,14 @@ The Go-Expvar check does not include any service checks.
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][11].
+Need help? Contact [Khulnasoft support][11].
 
 ## Further Reading
 
-- [Instrument your Go apps with Expvar and Datadog][15]
+- [Instrument your Go apps with Expvar and Khulnasoft][15]
 
 [1]: https://raw.githubusercontent.com/KhulnaSoft/integrations-core/master/go_expvar/images/go_graph.png
-[2]: https://github.com/KhulnaSoft/datadog-go
+[2]: https://github.com/KhulnaSoft/khulnasoft-go
 [3]: https://app.khulnasoft.com/account/settings/agent/latest
 [4]: https://golang.org/pkg/expvar
 [5]: https://golang.org/pkg/net/http/#ListenAndServe
@@ -93,4 +93,4 @@ Need help? Contact [Datadog support][11].
 [12]: https://docs.khulnasoft.com/agent/kubernetes/integrations/
 [13]: https://docs.khulnasoft.com/agent/guide/agent-commands/#agent-status-and-information
 [14]: https://github.com/KhulnaSoft/integrations-core/blob/master/go_expvar/metadata.csv
-[15]: https://www.khulnasoft.com/blog/instrument-go-apps-expvar-datadog
+[15]: https://www.khulnasoft.com/blog/instrument-go-apps-expvar-khulnasoft

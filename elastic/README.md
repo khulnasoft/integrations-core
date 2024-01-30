@@ -6,13 +6,13 @@
 
 Stay up-to-date on the health of your Elasticsearch cluster, from its overall status down to JVM heap usage and everything in between. Get notified when you need to revive a replica, add capacity to the cluster, or otherwise tweak its configuration. After doing so, track how your cluster metrics respond.
 
-The Datadog Agent's Elasticsearch check collects metrics for search and indexing performance, memory usage and garbage collection, node availability, shard statistics, disk space and performance, pending tasks, and many more. The Agent also sends events and service checks for the overall status of your cluster.
+The Khulnasoft Agent's Elasticsearch check collects metrics for search and indexing performance, memory usage and garbage collection, node availability, shard statistics, disk space and performance, pending tasks, and many more. The Agent also sends events and service checks for the overall status of your cluster.
 
 ## Setup
 
 ### Installation
 
-The Elasticsearch check is included in the [Datadog Agent][2] package. No additional installation is necessary.
+The Elasticsearch check is included in the [Khulnasoft Agent][2] package. No additional installation is necessary.
 
 ### Configuration
 
@@ -40,7 +40,7 @@ To configure this check for an Agent running on a host:
 
     **Notes**:
 
-      - If you're collecting Elasticsearch metrics from just one Datadog Agent running outside the cluster, such as using a hosted Elasticsearch, set `cluster_stats` to `true`.
+      - If you're collecting Elasticsearch metrics from just one Khulnasoft Agent running outside the cluster, such as using a hosted Elasticsearch, set `cluster_stats` to `true`.
       - [Agent-level tags][5] are not applied to hosts in a cluster that is not running the Agent. Use integration level tags in `<integration>.d/conf.yaml` to ensure **ALL** metrics have consistent tags. For example:
 
         ```yaml
@@ -63,7 +63,7 @@ To configure this check for an Agent running on a host:
       - If you have enabled security features in Elastic Search, you can use `monitor` or `manage` privilege while using the API to make the calls to the Elastic Search indices.
       - Include the following properties in the created role:
         ```json
-        name = "datadog"
+        name = "khulnasoft"
         indices {
           names = [".monitoring-*", "metricbeat-*"]
           privileges = ["read", "read_cross_cluster", "monitor"]
@@ -121,16 +121,16 @@ The custom query sends as a `GET` request. If you use an optional `payload` para
 
 ##### Trace collection
 
-Datadog APM integrates with Elasticsearch to see the traces across your distributed system. Trace collection is enabled by default in the Datadog Agent v6+. To start collecting traces:
+Khulnasoft APM integrates with Elasticsearch to see the traces across your distributed system. Trace collection is enabled by default in the Khulnasoft Agent v6+. To start collecting traces:
 
-1. [Enable trace collection in Datadog][9].
+1. [Enable trace collection in Khulnasoft][9].
 2. [Instrument your application that makes requests to ElasticSearch][10].
 
 ##### Log collection
 
 _Available for Agent versions >6.0_
 
-1. Collecting logs is disabled by default in the Datadog Agent, enable it in the `datadog.yaml` file with:
+1. Collecting logs is disabled by default in the Khulnasoft Agent, enable it in the `khulnasoft.yaml` file with:
 
    ```yaml
    logs_enabled: true
@@ -208,20 +208,20 @@ To configure this check for an Agent running on a container:
 Set [Autodiscovery Integrations Templates][12] as Docker labels on your application container:
 
 ```yaml
-LABEL "com.datadoghq.ad.check_names"='["elastic"]'
-LABEL "com.datadoghq.ad.init_configs"='[{}]'
-LABEL "com.datadoghq.ad.instances"='[{"url": "http://%%host%%:9200"}]'
+LABEL "com.khulnasofthq.ad.check_names"='["elastic"]'
+LABEL "com.khulnasofthq.ad.init_configs"='[{}]'
+LABEL "com.khulnasofthq.ad.instances"='[{"url": "http://%%host%%:9200"}]'
 ```
 
 ##### Log collection
 
 
-Collecting logs is disabled by default in the Datadog Agent. To enable it, see [Docker Log Collection][13].
+Collecting logs is disabled by default in the Khulnasoft Agent. To enable it, see [Docker Log Collection][13].
 
 Then, set [Log Integrations][14] as Docker labels:
 
 ```yaml
-LABEL "com.datadoghq.ad.logs"='[{"source":"elasticsearch","service":"<SERVICE_NAME>"}]'
+LABEL "com.khulnasofthq.ad.logs"='[{"source":"elasticsearch","service":"<SERVICE_NAME>"}]'
 ```
 
 ##### Trace collection
@@ -252,7 +252,7 @@ To configure this check for an Agent running on Kubernetes:
 
 Set [Autodiscovery Integrations Templates][17] as pod annotations on your application container. Aside from this, templates can also be configured with [a file, a configmap, or a key-value store][18].
 
-**Annotations v1** (for Datadog Agent < v7.36)
+**Annotations v1** (for Khulnasoft Agent < v7.36)
 
 ```yaml
 apiVersion: v1
@@ -273,7 +273,7 @@ spec:
     - name: elasticsearch
 ```
 
-**Annotations v2** (for Datadog Agent v7.36+)
+**Annotations v2** (for Khulnasoft Agent v7.36+)
 
 ```yaml
 apiVersion: v1
@@ -300,7 +300,7 @@ spec:
 ##### Log collection
 
 
-Collecting logs is disabled by default in the Datadog Agent. To enable it, see the [Kubernetes Log Collection][19].
+Collecting logs is disabled by default in the Khulnasoft Agent. To enable it, see the [Kubernetes Log Collection][19].
 
 Then, set [Log Integrations][14] as pod annotations. This can also be configured with [a file, a configmap, or a key-value store][20].
 
@@ -351,9 +351,9 @@ Set [Autodiscovery Integrations Templates][12] as Docker labels on your applicat
     "name": "elasticsearch",
     "image": "elasticsearch:latest",
     "dockerLabels": {
-      "com.datadoghq.ad.check_names": "[\"elastic\"]",
-      "com.datadoghq.ad.init_configs": "[{}]",
-      "com.datadoghq.ad.instances": "[{\"url\": \"http://%%host%%:9200\"}]"
+      "com.khulnasofthq.ad.check_names": "[\"elastic\"]",
+      "com.khulnasofthq.ad.init_configs": "[{}]",
+      "com.khulnasofthq.ad.instances": "[{\"url\": \"http://%%host%%:9200\"}]"
     }
   }]
 }
@@ -362,7 +362,7 @@ Set [Autodiscovery Integrations Templates][12] as Docker labels on your applicat
 ##### Log collection
 
 
-Collecting logs is disabled by default in the Datadog Agent. To enable it, see [ECS Log Collection][21].
+Collecting logs is disabled by default in the Khulnasoft Agent. To enable it, see [ECS Log Collection][21].
 
 Then, set [Log Integrations][14] as Docker labels:
 
@@ -372,7 +372,7 @@ Then, set [Log Integrations][14] as Docker labels:
     "name": "elasticsearch",
     "image": "elasticsearch:latest",
     "dockerLabels": {
-      "com.datadoghq.ad.logs": "[{\"source\":\"elasticsearch\",\"service\":\"<SERVICE_NAME>\"}]"
+      "com.khulnasofthq.ad.logs": "[{\"source\":\"elasticsearch\",\"service\":\"<SERVICE_NAME>\"}]"
     }
   }]
 }
@@ -417,7 +417,7 @@ See [metadata.csv][25] for a list of metrics provided by this integration.
 
 ### Events
 
-The Elasticsearch check emits an event to Datadog each time the overall status of your Elasticsearch cluster changes - red, yellow, or green.
+The Elasticsearch check emits an event to Khulnasoft each time the overall status of your Elasticsearch cluster changes - red, yellow, or green.
 
 ### Service Checks
 

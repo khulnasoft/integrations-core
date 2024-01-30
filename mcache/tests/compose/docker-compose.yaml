@@ -2,7 +2,7 @@ version: '3.5'
 
 services:
   memcached:
-    image: datadog/docker-library:memcached_SASL
+    image: khulnasoft/docker-library:memcached_SASL
     environment:
       USERNAME: testuser
       PASSWORD: testpass
@@ -11,7 +11,7 @@ services:
     command: memcached -S
 
   memcached_socket:
-    image: datadog/docker-library:memcached_SASL
+    image: khulnasoft/docker-library:memcached_SASL
     environment:
       USERNAME: testuser
       PASSWORD: testpass

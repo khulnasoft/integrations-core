@@ -16,7 +16,7 @@
             "id": 7701240760334496,
             "definition": {
               "type": "note",
-              "content": "This dashboard is a high-level overview of your SQL Servers. From here, you can track the health of your database fleet or individual servers by selecting a `host` from the dropdown. View IO statistics, locks, and query performance using Datadog [Database Monitoring](https://docs.khulnasoft.com/database_monitoring/setup_sql_server/) features.",
+              "content": "This dashboard is a high-level overview of your SQL Servers. From here, you can track the health of your database fleet or individual servers by selecting a `host` from the dropdown. View IO statistics, locks, and query performance using Khulnasoft [Database Monitoring](https://docs.khulnasoft.com/database_monitoring/setup_sql_server/) features.",
               "background_color": "transparent",
               "font_size": "16",
               "text_align": "left",
@@ -607,7 +607,7 @@
             "id": 4018430437288522,
             "definition": {
               "type": "note",
-              "content": "Query Performance metrics come from Datadog Database Monitoring (DBM). [Learn more](https://www.khulnasoft.com/product/database-monitoring/)",
+              "content": "Query Performance metrics come from Khulnasoft Database Monitoring (DBM). [Learn more](https://www.khulnasoft.com/product/database-monitoring/)",
               "background_color": "yellow",
               "font_size": "14",
               "text_align": "left",
@@ -889,7 +889,7 @@
             "id": 1585874212227112,
             "definition": {
               "type": "note",
-              "content": "Database Load comes from Datadog Database Monitoring (DBM). [Learn more](https://www.khulnasoft.com/product/database-monitoring/)",
+              "content": "Database Load comes from Khulnasoft Database Monitoring (DBM). [Learn more](https://www.khulnasoft.com/product/database-monitoring/)",
               "background_color": "yellow",
               "font_size": "14",
               "text_align": "left",

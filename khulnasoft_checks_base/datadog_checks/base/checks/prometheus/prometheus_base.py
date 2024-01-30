@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2018-present
+# (C) Khulnasoft, Inc. 2018-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 
@@ -43,7 +43,7 @@ class PrometheusCheck(PrometheusScraperMixin, AgentCheck):
         the ones from the label provided via the metrics object.
 
         `custom_tags` is an array of 'tag:value' that will be added to the
-        metric when sending the rate to Datadog.
+        metric when sending the rate to Khulnasoft.
         """
         _tags = self._metric_tags(metric_name, val, metric, custom_tags, hostname)
         self.rate('{}.{}'.format(self.NAMESPACE, metric_name), val, _tags, hostname=hostname)
@@ -54,7 +54,7 @@ class PrometheusCheck(PrometheusScraperMixin, AgentCheck):
         the ones from the label provided via the metrics object.
 
         `custom_tags` is an array of 'tag:value' that will be added to the
-        metric when sending the monotonic count to Datadog.
+        metric when sending the monotonic count to Khulnasoft.
         """
 
         _tags = self._metric_tags(metric_name, val, metric, custom_tags, hostname)
@@ -66,7 +66,7 @@ class PrometheusCheck(PrometheusScraperMixin, AgentCheck):
         the ones from the label provided via the metrics object.
 
         `custom_tags` is an array of 'tag:value' that will be added to the
-        metric when sending the gauge to Datadog.
+        metric when sending the gauge to Khulnasoft.
         """
         _tags = self._metric_tags(metric_name, val, metric, custom_tags, hostname)
         self.gauge('{}.{}'.format(self.NAMESPACE, metric_name), val, _tags, hostname=hostname)

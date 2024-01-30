@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2018-present
+# (C) Khulnasoft, Inc. 2018-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 
@@ -69,7 +69,7 @@ class PrometheusScraperMixin(object):
         self.NAMESPACE = ''
 
         # `metrics_mapper` is a dictionary where the keys are the metrics to capture
-        # and the values are the corresponding metrics names to have in datadog.
+        # and the values are the corresponding metrics names to have in khulnasoft.
         # Note: it is empty in the parent class but will need to be
         # overloaded/hardcoded in the final check not to be counted as custom metric.
         self.metrics_mapper = {}
@@ -488,7 +488,7 @@ class PrometheusScraperMixin(object):
     def process_metric(self, message, **kwargs):
         """
         Handle a prometheus metric message according to the following flow:
-            - search self.metrics_mapper for a prometheus.metric <--> datadog.metric mapping
+            - search self.metrics_mapper for a prometheus.metric <--> khulnasoft.metric mapping
             - call check method with the same name as the metric
             - log some info if none of the above worked
 
@@ -624,7 +624,7 @@ class PrometheusScraperMixin(object):
             send the buckets as tagged values when dealing with histograms.
 
         `custom_tags` is an array of 'tag:value' that will be added to the
-        metric when sending the gauge to Datadog.
+        metric when sending the gauge to Khulnasoft.
         """
         if message.type < len(self.METRIC_TYPES):
             for metric in message.metric:

@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2022-present
+# (C) Khulnasoft, Inc. 2022-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 
@@ -11,7 +11,7 @@ from khulnasoft_checks.dev.tooling.utils import get_license_header
 
 
 @pytest.mark.parametrize("years", ["2000-present", "2001-2003", "2014"])
-@pytest.mark.parametrize("holder", ["Datadog, Inc.", "Foo Bar", "Foo Bar <foo@bar.com>"])
+@pytest.mark.parametrize("holder", ["Khulnasoft, Inc.", "Foo Bar", "Foo Bar <foo@bar.com>"])
 def test_parse_license_header(years, holder):
     expected_header = f"""# (C) {holder} {years}
 # All rights reserved

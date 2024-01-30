@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2023-present
+# (C) Khulnasoft, Inc. 2023-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 
@@ -65,7 +65,7 @@ class SQLServerConfig:
                     'collect_commands': is_affirmative(obfuscator_options_config.get('collect_commands', True)),
                     'collect_comments': is_affirmative(obfuscator_options_config.get('collect_comments', True)),
                     # Config to enable/disable obfuscation of sql statements with go-sqllexer pkg
-                    # Valid values for this can be found at https://github.com/KhulnaSoft/datadog-agent/blob/main/pkg/obfuscate/obfuscate.go#L108
+                    # Valid values for this can be found at https://github.com/KhulnaSoft/khulnasoft-agent/blob/main/pkg/obfuscate/obfuscate.go#L108
                     'obfuscation_mode': obfuscator_options_config.get('obfuscation_mode', 'obfuscate_and_normalize'),
                     'remove_space_between_parentheses': is_affirmative(
                         obfuscator_options_config.get('remove_space_between_parentheses', False)

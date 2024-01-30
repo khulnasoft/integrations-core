@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2022-present
+# (C) Khulnasoft, Inc. 2022-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 from collections import OrderedDict
@@ -212,7 +212,7 @@ def test_proxy_passes_right_params_to_requests(requests, proxy, expected_proxy, 
         'auth': None,
         'cert': None,
         'headers': OrderedDict(
-            [('User-Agent', 'Datadog Agent/0.0.0'), ('Accept', '*/*'), ('Accept-Encoding', 'gzip, deflate')]
+            [('User-Agent', 'Khulnasoft Agent/0.0.0'), ('Accept', '*/*'), ('Accept-Encoding', 'gzip, deflate')]
         ),
         'proxies': expected_proxy,
         'timeout': (10.0, 10.0),

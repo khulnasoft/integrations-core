@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2018-present
+# (C) Khulnasoft, Inc. 2018-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 import json
@@ -189,7 +189,7 @@ EXPECTED_METRICS_PROMETHEUS_1_21 = [
 ]
 
 COMMON_TAGS = {
-    "kubernetes_pod_uid://c2319815-10d0-11e8-bd5a-42010af00137": ["pod_name:datadog-agent-jbm2k"],
+    "kubernetes_pod_uid://c2319815-10d0-11e8-bd5a-42010af00137": ["pod_name:khulnasoft-agent-jbm2k"],
     "kubernetes_pod_uid://2edfd4d9-10ce-11e8-bd5a-42010af00137": ["pod_name:fluentd-gcp-v2.0.10-9q9t4"],
     "kubernetes_pod_uid://2fdfd4d9-10ce-11e8-bd5a-42010af00137": ["pod_name:fluentd-gcp-v2.0.10-p13r3"],
     'container_id://5741ed2471c0e458b6b95db40ba05d1a5ee168256638a0264f08703e48d76561': [
@@ -220,10 +220,10 @@ COMMON_TAGS = {
     "kubernetes_pod_uid://12ceeaa9-33ca-11e6-ac8f-42010af00003": ['pod_name:dd-agent-ntepl'],
     "container_id://32fc50ecfe24df055f6d56037acb966337eef7282ad5c203a1be58f2dd2fe743": ['pod_name:dd-agent-ntepl'],
     "container_id://a335589109ce5506aa69ba7481fc3e6c943abd23c5277016c92dac15d0f40479": [
-        'kube_container_name:datadog-agent'
+        'kube_container_name:khulnasoft-agent'
     ],
     "container_id://326b384481ca95204018e3e837c61e522b64a3b86c3804142a22b2d1db9dbd7b": [
-        'kube_container_name:datadog-agent'
+        'kube_container_name:khulnasoft-agent'
     ],
     "container_id://6d8c6a05731b52195998c438fdca271b967b171f6c894f11ba59aa2f4deff10c": ['pod_name:cassandra-0'],
     "kubernetes_pod_uid://639980e5-2e6c-11ea-8bb1-42010a800074": [
@@ -257,16 +257,16 @@ WINDOWS_TAGS = {
     ],
     'kubernetes_pod_uid://8ddf0e3f-ac6c-4d44-87d7-0bc41f6729ec': [
         'kube_namespace:default',
-        'pod_name:dd-datadog-lbvkl',
+        'pod_name:dd-khulnasoft-lbvkl',
     ],
     'container_id://a26b9c2c92e4ab03f34b84d03d91bed92259c859576535a3167aa32d39206dc2': [
         'kube_namespace:default',
-        'pod_name:dd-datadog-lbvkl',
+        'pod_name:dd-khulnasoft-lbvkl',
         'kube_container_name:agent',
     ],
     'container_id://98fb504eb0fab22ce9089d8b1cc172ccb2095ee11a00bacd244419b5c02ee635': [
         'kube_namespace:default',
-        'pod_name:dd-datadog-lbvkl',
+        'pod_name:dd-khulnasoft-lbvkl',
         'kube_container_name:process-agent',
     ],
 }
@@ -304,7 +304,7 @@ PROBE_TAGS = {
     ],
     'container_id://c81dfc25dd24b538a880bfd0f807ba9ec1ff4541e8b8eb49a8d1afcdecc5ef59': [
         'kube_namespace:default',
-        'pod_name:datadog-t9f28',
+        'pod_name:khulnasoft-t9f28',
         'kube_container_name:agent',
     ],
 }
@@ -777,11 +777,11 @@ def test_report_container_spec_metrics(monkeypatch, tagger):
             314572800.0,
             ['kube_container_name:fluentd-gcp', 'kube_deployment:fluentd-gcp-v2.0.10'] + instance_tags,
         ),
-        mock.call('kubernetes.cpu.requests', 0.1, ['kube_container_name:datadog-agent'] + instance_tags),
-        mock.call('kubernetes.cpu.requests', 0.1, ['kube_container_name:datadog-agent'] + instance_tags),
-        mock.call('kubernetes.memory.requests', 134217728.0, ['kube_container_name:datadog-agent'] + instance_tags),
-        mock.call('kubernetes.cpu.limits', 0.25, ['kube_container_name:datadog-agent'] + instance_tags),
-        mock.call('kubernetes.memory.limits', 536870912.0, ['kube_container_name:datadog-agent'] + instance_tags),
+        mock.call('kubernetes.cpu.requests', 0.1, ['kube_container_name:khulnasoft-agent'] + instance_tags),
+        mock.call('kubernetes.cpu.requests', 0.1, ['kube_container_name:khulnasoft-agent'] + instance_tags),
+        mock.call('kubernetes.memory.requests', 134217728.0, ['kube_container_name:khulnasoft-agent'] + instance_tags),
+        mock.call('kubernetes.cpu.limits', 0.25, ['kube_container_name:khulnasoft-agent'] + instance_tags),
+        mock.call('kubernetes.memory.limits', 536870912.0, ['kube_container_name:khulnasoft-agent'] + instance_tags),
         mock.call('kubernetes.cpu.requests', 0.1, ["pod_name:demo-app-success-c485bc67b-klj45"] + instance_tags),
     ]
     if any(('pod_name:pi-kff76' in e for e in [x[0][2] for x in check.gauge.call_args_list])):
@@ -833,8 +833,8 @@ def test_report_container_state_metrics(monkeypatch, tagger):
             0,
             ['kube_container_name:prometheus-to-sd-exporter', 'kube_deployment:fluentd-gcp-v2.0.10'] + instance_tags,
         ),
-        mock.call('kubernetes.containers.restarts', 0, ['kube_container_name:datadog-agent'] + instance_tags),
-        mock.call('kubernetes.containers.restarts', 0, ['kube_container_name:datadog-agent'] + instance_tags),
+        mock.call('kubernetes.containers.restarts', 0, ['kube_container_name:khulnasoft-agent'] + instance_tags),
+        mock.call('kubernetes.containers.restarts', 0, ['kube_container_name:khulnasoft-agent'] + instance_tags),
     ]
     check.gauge.assert_has_calls(calls, any_order=True)
 
@@ -1091,7 +1091,7 @@ def test_process_stats_summary_not_source_windows(monkeypatch, aggregator, tagge
     # As we did not activate `use_stats_summary_as_source`, we only have ephemeral storage metrics
     # Kubelet stats not present as they are not returned on Windows
     aggregator.assert_metric(
-        'kubernetes.ephemeral_storage.usage', 919980.0, tags + ['kube_namespace:default', 'pod_name:dd-datadog-lbvkl']
+        'kubernetes.ephemeral_storage.usage', 919980.0, tags + ['kube_namespace:default', 'pod_name:dd-khulnasoft-lbvkl']
     )
 
 
@@ -1112,7 +1112,7 @@ def test_process_stats_summary_not_source_linux(monkeypatch, aggregator, tagger)
         'kubernetes.ephemeral_storage.usage', 69406720.0, ['instance:tag', 'pod_name:fluentd-gcp-v2.0.10-9q9t4']
     )
     aggregator.assert_metric(
-        'kubernetes.ephemeral_storage.usage', 49152.0, ['instance:tag', 'pod_name:datadog-agent-jbm2k']
+        'kubernetes.ephemeral_storage.usage', 49152.0, ['instance:tag', 'pod_name:khulnasoft-agent-jbm2k']
     )
     aggregator.assert_metric('kubernetes.runtime.cpu.usage', 19442853.0, ['instance:tag'])
     aggregator.assert_metric('kubernetes.kubelet.cpu.usage', 36755862.0, ['instance:tag'])
@@ -1132,13 +1132,13 @@ def test_process_stats_summary_as_source(monkeypatch, aggregator, tagger):
     check.process_stats_summary(pod_list_utils, stats, tags, True)
 
     aggregator.assert_metric(
-        'kubernetes.ephemeral_storage.usage', 919980.0, tags + ['kube_namespace:default', 'pod_name:dd-datadog-lbvkl']
+        'kubernetes.ephemeral_storage.usage', 919980.0, tags + ['kube_namespace:default', 'pod_name:dd-khulnasoft-lbvkl']
     )
     aggregator.assert_metric(
-        'kubernetes.network.tx_bytes', 163670.0, tags + ['kube_namespace:default', 'pod_name:dd-datadog-lbvkl']
+        'kubernetes.network.tx_bytes', 163670.0, tags + ['kube_namespace:default', 'pod_name:dd-khulnasoft-lbvkl']
     )
     aggregator.assert_metric(
-        'kubernetes.network.rx_bytes', 694636.0, tags + ['kube_namespace:default', 'pod_name:dd-datadog-lbvkl']
+        'kubernetes.network.rx_bytes', 694636.0, tags + ['kube_namespace:default', 'pod_name:dd-khulnasoft-lbvkl']
     )
     aggregator.assert_metric(
         'kubernetes.network.tx_bytes',
@@ -1153,12 +1153,12 @@ def test_process_stats_summary_as_source(monkeypatch, aggregator, tagger):
     aggregator.assert_metric(
         'kubernetes.cpu.usage.total',
         13796875000.0,
-        tags + ['kube_container_name:agent', 'kube_namespace:default', 'pod_name:dd-datadog-lbvkl'],
+        tags + ['kube_container_name:agent', 'kube_namespace:default', 'pod_name:dd-khulnasoft-lbvkl'],
     )
     aggregator.assert_metric(
         'kubernetes.cpu.usage.total',
         9359375000.0,
-        tags + ['kube_container_name:process-agent', 'kube_namespace:default', 'pod_name:dd-datadog-lbvkl'],
+        tags + ['kube_container_name:process-agent', 'kube_namespace:default', 'pod_name:dd-khulnasoft-lbvkl'],
     )
     aggregator.assert_metric(
         'kubernetes.cpu.usage.total',
@@ -1173,12 +1173,12 @@ def test_process_stats_summary_as_source(monkeypatch, aggregator, tagger):
     aggregator.assert_metric(
         'kubernetes.memory.working_set',
         136089600.0,
-        tags + ['kube_container_name:agent', 'kube_namespace:default', 'pod_name:dd-datadog-lbvkl'],
+        tags + ['kube_container_name:agent', 'kube_namespace:default', 'pod_name:dd-khulnasoft-lbvkl'],
     )
     aggregator.assert_metric(
         'kubernetes.memory.working_set',
         65474560.0,
-        tags + ['kube_container_name:process-agent', 'kube_namespace:default', 'pod_name:dd-datadog-lbvkl'],
+        tags + ['kube_container_name:process-agent', 'kube_namespace:default', 'pod_name:dd-khulnasoft-lbvkl'],
     )
     aggregator.assert_metric(
         'kubernetes.memory.working_set',
@@ -1193,12 +1193,12 @@ def test_process_stats_summary_as_source(monkeypatch, aggregator, tagger):
     aggregator.assert_metric(
         'kubernetes.filesystem.usage',
         0.0,
-        tags + ['kube_container_name:agent', 'kube_namespace:default', 'pod_name:dd-datadog-lbvkl'],
+        tags + ['kube_container_name:agent', 'kube_namespace:default', 'pod_name:dd-khulnasoft-lbvkl'],
     )
     aggregator.assert_metric(
         'kubernetes.filesystem.usage',
         0.0,
-        tags + ['kube_container_name:process-agent', 'kube_namespace:default', 'pod_name:dd-datadog-lbvkl'],
+        tags + ['kube_container_name:process-agent', 'kube_namespace:default', 'pod_name:dd-khulnasoft-lbvkl'],
     )
     aggregator.assert_metric(
         'kubernetes.filesystem.usage',
@@ -1213,12 +1213,12 @@ def test_process_stats_summary_as_source(monkeypatch, aggregator, tagger):
     aggregator.assert_metric(
         'kubernetes.filesystem.usage_pct',
         0.0,
-        tags + ['kube_container_name:agent', 'kube_namespace:default', 'pod_name:dd-datadog-lbvkl'],
+        tags + ['kube_container_name:agent', 'kube_namespace:default', 'pod_name:dd-khulnasoft-lbvkl'],
     )
     aggregator.assert_metric(
         'kubernetes.filesystem.usage_pct',
         0.0,
-        tags + ['kube_container_name:process-agent', 'kube_namespace:default', 'pod_name:dd-datadog-lbvkl'],
+        tags + ['kube_container_name:process-agent', 'kube_namespace:default', 'pod_name:dd-khulnasoft-lbvkl'],
     )
     aggregator.assert_metric(
         'kubernetes.filesystem.usage_pct',
@@ -1387,13 +1387,13 @@ def test_probe_metrics(monkeypatch, aggregator, tagger):
     aggregator.assert_metric(
         'kubernetes.liveness_probe.success.total',
         3,
-        ['kube_namespace:default', 'pod_name:datadog-t9f28', 'kube_container_name:agent'],
+        ['kube_namespace:default', 'pod_name:khulnasoft-t9f28', 'kube_container_name:agent'],
     )
 
     aggregator.assert_metric(
         'kubernetes.readiness_probe.success.total',
         3,
-        ['kube_namespace:default', 'pod_name:datadog-t9f28', 'kube_container_name:agent'],
+        ['kube_namespace:default', 'pod_name:khulnasoft-t9f28', 'kube_container_name:agent'],
     )
 
     aggregator.assert_metric(

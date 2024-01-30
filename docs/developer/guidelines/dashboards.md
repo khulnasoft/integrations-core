@@ -2,7 +2,7 @@
 
 -----
 
-Datadog dashboards enable you to efficiently monitor your infrastructure and integrations by displaying and tracking key metrics on dashboards.
+Khulnasoft dashboards enable you to efficiently monitor your infrastructure and integrations by displaying and tracking key metrics on dashboards.
 
 ## Integration Preset Dashboards
 
@@ -10,7 +10,7 @@ If you would like to create a default dashboard for an integration, follow the g
 
 ### Exporting a dashboard payload
 
-When you've created a dashboard in the Datadog UI, you can export the dashboard payload to be included in its integration's assets directory.
+When you've created a dashboard in the Khulnasoft UI, you can export the dashboard payload to be included in its integration's assets directory.
 
 Ensure that you have [set](../ddev/cli.md#ddev-config-set) an `api_key` and `app_key` for the org that contains the new dashboard in the [`ddev` configuration](../ddev/configuration.md#organization).
 

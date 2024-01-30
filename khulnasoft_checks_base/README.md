@@ -1,11 +1,11 @@
-# Datadog Checks Base
+# Khulnasoft Checks Base
 
 [![Latest PyPI version][1]][7]
 [![Supported Python versions][2]][7]
 
 ## Overview
 
-This package provides the Python bits needed by the [Datadog Agent][4]
+This package provides the Python bits needed by the [Khulnasoft Agent][4]
 to run Agent-based Integrations (also known as _Checks_).
 
 This package is used in two scenarios:
@@ -26,17 +26,17 @@ use the toolkit in a transparent way when you run the tests but you can
 install the toolkit locally and play with it:
 
 ```shell
-pip install datadog-checks-base
+pip install khulnasoft-checks-base
 ```
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][8].
+Need help? Contact [Khulnasoft support][8].
 
-[1]: https://img.shields.io/pypi/v/datadog-checks-base.svg
-[2]: https://img.shields.io/pypi/pyversions/datadog-checks-base.svg
-[4]: https://github.com/KhulnaSoft/datadog-agent
-[5]: https://datadoghq.dev/integrations-core/base/about/
+[1]: https://img.shields.io/pypi/v/khulnasoft-checks-base.svg
+[2]: https://img.shields.io/pypi/pyversions/khulnasoft-checks-base.svg
+[4]: https://github.com/KhulnaSoft/khulnasoft-agent
+[5]: https://khulnasofthq.dev/integrations-core/base/about/
 [6]: https://github.com/KhulnaSoft/integrations-core
-[7]: https://pypi.org/project/datadog-checks-base/
+[7]: https://pypi.org/project/khulnasoft-checks-base/
 [8]: https://docs.khulnasoft.com/help/

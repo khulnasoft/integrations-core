@@ -4,17 +4,17 @@
 
 ## Overview
 
-Monitor your [Databricks][1] clusters with the Datadog [Spark integration][2].
+Monitor your [Databricks][1] clusters with the Khulnasoft [Spark integration][2].
 
 This integration unifies logs, infrastructure metrics, and Spark performance metrics, providing real-time visibility into the health of your nodes and the performance of your jobs. It can help you debug errors, fine-tune performance, and identify issues such as inefficient data partitioning or clusters running out of memory.
 
-For feature details, see [Monitor Databricks with Datadog][22].
+For feature details, see [Monitor Databricks with Khulnasoft][22].
 
 ## Setup
 
 ### Installation
 
-Monitor Databricks Spark applications with the [Datadog Spark integration][3]. Install the [Datadog Agent][4] on your clusters following the [configuration](#configuration) instructions for your appropriate cluster. After that, install the [Spark integration][23] on Datadog to autoinstall the Databricks Overview dashboard.
+Monitor Databricks Spark applications with the [Khulnasoft Spark integration][3]. Install the [Khulnasoft Agent][4] on your clusters following the [configuration](#configuration) instructions for your appropriate cluster. After that, install the [Spark integration][23] on Khulnasoft to autoinstall the Databricks Overview dashboard.
 
 ### Configuration
 
@@ -49,7 +49,7 @@ Use the Databricks UI to edit the global init scripts:
 2. Modify the script to suit your needs. For example, you can add tags or define a specific configuration for the integration.
 3. Go to the Admin Settings and click the **Global Init Scripts** tab.
 4. Click on the **+ Add** button.
-5. Name the script, for example `Datadog init script` and then paste it in the **Script** field.
+5. Name the script, for example `Khulnasoft init script` and then paste it in the **Script** field.
 6. Click on the **Enabled** toggle to enable it.
 7. Click on the **Add** button.
 
@@ -59,15 +59,15 @@ After these steps, any new cluster uses the script automatically. More informati
 
 <!-- xxx tabs xxx -->
 <!-- xxx tab "Driver only" xxx -->
-##### Install the Datadog Agent on driver
+##### Install the Khulnasoft Agent on driver
 
-Install the Datadog Agent on the driver node of the cluster. 
+Install the Khulnasoft Agent on the driver node of the cluster. 
 
 <div class="alert alert-warning">You need to define the value of the `DD_API_KEY` variable inside the script.</div>
 
 ```shell script
 #!/bin/bash
-cat <<EOF > /tmp/start_datadog.sh
+cat <<EOF > /tmp/start_khulnasoft.sh
 #!/bin/bash
 
 date -u +"%Y-%m-%d %H:%M:%S UTC"
@@ -78,7 +78,7 @@ DB_CLUSTER_NAME=$(echo "$DB_CLUSTER_NAME" | sed -e 's/ /_/g' -e "s/'/_/g")
 DD_API_KEY='<YOUR_API_KEY>'
 
 if [[ \${DB_IS_DRIVER} = "TRUE" ]]; then
-  echo "Installing Datadog Agent on the driver..."
+  echo "Installing Khulnasoft Agent on the driver..."
 
   # CONFIGURE HOST TAGS FOR DRIVER
   DD_TAGS="environment:\${DD_ENV}","databricks_cluster_id:\${DB_CLUSTER_ID}","databricks_cluster_name:\${DB_CLUSTER_NAME}","spark_host_ip:\${DB_DRIVER_IP}","spark_node:driver","databricks_instance_type:\${DB_INSTANCE_TYPE}","databricks_is_job_cluster:\${DB_IS_JOB_CLUSTER}"
@@ -92,9 +92,9 @@ if [[ \${DB_IS_DRIVER} = "TRUE" ]]; then
     bash -c "\$(curl -L https://s3.amazonaws.com/dd-agent/scripts/install_script_agent7.sh)"
 
   # Avoid conflicts on port 6062
-  echo "process_config.expvar_port: 6063" >> /etc/datadog-agent/datadog.yaml
+  echo "process_config.expvar_port: 6063" >> /etc/khulnasoft-agent/khulnasoft.yaml
 
-  echo "Datadog Agent is installed"
+  echo "Khulnasoft Agent is installed"
 
   while [ -z \$DB_DRIVER_PORT ]; do
     if [ -e "/tmp/driver-env.sh" ]; then
@@ -123,33 +123,33 @@ logs:
       log_processing_rules:
         - type: multi_line
           name: new_log_start_with_date
-          pattern: \d{2,4}[\-\/]\d{2,4}[\-\/]\d{2,4}.*" > /etc/datadog-agent/conf.d/spark.d/spark.yaml
+          pattern: \d{2,4}[\-\/]\d{2,4}[\-\/]\d{2,4}.*" > /etc/khulnasoft-agent/conf.d/spark.d/spark.yaml
 
   echo "Spark integration configured"
 
-  # ENABLE LOGS IN datadog.yaml TO COLLECT DRIVER LOGS
-  sed -i '/.*logs_enabled:.*/a logs_enabled: true' /etc/datadog-agent/datadog.yaml
+  # ENABLE LOGS IN khulnasoft.yaml TO COLLECT DRIVER LOGS
+  sed -i '/.*logs_enabled:.*/a logs_enabled: true' /etc/khulnasoft-agent/khulnasoft.yaml
 fi
 
 echo "Restart the agent"
-sudo service datadog-agent restart
+sudo service khulnasoft-agent restart
 EOF
 
-chmod a+x /tmp/start_datadog.sh
-/tmp/start_datadog.sh >> /tmp/khulnasoft_start.log 2>&1 & disown
+chmod a+x /tmp/start_khulnasoft.sh
+/tmp/start_khulnasoft.sh >> /tmp/khulnasoft_start.log 2>&1 & disown
 ```
 
 <!-- xxz tab xxx -->
 <!-- xxx tab "All nodes" xxx -->
-##### Install the Datadog Agent on driver and worker nodes
+##### Install the Khulnasoft Agent on driver and worker nodes
 
-Install the Datadog Agent on the driver and worker nodes of the cluster.
+Install the Khulnasoft Agent on the driver and worker nodes of the cluster.
 
 <div class="alert alert-warning">You will need to define the value of the `DD_API_KEY` variable inside the script.</div>
 
 ```shell script
 #!/bin/bash
-cat <<EOF > /tmp/start_datadog.sh
+cat <<EOF > /tmp/start_khulnasoft.sh
 #!/bin/bash
 
 date -u +"%Y-%m-%d %H:%M:%S UTC"
@@ -160,7 +160,7 @@ DB_CLUSTER_NAME=$(echo "$DB_CLUSTER_NAME" | sed -e 's/ /_/g' -e "s/'/_/g")
 DD_API_KEY='<YOUR_API_KEY>'
 
 if [[ \${DB_IS_DRIVER} = "TRUE" ]]; then
-  echo "Installing Datadog Agent on the driver (master node)."
+  echo "Installing Khulnasoft Agent on the driver (master node)."
 
   # CONFIGURE HOST TAGS FOR DRIVER
   DD_TAGS="environment:\${DD_ENV}","databricks_cluster_id:\${DB_CLUSTER_ID}","databricks_cluster_name:\${DB_CLUSTER_NAME}","spark_host_ip:\${DB_DRIVER_IP}","spark_node:driver","databricks_instance_type:\${DB_INSTANCE_TYPE}","databricks_is_job_cluster:\${DB_IS_JOB_CLUSTER}"
@@ -173,7 +173,7 @@ if [[ \${DB_IS_DRIVER} = "TRUE" ]]; then
     DD_SITE="\${DD_SITE:-khulnasoft.com}" \
     bash -c "\$(curl -L https://s3.amazonaws.com/dd-agent/scripts/install_script_agent7.sh)"
 
-  echo "Datadog Agent is installed"
+  echo "Khulnasoft Agent is installed"
 
   while [ -z \$DB_DRIVER_PORT ]; do
     if [ -e "/tmp/driver-env.sh" ]; then
@@ -202,35 +202,35 @@ logs:
       log_processing_rules:
         - type: multi_line
           name: new_log_start_with_date
-          pattern: \d{2,4}[\-\/]\d{2,4}[\-\/]\d{2,4}.*" > /etc/datadog-agent/conf.d/spark.d/spark.yaml
+          pattern: \d{2,4}[\-\/]\d{2,4}[\-\/]\d{2,4}.*" > /etc/khulnasoft-agent/conf.d/spark.d/spark.yaml
 
   echo "Spark integration configured"
 
-  # ENABLE LOGS IN datadog.yaml TO COLLECT DRIVER LOGS
-  sed -i '/.*logs_enabled:.*/a logs_enabled: true' /etc/datadog-agent/datadog.yaml
+  # ENABLE LOGS IN khulnasoft.yaml TO COLLECT DRIVER LOGS
+  sed -i '/.*logs_enabled:.*/a logs_enabled: true' /etc/khulnasoft-agent/khulnasoft.yaml
 else
-  echo "Installing Datadog Agent on the worker."
+  echo "Installing Khulnasoft Agent on the worker."
 
   # CONFIGURE HOST TAGS FOR WORKERS
   DD_TAGS="environment:\${DD_ENV}","databricks_cluster_id:\${DB_CLUSTER_ID}","databricks_cluster_name:\${DB_CLUSTER_NAME}","spark_host_ip:\${SPARK_LOCAL_IP}","spark_node:worker","databricks_instance_type:\${DB_INSTANCE_TYPE}","databricks_is_job_cluster:\${DB_IS_JOB_CLUSTER}"
 
   # INSTALL THE LATEST KHULNASOFT AGENT 7 ON DRIVER AND WORKER NODES
-  # CONFIGURE HOSTNAME EXPLICITLY IN datadog.yaml TO PREVENT AGENT FROM FAILING ON VERSION 7.40+
-  # SEE https://github.com/KhulnaSoft/datadog-agent/issues/14152 FOR CHANGE
+  # CONFIGURE HOSTNAME EXPLICITLY IN khulnasoft.yaml TO PREVENT AGENT FROM FAILING ON VERSION 7.40+
+  # SEE https://github.com/KhulnaSoft/khulnasoft-agent/issues/14152 FOR CHANGE
   DD_INSTALL_ONLY=true DD_API_KEY=\$DD_API_KEY DD_HOST_TAGS=\$DD_TAGS DD_HOSTNAME="\$(hostname | xargs)" bash -c "\$(curl -L https://s3.amazonaws.com/dd-agent/scripts/install_script_agent7.sh)"
 
-  echo "Datadog Agent is installed"
+  echo "Khulnasoft Agent is installed"
 fi
 
 # Avoid conflicts on port 6062
-echo "process_config.expvar_port: 6063" >> /etc/datadog-agent/datadog.yaml
+echo "process_config.expvar_port: 6063" >> /etc/khulnasoft-agent/khulnasoft.yaml
 
 echo "Restart the agent"
-sudo service datadog-agent restart
+sudo service khulnasoft-agent restart
 EOF
 
-chmod a+x /tmp/start_datadog.sh
-/tmp/start_datadog.sh >> /tmp/khulnasoft_start.log 2>&1 & disown
+chmod a+x /tmp/start_khulnasoft.sh
+/tmp/start_khulnasoft.sh >> /tmp/khulnasoft_start.log 2>&1 & disown
 
 ```
 
@@ -261,13 +261,13 @@ More information on cluster init scripts can be found in the [Databricks officia
 
 <!-- xxx tabs xxx -->
 <!-- xxx tab "Driver only" xxx -->
-##### Install the Datadog Agent on Driver
+##### Install the Khulnasoft Agent on Driver
 
-Install the Datadog Agent on the driver node of the cluster. 
+Install the Khulnasoft Agent on the driver node of the cluster. 
 
 ```shell script
 #!/bin/bash
-cat <<EOF > /tmp/start_datadog.sh
+cat <<EOF > /tmp/start_khulnasoft.sh
 #!/bin/bash
 
 date -u +"%Y-%m-%d %H:%M:%S UTC"
@@ -277,7 +277,7 @@ echo "Driver ip: \$DB_DRIVER_IP"
 DB_CLUSTER_NAME=$(echo "$DB_CLUSTER_NAME" | sed -e 's/ /_/g' -e "s/'/_/g")
 
 if [[ \${DB_IS_DRIVER} = "TRUE" ]]; then
-  echo "Installing Datadog Agent on the driver..."
+  echo "Installing Khulnasoft Agent on the driver..."
 
   # CONFIGURE HOST TAGS FOR DRIVER
   DD_TAGS="environment:\${DD_ENV}","databricks_cluster_id:\${DB_CLUSTER_ID}","databricks_cluster_name:\${DB_CLUSTER_NAME}","spark_host_ip:\${DB_DRIVER_IP}","spark_node:driver","databricks_instance_type:\${DB_INSTANCE_TYPE}","databricks_is_job_cluster:\${DB_IS_JOB_CLUSTER}"
@@ -291,9 +291,9 @@ if [[ \${DB_IS_DRIVER} = "TRUE" ]]; then
     bash -c "\$(curl -L https://s3.amazonaws.com/dd-agent/scripts/install_script_agent7.sh)"
 
   # Avoid conflicts on port 6062
-  echo "process_config.expvar_port: 6063" >> /etc/datadog-agent/datadog.yaml
+  echo "process_config.expvar_port: 6063" >> /etc/khulnasoft-agent/khulnasoft.yaml
 
-  echo "Datadog Agent is installed"
+  echo "Khulnasoft Agent is installed"
 
   while [ -z \$DB_DRIVER_PORT ]; do
     if [ -e "/tmp/driver-env.sh" ]; then
@@ -322,32 +322,32 @@ logs:
       log_processing_rules:
         - type: multi_line
           name: new_log_start_with_date
-          pattern: \d{2,4}[\-\/]\d{2,4}[\-\/]\d{2,4}.*" > /etc/datadog-agent/conf.d/spark.d/spark.yaml
+          pattern: \d{2,4}[\-\/]\d{2,4}[\-\/]\d{2,4}.*" > /etc/khulnasoft-agent/conf.d/spark.d/spark.yaml
 
   echo "Spark integration configured"
 
-  # ENABLE LOGS IN datadog.yaml TO COLLECT DRIVER LOGS
-  sed -i '/.*logs_enabled:.*/a logs_enabled: true' /etc/datadog-agent/datadog.yaml
+  # ENABLE LOGS IN khulnasoft.yaml TO COLLECT DRIVER LOGS
+  sed -i '/.*logs_enabled:.*/a logs_enabled: true' /etc/khulnasoft-agent/khulnasoft.yaml
 fi
 
 
 echo "Restart the agent"
-sudo service datadog-agent restart
+sudo service khulnasoft-agent restart
 EOF
 
-chmod a+x /tmp/start_datadog.sh
-/tmp/start_datadog.sh >> /tmp/khulnasoft_start.log 2>&1 & disown
+chmod a+x /tmp/start_khulnasoft.sh
+/tmp/start_khulnasoft.sh >> /tmp/khulnasoft_start.log 2>&1 & disown
 ```
 
 <!-- xxz tab xxx -->
 <!-- xxx tab "All nodes" xxx -->
-##### Install the Datadog Agent on driver and worker nodes
+##### Install the Khulnasoft Agent on driver and worker nodes
 
-Install the Datadog Agent on the driver and worker nodes of the cluster.
+Install the Khulnasoft Agent on the driver and worker nodes of the cluster.
 
 ```shell script
 #!/bin/bash
-cat <<EOF > /tmp/start_datadog.sh
+cat <<EOF > /tmp/start_khulnasoft.sh
 #!/bin/bash
 
 date -u +"%Y-%m-%d %H:%M:%S UTC"
@@ -357,7 +357,7 @@ echo "Driver ip: \$DB_DRIVER_IP"
 DB_CLUSTER_NAME=$(echo "$DB_CLUSTER_NAME" | sed -e 's/ /_/g' -e "s/'/_/g")
 
 if [[ \${DB_IS_DRIVER} = "TRUE" ]]; then
-  echo "Installing Datadog Agent on the driver (master node)."
+  echo "Installing Khulnasoft Agent on the driver (master node)."
 
   # CONFIGURE HOST TAGS FOR DRIVER
   DD_TAGS="environment:\${DD_ENV}","databricks_cluster_id:\${DB_CLUSTER_ID}","databricks_cluster_name:\${DB_CLUSTER_NAME}","spark_host_ip:\${DB_DRIVER_IP}","spark_node:driver","databricks_instance_type:\${DB_INSTANCE_TYPE}","databricks_is_job_cluster:\${DB_IS_JOB_CLUSTER}"
@@ -370,7 +370,7 @@ if [[ \${DB_IS_DRIVER} = "TRUE" ]]; then
     DD_SITE="\${DD_SITE:-khulnasoft.com}" \
     bash -c "\$(curl -L https://s3.amazonaws.com/dd-agent/scripts/install_script_agent7.sh)"
 
-  echo "Datadog Agent is installed"
+  echo "Khulnasoft Agent is installed"
 
   while [ -z \$DB_DRIVER_PORT ]; do
     if [ -e "/tmp/driver-env.sh" ]; then
@@ -399,35 +399,35 @@ logs:
       log_processing_rules:
         - type: multi_line
           name: new_log_start_with_date
-          pattern: \d{2,4}[\-\/]\d{2,4}[\-\/]\d{2,4}.*" > /etc/datadog-agent/conf.d/spark.d/spark.yaml
+          pattern: \d{2,4}[\-\/]\d{2,4}[\-\/]\d{2,4}.*" > /etc/khulnasoft-agent/conf.d/spark.d/spark.yaml
 
   echo "Spark integration configured"
 
-  # ENABLE LOGS IN datadog.yaml TO COLLECT DRIVER LOGS
-  sed -i '/.*logs_enabled:.*/a logs_enabled: true' /etc/datadog-agent/datadog.yaml
+  # ENABLE LOGS IN khulnasoft.yaml TO COLLECT DRIVER LOGS
+  sed -i '/.*logs_enabled:.*/a logs_enabled: true' /etc/khulnasoft-agent/khulnasoft.yaml
 else
-  echo "Installing Datadog Agent on the worker."
+  echo "Installing Khulnasoft Agent on the worker."
 
   # CONFIGURE HOST TAGS FOR WORKERS
   DD_TAGS="environment:\${DD_ENV}","databricks_cluster_id:\${DB_CLUSTER_ID}","databricks_cluster_name:\${DB_CLUSTER_NAME}","spark_host_ip:\${SPARK_LOCAL_IP}","spark_node:worker","databricks_instance_type:\${DB_INSTANCE_TYPE}","databricks_is_job_cluster:\${DB_IS_JOB_CLUSTER}"
 
   # INSTALL THE LATEST KHULNASOFT AGENT 7 ON DRIVER AND WORKER NODES
-  # CONFIGURE HOSTNAME EXPLICITLY IN datadog.yaml TO PREVENT AGENT FROM FAILING ON VERSION 7.40+
-  # SEE https://github.com/KhulnaSoft/datadog-agent/issues/14152 FOR CHANGE
+  # CONFIGURE HOSTNAME EXPLICITLY IN khulnasoft.yaml TO PREVENT AGENT FROM FAILING ON VERSION 7.40+
+  # SEE https://github.com/KhulnaSoft/khulnasoft-agent/issues/14152 FOR CHANGE
   DD_INSTALL_ONLY=true DD_API_KEY=\$DD_API_KEY DD_HOST_TAGS=\$DD_TAGS DD_HOSTNAME="\$(hostname | xargs)" bash -c "\$(curl -L https://s3.amazonaws.com/dd-agent/scripts/install_script_agent7.sh)"
 
-  echo "Datadog Agent is installed"
+  echo "Khulnasoft Agent is installed"
 fi
 
 # Avoid conflicts on port 6062
-echo "process_config.expvar_port: 6063" >> /etc/datadog-agent/datadog.yaml
+echo "process_config.expvar_port: 6063" >> /etc/khulnasoft-agent/khulnasoft.yaml
 
 echo "Restart the agent"
-sudo service datadog-agent restart
+sudo service khulnasoft-agent restart
 EOF
 
-chmod a+x /tmp/start_datadog.sh
-/tmp/start_datadog.sh >> /tmp/khulnasoft_start.log 2>&1 & disown
+chmod a+x /tmp/start_khulnasoft.sh
+/tmp/start_khulnasoft.sh >> /tmp/khulnasoft_start.log 2>&1 & disown
 ```
 
 <!-- xxz tab xxx -->
@@ -451,7 +451,7 @@ The Databricks integration does not include any events.
 
 You can troubleshoot issues yourself by enabling the [Databricks web terminal][18] or by using a [Databricks Notebook][19]. Consult the [Agent Troubleshooting][20] documentation for information on useful troubleshooting steps. 
 
-Need help? Contact [Datadog support][10].
+Need help? Contact [Khulnasoft support][10].
 
 ## Further Reading
 
@@ -467,7 +467,7 @@ Need help? Contact [Datadog support][10].
 [9]: https://docs.khulnasoft.com/integrations/spark/#service-checks
 [10]: https://docs.khulnasoft.com/help/
 [12]: https://docs.databricks.com/notebooks/ipywidgets.html#requirements
-[13]: https://github.com/KhulnaSoft/datadog-agent/blob/7.43.x/pkg/config/config_template.yaml#L1262-L1266
+[13]: https://github.com/KhulnaSoft/khulnasoft-agent/blob/7.43.x/pkg/config/config_template.yaml#L1262-L1266
 [14]: https://docs.databricks.com/notebooks/ipywidgets.html
 [15]: https://docs.khulnasoft.com/getting_started/site/
 [16]: https://docs.databricks.com/clusters/init-scripts.html#global-init-scripts
@@ -476,5 +476,5 @@ Need help? Contact [Datadog support][10].
 [19]: https://docs.databricks.com/en/notebooks/index.html
 [20]: https://docs.khulnasoft.com/agent/troubleshooting/
 [21]: https://raw.githubusercontent.com/KhulnaSoft/integrations-core/master/databricks/images/databricks_dashboard.png
-[22]: https://www.khulnasoft.com/blog/databricks-monitoring-datadog/
+[22]: https://www.khulnasoft.com/blog/databricks-monitoring-khulnasoft/
 [23]: https://app.khulnasoft.com/integrations/spark

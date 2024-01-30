@@ -16,10 +16,10 @@ This check monitors [{integration_name}][1].
    Agent's configuration directory to start collecting your {check_name} performance data.
    See the [sample {check_name}.d/conf.yaml][3] for all available configuration options.
 
-   This check has a limit of 350 metrics per instance. The number of returned metrics is indicated when running the Datadog Agent [status command][4].
+   This check has a limit of 350 metrics per instance. The number of returned metrics is indicated when running the Khulnasoft Agent [status command][4].
    You can specify the metrics you are interested in by editing the [configuration][3].
    To learn how to customize the metrics to collect visit the [JMX Checks documentation][5] for more detailed instructions.
-   If you need to monitor more metrics, contact [Datadog support][6].
+   If you need to monitor more metrics, contact [Khulnasoft support][6].
 
 2. [Restart the Agent][7]
 
@@ -45,7 +45,7 @@ See [service_checks.json][8] for a list of service checks provided by this integ
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][6].
+Need help? Contact [Khulnasoft support][6].
 
 
 {integration_links}

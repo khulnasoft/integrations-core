@@ -1,6 +1,6 @@
 {
   "title": "Postgres - Overview",
-  "description": "This dashboard provides a high-level overview of your PostgreSQL databases, so you can track throughput, replication, locks, and other metrics from all your servers and spot potential issues. Further reading on PostgreSQL monitoring:\n\n- [Datadog's guide to key PostgreSQL metrics](https://www.khulnasoft.com/blog/postgresql-monitoring/)\n\n- [Collecting metrics with PostgreSQL monitoring tools](https://www.khulnasoft.com/blog/postgresql-monitoring-tools/)\n\n- [How to monitor PostgreSQL with Datadog](https://www.khulnasoft.com/blog/collect-postgresql-data-with-datadog/)\n\n- [Datadog's PostgreSQL integration docs](https://docs.khulnasoft.com/integrations/postgres/)\n\nClone this template dashboard to make changes and add your own graph widgets. (cloned)",
+  "description": "This dashboard provides a high-level overview of your PostgreSQL databases, so you can track throughput, replication, locks, and other metrics from all your servers and spot potential issues. Further reading on PostgreSQL monitoring:\n\n- [Khulnasoft's guide to key PostgreSQL metrics](https://www.khulnasoft.com/blog/postgresql-monitoring/)\n\n- [Collecting metrics with PostgreSQL monitoring tools](https://www.khulnasoft.com/blog/postgresql-monitoring-tools/)\n\n- [How to monitor PostgreSQL with Khulnasoft](https://www.khulnasoft.com/blog/collect-postgresql-data-with-khulnasoft/)\n\n- [Khulnasoft's PostgreSQL integration docs](https://docs.khulnasoft.com/integrations/postgres/)\n\nClone this template dashboard to make changes and add your own graph widgets. (cloned)",
   "widgets": [
     {
       "id": 8450562588885112,
@@ -35,7 +35,7 @@
             "id": 6131621647457690,
             "definition": {
               "type": "note",
-              "content": "\n**Further reading on PostgreSQL monitoring**\n\n- [Datadog's guide to key PostgreSQL metrics](https://www.khulnasoft.com/blog/postgresql-monitoring/)\n\n- [Collecting metrics with PostgreSQL monitoring tools](https://www.khulnasoft.com/blog/postgresql-monitoring-tools/)\n\n- [How to monitor PostgreSQL with Datadog](https://www.khulnasoft.com/blog/collect-postgresql-data-with-datadog/)\n\n- [Datadog's PostgreSQL integration docs](https://docs.khulnasoft.com/integrations/postgres/)",
+              "content": "\n**Further reading on PostgreSQL monitoring**\n\n- [Khulnasoft's guide to key PostgreSQL metrics](https://www.khulnasoft.com/blog/postgresql-monitoring/)\n\n- [Collecting metrics with PostgreSQL monitoring tools](https://www.khulnasoft.com/blog/postgresql-monitoring-tools/)\n\n- [How to monitor PostgreSQL with Khulnasoft](https://www.khulnasoft.com/blog/collect-postgresql-data-with-khulnasoft/)\n\n- [Khulnasoft's PostgreSQL integration docs](https://docs.khulnasoft.com/integrations/postgres/)",
               "background_color": "transparent",
               "font_size": "14",
               "text_align": "left",

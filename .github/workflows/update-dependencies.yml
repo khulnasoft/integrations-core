@@ -58,7 +58,7 @@ jobs:
           ### Review checklist (to be filled by reviewers)
 
           - [ ] Feature or bugfix MUST have appropriate tests (unit, integration, e2e)
-          - [ ] [Changelog entries](https://datadoghq.dev/integrations-core/guidelines/pr/#changelog-entries) must be created for modifications to shipped code
+          - [ ] [Changelog entries](https://khulnasofthq.dev/integrations-core/guidelines/pr/#changelog-entries) must be created for modifications to shipped code
           - [ ] Add the `qa/skip-qa` label if the PR doesn't need to be tested during QA.
         title: Update dependencies
         branch: bot/update-dependencies

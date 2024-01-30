@@ -4,7 +4,7 @@
 
 ## Overview
 
-The Datadog Agent collects one main metric about Gunicorn: the number of worker processes running. It also sends one service check: whether or not Gunicorn is running.
+The Khulnasoft Agent collects one main metric about Gunicorn: the number of worker processes running. It also sends one service check: whether or not Gunicorn is running.
 
 Gunicorn itself can provide further metrics using DogStatsD, including:
 
@@ -17,9 +17,9 @@ Gunicorn itself can provide further metrics using DogStatsD, including:
 
 ### Installation
 
-The Datadog Agent's Gunicorn check is included in the [Datadog Agent][2] package, so you don't need to install anything else on your Gunicorn servers.
+The Khulnasoft Agent's Gunicorn check is included in the [Khulnasoft Agent][2] package, so you don't need to install anything else on your Gunicorn servers.
 
-The Gunicorn check requires your Gunicorn app's Python environment to have the [`setproctitle`][3] package; without it, the Datadog Agent reports that it cannot find a `gunicorn` master process (and hence, cannot find workers, either). Install the `setproctitle` package in your app's Python environment if you want to collect the `gunicorn.workers` metric.
+The Gunicorn check requires your Gunicorn app's Python environment to have the [`setproctitle`][3] package; without it, the Khulnasoft Agent reports that it cannot find a `gunicorn` master process (and hence, cannot find workers, either). Install the `setproctitle` package in your app's Python environment if you want to collect the `gunicorn.workers` metric.
 
 ### Configuration
 
@@ -47,13 +47,13 @@ instances:
   - proc_name: <YOUR_APP_NAME>
 ```
 
-3. [Restart the Agent][8] to begin sending Gunicorn metrics to Datadog.
+3. [Restart the Agent][8] to begin sending Gunicorn metrics to Khulnasoft.
 
 #### Log collection
 
 _Available for Agent versions >6.0_
 
-1. Collecting logs is disabled by default in the Datadog Agent, enable it in your `datadog.yaml` file:
+1. Collecting logs is disabled by default in the Khulnasoft Agent, enable it in your `khulnasoft.yaml` file:
 
    ```yaml
    logs_enabled: true
@@ -142,7 +142,7 @@ ubuntu   18018 18013  0 20:23 pts/0    00:00:00 /usr/bin/python /usr/bin/gunicor
 ubuntu   18019 18013  0 20:23 pts/0    00:00:00 /usr/bin/python /usr/bin/gunicorn --config test-app-config.py gunicorn-test:app
 ```
 
-If it _is_ installed, `gunicorn` processes appear in the format the Datadog Agent expects:
+If it _is_ installed, `gunicorn` processes appear in the format the Khulnasoft Agent expects:
 
 ```text
 $ ps -ef | grep gunicorn
@@ -153,7 +153,7 @@ ubuntu   18463 18457  0 20:26 pts/0    00:00:00 gunicorn: worker [my_app]
 
 ## Further Reading
 
-- [Monitor Gunicorn performance with Datadog][14]
+- [Monitor Gunicorn performance with Khulnasoft][14]
 
 [1]: https://raw.githubusercontent.com/KhulnaSoft/integrations-core/master/gunicorn/images/gunicorn-dash.png
 [2]: https://app.khulnasoft.com/account/settings/agent/latest

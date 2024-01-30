@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2022-present
+# (C) Khulnasoft, Inc. 2022-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 def test_standard(ddev, config_file, helpers):
@@ -33,20 +33,20 @@ def test_standard_deep(ddev, config_file, helpers):
 
 
 def test_standard_complex(ddev, config_file, helpers):
-    result = ddev('config', 'set', 'agents.latest', "{'docker': 'datadog/agent:latest', 'local': 'latest'}")
+    result = ddev('config', 'set', 'agents.latest', "{'docker': 'khulnasoft/agent:latest', 'local': 'latest'}")
 
     assert result.exit_code == 0, result.output
     assert result.output == helpers.dedent(
         """
         New setting:
         [agents.latest]
-        docker = "datadog/agent:latest"
+        docker = "khulnasoft/agent:latest"
         local = "latest"
         """
     )
 
     config_file.load()
-    assert config_file.model.agents['latest'] == {'docker': 'datadog/agent:latest', 'local': 'latest'}
+    assert config_file.model.agents['latest'] == {'docker': 'khulnasoft/agent:latest', 'local': 'latest'}
 
 
 def test_standard_hidden(ddev, config_file, helpers):

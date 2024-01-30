@@ -1,6 +1,6 @@
 {
-    "author_name": "Datadog",
-    "description": "Datadog's integration for MarkLogic gives you the visibility you need to identify performance issues and tune your deployments more effectively.\n\nThis dashboard shows an overview of your cluster health, and provides more information about forests and databases.\n\nClone this template dashboard to make changes and add your own graph widgets.",
+    "author_name": "Khulnasoft",
+    "description": "Khulnasoft's integration for MarkLogic gives you the visibility you need to identify performance issues and tune your deployments more effectively.\n\nThis dashboard shows an overview of your cluster health, and provides more information about forests and databases.\n\nClone this template dashboard to make changes and add your own graph widgets.",
     "layout_type": "free",
     "template_variables": [
         {
@@ -378,7 +378,7 @@
         {
             "definition": {
                 "background_color": "gray",
-                "content": "Configure the databases Datadog will track using [resource filters](https://github.com/KhulnaSoft/integrations-core/blob/03831e4fb3f5d4e95f9aabe8d5a5da10dbf9547e/marklogic/khulnasoft_checks/marklogic/data/conf.yaml.example#L60-L75)",
+                "content": "Configure the databases Khulnasoft will track using [resource filters](https://github.com/KhulnaSoft/integrations-core/blob/03831e4fb3f5d4e95f9aabe8d5a5da10dbf9547e/marklogic/khulnasoft_checks/marklogic/data/conf.yaml.example#L60-L75)",
                 "font_size": "14",
                 "show_tick": true,
                 "text_align": "left",
@@ -467,7 +467,7 @@
         {
             "definition": {
                 "background_color": "white",
-                "content": "Datadog's integration for MarkLogic gives you the visibility you need to identify performance issues and tune your deployments more effectively.\n\nThis dashboard shows an overview of your cluster health, and provides more information about forests and databases.\n\nClone this template dashboard to make changes and add your own graph widgets.",
+                "content": "Khulnasoft's integration for MarkLogic gives you the visibility you need to identify performance issues and tune your deployments more effectively.\n\nThis dashboard shows an overview of your cluster health, and provides more information about forests and databases.\n\nClone this template dashboard to make changes and add your own graph widgets.",
                 "font_size": "14",
                 "show_tick": false,
                 "text_align": "left",

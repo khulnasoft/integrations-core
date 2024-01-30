@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2018-present
+# (C) Khulnasoft, Inc. 2018-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 import os
@@ -46,8 +46,8 @@ from .console import CONTEXT_SETTINGS, abort, echo_debug, echo_info, echo_succes
 @click.option('--cov-keep', is_flag=True, help='Keep coverage reports')
 @click.option('--skip-env', is_flag=True, help='Skip environment creation and assume it is already running')
 @click.option('--pytest-args', '-pa', help='Additional arguments to pytest')
-@click.option('--force-base-unpinned', is_flag=True, help='Force using datadog-checks-base as specified by check dep')
-@click.option('--force-base-min', is_flag=True, help='Force using lowest viable release version of datadog-checks-base')
+@click.option('--force-base-unpinned', is_flag=True, help='Force using khulnasoft-checks-base as specified by check dep')
+@click.option('--force-base-min', is_flag=True, help='Force using lowest viable release version of khulnasoft-checks-base')
 @click.option('--force-env-rebuild', '-fr', is_flag=True, help='Force creating a new env')
 @click.option('--memray', is_flag=True, help='Run memray to measure memory usage on all tests')
 @click.pass_context

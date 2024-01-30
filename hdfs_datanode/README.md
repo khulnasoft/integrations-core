@@ -14,7 +14,7 @@ Follow the instructions below to install and configure this check for an Agent r
 
 ### Installation
 
-The HDFS DataNode check is included in the [Datadog Agent][3] package, so you don't need to install anything else on your DataNodes.
+The HDFS DataNode check is included in the [Khulnasoft Agent][3] package, so you don't need to install anything else on your DataNodes.
 
 ### Configuration
 
@@ -64,7 +64,7 @@ For containerized environments, see the [Autodiscovery Integration Templates][2]
 
 **Available for Agent >6.0**
 
-1. Collecting logs is disabled by default in the Datadog Agent. Enable it in the `datadog.yaml` file with:
+1. Collecting logs is disabled by default in the Khulnasoft Agent. Enable it in the `khulnasoft.yaml` file with:
 
     ```yaml
       logs_enabled: true
@@ -107,14 +107,14 @@ See [service_checks.json][9] for a list of service checks provided by this integ
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][10].
+Need help? Contact [Khulnasoft support][10].
 
 ## Further Reading
 
 - [Hadoop architectural overview][11]
 - [How to monitor Hadoop metrics][12]
 - [How to collect Hadoop metrics][13]
-- [How to monitor Hadoop with Datadog][14]
+- [How to monitor Hadoop with Khulnasoft][14]
 
 [1]: https://raw.githubusercontent.com/KhulnaSoft/integrations-core/master/hdfs_datanode/images/hadoop_dashboard.png
 [2]: https://docs.khulnasoft.com/agent/kubernetes/integrations/
@@ -129,4 +129,4 @@ Need help? Contact [Datadog support][10].
 [11]: https://www.khulnasoft.com/blog/hadoop-architecture-overview
 [12]: https://www.khulnasoft.com/blog/monitor-hadoop-metrics
 [13]: https://www.khulnasoft.com/blog/collecting-hadoop-metrics
-[14]: https://www.khulnasoft.com/blog/monitor-hadoop-metrics-datadog
+[14]: https://www.khulnasoft.com/blog/monitor-hadoop-metrics-khulnasoft

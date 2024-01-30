@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2018-present
+# (C) Khulnasoft, Inc. 2018-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 import os
@@ -31,7 +31,7 @@ base_option = click.option(
     help=(
         'Pass this flag to mount the local version of the base package. By default we use the version shipped '
         'with the agent. Note that passing the flag also mounts the local version of the check.\n\n'
-        'More about the base package: https://datadoghq.dev/integrations-core/base/about/'
+        'More about the base package: https://khulnasofthq.dev/integrations-core/base/about/'
     ),
 )
 
@@ -43,7 +43,7 @@ base_option = click.option(
     '--agent',
     '-a',
     help=(
-        'The agent build to use e.g. a Docker image like `datadog/agent:latest`. You can '
+        'The agent build to use e.g. a Docker image like `khulnasoft/agent:latest`. You can '
         'also use the name of an agent defined in the `agents` configuration section.'
     ),
 )
@@ -153,7 +153,7 @@ def _start_environment(ctx, base, check, env, python, org_name, profile_memory, 
     agent_ver = _get_agent_ver(ctx, python, agent)
     env_type = _get_env_type(metadata, agent_ver, check, env)
     agent_build = _get_agent_build(ctx, agent_ver, env_type)
-    if agent_build == 'datadog/agent:6':
+    if agent_build == 'khulnasoft/agent:6':
         echo_warning('The Docker image for Agent 6 only ships with Python 2, will use that instead.')
         python = 2
 

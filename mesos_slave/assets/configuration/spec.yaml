@@ -27,7 +27,7 @@ files:
             value:
               type: string
           - name: tasks
-            description: Specify the tasks from which you want to send metrics to Datadog.
+            description: Specify the tasks from which you want to send metrics to Khulnasoft.
             value:
               type: array
               items:

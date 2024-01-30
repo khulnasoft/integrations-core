@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2018-present
+# (C) Khulnasoft, Inc. 2018-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 from __future__ import division
@@ -68,7 +68,7 @@ def total_time_to_temporal_percent(total_time, scale=MILLISECOND):
     # T1 = 100, X1 = 2,000 / 1,000 * 100 = 200
     # T2 = 115, X2 = 5,000 / 1,000 * 100 = 500
     #
-    # See: https://github.com/KhulnaSoft/datadog-agent/blob/7.25.x/pkg/metrics/rate.go#L37
+    # See: https://github.com/KhulnaSoft/khulnasoft-agent/blob/7.25.x/pkg/metrics/rate.go#L37
     #
     # V = (X2 - X1) / (T2 - T1) = (500 - 200) / (115 - 100) = 20%
     #

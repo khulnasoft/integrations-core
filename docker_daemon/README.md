@@ -18,7 +18,7 @@ Configure this Agent check to get metrics from the Docker_daemon service in real
 ## Setup
 ### Installation
 
-To collect Docker metrics about all your containers, run **one** Datadog Agent on every host. There are two ways to run the Agent: directly on each host, or within a [docker-dd-agent container][2] (recommended).
+To collect Docker metrics about all your containers, run **one** Khulnasoft Agent on every host. There are two ways to run the Agent: directly on each host, or within a [docker-dd-agent container][2] (recommended).
 
 For either option, your hosts need cgroup memory management enabled for the Docker check to succeed. See the [docker-dd-agent repository][3] for how to enable it.
 
@@ -42,15 +42,15 @@ For either option, your hosts need cgroup memory management enabled for the Dock
           -v /proc/:/host/proc/:ro \
           -v /sys/fs/cgroup/:/host/sys/fs/cgroup:ro \
           -e API_KEY={YOUR_DD_API_KEY} \
-          datadog/docker-dd-agent:latest
+          khulnasoft/docker-dd-agent:latest
 
-In the command above, you are able to pass your API key to the Datadog Agent using Docker's `-e` environment variable flag. Other variables include:
+In the command above, you are able to pass your API key to the Khulnasoft Agent using Docker's `-e` environment variable flag. Other variables include:
 
 | **Variable**                                                                                      | **Description**                                                                                                                                                                                                                  |
 |---------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| API_KEY                                                                                           | Sets your Datadog API key.                                                                                                                                                                                                       |
-| DD_HOSTNAME                                                                                       | Sets the hostname in the Agent container's `datadog.conf` file. If this variable is not set, the Agent container defaults to using the `Name` field (as reported by the `docker info` command) as the Agent container hostname.  |
-| DD_URL                                                                                            | Sets the Datadog intake server URL where the Agent sends data. This is useful when [using the Agent as a proxy][9].                                                                                                              |
+| API_KEY                                                                                           | Sets your Khulnasoft API key.                                                                                                                                                                                                       |
+| DD_HOSTNAME                                                                                       | Sets the hostname in the Agent container's `khulnasoft.conf` file. If this variable is not set, the Agent container defaults to using the `Name` field (as reported by the `docker info` command) as the Agent container hostname.  |
+| DD_URL                                                                                            | Sets the Khulnasoft intake server URL where the Agent sends data. This is useful when [using the Agent as a proxy][9].                                                                                                              |
 | LOG_LEVEL                                                                                         | Sets logging verbosity (CRITICAL, ERROR, WARNING, INFO, DEBUG). For example, `-e LOG_LEVEL=DEBUG` sets logging to debug mode.                                                                                                    |
 | TAGS                                                                                              | Sets host tags as a comma delimited string. Both simple tags and key-value tags are available, for example: `-e TAGS="simple-tag, tag-key:tag-value"`.                                                                           |
 | EC2_TAGS                                                                                          | Enabling this feature allows the Agent to query and capture custom tags set using the EC2 API during startup. To enable, use `-e EC2_TAGS=yes`. **Note**: This feature requires an IAM role associated with the instance.        |
@@ -62,7 +62,7 @@ In the command above, you are able to pass your API key to the Datadog Agent usi
 
 #### Running the Agent container on Amazon Linux
 
-To run the Datadog Agent container on Amazon Linux, make this change to the `cgroup` volume mount location:
+To run the Khulnasoft Agent container on Amazon Linux, make this change to the `cgroup` volume mount location:
 
 ```
 docker run -d --name dd-agent \
@@ -70,12 +70,12 @@ docker run -d --name dd-agent \
   -v /proc/:/host/proc/:ro \
   -v /cgroup/:/host/sys/fs/cgroup:ro \
   -e API_KEY={YOUR API KEY} \
-  datadog/docker-dd-agent:latest
+  khulnasoft/docker-dd-agent:latest
 ```
 
 #### Alpine Linux based container
 
-The standard Docker image is based on Debian Linux, but as of Datadog Agent v5.7, there is an [Alpine Linux][13] based image. The Alpine Linux image is considerably smaller in size than the traditional Debian-based image. It also inherits Alpine's security-oriented design.
+The standard Docker image is based on Debian Linux, but as of Khulnasoft Agent v5.7, there is an [Alpine Linux][13] based image. The Alpine Linux image is considerably smaller in size than the traditional Debian-based image. It also inherits Alpine's security-oriented design.
 
 To use the Alpine Linux image, append `-alpine` to the version tag. For example:
 
@@ -85,19 +85,19 @@ docker run -d --name dd-agent \
   -v /proc/:/host/proc/:ro \
   -v /sys/fs/cgroup/:/host/sys/fs/cgroup:ro \
   -e API_KEY={YOUR API KEY} \
-  datadog/docker-dd-agent:latest-alpine
+  khulnasoft/docker-dd-agent:latest-alpine
 ```
 
 #### Image versioning
-Starting with version 5.5.0 of the Datadog Agent, the Docker image follows a new versioning pattern. This allows Datadog to release changes to the Docker image of the Datadog Agent but with the same version of the Agent.
+Starting with version 5.5.0 of the Khulnasoft Agent, the Docker image follows a new versioning pattern. This allows Khulnasoft to release changes to the Docker image of the Khulnasoft Agent but with the same version of the Agent.
 
 The Docker image version has the following pattern: **X.Y.Z** where **X** is the major version of the Docker image, **Y** is the minor version, **Z** represents the Agent version.
 
-For example, the first version of the Docker image that bundles the Datadog Agent 5.5.0 is: `10.0.550`
+For example, the first version of the Docker image that bundles the Khulnasoft Agent 5.5.0 is: `10.0.550`
 
 #### Custom containers and additional information
 
-For more information about building custom Docker containers with the Datadog Agent, the Alpine Linux based image, versioning, and more, reference the [docker-dd-agent project on Github][2].
+For more information about building custom Docker containers with the Khulnasoft Agent, the Alpine Linux based image, versioning, and more, reference the [docker-dd-agent project on Github][2].
 
 ### Validation
 
@@ -111,19 +111,19 @@ The latest Docker check is named `docker` and written in Go to take advantage of
   * The `ecs_tags`, `performance_tags` and `container_tags` options are deprecated. Every relevant tag is collected by default.
   * The `collect_container_count` option to enable the `docker.container.count` metric is not supported. `docker.containers.running` and `.stopped` should be used.
 
-Some options have moved from `docker_daemon.yaml` to the main `datadog.yaml`:
+Some options have moved from `docker_daemon.yaml` to the main `khulnasoft.yaml`:
 
-  * `collect_labels_as_tags` has been renamed `docker_labels_as_tags` and supports high cardinality tags. See the details in `datadog.yaml.example`.
-  * `exclude` and `include` lists have been renamed `ac_include` and `ac_exclude`. To make filtering consistent across all components of the Agent, filtering on arbitrary tags has been dropped. The only supported filtering tags are `image` (image name) and `name` (container name). Regexp filtering is still available, see `datadog.yaml.example` for examples.
+  * `collect_labels_as_tags` has been renamed `docker_labels_as_tags` and supports high cardinality tags. See the details in `khulnasoft.yaml.example`.
+  * `exclude` and `include` lists have been renamed `ac_include` and `ac_exclude`. To make filtering consistent across all components of the Agent, filtering on arbitrary tags has been dropped. The only supported filtering tags are `image` (image name) and `name` (container name). Regexp filtering is still available, see `khulnasoft.yaml.example` for examples.
   * The `docker_root` option has been split in two options: `container_cgroup_root` and `container_proc_root`.
   * `exclude_pause_container` has been added to exclude paused containers on Kubernetes and Openshift (defaults to true). This avoids removing them from the exclude list by error.
 
 Additional changes:
 
   * The `TAGS` environment variable was renamed to `DD_TAGS`.
-  * The Docker Hub repository has changed from [datadog/docker-dd-agent][16] to [datadog/agent][17].
+  * The Docker Hub repository has changed from [khulnasoft/docker-dd-agent][16] to [khulnasoft/agent][17].
 
-The [`import`][18] command converts the old `docker_daemon.yaml` to the new `docker.yaml`. The command also moves needed settings from `docker_daemon.yaml` to `datadog.yaml`.
+The [`import`][18] command converts the old `docker_daemon.yaml` to the new `docker.yaml`. The command also moves needed settings from `docker_daemon.yaml` to `khulnasoft.yaml`.
 
 ## Data Collected
 ### Metrics
@@ -151,19 +151,19 @@ See [service_checks.json][20] for a list of service checks provided by this inte
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][22].
+Need help? Contact [Khulnasoft support][22].
 
 ## Further Reading
 
-* [Compose and the Datadog Agent][23]
+* [Compose and the Khulnasoft Agent][23]
 * [DogStatsD and Docker][24]
 * [The Docker Monitoring Problem][25] (series)
 * [How to Monitor Docker Resource Metrics][26]
 * [How to Collect Docker Metrics][27]
 * [8 Surprising Facts about Real Docker Adoption][28]
 * [Monitor Docker on AWS ECS][29]
-* [Dockerize Datadog][30]
-* [Monitor Docker with Datadog][31]
+* [Dockerize Khulnasoft][30]
+* [Monitor Docker with Khulnasoft][31]
 
 
 [1]: https://raw.githubusercontent.com/KhulnaSoft/integrations-core/master/docker_daemon/images/docker.png
@@ -181,19 +181,19 @@ Need help? Contact [Datadog support][22].
 [13]: https://alpinelinux.org
 [14]: https://docs.khulnasoft.com/agent/guide/agent-commands/#agent-status-and-information
 [15]: https://docs.docker.com/engine/reference/commandline/cli/#environment-variables
-[16]: https://hub.docker.com/r/datadog/docker-dd-agent
-[17]: https://hub.docker.com/r/datadog/agent
+[16]: https://hub.docker.com/r/khulnasoft/docker-dd-agent
+[17]: https://hub.docker.com/r/khulnasoft/agent
 [18]: https://docs.khulnasoft.com/agent/#cli
 [19]: https://github.com/KhulnaSoft/integrations-core/blob/master/docker_daemon/metadata.csv
 [20]: https://github.com/KhulnaSoft/integrations-core/blob/master/docker_daemon/assets/service_checks.json
 [21]: https://github.com/KhulnaSoft/integrations-core/blob/7.39.0/docker_daemon/khulnasoft_checks/docker_daemon/data/conf.yaml.example#L151-L154
 [22]: https://docs.khulnasoft.com/help
-[23]: https://docs.khulnasoft.com/agent/guide/compose-and-the-datadog-agent
+[23]: https://docs.khulnasoft.com/agent/guide/compose-and-the-khulnasoft-agent
 [24]: https://docs.khulnasoft.com/integrations/faq/dogstatsd-and-docker
 [25]: https://www.khulnasoft.com/blog/the-docker-monitoring-problem
 [26]: https://www.khulnasoft.com/blog/how-to-monitor-docker-resource-metrics
 [27]: https://www.khulnasoft.com/blog/how-to-collect-docker-metrics
 [28]: https://www.khulnasoft.com/docker-adoption
 [29]: https://www.khulnasoft.com/blog/monitor-docker-on-aws-ecs
-[30]: https://www.khulnasoft.com/blog/docker-performance-datadog
-[31]: https://www.khulnasoft.com/blog/monitor-docker-datadog
+[30]: https://www.khulnasoft.com/blog/docker-performance-khulnasoft
+[31]: https://www.khulnasoft.com/blog/monitor-docker-khulnasoft

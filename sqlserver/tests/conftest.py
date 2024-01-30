@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2018-present
+# (C) Khulnasoft, Inc. 2018-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 import logging
@@ -52,7 +52,7 @@ def instance_session_default():
         'host': '{},1433'.format(HOST),
         'connector': 'odbc',
         'driver': get_local_driver(),
-        'username': 'datadog',
+        'username': 'khulnasoft',
         'password': 'Password12!',
         'disable_generic_tags': True,
         'tags': ['optional:tag1'],

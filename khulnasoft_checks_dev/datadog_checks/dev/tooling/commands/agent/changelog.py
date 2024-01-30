@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2018-present
+# (C) Khulnasoft, Inc. 2018-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 import os
@@ -27,7 +27,7 @@ DISPLAY_NAME_MAPPING = {
 
 @click.command(
     context_settings=CONTEXT_SETTINGS,
-    short_help="Provide a list of updated checks on a given Datadog Agent version, in changelog form",
+    short_help="Provide a list of updated checks on a given Khulnasoft Agent version, in changelog form",
 )
 @click.option('--since', help="Initial Agent version", default='6.3.0')
 @click.option('--to', help="Final Agent version")
@@ -52,13 +52,13 @@ def changelog(since, to, write, force):
     changelog_contents = StringIO()
 
     # prepare the links
-    agent_changelog_url = 'https://github.com/KhulnaSoft/datadog-agent/blob/master/CHANGELOG.rst#{}'
+    agent_changelog_url = 'https://github.com/KhulnaSoft/khulnasoft-agent/blob/master/CHANGELOG.rst#{}'
     check_changelog_url = 'https://github.com/KhulnaSoft/integrations-core/blob/master/{}/CHANGELOG.md'
 
     # go through all the agent releases
     for agent, version_changes in changes_per_agent.items():
         url = agent_changelog_url.format(agent.replace('.', ''))  # Github removes dots from the anchor
-        changelog_contents.write(f'## Datadog Agent version [{agent}]({url})\n\n')
+        changelog_contents.write(f'## Khulnasoft Agent version [{agent}]({url})\n\n')
 
         if not version_changes and not CHANGELOG_MANUAL_ENTRIES.get(agent):
             changelog_contents.write('* There were no integration updates for this version of the Agent.\n\n')

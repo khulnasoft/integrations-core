@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2018-present
+# (C) Khulnasoft, Inc. 2018-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 import json
@@ -21,7 +21,7 @@ EVENT_FIELDS = {
     'HOST ALERT': namedtuple('E_HostAlert', 'host, event_state, event_soft_hard, return_code, payload'),
     # [1305744274] SERVICE NOTIFICATION: ops;ip-10-114-237-165;Metric ETL;ACKNOWLEDGEMENT (CRITICAL);
     #   notify-service-by-email;HTTP CRITICAL: HTTP/1.1 503 Service Unavailable - 394 bytes
-    #   in 0.010 second response time;datadog;alq
+    #   in 0.010 second response time;khulnasoft;alq
     'SERVICE NOTIFICATION': namedtuple(
         'E_ServiceNotification', 'contact, host, check_name, event_state, notification_type, payload'
     ),
@@ -33,7 +33,7 @@ EVENT_FIELDS = {
     # Reference for external commands: http://old.nagios.org/developerinfo/externalcommands/commandlist.php
     # Command Format:
     # ACKNOWLEDGE_SVC_PROBLEM;<host_name>;<service_description>;<sticky>;<notify>;<persistent>;<author>;<comment>
-    # [1305832665] EXTERNAL COMMAND: ACKNOWLEDGE_SVC_PROBLEM;ip-10-202-161-236;Resources ETL;2;1;0;datadog;alq checking
+    # [1305832665] EXTERNAL COMMAND: ACKNOWLEDGE_SVC_PROBLEM;ip-10-202-161-236;Resources ETL;2;1;0;khulnasoft;alq checking
     'ACKNOWLEDGE_SVC_PROBLEM': namedtuple(
         'E_ServiceAck', 'host, check_name, sticky_ack, notify_ack, persistent_ack, ack_author, payload'
     ),
@@ -301,8 +301,8 @@ class NagiosEventLogTailer(NagiosTailer):
     def create_event(self, timestamp, event_type, hostname, fields, tags=None):
         """Factory method called by the parsers"""
         # Agent6 expects a specific set of fields, so we need to place all
-        # extra fields in the msg_title and let the Datadog backend separate them
-        # Any remaining fields that aren't a part of the datadog-agent payload
+        # extra fields in the msg_title and let the Khulnasoft backend separate them
+        # Any remaining fields that aren't a part of the khulnasoft-agent payload
         # specification will be dropped.
         event_payload = fields._asdict()
 

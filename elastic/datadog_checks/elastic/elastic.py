@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2018-present
+# (C) Khulnasoft, Inc. 2018-present
 # All rights reserved
 # Licensed under Simplified BSD License (see LICENSE)
 import re
@@ -29,11 +29,11 @@ from .metrics import (
 
 REGEX = r'(?<!\\)\.'  # This regex string is used to traverse through nested dictionaries for JSON responses
 
-DatadogESHealth = namedtuple('DatadogESHealth', ['status', 'reverse_status', 'tag'])
+KhulnasoftESHealth = namedtuple('KhulnasoftESHealth', ['status', 'reverse_status', 'tag'])
 ES_HEALTH_TO_DD_STATUS = {
-    'green': DatadogESHealth(AgentCheck.OK, AgentCheck.CRITICAL, 'OK'),
-    'yellow': DatadogESHealth(AgentCheck.WARNING, AgentCheck.WARNING, 'WARN'),
-    'red': DatadogESHealth(AgentCheck.CRITICAL, AgentCheck.OK, 'ALERT'),
+    'green': KhulnasoftESHealth(AgentCheck.OK, AgentCheck.CRITICAL, 'OK'),
+    'yellow': KhulnasoftESHealth(AgentCheck.WARNING, AgentCheck.WARNING, 'WARN'),
+    'red': KhulnasoftESHealth(AgentCheck.CRITICAL, AgentCheck.OK, 'ALERT'),
 }
 
 # Skipping the following templates:
@@ -255,7 +255,7 @@ class ESCheck(AgentCheck):
                 'health': idx.get('health'),
             }
 
-            # Convert Elastic health to Datadog status.
+            # Convert Elastic health to Khulnasoft status.
             if index_data['health'] is not None:
                 dd_health = ES_HEALTH_TO_DD_STATUS[index_data['health'].lower()]
                 index_data['health'] = dd_health.status
@@ -422,7 +422,7 @@ class ESCheck(AgentCheck):
     def _process_metric(self, data, metric, xtype, path, xform=None, tags=None, hostname=None):
         """
         data: dictionary containing all the stats
-        metric: datadog metric
+        metric: khulnasoft metric
         path: corresponding path in data, flattened, e.g. thread_pool.bulk.queue
         xform: a lambda to apply to the numerical value
         """
@@ -524,8 +524,8 @@ class ESCheck(AgentCheck):
         data_path: path to data right before metric value or right before list of metric values
         value_path: path to data after data_path to metric value
         dynamic_tags: list of dynamic tags and their value_paths
-        xtype: datadog metric type, default to gauge
-        metric_name: datadog metric name
+        xtype: khulnasoft metric type, default to gauge
+        metric_name: khulnasoft metric name
         tags: list of tags that should be included with each metric submitted
         """
 

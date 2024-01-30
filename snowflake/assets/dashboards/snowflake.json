@@ -1,6 +1,6 @@
 {
-    "author_name": "Datadog",
-    "description": "## Snowflake Integration\n\nThe Snowflake overview dashboard provides a high-level view of your Snowflake warehouse and provides insight into storage usage, credit billing, and user metrics.\n\nFor more information on setup and use-cases, check out the following:\n\n- [Snowflake integration docs](https://docs.khulnasoft.com/integrations/snowflake/)\n- [How to setup custom queries](https://docs.khulnasoft.com/integrations/snowflake/#snowflake-custom-queries)\n- [Blog post on Snowflake monitoring use-cases](https://www.khulnasoft.com/blog/snowflake-monitoring-datadog/)",
+    "author_name": "Khulnasoft",
+    "description": "## Snowflake Integration\n\nThe Snowflake overview dashboard provides a high-level view of your Snowflake warehouse and provides insight into storage usage, credit billing, and user metrics.\n\nFor more information on setup and use-cases, check out the following:\n\n- [Snowflake integration docs](https://docs.khulnasoft.com/integrations/snowflake/)\n- [How to setup custom queries](https://docs.khulnasoft.com/integrations/snowflake/#snowflake-custom-queries)\n- [Blog post on Snowflake monitoring use-cases](https://www.khulnasoft.com/blog/snowflake-monitoring-khulnasoft/)",
     "layout_type": "free",
     "template_variables": [
         {
@@ -132,7 +132,7 @@
         {
             "definition": {
                 "background_color": "white",
-                "content": "Using this dashboard, you can get a high-level view of your Snowflake warehouse and monitor storage usage, credit billing, and query metrics at an account-level.\n\n**Note**: By default, the integration minimum collection interval is 1 hour, setting the global dashboard time selector to **past 1 Hour or less may result in sparse graphs**.\n\nSnowflake `ACCOUNT_USAGE` views have a [known latency](https://docs.snowflake.com/en/sql-reference/account-usage.html#data-latency) of 45 minutes to 3 hours.\n\nFor more information on setup and use-cases, check out the following:\n\n- [Snowflake integration docs](https://docs.khulnasoft.com/integrations/snowflake/)\n- [How to setup custom queries](https://docs.khulnasoft.com/integrations/snowflake/#snowflake-custom-queries)\n- [Blog post on Snowflake monitoring use-cases](https://www.khulnasoft.com/blog/snowflake-monitoring-datadog/)",
+                "content": "Using this dashboard, you can get a high-level view of your Snowflake warehouse and monitor storage usage, credit billing, and query metrics at an account-level.\n\n**Note**: By default, the integration minimum collection interval is 1 hour, setting the global dashboard time selector to **past 1 Hour or less may result in sparse graphs**.\n\nSnowflake `ACCOUNT_USAGE` views have a [known latency](https://docs.snowflake.com/en/sql-reference/account-usage.html#data-latency) of 45 minutes to 3 hours.\n\nFor more information on setup and use-cases, check out the following:\n\n- [Snowflake integration docs](https://docs.khulnasoft.com/integrations/snowflake/)\n- [How to setup custom queries](https://docs.khulnasoft.com/integrations/snowflake/#snowflake-custom-queries)\n- [Blog post on Snowflake monitoring use-cases](https://www.khulnasoft.com/blog/snowflake-monitoring-khulnasoft/)",
                 "font_size": "14",
                 "show_tick": false,
                 "text_align": "left",

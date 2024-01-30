@@ -1,6 +1,6 @@
 {
     "title": "RethinkDB Overview",
-    "description": "## RethinkDB Overview\n\nThis dashboard provides an overview of RethinkDB availability, client activity, and read/write throughput so you can monitor the health and performance of your deployments. \n\n- [Monitor RethinkDB with Datadog](khulnasoft.com/blog/monitor-rethinkdb-with-datadog)\n- [RethinkDB integration documentation](https://docs.khulnasoft.com/integrations/rethinkdb/)",
+    "description": "## RethinkDB Overview\n\nThis dashboard provides an overview of RethinkDB availability, client activity, and read/write throughput so you can monitor the health and performance of your deployments. \n\n- [Monitor RethinkDB with Khulnasoft](khulnasoft.com/blog/monitor-rethinkdb-with-khulnasoft)\n- [RethinkDB integration documentation](https://docs.khulnasoft.com/integrations/rethinkdb/)",
     "widgets": [
       {
         "id": 0,

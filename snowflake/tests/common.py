@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2021-present
+# (C) Khulnasoft, Inc. 2021-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 import os
@@ -38,7 +38,7 @@ E2E_METADATA = {
         # Need new version of pip to upgrade setuptools...
         'pip install --upgrade pip',
         # Agent ships old version of setuptools which for some reason leads to errors during loading:
-        #   File "/opt/datadog-agent/embedded/lib/python3.8/site-packages/snowflake/connector/options.py", line 11, ...
+        #   File "/opt/khulnasoft-agent/embedded/lib/python3.8/site-packages/snowflake/connector/options.py", line 11, ...
         #     import pkg_resources
         # ModuleNotFoundError: No module named 'pkg_resources'
         'pip install --upgrade setuptools',

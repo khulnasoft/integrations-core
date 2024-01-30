@@ -1,6 +1,6 @@
 {
-    "author_name": "Datadog",
-    "description": "**Weaviate**\n\nWeaviate is a self-hosted vector database that enables accurate and efficient storage and querying of unstructured data. This dashboard showcases important insights and metrics enabling you to monitor the health of your Weaviate instances. \n\n**Further reading:**\n\n- [Datadog Weaviate Integration Documentation](https://docs.khulnasoft.com/integrations/weaviate/)\n- [How Datadog monitors Weaviate and other AI stack technologies](https://www.khulnasoft.com/blog/ai-integrations)\n- [Weaviate Monitoring Docs](https://weaviate.io/developers/weaviate/configuration/monitoring)",
+    "author_name": "Khulnasoft",
+    "description": "**Weaviate**\n\nWeaviate is a self-hosted vector database that enables accurate and efficient storage and querying of unstructured data. This dashboard showcases important insights and metrics enabling you to monitor the health of your Weaviate instances. \n\n**Further reading:**\n\n- [Khulnasoft Weaviate Integration Documentation](https://docs.khulnasoft.com/integrations/weaviate/)\n- [How Khulnasoft monitors Weaviate and other AI stack technologies](https://www.khulnasoft.com/blog/ai-integrations)\n- [Weaviate Monitoring Docs](https://weaviate.io/developers/weaviate/configuration/monitoring)",
     "layout_type": "ordered",
     "template_variables": [
         {
@@ -74,7 +74,7 @@
                     {
                         "definition": {
                             "background_color": "transparent",
-                            "content": "**Further reading:**\n\n- [Datadog Weaviate Integration Documentation](https://docs.khulnasoft.com/integrations/weaviate/)\n- [How Datadog monitors Weaviate and other AI stack technologies](https://www.khulnasoft.com/blog/ai-integrations)\n- [Weaviate Monitoring Docs](https://weaviate.io/developers/weaviate/configuration/monitoring)",
+                            "content": "**Further reading:**\n\n- [Khulnasoft Weaviate Integration Documentation](https://docs.khulnasoft.com/integrations/weaviate/)\n- [How Khulnasoft monitors Weaviate and other AI stack technologies](https://www.khulnasoft.com/blog/ai-integrations)\n- [Weaviate Monitoring Docs](https://weaviate.io/developers/weaviate/configuration/monitoring)",
                             "font_size": "14",
                             "has_padding": true,
                             "show_tick": false,

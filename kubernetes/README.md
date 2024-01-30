@@ -15,9 +15,9 @@ Note: This check only works with Agent v5. For Agent v6+, see the [kubelet check
 
 ### Installation
 
-The Kubernetes check is included in the [Datadog Agent][3] package, so you don't need to install anything else on your Kubernetes servers.
+The Kubernetes check is included in the [Khulnasoft Agent][3] package, so you don't need to install anything else on your Kubernetes servers.
 
-For more information on installing the Datadog Agent on your Kubernetes clusters, see the [Kubernetes documentation][4].
+For more information on installing the Khulnasoft Agent on your Kubernetes clusters, see the [Kubernetes documentation][4].
 
 To collect Kubernetes State metrics, see the [kubernetes_state integration][5].
 
@@ -37,7 +37,7 @@ See [metadata.csv][7] for a list of metrics provided by this integration.
 
 ### Events
 
-As of the v5.17.0 release, the Datadog Agent supports a built-in [leader election option](#gathering-kubernetes-events) for the Kubernetes event collector. Once enabled, you no longer need to deploy an additional event collection container to your cluster. Instead, Agents coordinate to ensure only one Agent instance is gathering events at a given time, events below are available:
+As of the v5.17.0 release, the Khulnasoft Agent supports a built-in [leader election option](#gathering-kubernetes-events) for the Kubernetes event collector. Once enabled, you no longer need to deploy an additional event collection container to your cluster. Instead, Agents coordinate to ensure only one Agent instance is gathering events at a given time, events below are available:
 
 - Backoff
 - Conflict

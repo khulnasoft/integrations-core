@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2019-present
+# (C) Khulnasoft, Inc. 2019-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 import os
@@ -19,7 +19,7 @@ def test_check_e2e(dd_agent_check, instance, connection_load_balance):
     aggregator = dd_agent_check(instance, rate=True)
 
     for metric in ALL_METRICS:
-        aggregator.assert_metric_has_tag(metric, 'db:datadog')
+        aggregator.assert_metric_has_tag(metric, 'db:khulnasoft')
         aggregator.assert_metric_has_tag(metric, 'foo:bar')
 
     aggregator.assert_all_metrics_covered()
@@ -33,7 +33,7 @@ def test_check(aggregator, khulnasoft_agent, instance, dd_run_check):
     dd_run_check(check)
 
     for metric in ALL_METRICS:
-        aggregator.assert_metric_has_tag(metric, 'db:datadog')
+        aggregator.assert_metric_has_tag(metric, 'db:khulnasoft')
         aggregator.assert_metric_has_tag(metric, 'foo:bar')
 
     aggregator.assert_all_metrics_covered()
@@ -107,7 +107,7 @@ def test_custom_queries(aggregator, instance, dd_run_check):
     dd_run_check(check)
 
     aggregator.assert_metric(
-        'vertica.table.force_outer', metric_type=0, tags=['db:datadog', 'foo:bar', 'test:vertica', 'table_name:datadog']
+        'vertica.table.force_outer', metric_type=0, tags=['db:khulnasoft', 'foo:bar', 'test:vertica', 'table_name:khulnasoft']
     )
 
 

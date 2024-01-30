@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2022-present
+# (C) Khulnasoft, Inc. 2022-present
 # All rights reserved
 # Licensed under Simplified BSD License (see LICENSE)
 
@@ -109,7 +109,7 @@ class SolarisNetwork(Network):
         # link:0:net1:unknowns    0
         # link:0:net1:zonename    53aa9b7e-48ba-4152-a52b-a6368c3d9e7c
 
-        # A mapping of solaris names -> datadog names
+        # A mapping of solaris names -> khulnasoft names
         metric_by_solaris_name = {
             'rbytes64': 'bytes_rcvd',
             'obytes64': 'bytes_sent',
@@ -129,7 +129,7 @@ class SolarisNetwork(Network):
             link, n, iface, name = cols[0].split(":")
             assert link == "link"
 
-            # Get the datadog metric name.
+            # Get the khulnasoft metric name.
             ddname = metric_by_solaris_name.get(name, None)
             if ddname is None:
                 continue

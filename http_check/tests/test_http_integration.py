@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2018-present
+# (C) Khulnasoft, Inc. 2018-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 import os
@@ -474,7 +474,7 @@ def test_instance_auth_token(dd_run_check):
 
     expected_headers = OrderedDict(
         [
-            ('User-Agent', 'Datadog Agent/0.0.0'),
+            ('User-Agent', 'Khulnasoft Agent/0.0.0'),
             ('Accept', '*/*'),
             ('Accept-Encoding', 'gzip, deflate'),
             ('Authorization', str(data)),
@@ -496,7 +496,7 @@ def test_instance_auth_token(dd_run_check):
             {'url': 'https://valid.mock', 'name': 'UpService', 'extra_headers': {'Host': 'test'}},
             OrderedDict(
                 [
-                    ('User-Agent', 'Datadog Agent/0.0.0'),
+                    ('User-Agent', 'Khulnasoft Agent/0.0.0'),
                     ('Accept', '*/*'),
                     ('Accept-Encoding', 'gzip, deflate'),
                     ('Host', 'test'),
@@ -592,7 +592,7 @@ def test_case_insensitive_header_content_type(dd_run_check, headers):
         'data': {'foo': 'bar'},
     }
     default_headers = {
-        'User-Agent': 'Datadog Agent/0.0.0',
+        'User-Agent': 'Khulnasoft Agent/0.0.0',
         'Accept': '*/*',
         'Accept-Encoding': 'gzip, deflate',
         'Content-Type': 'application/x-www-form-urlencoded',

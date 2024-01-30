@@ -104,7 +104,7 @@ instances:
     # send_histograms_buckets: true
 
     ## @param send_distribution_buckets - boolean - optional - default: false
-    ## Set `send_distribution_buckets` to `true` to send histograms as Datadog distribution metrics.
+    ## Set `send_distribution_buckets` to `true` to send histograms as Khulnasoft distribution metrics.
     ##
     ## Learn more about distribution metrics: https://docs.khulnasoft.com/developers/metrics/distributions/
     #

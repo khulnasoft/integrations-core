@@ -2,7 +2,7 @@
 
 ## Overview
 
-This check monitors [ProxySQL][1] through the Datadog Agent.
+This check monitors [ProxySQL][1] through the Khulnasoft Agent.
 
 ## Setup
 
@@ -10,7 +10,7 @@ Follow the instructions below to install and configure this check for an Agent r
 
 ### Installation
 
-The ProxySQL integration is included in the [Datadog Agent][3] package, so you don't need to install anything else on your servers.
+The ProxySQL integration is included in the [Khulnasoft Agent][3] package, so you don't need to install anything else on your servers.
 
 ### Configuration
 
@@ -35,7 +35,7 @@ To configure this check for an Agent running on a host:
 
 ##### Log collection
 
-1. Collecting logs is disabled by default in the Datadog Agent, enable it in your `datadog.yaml` file:
+1. Collecting logs is disabled by default in the Khulnasoft Agent, enable it in your `khulnasoft.yaml` file:
 
    ```yaml
    logs_enabled: true
@@ -85,7 +85,7 @@ For containerized environments, see the [Autodiscovery Integration Templates][2]
 
 ##### Log collection
 
-Collecting logs is disabled by default in the Datadog Agent. To enable it, see [Kubernetes Log Collection][7].
+Collecting logs is disabled by default in the Khulnasoft Agent. To enable it, see [Kubernetes Log Collection][7].
 
 | Parameter      | Value                                     |
 |----------------|-------------------------------------------|
@@ -114,7 +114,7 @@ See [service_checks.json][10] for a list of service checks provided by this inte
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][11].
+Need help? Contact [Khulnasoft support][11].
 
 
 [1]: https://proxysql.com/

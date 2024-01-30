@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2019-present
+# (C) Khulnasoft, Inc. 2019-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 import os
@@ -34,7 +34,7 @@ INSTANCES = {
     'bad_hostname': {
         'host': 'wronghost',
         'port': 22,
-        'username': 'datadog01',
+        'username': 'khulnasoft01',
         'password': 'abcd',
         'sftp_check': False,
         'private_key_file': '',

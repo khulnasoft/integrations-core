@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2021-present
+# (C) Khulnasoft, Inc. 2021-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 from typing import Any, Dict  # noqa: F401
@@ -7,10 +7,10 @@ import pytest
 
 from khulnasoft_checks.base import AgentCheck
 from khulnasoft_checks.base.stubs.aggregator import AggregatorStub  # noqa: F401
-from khulnasoft_checks.khulnasoft_cluster_agent import DatadogClusterAgentCheck
+from khulnasoft_checks.khulnasoft_cluster_agent import KhulnasoftClusterAgentCheck
 from khulnasoft_checks.dev.utils import get_metadata_metrics
 
-NAMESPACE = 'datadog.cluster_agent'
+NAMESPACE = 'khulnasoft.cluster_agent'
 
 METRICS = [
     'admission_webhooks.certificate_expiry',
@@ -45,12 +45,12 @@ METRICS = [
     'cluster_checks.rebalancing_duration_seconds',
     'cluster_checks.successful_rebalancing_moves',
     'cluster_checks.updating_stats_duration_seconds',
-    'datadog.rate_limit_queries.limit',
-    'datadog.rate_limit_queries.period',
-    'datadog.rate_limit_queries.remaining',
-    'datadog.rate_limit_queries.remaining_min',
-    'datadog.rate_limit_queries.reset',
-    'datadog.requests',
+    'khulnasoft.rate_limit_queries.limit',
+    'khulnasoft.rate_limit_queries.period',
+    'khulnasoft.rate_limit_queries.remaining',
+    'khulnasoft.rate_limit_queries.remaining_min',
+    'khulnasoft.rate_limit_queries.reset',
+    'khulnasoft.requests',
     'endpoint_checks.configs_dispatched',
     'external_metrics',
     'external_metrics.api_elapsed.count',
@@ -70,7 +70,7 @@ METRICS = [
 
 def test_check(aggregator, instance, mock_metrics_endpoint):
     # type: (AggregatorStub, Dict[str, Any]) -> None
-    check = DatadogClusterAgentCheck('khulnasoft_cluster_agent', {}, [instance])
+    check = KhulnasoftClusterAgentCheck('khulnasoft_cluster_agent', {}, [instance])
 
     # dry run to build mapping for label joins
     check.check(instance)
@@ -91,4 +91,4 @@ def test_e2e(dd_agent_check, aggregator, instance):
     with pytest.raises(Exception):
         dd_agent_check(instance, rate=True)
     tag = "endpoint:" + instance.get('prometheus_url')
-    aggregator.assert_service_check("datadog.cluster_agent.prometheus.health", AgentCheck.CRITICAL, count=2, tags=[tag])
+    aggregator.assert_service_check("khulnasoft.cluster_agent.prometheus.health", AgentCheck.CRITICAL, count=2, tags=[tag])

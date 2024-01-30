@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2020-present
+# (C) Khulnasoft, Inc. 2020-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 
@@ -57,7 +57,7 @@ class MongoCollector(object):
         )
 
     def _submit_payload(self, payload, additional_tags=None, metrics_to_collect=None, prefix=""):
-        """Common utility method used to submit a pre-formatted payload to Datadog. The format is standard throughout
+        """Common utility method used to submit a pre-formatted payload to Khulnasoft. The format is standard throughout
         this integration, each numerical value in the payload comes from nested dictionary keys. The corresponding
         metric name is the concatenation of all keys leading to a value, joined by 'dots'.
 
@@ -112,7 +112,7 @@ class MongoCollector(object):
                 else metric_name
             )
 
-            # This is because https://datadoghq.atlassian.net/browse/AGENT-9001
+            # This is because https://khulnasofthq.atlassian.net/browse/AGENT-9001
             # Delete this code when the metrics are definitely deprecated
             if metric_name_alias in (
                 'opLatencies.reads.latency',

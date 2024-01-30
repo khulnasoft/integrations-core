@@ -12,7 +12,7 @@ This check monitors [Kubernetes Scheduler][2], part of the Kubernetes control pl
 
 ### Installation
 
-The Kubernetes Scheduler check is included in the [Datadog Agent][3] package.
+The Kubernetes Scheduler check is included in the [Khulnasoft Agent][3] package.
 No additional installation is needed on your server.
 
 ### Configuration
@@ -27,7 +27,7 @@ See the [Autodiscovery Integration Templates][4] for guidance on applying the pa
 
 #### Log collection
 
-Collecting logs is disabled by default in the Datadog Agent. To enable it, see [Kubernetes Log Collection][7].
+Collecting logs is disabled by default in the Khulnasoft Agent. To enable it, see [Kubernetes Log Collection][7].
 
 | Parameter      | Value                                     |
 |----------------|-------------------------------------------|
@@ -53,7 +53,7 @@ See [service_checks.json][10] for a list of service checks provided by this inte
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][11].
+Need help? Contact [Khulnasoft support][11].
 
 [1]: https://raw.githubusercontent.com/KhulnaSoft/integrations-core/master/kube_scheduler/images/kube_scheduler_screenshot.jpeg
 [2]: https://kubernetes.io/docs/reference/command-line-tools-reference/kube-scheduler

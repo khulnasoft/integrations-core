@@ -142,19 +142,19 @@ coverage:
         target: 75
         flags:
         - dns_check
-      Datadog_Checks_Base:
+      Khulnasoft_Checks_Base:
         target: 75
         flags:
         - khulnasoft_checks_base
-      Datadog_Checks_Dev:
+      Khulnasoft_Checks_Dev:
         target: 75
         flags:
         - khulnasoft_checks_dev
-      Datadog_Checks_Downloader:
+      Khulnasoft_Checks_Downloader:
         target: 75
         flags:
         - khulnasoft_checks_downloader
-      Datadog_Cluster_Agent:
+      Khulnasoft_Cluster_Agent:
         target: 75
         flags:
         - khulnasoft_cluster_agent

@@ -36,7 +36,7 @@
                         "id": 53414724129532,
                         "definition": {
                             "type": "note",
-                            "content": "## Useful Links\n\n- [Monitoring Boundary with Datadog ↗](https://www.khulnasoft.com/blog/hashicorp-boundary-datadog)\n- [Datadog Boundary Integration Documentation ↗](https://docs.khulnasoft.com/integrations/boundary)\n- [Hashicorp Boundary Documentation ↗](https://www.boundaryproject.io/docs/oss/operations/metrics)",
+                            "content": "## Useful Links\n\n- [Monitoring Boundary with Khulnasoft ↗](https://www.khulnasoft.com/blog/hashicorp-boundary-khulnasoft)\n- [Khulnasoft Boundary Integration Documentation ↗](https://docs.khulnasoft.com/integrations/boundary)\n- [Hashicorp Boundary Documentation ↗](https://www.boundaryproject.io/docs/oss/operations/metrics)",
                             "background_color": "transparent",
                             "font_size": "12",
                             "text_align": "left",

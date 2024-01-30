@@ -1,4 +1,4 @@
-# CHANGELOG - Datadog Checks Dev
+# CHANGELOG - Khulnasoft Checks Dev
 
 <!-- towncrier release notes start -->
 
@@ -602,7 +602,7 @@
 ***Fixed***:
 
 * Update trello.py ([#12475](https://github.com/KhulnaSoft/integrations-core/pull/12475))
-* Do not include Datadog licenses to community files ([#12445](https://github.com/KhulnaSoft/integrations-core/pull/12445))
+* Do not include Khulnasoft licenses to community files ([#12445](https://github.com/KhulnaSoft/integrations-core/pull/12445))
 
 ## 16.5.1 / 2022-07-06
 
@@ -961,7 +961,7 @@
 ***Changed***:
 
 * Update immutable attributes validator for manifest upgrades v2 ([#10175](https://github.com/KhulnaSoft/integrations-core/pull/10175))
-* Update mib_source_url to a Datadog fork of mibs.snmplabs.com ([#9952](https://github.com/KhulnaSoft/integrations-core/pull/9952))
+* Update mib_source_url to a Khulnasoft fork of mibs.snmplabs.com ([#9952](https://github.com/KhulnaSoft/integrations-core/pull/9952))
 
 ***Added***:
 
@@ -1002,7 +1002,7 @@
 * Fix warning for snmp generate profile command ([#9967](https://github.com/KhulnaSoft/integrations-core/pull/9967))
 * Allow double quote on requirement ([#10028](https://github.com/KhulnaSoft/integrations-core/pull/10028))
 * Don't read from nonexistent manifest files ([#10041](https://github.com/KhulnaSoft/integrations-core/pull/10041))
-* Prevent creation of datadog named integrations ([#10014](https://github.com/KhulnaSoft/integrations-core/pull/10014))
+* Prevent creation of khulnasoft named integrations ([#10014](https://github.com/KhulnaSoft/integrations-core/pull/10014))
 * Fix bug when PR body is empty and includes DBM team to selector ([#9951](https://github.com/KhulnaSoft/integrations-core/pull/9951))
 
 ## 13.0.1 / 2021-08-27
@@ -1336,7 +1336,7 @@
 * Support installing minimum and unpinned khulnasoft_checks_base dependencies for tests ([#8318](https://github.com/KhulnaSoft/integrations-core/pull/8318))
 * Allow MockResponse method `iter_lines` to be called multiple times ([#8353](https://github.com/KhulnaSoft/integrations-core/pull/8353))
 * [1/3] Add units to metadata check ([#8308](https://github.com/KhulnaSoft/integrations-core/pull/8308))
-* Add version verification for datadog-checks-base ([#8255](https://github.com/KhulnaSoft/integrations-core/pull/8255))
+* Add version verification for khulnasoft-checks-base ([#8255](https://github.com/KhulnaSoft/integrations-core/pull/8255))
 * Support nightly khulnasoft_checks_base package checks ([#8293](https://github.com/KhulnaSoft/integrations-core/pull/8293))
 * Add snmp_tile template to ddev create --type ([#8216](https://github.com/KhulnaSoft/integrations-core/pull/8216))
 * Add new global fixture to mock HTTP requests ([#8276](https://github.com/KhulnaSoft/integrations-core/pull/8276))
@@ -1828,7 +1828,7 @@
 * Add meta command to fetch JMX info ([#5652](https://github.com/KhulnaSoft/integrations-core/pull/5652))
 * Add `validate metadata` option to check for more duplicates ([#5803](https://github.com/KhulnaSoft/integrations-core/pull/5803))
 * Add markdown output support to catalog tool ([#5946](https://github.com/KhulnaSoft/integrations-core/pull/5946))
-* Bump `datadog-checks-base` version in new integration template ([#5858](https://github.com/KhulnaSoft/integrations-core/pull/5858))
+* Bump `khulnasoft-checks-base` version in new integration template ([#5858](https://github.com/KhulnaSoft/integrations-core/pull/5858))
 * Add config spec support for logs-only integrations ([#5932](https://github.com/KhulnaSoft/integrations-core/pull/5932))
 
 ***Fixed***:
@@ -2271,7 +2271,7 @@
 * Add ability to specify extra start-up commands for e2e ([#3594](https://github.com/KhulnaSoft/integrations-core/pull/3594))
 * Add a pytest-args option to ddev test ([#3596](https://github.com/KhulnaSoft/integrations-core/pull/3596))
 * Add posargs in tox.ini ([#3313](https://github.com/KhulnaSoft/integrations-core/pull/3313))
-* Update version of datadog-checks-base for extras ([#3433](https://github.com/KhulnaSoft/integrations-core/pull/3433))
+* Update version of khulnasoft-checks-base for extras ([#3433](https://github.com/KhulnaSoft/integrations-core/pull/3433))
 
 ***Fixed***:
 
@@ -2324,7 +2324,7 @@
 
 * Fix agent changelog command ([#3233](https://github.com/KhulnaSoft/integrations-core/pull/3233))
 * Properly detect integration folder for py3 validation ([#3188](https://github.com/KhulnaSoft/integrations-core/pull/3188))
-* Properly ship datadog-checks-downloader ([#3169](https://github.com/KhulnaSoft/integrations-core/pull/3169))
+* Properly ship khulnasoft-checks-downloader ([#3169](https://github.com/KhulnaSoft/integrations-core/pull/3169))
 
 ## 0.18.0 / 2019-02-18
 
@@ -2332,13 +2332,13 @@
 
 * Add util to get the directory of current file ([#3135](https://github.com/KhulnaSoft/integrations-core/pull/3135))
 * Add command to build package wheel ([#3067](https://github.com/KhulnaSoft/integrations-core/pull/3067))
-* Add datadog-checks-downloader ([#3026](https://github.com/KhulnaSoft/integrations-core/pull/3026))
+* Add khulnasoft-checks-downloader ([#3026](https://github.com/KhulnaSoft/integrations-core/pull/3026))
 * Add `local` E2E  ([#3064](https://github.com/KhulnaSoft/integrations-core/pull/3064))
 * Add command to show changes based on commit date ([#3063](https://github.com/KhulnaSoft/integrations-core/pull/3063))
 * Add e2e command to restart the agent ([#3054](https://github.com/KhulnaSoft/integrations-core/pull/3054))
 * Upgrade pytest-benchmark ([#2934](https://github.com/KhulnaSoft/integrations-core/pull/2934))
 * Add description length metadata validation ([#2923](https://github.com/KhulnaSoft/integrations-core/pull/2923))
-* Allow uploading of any Datadog python package ([#2907](https://github.com/KhulnaSoft/integrations-core/pull/2907))
+* Allow uploading of any Khulnasoft python package ([#2907](https://github.com/KhulnaSoft/integrations-core/pull/2907))
 * Upgrade pytest plugins ([#2884](https://github.com/KhulnaSoft/integrations-core/pull/2884))
 
 ***Fixed***:
@@ -2427,7 +2427,7 @@
 * Use raw string literals when \ is present ([#2465][31])
 * Improve output of `ddev manifest verify` command ([#2444][32])
 * Handle any clipboard errors for E2E ([#2454][36])
-* Add `datadog-` prefix to packages name ([#2430][38])
+* Add `khulnasoft-` prefix to packages name ([#2430][38])
 
 ## 0.13.0 / 2018-10-17
 
@@ -2504,7 +2504,7 @@
 * Add new templates for other integration types ([#2285][60])
 * Add release signing via in-toto ([#2224][61])
 * Add prometheus metadata.csv and metric map auto-generation ([#2117][62])
-* Keep track of the checks changed at every Datadog Agent release ([#2277][63])
+* Keep track of the checks changed at every Khulnasoft Agent release ([#2277][63])
 
 ## 0.7.0 / 2018-09-18
 

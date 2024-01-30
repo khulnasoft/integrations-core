@@ -53,7 +53,7 @@ instances:
 
     ## @param custom_queries - list of mappings - optional
     ## Specifies custom search queries that are run by the check, which then sends the duration of
-    ## the query, and the number of results to Datadog.
+    ## the query, and the number of results to Khulnasoft.
     ## Each custom query has the following parameters:
     ## * `name` - string - required: A name to identify your query. Used to tag the metrics for this query.
     ## * `search_base` - string - required: The search base for the query.
@@ -127,7 +127,7 @@ instances:
 ##                      Overrides any `service` defined in the `init_config` section.
 ## tags - optional - Add tags to the collected logs.
 ##
-## Discover Datadog log collection: https://docs.khulnasoft.com/logs/log_collection/
+## Discover Khulnasoft log collection: https://docs.khulnasoft.com/logs/log_collection/
 #
 # logs:
 #   - type: file

@@ -8,9 +8,9 @@ This check monitors the Containerd container runtime.
 
 ### Installation
 
-Containerd is a core [Datadog Agent][1] check. You must configure Containerd in both `datadog.yaml` and `containerd.d/conf.yaml`.
+Containerd is a core [Khulnasoft Agent][1] check. You must configure Containerd in both `khulnasoft.yaml` and `containerd.d/conf.yaml`.
 
-In `datadog.yaml`, configure your `cri_socket_path` for the Agent to query Containerd. In `containerd.d/conf.yaml`, configure the check instance settings (such as `filters`) for the events.
+In `khulnasoft.yaml`, configure your `cri_socket_path` for the Agent to query Containerd. In `containerd.d/conf.yaml`, configure the check instance settings (such as `filters`) for the events.
 
 #### Installation on containers
 
@@ -27,12 +27,12 @@ For example, to install the integration on Kubernetes, edit your DaemonSet to mo
 apiVersion: extensions/v1beta1
 kind: DaemonSet
 metadata:
-  name: datadog-agent
+  name: khulnasoft-agent
 spec:
   template:
     spec:
       containers:
-        - name: datadog-agent
+        - name: khulnasoft-agent
           # ...
           env:
             - name: DD_CRI_SOCKET_PATH
@@ -63,12 +63,12 @@ spec:
 apiVersion: extensions/v1beta1
 kind: DaemonSet
 metadata:
-  name: datadog-agent
+  name: khulnasoft-agent
 spec:
   template:
     spec:
       containers:
-        - name: datadog-agent
+        - name: khulnasoft-agent
           # ...
           env:
             - name: DD_CRI_SOCKET_PATH
@@ -117,11 +117,11 @@ See [service_checks.json][6] for a list of service checks provided by this integ
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][3].
+Need help? Contact [Khulnasoft support][3].
 
 
 [1]: https://app.khulnasoft.com/account/settings/agent/latest
-[2]: https://github.com/KhulnaSoft/datadog-agent/blob/master/cmd/agent/dist/conf.d/containerd.d/conf.yaml.default
+[2]: https://github.com/KhulnaSoft/khulnasoft-agent/blob/master/cmd/agent/dist/conf.d/containerd.d/conf.yaml.default
 [3]: https://docs.khulnasoft.com/help/
 [4]: https://docs.khulnasoft.com/agent/guide/agent-commands/#start-stop-and-restart-the-agent
 [5]: https://github.com/KhulnaSoft/integrations-core/blob/master/containerd/metadata.csv

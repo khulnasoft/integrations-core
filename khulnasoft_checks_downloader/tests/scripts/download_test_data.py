@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2022-present
+# (C) Khulnasoft, Inc. 2022-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 """
@@ -19,7 +19,7 @@ from zipfile import ZipFile
 REPOSITORY_BASE_URL = 'https://dd-integrations-core-wheels-build-stable.khulnasoft.com/'
 INTEGRATION = 'active-directory'
 INTEGRATION_VERSION = '1.10.0'
-ZIP_FILENAME = f'datadog-{INTEGRATION}-{INTEGRATION_VERSION}.zip'
+ZIP_FILENAME = f'khulnasoft-{INTEGRATION}-{INTEGRATION_VERSION}.zip'
 TARGET_DIR = Path(__file__).parent.parent / 'data'
 
 
@@ -101,15 +101,15 @@ def main():
             load_target_filenames(filename)
 
         # Download required files for sample integration
-        for filename in filenames_for_target(signer_file, f'simple/datadog-{INTEGRATION}/index.html'):
+        for filename in filenames_for_target(signer_file, f'simple/khulnasoft-{INTEGRATION}/index.html'):
             download_file(filename)
 
-        download_file(f'targets/simple/datadog-{INTEGRATION}/index.html')
+        download_file(f'targets/simple/khulnasoft-{INTEGRATION}/index.html')
 
         wheel_name = f'khulnasoft_{INTEGRATION.replace("-", "_")}-{INTEGRATION_VERSION}-py2.py3-none-any.whl'
-        download_file(f'targets/simple/datadog-{INTEGRATION}/{wheel_name}')
+        download_file(f'targets/simple/khulnasoft-{INTEGRATION}/{wheel_name}')
 
-        for filename in filenames_for_target(signer_file, f'simple/datadog-{INTEGRATION}/{wheel_name}'):
+        for filename in filenames_for_target(signer_file, f'simple/khulnasoft-{INTEGRATION}/{wheel_name}'):
             download_file(filename)
 
         # Grab latest in toto X.core.root.layout

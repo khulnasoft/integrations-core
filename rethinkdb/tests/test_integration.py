@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2020-present
+# (C) Khulnasoft, Inc. 2020-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 import copy
@@ -8,7 +8,7 @@ import mock
 import pytest
 
 from khulnasoft_checks.base.stubs.aggregator import AggregatorStub  # noqa: F401
-from khulnasoft_checks.base.stubs.khulnasoft_agent import DatadogAgentStub  # noqa: F401
+from khulnasoft_checks.base.stubs.khulnasoft_agent import KhulnasoftAgentStub  # noqa: F401
 from khulnasoft_checks.rethinkdb import RethinkDBCheck
 from khulnasoft_checks.rethinkdb.types import Instance  # noqa: F401
 
@@ -109,7 +109,7 @@ class TestVersionMetadata:
 
     @pytest.mark.skipif(not RAW_VERSION, reason='Requires RAW_VERSION to be set')
     def test_default(self, instance, dd_run_check, khulnasoft_agent):
-        # type: (Instance, Callable, DatadogAgentStub) -> None
+        # type: (Instance, Callable, KhulnasoftAgentStub) -> None
         raw_version = RAW_VERSION
         version, _, build = raw_version.partition('~')
         major, minor, patch = version.split('.')
@@ -130,7 +130,7 @@ class TestVersionMetadata:
     @pytest.mark.integration
     @pytest.mark.parametrize('malformed_version_string', MALFORMED_VERSION_STRING_PARAMS)
     def test_malformed(self, instance, dd_run_check, khulnasoft_agent, malformed_version_string):
-        # type: (Instance, Callable, DatadogAgentStub, str) -> None
+        # type: (Instance, Callable, KhulnasoftAgentStub, str) -> None
         with mock.patch(self.VERSION_MOCK_TARGET, return_value=[(malformed_version_string,)]):
             check_id = 'test'
             check = RethinkDBCheck('rethinkdb', {}, [instance])
@@ -140,7 +140,7 @@ class TestVersionMetadata:
 
     @pytest.mark.integration
     def test_failure(self, instance, dd_run_check, khulnasoft_agent):
-        # type: (Instance, Callable, DatadogAgentStub) -> None
+        # type: (Instance, Callable, KhulnasoftAgentStub) -> None
         with mock.patch(self.VERSION_MOCK_TARGET, side_effect=ValueError('Oops!')):
             check_id = 'test'
             check = RethinkDBCheck('rethinkdb', {}, [instance])

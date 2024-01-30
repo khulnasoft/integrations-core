@@ -10,7 +10,7 @@ The Agent's lighttpd check tracks uptime, bytes served, requests per second, res
 
 ### Installation
 
-The Lighttpd check is included in the [Datadog Agent][2] package, so you don't need to install anything else on your Lighttpd servers.
+The Lighttpd check is included in the [Khulnasoft Agent][2] package, so you don't need to install anything else on your Lighttpd servers.
 
 In addition, install `mod_status` on your Lighttpd servers.
 
@@ -55,7 +55,7 @@ For containerized environments, see the [Autodiscovery Integration Templates][6]
 
 #### Log collection
 
-1. Collecting logs is disabled by default in the Datadog Agent, you need to enable it in `datadog.yaml`:
+1. Collecting logs is disabled by default in the Khulnasoft Agent, you need to enable it in `khulnasoft.yaml`:
 
    ```yaml
    logs_enabled: true
@@ -95,11 +95,11 @@ See [service_checks.json][9] for a list of service checks provided by this integ
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][10].
+Need help? Contact [Khulnasoft support][10].
 
 ## Further Reading
 
-- [Monitor Lighttpd web server metrics with Datadog][11].
+- [Monitor Lighttpd web server metrics with Khulnasoft][11].
 
 
 [1]: https://raw.githubusercontent.com/KhulnaSoft/integrations-core/master/lighttpd/images/lighttpddashboard.png

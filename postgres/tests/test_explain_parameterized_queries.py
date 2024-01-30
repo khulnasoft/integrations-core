@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2022-present
+# (C) Khulnasoft, Inc. 2022-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 
@@ -18,7 +18,7 @@ from .common import DB_NAME
 def dbm_instance(pg_instance):
     pg_instance['dbm'] = True
     pg_instance['min_collection_interval'] = 1
-    pg_instance['pg_stat_activity_view'] = "datadog.pg_stat_activity()"
+    pg_instance['pg_stat_activity_view'] = "khulnasoft.pg_stat_activity()"
     pg_instance['query_samples'] = {
         'enabled': True,
         'run_sync': True,

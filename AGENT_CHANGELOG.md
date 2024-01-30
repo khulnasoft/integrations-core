@@ -1,23 +1,23 @@
-## Datadog Agent version [7.50.2](https://github.com/KhulnaSoft/datadog-agent/blob/master/CHANGELOG.rst#7502)
+## Khulnasoft Agent version [7.50.2](https://github.com/KhulnaSoft/khulnasoft-agent/blob/master/CHANGELOG.rst#7502)
 
 * Postgres [15.3.1](https://github.com/KhulnaSoft/integrations-core/blob/master/postgres/CHANGELOG.md)
 * SQL Server [15.2.1](https://github.com/KhulnaSoft/integrations-core/blob/master/sqlserver/CHANGELOG.md)
 
-## Datadog Agent version [7.50.1](https://github.com/KhulnaSoft/datadog-agent/blob/master/CHANGELOG.rst#7501)
+## Khulnasoft Agent version [7.50.1](https://github.com/KhulnaSoft/khulnasoft-agent/blob/master/CHANGELOG.rst#7501)
 
 * There were no integration updates for this version of the Agent.
 
-## Datadog Agent version [7.50.0](https://github.com/KhulnaSoft/datadog-agent/blob/master/CHANGELOG.rst#7500)
+## Khulnasoft Agent version [7.50.0](https://github.com/KhulnaSoft/khulnasoft-agent/blob/master/CHANGELOG.rst#7500)
 
 * Amazon Kafka [4.3.0](https://github.com/KhulnaSoft/integrations-core/blob/master/amazon_msk/CHANGELOG.md)
 * Ambari [4.0.0](https://github.com/KhulnaSoft/integrations-core/blob/master/ambari/CHANGELOG.md) **BREAKING CHANGE**
 * Cacti [2.0.1](https://github.com/KhulnaSoft/integrations-core/blob/master/cacti/CHANGELOG.md)
-* Datadog Checks Base [34.3.1](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_base/CHANGELOG.md)
-* Datadog Checks Downloader [4.4.0](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_downloader/CHANGELOG.md)
+* Khulnasoft Checks Base [34.3.1](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_base/CHANGELOG.md)
+* Khulnasoft Checks Downloader [4.4.0](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_downloader/CHANGELOG.md)
 * Cilium [3.2.0](https://github.com/KhulnaSoft/integrations-core/blob/master/cilium/CHANGELOG.md)
 * Cisco ACI [2.4.2](https://github.com/KhulnaSoft/integrations-core/blob/master/cisco_aci/CHANGELOG.md)
 * Cloud Foundry API [3.1.0](https://github.com/KhulnaSoft/integrations-core/blob/master/cloud_foundry_api/CHANGELOG.md)
-* Datadog Cluster Agent [2.8.0](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_cluster_agent/CHANGELOG.md)
+* Khulnasoft Cluster Agent [2.8.0](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_cluster_agent/CHANGELOG.md)
 * DNS [3.0.1](https://github.com/KhulnaSoft/integrations-core/blob/master/dns_check/CHANGELOG.md)
 * Amazon ECS Fargate [4.1.0](https://github.com/KhulnaSoft/integrations-core/blob/master/ecs_fargate/CHANGELOG.md)
 * Envoy [3.2.0](https://github.com/KhulnaSoft/integrations-core/blob/master/envoy/CHANGELOG.md)
@@ -50,18 +50,18 @@
 * Yarn [5.1.0](https://github.com/KhulnaSoft/integrations-core/blob/master/yarn/CHANGELOG.md)
 * ZooKeeper [4.4.0](https://github.com/KhulnaSoft/integrations-core/blob/master/zk/CHANGELOG.md)
 
-## Datadog Agent version [7.49.1](https://github.com/KhulnaSoft/datadog-agent/blob/master/CHANGELOG.rst#7491)
+## Khulnasoft Agent version [7.49.1](https://github.com/KhulnaSoft/khulnasoft-agent/blob/master/CHANGELOG.rst#7491)
 
-* Datadog Checks Base [34.0.3](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_base/CHANGELOG.md)
+* Khulnasoft Checks Base [34.0.3](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_base/CHANGELOG.md)
 * IBM WAS [3.1.1](https://github.com/KhulnaSoft/integrations-core/blob/master/ibm_was/CHANGELOG.md)
 * SQL Server [15.0.3](https://github.com/KhulnaSoft/integrations-core/blob/master/sqlserver/CHANGELOG.md)
 
-## Datadog Agent version [7.49.0](https://github.com/KhulnaSoft/datadog-agent/blob/master/CHANGELOG.rst#7490)
+## Khulnasoft Agent version [7.49.0](https://github.com/KhulnaSoft/khulnasoft-agent/blob/master/CHANGELOG.rst#7490)
 
 * Amazon Kafka [4.2.0](https://github.com/KhulnaSoft/integrations-core/blob/master/amazon_msk/CHANGELOG.md)
 * ArgoCD [2.1.0](https://github.com/KhulnaSoft/integrations-core/blob/master/argocd/CHANGELOG.md)
-* Datadog Checks Base [34.0.2](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_base/CHANGELOG.md) **BREAKING CHANGE**
-* Datadog Checks Downloader [4.3.1](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_downloader/CHANGELOG.md)
+* Khulnasoft Checks Base [34.0.2](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_base/CHANGELOG.md) **BREAKING CHANGE**
+* Khulnasoft Checks Downloader [4.3.1](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_downloader/CHANGELOG.md)
 * Cisco ACI [2.4.1](https://github.com/KhulnaSoft/integrations-core/blob/master/cisco_aci/CHANGELOG.md)
 * ClickHouse [3.1.0](https://github.com/KhulnaSoft/integrations-core/blob/master/clickhouse/CHANGELOG.md)
 * Envoy [3.1.0](https://github.com/KhulnaSoft/integrations-core/blob/master/envoy/CHANGELOG.md)
@@ -86,11 +86,11 @@
 * vSphere [7.1.0](https://github.com/KhulnaSoft/integrations-core/blob/master/vsphere/CHANGELOG.md)
 * Windows Event Log [3.1.0](https://github.com/KhulnaSoft/integrations-core/blob/master/win32_event_log/CHANGELOG.md)
 
-## Datadog Agent version [7.48.1](https://github.com/KhulnaSoft/datadog-agent/blob/master/CHANGELOG.rst#7481)
+## Khulnasoft Agent version [7.48.1](https://github.com/KhulnaSoft/khulnasoft-agent/blob/master/CHANGELOG.rst#7481)
 
 * Kafka Consumer [4.1.3](https://github.com/KhulnaSoft/integrations-core/blob/master/kafka_consumer/CHANGELOG.md)
 
-## Datadog Agent version [7.48.0](https://github.com/KhulnaSoft/datadog-agent/blob/master/CHANGELOG.rst#7480)
+## Khulnasoft Agent version [7.48.0](https://github.com/KhulnaSoft/khulnasoft-agent/blob/master/CHANGELOG.rst#7480)
 
 * Active Directory [2.0.0](https://github.com/KhulnaSoft/integrations-core/blob/master/active_directory/CHANGELOG.md) **BREAKING CHANGE**
 * ActiveMQ XML [3.0.0](https://github.com/KhulnaSoft/integrations-core/blob/master/activemq_xml/CHANGELOG.md) **BREAKING CHANGE**
@@ -112,8 +112,8 @@
 * Cassandra Nodetool [1.12.1](https://github.com/KhulnaSoft/integrations-core/blob/master/cassandra_nodetool/CHANGELOG.md)
 * Cassandra [1.17.1](https://github.com/KhulnaSoft/integrations-core/blob/master/cassandra/CHANGELOG.md)
 * Ceph [2.9.1](https://github.com/KhulnaSoft/integrations-core/blob/master/ceph/CHANGELOG.md)
-* Datadog Checks Base [33.1.0](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_base/CHANGELOG.md) **BREAKING CHANGE**
-* Datadog Checks Downloader [4.3.0](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_downloader/CHANGELOG.md)
+* Khulnasoft Checks Base [33.1.0](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_base/CHANGELOG.md) **BREAKING CHANGE**
+* Khulnasoft Checks Downloader [4.3.0](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_downloader/CHANGELOG.md)
 * Cilium [3.0.0](https://github.com/KhulnaSoft/integrations-core/blob/master/cilium/CHANGELOG.md) **BREAKING CHANGE**
 * Cisco ACI [2.3.1](https://github.com/KhulnaSoft/integrations-core/blob/master/cisco_aci/CHANGELOG.md)
 * Citrix Hypervisor [3.0.0](https://github.com/KhulnaSoft/integrations-core/blob/master/citrix_hypervisor/CHANGELOG.md) **BREAKING CHANGE**
@@ -127,7 +127,7 @@
 * CouchDB [6.0.0](https://github.com/KhulnaSoft/integrations-core/blob/master/couch/CHANGELOG.md) **BREAKING CHANGE**
 * Couchbase [3.0.0](https://github.com/KhulnaSoft/integrations-core/blob/master/couchbase/CHANGELOG.md) **BREAKING CHANGE**
 * CRI-O [2.4.1](https://github.com/KhulnaSoft/integrations-core/blob/master/crio/CHANGELOG.md)
-* Datadog Cluster Agent [2.7.1](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_cluster_agent/CHANGELOG.md)
+* Khulnasoft Cluster Agent [2.7.1](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_cluster_agent/CHANGELOG.md)
 * dcgm [2.1.0](https://github.com/KhulnaSoft/integrations-core/blob/master/dcgm/CHANGELOG.md) **BREAKING CHANGE**
 * Directory [2.0.0](https://github.com/KhulnaSoft/integrations-core/blob/master/directory/CHANGELOG.md) **BREAKING CHANGE**
 * Disk [5.0.0](https://github.com/KhulnaSoft/integrations-core/blob/master/disk/CHANGELOG.md) **BREAKING CHANGE**
@@ -258,7 +258,7 @@
 * Yarn [5.0.0](https://github.com/KhulnaSoft/integrations-core/blob/master/yarn/CHANGELOG.md) **BREAKING CHANGE**
 * ZooKeeper [4.3.1](https://github.com/KhulnaSoft/integrations-core/blob/master/zk/CHANGELOG.md)
 
-## Datadog Agent version [7.47.0](https://github.com/KhulnaSoft/datadog-agent/blob/master/CHANGELOG.rst#7470)
+## Khulnasoft Agent version [7.47.0](https://github.com/KhulnaSoft/khulnasoft-agent/blob/master/CHANGELOG.rst#7470)
 
 * Active Directory [1.17.1](https://github.com/KhulnaSoft/integrations-core/blob/master/active_directory/CHANGELOG.md)
 * ActiveMQ XML [2.2.1](https://github.com/KhulnaSoft/integrations-core/blob/master/activemq_xml/CHANGELOG.md)
@@ -281,9 +281,9 @@
 * Cassandra [1.16.1](https://github.com/KhulnaSoft/integrations-core/blob/master/cassandra/CHANGELOG.md)
 * Ceph [2.8.0](https://github.com/KhulnaSoft/integrations-core/blob/master/ceph/CHANGELOG.md)
 * cert-manager [3.1.1](https://github.com/KhulnaSoft/integrations-core/blob/master/cert_manager/CHANGELOG.md)
-* Datadog Checks Base [32.5.1](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_base/CHANGELOG.md)
+* Khulnasoft Checks Base [32.5.1](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_base/CHANGELOG.md)
 * khulnasoft_checks_dependency_provider [1.3.1](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_dependency_provider/CHANGELOG.md)
-* Datadog Checks Downloader [4.2.2](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_downloader/CHANGELOG.md)
+* Khulnasoft Checks Downloader [4.2.2](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_downloader/CHANGELOG.md)
 * Cilium [2.4.1](https://github.com/KhulnaSoft/integrations-core/blob/master/cilium/CHANGELOG.md)
 * Cisco ACI [2.2.2](https://github.com/KhulnaSoft/integrations-core/blob/master/cisco_aci/CHANGELOG.md)
 * Citrix Hypervisor [2.2.1](https://github.com/KhulnaSoft/integrations-core/blob/master/citrix_hypervisor/CHANGELOG.md)
@@ -297,7 +297,7 @@
 * CouchDB [5.2.1](https://github.com/KhulnaSoft/integrations-core/blob/master/couch/CHANGELOG.md)
 * Couchbase [2.2.1](https://github.com/KhulnaSoft/integrations-core/blob/master/couchbase/CHANGELOG.md)
 * CRI-O [2.3.1](https://github.com/KhulnaSoft/integrations-core/blob/master/crio/CHANGELOG.md)
-* Datadog Cluster Agent [2.6.2](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_cluster_agent/CHANGELOG.md)
+* Khulnasoft Cluster Agent [2.6.2](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_cluster_agent/CHANGELOG.md)
 * dcgm [1.0.0](https://github.com/KhulnaSoft/integrations-core/blob/master/dcgm/CHANGELOG.md)
 * Directory [1.14.4](https://github.com/KhulnaSoft/integrations-core/blob/master/directory/CHANGELOG.md)
 * Disk [4.10.0](https://github.com/KhulnaSoft/integrations-core/blob/master/disk/CHANGELOG.md)
@@ -435,7 +435,7 @@
 * Yarn [4.3.2](https://github.com/KhulnaSoft/integrations-core/blob/master/yarn/CHANGELOG.md)
 * ZooKeeper [4.2.3](https://github.com/KhulnaSoft/integrations-core/blob/master/zk/CHANGELOG.md)
 
-## Datadog Agent version [7.46.0](https://github.com/KhulnaSoft/datadog-agent/blob/master/CHANGELOG.rst#7460)
+## Khulnasoft Agent version [7.46.0](https://github.com/KhulnaSoft/khulnasoft-agent/blob/master/CHANGELOG.rst#7460)
 
 * Aerospike [1.18.0](https://github.com/KhulnaSoft/integrations-core/blob/master/aerospike/CHANGELOG.md)
 * Amazon Kafka [3.4.0](https://github.com/KhulnaSoft/integrations-core/blob/master/amazon_msk/CHANGELOG.md)
@@ -446,13 +446,13 @@
 * Boundary [1.2.0](https://github.com/KhulnaSoft/integrations-core/blob/master/boundary/CHANGELOG.md)
 * Calico [1.2.0](https://github.com/KhulnaSoft/integrations-core/blob/master/calico/CHANGELOG.md)
 * cert-manager [3.1.0](https://github.com/KhulnaSoft/integrations-core/blob/master/cert_manager/CHANGELOG.md)
-* Datadog Checks Base [32.3.1](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_base/CHANGELOG.md) **BREAKING CHANGE**
-* Datadog Checks Downloader [4.2.1](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_downloader/CHANGELOG.md)
+* Khulnasoft Checks Base [32.3.1](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_base/CHANGELOG.md) **BREAKING CHANGE**
+* Khulnasoft Checks Downloader [4.2.1](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_downloader/CHANGELOG.md)
 * Cilium [2.4.0](https://github.com/KhulnaSoft/integrations-core/blob/master/cilium/CHANGELOG.md)
 * CockroachDB [2.7.0](https://github.com/KhulnaSoft/integrations-core/blob/master/cockroachdb/CHANGELOG.md)
 * Consul [2.2.1](https://github.com/KhulnaSoft/integrations-core/blob/master/consul/CHANGELOG.md)
 * CoreDNS [2.4.0](https://github.com/KhulnaSoft/integrations-core/blob/master/coredns/CHANGELOG.md)
-* Datadog Cluster Agent [2.6.1](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_cluster_agent/CHANGELOG.md)
+* Khulnasoft Cluster Agent [2.6.1](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_cluster_agent/CHANGELOG.md)
 * Directory [1.14.3](https://github.com/KhulnaSoft/integrations-core/blob/master/directory/CHANGELOG.md)
 * Elasticsearch [5.4.2](https://github.com/KhulnaSoft/integrations-core/blob/master/elastic/CHANGELOG.md)
 * Envoy [2.6.0](https://github.com/KhulnaSoft/integrations-core/blob/master/envoy/CHANGELOG.md)
@@ -487,14 +487,14 @@
 * Vault [3.4.0](https://github.com/KhulnaSoft/integrations-core/blob/master/vault/CHANGELOG.md)
 * vSphere [6.2.2](https://github.com/KhulnaSoft/integrations-core/blob/master/vsphere/CHANGELOG.md)
 
-## Datadog Agent version [7.45.0](https://github.com/KhulnaSoft/datadog-agent/blob/master/CHANGELOG.rst#7450)
+## Khulnasoft Agent version [7.45.0](https://github.com/KhulnaSoft/khulnasoft-agent/blob/master/CHANGELOG.rst#7450)
 
 * Amazon Kafka [3.3.0](https://github.com/KhulnaSoft/integrations-core/blob/master/amazon_msk/CHANGELOG.md)
 * Apache [4.2.1](https://github.com/KhulnaSoft/integrations-core/blob/master/apache/CHANGELOG.md)
 * Avi Vantage [3.2.1](https://github.com/KhulnaSoft/integrations-core/blob/master/avi_vantage/CHANGELOG.md)
-* Datadog Checks Base [31.0.2](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_base/CHANGELOG.md) **BREAKING CHANGE**
+* Khulnasoft Checks Base [31.0.2](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_base/CHANGELOG.md) **BREAKING CHANGE**
 * CoreDNS [2.3.1](https://github.com/KhulnaSoft/integrations-core/blob/master/coredns/CHANGELOG.md)
-* Datadog Cluster Agent [2.6.0](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_cluster_agent/CHANGELOG.md)
+* Khulnasoft Cluster Agent [2.6.0](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_cluster_agent/CHANGELOG.md)
 * Directory [1.14.2](https://github.com/KhulnaSoft/integrations-core/blob/master/directory/CHANGELOG.md)
 * Gitlab [6.0.2](https://github.com/KhulnaSoft/integrations-core/blob/master/gitlab/CHANGELOG.md) **BREAKING CHANGE**
 * IIS [2.18.3](https://github.com/KhulnaSoft/integrations-core/blob/master/iis/CHANGELOG.md)
@@ -514,14 +514,14 @@
 * Temporal [1.0.0](https://github.com/KhulnaSoft/integrations-core/blob/master/temporal/CHANGELOG.md)
 * TLS [2.10.0](https://github.com/KhulnaSoft/integrations-core/blob/master/tls/CHANGELOG.md)
 
-## Datadog Agent version [7.44.0](https://github.com/KhulnaSoft/datadog-agent/blob/master/CHANGELOG.rst#7440)
+## Khulnasoft Agent version [7.44.0](https://github.com/KhulnaSoft/khulnasoft-agent/blob/master/CHANGELOG.rst#7440)
 
 * Amazon Kafka [3.2.4](https://github.com/KhulnaSoft/integrations-core/blob/master/amazon_msk/CHANGELOG.md)
-* Datadog Checks Base [30.2.0](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_base/CHANGELOG.md)
-* Datadog Checks Downloader [4.1.0](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_downloader/CHANGELOG.md)
+* Khulnasoft Checks Base [30.2.0](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_base/CHANGELOG.md)
+* Khulnasoft Checks Downloader [4.1.0](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_downloader/CHANGELOG.md)
 * Cloudera [1.1.0](https://github.com/KhulnaSoft/integrations-core/blob/master/cloudera/CHANGELOG.md)
 * CockroachDB [2.6.0](https://github.com/KhulnaSoft/integrations-core/blob/master/cockroachdb/CHANGELOG.md)
-* Datadog Cluster Agent [2.5.0](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_cluster_agent/CHANGELOG.md)
+* Khulnasoft Cluster Agent [2.5.0](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_cluster_agent/CHANGELOG.md)
 * Directory [1.14.1](https://github.com/KhulnaSoft/integrations-core/blob/master/directory/CHANGELOG.md)
 * Envoy [2.5.0](https://github.com/KhulnaSoft/integrations-core/blob/master/envoy/CHANGELOG.md)
 * HAProxy [4.5.0](https://github.com/KhulnaSoft/integrations-core/blob/master/haproxy/CHANGELOG.md)
@@ -544,16 +544,16 @@
 * Supervisord [2.4.0](https://github.com/KhulnaSoft/integrations-core/blob/master/supervisord/CHANGELOG.md)
 * ZooKeeper [4.2.2](https://github.com/KhulnaSoft/integrations-core/blob/master/zk/CHANGELOG.md)
 
-## Datadog Agent version [7.43.1](https://github.com/KhulnaSoft/datadog-agent/blob/master/CHANGELOG.rst#7431)
+## Khulnasoft Agent version [7.43.1](https://github.com/KhulnaSoft/khulnasoft-agent/blob/master/CHANGELOG.rst#7431)
 
-* Datadog Checks Base [30.0.2](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_base/CHANGELOG.md)
+* Khulnasoft Checks Base [30.0.2](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_base/CHANGELOG.md)
 * Snowflake [4.5.1](https://github.com/KhulnaSoft/integrations-core/blob/master/snowflake/CHANGELOG.md)
 
-## Datadog Agent version [7.43.0](https://github.com/KhulnaSoft/datadog-agent/blob/master/CHANGELOG.rst#7430)
+## Khulnasoft Agent version [7.43.0](https://github.com/KhulnaSoft/khulnasoft-agent/blob/master/CHANGELOG.rst#7430)
 
 * Amazon Kafka [3.2.3](https://github.com/KhulnaSoft/integrations-core/blob/master/amazon_msk/CHANGELOG.md)
-* Datadog Checks Base [30.0.0](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_base/CHANGELOG.md) **BREAKING CHANGE**
-* Datadog Checks Downloader [4.0.0](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_downloader/CHANGELOG.md) **BREAKING CHANGE**
+* Khulnasoft Checks Base [30.0.0](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_base/CHANGELOG.md) **BREAKING CHANGE**
+* Khulnasoft Checks Downloader [4.0.0](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_downloader/CHANGELOG.md) **BREAKING CHANGE**
 * ClickHouse [2.8.2](https://github.com/KhulnaSoft/integrations-core/blob/master/clickhouse/CHANGELOG.md)
 * Cloudera [1.0.1](https://github.com/KhulnaSoft/integrations-core/blob/master/cloudera/CHANGELOG.md)
 * Disk [4.9.0](https://github.com/KhulnaSoft/integrations-core/blob/master/disk/CHANGELOG.md)
@@ -578,21 +578,21 @@
 * Varnish [1.14.3](https://github.com/KhulnaSoft/integrations-core/blob/master/varnish/CHANGELOG.md)
 * Yarn [4.3.0](https://github.com/KhulnaSoft/integrations-core/blob/master/yarn/CHANGELOG.md)
 
-## Datadog Agent version [7.42.2](https://github.com/KhulnaSoft/datadog-agent/blob/master/CHANGELOG.rst#7422)
+## Khulnasoft Agent version [7.42.2](https://github.com/KhulnaSoft/khulnasoft-agent/blob/master/CHANGELOG.rst#7422)
 
 * IIS [2.18.1](https://github.com/KhulnaSoft/integrations-core/blob/master/iis/CHANGELOG.md)
 
-## Datadog Agent version [7.42.1](https://github.com/KhulnaSoft/datadog-agent/blob/master/CHANGELOG.rst#7421)
+## Khulnasoft Agent version [7.42.1](https://github.com/KhulnaSoft/khulnasoft-agent/blob/master/CHANGELOG.rst#7421)
 
-* Datadog Checks Base [28.0.2](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_base/CHANGELOG.md)
+* Khulnasoft Checks Base [28.0.2](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_base/CHANGELOG.md)
 * Snowflake [4.4.6](https://github.com/KhulnaSoft/integrations-core/blob/master/snowflake/CHANGELOG.md)
 
-## Datadog Agent version [7.42.0](https://github.com/KhulnaSoft/datadog-agent/blob/master/CHANGELOG.rst#7420)
+## Khulnasoft Agent version [7.42.0](https://github.com/KhulnaSoft/khulnasoft-agent/blob/master/CHANGELOG.rst#7420)
 
 * Amazon Kafka [3.2.2](https://github.com/KhulnaSoft/integrations-core/blob/master/amazon_msk/CHANGELOG.md)
 * ArgoCD [1.0.1](https://github.com/KhulnaSoft/integrations-core/blob/master/argocd/CHANGELOG.md)
-* Datadog Checks Base [28.0.1](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_base/CHANGELOG.md) **BREAKING CHANGE**
-* Datadog Checks Downloader [3.10.1](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_downloader/CHANGELOG.md)
+* Khulnasoft Checks Base [28.0.1](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_base/CHANGELOG.md) **BREAKING CHANGE**
+* Khulnasoft Checks Downloader [3.10.1](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_downloader/CHANGELOG.md)
 * Cisco ACI [2.2.1](https://github.com/KhulnaSoft/integrations-core/blob/master/cisco_aci/CHANGELOG.md)
 * ClickHouse [2.8.1](https://github.com/KhulnaSoft/integrations-core/blob/master/clickhouse/CHANGELOG.md)
 * CockroachDB [2.5.0](https://github.com/KhulnaSoft/integrations-core/blob/master/cockroachdb/CHANGELOG.md)
@@ -633,12 +633,12 @@
 * Windows performance counters [1.5.0](https://github.com/KhulnaSoft/integrations-core/blob/master/windows_performance_counters/CHANGELOG.md)
 * ZooKeeper [4.2.1](https://github.com/KhulnaSoft/integrations-core/blob/master/zk/CHANGELOG.md)
 
-## Datadog Agent version [7.41.0](https://github.com/KhulnaSoft/datadog-agent/blob/master/CHANGELOG.rst#7410)
+## Khulnasoft Agent version [7.41.0](https://github.com/KhulnaSoft/khulnasoft-agent/blob/master/CHANGELOG.rst#7410)
 
 * Aerospike [1.17.2](https://github.com/KhulnaSoft/integrations-core/blob/master/aerospike/CHANGELOG.md)
 * Amazon Kafka [3.2.1](https://github.com/KhulnaSoft/integrations-core/blob/master/amazon_msk/CHANGELOG.md)
-* Datadog Checks Base [27.4.2](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_base/CHANGELOG.md)
-* Datadog Checks Downloader [3.10.0](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_downloader/CHANGELOG.md)
+* Khulnasoft Checks Base [27.4.2](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_base/CHANGELOG.md)
+* Khulnasoft Checks Downloader [3.10.0](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_downloader/CHANGELOG.md)
 * Cloud Foundry API [2.2.1](https://github.com/KhulnaSoft/integrations-core/blob/master/cloud_foundry_api/CHANGELOG.md)
 * CockroachDB [2.4.1](https://github.com/KhulnaSoft/integrations-core/blob/master/cockroachdb/CHANGELOG.md)
 * Directory [1.14.0](https://github.com/KhulnaSoft/integrations-core/blob/master/directory/CHANGELOG.md)
@@ -657,14 +657,14 @@
 * Vault [3.3.3](https://github.com/KhulnaSoft/integrations-core/blob/master/vault/CHANGELOG.md)
 * Windows Service [4.4.0](https://github.com/KhulnaSoft/integrations-core/blob/master/windows_service/CHANGELOG.md)
 
-## Datadog Agent version [7.40.1](https://github.com/KhulnaSoft/datadog-agent/blob/master/CHANGELOG.rst#7401)
+## Khulnasoft Agent version [7.40.1](https://github.com/KhulnaSoft/khulnasoft-agent/blob/master/CHANGELOG.rst#7401)
 
 * Gitlab Runner [3.3.1](https://github.com/KhulnaSoft/integrations-core/blob/master/gitlab_runner/CHANGELOG.md)
 * Gitlab [5.3.1](https://github.com/KhulnaSoft/integrations-core/blob/master/gitlab/CHANGELOG.md)
 * Kube DNS [3.3.1](https://github.com/KhulnaSoft/integrations-core/blob/master/kube_dns/CHANGELOG.md)
 * Kubernetes State [7.3.1](https://github.com/KhulnaSoft/integrations-core/blob/master/kubernetes_state/CHANGELOG.md)
 
-## Datadog Agent version [7.40.0](https://github.com/KhulnaSoft/datadog-agent/blob/master/CHANGELOG.rst#7400)
+## Khulnasoft Agent version [7.40.0](https://github.com/KhulnaSoft/khulnasoft-agent/blob/master/CHANGELOG.rst#7400)
 
 * ActiveMQ XML [2.2.0](https://github.com/KhulnaSoft/integrations-core/blob/master/activemq_xml/CHANGELOG.md)
 * Aerospike [1.17.0](https://github.com/KhulnaSoft/integrations-core/blob/master/aerospike/CHANGELOG.md)
@@ -679,8 +679,8 @@
 * Calico [1.1.0](https://github.com/KhulnaSoft/integrations-core/blob/master/calico/CHANGELOG.md)
 * Cassandra [1.16.0](https://github.com/KhulnaSoft/integrations-core/blob/master/cassandra/CHANGELOG.md)
 * cert-manager [3.0.0](https://github.com/KhulnaSoft/integrations-core/blob/master/cert_manager/CHANGELOG.md)
-* Datadog Checks Base [27.3.1](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_base/CHANGELOG.md)
-* Datadog Checks Downloader [3.9.0](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_downloader/CHANGELOG.md)
+* Khulnasoft Checks Base [27.3.1](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_base/CHANGELOG.md)
+* Khulnasoft Checks Downloader [3.9.0](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_downloader/CHANGELOG.md)
 * Cilium [2.3.0](https://github.com/KhulnaSoft/integrations-core/blob/master/cilium/CHANGELOG.md)
 * Cisco ACI [2.2.0](https://github.com/KhulnaSoft/integrations-core/blob/master/cisco_aci/CHANGELOG.md)
 * Citrix Hypervisor [2.2.0](https://github.com/KhulnaSoft/integrations-core/blob/master/citrix_hypervisor/CHANGELOG.md)
@@ -691,7 +691,7 @@
 * CouchDB [5.2.0](https://github.com/KhulnaSoft/integrations-core/blob/master/couch/CHANGELOG.md)
 * Couchbase [2.2.0](https://github.com/KhulnaSoft/integrations-core/blob/master/couchbase/CHANGELOG.md)
 * CRI-O [2.3.0](https://github.com/KhulnaSoft/integrations-core/blob/master/crio/CHANGELOG.md)
-* Datadog Cluster Agent [2.4.0](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_cluster_agent/CHANGELOG.md)
+* Khulnasoft Cluster Agent [2.4.0](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_cluster_agent/CHANGELOG.md)
 * Druid [2.2.0](https://github.com/KhulnaSoft/integrations-core/blob/master/druid/CHANGELOG.md)
 * Amazon ECS Fargate [3.2.0](https://github.com/KhulnaSoft/integrations-core/blob/master/ecs_fargate/CHANGELOG.md)
 * EKS Fargate [3.2.0](https://github.com/KhulnaSoft/integrations-core/blob/master/eks_fargate/CHANGELOG.md)
@@ -759,7 +759,7 @@
 * Windows Service [4.3.0](https://github.com/KhulnaSoft/integrations-core/blob/master/windows_service/CHANGELOG.md)
 * Yarn [4.2.0](https://github.com/KhulnaSoft/integrations-core/blob/master/yarn/CHANGELOG.md)
 
-## Datadog Agent version [7.39.0](https://github.com/KhulnaSoft/datadog-agent/blob/master/CHANGELOG.rst#7390)
+## Khulnasoft Agent version [7.39.0](https://github.com/KhulnaSoft/khulnasoft-agent/blob/master/CHANGELOG.rst#7390)
 
 * Active Directory [1.16.0](https://github.com/KhulnaSoft/integrations-core/blob/master/active_directory/CHANGELOG.md)
 * Aerospike [1.16.2](https://github.com/KhulnaSoft/integrations-core/blob/master/aerospike/CHANGELOG.md)
@@ -767,12 +767,12 @@
 * ASP.NET [1.12.0](https://github.com/KhulnaSoft/integrations-core/blob/master/aspdotnet/CHANGELOG.md)
 * Btrfs [1.14.1](https://github.com/KhulnaSoft/integrations-core/blob/master/btrfs/CHANGELOG.md)
 * Cacti [1.11.1](https://github.com/KhulnaSoft/integrations-core/blob/master/cacti/CHANGELOG.md)
-* Datadog Checks Base [27.0.0](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_base/CHANGELOG.md) **BREAKING CHANGE**
-* Datadog Checks Downloader [3.8.0](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_downloader/CHANGELOG.md)
+* Khulnasoft Checks Base [27.0.0](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_base/CHANGELOG.md) **BREAKING CHANGE**
+* Khulnasoft Checks Downloader [3.8.0](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_downloader/CHANGELOG.md)
 * ClickHouse [2.8.0](https://github.com/KhulnaSoft/integrations-core/blob/master/clickhouse/CHANGELOG.md)
 * CockroachDB [2.3.0](https://github.com/KhulnaSoft/integrations-core/blob/master/cockroachdb/CHANGELOG.md)
 * CouchDB [5.1.1](https://github.com/KhulnaSoft/integrations-core/blob/master/couch/CHANGELOG.md)
-* Datadog Cluster Agent [2.3.0](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_cluster_agent/CHANGELOG.md)
+* Khulnasoft Cluster Agent [2.3.0](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_cluster_agent/CHANGELOG.md)
 * Directory [1.13.1](https://github.com/KhulnaSoft/integrations-core/blob/master/directory/CHANGELOG.md)
 * Disk [4.7.1](https://github.com/KhulnaSoft/integrations-core/blob/master/disk/CHANGELOG.md)
 * .NET CLR [1.13.0](https://github.com/KhulnaSoft/integrations-core/blob/master/dotnetclr/CHANGELOG.md)
@@ -822,16 +822,16 @@
 * Vertica [3.4.1](https://github.com/KhulnaSoft/integrations-core/blob/master/vertica/CHANGELOG.md)
 * Windows performance counters [1.3.0](https://github.com/KhulnaSoft/integrations-core/blob/master/windows_performance_counters/CHANGELOG.md)
 
-## Datadog Agent version [7.38.2](https://github.com/KhulnaSoft/datadog-agent/blob/master/CHANGELOG.rst#7382)
+## Khulnasoft Agent version [7.38.2](https://github.com/KhulnaSoft/khulnasoft-agent/blob/master/CHANGELOG.rst#7382)
 
-* Datadog Checks Base [25.5.1](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_base/CHANGELOG.md)
+* Khulnasoft Checks Base [25.5.1](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_base/CHANGELOG.md)
 
-## Datadog Agent version [7.38.0](https://github.com/KhulnaSoft/datadog-agent/blob/master/CHANGELOG.rst#7380)
+## Khulnasoft Agent version [7.38.0](https://github.com/KhulnaSoft/khulnasoft-agent/blob/master/CHANGELOG.rst#7380)
 
 * Airflow [3.1.1](https://github.com/KhulnaSoft/integrations-core/blob/master/airflow/CHANGELOG.md)
 * ArangoDB [1.2.0](https://github.com/KhulnaSoft/integrations-core/blob/master/arangodb/CHANGELOG.md)
 * Boundary [1.0.0](https://github.com/KhulnaSoft/integrations-core/blob/master/boundary/CHANGELOG.md)
-* Datadog Checks Base [25.5.0](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_base/CHANGELOG.md)
+* Khulnasoft Checks Base [25.5.0](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_base/CHANGELOG.md)
 * Elasticsearch [5.2.0](https://github.com/KhulnaSoft/integrations-core/blob/master/elastic/CHANGELOG.md)
 * Envoy [2.3.0](https://github.com/KhulnaSoft/integrations-core/blob/master/envoy/CHANGELOG.md)
 * Gitlab [5.2.2](https://github.com/KhulnaSoft/integrations-core/blob/master/gitlab/CHANGELOG.md)
@@ -849,7 +849,7 @@
 * Vault [3.3.0](https://github.com/KhulnaSoft/integrations-core/blob/master/vault/CHANGELOG.md)
 * VoltDB [2.1.2](https://github.com/KhulnaSoft/integrations-core/blob/master/voltdb/CHANGELOG.md)
 
-## Datadog Agent version [7.37.0](https://github.com/KhulnaSoft/datadog-agent/blob/master/CHANGELOG.rst#7370)
+## Khulnasoft Agent version [7.37.0](https://github.com/KhulnaSoft/khulnasoft-agent/blob/master/CHANGELOG.rst#7370)
 
 * Active Directory [1.15.1](https://github.com/KhulnaSoft/integrations-core/blob/master/active_directory/CHANGELOG.md)
 * Aerospike [1.16.1](https://github.com/KhulnaSoft/integrations-core/blob/master/aerospike/CHANGELOG.md)
@@ -859,13 +859,13 @@
 * Avi Vantage [3.1.1](https://github.com/KhulnaSoft/integrations-core/blob/master/avi_vantage/CHANGELOG.md)
 * Azure IoT Edge [3.2.0](https://github.com/KhulnaSoft/integrations-core/blob/master/azure_iot_edge/CHANGELOG.md)
 * Calico [1.0.1](https://github.com/KhulnaSoft/integrations-core/blob/master/calico/CHANGELOG.md)
-* Datadog Checks Base [25.4.1](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_base/CHANGELOG.md)
+* Khulnasoft Checks Base [25.4.1](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_base/CHANGELOG.md)
 * Cilium [2.2.1](https://github.com/KhulnaSoft/integrations-core/blob/master/cilium/CHANGELOG.md)
 * Cloud Foundry API [2.1.1](https://github.com/KhulnaSoft/integrations-core/blob/master/cloud_foundry_api/CHANGELOG.md)
 * CockroachDB [2.2.1](https://github.com/KhulnaSoft/integrations-core/blob/master/cockroachdb/CHANGELOG.md)
 * CoreDNS [2.2.1](https://github.com/KhulnaSoft/integrations-core/blob/master/coredns/CHANGELOG.md)
 * CRI-O [2.2.0](https://github.com/KhulnaSoft/integrations-core/blob/master/crio/CHANGELOG.md)
-* Datadog Cluster Agent [2.2.0](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_cluster_agent/CHANGELOG.md)
+* Khulnasoft Cluster Agent [2.2.0](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_cluster_agent/CHANGELOG.md)
 * .NET CLR [1.12.1](https://github.com/KhulnaSoft/integrations-core/blob/master/dotnetclr/CHANGELOG.md)
 * Elasticsearch [5.1.1](https://github.com/KhulnaSoft/integrations-core/blob/master/elastic/CHANGELOG.md)
 * Envoy [2.1.1](https://github.com/KhulnaSoft/integrations-core/blob/master/envoy/CHANGELOG.md)
@@ -922,11 +922,11 @@
 * Windows Service [4.2.1](https://github.com/KhulnaSoft/integrations-core/blob/master/windows_service/CHANGELOG.md)
 * WMI [1.15.1](https://github.com/KhulnaSoft/integrations-core/blob/master/wmi_check/CHANGELOG.md)
 
-## Datadog Agent version [7.36.1](https://github.com/KhulnaSoft/datadog-agent/blob/master/CHANGELOG.rst#7361)
+## Khulnasoft Agent version [7.36.1](https://github.com/KhulnaSoft/khulnasoft-agent/blob/master/CHANGELOG.rst#7361)
 
 * MySQL [8.2.3](https://github.com/KhulnaSoft/integrations-core/blob/master/mysql/CHANGELOG.md)
 
-## Datadog Agent version [7.36.0](https://github.com/KhulnaSoft/datadog-agent/blob/master/CHANGELOG.rst#7360)
+## Khulnasoft Agent version [7.36.0](https://github.com/KhulnaSoft/khulnasoft-agent/blob/master/CHANGELOG.rst#7360)
 
 * Active Directory [1.15.0](https://github.com/KhulnaSoft/integrations-core/blob/master/active_directory/CHANGELOG.md)
 * ActiveMQ XML [2.1.0](https://github.com/KhulnaSoft/integrations-core/blob/master/activemq_xml/CHANGELOG.md)
@@ -944,9 +944,9 @@
 * Cassandra Nodetool [1.11.0](https://github.com/KhulnaSoft/integrations-core/blob/master/cassandra_nodetool/CHANGELOG.md)
 * Cassandra [1.15.1](https://github.com/KhulnaSoft/integrations-core/blob/master/cassandra/CHANGELOG.md)
 * Ceph [2.7.0](https://github.com/KhulnaSoft/integrations-core/blob/master/ceph/CHANGELOG.md)
-* Datadog Checks Base [25.3.1](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_base/CHANGELOG.md)
+* Khulnasoft Checks Base [25.3.1](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_base/CHANGELOG.md)
 * khulnasoft_checks_dependency_provider [1.3.0](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_dependency_provider/CHANGELOG.md)
-* Datadog Checks Downloader [3.7.0](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_downloader/CHANGELOG.md)
+* Khulnasoft Checks Downloader [3.7.0](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_downloader/CHANGELOG.md)
 * Cilium [2.1.0](https://github.com/KhulnaSoft/integrations-core/blob/master/cilium/CHANGELOG.md)
 * Cisco ACI [2.1.0](https://github.com/KhulnaSoft/integrations-core/blob/master/cisco_aci/CHANGELOG.md)
 * Citrix Hypervisor [2.1.0](https://github.com/KhulnaSoft/integrations-core/blob/master/citrix_hypervisor/CHANGELOG.md)
@@ -959,7 +959,7 @@
 * CouchDB [5.1.0](https://github.com/KhulnaSoft/integrations-core/blob/master/couch/CHANGELOG.md)
 * Couchbase [2.1.0](https://github.com/KhulnaSoft/integrations-core/blob/master/couchbase/CHANGELOG.md)
 * CRI-O [2.1.0](https://github.com/KhulnaSoft/integrations-core/blob/master/crio/CHANGELOG.md)
-* Datadog Cluster Agent [2.1.0](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_cluster_agent/CHANGELOG.md)
+* Khulnasoft Cluster Agent [2.1.0](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_cluster_agent/CHANGELOG.md)
 * Directory [1.13.0](https://github.com/KhulnaSoft/integrations-core/blob/master/directory/CHANGELOG.md)
 * Disk [4.7.0](https://github.com/KhulnaSoft/integrations-core/blob/master/disk/CHANGELOG.md)
 * DNS [2.3.0](https://github.com/KhulnaSoft/integrations-core/blob/master/dns_check/CHANGELOG.md)
@@ -1083,7 +1083,7 @@
 * Yarn [4.1.0](https://github.com/KhulnaSoft/integrations-core/blob/master/yarn/CHANGELOG.md)
 * ZooKeeper [4.2.0](https://github.com/KhulnaSoft/integrations-core/blob/master/zk/CHANGELOG.md)
 
-## Datadog Agent version [7.35.0](https://github.com/KhulnaSoft/datadog-agent/blob/master/CHANGELOG.rst#7350)
+## Khulnasoft Agent version [7.35.0](https://github.com/KhulnaSoft/khulnasoft-agent/blob/master/CHANGELOG.rst#7350)
 
 * Active Directory [1.14.0](https://github.com/KhulnaSoft/integrations-core/blob/master/active_directory/CHANGELOG.md)
 * ActiveMQ XML [2.0.0](https://github.com/KhulnaSoft/integrations-core/blob/master/activemq_xml/CHANGELOG.md) **BREAKING CHANGE**
@@ -1101,8 +1101,8 @@
 * Cassandra Nodetool [1.10.0](https://github.com/KhulnaSoft/integrations-core/blob/master/cassandra_nodetool/CHANGELOG.md)
 * Cassandra [1.15.0](https://github.com/KhulnaSoft/integrations-core/blob/master/cassandra/CHANGELOG.md)
 * Ceph [2.6.0](https://github.com/KhulnaSoft/integrations-core/blob/master/ceph/CHANGELOG.md)
-* Datadog Checks Base [25.0.1](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_base/CHANGELOG.md) **BREAKING CHANGE**
-* Datadog Checks Downloader [3.6.0](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_downloader/CHANGELOG.md)
+* Khulnasoft Checks Base [25.0.1](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_base/CHANGELOG.md) **BREAKING CHANGE**
+* Khulnasoft Checks Downloader [3.6.0](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_downloader/CHANGELOG.md)
 * Cilium [2.0.0](https://github.com/KhulnaSoft/integrations-core/blob/master/cilium/CHANGELOG.md) **BREAKING CHANGE**
 * Cisco ACI [2.0.0](https://github.com/KhulnaSoft/integrations-core/blob/master/cisco_aci/CHANGELOG.md) **BREAKING CHANGE**
 * Citrix Hypervisor [2.0.0](https://github.com/KhulnaSoft/integrations-core/blob/master/citrix_hypervisor/CHANGELOG.md) **BREAKING CHANGE**
@@ -1115,7 +1115,7 @@
 * CouchDB [5.0.0](https://github.com/KhulnaSoft/integrations-core/blob/master/couch/CHANGELOG.md) **BREAKING CHANGE**
 * Couchbase [2.0.0](https://github.com/KhulnaSoft/integrations-core/blob/master/couchbase/CHANGELOG.md) **BREAKING CHANGE**
 * CRI-O [2.0.0](https://github.com/KhulnaSoft/integrations-core/blob/master/crio/CHANGELOG.md) **BREAKING CHANGE**
-* Datadog Cluster Agent [2.0.0](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_cluster_agent/CHANGELOG.md) **BREAKING CHANGE**
+* Khulnasoft Cluster Agent [2.0.0](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_cluster_agent/CHANGELOG.md) **BREAKING CHANGE**
 * Directory [1.12.0](https://github.com/KhulnaSoft/integrations-core/blob/master/directory/CHANGELOG.md)
 * Disk [4.6.0](https://github.com/KhulnaSoft/integrations-core/blob/master/disk/CHANGELOG.md)
 * DNS [2.2.0](https://github.com/KhulnaSoft/integrations-core/blob/master/dns_check/CHANGELOG.md)
@@ -1244,7 +1244,7 @@
 * Yarn [4.0.0](https://github.com/KhulnaSoft/integrations-core/blob/master/yarn/CHANGELOG.md) **BREAKING CHANGE**
 * ZooKeeper [4.1.0](https://github.com/KhulnaSoft/integrations-core/blob/master/zk/CHANGELOG.md)
 
-## Datadog Agent version [7.34.0](https://github.com/KhulnaSoft/datadog-agent/blob/master/CHANGELOG.rst#7340)
+## Khulnasoft Agent version [7.34.0](https://github.com/KhulnaSoft/khulnasoft-agent/blob/master/CHANGELOG.rst#7340)
 
 * Active Directory [1.13.0](https://github.com/KhulnaSoft/integrations-core/blob/master/active_directory/CHANGELOG.md)
 * ActiveMQ XML [1.12.1](https://github.com/KhulnaSoft/integrations-core/blob/master/activemq_xml/CHANGELOG.md)
@@ -1262,7 +1262,7 @@
 * Cassandra Nodetool [1.9.1](https://github.com/KhulnaSoft/integrations-core/blob/master/cassandra_nodetool/CHANGELOG.md)
 * Cassandra [1.14.2](https://github.com/KhulnaSoft/integrations-core/blob/master/cassandra/CHANGELOG.md)
 * Ceph [2.5.1](https://github.com/KhulnaSoft/integrations-core/blob/master/ceph/CHANGELOG.md)
-* Datadog Checks Base [23.7.6](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_base/CHANGELOG.md)
+* Khulnasoft Checks Base [23.7.6](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_base/CHANGELOG.md)
 * Cilium [1.10.2](https://github.com/KhulnaSoft/integrations-core/blob/master/cilium/CHANGELOG.md)
 * Cisco ACI [1.17.2](https://github.com/KhulnaSoft/integrations-core/blob/master/cisco_aci/CHANGELOG.md)
 * Citrix Hypervisor [1.0.1](https://github.com/KhulnaSoft/integrations-core/blob/master/citrix_hypervisor/CHANGELOG.md)
@@ -1275,7 +1275,7 @@
 * CouchDB [4.2.1](https://github.com/KhulnaSoft/integrations-core/blob/master/couch/CHANGELOG.md)
 * Couchbase [1.19.0](https://github.com/KhulnaSoft/integrations-core/blob/master/couchbase/CHANGELOG.md)
 * CRI-O [1.8.3](https://github.com/KhulnaSoft/integrations-core/blob/master/crio/CHANGELOG.md)
-* Datadog Cluster Agent [1.3.3](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_cluster_agent/CHANGELOG.md)
+* Khulnasoft Cluster Agent [1.3.3](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_cluster_agent/CHANGELOG.md)
 * Directory [1.11.1](https://github.com/KhulnaSoft/integrations-core/blob/master/directory/CHANGELOG.md)
 * Disk [4.5.2](https://github.com/KhulnaSoft/integrations-core/blob/master/disk/CHANGELOG.md)
 * DNS [2.1.1](https://github.com/KhulnaSoft/integrations-core/blob/master/dns_check/CHANGELOG.md)
@@ -1392,7 +1392,7 @@
 * Yarn [2.1.1](https://github.com/KhulnaSoft/integrations-core/blob/master/yarn/CHANGELOG.md)
 * ZooKeeper [4.0.0](https://github.com/KhulnaSoft/integrations-core/blob/master/zk/CHANGELOG.md) **BREAKING CHANGE**
 
-## Datadog Agent version [7.33.0](https://github.com/KhulnaSoft/datadog-agent/blob/master/CHANGELOG.rst#7330)
+## Khulnasoft Agent version [7.33.0](https://github.com/KhulnaSoft/khulnasoft-agent/blob/master/CHANGELOG.rst#7330)
 
 * ActiveMQ [2.2.1](https://github.com/KhulnaSoft/integrations-core/blob/master/activemq/CHANGELOG.md)
 * Aerospike [1.13.0](https://github.com/KhulnaSoft/integrations-core/blob/master/aerospike/CHANGELOG.md)
@@ -1405,7 +1405,7 @@
 * Btrfs [1.12.0](https://github.com/KhulnaSoft/integrations-core/blob/master/btrfs/CHANGELOG.md)
 * Cacti [1.9.1](https://github.com/KhulnaSoft/integrations-core/blob/master/cacti/CHANGELOG.md)
 * Cassandra [1.14.1](https://github.com/KhulnaSoft/integrations-core/blob/master/cassandra/CHANGELOG.md)
-* Datadog Checks Base [23.7.2](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_base/CHANGELOG.md)
+* Khulnasoft Checks Base [23.7.2](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_base/CHANGELOG.md)
 * khulnasoft_checks_dependency_provider [1.2.0](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_dependency_provider/CHANGELOG.md)
 * Cilium [1.9.0](https://github.com/KhulnaSoft/integrations-core/blob/master/cilium/CHANGELOG.md)
 * Cisco ACI [1.17.1](https://github.com/KhulnaSoft/integrations-core/blob/master/cisco_aci/CHANGELOG.md)
@@ -1416,7 +1416,7 @@
 * CoreDNS [1.10.0](https://github.com/KhulnaSoft/integrations-core/blob/master/coredns/CHANGELOG.md)
 * CouchDB [4.2.0](https://github.com/KhulnaSoft/integrations-core/blob/master/couch/CHANGELOG.md)
 * CRI-O [1.8.0](https://github.com/KhulnaSoft/integrations-core/blob/master/crio/CHANGELOG.md)
-* Datadog Cluster Agent [1.3.0](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_cluster_agent/CHANGELOG.md)
+* Khulnasoft Cluster Agent [1.3.0](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_cluster_agent/CHANGELOG.md)
 * Disk [4.5.1](https://github.com/KhulnaSoft/integrations-core/blob/master/disk/CHANGELOG.md)
 * DNS [2.1.0](https://github.com/KhulnaSoft/integrations-core/blob/master/dns_check/CHANGELOG.md)
 * Amazon ECS Fargate [2.14.0](https://github.com/KhulnaSoft/integrations-core/blob/master/ecs_fargate/CHANGELOG.md)
@@ -1474,7 +1474,7 @@
 * WMI [1.13.0](https://github.com/KhulnaSoft/integrations-core/blob/master/wmi_check/CHANGELOG.md)
 * ZooKeeper [3.1.1](https://github.com/KhulnaSoft/integrations-core/blob/master/zk/CHANGELOG.md)
 
-## Datadog Agent version [7.32.0](https://github.com/KhulnaSoft/datadog-agent/blob/master/CHANGELOG.rst#7320)
+## Khulnasoft Agent version [7.32.0](https://github.com/KhulnaSoft/khulnasoft-agent/blob/master/CHANGELOG.rst#7320)
 
 * Active Directory [1.12.0](https://github.com/KhulnaSoft/integrations-core/blob/master/active_directory/CHANGELOG.md)
 * ActiveMQ XML [1.12.0](https://github.com/KhulnaSoft/integrations-core/blob/master/activemq_xml/CHANGELOG.md)
@@ -1488,9 +1488,9 @@
 * Cassandra Nodetool [1.9.0](https://github.com/KhulnaSoft/integrations-core/blob/master/cassandra_nodetool/CHANGELOG.md)
 * Cassandra [1.14.0](https://github.com/KhulnaSoft/integrations-core/blob/master/cassandra/CHANGELOG.md)
 * Ceph [2.5.0](https://github.com/KhulnaSoft/integrations-core/blob/master/ceph/CHANGELOG.md)
-* Datadog Checks Base [23.1.5](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_base/CHANGELOG.md) **BREAKING CHANGE**
+* Khulnasoft Checks Base [23.1.5](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_base/CHANGELOG.md) **BREAKING CHANGE**
 * khulnasoft_checks_dependency_provider [1.1.0](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_dependency_provider/CHANGELOG.md)
-* Datadog Checks Downloader [3.4.1](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_downloader/CHANGELOG.md)
+* Khulnasoft Checks Downloader [3.4.1](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_downloader/CHANGELOG.md)
 * Cilium [1.8.0](https://github.com/KhulnaSoft/integrations-core/blob/master/cilium/CHANGELOG.md)
 * Cisco ACI [1.16.0](https://github.com/KhulnaSoft/integrations-core/blob/master/cisco_aci/CHANGELOG.md)
 * Citrix Hypervisor [1.0.0](https://github.com/KhulnaSoft/integrations-core/blob/master/citrix_hypervisor/CHANGELOG.md)
@@ -1502,7 +1502,7 @@
 * CouchDB [4.1.0](https://github.com/KhulnaSoft/integrations-core/blob/master/couch/CHANGELOG.md)
 * Couchbase [1.18.0](https://github.com/KhulnaSoft/integrations-core/blob/master/couchbase/CHANGELOG.md)
 * CRI-O [1.7.0](https://github.com/KhulnaSoft/integrations-core/blob/master/crio/CHANGELOG.md)
-* Datadog Cluster Agent [1.2.0](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_cluster_agent/CHANGELOG.md)
+* Khulnasoft Cluster Agent [1.2.0](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_cluster_agent/CHANGELOG.md)
 * Directory [1.11.0](https://github.com/KhulnaSoft/integrations-core/blob/master/directory/CHANGELOG.md)
 * .NET CLR [1.9.0](https://github.com/KhulnaSoft/integrations-core/blob/master/dotnetclr/CHANGELOG.md)
 * Druid [1.7.0](https://github.com/KhulnaSoft/integrations-core/blob/master/druid/CHANGELOG.md)
@@ -1613,13 +1613,13 @@
 * Yarn [2.1.0](https://github.com/KhulnaSoft/integrations-core/blob/master/yarn/CHANGELOG.md)
 * ZooKeeper [3.1.0](https://github.com/KhulnaSoft/integrations-core/blob/master/zk/CHANGELOG.md)
 
-## Datadog Agent version [7.31.0](https://github.com/KhulnaSoft/datadog-agent/blob/master/CHANGELOG.rst#7310)
+## Khulnasoft Agent version [7.31.0](https://github.com/KhulnaSoft/khulnasoft-agent/blob/master/CHANGELOG.rst#7310)
 
 * Airflow [2.0.0](https://github.com/KhulnaSoft/integrations-core/blob/master/airflow/CHANGELOG.md) **BREAKING CHANGE**
 * Ambari [2.0.0](https://github.com/KhulnaSoft/integrations-core/blob/master/ambari/CHANGELOG.md) **BREAKING CHANGE**
 * Avi Vantage [1.0.1](https://github.com/KhulnaSoft/integrations-core/blob/master/avi_vantage/CHANGELOG.md)
 * Cassandra [1.13.0](https://github.com/KhulnaSoft/integrations-core/blob/master/cassandra/CHANGELOG.md)
-* Datadog Checks Base [21.0.1](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_base/CHANGELOG.md) **BREAKING CHANGE**
+* Khulnasoft Checks Base [21.0.1](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_base/CHANGELOG.md) **BREAKING CHANGE**
 * Cilium [1.7.2](https://github.com/KhulnaSoft/integrations-core/blob/master/cilium/CHANGELOG.md)
 * Cisco ACI [1.15.1](https://github.com/KhulnaSoft/integrations-core/blob/master/cisco_aci/CHANGELOG.md)
 * ClickHouse [2.3.0](https://github.com/KhulnaSoft/integrations-core/blob/master/clickhouse/CHANGELOG.md)
@@ -1688,11 +1688,11 @@
 * Yarn [2.0.0](https://github.com/KhulnaSoft/integrations-core/blob/master/yarn/CHANGELOG.md) **BREAKING CHANGE**
 * ZooKeeper [3.0.0](https://github.com/KhulnaSoft/integrations-core/blob/master/zk/CHANGELOG.md) **BREAKING CHANGE**
 
-## Datadog Agent version [7.30.1](https://github.com/KhulnaSoft/datadog-agent/blob/master/CHANGELOG.rst#7301)
+## Khulnasoft Agent version [7.30.1](https://github.com/KhulnaSoft/khulnasoft-agent/blob/master/CHANGELOG.rst#7301)
 
 * Revert requests bump back to 2.22.0 [#9912](https://github.com/KhulnaSoft/integrations-core/pull/9912)
 
-## Datadog Agent version [7.30.0](https://github.com/KhulnaSoft/datadog-agent/blob/master/CHANGELOG.rst#7300)
+## Khulnasoft Agent version [7.30.0](https://github.com/KhulnaSoft/khulnasoft-agent/blob/master/CHANGELOG.rst#7300)
 
 * ActiveMQ [2.1.0](https://github.com/KhulnaSoft/integrations-core/blob/master/activemq/CHANGELOG.md)
 * Aerospike [1.12.0](https://github.com/KhulnaSoft/integrations-core/blob/master/aerospike/CHANGELOG.md)
@@ -1701,8 +1701,8 @@
 * Cacti [1.8.3](https://github.com/KhulnaSoft/integrations-core/blob/master/cacti/CHANGELOG.md)
 * Cassandra [1.12.0](https://github.com/KhulnaSoft/integrations-core/blob/master/cassandra/CHANGELOG.md)
 * Ceph [2.4.1](https://github.com/KhulnaSoft/integrations-core/blob/master/ceph/CHANGELOG.md)
-* Datadog Checks Base [20.2.0](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_base/CHANGELOG.md) **BREAKING CHANGE**
-* Datadog Checks Downloader [3.4.0](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_downloader/CHANGELOG.md)
+* Khulnasoft Checks Base [20.2.0](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_base/CHANGELOG.md) **BREAKING CHANGE**
+* Khulnasoft Checks Downloader [3.4.0](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_downloader/CHANGELOG.md)
 * Cilium [1.7.1](https://github.com/KhulnaSoft/integrations-core/blob/master/cilium/CHANGELOG.md)
 * ClickHouse [2.2.1](https://github.com/KhulnaSoft/integrations-core/blob/master/clickhouse/CHANGELOG.md)
 * Confluent Platform [1.5.0](https://github.com/KhulnaSoft/integrations-core/blob/master/confluent_platform/CHANGELOG.md)
@@ -1754,15 +1754,15 @@
 * Tomcat [1.8.0](https://github.com/KhulnaSoft/integrations-core/blob/master/tomcat/CHANGELOG.md)
 * Twistlock [1.12.0](https://github.com/KhulnaSoft/integrations-core/blob/master/twistlock/CHANGELOG.md)
 
-## Datadog Agent version [7.29.0](https://github.com/KhulnaSoft/datadog-agent/blob/master/CHANGELOG.rst#7290)
+## Khulnasoft Agent version [7.29.0](https://github.com/KhulnaSoft/khulnasoft-agent/blob/master/CHANGELOG.rst#7290)
 
 * ActiveMQ [2.0.1](https://github.com/KhulnaSoft/integrations-core/blob/master/activemq/CHANGELOG.md)
 * Amazon Kafka [1.7.0](https://github.com/KhulnaSoft/integrations-core/blob/master/amazon_msk/CHANGELOG.md)
 * Azure IoT Edge [2.1.0](https://github.com/KhulnaSoft/integrations-core/blob/master/azure_iot_edge/CHANGELOG.md)
 * Cassandra Nodetool [1.8.0](https://github.com/KhulnaSoft/integrations-core/blob/master/cassandra_nodetool/CHANGELOG.md)
 * Cassandra [1.11.1](https://github.com/KhulnaSoft/integrations-core/blob/master/cassandra/CHANGELOG.md)
-* Datadog Checks Base [19.0.0](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_base/CHANGELOG.md) **BREAKING CHANGE**
-* Datadog Checks Downloader [3.3.0](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_downloader/CHANGELOG.md)
+* Khulnasoft Checks Base [19.0.0](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_base/CHANGELOG.md) **BREAKING CHANGE**
+* Khulnasoft Checks Downloader [3.3.0](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_downloader/CHANGELOG.md)
 * Cilium [1.6.0](https://github.com/KhulnaSoft/integrations-core/blob/master/cilium/CHANGELOG.md)
 * ClickHouse [2.2.0](https://github.com/KhulnaSoft/integrations-core/blob/master/clickhouse/CHANGELOG.md)
 * CockroachDB [1.6.0](https://github.com/KhulnaSoft/integrations-core/blob/master/cockroachdb/CHANGELOG.md)
@@ -1831,11 +1831,11 @@
 * Yarn [1.19.1](https://github.com/KhulnaSoft/integrations-core/blob/master/yarn/CHANGELOG.md)
 * ZooKeeper [2.10.0](https://github.com/KhulnaSoft/integrations-core/blob/master/zk/CHANGELOG.md)
 
-## Datadog Agent version [7.28.1](https://github.com/KhulnaSoft/datadog-agent/blob/master/CHANGELOG.rst#7281)
+## Khulnasoft Agent version [7.28.1](https://github.com/KhulnaSoft/khulnasoft-agent/blob/master/CHANGELOG.rst#7281)
 
 * TLS [2.5.0](https://github.com/KhulnaSoft/integrations-core/blob/master/tls/CHANGELOG.md)
 
-## Datadog Agent version [7.28.0](https://github.com/KhulnaSoft/datadog-agent/blob/master/CHANGELOG.rst#7280)
+## Khulnasoft Agent version [7.28.0](https://github.com/KhulnaSoft/khulnasoft-agent/blob/master/CHANGELOG.rst#7280)
 
 * Active Directory [1.11.0](https://github.com/KhulnaSoft/integrations-core/blob/master/active_directory/CHANGELOG.md)
 * ActiveMQ XML [1.11.0](https://github.com/KhulnaSoft/integrations-core/blob/master/activemq_xml/CHANGELOG.md)
@@ -1846,7 +1846,7 @@
 * ASP.NET [1.7.0](https://github.com/KhulnaSoft/integrations-core/blob/master/aspdotnet/CHANGELOG.md)
 * Cassandra [1.11.0](https://github.com/KhulnaSoft/integrations-core/blob/master/cassandra/CHANGELOG.md)
 * Ceph [2.4.0](https://github.com/KhulnaSoft/integrations-core/blob/master/ceph/CHANGELOG.md)
-* Datadog Checks Base [18.2.0](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_base/CHANGELOG.md) **BREAKING CHANGE**
+* Khulnasoft Checks Base [18.2.0](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_base/CHANGELOG.md) **BREAKING CHANGE**
 * Cisco ACI [1.15.0](https://github.com/KhulnaSoft/integrations-core/blob/master/cisco_aci/CHANGELOG.md)
 * ClickHouse [2.1.0](https://github.com/KhulnaSoft/integrations-core/blob/master/clickhouse/CHANGELOG.md)
 * Confluent Platform [1.4.0](https://github.com/KhulnaSoft/integrations-core/blob/master/confluent_platform/CHANGELOG.md)
@@ -1898,7 +1898,7 @@
 * Windows Service [3.1.0](https://github.com/KhulnaSoft/integrations-core/blob/master/windows_service/CHANGELOG.md)
 * WMI [1.10.0](https://github.com/KhulnaSoft/integrations-core/blob/master/wmi_check/CHANGELOG.md)
 
-## Datadog Agent version [7.27.0](https://github.com/KhulnaSoft/datadog-agent/blob/master/CHANGELOG.rst#7270)
+## Khulnasoft Agent version [7.27.0](https://github.com/KhulnaSoft/khulnasoft-agent/blob/master/CHANGELOG.rst#7270)
 
 * Active Directory [1.10.2](https://github.com/KhulnaSoft/integrations-core/blob/master/active_directory/CHANGELOG.md)
 * ActiveMQ XML [1.10.1](https://github.com/KhulnaSoft/integrations-core/blob/master/activemq_xml/CHANGELOG.md)
@@ -1913,7 +1913,7 @@
 * Cassandra Nodetool [1.7.1](https://github.com/KhulnaSoft/integrations-core/blob/master/cassandra_nodetool/CHANGELOG.md)
 * Cassandra [1.10.1](https://github.com/KhulnaSoft/integrations-core/blob/master/cassandra/CHANGELOG.md)
 * Ceph [2.3.1](https://github.com/KhulnaSoft/integrations-core/blob/master/ceph/CHANGELOG.md)
-* Datadog Checks Base [16.6.1](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_base/CHANGELOG.md)
+* Khulnasoft Checks Base [16.6.1](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_base/CHANGELOG.md)
 * Cilium [1.5.3](https://github.com/KhulnaSoft/integrations-core/blob/master/cilium/CHANGELOG.md)
 * Cisco ACI [1.14.0](https://github.com/KhulnaSoft/integrations-core/blob/master/cisco_aci/CHANGELOG.md)
 * ClickHouse [2.0.2](https://github.com/KhulnaSoft/integrations-core/blob/master/clickhouse/CHANGELOG.md)
@@ -2037,7 +2037,7 @@
 * Yarn [1.18.0](https://github.com/KhulnaSoft/integrations-core/blob/master/yarn/CHANGELOG.md)
 * ZooKeeper [2.9.3](https://github.com/KhulnaSoft/integrations-core/blob/master/zk/CHANGELOG.md)
 
-## Datadog Agent version [7.26.0](https://github.com/KhulnaSoft/datadog-agent/blob/master/CHANGELOG.rst#7260)
+## Khulnasoft Agent version [7.26.0](https://github.com/KhulnaSoft/khulnasoft-agent/blob/master/CHANGELOG.rst#7260)
 
 * ActiveMQ [1.9.0](https://github.com/KhulnaSoft/integrations-core/blob/master/activemq/CHANGELOG.md)
 * Amazon Kafka [1.4.1](https://github.com/KhulnaSoft/integrations-core/blob/master/amazon_msk/CHANGELOG.md)
@@ -2045,7 +2045,7 @@
 * Azure IoT Edge [2.0.0](https://github.com/KhulnaSoft/integrations-core/blob/master/azure_iot_edge/CHANGELOG.md) **BREAKING CHANGE**
 * Cacti [1.8.1](https://github.com/KhulnaSoft/integrations-core/blob/master/cacti/CHANGELOG.md)
 * Cassandra [1.10.0](https://github.com/KhulnaSoft/integrations-core/blob/master/cassandra/CHANGELOG.md)
-* Datadog Checks Base [16.3.2](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_base/CHANGELOG.md) **BREAKING CHANGE**
+* Khulnasoft Checks Base [16.3.2](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_base/CHANGELOG.md) **BREAKING CHANGE**
 * Cilium [1.5.2](https://github.com/KhulnaSoft/integrations-core/blob/master/cilium/CHANGELOG.md)
 * Cisco ACI [1.13.0](https://github.com/KhulnaSoft/integrations-core/blob/master/cisco_aci/CHANGELOG.md)
 * ClickHouse [2.0.1](https://github.com/KhulnaSoft/integrations-core/blob/master/clickhouse/CHANGELOG.md)
@@ -2102,7 +2102,7 @@
 * VoltDB [1.0.0](https://github.com/KhulnaSoft/integrations-core/blob/master/voltdb/CHANGELOG.md)
 * Windows Service [3.0.0](https://github.com/KhulnaSoft/integrations-core/blob/master/windows_service/CHANGELOG.md) **BREAKING CHANGE**
 
-## Datadog Agent version [7.25.0](https://github.com/KhulnaSoft/datadog-agent/blob/master/CHANGELOG.rst#7250)
+## Khulnasoft Agent version [7.25.0](https://github.com/KhulnaSoft/khulnasoft-agent/blob/master/CHANGELOG.rst#7250)
 
 * Active Directory [1.10.1](https://github.com/KhulnaSoft/integrations-core/blob/master/active_directory/CHANGELOG.md)
 * ActiveMQ [1.8.0](https://github.com/KhulnaSoft/integrations-core/blob/master/activemq/CHANGELOG.md)
@@ -2112,7 +2112,7 @@
 * Azure IoT Edge [1.1.1](https://github.com/KhulnaSoft/integrations-core/blob/master/azure_iot_edge/CHANGELOG.md)
 * Cassandra [1.9.0](https://github.com/KhulnaSoft/integrations-core/blob/master/cassandra/CHANGELOG.md)
 * Ceph [2.3.0](https://github.com/KhulnaSoft/integrations-core/blob/master/ceph/CHANGELOG.md)
-* Datadog Checks Base [15.7.2](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_base/CHANGELOG.md)
+* Khulnasoft Checks Base [15.7.2](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_base/CHANGELOG.md)
 * Cilium [1.5.1](https://github.com/KhulnaSoft/integrations-core/blob/master/cilium/CHANGELOG.md)
 * Confluent Platform [1.3.0](https://github.com/KhulnaSoft/integrations-core/blob/master/confluent_platform/CHANGELOG.md)
 * Consul [1.17.1](https://github.com/KhulnaSoft/integrations-core/blob/master/consul/CHANGELOG.md)
@@ -2166,7 +2166,7 @@
 * Windows Service [2.8.0](https://github.com/KhulnaSoft/integrations-core/blob/master/windows_service/CHANGELOG.md)
 * ZooKeeper [2.9.2](https://github.com/KhulnaSoft/integrations-core/blob/master/zk/CHANGELOG.md)
 
-## Datadog Agent version [7.24.0](https://github.com/KhulnaSoft/datadog-agent/blob/master/CHANGELOG.rst#7240)
+## Khulnasoft Agent version [7.24.0](https://github.com/KhulnaSoft/khulnasoft-agent/blob/master/CHANGELOG.rst#7240)
 
 * Active Directory [1.10.0](https://github.com/KhulnaSoft/integrations-core/blob/master/active_directory/CHANGELOG.md)
 * ActiveMQ XML [1.10.0](https://github.com/KhulnaSoft/integrations-core/blob/master/activemq_xml/CHANGELOG.md)
@@ -2179,8 +2179,8 @@
 * Cacti [1.8.0](https://github.com/KhulnaSoft/integrations-core/blob/master/cacti/CHANGELOG.md)
 * Cassandra [1.8.0](https://github.com/KhulnaSoft/integrations-core/blob/master/cassandra/CHANGELOG.md)
 * Ceph [2.2.0](https://github.com/KhulnaSoft/integrations-core/blob/master/ceph/CHANGELOG.md)
-* Datadog Checks Base [15.6.1](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_base/CHANGELOG.md) **BREAKING CHANGE**
-* Datadog Checks Downloader [3.2.0](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_downloader/CHANGELOG.md)
+* Khulnasoft Checks Base [15.6.1](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_base/CHANGELOG.md) **BREAKING CHANGE**
+* Khulnasoft Checks Downloader [3.2.0](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_downloader/CHANGELOG.md)
 * Cilium [1.5.0](https://github.com/KhulnaSoft/integrations-core/blob/master/cilium/CHANGELOG.md)
 * Cisco ACI [1.12.0](https://github.com/KhulnaSoft/integrations-core/blob/master/cisco_aci/CHANGELOG.md)
 * ClickHouse [2.0.0](https://github.com/KhulnaSoft/integrations-core/blob/master/clickhouse/CHANGELOG.md) **BREAKING CHANGE**
@@ -2277,7 +2277,7 @@
 * Yarn [1.17.0](https://github.com/KhulnaSoft/integrations-core/blob/master/yarn/CHANGELOG.md)
 * ZooKeeper [2.8.0](https://github.com/KhulnaSoft/integrations-core/blob/master/zk/CHANGELOG.md)
 
-## Datadog Agent version [7.23.0](https://github.com/KhulnaSoft/datadog-agent/blob/master/CHANGELOG.rst#7230)
+## Khulnasoft Agent version [7.23.0](https://github.com/KhulnaSoft/khulnasoft-agent/blob/master/CHANGELOG.rst#7230)
 
 * ActiveMQ XML [1.9.0](https://github.com/KhulnaSoft/integrations-core/blob/master/activemq_xml/CHANGELOG.md)
 * ActiveMQ [1.6.1](https://github.com/KhulnaSoft/integrations-core/blob/master/activemq/CHANGELOG.md)
@@ -2290,8 +2290,8 @@
 * Cacti [1.7.1](https://github.com/KhulnaSoft/integrations-core/blob/master/cacti/CHANGELOG.md)
 * Cassandra Nodetool [1.7.0](https://github.com/KhulnaSoft/integrations-core/blob/master/cassandra_nodetool/CHANGELOG.md)
 * Cassandra [1.7.1](https://github.com/KhulnaSoft/integrations-core/blob/master/cassandra/CHANGELOG.md)
-* Datadog Checks Base [14.0.1](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_base/CHANGELOG.md) **BREAKING CHANGE**
-* Datadog Checks Downloader [3.1.1](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_downloader/CHANGELOG.md)
+* Khulnasoft Checks Base [14.0.1](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_base/CHANGELOG.md) **BREAKING CHANGE**
+* Khulnasoft Checks Downloader [3.1.1](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_downloader/CHANGELOG.md)
 * Cilium [1.4.0](https://github.com/KhulnaSoft/integrations-core/blob/master/cilium/CHANGELOG.md)
 * Cisco ACI [1.11.0](https://github.com/KhulnaSoft/integrations-core/blob/master/cisco_aci/CHANGELOG.md)
 * ClickHouse [1.4.0](https://github.com/KhulnaSoft/integrations-core/blob/master/clickhouse/CHANGELOG.md)
@@ -2384,11 +2384,11 @@
 * Windows Event Log [2.6.1](https://github.com/KhulnaSoft/integrations-core/blob/master/win32_event_log/CHANGELOG.md)
 * Yarn [1.16.0](https://github.com/KhulnaSoft/integrations-core/blob/master/yarn/CHANGELOG.md)
 
-## Datadog Agent version [7.22.1](https://github.com/KhulnaSoft/datadog-agent/blob/master/CHANGELOG.rst#7221)
+## Khulnasoft Agent version [7.22.1](https://github.com/KhulnaSoft/khulnasoft-agent/blob/master/CHANGELOG.rst#7221)
 
 * Linux proc extras [2.0.0](https://github.com/KhulnaSoft/integrations-core/blob/master/linux_proc_extras/CHANGELOG.md) **BREAKING CHANGE**
 
-## Datadog Agent version [7.22.0](https://github.com/KhulnaSoft/datadog-agent/blob/master/CHANGELOG.rst#7220)
+## Khulnasoft Agent version [7.22.0](https://github.com/KhulnaSoft/khulnasoft-agent/blob/master/CHANGELOG.rst#7220)
 
 * Active Directory [1.9.1](https://github.com/KhulnaSoft/integrations-core/blob/master/active_directory/CHANGELOG.md)
 * ActiveMQ XML [1.8.1](https://github.com/KhulnaSoft/integrations-core/blob/master/activemq_xml/CHANGELOG.md)
@@ -2399,7 +2399,7 @@
 * Apache [1.13.1](https://github.com/KhulnaSoft/integrations-core/blob/master/apache/CHANGELOG.md)
 * Cassandra [1.7.0](https://github.com/KhulnaSoft/integrations-core/blob/master/cassandra/CHANGELOG.md)
 * Ceph [2.1.2](https://github.com/KhulnaSoft/integrations-core/blob/master/ceph/CHANGELOG.md)
-* Datadog Checks Base [12.0.0](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_base/CHANGELOG.md) **BREAKING CHANGE**
+* Khulnasoft Checks Base [12.0.0](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_base/CHANGELOG.md) **BREAKING CHANGE**
 * Cilium [1.3.0](https://github.com/KhulnaSoft/integrations-core/blob/master/cilium/CHANGELOG.md)
 * Cisco ACI [1.10.1](https://github.com/KhulnaSoft/integrations-core/blob/master/cisco_aci/CHANGELOG.md)
 * ClickHouse [1.3.2](https://github.com/KhulnaSoft/integrations-core/blob/master/clickhouse/CHANGELOG.md)
@@ -2472,11 +2472,11 @@
 * Yarn [1.15.0](https://github.com/KhulnaSoft/integrations-core/blob/master/yarn/CHANGELOG.md)
 * ZooKeeper [2.7.0](https://github.com/KhulnaSoft/integrations-core/blob/master/zk/CHANGELOG.md)
 
-## Datadog Agent version [7.21.1](https://github.com/KhulnaSoft/datadog-agent/blob/master/CHANGELOG.rst#7211)
+## Khulnasoft Agent version [7.21.1](https://github.com/KhulnaSoft/khulnasoft-agent/blob/master/CHANGELOG.rst#7211)
 
-* Datadog Checks Downloader [3.1.0](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_downloader/CHANGELOG.md)
+* Khulnasoft Checks Downloader [3.1.0](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_downloader/CHANGELOG.md)
 
-## Datadog Agent version [7.21.0](https://github.com/KhulnaSoft/datadog-agent/blob/master/CHANGELOG.rst#7210)
+## Khulnasoft Agent version [7.21.0](https://github.com/KhulnaSoft/khulnasoft-agent/blob/master/CHANGELOG.rst#7210)
 
 * Active Directory [1.9.0](https://github.com/KhulnaSoft/integrations-core/blob/master/active_directory/CHANGELOG.md)
 * ActiveMQ XML [1.8.0](https://github.com/KhulnaSoft/integrations-core/blob/master/activemq_xml/CHANGELOG.md)
@@ -2487,8 +2487,8 @@
 * ASP.NET [1.6.0](https://github.com/KhulnaSoft/integrations-core/blob/master/aspdotnet/CHANGELOG.md)
 * Cassandra [1.6.1](https://github.com/KhulnaSoft/integrations-core/blob/master/cassandra/CHANGELOG.md)
 * Ceph [2.1.1](https://github.com/KhulnaSoft/integrations-core/blob/master/ceph/CHANGELOG.md)
-* Datadog Checks Base [11.12.0](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_base/CHANGELOG.md)
-* Datadog Checks Downloader [3.0.0](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_downloader/CHANGELOG.md) **BREAKING CHANGE**
+* Khulnasoft Checks Base [11.12.0](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_base/CHANGELOG.md)
+* Khulnasoft Checks Downloader [3.0.0](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_downloader/CHANGELOG.md) **BREAKING CHANGE**
 * Cisco ACI [1.10.0](https://github.com/KhulnaSoft/integrations-core/blob/master/cisco_aci/CHANGELOG.md)
 * ClickHouse [1.3.1](https://github.com/KhulnaSoft/integrations-core/blob/master/clickhouse/CHANGELOG.md)
 * Confluent Platform [1.1.1](https://github.com/KhulnaSoft/integrations-core/blob/master/confluent_platform/CHANGELOG.md)
@@ -2578,15 +2578,15 @@
 * Yarn [1.14.0](https://github.com/KhulnaSoft/integrations-core/blob/master/yarn/CHANGELOG.md)
 * ZooKeeper [2.6.1](https://github.com/KhulnaSoft/integrations-core/blob/master/zk/CHANGELOG.md)
 
-## Datadog Agent version [7.20.2](https://github.com/KhulnaSoft/datadog-agent/blob/master/CHANGELOG.rst#7202)
+## Khulnasoft Agent version [7.20.2](https://github.com/KhulnaSoft/khulnasoft-agent/blob/master/CHANGELOG.rst#7202)
 
 * Redis [2.1.1](https://github.com/KhulnaSoft/integrations-core/blob/master/redisdb/CHANGELOG.md)
 
-## Datadog Agent version [7.20.1](https://github.com/KhulnaSoft/datadog-agent/blob/master/CHANGELOG.rst#7201)
+## Khulnasoft Agent version [7.20.1](https://github.com/KhulnaSoft/khulnasoft-agent/blob/master/CHANGELOG.rst#7201)
 
 * Disk [2.9.1](https://github.com/KhulnaSoft/integrations-core/blob/master/disk/CHANGELOG.md)
 
-## Datadog Agent version [7.20.0](https://github.com/KhulnaSoft/datadog-agent/blob/master/CHANGELOG.rst#7200)
+## Khulnasoft Agent version [7.20.0](https://github.com/KhulnaSoft/khulnasoft-agent/blob/master/CHANGELOG.rst#7200)
 
 * Active Directory [1.8.0](https://github.com/KhulnaSoft/integrations-core/blob/master/active_directory/CHANGELOG.md)
 * ActiveMQ XML [1.7.0](https://github.com/KhulnaSoft/integrations-core/blob/master/activemq_xml/CHANGELOG.md)
@@ -2602,8 +2602,8 @@
 * Cassandra Nodetool [1.6.0](https://github.com/KhulnaSoft/integrations-core/blob/master/cassandra_nodetool/CHANGELOG.md)
 * Cassandra [1.6.0](https://github.com/KhulnaSoft/integrations-core/blob/master/cassandra/CHANGELOG.md)
 * Ceph [2.1.0](https://github.com/KhulnaSoft/integrations-core/blob/master/ceph/CHANGELOG.md)
-* Datadog Checks Base [11.10.0](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_base/CHANGELOG.md)
-* Datadog Checks Downloader [2.5.0](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_downloader/CHANGELOG.md)
+* Khulnasoft Checks Base [11.10.0](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_base/CHANGELOG.md)
+* Khulnasoft Checks Downloader [2.5.0](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_downloader/CHANGELOG.md)
 * Cilium [1.2.0](https://github.com/KhulnaSoft/integrations-core/blob/master/cilium/CHANGELOG.md)
 * Cisco ACI [1.9.0](https://github.com/KhulnaSoft/integrations-core/blob/master/cisco_aci/CHANGELOG.md)
 * ClickHouse [1.3.0](https://github.com/KhulnaSoft/integrations-core/blob/master/clickhouse/CHANGELOG.md)
@@ -2728,13 +2728,13 @@
 * Yarn [1.13.0](https://github.com/KhulnaSoft/integrations-core/blob/master/yarn/CHANGELOG.md)
 * ZooKeeper [2.6.0](https://github.com/KhulnaSoft/integrations-core/blob/master/zk/CHANGELOG.md)
 
-## Datadog Agent version [7.19.2](https://github.com/KhulnaSoft/datadog-agent/blob/master/CHANGELOG.rst#7192)
+## Khulnasoft Agent version [7.19.2](https://github.com/KhulnaSoft/khulnasoft-agent/blob/master/CHANGELOG.rst#7192)
 
-* Datadog Checks Base [11.5.1](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_base/CHANGELOG.md)
+* Khulnasoft Checks Base [11.5.1](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_base/CHANGELOG.md)
 * HAProxy [2.8.1](https://github.com/KhulnaSoft/integrations-core/blob/master/haproxy/CHANGELOG.md)
 * Vault [2.3.2](https://github.com/KhulnaSoft/integrations-core/blob/master/vault/CHANGELOG.md)
 
-## Datadog Agent version [7.19.0](https://github.com/KhulnaSoft/datadog-agent/blob/master/CHANGELOG.rst#7190)
+## Khulnasoft Agent version [7.19.0](https://github.com/KhulnaSoft/khulnasoft-agent/blob/master/CHANGELOG.rst#7190)
 
 * Active Directory [1.7.0](https://github.com/KhulnaSoft/integrations-core/blob/master/active_directory/CHANGELOG.md)
 * ActiveMQ XML [1.6.1](https://github.com/KhulnaSoft/integrations-core/blob/master/activemq_xml/CHANGELOG.md)
@@ -2749,7 +2749,7 @@
 * Cassandra Nodetool [1.5.2](https://github.com/KhulnaSoft/integrations-core/blob/master/cassandra_nodetool/CHANGELOG.md)
 * Cassandra [1.5.0](https://github.com/KhulnaSoft/integrations-core/blob/master/cassandra/CHANGELOG.md)
 * Ceph [2.0.0](https://github.com/KhulnaSoft/integrations-core/blob/master/ceph/CHANGELOG.md) **BREAKING CHANGE**
-* Datadog Checks Base [11.5.0](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_base/CHANGELOG.md)
+* Khulnasoft Checks Base [11.5.0](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_base/CHANGELOG.md)
 * Cilium [1.1.0](https://github.com/KhulnaSoft/integrations-core/blob/master/cilium/CHANGELOG.md)
 * Cisco ACI [1.8.4](https://github.com/KhulnaSoft/integrations-core/blob/master/cisco_aci/CHANGELOG.md)
 * ClickHouse [1.2.0](https://github.com/KhulnaSoft/integrations-core/blob/master/clickhouse/CHANGELOG.md)
@@ -2854,13 +2854,13 @@
 * Yarn [1.12.1](https://github.com/KhulnaSoft/integrations-core/blob/master/yarn/CHANGELOG.md)
 * ZooKeeper [2.4.2](https://github.com/KhulnaSoft/integrations-core/blob/master/zk/CHANGELOG.md)
 
-## Datadog Agent version [7.18.0](https://github.com/KhulnaSoft/datadog-agent/blob/master/CHANGELOG.rst#7180)
+## Khulnasoft Agent version [7.18.0](https://github.com/KhulnaSoft/khulnasoft-agent/blob/master/CHANGELOG.rst#7180)
 
 * Aerospike [1.6.0](https://github.com/KhulnaSoft/integrations-core/blob/master/aerospike/CHANGELOG.md)
 * Airflow [1.1.0](https://github.com/KhulnaSoft/integrations-core/blob/master/airflow/CHANGELOG.md)
 * Apache [1.10.1](https://github.com/KhulnaSoft/integrations-core/blob/master/apache/CHANGELOG.md)
-* Datadog Checks Base [11.1.0](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_base/CHANGELOG.md) **BREAKING CHANGE**
-* Datadog Checks Downloader [2.4.0](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_downloader/CHANGELOG.md)
+* Khulnasoft Checks Base [11.1.0](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_base/CHANGELOG.md) **BREAKING CHANGE**
+* Khulnasoft Checks Downloader [2.4.0](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_downloader/CHANGELOG.md)
 * Cisco ACI [1.8.3](https://github.com/KhulnaSoft/integrations-core/blob/master/cisco_aci/CHANGELOG.md)
 * ClickHouse [1.1.0](https://github.com/KhulnaSoft/integrations-core/blob/master/clickhouse/CHANGELOG.md)
 * Consul [1.12.2](https://github.com/KhulnaSoft/integrations-core/blob/master/consul/CHANGELOG.md)
@@ -2911,18 +2911,18 @@
 * Windows Service [2.5.1](https://github.com/KhulnaSoft/integrations-core/blob/master/windows_service/CHANGELOG.md)
 * WMI [1.7.2](https://github.com/KhulnaSoft/integrations-core/blob/master/wmi_check/CHANGELOG.md)
 
-## Datadog Agent version [7.17.1](https://github.com/KhulnaSoft/datadog-agent/blob/master/CHANGELOG.rst#7171)
+## Khulnasoft Agent version [7.17.1](https://github.com/KhulnaSoft/khulnasoft-agent/blob/master/CHANGELOG.rst#7171)
 
 * Kubelet [3.5.2](https://github.com/KhulnaSoft/integrations-core/blob/master/kubelet/CHANGELOG.md)
 
-## Datadog Agent version [7.17.0](https://github.com/KhulnaSoft/datadog-agent/blob/master/CHANGELOG.rst#7170)
+## Khulnasoft Agent version [7.17.0](https://github.com/KhulnaSoft/khulnasoft-agent/blob/master/CHANGELOG.rst#7170)
 
 * Aerospike [1.5.0](https://github.com/KhulnaSoft/integrations-core/blob/master/aerospike/CHANGELOG.md)
 * Airflow [1.0.0](https://github.com/KhulnaSoft/integrations-core/blob/master/airflow/CHANGELOG.md)
 * Apache [1.9.5](https://github.com/KhulnaSoft/integrations-core/blob/master/apache/CHANGELOG.md)
 * Cassandra [1.4.0](https://github.com/KhulnaSoft/integrations-core/blob/master/cassandra/CHANGELOG.md)
-* Datadog Checks Base [10.3.1](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_base/CHANGELOG.md)
-* Datadog Checks Downloader [2.2.0](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_downloader/CHANGELOG.md)
+* Khulnasoft Checks Base [10.3.1](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_base/CHANGELOG.md)
+* Khulnasoft Checks Downloader [2.2.0](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_downloader/CHANGELOG.md)
 * Cilium [1.0.2](https://github.com/KhulnaSoft/integrations-core/blob/master/cilium/CHANGELOG.md)
 * Cisco ACI [1.8.2](https://github.com/KhulnaSoft/integrations-core/blob/master/cisco_aci/CHANGELOG.md)
 * ClickHouse [1.0.1](https://github.com/KhulnaSoft/integrations-core/blob/master/clickhouse/CHANGELOG.md) **BREAKING CHANGE**
@@ -3004,11 +3004,11 @@
 * Yarn [1.12.0](https://github.com/KhulnaSoft/integrations-core/blob/master/yarn/CHANGELOG.md)
 * ZooKeeper [2.4.0](https://github.com/KhulnaSoft/integrations-core/blob/master/zk/CHANGELOG.md)
 
-## Datadog Agent version [7.16.1](https://github.com/KhulnaSoft/datadog-agent/blob/master/CHANGELOG.rst#7161)
+## Khulnasoft Agent version [7.16.1](https://github.com/KhulnaSoft/khulnasoft-agent/blob/master/CHANGELOG.rst#7161)
 
 * Apache [1.9.2](https://github.com/KhulnaSoft/integrations-core/blob/master/apache/CHANGELOG.md)
 
-## Datadog Agent version [7.16.0](https://github.com/KhulnaSoft/datadog-agent/blob/master/CHANGELOG.rst#7160)
+## Khulnasoft Agent version [7.16.0](https://github.com/KhulnaSoft/khulnasoft-agent/blob/master/CHANGELOG.rst#7160)
 
 * Active Directory [1.6.0](https://github.com/KhulnaSoft/integrations-core/blob/master/active_directory/CHANGELOG.md)
 * ActiveMQ XML [1.5.0](https://github.com/KhulnaSoft/integrations-core/blob/master/activemq_xml/CHANGELOG.md)
@@ -3021,8 +3021,8 @@
 * Btrfs [1.8.1](https://github.com/KhulnaSoft/integrations-core/blob/master/btrfs/CHANGELOG.md)
 * Cacti [1.6.0](https://github.com/KhulnaSoft/integrations-core/blob/master/cacti/CHANGELOG.md)
 * Cassandra Nodetool [1.5.1](https://github.com/KhulnaSoft/integrations-core/blob/master/cassandra_nodetool/CHANGELOG.md)
-* Datadog Checks Base [10.0.2](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_base/CHANGELOG.md)
-* Datadog Checks Downloader [2.0.0](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_downloader/CHANGELOG.md) **BREAKING CHANGE**
+* Khulnasoft Checks Base [10.0.2](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_base/CHANGELOG.md)
+* Khulnasoft Checks Downloader [2.0.0](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_downloader/CHANGELOG.md) **BREAKING CHANGE**
 * Cilium [1.0.1](https://github.com/KhulnaSoft/integrations-core/blob/master/cilium/CHANGELOG.md)
 * Cisco ACI [1.8.1](https://github.com/KhulnaSoft/integrations-core/blob/master/cisco_aci/CHANGELOG.md)
 * ClickHouse [0.0.1](https://github.com/KhulnaSoft/integrations-core/blob/master/clickhouse/CHANGELOG.md)
@@ -3094,7 +3094,7 @@
 * Yarn [1.11.0](https://github.com/KhulnaSoft/integrations-core/blob/master/yarn/CHANGELOG.md)
 * ZooKeeper [2.3.0](https://github.com/KhulnaSoft/integrations-core/blob/master/zk/CHANGELOG.md)
 
-## Datadog Agent version [6.15.0](https://github.com/KhulnaSoft/datadog-agent/blob/master/CHANGELOG.rst#6150)
+## Khulnasoft Agent version [6.15.0](https://github.com/KhulnaSoft/khulnasoft-agent/blob/master/CHANGELOG.rst#6150)
 
 * Active Directory [1.5.0](https://github.com/KhulnaSoft/integrations-core/blob/master/active_directory/CHANGELOG.md)
 * ActiveMQ XML [1.4.0](https://github.com/KhulnaSoft/integrations-core/blob/master/activemq_xml/CHANGELOG.md)
@@ -3103,7 +3103,7 @@
 * Btrfs [1.7.1](https://github.com/KhulnaSoft/integrations-core/blob/master/btrfs/CHANGELOG.md)
 * Cacti [1.5.0](https://github.com/KhulnaSoft/integrations-core/blob/master/cacti/CHANGELOG.md)
 * Ceph [1.8.0](https://github.com/KhulnaSoft/integrations-core/blob/master/ceph/CHANGELOG.md)
-* Datadog Checks Base [9.4.2](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_base/CHANGELOG.md)
+* Khulnasoft Checks Base [9.4.2](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_base/CHANGELOG.md)
 * Consul [1.10.0](https://github.com/KhulnaSoft/integrations-core/blob/master/consul/CHANGELOG.md)
 * CouchDB [3.5.0](https://github.com/KhulnaSoft/integrations-core/blob/master/couch/CHANGELOG.md)
 * Couchbase [1.11.0](https://github.com/KhulnaSoft/integrations-core/blob/master/couchbase/CHANGELOG.md)
@@ -3172,13 +3172,13 @@
 * WMI [1.5.0](https://github.com/KhulnaSoft/integrations-core/blob/master/wmi_check/CHANGELOG.md)
 * Yarn [1.10.0](https://github.com/KhulnaSoft/integrations-core/blob/master/yarn/CHANGELOG.md)
 
-## Datadog Agent version [6.14.0](https://github.com/KhulnaSoft/datadog-agent/blob/master/CHANGELOG.rst#6140)
+## Khulnasoft Agent version [6.14.0](https://github.com/KhulnaSoft/khulnasoft-agent/blob/master/CHANGELOG.rst#6140)
 
 * ActiveMQ XML [1.3.0](https://github.com/KhulnaSoft/integrations-core/blob/master/activemq_xml/CHANGELOG.md)
 * Ambari [1.1.2](https://github.com/KhulnaSoft/integrations-core/blob/master/ambari/CHANGELOG.md)
 * Apache [1.7.1](https://github.com/KhulnaSoft/integrations-core/blob/master/apache/CHANGELOG.md)
 * Ceph [1.7.0](https://github.com/KhulnaSoft/integrations-core/blob/master/ceph/CHANGELOG.md)
-* Datadog Checks Base [9.3.2](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_base/CHANGELOG.md)
+* Khulnasoft Checks Base [9.3.2](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_base/CHANGELOG.md)
 * Cisco ACI [1.7.2](https://github.com/KhulnaSoft/integrations-core/blob/master/cisco_aci/CHANGELOG.md)
 * Consul [1.9.1](https://github.com/KhulnaSoft/integrations-core/blob/master/consul/CHANGELOG.md)
 * CouchDB [3.4.1](https://github.com/KhulnaSoft/integrations-core/blob/master/couch/CHANGELOG.md)
@@ -3228,14 +3228,14 @@
 * Vertica [1.0.0](https://github.com/KhulnaSoft/integrations-core/blob/master/vertica/CHANGELOG.md)
 * Windows Event Log [2.0.1](https://github.com/KhulnaSoft/integrations-core/blob/master/win32_event_log/CHANGELOG.md)
 
-## Datadog Agent version [6.13.0](https://github.com/KhulnaSoft/datadog-agent/blob/master/CHANGELOG.rst#6130)
+## Khulnasoft Agent version [6.13.0](https://github.com/KhulnaSoft/khulnasoft-agent/blob/master/CHANGELOG.rst#6130)
 
 * Active Directory [1.4.1](https://github.com/KhulnaSoft/integrations-core/blob/master/active_directory/CHANGELOG.md)
 * ActiveMQ [1.2.0](https://github.com/KhulnaSoft/integrations-core/blob/master/activemq/CHANGELOG.md)
 * Ambari [1.1.1](https://github.com/KhulnaSoft/integrations-core/blob/master/ambari/CHANGELOG.md)
 * ASP.NET [1.2.1](https://github.com/KhulnaSoft/integrations-core/blob/master/aspdotnet/CHANGELOG.md)
 * Ceph [1.6.0](https://github.com/KhulnaSoft/integrations-core/blob/master/ceph/CHANGELOG.md)
-* Datadog Checks Base [9.2.1](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_base/CHANGELOG.md) **BREAKING CHANGE**
+* Khulnasoft Checks Base [9.2.1](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_base/CHANGELOG.md) **BREAKING CHANGE**
 * Cisco ACI [1.7.1](https://github.com/KhulnaSoft/integrations-core/blob/master/cisco_aci/CHANGELOG.md)
 * Couchbase [1.8.1](https://github.com/KhulnaSoft/integrations-core/blob/master/couchbase/CHANGELOG.md)
 * Disk [2.4.0](https://github.com/KhulnaSoft/integrations-core/blob/master/disk/CHANGELOG.md)
@@ -3280,16 +3280,16 @@
 * WMI [1.4.2](https://github.com/KhulnaSoft/integrations-core/blob/master/wmi_check/CHANGELOG.md)
 * Yarn [1.9.0](https://github.com/KhulnaSoft/integrations-core/blob/master/yarn/CHANGELOG.md)
 
-## Datadog Agent version [6.12.2](https://github.com/KhulnaSoft/datadog-agent/blob/master/CHANGELOG.rst#6122)
+## Khulnasoft Agent version [6.12.2](https://github.com/KhulnaSoft/khulnasoft-agent/blob/master/CHANGELOG.rst#6122)
 
-* Datadog Checks Base [8.4.1](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_base/CHANGELOG.md)
+* Khulnasoft Checks Base [8.4.1](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_base/CHANGELOG.md)
 
-## Datadog Agent version [6.12.1](https://github.com/KhulnaSoft/datadog-agent/blob/master/CHANGELOG.rst#6121)
+## Khulnasoft Agent version [6.12.1](https://github.com/KhulnaSoft/khulnasoft-agent/blob/master/CHANGELOG.rst#6121)
 
 * Amazon ECS Fargate [2.2.1](https://github.com/KhulnaSoft/integrations-core/blob/master/ecs_fargate/CHANGELOG.md)
 * Kubelet [3.2.1](https://github.com/KhulnaSoft/integrations-core/blob/master/kubelet/CHANGELOG.md)
 
-## Datadog Agent version [6.12.0](https://github.com/KhulnaSoft/datadog-agent/blob/master/CHANGELOG.rst#6120)
+## Khulnasoft Agent version [6.12.0](https://github.com/KhulnaSoft/khulnasoft-agent/blob/master/CHANGELOG.rst#6120)
 
 * Active Directory [1.4.0](https://github.com/KhulnaSoft/integrations-core/blob/master/active_directory/CHANGELOG.md)
 * Aerospike [1.3.0](https://github.com/KhulnaSoft/integrations-core/blob/master/aerospike/CHANGELOG.md)
@@ -3300,8 +3300,8 @@
 * Cassandra Nodetool [1.5.0](https://github.com/KhulnaSoft/integrations-core/blob/master/cassandra_nodetool/CHANGELOG.md)
 * Cassandra [1.3.1](https://github.com/KhulnaSoft/integrations-core/blob/master/cassandra/CHANGELOG.md)
 * Ceph [1.5.1](https://github.com/KhulnaSoft/integrations-core/blob/master/ceph/CHANGELOG.md)
-* Datadog Checks Base [8.3.3](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_base/CHANGELOG.md) **BREAKING CHANGE**
-* Datadog Checks Downloader [0.6.0](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_downloader/CHANGELOG.md)
+* Khulnasoft Checks Base [8.3.3](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_base/CHANGELOG.md) **BREAKING CHANGE**
+* Khulnasoft Checks Downloader [0.6.0](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_downloader/CHANGELOG.md)
 * Cisco ACI [1.6.0](https://github.com/KhulnaSoft/integrations-core/blob/master/cisco_aci/CHANGELOG.md)
 * CockroachDB [1.1.0](https://github.com/KhulnaSoft/integrations-core/blob/master/cockroachdb/CHANGELOG.md)
 * Consul [1.8.0](https://github.com/KhulnaSoft/integrations-core/blob/master/consul/CHANGELOG.md)
@@ -3403,19 +3403,19 @@
 * Yarn [1.7.1](https://github.com/KhulnaSoft/integrations-core/blob/master/yarn/CHANGELOG.md)
 * ZooKeeper [2.2.0](https://github.com/KhulnaSoft/integrations-core/blob/master/zk/CHANGELOG.md)
 
-## Datadog Agent version [6.11.3](https://github.com/KhulnaSoft/datadog-agent/blob/master/CHANGELOG.rst#6113)
+## Khulnasoft Agent version [6.11.3](https://github.com/KhulnaSoft/khulnasoft-agent/blob/master/CHANGELOG.rst#6113)
 
 * There were no integration updates for this version of the Agent.
 
-## Datadog Agent version [6.11.2](https://github.com/KhulnaSoft/datadog-agent/blob/master/CHANGELOG.rst#6112)
+## Khulnasoft Agent version [6.11.2](https://github.com/KhulnaSoft/khulnasoft-agent/blob/master/CHANGELOG.rst#6112)
 
 * There were no integration updates for this version of the Agent.
 
-## Datadog Agent version [6.11.1](https://github.com/KhulnaSoft/datadog-agent/blob/master/CHANGELOG.rst#6111)
+## Khulnasoft Agent version [6.11.1](https://github.com/KhulnaSoft/khulnasoft-agent/blob/master/CHANGELOG.rst#6111)
 
 * There were no integration updates for this version of the Agent.
 
-## Datadog Agent version [6.11.0](https://github.com/KhulnaSoft/datadog-agent/blob/master/CHANGELOG.rst#6110)
+## Khulnasoft Agent version [6.11.0](https://github.com/KhulnaSoft/khulnasoft-agent/blob/master/CHANGELOG.rst#6110)
 
 * ActiveMQ XML [1.2.0](https://github.com/KhulnaSoft/integrations-core/blob/master/activemq_xml/CHANGELOG.md)
 * Aerospike [1.2.0](https://github.com/KhulnaSoft/integrations-core/blob/master/aerospike/CHANGELOG.md)
@@ -3423,8 +3423,8 @@
 * Btrfs [1.6.0](https://github.com/KhulnaSoft/integrations-core/blob/master/btrfs/CHANGELOG.md)
 * Cacti [1.4.0](https://github.com/KhulnaSoft/integrations-core/blob/master/cacti/CHANGELOG.md)
 * Cassandra Nodetool [1.4.0](https://github.com/KhulnaSoft/integrations-core/blob/master/cassandra_nodetool/CHANGELOG.md)
-* Datadog Checks Base [6.6.1](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_base/CHANGELOG.md)
-* Datadog Checks Downloader [0.4.0](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_downloader/CHANGELOG.md)
+* Khulnasoft Checks Base [6.6.1](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_base/CHANGELOG.md)
+* Khulnasoft Checks Downloader [0.4.0](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_downloader/CHANGELOG.md)
 * CouchDB [3.2.1](https://github.com/KhulnaSoft/integrations-core/blob/master/couch/CHANGELOG.md)
 * Couchbase [1.7.1](https://github.com/KhulnaSoft/integrations-core/blob/master/couchbase/CHANGELOG.md)
 * DNS [1.3.0](https://github.com/KhulnaSoft/integrations-core/blob/master/dns_check/CHANGELOG.md)
@@ -3457,11 +3457,11 @@
 * Twistlock [1.0.0](https://github.com/KhulnaSoft/integrations-core/blob/master/twistlock/CHANGELOG.md)
 * Varnish [1.3.1](https://github.com/KhulnaSoft/integrations-core/blob/master/varnish/CHANGELOG.md)
 
-## Datadog Agent version [6.10.1](https://github.com/KhulnaSoft/datadog-agent/blob/master/CHANGELOG.rst#6101)
+## Khulnasoft Agent version [6.10.1](https://github.com/KhulnaSoft/khulnasoft-agent/blob/master/CHANGELOG.rst#6101)
 
 * There were no integration updates for this version of the Agent.
 
-## Datadog Agent version [6.10.0](https://github.com/KhulnaSoft/datadog-agent/blob/master/CHANGELOG.rst#6100)
+## Khulnasoft Agent version [6.10.0](https://github.com/KhulnaSoft/khulnasoft-agent/blob/master/CHANGELOG.rst#6100)
 
 * Active Directory [1.3.0](https://github.com/KhulnaSoft/integrations-core/blob/master/active_directory/CHANGELOG.md)
 * Aerospike [1.0.0](https://github.com/KhulnaSoft/integrations-core/blob/master/aerospike/CHANGELOG.md)
@@ -3470,8 +3470,8 @@
 * Cacti [1.3.0](https://github.com/KhulnaSoft/integrations-core/blob/master/cacti/CHANGELOG.md)
 * Cassandra Nodetool [1.3.0](https://github.com/KhulnaSoft/integrations-core/blob/master/cassandra_nodetool/CHANGELOG.md)
 * Ceph [1.4.0](https://github.com/KhulnaSoft/integrations-core/blob/master/ceph/CHANGELOG.md)
-* Datadog Checks Base [6.0.1](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_base/CHANGELOG.md) **BREAKING CHANGE**
-* Datadog Checks Downloader [0.3.0](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_downloader/CHANGELOG.md)
+* Khulnasoft Checks Base [6.0.1](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_base/CHANGELOG.md) **BREAKING CHANGE**
+* Khulnasoft Checks Downloader [0.3.0](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_downloader/CHANGELOG.md)
 * Cisco ACI [1.4.0](https://github.com/KhulnaSoft/integrations-core/blob/master/cisco_aci/CHANGELOG.md)
 * Consul [1.7.0](https://github.com/KhulnaSoft/integrations-core/blob/master/consul/CHANGELOG.md)
 * CouchDB [3.2.0](https://github.com/KhulnaSoft/integrations-core/blob/master/couch/CHANGELOG.md)
@@ -3533,11 +3533,11 @@
 * WMI [1.3.0](https://github.com/KhulnaSoft/integrations-core/blob/master/wmi_check/CHANGELOG.md)
 * Yarn [1.6.0](https://github.com/KhulnaSoft/integrations-core/blob/master/yarn/CHANGELOG.md)
 
-## Datadog Agent version [6.9.0](https://github.com/KhulnaSoft/datadog-agent/blob/master/CHANGELOG.rst#690)
+## Khulnasoft Agent version [6.9.0](https://github.com/KhulnaSoft/khulnasoft-agent/blob/master/CHANGELOG.rst#690)
 
 * ASP.NET [1.0.1](https://github.com/KhulnaSoft/integrations-core/blob/master/aspdotnet/CHANGELOG.md)
 * Cassandra Nodetool [1.2.0](https://github.com/KhulnaSoft/integrations-core/blob/master/cassandra_nodetool/CHANGELOG.md)
-* Datadog Checks Base [5.0.1](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_base/CHANGELOG.md) **BREAKING CHANGE**
+* Khulnasoft Checks Base [5.0.1](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_base/CHANGELOG.md) **BREAKING CHANGE**
 * CouchDB [3.1.0](https://github.com/KhulnaSoft/integrations-core/blob/master/couch/CHANGELOG.md)
 * Couchbase [1.7.0](https://github.com/KhulnaSoft/integrations-core/blob/master/couchbase/CHANGELOG.md)
 * CRI-O [1.1.0](https://github.com/KhulnaSoft/integrations-core/blob/master/crio/CHANGELOG.md)
@@ -3597,11 +3597,11 @@
 * Yarn [1.5.0](https://github.com/KhulnaSoft/integrations-core/blob/master/yarn/CHANGELOG.md)
 * ZooKeeper [2.1.0](https://github.com/KhulnaSoft/integrations-core/blob/master/zk/CHANGELOG.md)
 
-## Datadog Agent version [6.8.1](https://github.com/KhulnaSoft/datadog-agent/blob/master/CHANGELOG.rst#681)
+## Khulnasoft Agent version [6.8.1](https://github.com/KhulnaSoft/khulnasoft-agent/blob/master/CHANGELOG.rst#681)
 
 * There were no integration updates for this version of the Agent.
 
-## Datadog Agent version [6.8.0](https://github.com/KhulnaSoft/datadog-agent/blob/master/CHANGELOG.rst#680)
+## Khulnasoft Agent version [6.8.0](https://github.com/KhulnaSoft/khulnasoft-agent/blob/master/CHANGELOG.rst#680)
 
 * ActiveMQ XML [1.1.0](https://github.com/KhulnaSoft/integrations-core/blob/master/activemq_xml/CHANGELOG.md)
 * Apache [1.4.0](https://github.com/KhulnaSoft/integrations-core/blob/master/apache/CHANGELOG.md)
@@ -3609,7 +3609,7 @@
 * Cacti [1.2.0](https://github.com/KhulnaSoft/integrations-core/blob/master/cacti/CHANGELOG.md)
 * Cassandra Nodetool [1.1.0](https://github.com/KhulnaSoft/integrations-core/blob/master/cassandra_nodetool/CHANGELOG.md)
 * Ceph [1.3.2](https://github.com/KhulnaSoft/integrations-core/blob/master/ceph/CHANGELOG.md)
-* Datadog Checks Base [4.6.0](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_base/CHANGELOG.md)
+* Khulnasoft Checks Base [4.6.0](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_base/CHANGELOG.md)
 * Cisco ACI [1.3.0](https://github.com/KhulnaSoft/integrations-core/blob/master/cisco_aci/CHANGELOG.md)
 * Consul [1.6.0](https://github.com/KhulnaSoft/integrations-core/blob/master/consul/CHANGELOG.md)
 * CoreDNS [1.1.0](https://github.com/KhulnaSoft/integrations-core/blob/master/coredns/CHANGELOG.md)
@@ -3651,11 +3651,11 @@
 * vSphere [3.6.0](https://github.com/KhulnaSoft/integrations-core/blob/master/vsphere/CHANGELOG.md)
 * ZooKeeper [2.0.0](https://github.com/KhulnaSoft/integrations-core/blob/master/zk/CHANGELOG.md) **BREAKING CHANGE**
 
-## Datadog Agent version [6.7.0](https://github.com/KhulnaSoft/datadog-agent/blob/master/CHANGELOG.rst#670)
+## Khulnasoft Agent version [6.7.0](https://github.com/KhulnaSoft/khulnasoft-agent/blob/master/CHANGELOG.rst#670)
 
 * There were no integration updates for this version of the Agent.
 
-## Datadog Agent version [6.6.0](https://github.com/KhulnaSoft/datadog-agent/blob/master/CHANGELOG.rst#660)
+## Khulnasoft Agent version [6.6.0](https://github.com/KhulnaSoft/khulnasoft-agent/blob/master/CHANGELOG.rst#660)
 
 * Active Directory [1.2.0](https://github.com/KhulnaSoft/integrations-core/blob/master/active_directory/CHANGELOG.md)
 * ActiveMQ [1.1.0](https://github.com/KhulnaSoft/integrations-core/blob/master/activemq/CHANGELOG.md)
@@ -3668,7 +3668,7 @@
 * Consul [1.5.2](https://github.com/KhulnaSoft/integrations-core/blob/master/consul/CHANGELOG.md)
 * CoreDNS [1.0.0](https://github.com/KhulnaSoft/integrations-core/blob/master/coredns/CHANGELOG.md)
 * CRI-O [1.0.0](https://github.com/KhulnaSoft/integrations-core/blob/master/crio/CHANGELOG.md)
-* Datadog Checks Base [4.2.0](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_base/CHANGELOG.md) **BREAKING CHANGE**
+* Khulnasoft Checks Base [4.2.0](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_base/CHANGELOG.md) **BREAKING CHANGE**
 * Directory [1.3.1](https://github.com/KhulnaSoft/integrations-core/blob/master/directory/CHANGELOG.md)
 * Disk [1.4.0](https://github.com/KhulnaSoft/integrations-core/blob/master/disk/CHANGELOG.md)
 * .NET CLR [1.1.0](https://github.com/KhulnaSoft/integrations-core/blob/master/dotnetclr/CHANGELOG.md)
@@ -3707,11 +3707,11 @@
 * Windows Service [2.0.0](https://github.com/KhulnaSoft/integrations-core/blob/master/windows_service/CHANGELOG.md) **BREAKING CHANGE**
 * WMI [1.2.0](https://github.com/KhulnaSoft/integrations-core/blob/master/wmi_check/CHANGELOG.md)
 
-## Datadog Agent version [6.5.2](https://github.com/KhulnaSoft/datadog-agent/blob/master/CHANGELOG.rst#652)
+## Khulnasoft Agent version [6.5.2](https://github.com/KhulnaSoft/khulnasoft-agent/blob/master/CHANGELOG.rst#652)
 
 * vSphere [3.3.1](https://github.com/KhulnaSoft/integrations-core/blob/master/vsphere/CHANGELOG.md)
 
-## Datadog Agent version [6.5.0](https://github.com/KhulnaSoft/datadog-agent/blob/master/CHANGELOG.rst#650)
+## Khulnasoft Agent version [6.5.0](https://github.com/KhulnaSoft/khulnasoft-agent/blob/master/CHANGELOG.rst#650)
 
 * Active Directory [1.1.1](https://github.com/KhulnaSoft/integrations-core/blob/master/active_directory/CHANGELOG.md)
 * ActiveMQ [1.0.2](https://github.com/KhulnaSoft/integrations-core/blob/master/activemq/CHANGELOG.md)
@@ -3727,7 +3727,7 @@
 * Consul [1.5.1](https://github.com/KhulnaSoft/integrations-core/blob/master/consul/CHANGELOG.md)
 * CouchDB [2.6.1](https://github.com/KhulnaSoft/integrations-core/blob/master/couch/CHANGELOG.md)
 * Couchbase [1.5.1](https://github.com/KhulnaSoft/integrations-core/blob/master/couchbase/CHANGELOG.md)
-* Datadog Checks Base [2.2.1](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_base/CHANGELOG.md) **BREAKING CHANGE**
+* Khulnasoft Checks Base [2.2.1](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_base/CHANGELOG.md) **BREAKING CHANGE**
 * Directory [1.3.0](https://github.com/KhulnaSoft/integrations-core/blob/master/directory/CHANGELOG.md)
 * Disk [1.3.0](https://github.com/KhulnaSoft/integrations-core/blob/master/disk/CHANGELOG.md)
 * DNS [1.1.2](https://github.com/KhulnaSoft/integrations-core/blob/master/dns_check/CHANGELOG.md)
@@ -3810,21 +3810,21 @@
 * Yarn [1.4.0](https://github.com/KhulnaSoft/integrations-core/blob/master/yarn/CHANGELOG.md)
 * ZooKeeper [1.2.1](https://github.com/KhulnaSoft/integrations-core/blob/master/zk/CHANGELOG.md)
 
-## Datadog Agent version [6.4.2](https://github.com/KhulnaSoft/datadog-agent/blob/master/CHANGELOG.rst#642)
+## Khulnasoft Agent version [6.4.2](https://github.com/KhulnaSoft/khulnasoft-agent/blob/master/CHANGELOG.rst#642)
 
 * There were no integration updates for this version of the Agent.
 
-## Datadog Agent version [6.4.1](https://github.com/KhulnaSoft/datadog-agent/blob/master/CHANGELOG.rst#641)
+## Khulnasoft Agent version [6.4.1](https://github.com/KhulnaSoft/khulnasoft-agent/blob/master/CHANGELOG.rst#641)
 
 * There were no integration updates for this version of the Agent.
 
-## Datadog Agent version [6.4.0](https://github.com/KhulnaSoft/datadog-agent/blob/master/CHANGELOG.rst#640)
+## Khulnasoft Agent version [6.4.0](https://github.com/KhulnaSoft/khulnasoft-agent/blob/master/CHANGELOG.rst#640)
 
 * Cacti [1.1.1](https://github.com/KhulnaSoft/integrations-core/blob/master/cacti/CHANGELOG.md)
 * Cassandra Nodetool [0.1.2](https://github.com/KhulnaSoft/integrations-core/blob/master/cassandra_nodetool/CHANGELOG.md)
 * Cisco ACI [1.1.0](https://github.com/KhulnaSoft/integrations-core/blob/master/cisco_aci/CHANGELOG.md)
 * Couchbase [1.5.0](https://github.com/KhulnaSoft/integrations-core/blob/master/couchbase/CHANGELOG.md)
-* Datadog Checks Base [1.4.0](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_base/CHANGELOG.md)
+* Khulnasoft Checks Base [1.4.0](https://github.com/KhulnaSoft/integrations-core/blob/master/khulnasoft_checks_base/CHANGELOG.md)
 * DNS [1.1.1](https://github.com/KhulnaSoft/integrations-core/blob/master/dns_check/CHANGELOG.md)
 * Envoy [1.2.1](https://github.com/KhulnaSoft/integrations-core/blob/master/envoy/CHANGELOG.md)
 * etcd [1.5.0](https://github.com/KhulnaSoft/integrations-core/blob/master/etcd/CHANGELOG.md)
@@ -3840,15 +3840,15 @@
 * TCP [2.0.1](https://github.com/KhulnaSoft/integrations-core/blob/master/tcp_check/CHANGELOG.md)
 * vSphere [2.2.0](https://github.com/KhulnaSoft/integrations-core/blob/master/vsphere/CHANGELOG.md)
 
-## Datadog Agent version [6.3.3](https://github.com/KhulnaSoft/datadog-agent/blob/master/CHANGELOG.rst#633)
+## Khulnasoft Agent version [6.3.3](https://github.com/KhulnaSoft/khulnasoft-agent/blob/master/CHANGELOG.rst#633)
 
 * There were no integration updates for this version of the Agent.
 
-## Datadog Agent version [6.3.2](https://github.com/KhulnaSoft/datadog-agent/blob/master/CHANGELOG.rst#632)
+## Khulnasoft Agent version [6.3.2](https://github.com/KhulnaSoft/khulnasoft-agent/blob/master/CHANGELOG.rst#632)
 
 * There were no integration updates for this version of the Agent.
 
-## Datadog Agent version [6.3.1](https://github.com/KhulnaSoft/datadog-agent/blob/master/CHANGELOG.rst#631)
+## Khulnasoft Agent version [6.3.1](https://github.com/KhulnaSoft/khulnasoft-agent/blob/master/CHANGELOG.rst#631)
 
 * HTTP [2.2.0](https://github.com/KhulnaSoft/integrations-core/blob/master/http_check/CHANGELOG.md)
 * Kubelet [1.4.0](https://github.com/KhulnaSoft/integrations-core/blob/master/kubelet/CHANGELOG.md)

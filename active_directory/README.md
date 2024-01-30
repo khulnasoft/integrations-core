@@ -8,9 +8,9 @@ Get metrics and logs from Microsoft Active Directory to visualize and monitor it
 
 ### Installation
 
-The Agent's Active Directory check is included in the [Datadog Agent][1] package, so you don't need to install anything else on your servers.
+The Agent's Active Directory check is included in the [Khulnasoft Agent][1] package, so you don't need to install anything else on your servers.
 
-If installing the Datadog Agent on a domain environment, see [the installation requirements for the Agent][2]
+If installing the Khulnasoft Agent on a domain environment, see [the installation requirements for the Agent][2]
 
 ### Configuration
 
@@ -26,7 +26,7 @@ If installing the Datadog Agent on a domain environment, see [the installation r
 
 _Available for Agent versions >6.0_
 
-1. Collecting logs is disabled by default in the Datadog Agent, you need to enable it in `datadog.yaml`:
+1. Collecting logs is disabled by default in the Khulnasoft Agent, you need to enable it in `khulnasoft.yaml`:
 
    ```yaml
    logs_enabled: true
@@ -69,7 +69,7 @@ The Active Directory check does not include any service checks.
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][9].
+Need help? Contact [Khulnasoft support][9].
 
 [1]: https://app.khulnasoft.com/account/settings/agent/latest
 [2]: https://docs.khulnasoft.com/agent/faq/windows-agent-ddagent-user/#installation-in-a-domain-environment

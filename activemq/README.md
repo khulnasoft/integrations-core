@@ -12,9 +12,9 @@ The ActiveMQ check collects metrics for brokers, queues, producers, consumers, a
 
 ### Installation
 
-The Agent's ActiveMQ check is included in the [Datadog Agent][3] package, so you don't need to install anything else on your ActiveMQ nodes.
+The Agent's ActiveMQ check is included in the [Khulnasoft Agent][3] package, so you don't need to install anything else on your ActiveMQ nodes.
 
-The check collects metrics from JMX with [JMXFetch][4]. A JVM is needed on each node so the Agent can run JMXFetch. Datadog recommends using an Oracle-provided JVM.
+The check collects metrics from JMX with [JMXFetch][4]. A JVM is needed on each node so the Agent can run JMXFetch. Khulnasoft recommends using an Oracle-provided JVM.
 
 ### Configuration
 
@@ -47,7 +47,7 @@ To configure this check for an Agent running on a host:
 
 _Available for Agent versions >6.0_
 
-1. Collecting logs is disabled by default in the Datadog Agent, enable it in your `datadog.yaml` file:
+1. Collecting logs is disabled by default in the Khulnasoft Agent, enable it in your `khulnasoft.yaml` file:
 
    ```yaml
    logs_enabled: true
@@ -88,7 +88,7 @@ For containerized environments, see the [Autodiscovery Integration Templates][10
 
 _Available for Agent versions >6.0_
 
-Collecting logs is disabled by default in the Datadog Agent. To enable it, see [Kubernetes Log Collection][11].
+Collecting logs is disabled by default in the Khulnasoft Agent. To enable it, see [Kubernetes Log Collection][11].
 
 | Parameter      | Value                                                  |
 | -------------- | ------------------------------------------------------ |
@@ -117,7 +117,7 @@ See [service_checks.json][13] for a list of service checks provided by this inte
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][14].
+Need help? Contact [Khulnasoft support][14].
 
 ## Further Reading
 

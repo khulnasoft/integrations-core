@@ -40,7 +40,7 @@
         - all_metrics_asserted
         - reset
 
-::: khulnasoft_checks.base.stubs.khulnasoft_agent.DatadogAgentStub
+::: khulnasoft_checks.base.stubs.khulnasoft_agent.KhulnasoftAgentStub
     options:
       heading_level: 3
       members:

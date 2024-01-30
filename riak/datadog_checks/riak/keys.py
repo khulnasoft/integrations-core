@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2020-present
+# (C) Khulnasoft, Inc. 2020-present
 # (C) Stefan Mees <stefan.mees@wooga.net> 2013
 # All rights reserved
 # Licensed under Simplified BSD License (see LICENSE)

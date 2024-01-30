@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2018-present
+# (C) Khulnasoft, Inc. 2018-present
 # All rights reserved
 # Licensed under Simplified BSD License (see LICENSE)
 import re
@@ -91,7 +91,7 @@ class Nginx(AgentCheck):
 
     def _get_enabled_endpoints(self):
         """
-        Dynamically determines which NGINX endpoints are enabled and Datadog supports getting metrics from
+        Dynamically determines which NGINX endpoints are enabled and Khulnasoft supports getting metrics from
         by querying the NGINX APIs that list availabled endpoints. If an error is encountered,
         then it falls back to query all of the known endpoints available in the given NGINX Plus version.
         """

@@ -49,7 +49,7 @@
 * Ignore `rethinkdb` when bumping the deps ([#16449](https://github.com/KhulnaSoft/integrations-core/pull/16449))
 * Override the default configuration when environment vars are provided in the `env start` command ([#16474](https://github.com/KhulnaSoft/integrations-core/pull/16474))
 * Update the CHANGELOG file for packages in the `integrations-changelog` command ([#16492](https://github.com/KhulnaSoft/integrations-core/pull/16492))
-* Bump the `datadog-checks-dev` minimum version to 29.0.1 ([#16506](https://github.com/KhulnaSoft/integrations-core/pull/16506))
+* Bump the `khulnasoft-checks-dev` minimum version to 29.0.1 ([#16506](https://github.com/KhulnaSoft/integrations-core/pull/16506))
 
 ## 6.1.0 / 2023-12-14
 
@@ -123,7 +123,7 @@
 ***Added***:
 
 * Migrate E2E features ([#15931](https://github.com/KhulnaSoft/integrations-core/pull/15931))
-* Bump the minimum supported version of datadog-checks-dev ([#16006](https://github.com/KhulnaSoft/integrations-core/pull/16006))
+* Bump the minimum supported version of khulnasoft-checks-dev ([#16006](https://github.com/KhulnaSoft/integrations-core/pull/16006))
 
 ## 5.1.1 / 2023-09-29
 
@@ -142,7 +142,7 @@
 
 * Make sure repo override in envvar makes it into config ([#15782](https://github.com/KhulnaSoft/integrations-core/pull/15782))
 * Bump the `target-version` to python 3.9 for ruff and black ([#15824](https://github.com/KhulnaSoft/integrations-core/pull/15824))
-* Bump the `datadog-checks-dev` version to ~=25 ([#15823](https://github.com/KhulnaSoft/integrations-core/pull/15823))
+* Bump the `khulnasoft-checks-dev` version to ~=25 ([#15823](https://github.com/KhulnaSoft/integrations-core/pull/15823))
 * Fix the `--compat` option of the `test` command ([#15815](https://github.com/KhulnaSoft/integrations-core/pull/15815))
 
 ## 5.0.0 / 2023-09-06
@@ -157,7 +157,7 @@
 
 ***Fixed***:
 
-* Bump datadog-checks-dev version to ~=24.0 ([#15683](https://github.com/KhulnaSoft/integrations-core/pull/15683))
+* Bump khulnasoft-checks-dev version to ~=24.0 ([#15683](https://github.com/KhulnaSoft/integrations-core/pull/15683))
 
 ## 4.0.1 / 2023-08-25
 
@@ -194,13 +194,13 @@
 ***Added***:
 
 * Add changelog enforcement ([#15459](https://github.com/KhulnaSoft/integrations-core/pull/15459))
-* Upgrade datadog-checks-dev to 23.0.0 ([#15540](https://github.com/KhulnaSoft/integrations-core/pull/15540))
+* Upgrade khulnasoft-checks-dev to 23.0.0 ([#15540](https://github.com/KhulnaSoft/integrations-core/pull/15540))
 
 ## 3.3.0 / 2023-07-20
 
 ***Added***:
 
-* Upgrade datadog-checks-dev to 22.1 ([#15325](https://github.com/KhulnaSoft/integrations-core/pull/15325))
+* Upgrade khulnasoft-checks-dev to 22.1 ([#15325](https://github.com/KhulnaSoft/integrations-core/pull/15325))
 * Upgrade click to 8.1.6 ([#15272](https://github.com/KhulnaSoft/integrations-core/pull/15272))
 * Update generated config models ([#15212](https://github.com/KhulnaSoft/integrations-core/pull/15212))
 
@@ -219,7 +219,7 @@
 
 ***Added***:
 
-* Bump the minimum supported version of datadog-checks-dev ([#15171](https://github.com/KhulnaSoft/integrations-core/pull/15171))
+* Bump the minimum supported version of khulnasoft-checks-dev ([#15171](https://github.com/KhulnaSoft/integrations-core/pull/15171))
 * Move CLI plugins to ddev ([#15166](https://github.com/KhulnaSoft/integrations-core/pull/15166))
 * Add VerbosityLevels class for ddev cli/terminal use ([#14780](https://github.com/KhulnaSoft/integrations-core/pull/14780))
 * Add utilities for GitHub ([#15036](https://github.com/KhulnaSoft/integrations-core/pull/15036))
@@ -228,7 +228,7 @@
 
 ***Added***:
 
-* Update version of datadog-checks-dev ([#14865](https://github.com/KhulnaSoft/integrations-core/pull/14865))
+* Update version of khulnasoft-checks-dev ([#14865](https://github.com/KhulnaSoft/integrations-core/pull/14865))
 * Add Git utilities ([#14838](https://github.com/KhulnaSoft/integrations-core/pull/14838))
 * Add pluggy to ddev dependencies ([#14821](https://github.com/KhulnaSoft/integrations-core/pull/14821))
 
@@ -240,7 +240,7 @@
 
 ***Added***:
 
-* Bump the minimum version of datadog-checks-dev ([#14785](https://github.com/KhulnaSoft/integrations-core/pull/14785))
+* Bump the minimum version of khulnasoft-checks-dev ([#14785](https://github.com/KhulnaSoft/integrations-core/pull/14785))
 * Upgrade Pydantic model code generator ([#14779](https://github.com/KhulnaSoft/integrations-core/pull/14779))
 * Use Git for versioning ([#14778](https://github.com/KhulnaSoft/integrations-core/pull/14778))
 * Add validations for removed dependencies ([#14556](https://github.com/KhulnaSoft/integrations-core/pull/14556))
@@ -280,7 +280,7 @@
 
 ***Added***:
 
-* Bump datadog-checks-dev to 18.x ([#14225](https://github.com/KhulnaSoft/integrations-core/pull/14225))
+* Bump khulnasoft-checks-dev to 18.x ([#14225](https://github.com/KhulnaSoft/integrations-core/pull/14225))
 
 ## 1.4.3 / 2023-03-01
 

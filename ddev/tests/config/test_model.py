@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2022-present
+# (C) Khulnasoft, Inc. 2022-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 import os
@@ -20,11 +20,11 @@ def test_default():
             'core': os.path.join('~', 'dd', 'integrations-core'),
             'extras': os.path.join('~', 'dd', 'integrations-extras'),
             'marketplace': os.path.join('~', 'dd', 'marketplace'),
-            'agent': os.path.join('~', 'dd', 'datadog-agent'),
+            'agent': os.path.join('~', 'dd', 'khulnasoft-agent'),
         },
         'agents': {
-            'dev': {'docker': 'datadog/agent-dev:master', 'local': 'latest'},
-            '7': {'docker': 'datadog/agent:7', 'local': '7'},
+            'dev': {'docker': 'khulnasoft/agent-dev:master', 'local': 'latest'},
+            '7': {'docker': 'khulnasoft/agent:7', 'local': '7'},
         },
         'orgs': {
             'default': {
@@ -194,7 +194,7 @@ class TestAgent:
     def test_default(self):
         config = RootConfig({})
 
-        agent_config = {'docker': 'datadog/agent-dev:master', 'local': 'latest'}
+        agent_config = {'docker': 'khulnasoft/agent-dev:master', 'local': 'latest'}
         assert config.agent.name == config.agent.name == 'dev'
         assert config.agent.config == config.agent.config == agent_config
         assert config.agent.raw_data == {'name': 'dev', 'config': agent_config}
@@ -216,7 +216,7 @@ class TestAgent:
     def test_defined(self):
         config = RootConfig({'agent': '7'})
 
-        agent_config = {'docker': 'datadog/agent:7', 'local': '7'}
+        agent_config = {'docker': 'khulnasoft/agent:7', 'local': '7'}
         assert config.agent.name == config.agent.name == '7'
         assert config.agent.config == config.agent.config == agent_config
         assert config.agent.raw_data == {'name': '7', 'config': agent_config}
@@ -274,7 +274,7 @@ class TestAgent:
         config.agent.name = 9000
         assert config.agent.raw_data == {
             'name': 9000,
-            'config': {'docker': 'datadog/agent-dev:master', 'local': 'latest'},
+            'config': {'docker': 'khulnasoft/agent-dev:master', 'local': 'latest'},
         }
 
         with pytest.raises(
@@ -474,7 +474,7 @@ class TestRepos:
             'core': os.path.join('~', 'dd', 'integrations-core'),
             'extras': os.path.join('~', 'dd', 'integrations-extras'),
             'marketplace': os.path.join('~', 'dd', 'marketplace'),
-            'agent': os.path.join('~', 'dd', 'datadog-agent'),
+            'agent': os.path.join('~', 'dd', 'khulnasoft-agent'),
         }
         assert config.repos == repos
         assert config.raw_data == {'repos': repos}
@@ -551,8 +551,8 @@ class TestAgents:
         config = RootConfig({})
 
         agents = {
-            'dev': {'docker': 'datadog/agent-dev:master', 'local': 'latest'},
-            '7': {'docker': 'datadog/agent:7', 'local': '7'},
+            'dev': {'docker': 'khulnasoft/agent-dev:master', 'local': 'latest'},
+            '7': {'docker': 'khulnasoft/agent:7', 'local': '7'},
         }
         assert config.agents == agents
         assert config.raw_data == {'agents': agents}

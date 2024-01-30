@@ -39,7 +39,7 @@ instances:
     #       - label_addonmanager_kubernetes_io_mode
 
     ## @param labels_as_tags - map - optional
-    ## labels_as_tags allows to specify custom labels of kubernetes resources to be turned into Datadog tags attached the corresponding metrics.
+    ## labels_as_tags allows to specify custom labels of kubernetes resources to be turned into Khulnasoft tags attached the corresponding metrics.
     ##
     ## Example:
     #
@@ -50,7 +50,7 @@ instances:
     #     topology.kubernetes.io/region: kube_region
 
     ## @param annotations_as_tags - map - optional
-    ## annotations_as_tags allows to specify custom annotations of kubernetes resources to be turned into Datadog tags attached the corresponding metrics.
+    ## annotations_as_tags allows to specify custom annotations of kubernetes resources to be turned into Khulnasoft tags attached the corresponding metrics.
     ##
     ## Example:
     #

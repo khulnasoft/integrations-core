@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2023-present
+# (C) Khulnasoft, Inc. 2023-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 
@@ -34,7 +34,7 @@ def test_e2e_profile_f5_big_ip(dd_agent_check):
     ip_address = get_device_ip_from_config(config)
     common_tags = [
         'snmp_profile:f5-big-ip',
-        'snmp_host:f5-big-ip-adc-good-byol-1-vm.c.datadog-integrations-lab.internal',
+        'snmp_host:f5-big-ip-adc-good-byol-1-vm.c.khulnasoft-integrations-lab.internal',
         'device_namespace:default',
         'snmp_device:' + ip_address,
         'device_vendor:f5',
@@ -459,7 +459,7 @@ def test_e2e_profile_f5_big_ip(dd_agent_check):
         'id': 'default:' + ip_address,
         'id_tags': ['device_namespace:default', 'snmp_device:' + ip_address],
         'ip_address': '' + ip_address,
-        'name': 'f5-big-ip-adc-good-byol-1-vm.c.datadog-integrations-lab.internal',
+        'name': 'f5-big-ip-adc-good-byol-1-vm.c.khulnasoft-integrations-lab.internal',
         'os_name': 'Linux',
         'os_version': '3.10.0-862.14.4.el7.ve.x86_64',
         'product_name': 'BIG-IP',

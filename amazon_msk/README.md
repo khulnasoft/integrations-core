@@ -4,22 +4,22 @@
 
 Amazon Managed Streaming for Apache Kafka (MSK) is a fully managed service that makes it easy to build and run applications that use Apache Kafka to process streaming data.
 
-You can collect metrics from this integration in two ways-with the [Datadog Agent](#setup) or with a [Crawler][18] that collects metrics from CloudWatch. 
+You can collect metrics from this integration in two ways-with the [Khulnasoft Agent](#setup) or with a [Crawler][18] that collects metrics from CloudWatch. 
 
 ## Setup
 
-The Agent check monitors Amazon Managed Streaming for Apache Kafka ([Amazon MSK][1]) through the Datadog Agent.
+The Agent check monitors Amazon Managed Streaming for Apache Kafka ([Amazon MSK][1]) through the Khulnasoft Agent.
 
 Follow the instructions below to install and configure this check for an Agent running on a host. For containerized environments, see the [Autodiscovery Integration Templates][2] for guidance on applying these instructions.
 
-This OpenMetrics-based integration has a latest mode (`use_openmetrics`: true) and a legacy mode (`use_openmetrics`: false). To get all the most up-to-date features, Datadog recommends enabling the latest mode. For more information, see [Latest and Legacy Versioning For OpenMetrics-based Integrations][19].
+This OpenMetrics-based integration has a latest mode (`use_openmetrics`: true) and a legacy mode (`use_openmetrics`: false). To get all the most up-to-date features, Khulnasoft recommends enabling the latest mode. For more information, see [Latest and Legacy Versioning For OpenMetrics-based Integrations][19].
 
 ### Installation
 
 1. [Create a client machine][3] if one does not already exist.
 2. Ensure the client machine has been [granted][4] the permission policy [arn:aws:iam::aws:policy/AmazonMSKReadOnlyAccess][5] or equivalent [credentials][6] are available.
 3. Enable [open monitoring with Prometheus][7] on the MSK side to enable the JmxExporter and the NodeExporter.
-4. Install the [Datadog Agent][8] on the client machine just created.
+4. Install the [Khulnasoft Agent][8] on the client machine just created.
 
 ### Configuration
 
@@ -57,13 +57,13 @@ See [service_checks.json][14] for a list of service checks provided by this inte
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][15].
+Need help? Contact [Khulnasoft support][15].
 
 ## Further Reading
 
 Additional helpful documentation, links, and articles:
 
-- [Monitor Amazon Managed Streaming for Apache Kafka with Datadog][16]
+- [Monitor Amazon Managed Streaming for Apache Kafka with Khulnasoft][16]
 
 [1]: https://aws.amazon.com/msk
 [2]: https://docs.khulnasoft.com/agent/kubernetes/integrations/

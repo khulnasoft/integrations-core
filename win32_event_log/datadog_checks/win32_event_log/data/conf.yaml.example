@@ -332,7 +332,7 @@ instances:
 
     ## @param event_format - list of strings - optional - default: ['Message']
     ## The `event_format` parameter instructs the check to generate
-    ## Datadog's event bodies with the specified list of event properties.
+    ## Khulnasoft's event bodies with the specified list of event properties.
     ## If unspecified, the EventLog's `Message` or `InsertionStrings` are used by default.
     ## Available values are: Logfile, SourceName, EventCode, Message, InsertionStrings, TimeGenerated, Type
     ##
@@ -394,7 +394,7 @@ instances:
 ##                      Overrides any `service` defined in the `init_config` section.
 ## tags - optional - Add tags to the collected logs.
 ##
-## Discover Datadog log collection: https://docs.khulnasoft.com/logs/log_collection/
+## Discover Khulnasoft log collection: https://docs.khulnasoft.com/logs/log_collection/
 #
 # logs:
 #   - type: windows_event

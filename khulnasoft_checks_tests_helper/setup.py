@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2018-present
+# (C) Khulnasoft, Inc. 2018-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 from codecs import open  # To use a consistent encoding
@@ -28,12 +28,12 @@ setup(
     # Version should always match one from an agent release
     version=ABOUT["__version__"],
     name='khulnasoft_checks_tests_helper',
-    description='The Datadog Check Tests Helpers',
+    description='The Khulnasoft Check Tests Helpers',
     long_description=LONG_DESC,
     long_description_content_type='text/markdown',
-    keywords='datadog agent checks tests',
-    url='https://github.com/KhulnaSoft/datadog-agent-tk',
-    author='Datadog',
+    keywords='khulnasoft agent checks tests',
+    url='https://github.com/KhulnaSoft/khulnasoft-agent-tk',
+    author='Khulnasoft',
     author_email='packages@khulnasoft.com',
     license='BSD',
     # See https://pypi.python.org/pypi?%3Aaction=list_classifiers

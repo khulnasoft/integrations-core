@@ -51,7 +51,7 @@
       "max_usage":211410944,
       "privateworkingset":140673024
     },
-    "name":"datadog-agent",
+    "name":"khulnasoft-agent",
     "id":"abcd-123456",
     "networks":{
       "Ethernet 3":{

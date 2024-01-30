@@ -8,7 +8,7 @@ Monitor the resolvability of and lookup times for any DNS records using nameserv
 
 ### Installation
 
-The DNS check is included in the [Datadog Agent][1] package. No additional installation is needed on your server.
+The DNS check is included in the [Khulnasoft Agent][1] package. No additional installation is needed on your server.
 
 Though many metrics-oriented checks are best run on the same host(s) as the monitored service, you may want to run this status-oriented check from hosts that do not run the monitored DNS services.
 
@@ -35,7 +35,7 @@ Though many metrics-oriented checks are best run on the same host(s) as the moni
 
     If you omit the `nameserver` option, the check uses whichever nameserver is configured in local network settings.
 
-2. [Restart the Agent][4] to begin sending DNS service checks and response times to Datadog.
+2. [Restart the Agent][4] to begin sending DNS service checks and response times to Khulnasoft.
 
 ### Validation
 
@@ -57,7 +57,7 @@ See [service_checks.json][7] for a list of service checks provided by this integ
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][8].
+Need help? Contact [Khulnasoft support][8].
 
 
 [1]: https://app.khulnasoft.com/account/settings/agent/latest

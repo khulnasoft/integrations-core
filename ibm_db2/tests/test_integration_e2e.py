@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2019-present
+# (C) Khulnasoft, Inc. 2019-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 import pytest
@@ -29,6 +29,6 @@ def _assert_standard(aggregator):
     aggregator.assert_service_check('ibm_db2.can_connect', AgentCheck.OK)
 
     for metric in metrics.STANDARD:
-        aggregator.assert_metric_has_tag(metric, 'db:datadog')
+        aggregator.assert_metric_has_tag(metric, 'db:khulnasoft')
         aggregator.assert_metric_has_tag(metric, 'foo:bar')
     aggregator.assert_all_metrics_covered()

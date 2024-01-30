@@ -9280,7 +9280,7 @@ spec:
                 - grafana
                 - githubdispatch
                 - pagerduty
-                - datadog
+                - khulnasoft
                 type: string
               username:
                 description: Username specifies the name under which events are posted.
@@ -9482,7 +9482,7 @@ spec:
                 - grafana
                 - githubdispatch
                 - pagerduty
-                - datadog
+                - khulnasoft
                 - nats
                 type: string
               username:

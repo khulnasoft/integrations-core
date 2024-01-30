@@ -1,6 +1,6 @@
 {
     "title": "Druid Overview",
-    "description": "This dashboard provides an overview of Druid queries, segments, ingestion, jvm, and system metrics for monitoring and investigating issues. Further reading on Druid monitoring:\n\n- [Datadog’s Druid integration docs](https://docs.khulnasoft.com/integrations/druid/)\n\nClone this template dashboard to make changes and add your own graphs and widgets.",
+    "description": "This dashboard provides an overview of Druid queries, segments, ingestion, jvm, and system metrics for monitoring and investigating issues. Further reading on Druid monitoring:\n\n- [Khulnasoft’s Druid integration docs](https://docs.khulnasoft.com/integrations/druid/)\n\nClone this template dashboard to make changes and add your own graphs and widgets.",
     "widgets": [
         {
             "id": 0,

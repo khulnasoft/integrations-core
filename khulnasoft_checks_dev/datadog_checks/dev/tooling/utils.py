@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2018-present
+# (C) Khulnasoft, Inc. 2018-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 import csv
@@ -37,7 +37,7 @@ CUSTOM_FILES = ['validators.py', 'deprecations.py']
 
 def get_license_header():
     return (
-        '# (C) Datadog, Inc. {year}-present\n'
+        '# (C) Khulnasoft, Inc. {year}-present\n'
         '# All rights reserved\n'
         '# Licensed under a 3-clause BSD style license (see LICENSE)'.format(year=str(datetime.now(timezone.utc).year))
     )
@@ -62,7 +62,7 @@ def format_commit_id(commit_id):
 
 
 def get_current_agent_version():
-    release_data = requests.get('https://raw.githubusercontent.com/KhulnaSoft/datadog-agent/master/release.json').json()
+    release_data = requests.get('https://raw.githubusercontent.com/KhulnaSoft/khulnasoft-agent/master/release.json').json()
     versions = set()
 
     for version in release_data:
@@ -186,7 +186,7 @@ def initialize_root(config, agent=False, core=False, extras=False, marketplace=F
     if here or not dir_exists(root):
         if not here:
             repo = (
-                'datadog-agent'
+                'khulnasoft-agent'
                 if repo_choice == 'agent'
                 else 'marketplace'
                 if repo_choice == 'marketplace'
@@ -603,7 +603,7 @@ def parse_agent_req_file(contents):
     Returns a dictionary mapping {check-package-name --> pinned_version} from the
     given file contents. We can assume lines are in the form:
 
-        datadog-active-directory==1.1.1; sys_platform == 'win32'
+        khulnasoft-active-directory==1.1.1; sys_platform == 'win32'
 
     """
     catalog = {}

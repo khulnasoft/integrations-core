@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2014-present
+# (C) Khulnasoft, Inc. 2014-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 from copy import deepcopy

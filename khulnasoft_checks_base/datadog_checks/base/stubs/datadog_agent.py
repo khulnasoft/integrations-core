@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2018-present
+# (C) Khulnasoft, Inc. 2018-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 import re
@@ -8,12 +8,12 @@ from six import iteritems
 from khulnasoft_checks.base.utils.serialization import json
 
 
-class DatadogAgentStub(object):
+class KhulnasoftAgentStub(object):
     """
     This implements the methods defined by the Agent's
-    [C bindings](https://github.com/KhulnaSoft/datadog-agent/blob/master/rtloader/common/builtins/khulnasoft_agent.c)
+    [C bindings](https://github.com/KhulnaSoft/khulnasoft-agent/blob/master/rtloader/common/builtins/khulnasoft_agent.c)
     which in turn call the
-    [Go backend](https://github.com/KhulnaSoft/datadog-agent/blob/master/pkg/collector/python/khulnasoft_agent.go).
+    [Go backend](https://github.com/KhulnaSoft/khulnasoft-agent/blob/master/pkg/collector/python/khulnasoft_agent.go).
 
     It also provides utility methods for test assertions.
     """
@@ -126,4 +126,4 @@ class DatadogAgentStub(object):
 
 
 # Use the stub as a singleton
-khulnasoft_agent = DatadogAgentStub()
+khulnasoft_agent = KhulnasoftAgentStub()

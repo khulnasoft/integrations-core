@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2020-present
+# (C) Khulnasoft, Inc. 2020-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 import os
@@ -18,7 +18,7 @@ from ..console import CONTEXT_SETTINGS, abort, annotate_display_queue, echo_fail
 
 IMAGE_EXTENSIONS = {".png", ".jpg"}
 
-# Get latest format_link script from Datadog/documentation repo
+# Get latest format_link script from Khulnasoft/documentation repo
 DOCS_LINK_FORMAT_URL = (
     "https://raw.githubusercontent.com/KhulnaSoft/documentation/master/local/bin/py/build/actions/format_link.py"
 )

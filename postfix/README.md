@@ -10,7 +10,7 @@ This check monitors the size of all your Postfix queues.
 
 ### Installation
 
-The Postfix check is included in the [Datadog Agent][2] package, so you don't need to install anything else on your Postfix servers.
+The Postfix check is included in the [Khulnasoft Agent][2] package, so you don't need to install anything else on your Postfix servers.
 
 ### Configuration
 
@@ -133,7 +133,7 @@ Postfix sends logs to the syslog daemon, which then writes logs to the file syst
     mail.debug                                  /var/log/mail.log
 ```
 
-1. Collecting logs is disabled by default in the Datadog Agent, enable it in your `datadog.yaml` file:
+1. Collecting logs is disabled by default in the Khulnasoft Agent, enable it in your `khulnasoft.yaml` file:
 
    ```yaml
    logs_enabled: true
@@ -171,7 +171,7 @@ The Postfix check does not include any service checks.
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][9].
+Need help? Contact [Khulnasoft support][9].
 
 ## Further Reading
 

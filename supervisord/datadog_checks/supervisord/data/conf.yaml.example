@@ -75,9 +75,9 @@ instances:
     #   - <PROCESS_NAME_EXCLUDE_2>
 
     ## @param status_mapping_override - mapping - optional
-    ## The process status mapping override between supervisord status and Datadog status.
+    ## The process status mapping override between supervisord status and Khulnasoft status.
     ##
-    ## This setting overrides default mapping (supervisord => Datadog):
+    ## This setting overrides default mapping (supervisord => Khulnasoft):
     ##   RUNNING  => up
     ##   BACKOFF  => down
     ##   STOPPING => down
@@ -87,7 +87,7 @@ instances:
     ##   STARTING => unknown
     ##   UNKNOWN  => unknown
     ##
-    ## Available Datadog status are: up / down / unknown
+    ## Available Khulnasoft status are: up / down / unknown
     #
     # status_mapping_override:
     #   <SUPERVISORD_STATUS_1>: <KHULNASOFT_STATUS_1>
@@ -146,7 +146,7 @@ instances:
 ##                      Overrides any `service` defined in the `init_config` section.
 ## tags - optional - Add tags to the collected logs.
 ##
-## Discover Datadog log collection: https://docs.khulnasoft.com/logs/log_collection/
+## Discover Khulnasoft log collection: https://docs.khulnasoft.com/logs/log_collection/
 #
 # logs:
 #   - type: file

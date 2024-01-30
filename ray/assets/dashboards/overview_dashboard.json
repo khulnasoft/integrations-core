@@ -1,6 +1,6 @@
 {
-    "author_name": "Datadog",
-    "description": "**Ray**\n\nThis dashboard provides insights into your Ray services. You can use the dashboard to track health status, performance, and resource utilization metrics from all your services. You can also get in-depth information on the workload deployment that are currently running in your instance, the workers they leverage, and the resource consumption breakdown. \n\n**Useful Links**\n\n* [Integration Docs](https://docs.khulnasoft.com/integrations/ray)\n* [Blog](https://www.khulnasoft.com/blog/monitor-ray-with-datadog)",
+    "author_name": "Khulnasoft",
+    "description": "**Ray**\n\nThis dashboard provides insights into your Ray services. You can use the dashboard to track health status, performance, and resource utilization metrics from all your services. You can also get in-depth information on the workload deployment that are currently running in your instance, the workers they leverage, and the resource consumption breakdown. \n\n**Useful Links**\n\n* [Integration Docs](https://docs.khulnasoft.com/integrations/ray)\n* [Blog](https://www.khulnasoft.com/blog/monitor-ray-with-khulnasoft)",
     "layout_type": "ordered",
     "template_variables": [
         {
@@ -81,7 +81,7 @@
                     {
                         "definition": {
                             "background_color": "white",
-                            "content": "**Useful Links**\n\n* [Integration Docs](https://docs.khulnasoft.com/integrations/ray)\n* [Blog](https://www.khulnasoft.com/blog/monitor-ray-with-datadog)\n",
+                            "content": "**Useful Links**\n\n* [Integration Docs](https://docs.khulnasoft.com/integrations/ray)\n* [Blog](https://www.khulnasoft.com/blog/monitor-ray-with-khulnasoft)\n",
                             "font_size": "16",
                             "has_padding": true,
                             "show_tick": false,
@@ -433,7 +433,7 @@
                                     ],
                                     "response_format": "scalar",
                                     "style": {
-                                        "palette": "datadog16"
+                                        "palette": "khulnasoft16"
                                     }
                                 }
                             ],
@@ -950,7 +950,7 @@
                                     ],
                                     "response_format": "scalar",
                                     "style": {
-                                        "palette": "datadog16"
+                                        "palette": "khulnasoft16"
                                     }
                                 }
                             ],
@@ -993,7 +993,7 @@
                                     ],
                                     "response_format": "scalar",
                                     "style": {
-                                        "palette": "datadog16"
+                                        "palette": "khulnasoft16"
                                     }
                                 }
                             ],

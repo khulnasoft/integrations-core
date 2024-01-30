@@ -7,17 +7,17 @@ requires = [
 build-backend = "hatchling.build"
 
 [project]
-name = "datadog-checks-downloader"
-description = "The Datadog Checks Downloader"
+name = "khulnasoft-checks-downloader"
+description = "The Khulnasoft Checks Downloader"
 readme = "README.md"
 requires-python = ">=3.8"
 keywords = [
-    "datadog",
-    "datadog agent",
-    "datadog check",
+    "khulnasoft",
+    "khulnasoft agent",
+    "khulnasoft check",
 ]
 authors = [
-    { name = "Datadog", email = "packages@khulnasoft.com" },
+    { name = "Khulnasoft", email = "packages@khulnasoft.com" },
 ]
 classifiers = [
     "Private :: Do Not Upload",

@@ -35,7 +35,7 @@ tests:
      - "db:postgres"
     timestamp: 1510164695727
  -
-  sample: "2019-12-10 18:27:45.389 UTC [114] khulnasoft_test datadog-agent datadog 172.28.0.1 5defc7c5.72 LOG:  duration: 0.140 ms  statement: select checkpoints_timed, checkpoints_req, buffers_checkpoint, buffers_clean, maxwritten_clean, buffers_backend, buffers_alloc, buffers_backend_fsync, checkpoint_write_time, checkpoint_sync_time FROM pg_stat_bgwriter"
+  sample: "2019-12-10 18:27:45.389 UTC [114] khulnasoft_test khulnasoft-agent khulnasoft 172.28.0.1 5defc7c5.72 LOG:  duration: 0.140 ms  statement: select checkpoints_timed, checkpoints_req, buffers_checkpoint, buffers_clean, maxwritten_clean, buffers_backend, buffers_alloc, buffers_backend_fsync, checkpoint_write_time, checkpoint_sync_time FROM pg_stat_bgwriter"
   result:
     custom:
       db:
@@ -44,16 +44,16 @@ tests:
         operation: "select"
         severity: "LOG"
         statement: "select checkpoints_timed, checkpoints_req, buffers_checkpoint, buffers_clean, maxwritten_clean, buffers_backend, buffers_alloc, buffers_backend_fsync, checkpoint_write_time, checkpoint_sync_time FROM pg_stat_bgwriter"
-        user: "datadog"
+        user: "khulnasoft"
       duration: 140000.0
       network:
         client:
           ip: "172.28.0.1"
       postgres:
-        appname: "datadog-agent"
+        appname: "khulnasoft-agent"
         proc_id: "114"
         session_id: "5defc7c5.72"
-    message: "2019-12-10 18:27:45.389 UTC [114] khulnasoft_test datadog-agent datadog 172.28.0.1 5defc7c5.72 LOG:  duration: 0.140 ms  statement: select checkpoints_timed, checkpoints_req, buffers_checkpoint, buffers_clean, maxwritten_clean, buffers_backend, buffers_alloc, buffers_backend_fsync, checkpoint_write_time, checkpoint_sync_time FROM pg_stat_bgwriter"
+    message: "2019-12-10 18:27:45.389 UTC [114] khulnasoft_test khulnasoft-agent khulnasoft 172.28.0.1 5defc7c5.72 LOG:  duration: 0.140 ms  statement: select checkpoints_timed, checkpoints_req, buffers_checkpoint, buffers_clean, maxwritten_clean, buffers_backend, buffers_alloc, buffers_backend_fsync, checkpoint_write_time, checkpoint_sync_time FROM pg_stat_bgwriter"
     tags:
      - "source:LOGS_SOURCE"
      - "db:khulnasoft_test"

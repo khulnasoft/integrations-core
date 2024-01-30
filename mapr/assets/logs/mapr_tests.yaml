@@ -3,7 +3,7 @@ tests:
  -
   sample: |-
     {
-      "hostname" : "mapr-lab-2-dhk4.c.datadog-integrations-lab.internal",
+      "hostname" : "mapr-lab-2-dhk4.c.khulnasoft-integrations-lab.internal",
       "@timestamp" : "2019-09-13T23:56:30.634Z",
       "fqdn" : "mapr-lab-2-dhk4",
       "level" : "INFO",
@@ -22,7 +22,7 @@ tests:
       event_time: "2019-09-13T23:56:30.634Z"
       fluentd_tag: "mfs_maprdb"
       fqdn: "mapr-lab-2-dhk4"
-      hostname: "mapr-lab-2-dhk4.c.datadog-integrations-lab.internal"
+      hostname: "mapr-lab-2-dhk4.c.khulnasoft-integrations-lab.internal"
       level: "INFO"
       logger:
         name: "DB"

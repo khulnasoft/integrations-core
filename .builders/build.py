@@ -164,10 +164,10 @@ def build_image():
 
     windows_image = image.startswith('windows-')
     if args.digest:
-        image_name = f'ghcr.io/datadog/agent-int-builder@{args.digest}'
+        image_name = f'ghcr.io/khulnasoft/agent-int-builder@{args.digest}'
         check_process(['docker', 'pull', image_name])
     else:
-        image_name = f'ghcr.io/datadog/agent-int-builder:{image}'
+        image_name = f'ghcr.io/khulnasoft/agent-int-builder:{image}'
         with temporary_directory() as temp_dir:
             build_context_dir = shutil.copytree(image_path, temp_dir, dirs_exist_ok=True)
 

@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2018-present
+# (C) Khulnasoft, Inc. 2018-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 from __future__ import absolute_import
@@ -49,7 +49,7 @@ def aggregator():
         try:
             from khulnasoft_checks.base.stubs import aggregator as __aggregator
         except ImportError:
-            raise ImportError('datadog-checks-base is not installed!')
+            raise ImportError('khulnasoft-checks-base is not installed!')
 
     __aggregator.reset()
     return __aggregator
@@ -63,7 +63,7 @@ def khulnasoft_agent():
         try:
             from khulnasoft_checks.base.stubs import khulnasoft_agent as __khulnasoft_agent
         except ImportError:
-            raise ImportError('datadog-checks-base is not installed!')
+            raise ImportError('khulnasoft-checks-base is not installed!')
 
     __khulnasoft_agent.reset()
     return __khulnasoft_agent
@@ -180,7 +180,7 @@ def dd_agent_check(request, aggregator, khulnasoft_agent):
 
             new_root = os.path.dirname(root)
             if new_root == root:
-                raise OSError('No Datadog Agent check found')
+                raise OSError('No Khulnasoft Agent check found')
 
             root = new_root
 

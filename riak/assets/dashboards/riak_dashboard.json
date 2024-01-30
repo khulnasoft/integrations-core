@@ -1,6 +1,6 @@
 {
     "title": "Riak - Metrics",
-    "description": "This dashboard provides a high-level overview of your Riak databases, so you can track database performance and vnode throughput. Further reading on Riak monitoring:\n\n- [Datadog's Riak integration docs](https://docs.khulnasoft.com/integrations/riak)\n\nClone this template dashboard to make changes and add your own graph widgets.",
+    "description": "This dashboard provides a high-level overview of your Riak databases, so you can track database performance and vnode throughput. Further reading on Riak monitoring:\n\n- [Khulnasoft's Riak integration docs](https://docs.khulnasoft.com/integrations/riak)\n\nClone this template dashboard to make changes and add your own graph widgets.",
     "layout_type": "ordered",
     "template_variables": [
         {

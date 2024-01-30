@@ -1,6 +1,6 @@
 {
     "title": "Cloudera Data Platform - Overview",
-    "description": "This dashboard provides a high-level overview of your Cloudera Data Platform Data Hub clusters. You can use this dashboard to keep track of your Cloudera clusters, hosts, and disks to be ready to deal with any potential issues.\n\nFurther reading on monitoring Cloudera Data Platform:\n\n- [Datadog's Cloudera integration docs](https://docs.khulnasoft.com/integrations/cloudera/)\n",
+    "description": "This dashboard provides a high-level overview of your Cloudera Data Platform Data Hub clusters. You can use this dashboard to keep track of your Cloudera clusters, hosts, and disks to be ready to deal with any potential issues.\n\nFurther reading on monitoring Cloudera Data Platform:\n\n- [Khulnasoft's Cloudera integration docs](https://docs.khulnasoft.com/integrations/cloudera/)\n",
     "widgets": [
         {
             "id": 2546624466281714,
@@ -15,7 +15,7 @@
                         "id": 5744851153096022,
                         "definition": {
                             "type": "note",
-                            "content": "This dashboard provides a high-level overview of your Cloudera Data Platform Data Hub clusters. You can use this dashboard to keep track of your Cloudera clusters, hosts, and disks to be ready to deal with any potential issues.\n\n\nFurther reading on monitoring Cloudera Data Platform:\n- [Datadog's Cloudera integration docs](https://docs.khulnasoft.com/integrations/cloudera/)\n",
+                            "content": "This dashboard provides a high-level overview of your Cloudera Data Platform Data Hub clusters. You can use this dashboard to keep track of your Cloudera clusters, hosts, and disks to be ready to deal with any potential issues.\n\n\nFurther reading on monitoring Cloudera Data Platform:\n- [Khulnasoft's Cloudera integration docs](https://docs.khulnasoft.com/integrations/cloudera/)\n",
                             "background_color": "white",
                             "font_size": "14",
                             "text_align": "left",
@@ -470,7 +470,7 @@
             "id": 4209946924530560,
             "definition": {
                 "type": "note",
-                "content": "**Note:** By default, Cloudera Manager only refreshes metrics from Cloudera Data Platform [every minute](https://docs.cloudera.com/cloudera-manager/7.4.2/metrics/topics/cm-metrics-reference.html), which may result in repeated data. To change the frequency that the Datadog Agent collects from Cloudera, use the `min_collection_interval` instance configuration option.",
+                "content": "**Note:** By default, Cloudera Manager only refreshes metrics from Cloudera Data Platform [every minute](https://docs.cloudera.com/cloudera-manager/7.4.2/metrics/topics/cm-metrics-reference.html), which may result in repeated data. To change the frequency that the Khulnasoft Agent collects from Cloudera, use the `min_collection_interval` instance configuration option.",
                 "background_color": "yellow",
                 "font_size": "16",
                 "text_align": "left",

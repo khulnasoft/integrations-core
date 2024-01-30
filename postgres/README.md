@@ -6,11 +6,11 @@
 
 The Postgres integration provides health and performance metrics for your Postgres database in near real-time. Visualize these metrics with the provided dashboard and create monitors to alert your team on PostgreSQL states.
 
-Enable [Database Monitoring][28] (DBM) for enhanced insights into query performance and database health. In addition to the standard integration, Datadog DBM provides query-level metrics, live and historical query snapshots, wait event analysis, database load, query explain plans, and blocking query insights.
+Enable [Database Monitoring][28] (DBM) for enhanced insights into query performance and database health. In addition to the standard integration, Khulnasoft DBM provides query-level metrics, live and historical query snapshots, wait event analysis, database load, query explain plans, and blocking query insights.
 
 ## Setup
 
-<div class="alert alert-info">This page describes the standard Postgres Agent integration. If you are looking for the Database Monitoring product for Postgres, see <a href="https://docs.khulnasoft.com/database_monitoring" target="_blank">Datadog Database Monitoring</a>.</div>
+<div class="alert alert-info">This page describes the standard Postgres Agent integration. If you are looking for the Database Monitoring product for Postgres, see <a href="https://docs.khulnasoft.com/database_monitoring" target="_blank">Khulnasoft Database Monitoring</a>.</div>
 
 ### Installation
 
@@ -24,27 +24,27 @@ Proceed with the following steps in this guide only if you are installing the st
 
 #### Prepare Postgres
 
-To get started with the standard PostgreSQL integration, create a read-only `datadog` user with proper access to your PostgreSQL server. Start `psql` on your PostgreSQL database.
+To get started with the standard PostgreSQL integration, create a read-only `khulnasoft` user with proper access to your PostgreSQL server. Start `psql` on your PostgreSQL database.
 
 For PostgreSQL version 10 and above, run:
 
 ```shell
-create user datadog with password '<PASSWORD>';
-grant pg_monitor to datadog;
-grant SELECT ON pg_stat_database to datadog;
+create user khulnasoft with password '<PASSWORD>';
+grant pg_monitor to khulnasoft;
+grant SELECT ON pg_stat_database to khulnasoft;
 ```
 
 For older PostgreSQL versions, run:
 
 ```shell
-create user datadog with password '<PASSWORD>';
-grant SELECT ON pg_stat_database to datadog;
+create user khulnasoft with password '<PASSWORD>';
+grant SELECT ON pg_stat_database to khulnasoft;
 ```
 
 To verify the permissions are correct, run the following command:
 
 ```shell
-psql -h localhost -U datadog postgres -c \
+psql -h localhost -U khulnasoft postgres -c \
 "select * from pg_stat_database LIMIT(1);" \
 && echo -e "\e[0;32mPostgres connection - OK\e[0m" \
 || echo -e "\e[0;31mCannot connect to Postgres\e[0m"
@@ -60,13 +60,13 @@ $$ SELECT * from pg_catalog.pg_stat_activity; $$
 LANGUAGE sql VOLATILE SECURITY DEFINER;
 
 CREATE VIEW pg_stat_activity_dd AS SELECT * FROM pg_stat_activity();
-grant SELECT ON pg_stat_activity_dd to datadog;
+grant SELECT ON pg_stat_activity_dd to khulnasoft;
 ```
 
 <!-- xxx tabs xxx -->
 <!-- xxx tab "Host" xxx -->
 
-**Note**: When generating custom metrics that require querying additional tables, you may need to grant the `SELECT` permission on those tables to the `datadog` user. Example: `grant SELECT on <TABLE_NAME> to datadog;`. Check the [FAQ section][30] for more information.
+**Note**: When generating custom metrics that require querying additional tables, you may need to grant the `SELECT` permission on those tables to the `khulnasoft` user. Example: `grant SELECT on <TABLE_NAME> to khulnasoft;`. Check the [FAQ section][30] for more information.
 
 #### Host
 
@@ -93,12 +93,12 @@ To configure this check for an Agent running on a host:
         port: 5432
 
         ## @param user - string - required
-        ## Datadog Username created to connect to PostgreSQL.
+        ## Khulnasoft Username created to connect to PostgreSQL.
         #
-        username: datadog
+        username: khulnasoft
 
         ## @param pass - string - required
-        ## Password associated with the Datadog user.
+        ## Password associated with the Khulnasoft user.
         #
         password: "<PASSWORD>"
 
@@ -138,14 +138,14 @@ To configure this check for an Agent running on a host:
     instances:
       - host: example-service-primary.example-host.com
         port: 5432
-        username: datadog
+        username: khulnasoft
         password: '<PASSWORD>'
         relations:
           - relation_name: products
           - relation_name: external_seller_products
       - host: example-service-replica-1.example-host.com
         port: 5432
-        username: datadog
+        username: khulnasoft
         password: '<PASSWORD>'
         relations:
           - relation_regex: inventory_.*
@@ -154,7 +154,7 @@ To configure this check for an Agent running on a host:
               - i
       - host: example-service-replica-2.example-host.com
         port: 5432
-        username: datadog
+        username: khulnasoft
         password: '<PASSWORD>'
         relations:
           - relation_regex: .*
@@ -163,9 +163,9 @@ To configure this check for an Agent running on a host:
 
 ##### Trace collection
 
-Datadog APM integrates with Postgres to see the traces across your distributed system. Trace collection is enabled by default in the Datadog Agent v6+. To start collecting traces:
+Khulnasoft APM integrates with Postgres to see the traces across your distributed system. Trace collection is enabled by default in the Khulnasoft Agent v6+. To start collecting traces:
 
-1. [Enable trace collection in Datadog][5].
+1. [Enable trace collection in Khulnasoft][5].
 2. [Instrument your application that makes requests to Postgres][6].
 
 ##### Log collection
@@ -189,7 +189,7 @@ PostgreSQL default logging is to `stderr`, and logs do not include detailed info
      #log_destination = 'eventlog'
    ```
 
-2. To gather detailed duration metrics and make them searchable in the Datadog interface, they should be configured inline with the statement themselves. See below for the recommended configuration differences from above. **Note**: Both `log_statement` and `log_duration` options are commented out. See [Logging statement/duration on the same line][8] for discussion on this topic.
+2. To gather detailed duration metrics and make them searchable in the Khulnasoft interface, they should be configured inline with the statement themselves. See below for the recommended configuration differences from above. **Note**: Both `log_statement` and `log_duration` options are commented out. See [Logging statement/duration on the same line][8] for discussion on this topic.
 
     This config logs all statements. To reduce the output based on duration, set the `log_min_duration_statement` value to the desired minimum duration (in milliseconds):
 
@@ -202,7 +202,7 @@ PostgreSQL default logging is to `stderr`, and logs do not include detailed info
      #log_duration = on
    ```
 
-3. Collecting logs is disabled by default in the Datadog Agent, enable it in your `datadog.yaml` file:
+3. Collecting logs is disabled by default in the Khulnasoft Agent, enable it in your `khulnasoft.yaml` file:
 
    ```yaml
    logs_enabled: true
@@ -239,20 +239,20 @@ To configure this check for an Agent running on a container:
 Set [Autodiscovery Integrations Templates][9] as Docker labels on your application container:
 
 ```yaml
-LABEL "com.datadoghq.ad.check_names"='["postgres"]'
-LABEL "com.datadoghq.ad.init_configs"='[{}]'
-LABEL "com.datadoghq.ad.instances"='[{"host":"%%host%%", "port":5432,"username":"datadog","password":"<PASSWORD>"}]'
+LABEL "com.khulnasofthq.ad.check_names"='["postgres"]'
+LABEL "com.khulnasofthq.ad.init_configs"='[{}]'
+LABEL "com.khulnasofthq.ad.instances"='[{"host":"%%host%%", "port":5432,"username":"khulnasoft","password":"<PASSWORD>"}]'
 ```
 
 ##### Log collection
 
 
-Collecting logs is disabled by default in the Datadog Agent. To enable it, see [Docker Log Collection][10].
+Collecting logs is disabled by default in the Khulnasoft Agent. To enable it, see [Docker Log Collection][10].
 
 Then, set [Log Integrations][11] as Docker labels:
 
 ```yaml
-LABEL "com.datadoghq.ad.logs"='[{"source":"postgresql","service":"postgresql"}]'
+LABEL "com.khulnasofthq.ad.logs"='[{"source":"postgresql","service":"postgresql"}]'
 ```
 
 ##### Trace collection
@@ -283,7 +283,7 @@ To configure this check for an Agent running on Kubernetes:
 
 Set [Autodiscovery Integrations Templates][13] as pod annotations on your application container. Aside from this, templates can also be configured with [a file, a configmap, or a key-value store][14].
 
-**Annotations v1** (for Datadog Agent < v7.36)
+**Annotations v1** (for Khulnasoft Agent < v7.36)
 
 ```yaml
 apiVersion: v1
@@ -298,7 +298,7 @@ metadata:
         {
           "host": "%%host%%",
           "port":"5432",
-          "username":"datadog",
+          "username":"khulnasoft",
           "password":"<PASSWORD>"
         }
       ]
@@ -307,7 +307,7 @@ spec:
     - name: postgres
 ```
 
-**Annotations v2** (for Datadog Agent v7.36+)
+**Annotations v2** (for Khulnasoft Agent v7.36+)
 
 ```yaml
 apiVersion: v1
@@ -323,7 +323,7 @@ metadata:
             {
               "host": "%%host%%",
               "port":"5432",
-              "username":"datadog",
+              "username":"khulnasoft",
               "password":"<PASSWORD>"
             }
           ]
@@ -337,7 +337,7 @@ spec:
 ##### Log collection
 
 
-Collecting logs is disabled by default in the Datadog Agent. To enable it, see [Kubernetes Log Collection][15].
+Collecting logs is disabled by default in the Khulnasoft Agent. To enable it, see [Kubernetes Log Collection][15].
 
 Then, set [Log Integrations][11] as pod annotations. This can also be configured with [a file, a configmap, or a key-value store][16].
 
@@ -388,9 +388,9 @@ Set [Autodiscovery Integrations Templates][9] as Docker labels on your applicati
     "name": "postgres",
     "image": "postgres:latest",
     "dockerLabels": {
-      "com.datadoghq.ad.check_names": "[\"postgres\"]",
-      "com.datadoghq.ad.init_configs": "[{}]",
-      "com.datadoghq.ad.instances": "[{\"host\":\"%%host%%\", \"port\":5432,\"username\":\"datadog\",\"password\":\"<PASSWORD>\"}]"
+      "com.khulnasofthq.ad.check_names": "[\"postgres\"]",
+      "com.khulnasofthq.ad.init_configs": "[{}]",
+      "com.khulnasofthq.ad.instances": "[{\"host\":\"%%host%%\", \"port\":5432,\"username\":\"khulnasoft\",\"password\":\"<PASSWORD>\"}]"
     }
   }]
 }
@@ -399,7 +399,7 @@ Set [Autodiscovery Integrations Templates][9] as Docker labels on your applicati
 ##### Log collection
 
 
-Collecting logs is disabled by default in the Datadog Agent. To enable it, see [ECS Log Collection][12].
+Collecting logs is disabled by default in the Khulnasoft Agent. To enable it, see [ECS Log Collection][12].
 
 Then, set [Log Integrations][11] as Docker labels:
 
@@ -409,7 +409,7 @@ Then, set [Log Integrations][11] as Docker labels:
     "name": "postgres",
     "image": "postgres:latest",
     "dockerLabels": {
-      "com.datadoghq.ad.logs": "[{\"source\":\"postgresql\",\"service\":\"postgresql\"}]"
+      "com.khulnasofthq.ad.logs": "[{\"source\":\"postgresql\",\"service\":\"postgresql\"}]"
     }
   }]
 }
@@ -458,7 +458,7 @@ See [service_checks.json][18] for a list of service checks provided by this inte
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][21].
+Need help? Contact [Khulnasoft support][21].
 
 ## Further Reading
 
@@ -473,7 +473,7 @@ Additional helpful documentation, links, and articles:
 - [100x faster Postgres performance by changing 1 line][23]
 - [Key metrics for PostgreSQL monitoring][24]
 - [Collecting metrics with PostgreSQL monitoring tools][25]
-- [How to collect and monitor PostgreSQL data with Datadog][26]
+- [How to collect and monitor PostgreSQL data with Khulnasoft][26]
 
 [1]: https://raw.githubusercontent.com/KhulnaSoft/integrations-core/master/postgres/images/postgresql_dashboard.png
 [2]: https://app.khulnasoft.com/account/settings/agent/latest
@@ -500,7 +500,7 @@ Additional helpful documentation, links, and articles:
 [23]: https://www.khulnasoft.com/blog/100x-faster-postgres-performance-by-changing-1-line
 [24]: https://www.khulnasoft.com/blog/postgresql-monitoring
 [25]: https://www.khulnasoft.com/blog/postgresql-monitoring-tools
-[26]: https://www.khulnasoft.com/blog/collect-postgresql-data-with-datadog
+[26]: https://www.khulnasoft.com/blog/collect-postgresql-data-with-khulnasoft
 [27]: https://docs.khulnasoft.com/agent/docker/apm/
 [28]: https://docs.khulnasoft.com/database_monitoring/
 [29]: https://docs.khulnasoft.com/database_monitoring/#postgres

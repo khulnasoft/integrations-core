@@ -8,7 +8,7 @@ This check monitors [IBM MQ][1] versions 9.1 and above.
 
 ### Installation
 
-The IBM MQ check is included in the [Datadog Agent][2] package.
+The IBM MQ check is included in the [Khulnasoft Agent][2] package.
 
 To use the IBM MQ check, you need to make sure the [IBM MQ Client][3] 9.1+ is installed (unless a compatible version of IBM MQ server is installed on the Agent host). Currently, the IBM MQ check does not support connecting to an IBM MQ server on z/OS.
 
@@ -21,30 +21,30 @@ For example, if you installed the client under `/opt`:
 export LD_LIBRARY_PATH=/opt/mqm/lib64:/opt/mqm/lib:$LD_LIBRARY_PATH
 ```
 
-**Note**: Agent v6+ uses `upstart`, `systemd` or `launchd` to orchestrate the datadog-agent service. Environment variables may need to be added to the service configuration files at the default locations of:
+**Note**: Agent v6+ uses `upstart`, `systemd` or `launchd` to orchestrate the khulnasoft-agent service. Environment variables may need to be added to the service configuration files at the default locations of:
 
-- Upstart (Linux): `/etc/init/datadog-agent.conf`
-- Systemd (Linux): `/lib/systemd/system/datadog-agent.service`
-- Launchd (MacOS): `~/Library/LaunchAgents/com.datadoghq.agent.plist`
+- Upstart (Linux): `/etc/init/khulnasoft-agent.conf`
+- Systemd (Linux): `/lib/systemd/system/khulnasoft-agent.service`
+- Launchd (MacOS): `~/Library/LaunchAgents/com.khulnasofthq.agent.plist`
   - This only works if MacOS SIP is disabled (might not be recommended depending on your security policy). This is due to [SIP purging `LD_LIBRARY_PATH` environ variable][4].
 
 Example of the configuration for `systemd`:
 
 ```yaml
 [Unit]
-Description="Datadog Agent"
+Description="Khulnasoft Agent"
 After=network.target
-Wants=datadog-agent-trace.service datadog-agent-process.service
+Wants=khulnasoft-agent-trace.service khulnasoft-agent-process.service
 StartLimitIntervalSec=10
 StartLimitBurst=5
 
 [Service]
 Type=simple
-PIDFile=/opt/datadog-agent/run/agent.pid
+PIDFile=/opt/khulnasoft-agent/run/agent.pid
 Environment="LD_LIBRARY_PATH=/opt/mqm/lib64:/opt/mqm/lib:$LD_LIBRARY_PATH"
 User=dd-agent
 Restart=on-failure
-ExecStart=/opt/datadog-agent/bin/agent/agent run -p /opt/datadog-agent/run/agent.pid
+ExecStart=/opt/khulnasoft-agent/bin/agent/agent run -p /opt/khulnasoft-agent/run/agent.pid
 
 [Install]
 WantedBy=multi-user.target
@@ -53,7 +53,7 @@ WantedBy=multi-user.target
 Example of the configuration for `upstart`:
 
 ```conf
-description "Datadog Agent"
+description "Khulnasoft Agent"
 
 start on started networking
 stop on runlevel [!2345]
@@ -69,11 +69,11 @@ env LD_LIBRARY_PATH=/opt/mqm/lib64:/opt/mqm/lib:$LD_LIBRARY_PATH
 setuid dd-agent
 
 script
-  exec /opt/datadog-agent/bin/agent/agent start -p /opt/datadog-agent/run/agent.pid
+  exec /opt/khulnasoft-agent/bin/agent/agent start -p /opt/khulnasoft-agent/run/agent.pid
 end script
 
 post-stop script
-  rm -f /opt/datadog-agent/run/agent.pid
+  rm -f /opt/khulnasoft-agent/run/agent.pid
 end script
 ```
 
@@ -90,7 +90,7 @@ Example of the configuration for `launchd`:
             <false/>
         </dict>
         <key>Label</key>
-        <string>com.datadoghq.agent</string>
+        <string>com.khulnasofthq.agent</string>
         <key>EnvironmentVariables</key>
         <dict>
             <key>DD_LOG_TO_CONSOLE</key>
@@ -100,13 +100,13 @@ Example of the configuration for `launchd`:
         </dict>
         <key>ProgramArguments</key>
         <array>
-            <string>/opt/datadog-agent/bin/agent/agent</string>
+            <string>/opt/khulnasoft-agent/bin/agent/agent</string>
             <string>run</string>
         </array>
         <key>StandardOutPath</key>
-        <string>/var/log/datadog/launchd.log</string>
+        <string>/var/log/khulnasoft/launchd.log</string>
         <key>StandardErrorPath</key>
-        <string>/var/log/datadog/launchd.log</string>
+        <string>/var/log/khulnasoft/launchd.log</string>
         <key>ExitTimeOut</key>
         <integer>10</integer>
     </dict>
@@ -137,14 +137,14 @@ Configure the environment variable `MQ_FILE_PATH`, to point at the data director
 
 ### Permissions and authentication
 
-There are many ways to set up permissions in IBM MQ. Depending on how your setup works, create a `datadog` user within MQ with read only permissions and, optionally, `+chg` permissions. `+chg` permissions are required to collect metrics for [reset queue statistics][14] (`MQCMD_RESET_Q_STATS`). If you do not wish to collect these metrics you can disable `collect_reset_queue_metrics` on the configuration. Collecting reset queue statistics performance data will also reset the performance data.
+There are many ways to set up permissions in IBM MQ. Depending on how your setup works, create a `khulnasoft` user within MQ with read only permissions and, optionally, `+chg` permissions. `+chg` permissions are required to collect metrics for [reset queue statistics][14] (`MQCMD_RESET_Q_STATS`). If you do not wish to collect these metrics you can disable `collect_reset_queue_metrics` on the configuration. Collecting reset queue statistics performance data will also reset the performance data.
 
 **Note**: "Queue Monitoring" must be enabled on the MQ server and set to at least "Medium". This can be done using the MQ UI or with an `mqsc` command in the server's host:
 
 ```text
 > /opt/mqm/bin/runmqsc
 5724-H72 (C) Copyright IBM Corp. 1994, 2018.
-Starting MQSC for queue manager datadog.
+Starting MQSC for queue manager khulnasoft.
 
 
 ALTER QMGR MONQ(MEDIUM) MONCHL(MEDIUM)
@@ -193,7 +193,7 @@ To configure this check for an Agent running on a host:
 
 _Available for Agent versions >6.0_
 
-1. Collecting logs is disabled by default in the Datadog Agent, enable it in your `datadog.yaml` file:
+1. Collecting logs is disabled by default in the Khulnasoft Agent, enable it in your `khulnasoft.yaml` file:
 
    ```yaml
    logs_enabled: true
@@ -228,13 +228,13 @@ For containerized environments, see the [Autodiscovery Integration Templates][7]
 | -------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
 | `<INTEGRATION_NAME>` | `ibm_mq`                                                                                                                        |
 | `<INIT_CONFIG>`      | blank or `{}`                                                                                                                   |
-| `<INSTANCE_CONFIG>`  | `{"channel": "DEV.ADMIN.SVRCONN", "queue_manager": "datadog", "host":"%%host%%", "port":"%%port%%", "queues":["<QUEUE_NAME>"]}` |
+| `<INSTANCE_CONFIG>`  | `{"channel": "DEV.ADMIN.SVRCONN", "queue_manager": "khulnasoft", "host":"%%host%%", "port":"%%port%%", "queues":["<QUEUE_NAME>"]}` |
 
 ##### Log collection
 
 _Available for Agent versions >6.0_
 
-Collecting logs is disabled by default in the Datadog Agent. To enable it, see [Kubernetes Log Collection][8].
+Collecting logs is disabled by default in the Khulnasoft Agent. To enable it, see [Kubernetes Log Collection][8].
 
 | Parameter      | Value                                                                                                                                                              |
 | -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -270,7 +270,7 @@ If you are getting the following warning:
 Warning: Error getting pcf queue reset metrics for SAMPLE.QUEUE.1: MQI Error. Comp: 2, Reason 2035: FAILED: MQRC_NOT_AUTHORIZED
 ```
 
-This is due to the `datadog` user not having the `+chg` permission to collect reset queue metrics. To fix this, you can either give `+chg` permissions to the `datadog` user [using `setmqaut`][15] and collect queue reset metrics, or you can disable the `collect_reset_queue_metrics`:
+This is due to the `khulnasoft` user not having the `+chg` permission to collect reset queue metrics. To fix this, you can either give `+chg` permissions to the `khulnasoft` user [using `setmqaut`][15] and collect queue reset metrics, or you can disable the `collect_reset_queue_metrics`:
 ```yaml
     collect_reset_queue_metrics: false
 ```
@@ -295,14 +295,14 @@ you can potentially reduce the scope of the check by trying the following:
 
 ### Other
 
-Need help? Contact [Datadog support][12].
+Need help? Contact [Khulnasoft support][12].
 
 
 ## Further Reading
 
 Additional helpful documentation, links, and articles:
 
-- [Monitor IBM MQ metrics and logs with Datadog][13]
+- [Monitor IBM MQ metrics and logs with Khulnasoft][13]
 
 [1]: https://www.ibm.com/products/mq
 [2]: https://app.khulnasoft.com/account/settings/agent/latest
@@ -316,7 +316,7 @@ Additional helpful documentation, links, and articles:
 [10]: https://github.com/KhulnaSoft/integrations-core/blob/master/ibm_mq/metadata.csv
 [11]: https://github.com/KhulnaSoft/integrations-core/blob/master/ibm_mq/assets/service_checks.json
 [12]: https://docs.khulnasoft.com/help/
-[13]: https://www.khulnasoft.com/blog/monitor-ibmmq-with-datadog
+[13]: https://www.khulnasoft.com/blog/monitor-ibmmq-with-khulnasoft
 [14]: https://www.ibm.com/docs/en/ibm-mq/9.1?topic=formats-reset-queue-statistics
 [15]: https://www.ibm.com/docs/en/ibm-mq/9.2?topic=reference-setmqaut-grant-revoke-authority
 [16]: https://www.ibm.com/docs/en/ibm-mq/9.2?topic=queues-dynamic-model

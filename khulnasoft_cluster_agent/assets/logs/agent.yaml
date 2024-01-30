@@ -1,11 +1,11 @@
 id: agent
-metric_id: datadog-cluster-agent # Only one official integration for the agent for now
+metric_id: khulnasoft-cluster-agent # Only one official integration for the agent for now
 backend_only: false
 installation_sources:
   - agent
-  - datadog-agent
-  - datadog-agent-cluster-worker
-  - datadog-cluster-agent
+  - khulnasoft-agent
+  - khulnasoft-agent-cluster-worker
+  - khulnasoft-cluster-agent
   - process-agent
   - security-agent
   - system-probe
@@ -14,17 +14,17 @@ installation_sources:
 facets:
 pipeline:
   type: pipeline
-  name: Datadog Agent
+  name: Khulnasoft Agent
   enabled: true
   # source:(agent,process-agent,security-agent,system-probe,trace-agent) = Host installation
-  # source:datadog-agent = K8S
-  # source:datadog-agent-cluster-worker = K8S - Cluster worker
-  # source:(cluster-agent, datadog-cluster-agent) = K8S - Cluster Agent
+  # source:khulnasoft-agent = K8S
+  # source:khulnasoft-agent-cluster-worker = K8S - Cluster worker
+  # source:(cluster-agent, khulnasoft-cluster-agent) = K8S - Cluster Agent
   filter:
-    query: source:(agent OR datadog-agent OR datadog-agent-cluster-worker OR datadog-cluster-agent OR process-agent OR security-agent OR system-probe OR trace-agent OR cluster-agent)
+    query: source:(agent OR khulnasoft-agent OR khulnasoft-agent-cluster-worker OR khulnasoft-cluster-agent OR process-agent OR security-agent OR system-probe OR trace-agent OR cluster-agent)
   processors:
     - type: grok-parser
-      name: Parsing Datadog Agent logs
+      name: Parsing Khulnasoft Agent logs
       enabled: true
       source: message
       samples:

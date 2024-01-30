@@ -250,7 +250,7 @@ kube_namespace_status_phase{namespace="test",phase="Terminating"} 0
 kube_node_created{node="minikube"} 1.508406442e+09
 # HELP kube_pod_info Information about pod.
 # TYPE kube_pod_info gauge
-kube_pod_info{namespace="default",pod="datadog-brl4p",host_ip="10.132.0.75",pod_ip="10.16.1.11",uid="b6fb4273-2dd6-4edb-9a23-7642bb121806",created_by_kind="DaemonSet",created_by_name="datadog",priority_class=""} 1
+kube_pod_info{namespace="default",pod="khulnasoft-brl4p",host_ip="10.132.0.75",pod_ip="10.16.1.11",uid="b6fb4273-2dd6-4edb-9a23-7642bb121806",created_by_kind="DaemonSet",created_by_name="khulnasoft",priority_class=""} 1
 kube_pod_info{namespace="kube-system",pod="fluentd-gke-2zdwh",host_ip="10.132.0.75",pod_ip="10.132.0.75",uid="70fb8207-612d-47ce-ae35-d7dce3c2fcfd",node="gke-nam-test-default-pool-d718e7e7-3pdj",created_by_kind="DaemonSet",created_by_name="fluentd-gke",priority_class="system-node-critical"} 1
 # HELP kube_node_info Information about a cluster node.
 # TYPE kube_node_info gauge
@@ -337,7 +337,7 @@ kube_persistentvolumeclaim_status_phase{namespace="default",persistentvolumeclai
 kube_persistentvolumeclaim_status_phase{namespace="default",persistentvolumeclaim="task-pv-claim",phase="Pending"} 0
 # HELP kube_pod_container_info Information about a container in a pod.
 # TYPE kube_pod_container_info gauge
-kube_pod_container_info{container="dd-k8state",container_id="docker://7cb618a8a95bba49cb1c77e8bd81f4410f7f98c27b036d67ad84fcb2d0a79146",image="datadog/docker-dd-agent:latest",image_id="docker-pullable://datadog/docker-dd-agent@sha256:64a562b89431441d52fb38544e5f7d395020481333e5c5a07f2a7e93639453a7",namespace="default",pod="jaundiced-numbat-dd-k8state-b6s77"} 1
+kube_pod_container_info{container="dd-k8state",container_id="docker://7cb618a8a95bba49cb1c77e8bd81f4410f7f98c27b036d67ad84fcb2d0a79146",image="khulnasoft/docker-dd-agent:latest",image_id="docker-pullable://khulnasoft/docker-dd-agent@sha256:64a562b89431441d52fb38544e5f7d395020481333e5c5a07f2a7e93639453a7",namespace="default",pod="jaundiced-numbat-dd-k8state-b6s77"} 1
 kube_pod_container_info{container="dnsmasq",container_id="docker://6b53931d2126fb164c5f139d348c292f5ea0449ab437c13e5cc883a9cad1ae5d",image="gcr.io/google_containers/k8s-dns-dnsmasq-nanny-amd64:1.14.5",image_id="docker-pullable://gcr.io/google_containers/k8s-dns-dnsmasq-nanny-amd64@sha256:46b933bb70270c8a02fa6b6f87d440f6f1fce1a5a2a719e164f83f7b109f7544",namespace="kube-system",pod="kube-dns-1326421443-hj4hx"} 1
 kube_pod_container_info{container="hello",container_id="docker://1a2d16f242e8603b569c453b121c1345f2905763790f2745db6e49d0f907d320",image="busybox:latest",image_id="docker-pullable://busybox@sha256:bbc3a03235220b170ba48a157dd097dd1379299370e1ed99ce976df0355d24f0",namespace="default",pod="hello-1509998400-rb8bs"} 1
 kube_pod_container_info{container="hello",container_id="docker://4e3fa7569b1d5910a06a6592dbdf775ad1671fb20c4ceb06b2523760e15a3c7a",image="busybox:latest",image_id="docker-pullable://busybox@sha256:bbc3a03235220b170ba48a157dd097dd1379299370e1ed99ce976df0355d24f0",namespace="default",pod="hello-1509998340-k4f8q"} 1
@@ -915,7 +915,7 @@ kube_service_labels{label_addonmanager_kubernetes_io_mode="Reconcile",label_app=
 kube_service_labels{label_app="kube-state-metrics",label_chart="kube-state-metrics-0.3.1",label_heritage="Tiller",label_release="jaundiced-numbat",namespace="default",service="jaundiced-numbat-kube-state-metrics"} 1
 # HELP kube_service_spec_type Type about service.
 # TYPE kube_service_spec_type gauge
-kube_service_spec_type{namespace="default",service="datadog-cluster-agent",type="ClusterIP"} 1
+kube_service_spec_type{namespace="default",service="khulnasoft-cluster-agent",type="ClusterIP"} 1
 kube_service_spec_type{namespace="default",service="ddrc1-kube-state-metrics",type="ClusterIP"} 1
 kube_service_spec_type{namespace="default",service="kubernetes",type="ClusterIP"} 1
 kube_service_spec_type{namespace="default",service="redis-db2",type="LoadBalancer"} 1
@@ -944,7 +944,7 @@ kube_limitrange{constraint="defaultRequest",limitrange="limits",namespace="defau
 # TYPE kube_daemonset_updated_number_scheduled gauge
 kube_daemonset_updated_number_scheduled{namespace="kube-system",daemonset="kube-proxy"} 3
 kube_daemonset_updated_number_scheduled{namespace="kube-system",daemonset="kube-svc-redirect"} 3
-kube_daemonset_updated_number_scheduled{namespace="default",daemonset="dd-datadog"} 3
+kube_daemonset_updated_number_scheduled{namespace="default",daemonset="dd-khulnasoft"} 3
 # HELP kube_hpa_status_condition The condition of this autoscaler.
 # TYPE kube_hpa_status_condition gauge
 kube_hpa_status_condition{namespace="default",hpa="myhpa",condition="true",status="AbleToScale"} 1

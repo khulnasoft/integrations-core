@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2018-present
+# (C) Khulnasoft, Inc. 2018-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 import os
@@ -114,8 +114,8 @@ def create(ctx, name, integration_type, location, non_interactive, quiet, dry_ru
 
     NAME: The display name of the integration that will appear in documentation.
     """
-    if name.lower().startswith("datadog"):
-        abort("Integration names cannot start with datadog")
+    if name.lower().startswith("khulnasoft"):
+        abort("Integration names cannot start with khulnasoft")
 
     if name.islower():
         echo_warning('Make sure to use the display name. e.g. MapR, Ambari, IBM MQ, vSphere, ...')
@@ -171,7 +171,7 @@ def create(ctx, name, integration_type, location, non_interactive, quiet, dry_ru
                 ] = """
   "author": {
     "support_email": "help@khulnasoft.com",
-    "name": "Datadog",
+    "name": "Khulnasoft",
     "homepage": "https://www.khulnasoft.com",
     "sales_email": "info@khulnasoft.com"
   },"""

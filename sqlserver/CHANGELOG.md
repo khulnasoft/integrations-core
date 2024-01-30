@@ -495,7 +495,7 @@
 * Handle missing DBM metrics columns on older SQL Server versions ([#10594](https://github.com/KhulnaSoft/integrations-core/pull/10594))
 * Fix sqlserver resolved_hostname by handling comma correctly ([#10592](https://github.com/KhulnaSoft/integrations-core/pull/10592))
 * Fix memory clerks metrics for sqlserver 2019 ([#10464](https://github.com/KhulnaSoft/integrations-core/pull/10464))
-* Upgrade datadog checks base to 23.1.5 ([#10468](https://github.com/KhulnaSoft/integrations-core/pull/10468))
+* Upgrade khulnasoft checks base to 23.1.5 ([#10468](https://github.com/KhulnaSoft/integrations-core/pull/10468))
 
 ## 6.0.0 / 2021-10-13
 
@@ -513,7 +513,7 @@
 
 ***Fixed***:
 
-* Upgrade datadog checks base to 23.1.5 in sqlserver integration ([#10468](https://github.com/KhulnaSoft/integrations-core/pull/10468))
+* Upgrade khulnasoft checks base to 23.1.5 in sqlserver integration ([#10468](https://github.com/KhulnaSoft/integrations-core/pull/10468))
 
 ## 5.0.1 / 2021-10-12
 

@@ -670,7 +670,7 @@
             "id": 22,
             "definition": {
                 "type": "note",
-                "content": "With this dashboard, you can get a high-level view of your Apache Ignite deployments and troubleshoot performance issues, including:\n\n- when a node goes offline or is kicked out of a cluster\n- unresponsive applications due to insufficient heap space on a node\n- drops in cache size, resulting in data loss\n- page write throttling\n\nTo learn more about our Ignite integration, see:\n\n- Our [official integration documentation](https://docs.khulnasoft.com/integrations/ignite)\n- Our [blog post](https://www.khulnasoft.com/blog/monitor-apache-ignite-with-datadog)\n\nYou can clone this dashboard, copy and paste widgets from other out-of-the-box dashboards, and create your own visualizations for your custom applications.",
+                "content": "With this dashboard, you can get a high-level view of your Apache Ignite deployments and troubleshoot performance issues, including:\n\n- when a node goes offline or is kicked out of a cluster\n- unresponsive applications due to insufficient heap space on a node\n- drops in cache size, resulting in data loss\n- page write throttling\n\nTo learn more about our Ignite integration, see:\n\n- Our [official integration documentation](https://docs.khulnasoft.com/integrations/ignite)\n- Our [blog post](https://www.khulnasoft.com/blog/monitor-apache-ignite-with-khulnasoft)\n\nYou can clone this dashboard, copy and paste widgets from other out-of-the-box dashboards, and create your own visualizations for your custom applications.",
                 "background_color": "white",
                 "font_size": "18",
                 "text_align": "left",

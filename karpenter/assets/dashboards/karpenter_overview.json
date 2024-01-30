@@ -1,5 +1,5 @@
 {
-    "author_name": "Datadog",
+    "author_name": "Khulnasoft",
     "description": null,
     "layout_type": "ordered",
     "template_variables": [
@@ -92,7 +92,7 @@
                     {
                         "definition": {
                             "background_color": "transparent",
-                            "content": "**Further reading:**\n\n- [Datadog Karpenter Integration Documentation](https://docs.khulnasoft.com/integrations/karpenter/)\n- [Karpenter Docs](https://karpenter.sh/docs/)",
+                            "content": "**Further reading:**\n\n- [Khulnasoft Karpenter Integration Documentation](https://docs.khulnasoft.com/integrations/karpenter/)\n- [Karpenter Docs](https://karpenter.sh/docs/)",
                             "font_size": "14",
                             "has_padding": true,
                             "show_tick": false,
@@ -928,7 +928,7 @@
                                     ],
                                     "response_format": "scalar",
                                     "style": {
-                                        "palette": "datadog16"
+                                        "palette": "khulnasoft16"
                                     }
                                 }
                             ],
@@ -1097,7 +1097,7 @@
                                     ],
                                     "response_format": "scalar",
                                     "style": {
-                                        "palette": "datadog16"
+                                        "palette": "khulnasoft16"
                                     }
                                 }
                             ],

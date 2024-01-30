@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2023-present
+# (C) Khulnasoft, Inc. 2023-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 """
@@ -18,7 +18,7 @@ from tempfile import TemporaryDirectory
 
 REPO_DIR = Path.cwd().parent
 ASSETS_DIR = Path(__file__).parent / 'pkg'
-IDENTIFIER = 'com.datadoghq.ddev'
+IDENTIFIER = 'com.khulnasofthq.ddev'
 COMPONENT_PACKAGE_NAME = f'{IDENTIFIER}.pkg'
 README = """\
 <!DOCTYPE html>
@@ -27,7 +27,7 @@ README = """\
 <body>
   <p>This will install ddev v{version} globally.</p>
 
-  <p>For more information on installing and upgrading ddev, see our <a href="https://datadoghq.dev/integrations-core/setup/#ddev">Installation Guide</a>.</p>
+  <p>For more information on installing and upgrading ddev, see our <a href="https://khulnasofthq.dev/integrations-core/setup/#ddev">Installation Guide</a>.</p>
 </body>
 </html>
 """  # noqa: E501

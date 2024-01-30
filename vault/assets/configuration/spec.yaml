@@ -11,7 +11,7 @@ files:
       description: |
         Use the latest OpenMetrics implementation for more features, better performance,
         and more appropriate metric types by default. If running on Agent v6, you must
-        set the `python_version` option in `datadog.yaml` to `"3"`.
+        set the `python_version` option in `khulnasoft.yaml` to `"3"`.
 
         In a future release, this option will be set to `true` by default.
 

@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2023-present
+# (C) Khulnasoft, Inc. 2023-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 from concurrent.futures.thread import ThreadPoolExecutor
@@ -50,7 +50,7 @@ def test_collect_metadata(integration_check, dbm_instance, aggregator):
 def test_collect_schemas(integration_check, dbm_instance, aggregator):
     dbm_instance["collect_schemas"] = {'enabled': True, 'collection_interval': 0.5}
     dbm_instance['relations'] = [{'relation_regex': ".*"}]
-    dbm_instance["database_autodiscovery"] = {"enabled": True, "include": ["datadog"]}
+    dbm_instance["database_autodiscovery"] = {"enabled": True, "include": ["khulnasoft"]}
     del dbm_instance['dbname']
     check = integration_check(dbm_instance)
     run_one_check(check, dbm_instance)
@@ -62,10 +62,10 @@ def test_collect_schemas(integration_check, dbm_instance, aggregator):
     assert len(database_metadata) == 1
     assert 'khulnasoft_test' == database_metadata[0]['name']
 
-    # there should only two schemas, 'public' and 'datadog'. datadog is empty
+    # there should only two schemas, 'public' and 'khulnasoft'. khulnasoft is empty
     schema_names = [s['name'] for s in database_metadata[0]['schemas']]
     assert 'public' in schema_names
-    assert 'datadog' in schema_names
+    assert 'khulnasoft' in schema_names
     schema_public = None
     for schema in database_metadata[0]['schemas']:
         if schema['name'] == 'public':

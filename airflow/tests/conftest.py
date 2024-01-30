@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2010-2018
+# (C) Khulnasoft, Inc. 2010-2018
 # All rights reserved
 # Licensed under Simplified BSD License (see LICENSE)
 import os
@@ -29,7 +29,7 @@ def dd_environment(instance):
 dogstatsd_metrics_stats_enable: true
 """
     with TempDir() as temp_dir:
-        with open(path.join(temp_dir, 'datadog.yaml'), 'w') as f:
+        with open(path.join(temp_dir, 'khulnasoft.yaml'), 'w') as f:
             f.write(khulnasoft_config + get_readme_mappings())
 
         with docker_run(
@@ -38,7 +38,7 @@ dogstatsd_metrics_stats_enable: true
             conditions=[CheckEndpoints(URL + "/api/v1/health", attempts=120)],
         ):
             yield instance, {
-                'docker_volumes': ['{}/datadog.yaml:/etc/datadog-agent/datadog.yaml'.format(temp_dir)],
+                'docker_volumes': ['{}/khulnasoft.yaml:/etc/khulnasoft-agent/khulnasoft.yaml'.format(temp_dir)],
             }
 
 

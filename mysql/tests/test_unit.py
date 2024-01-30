@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2021-present
+# (C) Khulnasoft, Inc. 2021-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 import subprocess
@@ -17,7 +17,7 @@ pytestmark = pytest.mark.unit
 
 
 def test__get_runtime_aurora_tags():
-    mysql_check = MySql(common.CHECK_NAME, {}, instances=[{'server': 'localhost', 'user': 'datadog'}])
+    mysql_check = MySql(common.CHECK_NAME, {}, instances=[{'server': 'localhost', 'user': 'khulnasoft'}])
 
     class MockCursor:
         def __init__(self, rows, side_effect=None):
@@ -82,7 +82,7 @@ def test__get_server_pid():
     """
     Test the logic looping through the processes searching for `mysqld`
     """
-    mysql_check = MySql(common.CHECK_NAME, {}, instances=[{'server': 'localhost', 'user': 'datadog'}])
+    mysql_check = MySql(common.CHECK_NAME, {}, instances=[{'server': 'localhost', 'user': 'khulnasoft'}])
     mysql_check._get_pid_file_variable = mock.MagicMock(return_value=None)
     mysql_check.log = mock.MagicMock()
     dummy_proc = subprocess.Popen(["python"])
@@ -234,7 +234,7 @@ def test_replication_check_status(
 
 def test__get_is_aurora():
     def new_check():
-        return MySql(common.CHECK_NAME, {}, instances=[{'server': 'localhost', 'user': 'datadog'}])
+        return MySql(common.CHECK_NAME, {}, instances=[{'server': 'localhost', 'user': 'khulnasoft'}])
 
     class MockCursor:
         def __init__(self, rows, side_effect=None):
@@ -305,7 +305,7 @@ def test__get_is_aurora():
     ],
 )
 def test_service_check(disable_generic_tags, expected_tags, hostname):
-    config = {'server': 'localhost', 'user': 'datadog', 'disable_generic_tags': disable_generic_tags}
+    config = {'server': 'localhost', 'user': 'khulnasoft', 'disable_generic_tags': disable_generic_tags}
     check = MySql(common.CHECK_NAME, {}, instances=[config])
 
     assert set(check._service_check_tags(hostname)) == expected_tags

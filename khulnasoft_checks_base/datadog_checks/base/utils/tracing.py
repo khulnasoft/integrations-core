@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2018-present
+# (C) Khulnasoft, Inc. 2018-present
 # All rights reserved
 # Licensed under Simplified BSD License (see LICENSE)
 import functools
@@ -25,7 +25,7 @@ EXCLUDED_MODULES = ['threading']
 # is acceptable.
 AGENT_CHECK_DEFAULT_TRACED_METHODS = {'check', 'run', 'warning'}
 
-INTEGRATION_TRACING_SERVICE_NAME = "datadog-agent-integrations"
+INTEGRATION_TRACING_SERVICE_NAME = "khulnasoft-agent-integrations"
 
 
 def _get_integration_name(function_name, self, *args, **kwargs):

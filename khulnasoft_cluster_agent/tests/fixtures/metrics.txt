@@ -57,17 +57,17 @@ api_requests{handler="getPodMetadataForNode",status="200"} 35
 api_requests{handler="postCheckStatus",status="200"} 11
 # HELP cluster_checks_busyness Busyness of a node per the number of metrics submitted and average duration of all checks run
 # TYPE cluster_checks_busyness gauge
-cluster_checks_busyness{join_leader="true",node="datadog-agent-cluster-worker-5fcdf964b7-4bhpr"} 5188
-cluster_checks_busyness{join_leader="true",node="datadog-agent-cluster-worker-5fcdf964b7-6x9zl"} 46944
-cluster_checks_busyness{join_leader="true",node="datadog-agent-cluster-worker-5fcdf964b7-czgvd"} 5366
+cluster_checks_busyness{join_leader="true",node="khulnasoft-agent-cluster-worker-5fcdf964b7-4bhpr"} 5188
+cluster_checks_busyness{join_leader="true",node="khulnasoft-agent-cluster-worker-5fcdf964b7-6x9zl"} 46944
+cluster_checks_busyness{join_leader="true",node="khulnasoft-agent-cluster-worker-5fcdf964b7-czgvd"} 5366
 # HELP cluster_checks_configs_dangling Number of check configurations not dispatched.
 # TYPE cluster_checks_configs_dangling gauge
 cluster_checks_configs_dangling{join_leader="true"} 0
 # HELP cluster_checks_configs_dispatched Number of check configurations dispatched, by node.
 # TYPE cluster_checks_configs_dispatched gauge
-cluster_checks_configs_dispatched{join_leader="true",node="datadog-agent-cluster-worker-5fcdf964b7-4bhpr"} 23
-cluster_checks_configs_dispatched{join_leader="true",node="datadog-agent-cluster-worker-5fcdf964b7-6x9zl"} 14
-cluster_checks_configs_dispatched{join_leader="true",node="datadog-agent-cluster-worker-5fcdf964b7-czgvd"} 22
+cluster_checks_configs_dispatched{join_leader="true",node="khulnasoft-agent-cluster-worker-5fcdf964b7-4bhpr"} 23
+cluster_checks_configs_dispatched{join_leader="true",node="khulnasoft-agent-cluster-worker-5fcdf964b7-6x9zl"} 14
+cluster_checks_configs_dispatched{join_leader="true",node="khulnasoft-agent-cluster-worker-5fcdf964b7-czgvd"} 22
 # HELP cluster_checks_failed_stats_collection Total number of unsuccessful stats collection attempts
 # TYPE cluster_checks_failed_stats_collection counter
 cluster_checks_failed_stats_collection 1
@@ -95,7 +95,7 @@ compressor__bytes_out 7737
 # HELP compressor__total_payloads Total payloads in the compressor serializer
 # TYPE compressor__total_payloads counter
 compressor__total_payloads 12
-# HELP khulnasoft_requests Counter of requests made to Datadog
+# HELP khulnasoft_requests Counter of requests made to Khulnasoft
 # TYPE khulnasoft_requests counter
 khulnasoft_requests{join_leader="true",status="error"} 2
 khulnasoft_requests{join_leader="true",status="rate_limit_error"} 2
@@ -105,20 +105,20 @@ khulnasoft_requests{join_leader="true",status="success"} 13006
 external_metrics{join_leader="true"} 100
 # HELP external_metrics_api_elapsed Count of API Requests received
 # TYPE external_metrics_api_elapsed histogram
-external_metrics_api_elapsed_bucket{handler="get",in_error="true",namespace="datadog",le="0.005"} 0
-external_metrics_api_elapsed_bucket{handler="get",in_error="true",namespace="datadog",le="0.01"} 0
-external_metrics_api_elapsed_bucket{handler="get",in_error="true",namespace="datadog",le="0.025"} 0
-external_metrics_api_elapsed_bucket{handler="get",in_error="true",namespace="datadog",le="0.05"} 0
-external_metrics_api_elapsed_bucket{handler="get",in_error="true",namespace="datadog",le="0.1"} 0
-external_metrics_api_elapsed_bucket{handler="get",in_error="true",namespace="datadog",le="0.25"} 0
-external_metrics_api_elapsed_bucket{handler="get",in_error="true",namespace="datadog",le="0.5"} 0
-external_metrics_api_elapsed_bucket{handler="get",in_error="true",namespace="datadog",le="1"} 0
-external_metrics_api_elapsed_bucket{handler="get",in_error="true",namespace="datadog",le="2.5"} 0
-external_metrics_api_elapsed_bucket{handler="get",in_error="true",namespace="datadog",le="5"} 0
-external_metrics_api_elapsed_bucket{handler="get",in_error="true",namespace="datadog",le="10"} 0
-external_metrics_api_elapsed_bucket{handler="get",in_error="true",namespace="datadog",le="+Inf"} 24
-external_metrics_api_elapsed_sum{handler="get",in_error="true",namespace="datadog"} 1.696529e+07
-external_metrics_api_elapsed_count{handler="get",in_error="true",namespace="datadog"} 24
+external_metrics_api_elapsed_bucket{handler="get",in_error="true",namespace="khulnasoft",le="0.005"} 0
+external_metrics_api_elapsed_bucket{handler="get",in_error="true",namespace="khulnasoft",le="0.01"} 0
+external_metrics_api_elapsed_bucket{handler="get",in_error="true",namespace="khulnasoft",le="0.025"} 0
+external_metrics_api_elapsed_bucket{handler="get",in_error="true",namespace="khulnasoft",le="0.05"} 0
+external_metrics_api_elapsed_bucket{handler="get",in_error="true",namespace="khulnasoft",le="0.1"} 0
+external_metrics_api_elapsed_bucket{handler="get",in_error="true",namespace="khulnasoft",le="0.25"} 0
+external_metrics_api_elapsed_bucket{handler="get",in_error="true",namespace="khulnasoft",le="0.5"} 0
+external_metrics_api_elapsed_bucket{handler="get",in_error="true",namespace="khulnasoft",le="1"} 0
+external_metrics_api_elapsed_bucket{handler="get",in_error="true",namespace="khulnasoft",le="2.5"} 0
+external_metrics_api_elapsed_bucket{handler="get",in_error="true",namespace="khulnasoft",le="5"} 0
+external_metrics_api_elapsed_bucket{handler="get",in_error="true",namespace="khulnasoft",le="10"} 0
+external_metrics_api_elapsed_bucket{handler="get",in_error="true",namespace="khulnasoft",le="+Inf"} 24
+external_metrics_api_elapsed_sum{handler="get",in_error="true",namespace="khulnasoft"} 1.696529e+07
+external_metrics_api_elapsed_count{handler="get",in_error="true",namespace="khulnasoft"} 24
 external_metrics_api_elapsed_bucket{handler="list",in_error="false",namespace="",le="0.005"} 0
 external_metrics_api_elapsed_bucket{handler="list",in_error="false",namespace="",le="0.01"} 0
 external_metrics_api_elapsed_bucket{handler="list",in_error="false",namespace="",le="0.025"} 0
@@ -135,16 +135,16 @@ external_metrics_api_elapsed_sum{handler="list",in_error="false",namespace=""} 4
 external_metrics_api_elapsed_count{handler="list",in_error="false",namespace=""} 97
 # HELP external_metrics_api_requests Count of API Requests received
 # TYPE external_metrics_api_requests gauge
-external_metrics_api_requests{handler="get",in_error="true",namespace="datadog"} 24
+external_metrics_api_requests{handler="get",in_error="true",namespace="khulnasoft"} 24
 external_metrics_api_requests{handler="list",in_error="false",namespace=""} 97
-# HELP external_metrics_khulnasoft_metrics The label valid is true if the DatadogMetric CR is valid, false otherwise
+# HELP external_metrics_khulnasoft_metrics The label valid is true if the KhulnasoftMetric CR is valid, false otherwise
 # TYPE external_metrics_khulnasoft_metrics gauge
 external_metrics_khulnasoft_metrics{join_leader="true",name="dcaautogen-776576e7e4e1d57e7df8d30d63fdabe2c60edc",namespace="default",valid="false"} 1
 external_metrics_khulnasoft_metrics{join_leader="true",name="dcaautogen-f9a56c0456c0113a1d5d9f7673fcd09c5d6638",namespace="default",valid="true"} 1
-# HELP external_metrics_delay_seconds freshness of the metric evaluated from querying Datadog
+# HELP external_metrics_delay_seconds freshness of the metric evaluated from querying Khulnasoft
 # TYPE external_metrics_delay_seconds gauge
 external_metrics_delay_seconds{join_leader="true",metric="kubernetes.cpu.usage.total"} 41
-# HELP external_metrics_processed_value value processed from querying Datadog
+# HELP external_metrics_processed_value value processed from querying Khulnasoft
 # TYPE external_metrics_processed_value gauge
 external_metrics_processed_value{join_leader="true",metric="kubernetes.cpu.usage.total"} 8.0226661796875e+07
 # HELP go_gc_duration_seconds A summary of the pause duration of garbage collection cycles.
@@ -365,11 +365,11 @@ transactions__success_bytes{domain="https://orchestrator.khulnasoft.com",endpoin
 secret_backend__elapsed_ms{command="/usr/local/bin/secrets",exit_code="0"} 156
 # HELP cluster_checks_configs_info Information about the dispatched checks (node, check ID)
 # TYPE cluster_checks_configs_info gauge
-cluster_checks_configs_info{check_id="http_check:kubernetes:b6afdcb9527c9071",join_leader="true",node="datadog-clusterchecks-779dfcd7bf-hxjwg"} 1
-cluster_checks_configs_info{check_id="http_check:kubernetes:c964669d244288ea",join_leader="true",node="datadog-clusterchecks-779dfcd7bf-jm4mz"} 1
-cluster_checks_configs_info{check_id="http_check:nginx 1:c89937d23c8b01a0",join_leader="true",node="datadog-clusterchecks-779dfcd7bf-jm4mz"} 1
-cluster_checks_configs_info{check_id="http_check:nginx 2:89d07d5d897f5241",join_leader="true",node="datadog-clusterchecks-779dfcd7bf-hxjwg"} 1
-cluster_checks_configs_info{check_id="http_check:nginx 3:8f889113ed52b58e",join_leader="true",node="datadog-clusterchecks-779dfcd7bf-hxjwg"} 1
+cluster_checks_configs_info{check_id="http_check:kubernetes:b6afdcb9527c9071",join_leader="true",node="khulnasoft-clusterchecks-779dfcd7bf-hxjwg"} 1
+cluster_checks_configs_info{check_id="http_check:kubernetes:c964669d244288ea",join_leader="true",node="khulnasoft-clusterchecks-779dfcd7bf-jm4mz"} 1
+cluster_checks_configs_info{check_id="http_check:nginx 1:c89937d23c8b01a0",join_leader="true",node="khulnasoft-clusterchecks-779dfcd7bf-jm4mz"} 1
+cluster_checks_configs_info{check_id="http_check:nginx 2:89d07d5d897f5241",join_leader="true",node="khulnasoft-clusterchecks-779dfcd7bf-hxjwg"} 1
+cluster_checks_configs_info{check_id="http_check:nginx 3:8f889113ed52b58e",join_leader="true",node="khulnasoft-clusterchecks-779dfcd7bf-hxjwg"} 1
 # HELP autodiscovery_errors Number of Autodiscovery errors by provider.
 # TYPE autodiscovery_errors gauge
 autodiscovery_errors{provider="kubernetes-services"} 1

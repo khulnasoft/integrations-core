@@ -32,15 +32,15 @@ Juniper does not include any events.
 
 Additional helpful documentation, links, and articles:
 
-- [Monitor SNMP with Datadog][3]
-- [Monitor Juniper network devices with Datadog][4]
+- [Monitor SNMP with Khulnasoft][3]
+- [Monitor Juniper network devices with Khulnasoft][4]
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][5].
+Need help? Contact [Khulnasoft support][5].
 
 [1]: https://docs.khulnasoft.com/network_monitoring/devices/data/
 [2]: https://docs.khulnasoft.com/network_monitoring/devices/setup/
-[3]: https://www.khulnasoft.com/blog/monitor-snmp-with-datadog/
-[4]: https://www.khulnasoft.com/blog/monitor-juniper-network-devices-with-datadog/
+[3]: https://www.khulnasoft.com/blog/monitor-snmp-with-khulnasoft/
+[4]: https://www.khulnasoft.com/blog/monitor-juniper-network-devices-with-khulnasoft/
 [5]: https://docs.khulnasoft.com/help/

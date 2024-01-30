@@ -5,7 +5,7 @@
 [RethinkDB][1] is a distributed documented-oriented NoSQL database, with first class support for realtime
 change feeds.
 
-This check monitors a RethinkDB cluster through the Datadog Agent and collects metrics about performance,
+This check monitors a RethinkDB cluster through the Khulnasoft Agent and collects metrics about performance,
 data availability, cluster configuration, and more.
 
 **Note**: this integration is compatible with RethinkDB **version 2.3.6 and above**.
@@ -18,17 +18,17 @@ instructions.
 
 ### Installation
 
-The RethinkDB check is included in the [Datadog Agent][3] package. No additional installation is needed on your server.
+The RethinkDB check is included in the [Khulnasoft Agent][3] package. No additional installation is needed on your server.
 
 ### Configuration
 
-1. If using RethinkDB 2.4+, add a `datadog-agent` user with read-only permissions on the `rethinkdb`
+1. If using RethinkDB 2.4+, add a `khulnasoft-agent` user with read-only permissions on the `rethinkdb`
 database. You can use the following ReQL commands, and see [Permissions and user accounts][4] for
 details:
 
     ```python
-    r.db('rethinkdb').table('users').insert({'id': 'datadog-agent', 'password': '<PASSWORD>'})
-    r.db('rethinkdb').grant('datadog-agent', {'read': True})
+    r.db('rethinkdb').table('users').insert({'id': 'khulnasoft-agent', 'password': '<PASSWORD>'})
+    r.db('rethinkdb').grant('khulnasoft-agent', {'read': True})
     ```
 
     **Note**: on RethinkDB 2.3.x, granting permissions on the `rethinkdb` database is not supported. Skip
@@ -55,7 +55,7 @@ configuration options.
 #### Log collection
 
 
-1. Collecting logs is disabled by default in the Datadog Agent, enable it in your `datadog.yaml` file:
+1. Collecting logs is disabled by default in the Khulnasoft Agent, enable it in your `khulnasoft.yaml` file:
 
     ```yaml
     logs_enabled: true
@@ -98,7 +98,7 @@ See [service_checks.json][12] for a list of service checks provided by this inte
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][13].
+Need help? Contact [Khulnasoft support][13].
 
 
 [1]: https://rethinkdb.com

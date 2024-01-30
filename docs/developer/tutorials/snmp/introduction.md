@@ -10,7 +10,7 @@ If you're already familiar with the SNMP protocol, feel free to skip to the next
 
 SNMP (Simple Network Management Protocol) is a protocol for monitoring [network devices](https://en.wikipedia.org/wiki/Networking_hardware). It uses UDP and supports both a request/response model (commands and queries) and a notification model (traps, informs).
 
-In the request/response model, the **SNMP manager** (eg. the Datadog Agent) issues an **SNMP command** (`GET`, `GETNEXT`, `BULK`) to an **SNMP agent** (eg. a network device).
+In the request/response model, the **SNMP manager** (eg. the Khulnasoft Agent) issues an **SNMP command** (`GET`, `GETNEXT`, `BULK`) to an **SNMP agent** (eg. a network device).
 
 SNMP was born in the 1980s, so it has been around for a long time. While more modern alternatives like [NETCONF](https://en.wikipedia.org/wiki/NETCONF) and [OpenConfig](https://github.com/openconfig) have been gaining attention, a large amount of network devices still use SNMP as their primary monitoring interface.
 
@@ -43,7 +43,7 @@ OIDs are **globally defined**, which means they have the same meaning regardless
 
 OIDs can refer to various types of objects, such as strings, numbers, tables, etc.
 
-In particular, this means that only a fraction of OIDs refer to numerical quantities that can actually be sent as metrics to Datadog. However, non-numerical OIDs can also be useful, especially for tagging.
+In particular, this means that only a fraction of OIDs refer to numerical quantities that can actually be sent as metrics to Khulnasoft. However, non-numerical OIDs can also be useful, especially for tagging.
 
 ### The OID tree
 

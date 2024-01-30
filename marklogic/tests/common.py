@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2020-present
+# (C) Khulnasoft, Inc. 2020-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 import os
@@ -27,7 +27,7 @@ ADMIN_USERNAME = 'admin'
 ADMIN_PASSWORD = 'admin'
 MANAGE_ADMIN_USERNAME = 'khulnasoft_admin'
 MANAGE_USER_USERNAME = 'khulnasoft_user'
-PASSWORD = 'datadog'
+PASSWORD = 'khulnasoft'
 
 COMMON_TAGS = ['foo:bar']
 

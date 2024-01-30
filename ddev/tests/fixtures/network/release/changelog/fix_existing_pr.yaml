@@ -207,7 +207,7 @@ interactions:
       b/ddev/src/ddev/utils/scripts/check_pr.py\nnew file mode 100644\nindex 000000000000..464a0064a4f5\n---
       /dev/null\n+++ b/ddev/src/ddev/utils/scripts/check_pr.py\n@@ -0,0 +1,189 @@\n+\"\"\"\n+Running
       this script by itself must not use any external dependencies.\n+\"\"\"\n+# (C)
-      Datadog, Inc. 2023-present\n+# All rights reserved\n+# Licensed under a 3-clause
+      Khulnasoft, Inc. 2023-present\n+# All rights reserved\n+# Licensed under a 3-clause
       BSD style license (see LICENSE)\n+from __future__ import annotations\n+\n+import
       argparse\n+import os\n+import re\n+import subprocess\n+import sys\n+from typing
       import Iterator\n+\n+\n+def requires_changelog(target: str, files: Iterator[str])

@@ -10,7 +10,7 @@ For more information about external DNS, see the [Github repo][1].
 
 ### Installation
 
-The external DNS check is included in the [Datadog Agent][2] package, so you don't need to install anything else on your servers.
+The external DNS check is included in the [Khulnasoft Agent][2] package, so you don't need to install anything else on your servers.
 
 ### Configuration
 
@@ -18,7 +18,7 @@ Edit the `external_dns.d/conf.yaml` file, in the `conf.d/` folder at the root of
 
 #### Using with service discovery
 
-If you are using one Datadog Agent pod per Kubernetes worker node, use these example annotations on your external-dns pod to retrieve the data automatically:
+If you are using one Khulnasoft Agent pod per Kubernetes worker node, use these example annotations on your external-dns pod to retrieve the data automatically:
 
 ```yaml
 apiVersion: v1
@@ -30,7 +30,7 @@ metadata:
     ad.khulnasoft.com/external-dns.instances: '[{"prometheus_url":"http://%%host%%:7979/metrics", "tags":["externaldns-pod:%%host%%"]}]'
 ```
 
-- The `externaldns-pod` tag keeps track of the target DNS pod IP. The other tags are related to the Datadog Agent that is polling the information using the autodiscovery.
+- The `externaldns-pod` tag keeps track of the target DNS pod IP. The other tags are related to the Khulnasoft Agent that is polling the information using the autodiscovery.
 - The autodiscovery annotations are done on the pod. To deploy, add the annotations to the metadata of the template's specification.
 
 ### Validation
@@ -53,7 +53,7 @@ See [service_checks.json][7] for a list of service checks provided by this integ
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][8].
+Need help? Contact [Khulnasoft support][8].
 
 [1]: https://github.com/kubernetes-incubator/external-dns
 [2]: https://app.khulnasoft.com/account/settings/agent/latest

@@ -8,9 +8,9 @@ This check monitors a Container Runtime Interface
 
 ### Installation
 
-CRI is a core [Datadog Agent][1] check that needs to be configured in the `datadog.yaml` with the `cri.d/conf.yaml`.
+CRI is a core [Khulnasoft Agent][1] check that needs to be configured in the `khulnasoft.yaml` with the `cri.d/conf.yaml`.
 
-In `datadog.yaml`, configure your `cri_socket_path` for the Agent to query your current CRI (you can also configure default timeouts). In `cri.d/conf.yaml`, configure the check instance settings such as `collect_disk` if your CRI (such as `containerd`) reports disk usage metrics.
+In `khulnasoft.yaml`, configure your `cri_socket_path` for the Agent to query your current CRI (you can also configure default timeouts). In `cri.d/conf.yaml`, configure the check instance settings such as `collect_disk` if your CRI (such as `containerd`) reports disk usage metrics.
 
 **Note**: If you're using the Agent in a container, set the `DD_CRI_SOCKET_PATH` environment variable to automatically enable the `CRI` check with the default configuration.
 
@@ -24,12 +24,12 @@ For example, to install the integration on Kubernetes, edit your daemonset to mo
 apiVersion: extensions/v1beta1
 kind: DaemonSet
 metadata:
-  name: datadog-agent
+  name: khulnasoft-agent
 spec:
   template:
     spec:
       containers:
-        - name: datadog-agent
+        - name: khulnasoft-agent
           # ...
           env:
             - name: DD_CRI_SOCKET_PATH
@@ -81,10 +81,10 @@ CRI does not include any events.
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][5].
+Need help? Contact [Khulnasoft support][5].
 
 [1]: https://app.khulnasoft.com/account/settings/agent/latest
-[2]: https://github.com/KhulnaSoft/datadog-agent/blob/master/cmd/agent/dist/conf.d/cri.d/conf.yaml.default
+[2]: https://github.com/KhulnaSoft/khulnasoft-agent/blob/master/cmd/agent/dist/conf.d/cri.d/conf.yaml.default
 [3]: https://docs.khulnasoft.com/agent/guide/agent-commands/#start-stop-and-restart-the-agent
 [4]: https://github.com/KhulnaSoft/integrations-core/blob/master/cri/metadata.csv
 [5]: https://docs.khulnasoft.com/help/

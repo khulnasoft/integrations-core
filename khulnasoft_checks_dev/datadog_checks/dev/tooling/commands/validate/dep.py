@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2018-present
+# (C) Khulnasoft, Inc. 2018-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 import os
@@ -44,14 +44,14 @@ def format_check_usage(checks, default=None):
 
 
 def verify_base_dependency(source, check_name, dependency, force_pinned=True, min_base_version=None):
-    """Minimal dependency verification for `datadog-checks-base` dependencies.
+    """Minimal dependency verification for `khulnasoft-checks-base` dependencies.
 
     Ensures that the version isn't specifically pinned since that will limit check installations.
     Optionally ensures that dependencies which have no pins are reported as errors.
     Optionally validate a specific version satisfies the base requirement spec.
     """
     failed = False
-    name = 'datadog-checks-base'
+    name = 'khulnasoft-checks-base'
     checks = [check_name]
     requirement = Requirement(dependency)
     specifier_set = requirement.specifier
@@ -145,10 +145,10 @@ def verify_dependency(source, name, python_versions, file):
 @click.command(context_settings=CONTEXT_SETTINGS, short_help='Verify dependencies across all checks')
 @click.argument('check', shell_complete=complete_valid_checks, required=False)
 @click.option(
-    '--require-base-check-version', is_flag=True, help='Require specific version for datadog-checks-base requirement'
+    '--require-base-check-version', is_flag=True, help='Require specific version for khulnasoft-checks-base requirement'
 )
 @click.option(
-    '--min-base-check-version', help='Specify minimum version for datadog-checks-base requirement, e.g. `11.0.0`'
+    '--min-base-check-version', help='Specify minimum version for khulnasoft-checks-base requirement, e.g. `11.0.0`'
 )
 def dep(check, require_base_check_version, min_base_check_version):
     """
@@ -159,9 +159,9 @@ def dep(check, require_base_check_version, min_base_check_version):
     * Verify all the dependencies are pinned.
     * Verify the embedded Python environment defined in the base check and requirements
       listed in every integration are compatible.
-    * Verify each check specifies a `CHECKS_BASE_REQ` variable for `datadog-checks-base` requirement
-    * Optionally verify that the `datadog-checks-base` requirement is lower-bounded
-    * Optionally verify that the `datadog-checks-base` requirement satisfies specific version
+    * Verify each check specifies a `CHECKS_BASE_REQ` variable for `khulnasoft-checks-base` requirement
+    * Optionally verify that the `khulnasoft-checks-base` requirement is lower-bounded
+    * Optionally verify that the `khulnasoft-checks-base` requirement satisfies specific version
     """
     failed = False
     checks = process_checks_option(check, source='valid_checks', extend_changed=True)

@@ -32,7 +32,7 @@
           "lastState": {},
           "ready": true,
           "restartCount": 0,
-          "image": "datadog/docker-dd-agent:massi_ingest_k8s_events",
+          "image": "khulnasoft/docker-dd-agent:massi_ingest_k8s_events",
           "imageID": "docker://22c8298aadea7bae69765758a88fc373118c9a0c332d23aa99869d4f84d75a8e",
           "containerID": "docker://32fc50ecfe24df055f6d56037acb966337eef7282ad5c203a1be58f2dd2fe743"
         }]

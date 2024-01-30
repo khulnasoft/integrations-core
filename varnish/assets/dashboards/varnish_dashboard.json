@@ -1,6 +1,6 @@
 {
     "title": "Varnish - Metrics",
-    "description": "This dashboard provides an overview of your Varnish caches, so you can monitor cache performance and resource utilization, as well as the health of connections to backend servers. Further reading on Varnish monitoring:\n\n- [Top Varnish performance metrics](https://www.khulnasoft.com/blog/top-varnish-performance-metrics/)\n\n- [How to collect Varnish metrics](https://www.khulnasoft.com/blog/how-to-collect-varnish-metrics/)\n\n- [Monitor Varnish using Datadog](https://www.khulnasoft.com/blog/monitor-varnish-using-datadog/)\n\n- [Visit our Varnish integration docs](https://docs.khulnasoft.com/integrations/varnish/)\n\nClone this template dashboard to make changes and add your own graph widgets.",
+    "description": "This dashboard provides an overview of your Varnish caches, so you can monitor cache performance and resource utilization, as well as the health of connections to backend servers. Further reading on Varnish monitoring:\n\n- [Top Varnish performance metrics](https://www.khulnasoft.com/blog/top-varnish-performance-metrics/)\n\n- [How to collect Varnish metrics](https://www.khulnasoft.com/blog/how-to-collect-varnish-metrics/)\n\n- [Monitor Varnish using Khulnasoft](https://www.khulnasoft.com/blog/monitor-varnish-using-khulnasoft/)\n\n- [Visit our Varnish integration docs](https://docs.khulnasoft.com/integrations/varnish/)\n\nClone this template dashboard to make changes and add your own graph widgets.",
     "layout_type": "ordered",
     "template_variables": [
         {

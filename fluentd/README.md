@@ -13,7 +13,7 @@ Get metrics from Fluentd to:
 
 ### Installation
 
-The Fluentd check is included in the [Datadog Agent][2] package, so you don't need to install anything else on your Fluentd servers.
+The Fluentd check is included in the [Khulnasoft Agent][2] package, so you don't need to install anything else on your Fluentd servers.
 
 #### Prepare Fluentd
 
@@ -54,25 +54,25 @@ To configure this check for an Agent running on a host:
 
 ##### Log collection
 
-You can use the [Datadog FluentD plugin][6] to forward the logs directly from FluentD to your Datadog account.
+You can use the [Khulnasoft FluentD plugin][6] to forward the logs directly from FluentD to your Khulnasoft account.
 
 ###### Add metadata to your logs
 
-Proper metadata (including hostname and source) is the key to unlocking the full potential of your logs in Datadog. By default, the hostname and timestamp fields should be properly remapped with the [remapping for reserved attributes][7].
+Proper metadata (including hostname and source) is the key to unlocking the full potential of your logs in Khulnasoft. By default, the hostname and timestamp fields should be properly remapped with the [remapping for reserved attributes][7].
 
 ###### Source and custom tags
 
-Add the `ddsource` attribute with [the name of the log integration][8] in your logs in order to trigger the [integration automatic setup][9] in Datadog.
+Add the `ddsource` attribute with [the name of the log integration][8] in your logs in order to trigger the [integration automatic setup][9] in Khulnasoft.
 [Host tags][10] are automatically set on your logs if there is a matching hostname in your [infrastructure list][11]. Use the `ddtags` attribute to add custom tags to your logs:
 
 Setup Example:
 
 ```conf
-  # Match events tagged with "datadog.**" and
-  # send them to Datadog
+  # Match events tagged with "khulnasoft.**" and
+  # send them to Khulnasoft
 
-<match datadog.**>
-  @type datadog
+<match khulnasoft.**>
+  @type khulnasoft
   @id awesome_agent
   api_key <your_api_key>
 
@@ -103,28 +103,28 @@ You can change this behavior by using the following parameters:
 
 Additional parameters can be used to change the endpoint used in order to go through a proxy:
 
-- `host`: The proxy endpoint for logs not directly forwarded to Datadog (default value: `http-intake.logs.khulnasoft.com`).
-- `port`: The proxy port for logs not directly forwarded to Datadog (default value: `80`).
-- `ssl_port`: The port used for logs forwarded with a secure TCP/SSL connection to Datadog (default value: `443`).
-- `use_ssl`: Instructs the Agent to initialize a secure TCP/SSL connection to Datadog (default value: `true`).
+- `host`: The proxy endpoint for logs not directly forwarded to Khulnasoft (default value: `http-intake.logs.khulnasoft.com`).
+- `port`: The proxy port for logs not directly forwarded to Khulnasoft (default value: `80`).
+- `ssl_port`: The port used for logs forwarded with a secure TCP/SSL connection to Khulnasoft (default value: `443`).
+- `use_ssl`: Instructs the Agent to initialize a secure TCP/SSL connection to Khulnasoft (default value: `true`).
 - `no_ssl_validation`: Disables SSL hostname validation (default value: `false`).
 
 **Note**: Set `host` and `port` to your region {{< region-param key="http_endpoint" code="true" >}} {{< region-param key="http_port" code="true" >}}.
 
 ```conf
-<match datadog.**>
+<match khulnasoft.**>
 
   #...
-  host 'http-intake.logs.datadoghq.eu'
+  host 'http-intake.logs.khulnasofthq.eu'
 
 </match>
 ```
 
 ###### Kubernetes and Docker tags
 
-Datadog tags are critical to be able to jump from one part of the product to another. Having the right metadata associated with your logs is therefore important in jumping from a container view or any container metrics to the most related logs.
+Khulnasoft tags are critical to be able to jump from one part of the product to another. Having the right metadata associated with your logs is therefore important in jumping from a container view or any container metrics to the most related logs.
 
-If your logs contain any of the following attributes, these attributes are automatically added as Datadog tags on your logs:
+If your logs contain any of the following attributes, these attributes are automatically added as Khulnasoft tags on your logs:
 
 - `kubernetes.container_image`
 - `kubernetes.container_name`
@@ -132,7 +132,7 @@ If your logs contain any of the following attributes, these attributes are autom
 - `kubernetes.pod_name`
 - `docker.container_id`
 
-While the Datadog Agent collects Docker and Kubernetes metadata automatically, FluentD requires a plugin for this. Datadog recommends using [fluent-plugin-kubernetes_metadata_filter][12] to collect this metadata.
+While the Khulnasoft Agent collects Docker and Kubernetes metadata automatically, FluentD requires a plugin for this. Khulnasoft recommends using [fluent-plugin-kubernetes_metadata_filter][12] to collect this metadata.
 
 Configuration example:
 
@@ -181,18 +181,18 @@ See [service_checks.json][16] for a list of service checks provided by this inte
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][17].
+Need help? Contact [Khulnasoft support][17].
 
 ## Further Reading
 
-- [How to monitor Fluentd with Datadog][18]
+- [How to monitor Fluentd with Khulnasoft][18]
 
 [1]: https://raw.githubusercontent.com/KhulnaSoft/integrations-core/master/fluentd/images/snapshot-fluentd.png
 [2]: https://app.khulnasoft.com/account/settings/agent/latest
 [3]: https://docs.khulnasoft.com/agent/guide/agent-configuration-files/#agent-configuration-directory
 [4]: https://github.com/KhulnaSoft/integrations-core/blob/master/fluentd/khulnasoft_checks/fluentd/data/conf.yaml.example
 [5]: https://docs.khulnasoft.com/agent/guide/agent-commands/#start-stop-and-restart-the-agent
-[6]: https://github.com/KhulnaSoft/fluent-plugin-datadog
+[6]: https://github.com/KhulnaSoft/fluent-plugin-khulnasoft
 [7]: https://docs.khulnasoft.com/logs/processing/#edit-reserved-attributes
 [8]: https://docs.khulnasoft.com/integrations/#cat-log-collection
 [9]: https://docs.khulnasoft.com/logs/processing/#integration-pipelines
@@ -204,4 +204,4 @@ Need help? Contact [Datadog support][17].
 [15]: https://github.com/KhulnaSoft/integrations-core/blob/master/fluentd/metadata.csv
 [16]: https://github.com/KhulnaSoft/integrations-core/blob/master/fluentd/assets/service_checks.json
 [17]: https://docs.khulnasoft.com/help/
-[18]: https://www.khulnasoft.com/blog/monitor-fluentd-datadog
+[18]: https://www.khulnasoft.com/blog/monitor-fluentd-khulnasoft

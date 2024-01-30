@@ -1,5 +1,5 @@
 {
-    "author_name": "Datadog",
+    "author_name": "Khulnasoft",
     "description": null,
     "layout_type": "ordered",
     "template_variables": [],
@@ -8,7 +8,7 @@
         {
             "definition": {
                 "background_color": "white",
-                "content": "[SonarQube](https://www.khulnasoft.com/blog/datadog-sonarqube-integration) is an open-source tool for static code analysis that integrates with your existing CI pipeline to run regular code checks on your codebase.\n\nThis integration collects metrics and logs from SonarQube\u2019s reports in order to provide insight into your codebase quality. You can monitor for code issues and security violations as they're reported by the scanner, visualize changes in code complexity, and collect logs from the SonarQube instance itself for unusual activity. For more information, check out the Datadog [documentation](https://docs.khulnasoft.com/integrations/sonarqube/).",
+                "content": "[SonarQube](https://www.khulnasoft.com/blog/khulnasoft-sonarqube-integration) is an open-source tool for static code analysis that integrates with your existing CI pipeline to run regular code checks on your codebase.\n\nThis integration collects metrics and logs from SonarQube\u2019s reports in order to provide insight into your codebase quality. You can monitor for code issues and security violations as they're reported by the scanner, visualize changes in code complexity, and collect logs from the SonarQube instance itself for unusual activity. For more information, check out the Khulnasoft [documentation](https://docs.khulnasoft.com/integrations/sonarqube/).",
                 "font_size": "12",
                 "has_padding": true,
                 "show_tick": false,
@@ -28,7 +28,7 @@
         },
         {
             "definition": {
-                "banner_img": "https://imgix.khulnasoft.com/img/blog/datadog-sonarqube-integration/sonarqube-hero.png",
+                "banner_img": "https://imgix.khulnasoft.com/img/blog/khulnasoft-sonarqube-integration/sonarqube-hero.png",
                 "layout_type": "ordered",
                 "show_title": false,
                 "title": "About Sonarqube",
@@ -38,7 +38,7 @@
                     {
                         "definition": {
                             "background_color": "transparent",
-                            "content": "This dashboard displays metrics and logs from SonarQube\u2019s reports in order to provide insight into your codebase quality. You can monitor for code issues and security violations as they're reported by the scanner, visualize changes in code complexity, and collect logs from the SonarQube instance itself for unusual activity.\n\n##### [**Datadog Sonarqube integration docs&nbsp;\u2197**](https://docs.khulnasoft.com/integrations/sonarqube/)",
+                            "content": "This dashboard displays metrics and logs from SonarQube\u2019s reports in order to provide insight into your codebase quality. You can monitor for code issues and security violations as they're reported by the scanner, visualize changes in code complexity, and collect logs from the SonarQube instance itself for unusual activity.\n\n##### [**Khulnasoft Sonarqube integration docs&nbsp;\u2197**](https://docs.khulnasoft.com/integrations/sonarqube/)",
                             "font_size": "18",
                             "has_padding": true,
                             "show_tick": false,
@@ -58,7 +58,7 @@
                     {
                         "definition": {
                             "background_color": "transparent",
-                            "content": "**Elasticsearch monitoring guides**\n\n[Datadog guide to key Elasticsearch metrics&nbsp;\u2197](https://www.khulnasoft.com/blog/monitor-elasticsearch-performance-metrics/)\n\n[How to monitor Elasticsearch with Datadog&nbsp;\u2197](https://www.khulnasoft.com/blog/monitor-elasticsearch-datadog/)\n\n[Collect metrics with native and open source tools&nbsp;\u2197](https://www.khulnasoft.com/blog/collect-elasticsearch-metrics/)\n\n[Solve 5 performance and scaling problems&nbsp;\u2197](https://www.khulnasoft.com/blog/elasticsearch-performance-scaling-problems/)\n\n[Resolve unassigned shards&nbsp;\u2197](https://www.khulnasoft.com/blog/elasticsearch-unassigned-shards/)",
+                            "content": "**Elasticsearch monitoring guides**\n\n[Khulnasoft guide to key Elasticsearch metrics&nbsp;\u2197](https://www.khulnasoft.com/blog/monitor-elasticsearch-performance-metrics/)\n\n[How to monitor Elasticsearch with Khulnasoft&nbsp;\u2197](https://www.khulnasoft.com/blog/monitor-elasticsearch-khulnasoft/)\n\n[Collect metrics with native and open source tools&nbsp;\u2197](https://www.khulnasoft.com/blog/collect-elasticsearch-metrics/)\n\n[Solve 5 performance and scaling problems&nbsp;\u2197](https://www.khulnasoft.com/blog/elasticsearch-performance-scaling-problems/)\n\n[Resolve unassigned shards&nbsp;\u2197](https://www.khulnasoft.com/blog/elasticsearch-unassigned-shards/)",
                             "font_size": "12",
                             "has_padding": true,
                             "show_tick": false,
@@ -183,7 +183,7 @@
                     {
                         "definition": {
                             "background_color": "white",
-                            "content": "Results from regular code checks will appear here. SonarQube assigns a maintainability score for every check. Datadog monitors can help you stay on top of any code violations found by the scanner.  \n",
+                            "content": "Results from regular code checks will appear here. SonarQube assigns a maintainability score for every check. Khulnasoft monitors can help you stay on top of any code violations found by the scanner.  \n",
                             "font_size": "12",
                             "has_padding": true,
                             "show_tick": true,
@@ -783,7 +783,7 @@
                     {
                         "definition": {
                             "background_color": "white",
-                            "content": "Datadog collects all logs from 4 levels SonarQube, including the main app process, the WebServer running the scanner's endpoint, the ComputeEngineServer, and the Elastisearch server. These can indicate problems in performance or security issues, and provide helpful context when troubleshooting.",
+                            "content": "Khulnasoft collects all logs from 4 levels SonarQube, including the main app process, the WebServer running the scanner's endpoint, the ComputeEngineServer, and the Elastisearch server. These can indicate problems in performance or security issues, and provide helpful context when troubleshooting.",
                             "font_size": "12",
                             "has_padding": true,
                             "show_tick": false,

@@ -5,7 +5,7 @@ pg_ctl -D /var/lib/postgresql/data -l /tmp/logfile -w stop
 rm -rf /var/lib/postgresql/data/*
 
 echo "Testing primary"
-while ! pg_isready -U datadog -d khulnasoft_test -h postgres -p 5432 ; do
+while ! pg_isready -U khulnasoft -d khulnasoft_test -h postgres -p 5432 ; do
     echo "Primary not running, waiting"
     sleep 1
 done

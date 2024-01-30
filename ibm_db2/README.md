@@ -4,13 +4,13 @@
 
 ## Overview
 
-This check monitors [IBM Db2][2] through the Datadog Agent.
+This check monitors [IBM Db2][2] through the Khulnasoft Agent.
 
 ## Setup
 
 ### Installation
 
-The IBM Db2 check is included in the [Datadog Agent][3] package.
+The IBM Db2 check is included in the [Khulnasoft Agent][3] package.
 
 #### Dependencies
 
@@ -19,7 +19,7 @@ The [ibm_db][4] client library is required. To install it, ensure you have a wor
 ##### Unix
 
 ```text
-sudo -Hu dd-agent /opt/datadog-agent/embedded/bin/pip install ibm_db==3.1.0
+sudo -Hu dd-agent /opt/khulnasoft-agent/embedded/bin/pip install ibm_db==3.1.0
 ```
 
 Note: If you are on an Agent running Python 2, use `ibm_db==3.0.1` instead of `ibm_db=3.1.0`.
@@ -29,19 +29,19 @@ Note: If you are on an Agent running Python 2, use `ibm_db==3.0.1` instead of `i
 For Agent versions <= 6.11:
 
 ```text
-"C:\Program Files\Datadog\Datadog Agent\embedded\python.exe" -m pip install ibm_db==3.0.1
+"C:\Program Files\Khulnasoft\Khulnasoft Agent\embedded\python.exe" -m pip install ibm_db==3.0.1
 ```
 
 For Agent versions >= 6.12 and < 7.0:
 
 ```text
-"C:\Program Files\Datadog\Datadog Agent\embedded<PYTHON_MAJOR_VERSION>\python.exe" -m pip install ibm_db==3.0.1
+"C:\Program Files\Khulnasoft\Khulnasoft Agent\embedded<PYTHON_MAJOR_VERSION>\python.exe" -m pip install ibm_db==3.0.1
 ```
 
 For Agent versions >= 7.0:
 
 ```text
-"C:\Program Files\Datadog\Datadog Agent\embedded3\python.exe" -m pip install ibm_db==3.1.0
+"C:\Program Files\Khulnasoft\Khulnasoft Agent\embedded3\python.exe" -m pip install ibm_db==3.1.0
 ```
 
 On Linux there may be need for XML functionality. If you encounter errors during
@@ -112,7 +112,7 @@ To configure this check for an Agent running on a host:
 
 _Available for Agent versions >6.0_
 
-1. Collecting logs is disabled by default in the Datadog Agent, enable it in your `datadog.yaml` file:
+1. Collecting logs is disabled by default in the Khulnasoft Agent, enable it in your `khulnasoft.yaml` file:
 
    ```yaml
    logs_enabled: true
@@ -153,7 +153,7 @@ For containerized environments, see the [Autodiscovery Integration Templates][7]
 
 _Available for Agent versions >6.0_
 
-Collecting logs is disabled by default in the Datadog Agent. To enable it, see [Kubernetes Log Collection][8].
+Collecting logs is disabled by default in the Khulnasoft Agent. To enable it, see [Kubernetes Log Collection][8].
 
 | Parameter      | Value                                                                                                                                                                                                |
 | -------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -187,14 +187,14 @@ See [service_checks.json][11] for a list of service checks provided by this inte
 If you encounter an issue that produces error logs like the following:
 
 ```
-2023-08-10 23:34:47 UTC | CORE | ERROR | (pkg/collector/python/khulnasoft_agent.go:129 in LogMessage) | ibm_db2:c051131490335a94 | (ibm_db2.py:563) | Unable to connect to database `datadog` as user `db2inst1`: [IBM][CLI Driver] SQL1531N  The connection failed because the name specified with the DSN connection string keyword could not be found in either the db2dsdriver.cfg configuration file or the db2cli.ini configuration file.  Data source name specified in the connection string: "KHULNASOFT". SQLCODE=-1531
+2023-08-10 23:34:47 UTC | CORE | ERROR | (pkg/collector/python/khulnasoft_agent.go:129 in LogMessage) | ibm_db2:c051131490335a94 | (ibm_db2.py:563) | Unable to connect to database `khulnasoft` as user `db2inst1`: [IBM][CLI Driver] SQL1531N  The connection failed because the name specified with the DSN connection string keyword could not be found in either the db2dsdriver.cfg configuration file or the db2cli.ini configuration file.  Data source name specified in the connection string: "KHULNASOFT". SQLCODE=-1531
 ```
 
 Then it's most likely caused by one of the following scenarios:
 - The configuration (conf.yaml) is missing a host and port configuration
 - The CLI Driver isn't able to locate the database due to the absence of `db2cli.ini` and `db2dsdriver.cfg`
 
-The Agent requires the information in both of the above scenarios to determine where to properly connect to the database. To solve this issue, you can either include a host and port parameter for every instance of the `ibm_db2` check experiencing this issue. Alternatively, if you want to use the DSNs defined in either the `db2cli.ini` or `db2dsdriver.cfg` files, you can copy those files over to the `clidriver` directory that the Agent uses. Under normal circumstances, that directory is located at `/opt/datadog-agent/embedded/lib/python3.9/site-packages/clidriver/cfg` for Linux.
+The Agent requires the information in both of the above scenarios to determine where to properly connect to the database. To solve this issue, you can either include a host and port parameter for every instance of the `ibm_db2` check experiencing this issue. Alternatively, if you want to use the DSNs defined in either the `db2cli.ini` or `db2dsdriver.cfg` files, you can copy those files over to the `clidriver` directory that the Agent uses. Under normal circumstances, that directory is located at `/opt/khulnasoft-agent/embedded/lib/python3.9/site-packages/clidriver/cfg` for Linux.
 
 ### Installing `ibm_db` client library offline
 
@@ -226,7 +226,7 @@ If you're in an air gapped environment, or on a restricted network where it's no
 1. Using the embedded [`pip`][15] on the Agent, install the `ibm_db` library locally. This library's files are contained within the extracted `python-ibmdb-x.y.z` from `ibm_db.tar.gz`.
 
    ```
-   /opt/datadog-agent/embedded/bin/pip install --no-index --no-deps --no-build-isolation  /path/to/python-ibmdb-x.y.z/IBM_DB/ibm_db/
+   /opt/khulnasoft-agent/embedded/bin/pip install --no-index --no-deps --no-build-isolation  /path/to/python-ibmdb-x.y.z/IBM_DB/ibm_db/
    ```
 
 If you get the following error:
@@ -250,13 +250,13 @@ If you get the following error:
 
 You may need to install `gcc`.
 
-Need help? Contact [Datadog support][12].
+Need help? Contact [Khulnasoft support][12].
 
 ## Further Reading
 
 Additional helpful documentation, links, and articles:
 
-- [Monitor IBM DB2 with Datadog][13]
+- [Monitor IBM DB2 with Khulnasoft][13]
 
 [1]: https://raw.githubusercontent.com/KhulnaSoft/integrations-core/master/ibm_db2/images/dashboard_overview.png
 [2]: https://www.ibm.com/analytics/us/en/db2
@@ -270,7 +270,7 @@ Additional helpful documentation, links, and articles:
 [10]: https://github.com/KhulnaSoft/integrations-core/blob/master/ibm_db2/metadata.csv
 [11]: https://github.com/KhulnaSoft/integrations-core/blob/master/ibm_db2/assets/service_checks.json
 [12]: https://docs.khulnasoft.com/help/
-[13]: https://www.khulnasoft.com/blog/monitor-db2-with-datadog
+[13]: https://www.khulnasoft.com/blog/monitor-db2-with-khulnasoft
 [14]: https://pypi.org/project/ibm-db/#files
 [15]: https://docs.khulnasoft.com/developers/guide/custom-python-package/?tab=linux
 [16]: https://public.dhe.ibm.com/ibmdl/export/pub/software/data/db2/drivers/odbc_cli/

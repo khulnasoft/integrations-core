@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2023-present
+# (C) Khulnasoft, Inc. 2023-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 import asyncio
@@ -23,7 +23,7 @@ IGNORED_DEPS = {
     'pyasn1',  # https://github.com/pyasn1/pyasn1/issues/52
     'pysnmp',  # Breaking snmp tests
     'aerospike',  # v8+ breaks agent build.
-    # We need pydantic 2.0.2 for the rpm x64 agent build (see https://github.com/KhulnaSoft/datadog-agent/pull/18303)
+    # We need pydantic 2.0.2 for the rpm x64 agent build (see https://github.com/KhulnaSoft/khulnasoft-agent/pull/18303)
     'pydantic',
     # https://github.com/KhulnaSoft/integrations-core/pull/16080
     'lxml',
@@ -44,7 +44,7 @@ IGNORED_DEPS = {
     # 2.4.10 is broken on py2 and they did not yank the version
     'rethinkdb',
     # cryptography>=42 requires rust>=1.63.0. We have rust 1.62 on centos 6
-    # https://github.com/KhulnaSoft/datadog-agent/pull/22268
+    # https://github.com/KhulnaSoft/khulnasoft-agent/pull/22268
     'cryptography',
     # Brings urllib 2.0.7 which breaks `test_uds_request` in the base check
     # https://github.com/kubernetes-client/python/pull/2131

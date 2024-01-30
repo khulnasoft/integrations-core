@@ -1,4 +1,4 @@
-# (C) Datadog, Inc. 2018-present
+# (C) Khulnasoft, Inc. 2018-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
 
@@ -46,16 +46,16 @@ def parse_pyproject_array(name):
 CHECKS_BASE_REQ = parse_pyproject_array('dependencies')[0]
 
 setup(
-    name='datadog-kube-proxy',
+    name='khulnasoft-kube-proxy',
     version=ABOUT["__version__"],
     description='The kube_proxy Check',
     long_description=long_description,
     long_description_content_type='text/markdown',
-    keywords='datadog agent kube_proxy check',
+    keywords='khulnasoft agent kube_proxy check',
     # The project's main homepage.
     url='https://github.com/KhulnaSoft/integrations-core',
     # Author details
-    author='Datadog',
+    author='Khulnasoft',
     author_email='packages@khulnasoft.com',
     # License
     license='BSD',

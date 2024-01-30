@@ -10,11 +10,11 @@ Get metrics from Aerospike Database in real time to:
 ## Setup
 
 NOTE: The current aerospike integration is only compatible with Aerospike server v4.9 or above, see Aerospike's [Python Client Library Release Notes][1] for more info.
-If you use an older Aerospike server version, it is still possible to monitor it with version 7.29.0 or lower of the Datadog Agent.
+If you use an older Aerospike server version, it is still possible to monitor it with version 7.29.0 or lower of the Khulnasoft Agent.
 
 ### Installation
 
-The Aerospike check is included in the [Datadog Agent][2] package.
+The Aerospike check is included in the [Khulnasoft Agent][2] package.
 No additional installation is needed on your server.
 
 ### Configuration
@@ -38,7 +38,7 @@ To configure this check for an Agent running on a host:
 ##### Log collection
 
 
-1. Collecting logs is disabled by default in the Datadog Agent, you need to enable it in `datadog.yaml`:
+1. Collecting logs is disabled by default in the Khulnasoft Agent, you need to enable it in `khulnasoft.yaml`:
 
    ```yaml
    logs_enabled: true
@@ -77,7 +77,7 @@ For containerized environments, see the [Autodiscovery Integration Templates][5]
 
 _Available for Agent versions >6.0_
 
-Collecting logs is disabled by default in the Datadog Agent. To enable it, see [Kubernetes Log Collection][6].
+Collecting logs is disabled by default in the Khulnasoft Agent. To enable it, see [Kubernetes Log Collection][6].
 
 | Parameter      | Value                                               |
 | -------------- | --------------------------------------------------- |
@@ -107,7 +107,7 @@ Aerospike does not include any events.
 
 ## Troubleshooting
 
-Need help? Contact [Datadog support][9].
+Need help? Contact [Khulnasoft support][9].
 
 [1]: https://download.aerospike.com/download/client/python/notes.html#5.0.0
 [2]: https://app.khulnasoft.com/account/settings/agent/latest

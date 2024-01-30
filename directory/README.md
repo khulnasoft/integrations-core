@@ -13,7 +13,7 @@ Capture metrics from directories and files of your choosing. The Agent collects:
 
 ### Installation
 
-The Directory check is included in the [Datadog Agent][1] package, so you don't need to install anything else on your server.
+The Directory check is included in the [Khulnasoft Agent][1] package, so you don't need to install anything else on your server.
 
 ### Configuration
 
@@ -30,7 +30,7 @@ The Directory check is included in the [Datadog Agent][1] package, so you don't 
      - directory: "<DIRECTORY_PATH>"
    ```
 
-    Ensure that the user running the Agent process (usually `datadog-agent`) has read access to the directories, subdirectories, and files you configure.
+    Ensure that the user running the Agent process (usually `khulnasoft-agent`) has read access to the directories, subdirectories, and files you configure.
 
     **Note**: On Windows when you add your directory, use double-backslashes `C:\\path\\to\\directory` instead of single-backslashes `C:\path\to\directory` for the check to run. Otherwise, the directory check fails with traceback ending in the error: `found unknown escape character in "<string>"`.
 
@@ -60,7 +60,7 @@ When running the check against very large directories and recursion is set to tr
 
 For example, if there is a directory with 15,000 files and sub-directories, and the check runs 30-40 seconds with high CPU usage, if you do not set up less frequent check frequency, the check with high CPU runs effectively and continuously.
 
-Need help? Contact [Datadog support][8].
+Need help? Contact [Khulnasoft support][8].
 
 
 [1]: https://app.khulnasoft.com/account/settings/agent/latest

@@ -1,5 +1,5 @@
 {
-  "author_name": "Datadog",
+  "author_name": "Khulnasoft",
   "title": "Azure IoT Edge - Overview",
   "description": "Using this dashboard, you can get a high-level view of your Azure IoT Edge metrics related to device status, activity and resource utilization.\n\nTo learn more about our Azure IoT Edge integration, see:\n\n- [Our official integration documentation](https://docs.khulnasoft.com/integrations/azure_iot_edge/?tab=host).\n\nYou can clone this dashboard, copy and paste widgets from other out-of-the-box dashboards, and create your own visualizations for your custom applications.",
   "layout_type": "free",

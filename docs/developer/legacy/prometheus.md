@@ -2,7 +2,7 @@
 
 -----
 
-[Prometheus](https://prometheus.io) is an open source monitoring system for timeseries metric data. Many Datadog
+[Prometheus](https://prometheus.io) is an open source monitoring system for timeseries metric data. Many Khulnasoft
 integrations collect metrics based on Prometheus exported data sets.
 
 Prometheus-based integrations use the OpenMetrics exposition format to collect metrics.
@@ -64,22 +64,22 @@ All [HTTP options](../base/http.md#options) are also supported.
       show_root_heading: false
       show_root_toc_entry: false
 
-## Prometheus to Datadog metric types
+## Prometheus to Khulnasoft metric types
 
-The Openmetrics Base Check supports various configurations for submitting Prometheus metrics to Datadog.
+The Openmetrics Base Check supports various configurations for submitting Prometheus metrics to Khulnasoft.
 We currently support Prometheus `gauge`, `counter`, `histogram`, and `summary` metric types.
 
 ### Gauge
 A gauge metric represents a single numerical value that can arbitrarily go up or down.
 
-Prometheus gauge metrics are submitted as Datadog gauge metrics.
+Prometheus gauge metrics are submitted as Khulnasoft gauge metrics.
 
 ### Counter
 
 A [Prometheus counter](https://prometheus.io/docs/concepts/metric_types/#counter) is a cumulative metric that represents
 a single monotonically increasing counter whose value can only increase or be reset to zero on restart.
 
-| Config Option | Value | Datadog Metric Submitted |
+| Config Option | Value | Khulnasoft Metric Submitted |
 | ------------- | ----- | ------------------------ |
 | `send_monotonic_counter` | `true` (default)| `monotonic_count` |
 | &nbsp; | `false` | `gauge` |
@@ -97,9 +97,9 @@ Histogram metrics ending in:
 - `_bucket` represent the cumulative counters for the observation buckets. Note that buckets are only submitted if `send_histograms_buckets` is enabled.
 
 
-| Subtype | Config Option | Value | Datadog Metric Submitted |
+| Subtype | Config Option | Value | Khulnasoft Metric Submitted |
 | ------- | ------------- | ----- | ------------------------ |
-| &nbsp; | `send_distribution_buckets` | `true` | The entire histogram can be submitted as a single [distribution metric][datadog-distribution-metrics]. If the option is enabled, none of the subtype metrics will be submitted.
+| &nbsp; | `send_distribution_buckets` | `true` | The entire histogram can be submitted as a single [distribution metric][khulnasoft-distribution-metrics]. If the option is enabled, none of the subtype metrics will be submitted.
 | `_sum` | `send_distribution_sums_as_monotonic` | `false` (default) | `gauge` |
 | &nbsp; | &nbsp; | `true` | `monotonic_count` |
 | `_count` | `send_distribution_counts_as_monotonic` | `false` (default) | `gauge` |
@@ -118,7 +118,7 @@ Summary metrics ending in:
 - `_count` represent the total number of events that have been observed.
 -  metrics with labels like `{quantile="<φ>"}` represent the streaming quantiles of observed events.
 
-| Subtype | Config Option | Value | Datadog Metric Submitted |
+| Subtype | Config Option | Value | Khulnasoft Metric Submitted |
 | ------- | ------------- | ----- | ------------------------ |
 | `_sum` | `send_distribution_sums_as_monotonic` | `false` (default) |`gauge` |
 | &nbsp; | &nbsp; | `true` | `monotonic_count` |

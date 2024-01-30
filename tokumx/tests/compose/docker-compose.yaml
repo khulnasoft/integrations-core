@@ -3,7 +3,7 @@ version: '2.1'
 services:
 
   tokumx:
-    image: datadog/tokumx
+    image: khulnasoft/tokumx
     volumes:
       - ${COMPOSE_DIR}/entry.sh:/entry.sh
     entrypoint: bash /entry.sh

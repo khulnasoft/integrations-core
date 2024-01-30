@@ -381,7 +381,7 @@ See meaning of index as used here in [Using an index](#using-an-index) section.
 ##### Tagging tips
 
 !!! note
-    General guidelines on [Datadog tagging](https://docs.khulnasoft.com/tagging/) also apply to table metric tags.
+    General guidelines on [Khulnasoft tagging](https://docs.khulnasoft.com/tagging/) also apply to table metric tags.
 
     In particular, be mindful of the kind of value contained in the columns used a tag sources. E.g. avoid using a `DisplayString` (an arbitrarily long human-readable text description) or unbounded sources (timestamps, IDs...) as tag values.
 
@@ -389,7 +389,7 @@ See meaning of index as used here in [Using an index](#using-an-index) section.
 
 #### Metric type inference
 
-By default, the [Datadog metric type](https://docs.khulnasoft.com/developers/metrics/types/?tab=count) of a symbol will be inferred from the SNMP type (i.e. the MIB `SYNTAX`):
+By default, the [Khulnasoft metric type](https://docs.khulnasoft.com/developers/metrics/types/?tab=count) of a symbol will be inferred from the SNMP type (i.e. the MIB `SYNTAX`):
 
 | SNMP type             | Inferred metric type |
 | --------------------- | -------------------- |
@@ -512,7 +512,7 @@ metrics:
     # ...
 ```
 
-An `snmp.myDevice` metric is sent, with a value of 1 and tagged by statuses. This allows you to monitor status changes, number of devices per state, etc., in Datadog.
+An `snmp.myDevice` metric is sent, with a value of 1 and tagged by statuses. This allows you to monitor status changes, number of devices per state, etc., in Khulnasoft.
 
 ### `metric_tags`
 
@@ -558,7 +558,7 @@ metadata:
         value: "dell"
 ```
 
-Supported resources and fields can be found here: [payload.go](https://github.com/KhulnaSoft/datadog-agent/blob/main/pkg/networkdevice/metadata/payload.go)
+Supported resources and fields can be found here: [payload.go](https://github.com/KhulnaSoft/khulnasoft-agent/blob/main/pkg/networkdevice/metadata/payload.go)
 
 #### Value from a static value
 

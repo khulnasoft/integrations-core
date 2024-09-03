@@ -145,7 +145,7 @@ jobs:
 
     - name: Download Python artifacts
       if: ${{ !startsWith(github.event.ref, 'refs/tags') }}
-      uses: actions/download-artifact@v3
+      uses: actions/download-artifact@v4.1.7
       with:
         name: python-artifacts
         path: ddev/dist
@@ -307,7 +307,7 @@ jobs:
         OUTER
 
     - name: Download staged standalone binaries
-      uses: actions/download-artifact@v3
+      uses: actions/download-artifact@v4.1.7
       with:
         name: staged-standalone-${{ runner.os }}
         path: ddev/archives
@@ -329,7 +329,7 @@ jobs:
       run: rm -rf archives bin targets
 
     - name: Download staged managed binaries
-      uses: actions/download-artifact@v3
+      uses: actions/download-artifact@v4.1.7
       with:
         name: staged-managed-${{ runner.os }}
         path: ddev/archives
@@ -476,7 +476,7 @@ jobs:
         OUTER
 
     - name: Download staged standalone binaries
-      uses: actions/download-artifact@v3
+      uses: actions/download-artifact@v4.1.7
       with:
         name: staged-standalone-${{ runner.os }}
         path: ddev/archives
@@ -510,7 +510,7 @@ jobs:
       run: rm -rf archives bin notarize-bin
 
     - name: Download staged managed binaries
-      uses: actions/download-artifact@v3
+      uses: actions/download-artifact@v4.1.7
       with:
         name: staged-managed-${{ runner.os }}
         path: ddev/archives
@@ -596,19 +596,19 @@ jobs:
 
     steps:
     - name: Download Python artifacts
-      uses: actions/download-artifact@v3
+      uses: actions/download-artifact@v4.1.7
       with:
         name: python-artifacts
         path: dist
 
     - name: Download binaries
-      uses: actions/download-artifact@v3
+      uses: actions/download-artifact@v4.1.7
       with:
         name: standalone
         path: archives
 
     - name: Download installers
-      uses: actions/download-artifact@v3
+      uses: actions/download-artifact@v4.1.7
       with:
         name: installers
         path: installers
